@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-risk-group-high-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "code": "%",
+    "system": "http://unitsofmeasure.org",
+    "unit": "%",
+    "value": 24
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "H",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "High"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient's cardiovascular disease risk is 24%, categorized as High risk group."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "827181004",
+        "system": "http://snomed.info/sct",
+        "display": "Risk of cardiovascular disease"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

@@ -1,0 +1,101 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CvdQuestionnairePreventionPlanItem",
+  "id": "cvd-questionnaire-prevention-plan-item",
+  "title": "CVD prevention plan questionnaire item (linkId)",
+  "description": "Stable linkId values for the illustrative ESPBI form 2 Questionnaire; used as ConceptMap source codes.",
+  "url": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-prevention-plan-item",
+  "concept": [
+    {
+      "code": "grp-plan-header",
+      "display": "Plan header"
+    },
+    {
+      "code": "plan-created-datetime",
+      "display": "Plan creation date and time"
+    },
+    {
+      "code": "plan-risk-group",
+      "display": "Risk group (plan)"
+    },
+    {
+      "code": "plan-target-ldl",
+      "display": "Target LDL cholesterol"
+    },
+    {
+      "code": "plan-target-bp",
+      "display": "Target blood pressure"
+    },
+    {
+      "code": "plan-smoking-cessation",
+      "display": "Quitting smoking (interventions)"
+    },
+    {
+      "code": "grp-plan-lifestyle",
+      "display": "Lifestyle and weight"
+    },
+    {
+      "code": "plan-physical-activity",
+      "display": "Physical activity plan"
+    },
+    {
+      "code": "plan-target-bmi",
+      "display": "Target BMI (kg/m²)"
+    },
+    {
+      "code": "grp-achievement",
+      "display": "Achievement evaluation"
+    },
+    {
+      "code": "achievement-datetime",
+      "display": "Achievement evaluation date and time"
+    },
+    {
+      "code": "achievement-ldl-mmol",
+      "display": "Achieved LDL cholesterol (mmol/l)"
+    },
+    {
+      "code": "achievement-ldl-target-met",
+      "display": "Target LDL achieved (boolean)"
+    },
+    {
+      "code": "achievement-bp-systolic",
+      "display": "Current systolic BP (mmHg)"
+    },
+    {
+      "code": "achievement-bp-diastolic",
+      "display": "Current diastolic BP (mmHg)"
+    },
+    {
+      "code": "achievement-bp-target-met",
+      "display": "Target BP achieved (boolean)"
+    },
+    {
+      "code": "achievement-smoking-quit",
+      "display": "Smoking cessation achieved"
+    },
+    {
+      "code": "achievement-height-cm",
+      "display": "Height (cm) at follow-up"
+    },
+    {
+      "code": "achievement-weight-kg",
+      "display": "Weight (kg) at follow-up"
+    },
+    {
+      "code": "achievement-bmi",
+      "display": "Achieved BMI (kg/m²)"
+    },
+    {
+      "code": "achievement-comments",
+      "display": "Achievement evaluator comments"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 21
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LungRecommendationVS",
+  "id": "lung-recommendation",
+  "title": "Lung Screening Recommendation Value Set",
+  "description": "Allowed recommendation codes used in the Lithuanian lung cancer early\ndiagnosis programme for follow-up and referral decisions.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lung-recommendation",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation"
+      }
+    ]
+  }
+}

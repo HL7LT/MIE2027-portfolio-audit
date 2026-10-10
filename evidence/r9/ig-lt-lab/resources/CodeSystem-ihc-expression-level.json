@@ -1,0 +1,36 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "IhcExpressionLevelLtLab",
+  "id": "ihc-expression-level",
+  "title": "IHC Expression Level",
+  "description": "Immunohistochemical expression level classification for receptor status assessment.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/ihc-expression-level",
+  "concept": [
+    {
+      "code": "negative",
+      "display": "Negative",
+      "definition": "No expression detected"
+    },
+    {
+      "code": "weak",
+      "display": "Weak (+)",
+      "definition": "Weak expression (+)"
+    },
+    {
+      "code": "moderate",
+      "display": "Moderate (++)",
+      "definition": "Moderate expression (++)"
+    },
+    {
+      "code": "strong",
+      "display": "Strong (+++)",
+      "definition": "Strong expression (+++)"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 4
+}

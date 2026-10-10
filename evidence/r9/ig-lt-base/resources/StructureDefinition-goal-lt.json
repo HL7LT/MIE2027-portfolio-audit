@@ -1,0 +1,122 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "goal-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/goal-lt",
+  "name": "GoalLt",
+  "title": "GoalLt",
+  "status": "active",
+  "description": "Lithuanian Base Goal profile, used for describing goals.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Goal",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Goal",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Goal.lifecycleStatus",
+        "path": "Goal.lifecycleStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.achievementStatus",
+        "path": "Goal.achievementStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.category",
+        "path": "Goal.category",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.priority",
+        "path": "Goal.priority",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.description",
+        "path": "Goal.description",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.subject",
+        "path": "Goal.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.start[x]",
+        "path": "Goal.start[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.target",
+        "path": "Goal.target",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.source",
+        "path": "Goal.source",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Goal.addresses",
+        "path": "Goal.addresses",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+              "http://hl7.org/fhir/StructureDefinition/MedicationStatement",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/RiskAssessment"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Goal.note",
+        "path": "Goal.note",
+        "mustSupport": true
+      },
+      {
+        "id": "Goal.outcome",
+        "path": "Goal.outcome",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

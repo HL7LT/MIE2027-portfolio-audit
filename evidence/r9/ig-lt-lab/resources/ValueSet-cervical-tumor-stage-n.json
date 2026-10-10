@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalTumorStageNLtLab",
+  "id": "cervical-tumor-stage-n",
+  "title": "Cervical Tumor Stage pN",
+  "description": "Pathological regional lymph node (pN) staging for cervical cancer, AJCC 8th edition.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-n",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1229966003",
+            "display": "American Joint Committee on Cancer pNX (qualifier value)"
+          },
+          {
+            "code": "1229967007",
+            "display": "American Joint Committee on Cancer pN0 (qualifier value)"
+          },
+          {
+            "code": "1229973008",
+            "display": "American Joint Committee on Cancer pN1 (qualifier value)"
+          },
+          {
+            "code": "1229978004",
+            "display": "American Joint Committee on Cancer pN2 (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

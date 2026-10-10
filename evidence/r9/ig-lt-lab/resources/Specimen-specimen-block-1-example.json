@@ -1,0 +1,38 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-block-1-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/specimen-block-lt-lab"
+    ]
+  },
+  "accessionIdentifier": {
+    "value": "A1"
+  },
+  "parent": [
+    {
+      "reference": "Specimen/specimen-left-breast-example"
+    }
+  ],
+  "processing": [
+    {
+      "method": {
+        "coding": [
+          {
+            "code": "702941008",
+            "system": "http://snomed.info/sct",
+            "display": "Paraffin embedding"
+          }
+        ]
+      }
+    }
+  ],
+  "collection": {
+    "quantity": {
+      "value": 5,
+      "unit": "slices"
+    }
+  },
+  "language": "en",
+  "status": "available"
+}

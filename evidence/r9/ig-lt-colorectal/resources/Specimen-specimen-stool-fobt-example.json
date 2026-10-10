@@ -1,0 +1,14 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-stool-fobt-example",
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "code": "119339001",
+        "system": "http://snomed.info/sct",
+        "display": "Stool specimen"
+      }
+    ]
+  }
+}

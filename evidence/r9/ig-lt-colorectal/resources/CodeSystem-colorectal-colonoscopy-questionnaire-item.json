@@ -1,0 +1,149 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ColorectalColonoscopyQuestionnaireItem",
+  "id": "colorectal-colonoscopy-questionnaire-item",
+  "title": "Colorectal colonoscopy ESPBI Questionnaire item (linkId)",
+  "description": "Stable linkId values for the ESPBI colonoscopy Questionnaire; source codes for the Colorectal ConceptMap prototype.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-colonoscopy-questionnaire-item",
+  "concept": [
+    {
+      "code": "basicInfo.procedureDate",
+      "display": "Procedure date/time"
+    },
+    {
+      "code": "basicInfo.anesthesia",
+      "display": "Anaesthesia used"
+    },
+    {
+      "code": "basicInfo.videoColonoscope",
+      "display": "Video colonoscope used"
+    },
+    {
+      "code": "basicInfo.withdrawalTime",
+      "display": "Withdrawal time (minutes)"
+    },
+    {
+      "code": "basicInfo.retroflexionRectum",
+      "display": "Retroflexion in rectum performed"
+    },
+    {
+      "code": "basicInfo.previousAbdominalSurgery",
+      "display": "Previous abdominal surgery flag"
+    },
+    {
+      "code": "bowelPrep.prepQuality",
+      "display": "Bowel preparation quality"
+    },
+    {
+      "code": "bowelPrep.bbpsRight",
+      "display": "BBPS right colon"
+    },
+    {
+      "code": "bowelPrep.bbpsTransverse",
+      "display": "BBPS transverse colon"
+    },
+    {
+      "code": "bowelPrep.bbpsLeft",
+      "display": "BBPS left colon"
+    },
+    {
+      "code": "bowelPrep.totalBbps",
+      "display": "BBPS total score"
+    },
+    {
+      "code": "bowelPrep.prepMethod",
+      "display": "Bowel preparation method"
+    },
+    {
+      "code": "bowelPrep.usedPreparations",
+      "display": "Preparation substance used"
+    },
+    {
+      "code": "scopeReach.reachLocation",
+      "display": "Colonoscope reach location"
+    },
+    {
+      "code": "polypFindings.polypFound",
+      "display": "Polyp(s) detected"
+    },
+    {
+      "code": "polypFindings.location",
+      "display": "Polyp location (colon segment)"
+    },
+    {
+      "code": "polypFindings.sizeMm",
+      "display": "Polyp size (mm)"
+    },
+    {
+      "code": "polypFindings.parisClassification",
+      "display": "Paris classification"
+    },
+    {
+      "code": "polypFindings.niceClassification",
+      "display": "NICE classification"
+    },
+    {
+      "code": "polypFindings.predictedHistology",
+      "display": "Predicted histology"
+    },
+    {
+      "code": "polypFindings.polypRemoved",
+      "display": "Polyp removed"
+    },
+    {
+      "code": "polypFindings.removalMethod",
+      "display": "Polyp removal method"
+    },
+    {
+      "code": "polypFindings.resectionType",
+      "display": "Resection type"
+    },
+    {
+      "code": "polypFindings.sentForHistology",
+      "display": "Sent for histology"
+    },
+    {
+      "code": "tumorFindings.tumorFound",
+      "display": "Tumour detected"
+    },
+    {
+      "code": "tumorFindings.tumorLocation",
+      "display": "Tumour location"
+    },
+    {
+      "code": "tumorFindings.biopsyPerformed",
+      "display": "Biopsy performed"
+    },
+    {
+      "code": "complications.complicationPresence",
+      "display": "Complication presence"
+    },
+    {
+      "code": "complications.complicationType",
+      "display": "Complication type"
+    },
+    {
+      "code": "complications.wallInjury",
+      "display": "Wall injury"
+    },
+    {
+      "code": "complications.bleedingControl",
+      "display": "Bleeding control method"
+    },
+    {
+      "code": "conclusions.conclusion",
+      "display": "Conclusion code"
+    },
+    {
+      "code": "recommendations.nextColonoscopy",
+      "display": "Recommended next colonoscopy"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 33
+}

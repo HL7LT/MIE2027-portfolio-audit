@@ -1,0 +1,30 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastNippleAppearanceFindingVS",
+  "id": "breast-nipple-appearance-finding",
+  "title": "Breast Nipple Appearance Finding",
+  "description": "SNOMED CT finding representing findings of the breast nipple appearance.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-nipple-appearance-finding",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "290118000",
+            "display": "Nipple normal"
+          },
+          {
+            "code": "271955004",
+            "display": "Retraction of nipple"
+          }
+        ]
+      }
+    ]
+  }
+}

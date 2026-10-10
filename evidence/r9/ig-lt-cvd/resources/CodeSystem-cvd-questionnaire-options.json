@@ -1,0 +1,124 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "CvdQuestionnaireOptionsLtCvd",
+  "id": "cvd-questionnaire-options",
+  "title": "CVD - Questionnaire Answer Options CS",
+  "description": "Local answer-option codes used by the cardiovascular screening programme questionnaires.",
+  "url": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+  "concept": [
+    {
+      "code": "alcohol-no",
+      "display": "No"
+    },
+    {
+      "code": "alcohol-unknown",
+      "display": "Unknown"
+    },
+    {
+      "code": "alcohol-yes",
+      "display": "Yes"
+    },
+    {
+      "code": "cessation-behavior",
+      "display": "Behavior change tools"
+    },
+    {
+      "code": "cessation-pharmacological",
+      "display": "Pharmacological"
+    },
+    {
+      "code": "cvd-rg-large",
+      "display": "Large"
+    },
+    {
+      "code": "cvd-rg-small-medium",
+      "display": "Small to medium"
+    },
+    {
+      "code": "cvd-rg-very-large",
+      "display": "Very large"
+    },
+    {
+      "code": "family-no",
+      "display": "No"
+    },
+    {
+      "code": "family-unknown",
+      "display": "Unknown"
+    },
+    {
+      "code": "family-yes",
+      "display": "Yes"
+    },
+    {
+      "code": "ldl-target-14",
+      "display": "<1.4 mmol/l"
+    },
+    {
+      "code": "ldl-target-18",
+      "display": "<1.8 mmol/l"
+    },
+    {
+      "code": "ldl-target-26",
+      "display": "<2.6 mmol/l"
+    },
+    {
+      "code": "nutrition-balanced",
+      "display": "Balanced"
+    },
+    {
+      "code": "nutrition-unbalanced",
+      "display": "Unbalanced"
+    },
+    {
+      "code": "pa-insufficient",
+      "display": "Insufficient"
+    },
+    {
+      "code": "pa-moderate-daily",
+      "display": "30-60 minutes moderate activity daily"
+    },
+    {
+      "code": "pa-other",
+      "display": "Other"
+    },
+    {
+      "code": "pa-sufficient",
+      "display": "Sufficient"
+    },
+    {
+      "code": "risk-factor-no",
+      "display": "No"
+    },
+    {
+      "code": "risk-factor-present",
+      "display": "There is"
+    },
+    {
+      "code": "risk-factor-treated",
+      "display": "There is, treated"
+    },
+    {
+      "code": "risk-factor-untreated",
+      "display": "There is, untreated"
+    },
+    {
+      "code": "smoking-current",
+      "display": "Smokes"
+    },
+    {
+      "code": "smoking-former",
+      "display": "Smoked before"
+    },
+    {
+      "code": "smoking-never",
+      "display": "Did not smoke"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 27
+}

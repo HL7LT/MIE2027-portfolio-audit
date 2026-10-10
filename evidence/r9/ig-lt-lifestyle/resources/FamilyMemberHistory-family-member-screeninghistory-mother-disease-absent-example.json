@@ -1,0 +1,35 @@
+{
+  "resourceType": "FamilyMemberHistory",
+  "id": "family-member-screeninghistory-mother-disease-absent-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-member-screening-history-lt-lifestyle"
+    ]
+  },
+  "note": [
+    {
+      "text": "Patient reports no known history of diabetes, cancer, or heart disease in mother."
+    }
+  ],
+  "status": "completed",
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  },
+  "date": "2025-10-01T09:00:00Z",
+  "relationship": {
+    "coding": [
+      {
+        "code": "MTH",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode"
+      }
+    ]
+  },
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "code": "unknown",
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      }
+    ]
+  }
+}

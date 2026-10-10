@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateSequenceTypeVS",
+  "id": "prostate-sequence-type",
+  "title": "Prostate - mpMRI Sequence Type",
+  "description": "Sequence/image types used in prostate mpMRI scoring (DICOM terminology).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://dicom.nema.org/resources/ontology/DCM",
+        "concept": [
+          {
+            "code": "110805",
+            "display": "T2 Weighted MR Signal Intensity"
+          },
+          {
+            "code": "113043",
+            "display": "Diffusion weighted"
+          },
+          {
+            "code": "113041",
+            "display": "Apparent Diffusion Coefficient"
+          },
+          {
+            "code": "110816",
+            "display": "T1 Weighted Dynamic Contrast Enhanced MR Signal Intensity"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "ImagingStudy",
+  "id": "imagingstudy-ldct-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:dicom:uid",
+      "value": "urn:oid:1.2.840.113619.2.55.3.604688654.20251120"
+    }
+  ],
+  "modality": [
+    {
+      "coding": [
+        {
+          "code": "CT",
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "display": "Computed Tomography"
+        }
+      ]
+    }
+  ],
+  "status": "available",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "started": "2025-11-20T14:30:00Z"
+}

@@ -1,0 +1,43 @@
+{
+  "resourceType": "List",
+  "id": "skl01-list-concomitant-risk-factors",
+  "code": {
+    "coding": [
+      {
+        "code": "46467-7",
+        "system": "http://loinc.org",
+        "display": "Risk factors"
+      }
+    ],
+    "text": "Rizikos veiksniai"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "entry": [
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-smoking-186"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-physical-activity-187"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-diet-188"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-alcohol-189"
+      }
+    }
+  ],
+  "mode": "working",
+  "status": "current"
+}

@@ -1,0 +1,30 @@
+{
+  "resourceType": "Goal",
+  "id": "example-goal-bmi",
+  "description": {
+    "text": "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9)."
+  },
+  "target": [
+    {
+      "detailQuantity": {
+        "value": 22.5,
+        "unit": "kg/m2",
+        "system": "http://unitsofmeasure.org",
+        "code": "kg/m2"
+      },
+      "measure": {
+        "coding": [
+          {
+            "code": "39156-5",
+            "system": "http://loinc.org",
+            "display": "Body mass index (BMI) [Ratio]"
+          }
+        ]
+      }
+    }
+  ],
+  "lifecycleStatus": "active",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

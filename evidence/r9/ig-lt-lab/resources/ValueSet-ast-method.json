@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ASTMethodLabLt",
+  "id": "ast-method",
+  "title": "AST (GOT) Method",
+  "description": "LOINC codes for measuring aspartate aminotransferase (AST/GOT) — with and without pyridoxal-5'-phosphate (P-5-P).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/ast-method",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "88112-8",
+            "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P"
+          },
+          {
+            "code": "30239-8",
+            "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by Without P-5'-P"
+          }
+        ]
+      }
+    ]
+  }
+}

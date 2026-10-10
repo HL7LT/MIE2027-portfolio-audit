@@ -1,0 +1,90 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "molecular-test-result-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal",
+  "name": "MolecularTestResultLtColorectal",
+  "title": "Molecular Test Result (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording molecular test results in the Lithuanian colorectal cancer\nscreening program. Covers MSI (microsatellite instability), KRAS, NRAS, and\nBRAF V600E mutation testing. Each test is a separate Observation instance.\n\nDefault for adenocarcinoma: all molecular tests are automatically indicated\nbut may be postponed.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "laboratory",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Laboratory"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Type of molecular test: MSI, KRAS, NRAS, or BRAF V600E",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-type"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Test result: Postponed, Detected mutation, Undefined mutation, or Set (MSI)",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-result"
+        }
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "short": "Additional details about the molecular test"
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "short": "Reference to the tissue specimen used for testing"
+      }
+    ]
+  }
+}

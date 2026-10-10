@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PdcGradeVS",
+  "id": "pdc-grade",
+  "title": "Poorly Differentiated Clusters (PDC) Grade",
+  "description": "Grading of poorly differentiated clusters in colorectal carcinoma.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/pdc-grade",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "filter": [
+          {
+            "property": "code",
+            "op": "regex",
+            "value": "pdc-.*"
+          }
+        ]
+      }
+    ]
+  }
+}

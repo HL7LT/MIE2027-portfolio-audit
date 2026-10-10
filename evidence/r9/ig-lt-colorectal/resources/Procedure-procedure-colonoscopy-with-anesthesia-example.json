@@ -1,0 +1,31 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-colonoscopy-with-anesthesia-example",
+  "reason": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "444783004",
+            "system": "http://snomed.info/sct",
+            "display": "Screening colonoscopy (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "1263452006",
+        "system": "http://snomed.info/sct",
+        "display": "Anesthesia and/or sedation procedure (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26"
+}

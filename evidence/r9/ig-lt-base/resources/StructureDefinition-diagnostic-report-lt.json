@@ -1,0 +1,218 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "diagnostic-report-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt",
+  "name": "DiagnosticReportLt",
+  "title": "DiagnosticReportLt",
+  "status": "active",
+  "description": "Lithuanian Base DiagnosticReport profile, used for interpretation of diagnostic tests.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.identifier",
+        "path": "DiagnosticReport.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.basedOn",
+        "path": "DiagnosticReport.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.status",
+        "path": "DiagnosticReport.status",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.category",
+        "path": "DiagnosticReport.category",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0074"
+        }
+      },
+      {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://hl7.lt/fhir/eu/ValueSet/report-code"
+        }
+      },
+      {
+        "id": "DiagnosticReport.subject",
+        "path": "DiagnosticReport.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-animal-eu-core",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "https://hl7.lt/fhir/base/StructureDefinition/location-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "http://hl7.org/fhir/StructureDefinition/Medication",
+              "http://hl7.org/fhir/StructureDefinition/Substance",
+              "http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.effective[x]",
+        "path": "DiagnosticReport.effective[x]",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.issued",
+        "path": "DiagnosticReport.issued",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.performer",
+        "path": "DiagnosticReport.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.resultsInterpreter",
+        "path": "DiagnosticReport.resultsInterpreter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.note",
+        "path": "DiagnosticReport.note",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.study",
+        "path": "DiagnosticReport.study",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt",
+              "http://hl7.org/fhir/StructureDefinition/GenomicStudy"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.supportingInfo",
+        "path": "DiagnosticReport.supportingInfo",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.supportingInfo.reference",
+        "path": "DiagnosticReport.supportingInfo.reference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt",
+              "http://hl7.org/fhir/StructureDefinition/Citation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/composition-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.conclusion",
+        "path": "DiagnosticReport.conclusion",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.conclusionCode",
+        "path": "DiagnosticReport.conclusionCode",
+        "mustSupport": true
+      }
+    ]
+  }
+}

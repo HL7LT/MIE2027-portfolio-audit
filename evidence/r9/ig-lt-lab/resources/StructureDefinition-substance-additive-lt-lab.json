@@ -1,0 +1,27 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "substance-additive-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/substance-additive-lt-lab",
+  "name": "SubstanceAdditiveLtLab",
+  "title": "Substance: Specimen Additive (LT Lab)",
+  "status": "active",
+  "description": "This profile defines how to represent Specimen Additive Substances for the Lithuanian Laboratory IG, based on the EU Lab Substance Additive profile.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Substance",
+  "baseDefinition": "http://hl7.eu/fhir/laboratory/StructureDefinition/Substance-additive-eu-lab",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Substance.code",
+        "path": "Substance.code",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/specimen-additive"
+        }
+      }
+    ]
+  }
+}

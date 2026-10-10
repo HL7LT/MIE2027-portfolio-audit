@@ -1,0 +1,68 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstatePathologyQuestionnaireItem",
+  "id": "prostate-pathology-questionnaire-item",
+  "title": "Prostate pathology ESPBI Questionnaire item (linkId)",
+  "description": "Codes equal to **linkId** values on **Questionnaire/prostate-pathology-espbi**. Used as **ConceptMap.group.source**.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item",
+  "concept": [
+    {
+      "code": "bioptate-length-mm",
+      "display": "Bioptate length (mm)"
+    },
+    {
+      "code": "specimen-quality",
+      "display": "Quality of materials"
+    },
+    {
+      "code": "treatment-effect",
+      "display": "Treatment effect on tumour"
+    },
+    {
+      "code": "histological-type",
+      "display": "Primary histological type"
+    },
+    {
+      "code": "histological-comment",
+      "display": "Histological type comment"
+    },
+    {
+      "code": "isup-grade-group",
+      "display": "ISUP grade group"
+    },
+    {
+      "code": "idc-status",
+      "display": "Intraductal carcinoma (IDC)"
+    },
+    {
+      "code": "cribriform-status",
+      "display": "Cribriform glands"
+    },
+    {
+      "code": "pattern4-pct-band",
+      "display": "Pattern 4 quantity (percent band)"
+    },
+    {
+      "code": "tumor-percent-in-biopsy",
+      "display": "Tumour percentage in prostate biopsy tissue"
+    },
+    {
+      "code": "periprostatic-fat-invasion",
+      "display": "Tumour infiltration in periprostatic adipose tissue"
+    },
+    {
+      "code": "perineural-invasion",
+      "display": "Perineural invasion"
+    },
+    {
+      "code": "lymphovascular-invasion",
+      "display": "Lymphatic and/or vascular tumour invasion"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 13
+}

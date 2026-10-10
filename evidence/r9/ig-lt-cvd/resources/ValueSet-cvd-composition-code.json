@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CvdCompositionCodeVS",
+  "id": "cvd-composition-code",
+  "title": "CVD Composition Codes",
+  "description": "Concepts representing codes used in Cvd Composition.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/vd-composition-code",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "83539-7",
+            "display": "Cardiology Risk assessment and screening note"
+          },
+          {
+            "code": "77442-2",
+            "display": "Cardiology Plan of care note"
+          },
+          {
+            "code": "78710-1",
+            "display": "Cardiology Progress note"
+          },
+          {
+            "code": "51848-0",
+            "display": "Evaluation note"
+          }
+        ]
+      }
+    ]
+  }
+}

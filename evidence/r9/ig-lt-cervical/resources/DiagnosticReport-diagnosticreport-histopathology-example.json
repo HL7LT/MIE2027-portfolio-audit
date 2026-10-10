@@ -1,0 +1,71 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-histopathology-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-diagnostic-report-lt-cervical"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.330.1",
+      "value": "HIST-CERV-2025-0042"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11526-1",
+          "system": "http://loinc.org",
+          "display": "Pathology study"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/specimen-cervical-biopsy-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-histopathology-conclusion-example"
+    },
+    {
+      "reference": "Observation/observation-tumor-measurement-cervical-example"
+    }
+  ],
+  "conclusionCode": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "D06.9",
+          "display": "Cervix, unspecified"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "714797009",
+        "system": "http://snomed.info/sct",
+        "display": "Histologic test (procedure)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-04-10T09:00:00+02:00",
+  "issued": "2025-04-15T16:00:00+02:00",
+  "conclusion": "High-grade squamous intraepithelial lesion (HSIL/CIN2). Clear surgical margins. No lymphovascular invasion."
+}

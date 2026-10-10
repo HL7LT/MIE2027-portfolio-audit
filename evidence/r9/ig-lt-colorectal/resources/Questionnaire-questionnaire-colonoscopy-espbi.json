@@ -1,0 +1,1323 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-colonoscopy-espbi",
+  "url": "https://hl7.lt/fhir/colorectal/Questionnaire/questionnaire-colonoscopy-espbi",
+  "title": "ESPBI Colonoscopy Form",
+  "description": "ESPBI form for colonoscopy in the Lithuanian colorectal cancer screening programme.",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "basicInfo.postponedColonoscopy",
+          "text": "Was colonoscopy postponed for screening?",
+          "type": "boolean"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "385660001",
+                "system": "http://snomed.info/sct",
+                "display": "Not done"
+              }
+            }
+          ],
+          "linkId": "basicInfo.anesthesia",
+          "text": "Anesthesia",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "basicInfo.videoColonoscope",
+          "text": "Video colonoscope used?",
+          "type": "coding"
+        },
+        {
+          "linkId": "basicInfo.withdrawalTime",
+          "text": "Withdrawal time (minutes)",
+          "type": "integer"
+        },
+        {
+          "linkId": "basicInfo.procedureDate",
+          "text": "Procedure date",
+          "type": "dateTime"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "416237000",
+                "system": "http://snomed.info/sct",
+                "display": "Procedure not done (situation)"
+              }
+            }
+          ],
+          "linkId": "basicInfo.retroflexionRectum",
+          "text": "Retroflexion in the rectum",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "basicInfo.previousAbdominalSurgery",
+          "text": "History of major abdominal surgery",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "basicInfo.previousAbdominalSurgery",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "basicInfo.previousAbdominalSurgeryDetails",
+          "text": "Previous abdominal surgery details",
+          "type": "text"
+        }
+      ],
+      "linkId": "basicInfo",
+      "text": "Basic descriptive part",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.prepQuality",
+          "text": "Bowel preparation quality adequate?",
+          "type": "coding"
+        },
+        {
+          "linkId": "bowelPrep.bbpsRight",
+          "text": "BBPS Right colon / ascending (0-3)",
+          "type": "integer"
+        },
+        {
+          "linkId": "bowelPrep.bbpsTransverse",
+          "text": "BBPS Transverse colon (0-3)",
+          "type": "integer"
+        },
+        {
+          "linkId": "bowelPrep.bbpsLeft",
+          "text": "BBPS Left colon / descending + sigmoid (0-3)",
+          "type": "integer"
+        },
+        {
+          "linkId": "bowelPrep.totalBbps",
+          "text": "Total BBPS score (0-9)",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.dietaryRecommendations",
+          "text": "Were dietary recommendations given?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.splitDose",
+          "text": "Was split-dose protocol used?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Two-day split preparation"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Same-day non-split preparation"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.prepMethod",
+          "text": "Preparation method",
+          "type": "coding"
+        },
+        {
+          "linkId": "bowelPrep.lastDoseHoursBeforeProcedure",
+          "text": "Last dose timing (hours before procedure)",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.writtenInfo",
+          "text": "Was written information about preparation given?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "712567003",
+                "system": "http://snomed.info/sct",
+                "display": "Macrogol 4000 (substance)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "712566007",
+                "system": "http://snomed.info/sct",
+                "display": "Macrogol 3350 (substance)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "715699009",
+                "system": "http://snomed.info/sct",
+                "display": "Product containing citric acid and magnesium oxide and sodium picosulfate (medicinal product)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "69958001",
+                "system": "http://snomed.info/sct",
+                "display": "Sodium sulfate (substance)"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.usedPreparations",
+          "text": "Used preparations for bowel preparation",
+          "type": "coding",
+          "repeats": true
+        }
+      ],
+      "linkId": "bowelPrep",
+      "text": "Bowel preparation assessment",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "34402009",
+                "system": "http://snomed.info/sct",
+                "display": "Rectum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "60184004",
+                "system": "http://snomed.info/sct",
+                "display": "Sigmoid colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32622004",
+                "system": "http://snomed.info/sct",
+                "display": "Descending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "72592005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of left colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "485005",
+                "system": "http://snomed.info/sct",
+                "display": "Transverse colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "48338005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of right colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "9040008",
+                "system": "http://snomed.info/sct",
+                "display": "Ascending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32713005",
+                "system": "http://snomed.info/sct",
+                "display": "Cecum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "34516001",
+                "system": "http://snomed.info/sct",
+                "display": "Ileal structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "85774003",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of distal portion of ileum (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "181261002",
+                "system": "http://snomed.info/sct",
+                "display": "Entire rectum (body structure)"
+              }
+            }
+          ],
+          "linkId": "scopeReach.reachLocation",
+          "text": "Deepest point reached by colonoscope",
+          "type": "coding"
+        }
+      ],
+      "linkId": "scopeReach",
+      "text": "Colonoscope reach",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "polypFindings.polypFound",
+          "text": "Polyp found?",
+          "type": "boolean"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "34402009",
+                "system": "http://snomed.info/sct",
+                "display": "Rectum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "60184004",
+                "system": "http://snomed.info/sct",
+                "display": "Sigmoid colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32622004",
+                "system": "http://snomed.info/sct",
+                "display": "Descending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "72592005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of left colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "485005",
+                "system": "http://snomed.info/sct",
+                "display": "Transverse colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "48338005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of right colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "9040008",
+                "system": "http://snomed.info/sct",
+                "display": "Ascending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32713005",
+                "system": "http://snomed.info/sct",
+                "display": "Cecum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "34516001",
+                "system": "http://snomed.info/sct",
+                "display": "Ileal structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "85774003",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of distal portion of ileum (body structure)"
+              }
+            }
+          ],
+          "linkId": "polypFindings.location",
+          "text": "Polyp location",
+          "type": "coding"
+        },
+        {
+          "linkId": "polypFindings.sizeMm",
+          "text": "Polyp size (mm)",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "I-p Pedunculated"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "I-sp Semi-pedunculated"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "I-s Sessile"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "IIa Slightly elevated"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "IIb Flat"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "IIc Slightly depressed"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "III Excavated"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "LST-G Granular laterally spreading"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "LST-NG Non-granular laterally spreading"
+              }
+            }
+          ],
+          "linkId": "polypFindings.parisClassification",
+          "text": "Paris endoscopic classification",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Type I (Hyperplastic)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type II (Adenoma)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type III (Invasive)"
+              }
+            }
+          ],
+          "linkId": "polypFindings.niceClassification",
+          "text": "NICE classification",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Hyperplastic"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Sessile serrated lesion (SSL)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Adenoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Adenoma with suspicion of malignancy"
+              }
+            }
+          ],
+          "linkId": "polypFindings.predictedHistology",
+          "text": "Predicted histology",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Left side"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Right side"
+              }
+            }
+          ],
+          "linkId": "polypFindings.locationSide",
+          "text": "Location side",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Easy"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Difficult"
+              }
+            }
+          ],
+          "linkId": "polypFindings.accessDifficulty",
+          "text": "Access difficulty",
+          "type": "coding"
+        },
+        {
+          "linkId": "polypFindings.smsaScore",
+          "text": "SMSA total score",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Level 1 (4-5 points)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Level 2 (6-8 points)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Level 3 (9-12 points)"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Level 4 (>12 points)"
+              }
+            }
+          ],
+          "linkId": "polypFindings.smsaLevel",
+          "text": "SMSA level",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "polypFindings.polypRemoved",
+          "text": "Was polyp removed?",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "polypFindings.polypRemoved",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Cold forceps"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Cold snare"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Hot snare"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "EMR"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "ESD"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Piecemeal EMR"
+              }
+            }
+          ],
+          "linkId": "polypFindings.removalMethod",
+          "text": "Removal method",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "polypFindings.polypRemoved",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Air insufflation"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Water immersion"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "CO2 insufflation"
+              }
+            }
+          ],
+          "linkId": "polypFindings.lumenFilling",
+          "text": "Lumen filling method",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "polypFindings.polypRemoved",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "En bloc resection"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Piecemeal resection"
+              }
+            }
+          ],
+          "linkId": "polypFindings.resectionType",
+          "text": "Resection type",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "polypFindings.polypRemoved",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Normal saline"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Adrenaline"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Methylene blue"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Gelofusine"
+              }
+            }
+          ],
+          "linkId": "polypFindings.hydropreparation",
+          "text": "Hydropreparation substances used",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "polypFindings.complicationAfterRemoval",
+          "text": "Complication after polyp removal?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "polypFindings.allPolypsRemovedSimultaneously",
+          "text": "All polyps removed simultaneously?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "polypFindings.sentForHistology",
+          "text": "Sent for histological examination?",
+          "type": "coding"
+        }
+      ],
+      "linkId": "polypFindings",
+      "text": "Polyp findings",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "linkId": "tumorFindings.tumorFound",
+          "text": "Tumor found?",
+          "type": "boolean"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "34402009",
+                "system": "http://snomed.info/sct",
+                "display": "Rectum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "60184004",
+                "system": "http://snomed.info/sct",
+                "display": "Sigmoid colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32622004",
+                "system": "http://snomed.info/sct",
+                "display": "Descending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "72592005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of left colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "485005",
+                "system": "http://snomed.info/sct",
+                "display": "Transverse colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "48338005",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of right colic flexure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "9040008",
+                "system": "http://snomed.info/sct",
+                "display": "Ascending colon structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "32713005",
+                "system": "http://snomed.info/sct",
+                "display": "Cecum structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "34516001",
+                "system": "http://snomed.info/sct",
+                "display": "Ileal structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "85774003",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of distal portion of ileum (body structure)"
+              }
+            }
+          ],
+          "linkId": "tumorFindings.tumorLocation",
+          "text": "Tumor location",
+          "type": "coding"
+        },
+        {
+          "linkId": "tumorFindings.tumorDescription",
+          "text": "Tumor description",
+          "type": "text"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "tumorFindings.biopsyPerformed",
+          "text": "Biopsy performed?",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "tumorFindings.biopsyPostponed",
+          "text": "Biopsy postponed?",
+          "type": "coding"
+        }
+      ],
+      "linkId": "tumorFindings",
+      "text": "Tumor findings",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "complications.complicationPresence",
+          "text": "Were there complications?",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "complications.complicationPresence",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Perforation"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Bleeding"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Post-polypectomy syndrome"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Cardiopulmonary"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Other"
+              }
+            }
+          ],
+          "linkId": "complications.complicationType",
+          "text": "Complication type",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "complications.complicationPresence",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Type I - Superficial mucosal injury"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type II - Deep mucosal injury"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type III - Muscularis propria injury"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type IV - Serosal injury"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Type V - Transmural perforation"
+              }
+            }
+          ],
+          "linkId": "complications.wallInjury",
+          "text": "Wall injury (Sydney classification)",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "complications.complicationPresence",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Conservative management"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Endoscopic treatment"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Surgical intervention"
+              }
+            }
+          ],
+          "linkId": "complications.actionTaken",
+          "text": "Action taken",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "complications.complicationPresence",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "complications.bleedingControl",
+          "text": "Bleeding control details",
+          "type": "text"
+        }
+      ],
+      "linkId": "complications",
+      "text": "Complications after colonoscopy",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "Normal"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Polyps found"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Polyps and diverticulosis"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Diverticulosis"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Tumor found"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Inflammatory bowel disease"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Other pathology"
+              }
+            }
+          ],
+          "linkId": "conclusions.conclusion",
+          "text": "Conclusion",
+          "type": "coding"
+        },
+        {
+          "linkId": "conclusions.conclusionNotes",
+          "text": "Conclusion notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "conclusions",
+      "text": "Final conclusions",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "display": "1 year"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "3 years"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "5 years"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "10 years"
+              }
+            },
+            {
+              "valueCoding": {
+                "display": "Not applicable"
+              }
+            }
+          ],
+          "linkId": "recommendations.nextColonoscopy",
+          "text": "Recommended interval for next colonoscopy",
+          "type": "coding"
+        },
+        {
+          "linkId": "recommendations.additionalNotes",
+          "text": "Additional notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "recommendations",
+      "text": "Follow-up recommendations",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "signatures.examinerName",
+          "text": "Examiner first name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signatures.examinerSurname",
+          "text": "Examiner surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signatures.examDate",
+          "text": "Examination date",
+          "type": "dateTime",
+          "required": true
+        }
+      ],
+      "linkId": "signatures",
+      "text": "Signatures",
+      "type": "group"
+    }
+  ],
+  "version": "0.0.1",
+  "name": "QuestionnaireColonoscopyEspbi",
+  "status": "active",
+  "date": "2026-03-25",
+  "publisher": "HL7 Lithuania"
+}

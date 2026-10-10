@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HpvRiskGroupLtCervicalVS",
+  "id": "hpv-risk-group-vs-lt-cervical",
+  "title": "HPV Risk Groups ValueSet (LT Cervical)",
+  "description": "ValueSet containing the ADP-specific risk buckets.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/hpv-risk-group",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group"
+      }
+    ]
+  }
+}

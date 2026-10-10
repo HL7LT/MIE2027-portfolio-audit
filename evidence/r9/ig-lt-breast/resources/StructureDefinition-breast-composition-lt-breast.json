@@ -1,0 +1,227 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "breast-composition-lt-breast",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/breast-composition-lt-breast",
+  "name": "BreastCompositionLtBreast",
+  "title": "Breast Composition (LT Breast)",
+  "status": "active",
+  "description": "Breast-specific imaging composition extending the base imaging composition with breast-specific constraints on findings, impression, and history sections. Designed for use in the Lithuanian breast cancer prevention programme.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.section:history",
+        "path": "Composition.section",
+        "sliceName": "history"
+      },
+      {
+        "id": "Composition.section:history.entry",
+        "path": "Composition.section.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.section:history.entry:breastHistory",
+        "path": "Composition.section.entry",
+        "sliceName": "breastHistory",
+        "short": "Breast history assessment (surgery, injuries, diseases)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:history.entry:breastNipple",
+        "path": "Composition.section.entry",
+        "sliceName": "breastNipple",
+        "short": "Nipple appearance assessment",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-nipple-inversion-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings",
+        "path": "Composition.section",
+        "sliceName": "findings"
+      },
+      {
+        "id": "Composition.section:findings.entry:finding",
+        "path": "Composition.section.entry",
+        "sliceName": "finding",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:findings.entry:breastObservation",
+        "path": "Composition.section.entry",
+        "sliceName": "breastObservation",
+        "short": "Breast observation finding (scars, skin changes)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-observation-finding-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:mammographicFinding",
+        "path": "Composition.section.entry",
+        "sliceName": "mammographicFinding",
+        "short": "Mammographic examination finding",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:tomosynthesisFinding",
+        "path": "Composition.section.entry",
+        "sliceName": "tomosynthesisFinding",
+        "short": "Tomosynthesis examination finding",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/tomosynthesis-finding-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:ultrasoundFinding",
+        "path": "Composition.section.entry",
+        "sliceName": "ultrasoundFinding",
+        "short": "Ultrasound lesion finding",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-ultrasound-finding-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:glandDensity",
+        "path": "Composition.section.entry",
+        "sliceName": "glandDensity",
+        "short": "ACR breast gland density assessment",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-gland-density-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:parenchyma",
+        "path": "Composition.section.entry",
+        "sliceName": "parenchyma",
+        "short": "Ultrasound breast parenchyma structure",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-parenchyma-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:ductCondition",
+        "path": "Composition.section.entry",
+        "sliceName": "ductCondition",
+        "short": "Breast duct condition (expanded/normal)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-duct-condition-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:radiationDose",
+        "path": "Composition.section.entry",
+        "sliceName": "radiationDose",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:impression",
+        "path": "Composition.section",
+        "sliceName": "impression"
+      },
+      {
+        "id": "Composition.section:impression.entry:finding",
+        "path": "Composition.section.entry",
+        "sliceName": "finding",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:impression.entry:birads",
+        "path": "Composition.section.entry",
+        "sliceName": "birads",
+        "short": "BI-RADS assessment per breast",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/birads-assessment-lt-breast"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

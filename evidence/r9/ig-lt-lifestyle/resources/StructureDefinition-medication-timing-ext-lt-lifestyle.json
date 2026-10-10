@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "medication-timing-ext-lt-lifestyle",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-timing-ext-lt-lifestyle",
+  "name": "MedicationTimingExtLtLifestyle",
+  "title": "Medication Timing Extension for LT Lifestyle",
+  "status": "draft",
+  "description": "The timing instructions for the medication (e.g., 'Before Meals', 'With Food').",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Element",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Medication Timing Extension for LT Lifestyle",
+        "definition": "The timing instructions for the medication (e.g., 'Before Meals', 'With Food')."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-timing-ext-lt-lifestyle"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "The timing instruction for the medication.",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

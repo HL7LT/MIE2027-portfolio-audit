@@ -1,0 +1,113 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-histopathology-conclusion-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-conclusion-lt-cervical"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "371469007",
+            "system": "http://snomed.info/sct",
+            "display": "Histologic grade of neoplasm (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "1228850007",
+            "system": "http://snomed.info/sct",
+            "display": "American Joint Committee on Cancer grade G2 (qualifier value)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "371512006",
+            "system": "http://snomed.info/sct",
+            "display": "Presence of direct invasion by primary malignant neoplasm to lymphatic vessel and/or small blood vessel (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "plvi-0",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/plvi-classification",
+            "display": "pLVI-0: not detected"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "396631001",
+            "system": "http://snomed.info/sct",
+            "display": "Surgical margin observable (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "310342002",
+            "system": "http://snomed.info/sct",
+            "display": "Excision - clear margin (finding)"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "371528001",
+        "system": "http://snomed.info/sct",
+        "display": "Pathology report (record artifact)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-04-10T09:00:00+02:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "400049009",
+        "system": "http://snomed.info/sct",
+        "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+      }
+    ]
+  },
+  "specimen": {
+    "reference": "Specimen/specimen-cervical-biopsy-example"
+  }
+}

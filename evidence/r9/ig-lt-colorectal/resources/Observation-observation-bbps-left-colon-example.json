@@ -1,0 +1,57 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-bbps-left-colon-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "722819004",
+        "system": "http://snomed.info/sct",
+        "display": "Boston bowel preparation scale finding (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "55572008",
+        "system": "http://snomed.info/sct",
+        "display": "Left colon structure (body structure)"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "10311000132100",
+        "system": "http://snomed.info/sct",
+        "display": "Entire mucosa of colon segment seen well with no residual staining, small fragments of stool or opaque liquid (finding)"
+      }
+    ]
+  }
+}

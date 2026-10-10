@@ -1,0 +1,403 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-prostate-adpp-primary-assessment",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "assessment-datetime",
+          "text": "Assessment date and time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "referral-screening",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Referral for screening"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "referral-elevated-psa",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Referral for elevated PSA"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "referral-other",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Other referral reason"
+              }
+            }
+          ],
+          "linkId": "referral-reason",
+          "text": "Reason for referral / programme entry",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-context",
+      "text": "Visit context",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "race",
+          "text": "Race",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "psa-recorded",
+          "text": "PSA measured at this visit",
+          "type": "boolean"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "dre-not-done",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "DRE not performed"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "standard-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Standard prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "276387009",
+                "system": "http://snomed.info/sct",
+                "display": "Hard prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "276385001",
+                "system": "http://snomed.info/sct",
+                "display": "Soft prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "flexible-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Flexible prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "inflexible-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Inflexible prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "443607001",
+                "system": "http://snomed.info/sct",
+                "display": "Palpable mass"
+              }
+            }
+          ],
+          "linkId": "dre-result",
+          "text": "Digital rectal examination (multiselect)",
+          "type": "coding",
+          "repeats": true
+        }
+      ],
+      "linkId": "grp-clinical",
+      "text": "Clinical findings (same visit)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-prostate",
+          "text": "Prostate cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-breast",
+          "text": "Breast cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-ovarian",
+          "text": "Ovarian cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-colon",
+          "text": "Colorectal cancer",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-family-history",
+      "text": "Family oncological history (first-degree)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "height-cm",
+          "text": "Height (cm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "weight-kg",
+          "text": "Weight (kg)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "bmi-kg-m2",
+          "text": "BMI (kg/m²)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-vitals",
+      "text": "Anthropometrics",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "first-psa-ngml",
+          "text": "First PSA (ng/ml)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "first-psa-date",
+          "text": "First PSA date (at least year-month)",
+          "type": "date"
+        },
+        {
+          "linkId": "second-psa-ngml",
+          "text": "Second PSA (ng/ml)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "second-psa-date",
+          "text": "Second PSA date (at least year-month)",
+          "type": "date"
+        }
+      ],
+      "linkId": "grp-psa-history",
+      "text": "PSA history",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "prior-mpmri",
+          "text": "Prior mpMRI documented",
+          "type": "boolean"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pirads-cat-1-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 1–2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 4"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 5"
+              }
+            }
+          ],
+          "linkId": "prior-mpmri-pirads",
+          "text": "Prior mpMRI PI-RADS category",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-prior-imaging",
+      "text": "Prior prostate mpMRI",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "prior-prostatectomy",
+          "text": "Prior prostatectomy",
+          "type": "boolean"
+        },
+        {
+          "linkId": "prior-prostate-radiation",
+          "text": "Prior prostate radiotherapy",
+          "type": "boolean"
+        },
+        {
+          "linkId": "anticoagulant-use",
+          "text": "Anticoagulant use",
+          "type": "boolean"
+        }
+      ],
+      "linkId": "grp-prior-therapy",
+      "text": "Prior prostate-directed therapy and anticoagulation",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "systemic-diseases",
+          "text": "Systemic diseases (e.g. RA, myeloma, immunosuppression)",
+          "type": "text"
+        },
+        {
+          "linkId": "systemic-diseases-date",
+          "text": "Diagnosis date (year-month)",
+          "type": "date"
+        }
+      ],
+      "linkId": "grp-systemic",
+      "text": "Systemic diseases",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "complaints-anamnesis",
+          "text": "Complaints, anamnesis",
+          "type": "text"
+        },
+        {
+          "linkId": "specialist-additional-info",
+          "text": "Additional description for specialist",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-narrative",
+      "text": "Narrative",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment",
+  "version": "0.2.0",
+  "name": "ProstateAdppPrimaryAssessment",
+  "title": "Prostate cancer prevention — primary assessment",
+  "status": "draft",
+  "date": "2025-03-24",
+  "publisher": "HL7 Lithuania"
+}

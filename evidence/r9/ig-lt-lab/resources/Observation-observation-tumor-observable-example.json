@@ -1,0 +1,170 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tumor-observable-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/tumor-observable-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "396199003",
+            "system": "http://snomed.info/sct",
+            "display": "Neoplasm focality (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "399506006",
+            "system": "http://snomed.info/sct",
+            "display": "Multifocal tumor (finding)"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 3
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "443748007",
+            "system": "http://snomed.info/sct",
+            "display": "Number of malignant neoplasm foci"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "396785008",
+            "system": "http://snomed.info/sct",
+            "display": "Histologic type of metastatic neoplasm (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "1187425009",
+            "system": "http://snomed.info/sct",
+            "display": "Carcinoma (morphologic abnormality)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "399687005",
+            "system": "http://snomed.info/sct",
+            "display": "Anatomic location of primary malignant neoplasm (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "76752008",
+            "system": "http://snomed.info/sct",
+            "display": "Breast structure (body structure)"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 2
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "405930005",
+            "system": "http://snomed.info/sct",
+            "display": "Number of tumor nodules (observable entity)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "406084004",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor nodule site (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "76752008",
+            "system": "http://snomed.info/sct",
+            "display": "Breast structure (body structure)"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 15
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "385398005",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor size, dominant nodule, greatest dimension (observable entity)"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 33
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "258263003",
+            "system": "http://snomed.info/sct",
+            "display": "Generic tumor extent (observable entity)"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "395531003",
+        "system": "http://snomed.info/sct",
+        "display": "Neoplasm observable (observable entity)"
+      }
+    ]
+  },
+  "language": "en",
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-01-10T09:15:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  }
+}

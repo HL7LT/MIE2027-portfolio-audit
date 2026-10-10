@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mammography-report-lt-breast",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/mammography-report-lt-breast",
+  "name": "MammographyReportLtBreast",
+  "title": "Mammography Diagnostic Report (LT Breast)",
+  "status": "active",
+  "description": "A Diagnostic Report for Mammography imaging studies. Aggregates BI-RADS assessments, mammographic findings, ultrasound findings, and general breast observations.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 2
+      },
+      {
+        "id": "DiagnosticReport.code.coding:doc-type",
+        "path": "DiagnosticReport.code.coding",
+        "sliceName": "doc-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "4231000179109",
+          "system": "http://snomed.info/sct",
+          "display": "Mammography report (record artifact)"
+        }
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "short": "Mammography results: BI-RADS, mammographic findings, ultrasound findings, breast observations",
+        "definition": "References to Observation resources carrying the structured findings of the mammography evaluation."
+      }
+    ]
+  }
+}

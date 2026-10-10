@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tobacco-use-duration-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-duration-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "social-history",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Social History"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "88029-4",
+        "display": "Tobacco use duration"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "code": "a",
+    "system": "http://unitsofmeasure.org",
+    "unit": "years",
+    "value": 5
+  },
+  "note": [
+    {
+      "text": "Patient reports smoking approximately for 5 years."
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

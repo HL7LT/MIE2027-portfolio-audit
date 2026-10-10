@@ -1,0 +1,337 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-pathology-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/pathology-composition-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/composition-number",
+      "value": "4540-baab-7a5d0877428f-93468-45y72547"
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/patient-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "attester": [
+    {
+      "mode": {
+        "coding": [
+          {
+            "code": "legal"
+          }
+        ]
+      },
+      "time": "2022-10-25T14:30:00+01:00",
+      "party": {
+        "reference": "Organization/organization-example"
+      }
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>Synoptic pathology composition (example).</strong> Overview of the four main sections and their subsections. Full structured data and per-section narratives are in <code>Composition.section</code> below.</p><p><strong>Pre-Analytic — pathology report relevant history (LOINC 22636-5)</strong></p><ul><li>Breast histopathology order (ServiceRequest)</li><li>Prostate pathology order (ServiceRequest)</li><li>Breast biopsy procedure</li><li>Submitted specimen — right breast</li><li>Submitted specimen — left breast</li></ul><p><strong>Macro — macroscopic observation in specimen narrative (LOINC 74574-5)</strong></p><ul><li>Gross specimen measurements</li><li>Specimen adequacy</li><li>Paraffin tissue block</li><li>Histology laboratory procedure</li></ul><p><strong>Micro — microscopic observation (LOINC 660-1)</strong></p><ul><li>Tumour characterisation (observable)</li><li>Tumour size (dimensions)</li><li>Oestrogen receptor (ER) status</li><li>Progesterone receptor (PR) status</li><li>HER2 receptor status</li></ul><p><strong>Synthesis — pathology report final diagnosis (LOINC 22637-3)</strong></p><ul><li>Diagnostic report (signed)</li><li>Example: prostate cancer stage (Condition)</li></ul></div>"
+  },
+  "section": [
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Information collected before laboratory processing: pathology service requests (breast histopathology and prostate pathway), the biopsy procedure, and submitted breast specimens that identify what entered the laboratory.</p></div>"
+      },
+      "section": [
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Service request for breast histopathology: ordered examination, time frame, and clinical question (e.g. suspicion of malignancy).</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "ServiceRequest/servicerequest-pathology-order-example"
+            }
+          ],
+          "title": "Breast histopathology order"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Service request for prostate-related pathology (e.g. screening or diagnostic follow-up) using a PathologyProcedure code.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "ServiceRequest/servicerequest-pathology-prostate-order-example"
+            }
+          ],
+          "title": "Prostate pathology order"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure performed to obtain breast tissue for histology, including timing and anatomical site.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Procedure/procedure-breast-biopsy-example"
+            }
+          ],
+          "title": "Breast biopsy procedure"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Specimen from the right breast: identifiers and traceability from collection to the laboratory.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Specimen/specimen-right-breast-example"
+            }
+          ],
+          "title": "Submitted specimen — right breast"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Specimen from the left breast: identifiers and traceability from collection to the laboratory.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Specimen/specimen-left-breast-example"
+            }
+          ],
+          "title": "Submitted specimen — left breast"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "22636-5",
+            "system": "http://loinc.org",
+            "display": "Pathology report relevant history Narrative"
+          }
+        ]
+      },
+      "title": "Pre-Analytic (Clinical Context)"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Gross examination: dimensions and weight of tissue, whether the specimen is adequate for diagnosis, preparation of embedded blocks, and laboratory histology processing.</p></div>"
+      },
+      "section": [
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Macroscopic measurements of the specimen (largest dimension, orthogonal dimensions, weight, lymph node count when applicable).</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-specimen-measurement-example"
+            }
+          ],
+          "title": "Gross specimen measurements"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Assessment that the received material is satisfactory for histopathological evaluation.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-specimen-adequacy-example"
+            }
+          ],
+          "title": "Specimen adequacy"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Embedded tissue block derived from the parent specimen for sectioning and slides.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Specimen/specimen-block-1-example"
+            }
+          ],
+          "title": "Paraffin tissue block"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Laboratory histologic processing step (e.g. preparation after grossing) on the documented date.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Procedure/procedure-histology-example"
+            }
+          ],
+          "title": "Histology laboratory procedure"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "74574-5",
+            "system": "http://loinc.org",
+            "display": "Macroscopic observation [Interpretation] in Specimen Narrative"
+          }
+        ]
+      },
+      "title": "Macro (Macroscopic Examination)"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Microscopic findings: tumour pattern and extent, size on slide, and immunohistochemistry for hormone receptors and HER2 where indicated.</p></div>"
+      },
+      "section": [
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Structured description of neoplasm focality, type, location, nodules, and extent.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-tumor-observable-example"
+            }
+          ],
+          "title": "Tumour characterisation (observable)"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Measured tumour dimensions including largest diameter and further axes.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-tumor-measurement-example"
+            }
+          ],
+          "title": "Tumour size (dimensions)"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Immunohistochemical assessment of oestrogen receptor expression in tissue.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-estrogen-receptor-status-example"
+            }
+          ],
+          "title": "Oestrogen receptor (ER) status"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Immunohistochemical assessment of progesterone receptor expression in tissue.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-progesterone-receptor-status-example"
+            }
+          ],
+          "title": "Progesterone receptor (PR) status"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HER2 testing result (e.g. IHC/FISH interpretation) for treatment planning.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Observation/observation-her2-receptor-status-example"
+            }
+          ],
+          "title": "HER2 receptor status"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "660-1",
+            "system": "http://loinc.org",
+            "display": "Microscopic observation [Identifier] in Specimen by Dark field examination"
+          }
+        ]
+      },
+      "title": "Micro (Microscopic Examination)"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Final integrated output: the signed diagnostic report with narrative conclusion, and—where staging applies—a structured cancer Condition with TNM and morphology.</p></div>"
+      },
+      "section": [
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Authoritative pathology diagnostic report linking specimens, key results, and overall conclusion for the case.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "DiagnosticReport/diagnosticreport-pathology-report-example"
+            }
+          ],
+          "title": "Diagnostic report (signed)"
+        },
+        {
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Illustrative Condition resource for prostate cancer with pathological T and clinical N/M categories and ICD-O-3 morphology—shown here as a separate example of staging structure in this implementation guide.</p></div>"
+          },
+          "entry": [
+            {
+              "reference": "Condition/condition-prostate-cancer-example"
+            }
+          ],
+          "title": "Example: prostate cancer stage (Condition)"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "22637-3",
+            "system": "http://loinc.org",
+            "display": "Pathology report final diagnosis Narrative"
+          }
+        ]
+      },
+      "title": "Synthesis (Conclusion/Integrated Diagnosis)"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "371528001",
+        "system": "http://snomed.info/sct",
+        "display": "Pathology report (record artifact)"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "26436-6",
+          "system": "http://loinc.org",
+          "display": "Laboratory Studies (set)"
+        }
+      ]
+    }
+  ],
+  "language": "en",
+  "status": "final",
+  "date": "2022-10-25T14:30:00+01:00",
+  "title": "Histological examination of the breast tissue",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PathologyServiceLtLab",
+  "id": "pathology-service",
+  "title": "Pathology Service Code",
+  "description": "Codes for pathology services.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/pathology-service",
+  "language": "en",
+  "publisher": "HL7 Lithuania",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "252416005",
+            "display": "Histopathology test"
+          },
+          {
+            "code": "116147009",
+            "display": "Cytologic test"
+          },
+          {
+            "code": "394577000",
+            "display": "Molecular pathology test"
+          },
+          {
+            "code": "29240004",
+            "display": "Autopsy examination"
+          }
+        ]
+      }
+    ]
+  }
+}

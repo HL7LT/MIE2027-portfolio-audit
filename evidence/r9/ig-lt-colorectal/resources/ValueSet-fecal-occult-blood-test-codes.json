@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FecalOccultBloodTestCodesVS",
+  "id": "fecal-occult-blood-test-codes",
+  "title": "Fecal Occult Blood Test Codes",
+  "description": "LOINC codes for fecal occult blood (hemoglobin) testing.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/fecal-occult-blood-test-codes",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "80372-6",
+            "display": "Hemoglobin [Presence] in Stool from gastrointestinal by Rapid immunoassay"
+          },
+          {
+            "code": "27396-1",
+            "display": "Hemoglobin [Mass/mass] in Stool from gastrointestinal"
+          }
+        ]
+      }
+    ]
+  }
+}

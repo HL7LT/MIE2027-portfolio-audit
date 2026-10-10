@@ -1,0 +1,385 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "incidental-finding-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung",
+  "name": "IncidentalFindingLtLung",
+  "title": "Incidental Finding (LT Lung)",
+  "status": "active",
+  "description": "Significant incidental finding detected during low-dose chest computed tomography (LDCT) screening. Covers both pulmonary incidental findings (emphysema, bronchiectasis, pleural changes, etc.) and extra-pulmonary findings (coronary calcification, aortic aneurysm, mediastinal mass, etc.) as defined in the MDKT dataset sections 1.2.2.1 and 1.2.2.2.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "404684003",
+              "system": "http://snomed.info/sct",
+              "display": "Clinical finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/incidental-finding"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:severity",
+        "path": "Observation.component",
+        "sliceName": "severity",
+        "short": "Severity: moderate or severe/expressed",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:severity.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "246112005",
+              "system": "http://snomed.info/sct",
+              "display": "Severity (attribute)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:severity.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-severity"
+        }
+      },
+      {
+        "id": "Observation.component:laterality",
+        "path": "Observation.component",
+        "sliceName": "laterality",
+        "short": "Laterality: right, left, or bilateral",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:laterality.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "272741003",
+              "system": "http://snomed.info/sct",
+              "display": "Laterality"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:laterality.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:size",
+        "path": "Observation.component",
+        "sliceName": "size",
+        "short": "Size of finding in mm",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:size.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "246115007",
+              "system": "http://snomed.info/sct",
+              "display": "Size (attribute)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:size.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:size.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:size.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:density",
+        "path": "Observation.component",
+        "sliceName": "density",
+        "short": "Density: cystic, solid, complex",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:density.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "28328005",
+              "system": "http://snomed.info/sct",
+              "display": "Abnormal radiologic density"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:density.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/finding-density"
+        }
+      },
+      {
+        "id": "Observation.component:multiplicity",
+        "path": "Observation.component",
+        "sliceName": "multiplicity",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:multiplicity.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "246454002",
+              "system": "http://snomed.info/sct",
+              "display": "Occurrence (attribute)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:multiplicity.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/finding-multiplicity"
+        }
+      },
+      {
+        "id": "Observation.component:quantity",
+        "path": "Observation.component",
+        "sliceName": "quantity",
+        "short": "Quantity: small, medium, or large (e.g. pleural fluid, pericardial effusion)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:quantity.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "246205007",
+              "system": "http://snomed.info/sct",
+              "display": "Quantity (attribute)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:quantity.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/finding-quantity"
+        }
+      },
+      {
+        "id": "Observation.component:lymphNodeLocation",
+        "path": "Observation.component",
+        "sliceName": "lymphNodeLocation",
+        "short": "Location of lymphadenopathy",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:lymphNodeLocation.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "439985001",
+              "system": "http://snomed.info/sct",
+              "display": "Area of body region by imaging measurement"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:lymphNodeLocation.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lymph-node-location"
+        }
+      },
+      {
+        "id": "Observation.component:consolidationInterpretation",
+        "path": "Observation.component",
+        "sliceName": "consolidationInterpretation",
+        "short": "Consolidation interpretation: inflammation or neoplasm (ADP 1.2.2.1 item 9)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:consolidationInterpretation.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "363714003",
+              "system": "http://snomed.info/sct",
+              "display": "Interprets (attribute)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:consolidationInterpretation.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/consolidation-interpretation"
+        }
+      }
+    ]
+  }
+}

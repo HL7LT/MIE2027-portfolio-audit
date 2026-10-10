@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "LymphNodeLevelVS",
+  "id": "lymph-node-level",
+  "title": "Lymph Node Level",
+  "description": "Regional lymph node involvement level (N1, N2, N3) for breast diagnostics.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lymph-node-level",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1229973008",
+            "display": "American Joint Committee on Cancer cN1 (qualifier value)"
+          },
+          {
+            "code": "1229978004",
+            "display": "American Joint Committee on Cancer cN2 (qualifier value)"
+          },
+          {
+            "code": "1229984001",
+            "display": "American Joint Committee on Cancer cN3 (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

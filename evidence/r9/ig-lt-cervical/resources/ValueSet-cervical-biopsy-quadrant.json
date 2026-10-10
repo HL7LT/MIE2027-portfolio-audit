@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalBiopsyQuadrantVS",
+  "id": "cervical-biopsy-quadrant",
+  "title": "Cervical Biopsy Quadrant",
+  "description": "Anatomical quadrants of the uterine cervix used to localize biopsy sites.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-biopsy-quadrant",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "127900007",
+            "display": "Structure of left superior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127902004",
+            "display": "Structure of right superior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127901006",
+            "display": "Structure of right inferior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127899002",
+            "display": "Structure of left inferior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "56739004",
+            "display": "Structure of cervical canal of uterus (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

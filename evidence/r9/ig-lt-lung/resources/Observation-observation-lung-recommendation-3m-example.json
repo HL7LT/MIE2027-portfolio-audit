@@ -1,0 +1,47 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-lung-recommendation-3m-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "derivedFrom": [
+    {
+      "reference": "Observation/observation-lung-rads-4a-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Short-term follow-up LDCT is recommended in 3 months based on the screening findings."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "424900004",
+        "system": "http://snomed.info/sct",
+        "display": "Recommendation - action"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:35:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "followup-3m",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+        "display": "Follow-up LDCT after 3 months"
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-incidental-lymphadenopathy-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "439985001",
+            "system": "http://snomed.info/sct",
+            "display": "Area of body region by imaging measurement"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "52324001",
+            "system": "http://snomed.info/sct",
+            "display": "Mediastinal lymphadenopathy"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "272741003",
+            "system": "http://snomed.info/sct",
+            "display": "Laterality"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "51440002",
+            "system": "http://snomed.info/sct",
+            "display": "Right and left"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "246454002",
+            "system": "http://snomed.info/sct",
+            "display": "Occurrence (attribute)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "255204007",
+            "system": "http://snomed.info/sct",
+            "display": "Multiple"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "404684003",
+        "system": "http://snomed.info/sct",
+        "display": "Clinical finding (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-11-20T14:30:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "30746006",
+        "system": "http://snomed.info/sct",
+        "display": "Lymphadenopathy"
+      }
+    ]
+  }
+}

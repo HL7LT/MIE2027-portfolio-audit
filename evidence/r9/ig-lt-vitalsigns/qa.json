@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+  "name" : "LTVitalSigns",
+  "title" : "Lithuanian Vital Signs Implementation Guide",
+  "description" : "Lithuanian Vital Signs Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.vitalsigns",
+  "ig-ver" : "0.1.0",
+  "date" : "Thu, 08 Oct, 2026 15:40:05 +0300",
+  "dateISO8601" : "2026-10-08T15:40:05+03:00",
+  "errs" : 0,
+  "warnings" : 202,
+  "hints" : 1056,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 9,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1533039744
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MedicationTakenLtLifestyle",
+  "id": "medication-taken",
+  "title": "Medication taken by patient during treatment",
+  "description": "SNOMED CT concepts representing medication given/used during treatment.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/medication-taken",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "182833002",
+            "display": "Medication given (situation)"
+          },
+          {
+            "code": "787481004",
+            "display": "No known medications (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

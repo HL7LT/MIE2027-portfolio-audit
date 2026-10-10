@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "Her2ReceptorStatusLtLab",
+  "id": "her2-receptor-status",
+  "title": "Her2 Receptor Status",
+  "description": "The data item records the Her2 (human epidermal growth factor receptor 2) expression status of the tumour.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/her2-receptor-status",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Her2 overexpressed or gene amplified"
+    },
+    {
+      "code": "2",
+      "display": "Her2 not overexpressed or gene not amplified"
+    }
+  ],
+  "version": "0.1.0",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "experimental": false,
+  "count": 2
+}

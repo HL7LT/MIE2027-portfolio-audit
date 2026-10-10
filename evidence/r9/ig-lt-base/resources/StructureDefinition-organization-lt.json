@@ -1,0 +1,176 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "organization-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/organization-lt",
+  "name": "OrganizationLt",
+  "title": "OrganizationLt",
+  "status": "active",
+  "description": "Lithuanian Base Organization profile, used to define healthcare organizations and sub-units",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.eu/fhir/base-r5/StructureDefinition/organization-eu-core",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "short": "Įstaigos identifikatorius",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier.system",
+        "path": "Organization.identifier.system",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/organization-identifier"
+        }
+      },
+      {
+        "id": "Organization.identifier.value",
+        "path": "Organization.identifier.value",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.active",
+        "path": "Organization.active",
+        "short": "Ar įstaiga yra veikianti / Whether the organization's record is still in active use",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "short": "Name organizations (in Lithuanian)",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.name.extension",
+        "path": "Organization.name.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Name organizations (in English)"
+      },
+      {
+        "id": "Organization.name.extension:translation",
+        "path": "Organization.name.extension",
+        "sliceName": "translation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/translation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact",
+        "path": "Organization.contact",
+        "short": "Įstaigos kontaktinė informacija / Official contact details for the Organization",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom",
+        "path": "Organization.contact.telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Contact details (phone/email and more)"
+      },
+      {
+        "id": "Organization.contact.telecom.system",
+        "path": "Organization.contact.telecom.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom.value",
+        "path": "Organization.contact.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom.use",
+        "path": "Organization.contact.telecom.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:phone",
+        "path": "Organization.contact.telecom",
+        "sliceName": "phone",
+        "short": "Telefono numeris / Phone number",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:phone.system",
+        "path": "Organization.contact.telecom.system",
+        "min": 1,
+        "fixedCode": "phone"
+      },
+      {
+        "id": "Organization.contact.telecom:email",
+        "path": "Organization.contact.telecom",
+        "sliceName": "email",
+        "short": "Elektroninio pašto adresas / Email",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.contact.telecom:email.system",
+        "path": "Organization.contact.telecom.system",
+        "min": 1,
+        "fixedCode": "email"
+      },
+      {
+        "id": "Organization.contact.address",
+        "path": "Organization.contact.address",
+        "short": "Įstaigos adresas / Adress",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.partOf",
+        "path": "Organization.partOf",
+        "short": "Įstaiga, kuriai priklausi ši įstaiga/padalinys / The organization of which this organization forms a part.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

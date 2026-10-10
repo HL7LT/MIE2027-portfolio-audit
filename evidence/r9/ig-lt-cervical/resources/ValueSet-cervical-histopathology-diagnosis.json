@@ -1,0 +1,128 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalHistopathologyDiagnosisVS",
+  "id": "cervical-histopathology-diagnosis",
+  "title": "Cervical Histopathology Diagnosis",
+  "description": "Histopathological diagnostic conclusions for cervical tissue examination, aligned with WHO Classification of Female Genital Tumours (2020).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-histopathology-diagnosis",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "30389008",
+            "display": "Normal tissue (finding)"
+          },
+          {
+            "code": "125513006",
+            "display": "Reactive cellular changes (morphologic abnormality)"
+          },
+          {
+            "code": "125154007",
+            "display": "Specimen unsatisfactory for evaluation (finding)"
+          },
+          {
+            "code": "400002005",
+            "display": "Squamous intraepithelial neoplasia grade 1 (morphologic abnormality)"
+          },
+          {
+            "code": "400049009",
+            "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+          },
+          {
+            "code": "1162893000",
+            "display": "Squamous cell carcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "12478003",
+            "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)"
+          },
+          {
+            "code": "1157180003",
+            "display": "Human papillomavirus-associated adenocarcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "1157186009",
+            "display": "Human papillomavirus-independent adenocarcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "51642000",
+            "display": "Adenocarcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "783212001",
+            "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "783213006",
+            "display": "Human papillomavirus negative squamous cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1162767002",
+            "display": "Squamous cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1157177004",
+            "display": "Human papillomavirus-associated adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "703569004",
+            "display": "Mucinous adenocarcinoma, endocervical, gastric type (morphologic abnormality)"
+          },
+          {
+            "code": "30546008",
+            "display": "Clear cell adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "2221008",
+            "display": "Mesonephroma, malignant (morphologic abnormality)"
+          },
+          {
+            "code": "1187332001",
+            "display": "Adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "63264007",
+            "display": "Carcinosarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "59367005",
+            "display": "Adenosquamous carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "4079000",
+            "display": "Mucoepidermoid carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128637002",
+            "display": "Adenoid basal carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "38549000",
+            "display": "Carcinoma, undifferentiated (morphologic abnormality)"
+          },
+          {
+            "code": "1286767006",
+            "display": "Neuroendocrine carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "14799000",
+            "display": "Neoplasm, metastatic (morphologic abnormality)"
+          },
+          {
+            "code": "40293003",
+            "display": "Adenomyoma (morphologic abnormality)"
+          },
+          {
+            "code": "31470003",
+            "display": "Adenosarcoma (morphologic abnormality)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "specimen-measurement-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/specimen-measurement-lt-lab",
+  "version": "0.1.0",
+  "name": "SpecimenMeasurementLtLab",
+  "title": "Observation: Specimen Measurement",
+  "status": "draft",
+  "publisher": "HL7 LT",
+  "description": "Definition of the Observation for the Specimen Measurement, which includes the physical measurements of the specimen and its number of lymph nodes.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Specimen Measurement",
+        "constraint": [
+          {
+            "key": "inv-obs-component-or-dataAbsentReason",
+            "human": "Observation must have either component[x] or dataAbsentReason",
+            "source": "https://hl7.lt/fhir/lab/StructureDefinition/specimen-measurement-lt-lab",
+            "severity": "error",
+            "expression": "component.exists() or dataAbsentReason.exists()"
+          }
+        ]
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371475003",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen size"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Patient",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.subject.reference",
+        "path": "Observation.subject.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Practitioner if resident physician or Organization Department if hospital",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer.reference",
+        "path": "Observation.performer.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/sample-examination"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab",
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-block-lt-lab"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "short": "Specimen measurements (dimensions and weight)",
+        "definition": "Used to report the physical dimensions and weight of a specimen."
+      },
+      {
+        "id": "Observation.component:largest",
+        "path": "Observation.component",
+        "sliceName": "largest",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:largest.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "384627007",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen size, largest dimension"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:largest.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:largest.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:largest.value[x]:valueQuantity.unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:largest.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:largest.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:weight",
+        "path": "Observation.component",
+        "sliceName": "weight",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:weight.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371506001",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen weight"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:weight.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:weight.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:weight.value[x]:valueQuantity.unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "g"
+      },
+      {
+        "id": "Observation.component:weight.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:weight.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "g"
+      },
+      {
+        "id": "Observation.component:dimension1",
+        "path": "Observation.component",
+        "sliceName": "dimension1",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:dimension1.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371476002",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen size, dimension 1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dimension2",
+        "path": "Observation.component",
+        "sliceName": "dimension2",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:dimension2.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371477006",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen size, dimension 2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dimension3",
+        "path": "Observation.component",
+        "sliceName": "dimension3",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:dimension3.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371478001",
+              "system": "http://snomed.info/sct",
+              "display": "Specimen size, dimension 3"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:lymphnodes",
+        "path": "Observation.component",
+        "sliceName": "lymphnodes",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:lymphnodes.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "444025001",
+              "system": "http://snomed.info/sct",
+              "display": "Number of lymph nodes examined by microscopy in excised specimen (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:lymphnodes.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:lymphnodes.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:lymphnodes.value[x]:valueQuantity.unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "node(s)"
+      },
+      {
+        "id": "Observation.component:lymphnodes.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:lymphnodes.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{1}"
+      }
+    ]
+  }
+}

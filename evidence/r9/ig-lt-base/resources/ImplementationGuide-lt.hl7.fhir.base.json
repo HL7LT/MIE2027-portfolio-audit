@@ -1,0 +1,592 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.base",
+  "url": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+  "version": "0.4.0",
+  "name": "LTBase",
+  "title": "Lithuanian Base Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Base Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.base",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "id": "hl7tx",
+      "packageId": "hl7.terminology.r5",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "version": "7.1.0"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    },
+    {
+      "id": "hl7euextr5",
+      "packageId": "hl7.fhir.eu.extensions.r5",
+      "uri": "http://hl7.eu/fhir/extensions/ImplementationGuide/hl7.fhir.eu.extensions",
+      "version": "1.2.0"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/appointment-lt"
+        },
+        "name": "AppointmentLt",
+        "description": "Lithuanian Base Appointment profile, used for planing visit to healthcare services.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/care-plan-lt"
+        },
+        "name": "CarePlanLt",
+        "description": "Lithuanian Base CarePlan profile, used for describing care plans.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/care-team-lt"
+        },
+        "name": "CareTeamLt",
+        "description": "Lithuanian Base Care Team profile, used for documenting care teams involved in patient care.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/composition-lt"
+        },
+        "name": "CompositionLt",
+        "description": "Lithuanian Base Composition profile, used for creating healthcare compositions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Condition/condition-cancer-example"
+        },
+        "name": "Condition: Cancer (example)",
+        "description": "Example instance of a cancer diagnosis documented during a patient encounter",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/condition-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/condition-lt"
+        },
+        "name": "ConditionLt",
+        "description": "Lithuanian Base Condition profile, used for documenting general, symptoms, conditions, and their characteristics.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/diagnostic-report-lt"
+        },
+        "name": "DiagnosticReportLt",
+        "description": "Lithuanian Base DiagnosticReport profile, used for interpretation of diagnostic tests.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/document-reference-lt"
+        },
+        "name": "DocumentReferenceLt",
+        "description": "Lithuanian Base Document Reference profile, used for composing documents.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Encounter/encounter-psychiatric-example"
+        },
+        "name": "Encounter: Psychiatric (example)",
+        "description": "Example of an psychiatric encounter",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/encounter-lt"
+        },
+        "name": "EncounterLt",
+        "description": "Lithuanian Base Encounter profile, used to represent clinical encounters",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/episode-of-care-lt"
+        },
+        "name": "EpisodeOfCareLt",
+        "description": "Lithuanian Base EpisodeOfCare profile, used for composing episodes of care.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/family-member-history-lt"
+        },
+        "name": "FamilyMemberHistoryLt",
+        "description": "Lithuanian Base FamilyMemberHistory profile, used for health conditions for a person related to the patient.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/finding-evolution"
+        },
+        "name": "Finding Evolution",
+        "description": "Evolution of findings across screening and diagnostic procedures — indicates whether a finding is new, changed, stable, or absent compared to prior examinations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/goal-lt"
+        },
+        "name": "GoalLt",
+        "description": "Lithuanian Base Goal profile, used for describing goals.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/healthcare-service-lt"
+        },
+        "name": "HealthcareServiceLt",
+        "description": "Lithuanian Base HealthcareService profile, used for describing provided healthcare services.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/identifier-domain-lt"
+        },
+        "name": "Identifier Domain",
+        "description": "Identifier Domain with translations in Lithuanian",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/imaging-composition-lt"
+        },
+        "name": "ImagingCompositionLt",
+        "description": "Composition: Imaging Summary (Eu IM). Clinical document used to represent a Imaging Study Report for the scope of the HL7 Europe project.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/imaging-report-lt"
+        },
+        "name": "ImagingReportLt",
+        "description": "DiagnosticReport: Imaging Report (Eu IM). This document represents the report of an imaging study. It is the anchor resource that refers to all structured data as well as the `Composition` resource that contains the narrative text of the report.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/imaging-study-lt"
+        },
+        "name": "ImagingStudyLt",
+        "description": "Lithuanian Base Imaging Study profile, used for documenting general imaging studies and their characteristics.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/laboratory-composition-lt"
+        },
+        "name": "LaboratoryCompositionLt",
+        "description": "Composition: Laboratory Summary (Eu Lab). Clinical document used to represent a Laboratory Report for the scope of the HL7 Europe project.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/laboratory-report-lt"
+        },
+        "name": "LaboratoryReportLt",
+        "description": "DiagnosticReport: Laboratory Report (Eu Lab) used to represent an entry of a Laboratory Report, including its context, for the scope of the HL7 Europe project.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Location/location-vilnius-hospital-example"
+        },
+        "name": "Location: Vilnius Hospital (example)",
+        "description": "Example instance of a healthcare location",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/location-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/location-lt"
+        },
+        "name": "LocationLt",
+        "description": "Lithuanian Base Location profile, used for documenting healthcare locations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-blood-pressure-example"
+        },
+        "name": "Observation: Blood Pressure (example)",
+        "description": "Example instance of a blood pressure measurement for a patient",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-breast-density-fatty-example"
+        },
+        "name": "Observation: Breast Density Fatty (example)",
+        "description": "Breast Density Fatty example",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/observation-lt"
+        },
+        "name": "ObservationLt",
+        "description": "Lithuanian Base Observation profile, used to represent vitals, demographic, clinical and laboratory observations",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/organization-identifier-lt"
+        },
+        "name": "Organization Identifier",
+        "description": "A curated list of identifier systems for organizations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-example"
+        },
+        "name": "Organization: Medical Library (example)",
+        "description": "Example of a LMB organization",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-vilnius-hospital-example"
+        },
+        "name": "Organization: Vilnius Hospital (example)",
+        "description": "Example of a healthcare organization",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/organization-lt"
+        },
+        "name": "OrganizationLt",
+        "description": "Lithuanian Base Organization profile, used to define healthcare organizations and sub-units",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/patient-identifier-lt"
+        },
+        "name": "Patient Identifier",
+        "description": "A curated list of identifier systems for patients.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-example"
+        },
+        "name": "Patient: Jonas Petrauskas (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/patient-lt"
+        },
+        "name": "PatientLt",
+        "description": "Lithuanian Base Patient profile, used to represent patients administrative information",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Petras Kazlauskas (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/practitioner-lt"
+        },
+        "name": "PractitionerLt",
+        "description": "Lithuanian Base Practitioner profile, used to define healthcare practitioners",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitioner-role-doctor-vilnius-hospital-example"
+        },
+        "name": "PractitionerRole: Doctor Vilnius Hospital (example)",
+        "description": "An example Practitioner Role conforming to the Lithuanian Base Profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/practitioner-role-lt"
+        },
+        "name": "PractitionerRoleLt",
+        "description": "Lithuanian Base Practitioner Role profile, used to define roles of the healthcare practitioner in the healthcare facilities",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/procedure-lt"
+        },
+        "name": "ProcedureLt",
+        "description": "Lithuanian Base Procedure profile, used for documenting healthcare procedures.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "RelatedPerson/related-person-ruta-petrauskiene-example"
+        },
+        "name": "RelatedPerson: Rūta Petrauskienė (example)",
+        "description": "An example Related Person conforming to the Lithuanian Base Profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/related-person-lt"
+        },
+        "name": "RelatedPersonLt",
+        "description": "Lithuanian Base Related Person profile, used to define persons related to a patient",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/screening-careplan-lt"
+        },
+        "name": "Screening CarePlan (LT)",
+        "description": "Base CarePlan for Lithuanian national screening programmes.\nCaptures programme enrollment, current status, scheduled screening activities,\nand care recommendations. Disease-specific screening IGs extend this profile\nwith programme-specific category codes and activity details.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/screening-programme"
+        },
+        "name": "Screening Programme",
+        "description": "Represents the various screening programmes supported in Lithuania.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/service-request-lt"
+        },
+        "name": "ServiceRequestLt",
+        "description": "Lithuanian Base Service Request profile, used for documenting general, symptoms, conditions, and their characteristics.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Translation information",
+          "generation": "markdown",
+          "name": "translationinfo.html",
+          "sourceUrl": "translationinfo.html"
+        },
+        {
+          "title": "Policy",
+          "generation": "markdown",
+          "name": "policy.html",
+          "sourceUrl": "policy.html"
+        },
+        {
+          "title": "Download",
+          "generation": "markdown",
+          "name": "download.html",
+          "sourceUrl": "download.html"
+        },
+        {
+          "title": "Changes",
+          "generation": "markdown",
+          "name": "changes.html",
+          "sourceUrl": "changes.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/identifier-domain"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/finding-evolution"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/organization-identifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/patient-identifier"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

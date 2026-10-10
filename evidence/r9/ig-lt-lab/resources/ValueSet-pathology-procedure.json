@@ -1,0 +1,89 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PathologyProcedureLtLab",
+  "id": "pathology-procedure",
+  "title": "Pathology Procedure",
+  "description": "SNOMED CT procedure codes for classifying pathology diagnostic reports (cytology, histology, screening, autopsy).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/pathology-procedure",
+  "language": "en",
+  "publisher": "HL7 LT",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "116147009",
+            "display": "Cytologic test (procedure)"
+          },
+          {
+            "code": "372277005",
+            "display": "Cytologic examination of breast (procedure)"
+          },
+          {
+            "code": "416107004",
+            "display": "Cervical cytology test (procedure)"
+          },
+          {
+            "code": "440623000",
+            "display": "Microscopic examination of cervical Papanicolaou smear (procedure)"
+          },
+          {
+            "code": "417036008",
+            "display": "Liquid-based cervical cytology screening (procedure)"
+          },
+          {
+            "code": "609040007",
+            "display": "Microscopic cytologic examination of smear of specimen from female genital tract prepared using Papanicolaou technique (procedure)"
+          },
+          {
+            "code": "447759004",
+            "display": "Cytologic examination of smear from anus (procedure)"
+          },
+          {
+            "code": "35904009",
+            "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+          },
+          {
+            "code": "395126005",
+            "display": "Immunocytochemistry test (procedure)"
+          },
+          {
+            "code": "252416005",
+            "display": "Histopathology test"
+          },
+          {
+            "code": "714797009",
+            "display": "Histologic test (procedure)"
+          },
+          {
+            "code": "15886004",
+            "display": "Screening for malignant neoplastic disease (procedure)"
+          },
+          {
+            "code": "171149006",
+            "display": "Screening for malignant neoplasm of cervix (procedure)"
+          },
+          {
+            "code": "275978004",
+            "display": "Screening for malignant neoplasm of colon (procedure)"
+          },
+          {
+            "code": "444822002",
+            "display": "Screening for malignant neoplasm of prostate (procedure)"
+          },
+          {
+            "code": "268548003",
+            "display": "Screening for malignant neoplasm of breast (procedure)"
+          },
+          {
+            "code": "29240004",
+            "display": "Autopsy examination (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

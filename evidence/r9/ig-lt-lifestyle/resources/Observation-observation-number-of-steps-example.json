@@ -1,0 +1,68 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-number-of-steps-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/number-of-steps-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Activity"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "41950-7",
+          "system": "http://loinc.org",
+          "display": "Number of steps in 24 hour Measured"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "unit": "{#}/{24.h}",
+    "system": "http://unitsofmeasure.org",
+    "code": "/d",
+    "value": 8642
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Steps counted automatically using a smartwatch throughout the day."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "41950-7",
+        "system": "http://loinc.org",
+        "display": "Number of steps in 24 hour Measured"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-27T23:59:00+03:00",
+  "device": {
+    "reference": "Device/device-physical-activity-example"
+  }
+}

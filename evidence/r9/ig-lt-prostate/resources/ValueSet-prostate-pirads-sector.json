@@ -1,0 +1,163 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstatePiradsSectorVS",
+  "id": "prostate-pirads-sector",
+  "title": "Prostate - PI-RADS Sector (39-Sector Map)",
+  "description": "PI-RADS prostate sector locations based on the 39-sector PI-RADS map.\nIncludes detailed SNOMED CT body structure codes for base/mid/apex,\nzone, side, and anterior/posterior subdivisions.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "716906001",
+            "display": "Structure of posterolateral basal part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "836428004",
+            "display": "Structure of posteromedial basal part of peripheral zone of right half of prostate"
+          },
+          {
+            "code": "836427009",
+            "display": "Structure of posteromedial basal part of peripheral zone of left half of prostate"
+          },
+          {
+            "code": "716907005",
+            "display": "Structure of posterolateral basal part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716896009",
+            "display": "Structure of anterior basal part of transition zone of right half prostate"
+          },
+          {
+            "code": "716897000",
+            "display": "Structure of anterior basal part of transition zone of left half prostate"
+          },
+          {
+            "code": "716898005",
+            "display": "Structure of posterior basal part of transition zone of right half prostate"
+          },
+          {
+            "code": "716899002",
+            "display": "Structure of posterior basal part of transition zone of left half prostate"
+          },
+          {
+            "code": "716900007",
+            "display": "Structure of central zone of right half prostate"
+          },
+          {
+            "code": "716901006",
+            "display": "Structure of central zone of left half prostate"
+          },
+          {
+            "code": "716892006",
+            "display": "Structure of basal part of anterior fibromuscular stroma of right half prostate"
+          },
+          {
+            "code": "716893001",
+            "display": "Structure of basal part of anterior fibromuscular stroma of left half prostate"
+          },
+          {
+            "code": "279669004",
+            "display": "Structure of lower pole of seminal vesicle"
+          },
+          {
+            "code": "716921007",
+            "display": "Structure of posterolateral middle regional part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716923005",
+            "display": "Structure of posteromedial middle regional part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716924004",
+            "display": "Structure of posteromedial middle regional part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716922000",
+            "display": "Structure of posterolateral middle regional part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716913001",
+            "display": "Structure of anterior middle regional part of transition zone of right half prostate"
+          },
+          {
+            "code": "716914007",
+            "display": "Structure of anterior middle regional part of transition zone of left half prostate"
+          },
+          {
+            "code": "716915008",
+            "display": "Structure of posterior middle regional part of transition zone of right half prostate"
+          },
+          {
+            "code": "716916009",
+            "display": "Structure of posterior middle regional part of transition zone of left half prostate"
+          },
+          {
+            "code": "716909008",
+            "display": "Structure of middle regional part of anterior fibromuscular stroma of right half prostate"
+          },
+          {
+            "code": "716910003",
+            "display": "Structure of middle regional part of anterior fibromuscular stroma of left half prostate"
+          },
+          {
+            "code": "716919002",
+            "display": "Structure of anterior middle regional part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716920008",
+            "display": "Structure of anterior middle regional part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716938006",
+            "display": "Structure of posterolateral apical part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716940001",
+            "display": "Structure of posteromedial apical part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716941002",
+            "display": "Structure of posteromedial apical part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716939003",
+            "display": "Structure of posterolateral apical part of peripheral zone of left half prostate"
+          },
+          {
+            "code": "716930004",
+            "display": "Structure of anterior apical part of transition zone of right half prostate"
+          },
+          {
+            "code": "716931000",
+            "display": "Structure of anterior apical part of transition zone of left half prostate"
+          },
+          {
+            "code": "716926002",
+            "display": "Structure of apical part of anterior fibromuscular stroma of right half prostate"
+          },
+          {
+            "code": "716927006",
+            "display": "Structure of apical part of anterior fibromuscular stroma of left half prostate"
+          },
+          {
+            "code": "277855007",
+            "display": "Structure of urethral sphincter"
+          },
+          {
+            "code": "716934008",
+            "display": "Structure of apical part of peripheral zone of right half prostate"
+          },
+          {
+            "code": "716935009",
+            "display": "Structure of apical part of peripheral zone of left half prostate"
+          }
+        ]
+      }
+    ]
+  }
+}

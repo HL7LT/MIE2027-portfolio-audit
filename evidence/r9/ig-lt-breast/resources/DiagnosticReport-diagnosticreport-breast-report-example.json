@@ -1,0 +1,94 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-breast-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-report-lt-breast"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://example.org/reports",
+      "value": "BREAST-RPT-2026-0001"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      },
+      {
+        "code": "4231000179109",
+        "system": "http://snomed.info/sct",
+        "display": "Mammography report (record artifact)"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "PractitionerRole/example-practitioner-role"
+    }
+  ],
+  "resultsInterpreter": [
+    {
+      "reference": "PractitionerRole/example-practitioner-role"
+    }
+  ],
+  "study": [
+    {
+      "reference": "ImagingStudy/imagingstudy-mammography-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-birads-1-negative-example"
+    },
+    {
+      "reference": "Observation/observation-birads-cat4-example"
+    },
+    {
+      "reference": "Observation/observation-gland-density-fatty-example"
+    },
+    {
+      "reference": "Observation/observation-mammo-mass-left-uoq-example"
+    },
+    {
+      "reference": "Observation/observation-breast-scar-example"
+    },
+    {
+      "reference": "Observation/observation-lesion-right-10-oclock-cyst-example"
+    },
+    {
+      "reference": "Observation/observation-history-disease-example"
+    },
+    {
+      "reference": "Observation/observation-breast-skin-formation-example"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-breast-step2-imaging-example"
+  },
+  "effectiveDateTime": "2026-01-10T10:00:00+02:00",
+  "issued": "2026-01-10T12:00:00+02:00",
+  "composition": {
+    "reference": "Composition/composition-breast-diagnostic-example"
+  },
+  "conclusion": "BI-RADS 4 right breast – suspicious abnormality. BI-RADS 1 left breast – negative. Biopsy recommended for right breast lesion."
+}

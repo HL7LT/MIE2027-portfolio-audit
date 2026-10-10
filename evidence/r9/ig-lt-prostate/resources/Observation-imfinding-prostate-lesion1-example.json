@@ -1,0 +1,67 @@
+{
+  "resourceType": "Observation",
+  "id": "imfinding-prostate-lesion1-example",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImFinding"
+    ]
+  },
+  "hasMember": [
+    {
+      "reference": "Observation/observation-prostate-pirads-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-t2-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-dwi-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-adc-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-dce-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-seminal-vesicle-invasion-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-neurovascular-bundle-invasion-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-regional-lymph-node-invasion-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-capsule-invasion-suspected-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-urinary-bladder-changes-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-rectum-changes-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-peripheral-zone-diffuse-enhancement-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-precise-followup-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "49755003",
+        "system": "http://snomed.info/sct",
+        "display": "Morphologically abnormal structure"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2024-05-27T10:30:00Z",
+  "bodyStructure": {
+    "reference": "BodyStructure/bodyStructure-prostate-lesion1-example"
+  }
+}

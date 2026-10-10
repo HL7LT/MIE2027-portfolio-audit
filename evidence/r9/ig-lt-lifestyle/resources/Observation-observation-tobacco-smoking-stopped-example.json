@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tobacco-smoking-stopped-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-smoking-stopped-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "social-history",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Social History"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "code": "a",
+    "system": "http://unitsofmeasure.org",
+    "unit": "years",
+    "value": 2
+  },
+  "note": [
+    {
+      "text": "Patient reports stopped smoking 2 years ago."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "228486009",
+        "system": "http://snomed.info/sct",
+        "display": "Time since stopped smoking (observable entity)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

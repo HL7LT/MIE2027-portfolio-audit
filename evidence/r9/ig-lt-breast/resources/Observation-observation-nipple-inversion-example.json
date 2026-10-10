@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-nipple-inversion-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-nipple-inversion-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "364377005",
+        "system": "http://snomed.info/sct",
+        "display": "Appearance of nipple"
+      }
+    ]
+  },
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/encounter-palpation-example"
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2024-06-15T10:00:00+03:00",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "76752008",
+        "system": "http://snomed.info/sct",
+        "display": "Breast"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "271955004",
+        "system": "http://snomed.info/sct",
+        "display": "Retraction of nipple (finding)"
+      }
+    ]
+  }
+}

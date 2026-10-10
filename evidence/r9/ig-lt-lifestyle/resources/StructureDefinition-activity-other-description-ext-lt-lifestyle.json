@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "activity-other-description-ext-lt-lifestyle",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle",
+  "name": "ActivityOtherDescriptionExtLtLifestyle",
+  "title": "Other Activity Description",
+  "status": "draft",
+  "description": "Free text description required when the 'Other' option is selected for physical activity or a similar behavioral intervention.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Other Activity Description",
+        "definition": "Free text description required when the 'Other' option is selected for physical activity or a similar behavioral intervention."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

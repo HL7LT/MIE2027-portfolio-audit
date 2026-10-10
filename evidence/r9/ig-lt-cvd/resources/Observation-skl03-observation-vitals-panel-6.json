@@ -1,0 +1,57 @@
+{
+  "resourceType": "Observation",
+  "id": "skl03-observation-vitals-panel-6",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "8716-3",
+        "system": "http://loinc.org",
+        "display": "Vital signs note"
+      }
+    ],
+    "text": "Gyvybiniai rodikliai"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "hasMember": [
+    {
+      "reference": "Observation/skl03-observation-bp-panel-8"
+    },
+    {
+      "reference": "Observation/skl03-observation-height-9"
+    },
+    {
+      "reference": "Observation/skl03-observation-weight-10"
+    },
+    {
+      "reference": "Observation/skl03-observation-bmi-11"
+    },
+    {
+      "reference": "Observation/skl03-observation-weight-first-visit-12"
+    }
+  ],
+  "status": "final",
+  "effectiveDateTime": "2014-10-27T20:40:40+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

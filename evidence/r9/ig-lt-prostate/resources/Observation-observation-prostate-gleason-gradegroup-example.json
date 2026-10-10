@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-gleason-gradegroup-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/gleason-isup-observation-lt-prostate"
+    ]
+  },
+  "focus": [
+    {
+      "reference": "BodyStructure/bodyStructure-prostate-lesion1-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Histopathology shows Gleason score 3+3. Patient managed with active surveillance."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "372278000",
+        "system": "http://snomed.info/sct",
+        "display": "Gleason score (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2024-05-27T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "1279715000",
+        "system": "http://snomed.info/sct",
+        "display": "ISUP (International Society of Urological Pathology) grade group 1 (Gleason score 3 + 3 = 6)"
+      }
+    ]
+  }
+}

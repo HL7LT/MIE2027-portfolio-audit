@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "skl02-observation-recommendations-4",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "effectiveDateTime": "2014-10-27T20:40:40+02:00",
+  "code": {
+    "coding": [
+      {
+        "code": "39223-3",
+        "system": "http://loinc.org",
+        "display": "Diagnosis recommendations, description (narrative) CPHS"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "valueString": "Kitos rekomendacijos: ..."
+}

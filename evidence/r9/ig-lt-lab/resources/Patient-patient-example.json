@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:1.2.3.4.5.6.7.8.9.11",
+      "value": "38501019999"
+    },
+    {
+      "use": "usual",
+      "system": "http://hospital-lt.lt/patient-id",
+      "value": "HOSPLT-10005"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Jonas"
+      ],
+      "use": "official",
+      "family": "Petrauskas",
+      "text": "Jonas Petrauskas"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+370 65551234",
+      "use": "mobile"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Gedimino pr. 10"
+      ],
+      "use": "home",
+      "city": "Vilnius",
+      "country": "LT",
+      "postalCode": "LT-01103"
+    }
+  ],
+  "active": true,
+  "gender": "male",
+  "birthDate": "1985-01-01"
+}

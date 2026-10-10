@@ -1,0 +1,116 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstateAdppQuestionnaireItem",
+  "id": "prostate-adpp-questionnaire-item",
+  "title": "ADPP primary assessment Questionnaire item (linkId)",
+  "description": "Codes equal to **linkId** values on **Questionnaire/prostate-adpp-primary-assessment**. Used as **ConceptMap.group.source**.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item",
+  "concept": [
+    {
+      "code": "assessment-datetime",
+      "display": "Assessment date and time"
+    },
+    {
+      "code": "referral-reason",
+      "display": "Reason for referral / programme entry"
+    },
+    {
+      "code": "psa-recorded",
+      "display": "PSA measured at this visit (flag)"
+    },
+    {
+      "code": "dre-result",
+      "display": "Digital rectal examination summary"
+    },
+    {
+      "code": "family-hx-prostate",
+      "display": "Family history: prostate cancer (1st degree)"
+    },
+    {
+      "code": "family-hx-breast",
+      "display": "Family history: breast cancer (1st degree)"
+    },
+    {
+      "code": "family-hx-ovarian",
+      "display": "Family history: ovarian cancer (1st degree)"
+    },
+    {
+      "code": "family-hx-colon",
+      "display": "Family history: colorectal cancer (1st degree)"
+    },
+    {
+      "code": "height-cm",
+      "display": "Height (cm)"
+    },
+    {
+      "code": "weight-kg",
+      "display": "Weight (kg)"
+    },
+    {
+      "code": "bmi-kg-m2",
+      "display": "BMI (kg/m²)"
+    },
+    {
+      "code": "first-psa-ngml",
+      "display": "First PSA (ng/ml)"
+    },
+    {
+      "code": "first-psa-date",
+      "display": "First PSA observation date"
+    },
+    {
+      "code": "second-psa-ngml",
+      "display": "Second PSA (ng/ml)"
+    },
+    {
+      "code": "second-psa-date",
+      "display": "Second PSA observation date"
+    },
+    {
+      "code": "prior-mpmri",
+      "display": "Prior prostate mpMRI documented"
+    },
+    {
+      "code": "prior-mpmri-pirads",
+      "display": "Prior mpMRI PI-RADS category"
+    },
+    {
+      "code": "prior-prostatectomy",
+      "display": "Prior prostate surgery"
+    },
+    {
+      "code": "prior-prostate-radiation",
+      "display": "Prior prostate radiotherapy"
+    },
+    {
+      "code": "anticoagulant-use",
+      "display": "Anticoagulant use"
+    },
+    {
+      "code": "complaints-anamnesis",
+      "display": "Complaints / anamnesis (free text)"
+    },
+    {
+      "code": "specialist-additional-info",
+      "display": "Additional information for specialist (free text)"
+    },
+    {
+      "code": "race",
+      "display": "Race"
+    },
+    {
+      "code": "systemic-diseases",
+      "display": "Systemic diseases (free text)"
+    },
+    {
+      "code": "systemic-diseases-date",
+      "display": "Systemic diseases diagnosis date"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 25
+}

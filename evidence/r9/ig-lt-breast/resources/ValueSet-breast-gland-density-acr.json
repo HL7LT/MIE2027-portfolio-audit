@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastGlandDensityAcrVS",
+  "id": "breast-gland-density-acr",
+  "title": "Breast Gland Density ACR",
+  "description": "ACR (BI-RADS) glandular density assessment.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-gland-density-acr",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "129716005",
+            "display": "Almost entirely fat breast composition (finding)"
+          },
+          {
+            "code": "129717001",
+            "display": "Mammographic breast composition showing scattered fibroglandular densities (finding)"
+          },
+          {
+            "code": "129718006",
+            "display": "Heterogeneously dense breast composition (finding)"
+          },
+          {
+            "code": "129719003",
+            "display": "Extremely dense breast composition (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

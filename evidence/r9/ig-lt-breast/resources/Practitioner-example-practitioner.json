@@ -1,0 +1,22 @@
+{
+  "resourceType": "Practitioner",
+  "id": "example-practitioner",
+  "name": [
+    {
+      "text": "Registrar"
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "224538006",
+            "system": "http://snomed.info/sct",
+            "display": "Triage nurse (occupation)"
+          }
+        ]
+      }
+    }
+  ]
+}

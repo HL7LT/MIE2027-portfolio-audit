@@ -1,0 +1,36 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "Her2IhcScoreLtLab",
+  "id": "her2-ihc-score",
+  "title": "HER2 IHC Score",
+  "description": "HER2 immunohistochemical scoring system (0+ to 3+).",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/her2-ihc-score",
+  "concept": [
+    {
+      "code": "0",
+      "display": "HER2 0+ (negative)",
+      "definition": "HER2: expression absent (0)"
+    },
+    {
+      "code": "1",
+      "display": "HER2 1+ (low)",
+      "definition": "HER2: low immunohistochemical expression (1+)"
+    },
+    {
+      "code": "2",
+      "display": "HER2 2+ (borderline)",
+      "definition": "HER2: expression borderline (2+)"
+    },
+    {
+      "code": "3",
+      "display": "HER2 3+ (positive)",
+      "definition": "HER2: expression positive (3+)"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 4
+}

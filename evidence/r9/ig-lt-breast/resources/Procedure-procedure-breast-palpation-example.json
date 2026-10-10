@@ -1,0 +1,42 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-breast-palpation-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+    ]
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/example-practitioner-role"
+      },
+      "function": {
+        "coding": [
+          {
+            "code": "223366009",
+            "system": "http://snomed.info/sct",
+            "display": "Healthcare professional"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "113011001",
+        "system": "http://snomed.info/sct",
+        "display": "Palpation (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-first-visit-example"
+  },
+  "occurrenceDateTime": "2024-06-15T09:40:00+03:00"
+}

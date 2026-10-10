@@ -1,0 +1,69 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-cervical-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-report-lt-cervical"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.330.1",
+      "value": "CERVICAL-RPT-2025-0001"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "721981007",
+        "system": "http://snomed.info/sct",
+        "display": "Diagnostic studies report (record artifact)"
+      },
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-hpv-result-example"
+    },
+    {
+      "reference": "Observation/observation-cytology-conclusion-example"
+    },
+    {
+      "reference": "Observation/observation-colposcopy-finding-example"
+    },
+    {
+      "reference": "Observation/observation-clinical-history-routine-example"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-03-15T10:00:00+02:00",
+  "issued": "2025-03-20T14:30:00+02:00",
+  "composition": {
+    "reference": "Composition/composition-cervical-screening-episode-example"
+  },
+  "conclusion": "HPV 16 positive, LSIL on cytology, low-risk colposcopy (Swede score 3). Follow-up recommended in 12 months."
+}

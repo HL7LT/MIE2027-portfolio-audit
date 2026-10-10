@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LymphovascularInvasionVS",
+  "id": "lymphovascular-invasion",
+  "title": "Lymphovascular Invasion",
+  "description": "Microscopic finding of lymphatic and/or vascular tumor invasion.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lymphovascular-invasion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+        "concept": [
+          {
+            "code": "lvi-not-identified",
+            "display": "Lymphovascular invasion not identified"
+          },
+          {
+            "code": "lvi-present",
+            "display": "Lymphovascular invasion present"
+          },
+          {
+            "code": "lvi-ambiguous",
+            "display": "Lymphovascular invasion ambiguous"
+          },
+          {
+            "code": "lvi-cannot-evaluate",
+            "display": "Lymphovascular invasion cannot be evaluated"
+          }
+        ]
+      }
+    ]
+  }
+}

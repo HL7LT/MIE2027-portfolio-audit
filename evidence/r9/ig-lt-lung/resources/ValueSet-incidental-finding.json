@@ -1,0 +1,213 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "IncidentalFindingVS",
+  "id": "incidental-finding",
+  "title": "Incidental Finding",
+  "description": "Significant incidental findings in the chest and abdominal areas detected during low-dose chest computed tomography (LDCT) screening.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/incidental-finding",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "233703007",
+            "display": "Interstitial lung disease (disorder)"
+          },
+          {
+            "code": "87433001",
+            "display": "Pulmonary emphysema (disorder)"
+          },
+          {
+            "code": "12295008",
+            "display": "Bronchiectasis (disorder)"
+          },
+          {
+            "code": "365664001",
+            "display": "Finding of pleural fluid appearance (finding)"
+          },
+          {
+            "code": "301256004",
+            "display": "Pleura finding (finding)"
+          },
+          {
+            "code": "540881000124100",
+            "display": "Mass of pleura (finding)"
+          },
+          {
+            "code": "233659006",
+            "display": "Asbestos-induced pleural plaque (disorder)"
+          },
+          {
+            "code": "32931001",
+            "display": "Calcification of pleura (disorder)"
+          },
+          {
+            "code": "36118008",
+            "display": "Pneumothorax (disorder)"
+          },
+          {
+            "code": "109363001",
+            "display": "Right pneumothorax (disorder)"
+          },
+          {
+            "code": "109364007",
+            "display": "Left pneumothorax (disorder)"
+          },
+          {
+            "code": "16838000",
+            "display": "Mediastinal emphysema (disorder)"
+          },
+          {
+            "code": "126728003",
+            "display": "Neoplasm of diaphragm (disorder)"
+          },
+          {
+            "code": "39839004",
+            "display": "Diaphragmatic hernia (disorder)"
+          },
+          {
+            "code": "286972004",
+            "display": "Complicated diaphragmatic hernia (disorder)"
+          },
+          {
+            "code": "95436008",
+            "display": "Lung consolidation (disorder)"
+          },
+          {
+            "code": "154283005",
+            "display": "Pulmonary tuberculosis (disorder)"
+          },
+          {
+            "code": "772170009",
+            "display": "Tuberculosis suspected (situation)"
+          },
+          {
+            "code": "445512009",
+            "display": "Calcification of coronary artery (disorder)"
+          },
+          {
+            "code": "250978003",
+            "display": "Aortic valve calcification (disorder)"
+          },
+          {
+            "code": "433068007",
+            "display": "Aneurysm of thoracic aorta (disorder)"
+          },
+          {
+            "code": "94147001",
+            "display": "Mass of mediastinum (finding)"
+          },
+          {
+            "code": "30746006",
+            "display": "Lymphadenopathy (disorder)"
+          },
+          {
+            "code": "704281009",
+            "display": "Head and neck lymphadenopathy (disorder)"
+          },
+          {
+            "code": "52324001",
+            "display": "Mediastinal lymphadenopathy (disorder)"
+          },
+          {
+            "code": "87500009",
+            "display": "Hilar lymphadenopathy (disorder)"
+          },
+          {
+            "code": "127189005",
+            "display": "Axillary lymphadenopathy (disorder)"
+          },
+          {
+            "code": "237557003",
+            "display": "Mass of thyroid gland (finding)"
+          },
+          {
+            "code": "373945007",
+            "display": "Pericardial effusion (disorder)"
+          },
+          {
+            "code": "37657006",
+            "display": "Disorder of esophagus (disorder)"
+          },
+          {
+            "code": "78974003",
+            "display": "Dilatation of esophagus (disorder)"
+          },
+          {
+            "code": "300287006",
+            "display": "Esophageal mass (finding)"
+          },
+          {
+            "code": "233985008",
+            "display": "Abdominal aortic aneurysm (disorder)"
+          },
+          {
+            "code": "89164003",
+            "display": "Breast lump (finding)"
+          },
+          {
+            "code": "300332007",
+            "display": "Liver mass (finding)"
+          },
+          {
+            "code": "309088003",
+            "display": "Renal mass (finding)"
+          },
+          {
+            "code": "312894000",
+            "display": "Osteopenia (disorder)"
+          },
+          {
+            "code": "203438009",
+            "display": "Vertebral osteoporosis (disorder)"
+          },
+          {
+            "code": "42942008",
+            "display": "Compression fracture of vertebral column (disorder)"
+          },
+          {
+            "code": "118953000",
+            "display": "Bone finding (finding)"
+          },
+          {
+            "code": "237783006",
+            "display": "Mass of adrenal gland (finding)"
+          },
+          {
+            "code": "65275009",
+            "display": "Acute cholecystitis (disorder)"
+          },
+          {
+            "code": "138561000119104",
+            "display": "Gallbladder mass (disorder)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code",
+        "concept": [
+          {
+            "code": "interstitial-non-subpleural",
+            "display": "Interstitial lung changes - non-subpleural"
+          },
+          {
+            "code": "interstitial-subpleural-non-fibrotic",
+            "display": "Interstitial lung changes - subpleural non-fibrotic"
+          },
+          {
+            "code": "interstitial-subpleural-fibrous",
+            "display": "Interstitial lung changes - subpleural fibrous"
+          },
+          {
+            "code": "interstitial-rb-ipl",
+            "display": "Respiratory bronchiolitis (RB-IPL)"
+          }
+        ]
+      }
+    ]
+  }
+}

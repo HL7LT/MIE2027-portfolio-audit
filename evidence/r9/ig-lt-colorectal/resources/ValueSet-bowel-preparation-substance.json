@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BowelPreparationSubstanceVS",
+  "id": "bowel-preparation-substance",
+  "title": "Bowel Preparation Substances",
+  "description": "Substances used for bowel preparation before colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bowel-preparation-substance",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "712567003",
+            "display": "Macrogol 4000 (substance)"
+          },
+          {
+            "code": "712566007",
+            "display": "Macrogol 3350 (substance)"
+          },
+          {
+            "code": "715699009",
+            "display": "Sodium picosulfate, magnesium oxide, citric acid (substance)"
+          },
+          {
+            "code": "69958001",
+            "display": "Sodium sulfate (substance)"
+          }
+        ]
+      }
+    ]
+  }
+}

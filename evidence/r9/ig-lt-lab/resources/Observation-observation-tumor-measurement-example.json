@@ -1,0 +1,102 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tumor-measurement-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/tumor-measurement-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "valueQuantity": {
+        "unit": "mm",
+        "value": 3
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "372299002",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor size, dimension 1"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "unit": "mm",
+        "value": 2
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "372300005",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor size, dimension 2"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "unit": "mm",
+        "value": 1
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "372301009",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor size, dimension 3"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "unit": "mm",
+        "value": 3
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "371479009",
+            "system": "http://snomed.info/sct",
+            "display": "Tumor size, largest dimension"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "263605001",
+        "system": "http://snomed.info/sct",
+        "display": "Tumor size"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2024-06-01T10:00:00Z",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "117259009",
+        "system": "http://snomed.info/sct",
+        "display": "Microscopic examination"
+      }
+    ]
+  }
+}

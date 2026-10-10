@@ -1,0 +1,49 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodystructure-blood-pressure-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-structure-blood-pressure"
+    ]
+  },
+  "includedStructure": [
+    {
+      "bodyLandmarkOrientation": [
+        {
+          "landmarkDescription": [
+            {
+              "coding": [
+                {
+                  "code": "33586001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Sitting position (finding)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "structure": {
+        "coding": [
+          {
+            "code": "7657000",
+            "system": "http://snomed.info/sct",
+            "display": "Structure of femoral artery (body structure)"
+          }
+        ]
+      },
+      "laterality": {
+        "coding": [
+          {
+            "code": "24028007",
+            "system": "http://snomed.info/sct",
+            "display": "Right"
+          }
+        ]
+      }
+    }
+  ],
+  "patient": {
+    "reference": "Patient/patient-example"
+  }
+}

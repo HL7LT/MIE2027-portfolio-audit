@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-cholesterol-ldl-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-ldl-lab-lt"
+    ]
+  },
+  "valueQuantity": {
+    "value": 122
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "LDL cholesterol calculated using the Friedewald formula."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "13457-7",
+        "system": "http://loinc.org",
+        "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

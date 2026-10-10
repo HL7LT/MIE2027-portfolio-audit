@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypAccessVS",
+  "id": "polyp-access",
+  "title": "Polyp Access Difficulty",
+  "description": "Difficulty of access to the polyp during endoscopy, used in SMSA scoring.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/polyp-access",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "access-easy",
+            "display": "Easy"
+          },
+          {
+            "code": "access-heavy",
+            "display": "Heavy"
+          }
+        ]
+      }
+    ]
+  }
+}

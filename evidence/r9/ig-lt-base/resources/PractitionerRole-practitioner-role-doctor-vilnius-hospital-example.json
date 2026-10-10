@@ -1,0 +1,27 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "practitioner-role-doctor-vilnius-hospital-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+    ]
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "doctor",
+          "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+          "display": "Doctor"
+        }
+      ]
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/practitioner-example"
+  },
+  "organization": {
+    "reference": "Organization/organization-example"
+  },
+  "active": true
+}

@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstatePiqualVS",
+  "id": "prostate-piqual",
+  "title": "Prostate - PI-QUAL",
+  "description": "Prostate Imaging Quality score for prostate MRI image quality assessment.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-piqual",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual"
+      }
+    ]
+  }
+}

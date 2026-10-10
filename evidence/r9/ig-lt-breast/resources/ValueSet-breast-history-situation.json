@@ -1,0 +1,58 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastHistorySituationVS",
+  "id": "breast-history-situation",
+  "title": "Breast History Situations",
+  "description": "A value set of SNOMED CT situations representing various types of breast history.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-history-situation",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "71661000210109",
+            "display": "History of operation on breast (situation)"
+          },
+          {
+            "code": "161586000",
+            "display": "History of injury (situation)"
+          },
+          {
+            "code": "312850006",
+            "display": "History of disorder (situation)"
+          },
+          {
+            "code": "429087003",
+            "display": "History of malignant neoplasm of breast"
+          },
+          {
+            "code": "11001921000119108",
+            "display": "History of carcinoma in situ of breast (situation)"
+          },
+          {
+            "code": "162161004",
+            "display": "No breast lump"
+          },
+          {
+            "code": "700146008",
+            "display": "No history of malignant tumor of breast"
+          },
+          {
+            "code": "160392000",
+            "display": "Family history: Breast disease (situation)"
+          },
+          {
+            "code": "313376005",
+            "display": "No family history: breast carcinoma (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

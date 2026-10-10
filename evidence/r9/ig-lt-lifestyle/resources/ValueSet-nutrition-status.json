@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "NutritionStatusLtLifestyle",
+  "id": "nutrition-status",
+  "title": "Nutrition Status",
+  "description": "Categorical assessment of whether the patient's nutrition is balanced or unbalanced.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/nutrition-status",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "226229006",
+            "display": "Balanced diet (finding)"
+          },
+          {
+            "code": "424890008",
+            "display": "Unbalanced diet (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

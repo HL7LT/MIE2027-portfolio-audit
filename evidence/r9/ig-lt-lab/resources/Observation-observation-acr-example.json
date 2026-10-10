@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-acr-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/acr-lab-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "unit": "mg/g creatinine",
+    "system": "http://unitsofmeasure.org",
+    "code": "mg/g{creat}",
+    "value": 18
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Urine albumin/creatinine ratio within normal range (<30 mg/g creatinine)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "32294-1",
+        "system": "http://loinc.org",
+        "display": "Albumin/Creatinine [Ratio] in Urine"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

@@ -1,0 +1,191 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lung-report-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/lung-report-lt-lung",
+  "name": "LungReportLtLung",
+  "title": "Lung LDCT Report (LT Lung)",
+  "status": "active",
+  "description": "Overall lung LDCT diagnostic report covering the low-dose chest computed tomography screening pathway. Wraps a LungCompositionLtLung and aggregates structured results including LUNG-RADS assessments, pulmonary nodule observations, incidental findings, and follow-up recommendations.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 2
+      },
+      {
+        "id": "DiagnosticReport.code.coding:doc-type",
+        "path": "DiagnosticReport.code.coding",
+        "sliceName": "doc-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "4261000179100",
+          "system": "http://snomed.info/sct",
+          "display": "Computed tomography imaging report"
+        }
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.performer",
+        "path": "DiagnosticReport.performer",
+        "short": "Specialist(s) involved in the LDCT screening (technologist, reporting radiologist)"
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "DiagnosticReport.result:lungRads",
+        "path": "DiagnosticReport.result",
+        "sliceName": "lungRads",
+        "short": "LUNG-RADS assessment",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:pulmonaryNodule",
+        "path": "DiagnosticReport.result",
+        "sliceName": "pulmonaryNodule",
+        "short": "Pulmonary nodule observation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:incidentalFinding",
+        "path": "DiagnosticReport.result",
+        "sliceName": "incidentalFinding",
+        "short": "Incidental finding",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:mediastinalMass",
+        "path": "DiagnosticReport.result",
+        "sliceName": "mediastinalMass",
+        "short": "Mediastinal mass",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/mediastinal-mass-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:kidneyLesion",
+        "path": "DiagnosticReport.result",
+        "sliceName": "kidneyLesion",
+        "short": "Kidney lesion",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/kidney-lesion-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:adrenalLesion",
+        "path": "DiagnosticReport.result",
+        "sliceName": "adrenalLesion",
+        "short": "Adrenal gland lesion",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/adrenal-lesion-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:recommendation",
+        "path": "DiagnosticReport.result",
+        "sliceName": "recommendation",
+        "short": "Follow-up recommendation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-composition-lt-lung"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

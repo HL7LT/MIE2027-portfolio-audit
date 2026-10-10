@@ -1,0 +1,46 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CoronaryCalciumInterpretationCS",
+  "id": "coronary-calcium-interpretation",
+  "title": "Coronary Artery Calcium Score Interpretation",
+  "description": "Six-level interpretation scale for coronary artery calcium (Agatston) score.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/coronary-calcium-interpretation",
+  "concept": [
+    {
+      "code": "0",
+      "display": "No calcification (score 0)",
+      "definition": "No coronary artery calcification detected."
+    },
+    {
+      "code": "1-10",
+      "display": "Minimal (score 1-10)",
+      "definition": "Minimal coronary artery calcification."
+    },
+    {
+      "code": "11-100",
+      "display": "Mild (score 11-100)",
+      "definition": "Mild coronary artery calcification."
+    },
+    {
+      "code": "101-400",
+      "display": "Moderate (score 101-400)",
+      "definition": "Moderate coronary artery calcification."
+    },
+    {
+      "code": "401-1000",
+      "display": "Significant (score 401-1000)",
+      "definition": "Significant coronary artery calcification."
+    },
+    {
+      "code": "gt1000",
+      "display": "Very significant (score > 1000)",
+      "definition": "Very significant coronary artery calcification."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 6
+}

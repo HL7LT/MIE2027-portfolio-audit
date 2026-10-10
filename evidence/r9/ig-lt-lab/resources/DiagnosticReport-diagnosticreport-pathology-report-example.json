@@ -1,0 +1,94 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-pathology-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/pathology-report-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/pathology-report-number",
+      "value": "3f69e0a5-2177-4540-baab-7a5d0877428f"
+    }
+  ],
+  "basedOn": [
+    {
+      "reference": "ServiceRequest/servicerequest-pathology-order-example"
+    },
+    {
+      "reference": "ServiceRequest/servicerequest-pathology-prostate-order-example"
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/specimen-right-breast-example"
+    },
+    {
+      "reference": "Specimen/specimen-left-breast-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-specimen-adequacy-example"
+    },
+    {
+      "reference": "Observation/observation-estrogen-receptor-status-example"
+    },
+    {
+      "reference": "Observation/observation-progesterone-receptor-status-example"
+    },
+    {
+      "reference": "Observation/observation-her2-receptor-status-example"
+    },
+    {
+      "reference": "Observation/observation-specimen-measurement-example"
+    },
+    {
+      "reference": "Observation/observation-tumor-observable-example"
+    },
+    {
+      "reference": "Observation/observation-tumor-measurement-example"
+    }
+  ],
+  "conclusionCode": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/sid/icd-10",
+          "code": "C10.1",
+          "display": "Anterior surface of epiglottis"
+        },
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/icd-o-3",
+          "code": "8140/2",
+          "display": "Adenocarcinoma in situ, NOS"
+        }
+      ]
+    }
+  ],
+  "language": "en",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "714797009",
+        "system": "http://snomed.info/sct",
+        "display": "Histologic test (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2022-10-25T13:35:00+01:00",
+  "composition": {
+    "reference": "Composition/composition-pathology-example"
+  },
+  "conclusion": "Histopathological examination of the breast tissue specimens confirms the presence of invasive ductal carcinoma in the right breast and benign fibrocystic changes in the left breast."
+}

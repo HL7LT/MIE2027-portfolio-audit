@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-birads-1-negative-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/birads-assessment-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "146611000146107",
+        "system": "http://snomed.info/sct",
+        "display": "Breast Imaging Reporting and Data System assessment category (observable entity)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2023-08-01T10:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "397140005",
+        "system": "http://snomed.info/sct",
+        "display": "Mammography assessment (Category 1) - Negative (finding)"
+      }
+    ]
+  }
+}

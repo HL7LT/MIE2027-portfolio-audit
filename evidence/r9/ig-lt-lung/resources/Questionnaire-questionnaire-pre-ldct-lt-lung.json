@@ -1,0 +1,452 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-pre-ldct-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/Questionnaire/questionnaire-pre-ldct-lt-lung",
+  "title": "Questionnaire: Pre-LDCT Questionnaire (LT Lung)",
+  "description": "Structured data-capture form for the pre-examination questionnaire before LDCT screening, based on ADP Table 7.2. Captures functional status, prior examinations, anthropometrics, smoking history, and current diagnoses.",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "registration-date",
+          "text": "CT study registration date",
+          "type": "dateTime"
+        }
+      ],
+      "linkId": "grp-registration",
+      "text": "Registration",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "self-care",
+          "text": "Do you serve yourself?",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bedridden",
+          "text": "Bedridden/chairbound",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-functional-status",
+      "text": "Functional status",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "prior-chest-ct",
+          "text": "Previous chest (lung) CT in the last 3 years",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "prior-chest-ct",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "linkId": "prior-chest-ct-date",
+          "text": "Date of previous chest CT examination (if known)",
+          "type": "date",
+          "required": false,
+          "repeats": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "recent-respiratory-infection",
+          "text": "Acute respiratory infection within 3 months prior to the invitation",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-prior-exams",
+      "text": "Prior examinations",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "height",
+          "text": "Height (cm)",
+          "type": "quantity",
+          "required": true
+        },
+        {
+          "linkId": "weight",
+          "text": "Body mass weight (kg)",
+          "type": "quantity",
+          "required": true
+        }
+      ],
+      "linkId": "grp-anthropometrics",
+      "text": "Anthropometrics",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "smokes",
+          "text": "Currently smokes",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smokes",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "cigarettes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "cigarettes-per-day",
+              "text": "Number of cigarettes per day",
+              "type": "integer"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "cigarettes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "pack-years",
+              "text": "Number of pack-years",
+              "type": "decimal"
+            }
+          ],
+          "linkId": "cigarettes",
+          "text": "Cigarettes",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smokes",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "e-cigarettes",
+          "text": "Electronic cigarettes",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smokes",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "heated-tobacco",
+          "text": "Heated tobacco",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smokes",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "tobacco",
+          "text": "Tobacco (smokeless)",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smokes",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "pipe",
+          "text": "Pipe",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-current-smoking",
+      "text": "Current smoking status",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "smoked-before",
+          "text": "Smoked before",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smoked-before",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "linkId": "years-smoked",
+          "text": "How many years did he/she smoke?",
+          "type": "integer"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "smoked-before",
+              "operator": "=",
+              "answerCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+              }
+            }
+          ],
+          "linkId": "years-quit",
+          "text": "How many years have not smoked",
+          "type": "integer"
+        }
+      ],
+      "linkId": "grp-smoking-history",
+      "text": "Smoking history",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "diagnoses",
+          "text": "Diagnoses before examination (ICD codes)",
+          "type": "coding",
+          "answerConstraint": "optionsOrString",
+          "repeats": true,
+          "required": false,
+          "answerValueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      ],
+      "linkId": "grp-diagnoses",
+      "text": "Diagnoses before examination",
+      "type": "group"
+    }
+  ],
+  "name": "PreLdctQuestionnaireLtLung",
+  "status": "active"
+}

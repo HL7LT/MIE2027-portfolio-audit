@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-colonoscope-reach-ileum-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscope-reach-lt-colorectal"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "procedure",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Procedure"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "444783004",
+        "system": "http://snomed.info/sct",
+        "display": "Screening colonoscopy (procedure)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "85774003",
+        "system": "http://snomed.info/sct",
+        "display": "Structure of distal portion of ileum (body structure)"
+      }
+    ]
+  }
+}

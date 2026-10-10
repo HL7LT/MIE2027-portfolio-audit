@@ -1,0 +1,68 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "screening-careplan-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/screening-careplan-lt",
+  "name": "ScreeningCarePlanLt",
+  "title": "Screening CarePlan (LT)",
+  "status": "active",
+  "publisher": "HL7 Lithuania",
+  "description": "Base CarePlan for Lithuanian national screening programmes.\nCaptures programme enrollment, current status, scheduled screening activities,\nand care recommendations. Disease-specific screening IGs extend this profile\nwith programme-specific category codes and activity details.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "patternCode": "plan"
+      },
+      {
+        "id": "CarePlan.category",
+        "path": "CarePlan.category",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CarePlan.title",
+        "path": "CarePlan.title",
+        "min": 1
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.period",
+        "path": "CarePlan.period",
+        "short": "Programme participation period (enrollment to exit/completion)"
+      },
+      {
+        "id": "CarePlan.addresses",
+        "path": "CarePlan.addresses",
+        "short": "Reason for screening (e.g. age-based eligibility, risk factors)"
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "short": "Scheduled screening activities"
+      },
+      {
+        "id": "CarePlan.note",
+        "path": "CarePlan.note",
+        "short": "Programme notes, recommendations, follow-up interval"
+      }
+    ]
+  }
+}

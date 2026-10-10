@@ -1,0 +1,911 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.lung",
+  "url": "https://hl7.lt/fhir/lung/ImplementationGuide/lt.hl7.fhir.lung",
+  "version": "0.0.1",
+  "name": "LTLung",
+  "title": "Lithuanian Lung Cancer Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Lung Cancer Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.lung",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "ValueSet/adrenal-laterality"
+        },
+        "name": "Adrenal Laterality",
+        "description": "Adrenal gland laterality for lesion location (ADP 1.2.2.2 item 14).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/adrenal-lesion-lt-lung"
+        },
+        "name": "Adrenal Lesion (LT Lung)",
+        "description": "Adrenal gland lesion incidental finding detected during LDCT screening,\nper ADP dataset section 1.2.2.2 item 14.\nCaptures laterality, largest dimension, and density in Hounsfield units (HV).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/lung-composition-ldct-example"
+        },
+        "name": "Composition: LDCT Screening Report (example)",
+        "description": "LDCT screening composition with solid nodule in right upper lobe, moderate coronary calcification, LUNG-RADS 4A impression, and 3-month follow-up recommendation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-composition-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-lung-ldct-questionnaire-to-fhir"
+        },
+        "name": "ConceptMap: LDCT structured-report Questionnaire → FHIR mapping (prototype)",
+        "description": "Maps linkIds of the LDCT structured-report Questionnaire to Lung / foundation profiles, including Lung-RADS, pulmonary nodules, incidental findings, and dose Observations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-lung-pre-ldct-questionnaire-to-fhir"
+        },
+        "name": "ConceptMap: Pre-LDCT Questionnaire → FHIR mapping (prototype)",
+        "description": "Maps linkIds of the pre-LDCT intake Questionnaire to foundation (Base / VitalSigns / Lifestyle) profiles. Prototype skeleton supplied with the JMIR Med Inform implementation report.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/consolidation-interpretation"
+        },
+        "name": "Consolidation Interpretation",
+        "description": "Interpretation subtypes for lung consolidation detected during LDCT screening: likely inflammatory or suspected malignant (ADP 1.2.2.1 item 9).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coronary-calcification-score"
+        },
+        "name": "Coronary Calcification Visual Score",
+        "description": "Visual semi-quantitative scoring of coronary artery calcification during LDCT screening (ADP 1.2.2.2 item 1).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-lung-report-example"
+        },
+        "name": "DiagnosticReport: LDCT Screening Report (example)",
+        "description": "LDCT screening report aggregating LUNG-RADS 4A assessment, solid nodule in right upper lobe, moderate coronary calcification, and 3-month follow-up recommendation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-report-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/finding-density"
+        },
+        "name": "Finding Density",
+        "description": "Radiologic density or texture types of a lesion detected during LDCT screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/finding-multiplicity"
+        },
+        "name": "Finding Multiplicity",
+        "description": "Number of occurrences of a finding: singular or multiple.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/finding-quantity"
+        },
+        "name": "Finding Quantity",
+        "description": "Amount of a finding: small, medium, or large. Used for pleural fluid, pericardial effusion, and similar quantifiable incidental findings.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ImagingStudy/imagingstudy-ldct-example"
+        },
+        "name": "ImagingStudy: LDCT Screening (example)",
+        "description": "Low-dose chest CT imaging study acquired during lung cancer screening.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/incidental-finding"
+        },
+        "name": "Incidental Finding",
+        "description": "Significant incidental findings in the chest and abdominal areas detected during low-dose chest computed tomography (LDCT) screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/incidental-finding-lt-lung"
+        },
+        "name": "Incidental Finding (LT Lung)",
+        "description": "Significant incidental finding detected during low-dose chest computed tomography (LDCT) screening. Covers both pulmonary incidental findings (emphysema, bronchiectasis, pleural changes, etc.) and extra-pulmonary findings (coronary calcification, aortic aneurysm, mediastinal mass, etc.) as defined in the MDKT dataset sections 1.2.2.1 and 1.2.2.2.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/kidney-laterality"
+        },
+        "name": "Kidney Laterality",
+        "description": "Kidney laterality for lesion location.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/kidney-lesion-lt-lung"
+        },
+        "name": "Kidney Lesion (LT Lung)",
+        "description": "Kidney lesion incidental finding detected during LDCT screening.\nSignificant lesions are 1 cm or larger, or smaller ones where malignancy\ncannot be excluded, per ADP dataset section 1.2.2.2 item 12.\nCalcified density can co-occur with cystic, solid, or complex.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/kidney-lesion-density"
+        },
+        "name": "Kidney Lesion Density",
+        "description": "Density types for kidney lesions detected during LDCT screening. Calcified can co-occur with cystic, solid, or complex.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-ldct-questionnaire-item"
+        },
+        "name": "LDCT structured-report Questionnaire item (linkId)",
+        "description": "Stable linkId values for the LDCT structured-report Questionnaire; source codes for the Lung ConceptMap prototype.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lung-composition-lt-lung"
+        },
+        "name": "Lung Composition (LT Lung)",
+        "description": "Lung-specific imaging composition extending the base imaging composition with lung-specific constraints on findings, impression, and recommendation sections. Designed for use in the Lithuanian lung cancer prevention programme LDCT screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lung-report-lt-lung"
+        },
+        "name": "Lung LDCT Report (LT Lung)",
+        "description": "Overall lung LDCT diagnostic report covering the low-dose chest computed tomography screening pathway. Wraps a LungCompositionLtLung and aggregates structured results including LUNG-RADS assessments, pulmonary nodule observations, incidental findings, and follow-up recommendations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lung-lobe"
+        },
+        "name": "Lung Lobe",
+        "description": "Allowed lung lobe body structure codes for localisation of pulmonary nodules\nin the Lithuanian lung cancer early diagnosis programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-questionnaire-options"
+        },
+        "name": "Lung questionnaire answer options",
+        "description": "Illustrative answer option codes for ESPBI questionnaire forms used in the Lithuanian lung cancer prevention programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-fhir-mapping-target"
+        },
+        "name": "Lung Questionnaire → FHIR profile mapping target",
+        "description": "Short identifiers for the FHIR profile / element combinations referenced by the Lung ConceptMap prototype.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lung-recommendation-observation-lt-lung"
+        },
+        "name": "Lung Screening Recommendation (LT Lung)",
+        "description": "Recommendation for follow-up or referral after low-dose chest CT (LDCT)\nscreening examination in the Lithuanian lung cancer early diagnosis programme.\n\nThis observation captures the recommended next action following the final\nLUNG-RADS assessment.\n\nSNOMED CT code 424900004 is used for the observation concept\n'Recommendation - action (qualifier value)'.\nThe actual recommendation value is represented using a local code system,\nbecause the source dataset provides programme-specific recommendation options.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-recommendation"
+        },
+        "name": "Lung Screening Recommendation Codes",
+        "description": "Recommendation codes used in the Lithuanian lung cancer early diagnosis\nprogramme for follow-up and referral actions after LUNG-RADS assessment.\n\nThese codes represent the recommended next clinical action based on the\nradiological conclusion and programme rules.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lung-recommendation"
+        },
+        "name": "Lung Screening Recommendation Value Set",
+        "description": "Allowed recommendation codes used in the Lithuanian lung cancer early\ndiagnosis programme for follow-up and referral decisions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lung-rads-assessment-lt-lung"
+        },
+        "name": "LUNG-RADS Assessment (LT Lung)",
+        "description": "LUNG-RADS assessment category assigned to a low-dose chest CT (LDCT)\nscreening examination in the Lithuanian lung cancer early diagnosis programme.\n\nThe observation represents the final radiological assessment that determines\nthe follow-up recommendation and screening pathway.\n\nSNOMED CT code 1362105002 is used for the observable concept\n'Lung Imaging Reporting and Data System category (observable entity)'.\nThe actual assessment value is represented using a local code system for the\nmain category values 0, 1, 2, 3, 4A, 4B, and 4X, because separate SNOMED CT\ncodes for those category values are not provided in the source dataset.\nThe optional S modifier is represented as a component.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-rads-category"
+        },
+        "name": "LUNG-RADS Assessment Categories",
+        "description": "Main LUNG-RADS assessment categories used in the Lithuanian lung cancer\nearly diagnosis programme.\n\nThese codes represent the primary final assessment category assigned\nto the low-dose chest CT screening examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lung-rads-category"
+        },
+        "name": "LUNG-RADS Assessment Category",
+        "description": "Allowed primary LUNG-RADS assessment categories used in the Lithuanian\nlung cancer early diagnosis programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-rads-modifier"
+        },
+        "name": "LUNG-RADS Assessment Modifier",
+        "description": "Additional modifier used together with the main LUNG-RADS assessment\ncategory in the Lithuanian lung cancer early diagnosis programme.\n\nThe modifier S indicates clinically significant incidental findings that\ncontribute to the overall assessment string, for example 0S or 4AS.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lung-rads-modifier"
+        },
+        "name": "LUNG-RADS Assessment Modifier Codes",
+        "description": "Allowed LUNG-RADS assessment modifier codes used in the Lithuanian\nlung cancer early diagnosis programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lymph-node-location"
+        },
+        "name": "Lymph Node Location",
+        "description": "Locations of lymphadenopathy detected during LDCT screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mediastinal-mass-lt-lung"
+        },
+        "name": "Mediastinal Mass (LT Lung)",
+        "description": "Mediastinal mass incidental finding detected during LDCT screening.\nMultiple masses can be recorded as separate observation instances.\nAt least one of size, changed density, or calcification should be documented\nper ADP dataset section 1.2.2.2 item 4.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-pleural-effusion-example"
+        },
+        "name": "Observation: Bilateral Pleural Effusion (example)",
+        "description": "Incidental finding of bilateral pleural effusion detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-coronary-calcification-example"
+        },
+        "name": "Observation: Coronary Artery Calcification, Moderate (example)",
+        "description": "Incidental finding of moderate coronary artery calcification detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-pulmonary-nodule-ground-glass-example"
+        },
+        "name": "Observation: Ground Glass Nodule – Right Middle Lobe, 9 mm (example)",
+        "description": "Ground glass pulmonary nodule in the right middle lobe (9 mm mean diameter, 320 mm3) with subpleural tissue abnormality detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-consolidation-inflammatory-example"
+        },
+        "name": "Observation: Lung Consolidation, Likely Inflammatory (example)",
+        "description": "Incidental finding of lung consolidation with structured interpretation indicating likely inflammatory origin.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lung-recommendation-3m-example"
+        },
+        "name": "Observation: Lung screening recommendation - 3 month (example)",
+        "description": "Follow-up LDCT recommended after 3 months based on LUNG-RADS 4A assessment.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lung-recommendation-pulmonologist-example"
+        },
+        "name": "Observation: Lung screening recommendation - pulmonologist consultation (example)",
+        "description": "Referral to pulmonologist consultation in an oncology cluster institution for further evaluation of suspicious findings.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lung-rads-4as-example"
+        },
+        "name": "Observation: LUNG-RADS 4A with S modifier (example)",
+        "description": "Final LUNG-RADS category 4A assessment with S modifier indicating a suspicious pulmonary lesion and a significant incidental extrapulmonary finding.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lung-rads-4a-example"
+        },
+        "name": "Observation: LUNG-RADS Category 4A (example)",
+        "description": "Final LUNG-RADS category 4A assessment indicating a suspicious pulmonary lesion requiring short-term follow-up.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-lymphadenopathy-example"
+        },
+        "name": "Observation: Mediastinal Lymphadenopathy, Multiple, Bilateral (example)",
+        "description": "Incidental finding of multiple bilateral mediastinal lymphadenopathy detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-mediastinal-mass-example"
+        },
+        "name": "Observation: Mediastinal Mass with Abnormal Density (example)",
+        "description": "Incidental finding of a 32 mm mediastinal mass with complex density detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-pulmonary-nodule-part-solid-example"
+        },
+        "name": "Observation: Part-Solid Nodule – Left Upper Lobe, 18 mm (example)",
+        "description": "Part-solid pulmonary nodule in the left upper lobe (18 mm total, 7 mm solid component) with microlobulated margin and subpleural tissue abnormality detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-incidental-emphysema-example"
+        },
+        "name": "Observation: Pulmonary Emphysema, Severe (example)",
+        "description": "Incidental finding of severe (>50%) pulmonary emphysema detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-adrenal-lesion-right-example"
+        },
+        "name": "Observation: Right Adrenal Lesion, 18mm, 12 HV (example)",
+        "description": "Incidental finding of a right adrenal gland lesion detected during LDCT screening with size and density in Hounsfield units.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/adrenal-lesion-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-pulmonary-nodule-solid-example"
+        },
+        "name": "Observation: Solid Nodule – Right Upper Lobe, 11 mm (example)",
+        "description": "Solid pulmonary nodule in the right upper lobe (11 mm mean diameter, 610 mm3) with spiculated margin detected during LDCT screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-ldct-example"
+        },
+        "name": "Organization: Santaros Klinikos (example)",
+        "description": "Healthcare institution where the LDCT screening examination was performed.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-male-example"
+        },
+        "name": "Patient: Male (example)",
+        "description": "Male patient participating in the lung cancer screening programme.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-radiologist-example"
+        },
+        "name": "Practitioner: Radiologist (example)",
+        "description": "Radiologist practitioner performing LDCT screening interpretation.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitionerrole-radiologist-example"
+        },
+        "name": "PractitionerRole: Radiologist (example)",
+        "description": "Radiologist practitioner role responsible for LDCT screening interpretation and reporting.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/lung-pre-ldct-questionnaire-item"
+        },
+        "name": "Pre-LDCT screening intake Questionnaire item (linkId)",
+        "description": "Stable linkId values for the pre-LDCT radiologist intake Questionnaire; source codes for the Lung ConceptMap prototype.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-ldct-example"
+        },
+        "name": "Procedure: LDCT Screening (example)",
+        "description": "Low-dose chest CT procedure performed as part of the lung cancer screening programme.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pulmonary-nodule-observation-lt-lung"
+        },
+        "name": "Pulmonary Nodule (LT Lung)",
+        "description": "Pulmonary nodule identified on low-dose chest CT (LDCT) in the Lithuanian\nlung cancer early diagnosis programme.\n\nOne observation represents one pulmonary nodule (Židinys). Multiple nodules\nare represented as multiple Observation instances.\n\nThe observation captures the nodule type, localisation, CT slice number,\nmorphological features, measurements, and optional note.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pulmonary-nodule-morphology"
+        },
+        "name": "Pulmonary Nodule Morphology Features",
+        "description": "Allowed morphology characteristics for pulmonary nodules in the Lithuanian\nlung cancer early diagnosis programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/pulmonary-nodule-component-code"
+        },
+        "name": "Pulmonary Nodule Observation Component Codes",
+        "description": "Local component codes for pulmonary nodule observation elements used in the\nLithuanian lung cancer early diagnosis programme when no suitable SNOMED CT\ncode is available in the source dataset.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pulmonary-nodule-type"
+        },
+        "name": "Pulmonary Nodule Type",
+        "description": "Allowed pulmonary nodule type values used in the Lithuanian lung cancer\nearly diagnosis programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/pulmonary-nodule-type-local"
+        },
+        "name": "Pulmonary Nodule Type Local Codes",
+        "description": "Local codes for pulmonary nodule types used in the Lithuanian lung cancer\nearly diagnosis programme when no suitable SNOMED CT code is available\nin the source dataset.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-ldct-lt-lung"
+        },
+        "name": "Questionnaire: LDCT ESPBI Form (LT Lung)",
+        "description": "Structured data-capture form for low-dose chest computed tomography (LDCT) reporting based on ADP Table 7.1 (MDKT dataset).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-pre-ldct-lt-lung"
+        },
+        "name": "Questionnaire: Pre-LDCT Questionnaire (LT Lung)",
+        "description": "Structured data-capture form for the pre-examination questionnaire before LDCT screening, based on ADP Table 7.2. Captures functional status, prior examinations, anthropometrics, smoking history, and current diagnoses.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-ldct-example"
+        },
+        "name": "QuestionnaireResponse: LDCT ESPBI (example)",
+        "description": "LDCT screening example – solid nodule in right upper lobe, moderate coronary calcification, LUNG-RADS 4A.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-pre-ldct-example"
+        },
+        "name": "QuestionnaireResponse: Pre-LDCT Questionnaire (example)",
+        "description": "Pre-LDCT screening questionnaire example – active smoker, 30 pack-years, height 178cm, weight 82kg.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/snomed-extension-code"
+        },
+        "name": "SNOMED CT Extension Codes",
+        "description": "Local extension codes used in the Lithuanian lung cancer early diagnosis\nprogramme when no suitable SNOMED CT code is available. These codes extend\nSNOMED CT concepts with local granularity required by the ADP dataset.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaires.html",
+          "sourceUrl": "questionnaires.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-modifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/pulmonary-nodule-type-local"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/adrenal-laterality"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/consolidation-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/coronary-calcification-score"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/finding-density"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/finding-multiplicity"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/finding-quantity"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/incidental-finding"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/kidney-laterality"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/kidney-lesion-density"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lung-lobe"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-modifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lung-recommendation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lymph-node-location"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-morphology"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-type"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

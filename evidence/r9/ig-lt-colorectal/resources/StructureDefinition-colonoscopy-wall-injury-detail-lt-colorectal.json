@@ -1,0 +1,143 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colonoscopy-wall-injury-detail-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-wall-injury-detail-lt-colorectal",
+  "name": "ColonoscopyWallInjuryDetailLtColorectal",
+  "title": "Colonoscopy Wall Injury Detail (LT Colorectal)",
+  "status": "active",
+  "publisher": "HL7 Lithuania",
+  "description": "Profile for recording Sydney classification and action taken after colon wall injury during diagnostic colonoscopy. This observation is recorded only if accidental organ perforation during a procedure or perforation of large intestine was selected as the complication type.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "303078007",
+              "system": "http://snomed.info/sct",
+              "display": "Perforation of large intestine (disorder)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.component:sydneyClassification",
+        "path": "Observation.component",
+        "sliceName": "sydneyClassification",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:sydneyClassification.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "303078007",
+              "system": "http://snomed.info/sct",
+              "display": "Perforation of large intestine (disorder)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:sydneyClassification.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/sydney-classification"
+        }
+      },
+      {
+        "id": "Observation.component:actionTaken",
+        "path": "Observation.component",
+        "sliceName": "actionTaken",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:actionTaken.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "129271007",
+              "system": "http://snomed.info/sct",
+              "display": "Management - action (qualifier value)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:actionTaken.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-wall-injury-action"
+        }
+      }
+    ]
+  }
+}

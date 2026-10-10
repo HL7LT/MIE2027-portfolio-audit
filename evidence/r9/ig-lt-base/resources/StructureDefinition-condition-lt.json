@@ -1,0 +1,111 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "condition-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+  "name": "ConditionLt",
+  "title": "ConditionLt",
+  "status": "active",
+  "description": "Lithuanian Base Condition profile, used for documenting general, symptoms, conditions, and their characteristics.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ConditionEu",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.onset[x]",
+        "path": "Condition.onset[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.participant",
+        "path": "Condition.participant",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.participant.function",
+        "path": "Condition.participant.function",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.participant.actor",
+        "path": "Condition.participant.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Condition.note",
+        "path": "Condition.note",
+        "mustSupport": true
+      }
+    ]
+  }
+}

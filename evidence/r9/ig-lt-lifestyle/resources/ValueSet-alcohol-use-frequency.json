@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AlcoholUseFrequencyVSLtLifestyle",
+  "id": "alcohol-use-frequency",
+  "title": "Alcohol Use Frequency",
+  "description": "Frequency of alcohol consumption.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/alcohol-use-frequency",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "69620002",
+            "display": "Daily (qualifier value)"
+          },
+          {
+            "code": "14497002",
+            "display": "Weekly (qualifier value)"
+          },
+          {
+            "code": "89185003",
+            "display": "Monthly (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SampleExaminationLtLab",
+  "id": "sample-examination",
+  "title": "Sample Examination Methods",
+  "description": "Microscopic or Microscopic examinations of the specimen.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/sample-examination",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "168126000",
+            "display": "Macroscopic examination"
+          },
+          {
+            "code": "117259009",
+            "display": "Microscopic examination"
+          },
+          {
+            "code": "104157003",
+            "display": "Light microscopy (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

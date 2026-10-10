@@ -1,0 +1,72 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastRecommendationVS",
+  "id": "breast-recommendation",
+  "title": "Breast Recommendation",
+  "description": "Coded recommendations for breast cancer prevention programme follow-up actions.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-recommendation",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+        "concept": [
+          {
+            "code": "rec-mammographic-control",
+            "display": "Mammographic control"
+          },
+          {
+            "code": "rec-additional-mammography",
+            "display": "Additional mammography"
+          },
+          {
+            "code": "rec-spot-compression",
+            "display": "Local compression with magnification"
+          },
+          {
+            "code": "rec-ultrasound",
+            "display": "Ultrasound examination"
+          },
+          {
+            "code": "rec-breast-specialist",
+            "display": "Breast specialist consultation"
+          },
+          {
+            "code": "rec-consultation",
+            "display": "Consultation with breast specialist"
+          },
+          {
+            "code": "rec-biopsy-ultrasound",
+            "display": "Biopsy under ultrasound"
+          },
+          {
+            "code": "rec-biopsy",
+            "display": "Biopsy indicated"
+          },
+          {
+            "code": "rec-stereotactic-biopsy",
+            "display": "Stereotactic biopsy"
+          },
+          {
+            "code": "rec-mri",
+            "display": "MRI examination"
+          },
+          {
+            "code": "rec-next-mammography",
+            "display": "Next mammography after N months"
+          },
+          {
+            "code": "rec-follow-up-6m",
+            "display": "Follow-up in 6 months"
+          },
+          {
+            "code": "rec-biopsy-indicated",
+            "display": "Biopsy indicated"
+          }
+        ]
+      }
+    ]
+  }
+}

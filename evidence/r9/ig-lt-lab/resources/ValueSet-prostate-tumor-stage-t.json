@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateTumorStageTLtLab",
+  "id": "prostate-tumor-stage-t",
+  "title": "Prostate Tumor Stage T",
+  "description": "Codes for prostate tumor stages T.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-t",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1222604002",
+            "display": "cTX (AJCC)"
+          },
+          {
+            "code": "1228882005",
+            "display": "cT0 (AJCC)"
+          },
+          {
+            "code": "1229852009",
+            "display": "pT2 (AJCC)"
+          },
+          {
+            "code": "1229859000",
+            "display": "pT3 (AJCC)"
+          },
+          {
+            "code": "1229864001",
+            "display": "pT4 (AJCC)"
+          }
+        ]
+      }
+    ]
+  }
+}

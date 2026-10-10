@@ -1,0 +1,27 @@
+{
+  "resourceType": "List",
+  "id": "skl01-list-meds-dispensed",
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "entry": [
+    {
+      "item": {
+        "reference": "MedicationDispense/1000043"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "60590-7",
+        "system": "http://loinc.org",
+        "display": "Medication dispensed.brief Document"
+      }
+    ]
+  },
+  "mode": "working",
+  "status": "current"
+}

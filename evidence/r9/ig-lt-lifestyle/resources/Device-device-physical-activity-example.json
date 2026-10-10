@@ -1,0 +1,17 @@
+{
+  "resourceType": "Device",
+  "id": "device-physical-activity-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-device-lt-lifestyle"
+    ]
+  },
+  "type": [
+    {
+      "text": "Activity tracker"
+    }
+  ],
+  "status": "active",
+  "manufacturer": "Fitbit Inc.",
+  "displayName": "Fitbit Versa 4"
+}

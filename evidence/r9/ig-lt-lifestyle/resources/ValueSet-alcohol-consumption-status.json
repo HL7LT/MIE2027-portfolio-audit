@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AlcoholConsumptionStatusLtLifestyle",
+  "id": "alcohol-consumption-status",
+  "title": "Alcohol Consumption Status",
+  "description": "Whether the patient currently consumes alcohol, does not consume alcohol, or the status is unknown.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/alcohol-consumption-status",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "105542008",
+            "display": "Current non-drinker of alcohol (finding)"
+          },
+          {
+            "code": "219006",
+            "display": "Current drinker of alcohol (finding)"
+          },
+          {
+            "code": "160580001",
+            "display": "Alcohol consumption unknown (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-cvd-eu-im-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/composition-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11369-6",
+          "system": "http://loinc.org",
+          "display": "History of Immunization note"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "83539-7",
+        "system": "http://loinc.org",
+        "display": "Cardiology Risk assessment and screening note"
+      }
+    ],
+    "text": "ŠKL rizikos vertinimas"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "section": [
+    {
+      "section": [
+        {
+          "entry": [
+            {
+              "reference": "Encounter/encounter-psychiatric-example"
+            },
+            {
+              "reference": "PractitionerRole/practitioner-role-doctor-vilnius-hospital-example"
+            }
+          ],
+          "title": "Encounter and practitioner workplace (Base)"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/observation-cvd-risk-assessment-example"
+            },
+            {
+              "reference": "Observation/observation-risk-group-high-example"
+            },
+            {
+              "reference": "Observation/observation-ekg-normal-example"
+            },
+            {
+              "reference": "Condition/condition-cvd-heart-failure-example"
+            }
+          ],
+          "title": "CVD risk assessment and programme stratification (CVD IG)"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/observation-hypertension-negligible-example"
+            },
+            {
+              "reference": "Observation/observation-dyslipidemia-treated-example"
+            },
+            {
+              "reference": "Observation/observation-diabetes-untreated-example"
+            },
+            {
+              "reference": "Observation/observation-impaired-glucose-tolerance-example"
+            }
+          ],
+          "title": "Risk factor observations (CVD IG)"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/observation-blood-pressure-example"
+            },
+            {
+              "reference": "Observation/observation-heart-rate-example"
+            },
+            {
+              "reference": "Observation/observation-body-weight-example"
+            },
+            {
+              "reference": "Observation/observation-body-height-example"
+            },
+            {
+              "reference": "Observation/observation-bmi-example"
+            },
+            {
+              "reference": "Observation/observation-waist-circumference-example"
+            }
+          ],
+          "title": "Vital signs (VitalSigns IG)",
+          "code": {
+            "coding": [
+              {
+                "code": "8716-3",
+                "system": "http://loinc.org",
+                "display": "Vital signs note"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/observation-total-cholesterol-example"
+            },
+            {
+              "reference": "Observation/observation-cholesterol-hdl-example"
+            },
+            {
+              "reference": "Observation/observation-cholesterol-ldl-example"
+            },
+            {
+              "reference": "Observation/observation-triglycerides-standalone-example"
+            },
+            {
+              "reference": "Observation/observation-glucose-venous-example"
+            },
+            {
+              "reference": "Observation/observation-hba1c-example"
+            },
+            {
+              "reference": "Observation/observation-creatinine-test-example"
+            },
+            {
+              "reference": "Observation/observation-egfr-example"
+            }
+          ],
+          "title": "Laboratory studies (Lab IG)",
+          "code": {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/observation-tobacco-use-current-smoker-example"
+            },
+            {
+              "reference": "Observation/observation-alcohol-consumption-no-example"
+            },
+            {
+              "reference": "Observation/observation-physical-activity-below-example"
+            },
+            {
+              "reference": "Observation/observation-nutrition-balanced-example"
+            },
+            {
+              "reference": "Observation/observation-family-history-cvd-positive-example"
+            }
+          ],
+          "title": "Lifestyle and family history (Lifestyle IG)"
+        },
+        {
+          "entry": [
+            {
+              "reference": "CarePlan/care-plan-cvd-screening-example"
+            },
+            {
+              "reference": "MedicationStatement/medication-statement-screening-example"
+            },
+            {
+              "reference": "Observation/observation-diabetes-duration-gt10-example"
+            }
+          ],
+          "title": "Prevention plan and medications (CVD IG)"
+        }
+      ],
+      "title": "Clinical information",
+      "code": {
+        "coding": [
+          {
+            "code": "55752-0",
+            "system": "http://loinc.org",
+            "display": "Clinical information"
+          }
+        ]
+      }
+    },
+    {
+      "entry": [
+        {
+          "reference": "CarePlan/care-plan-cvd-screening-example"
+        }
+      ],
+      "title": "Plan of care note",
+      "code": {
+        "coding": [
+          {
+            "code": "18776-5",
+            "system": "http://loinc.org",
+            "display": "Plan of care note"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "date": "2024-10-27T20:40:40+02:00",
+  "title": "ŠKL rizikos vertinimas",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  }
+}

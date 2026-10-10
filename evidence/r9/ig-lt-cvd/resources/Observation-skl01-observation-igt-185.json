@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "skl01-observation-igt-185",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+    ]
+  },
+  "component": [
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "certain",
+            "system": "http://terminology.hl7.org/CodeSystem/risk-probability",
+            "display": "Certain"
+          }
+        ],
+        "text": "Yra"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "80943009",
+            "system": "http://snomed.info/sct",
+            "display": "Risk factor"
+          }
+        ]
+      }
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "derivedFrom": [
+    {
+      "reference": "Observation/skl01-observation-treatment"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "9414007",
+        "system": "http://snomed.info/sct",
+        "display": "Impaired glucose tolerance (disorder)"
+      }
+    ]
+  },
+  "effectiveDateTime": "2014-10-28T08:01:00.000+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "UltrasoundLesionFindingVS",
+  "id": "ultrasound-lesion-finding",
+  "title": "Ultrasound Lesion Finding",
+  "description": "Lesions findings identified during breast ultrasound.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/ultrasound-lesion-finding",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "language": "en",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "399294002",
+            "display": "Cyst of breast (disorder)"
+          },
+          {
+            "code": "76616003",
+            "display": "Disorder of lymph node (disorder)"
+          },
+          {
+            "code": "254845004",
+            "display": "Fibroadenoma of breast (disorder)"
+          },
+          {
+            "code": "99571000119102",
+            "display": "Papilloma of breast (disorder)"
+          },
+          {
+            "code": "276891009",
+            "display": "Lipoma of breast (disorder)"
+          },
+          {
+            "code": "254837009",
+            "display": "Malignant neoplasm of breast (disorder)"
+          },
+          {
+            "code": "28432003",
+            "display": "Abscess of breast (disorder)"
+          },
+          {
+            "code": "79604008",
+            "display": "Disorder of breast (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

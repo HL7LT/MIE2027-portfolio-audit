@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DigitalRectalExaminationVS",
+  "id": "digital-rectal-examination",
+  "title": "Digital Rectal Examination Findings",
+  "description": "Findings from digital rectal examination (DRE) of the prostate, including consistency and palpable mass.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "276385001",
+            "display": "Soft prostate (finding)"
+          },
+          {
+            "code": "276387009",
+            "display": "Hard prostate (finding)"
+          },
+          {
+            "code": "443607001",
+            "display": "Palpable mass (finding)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+        "concept": [
+          {
+            "code": "standard-prostate",
+            "display": "Standard prostate (finding)"
+          },
+          {
+            "code": "flexible-prostate",
+            "display": "Flexible prostate (finding)"
+          },
+          {
+            "code": "inflexible-prostate",
+            "display": "Inflexible prostate (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "SnomedExtensionCode",
+  "id": "snomed-extension-code",
+  "title": "SNOMED CT Extension Codes",
+  "description": "Local extension codes used in the Lithuanian lung cancer early diagnosis\nprogramme when no suitable SNOMED CT code is available. These codes extend\nSNOMED CT concepts with local granularity required by the ADP dataset.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code",
+  "concept": [
+    {
+      "code": "interstitial-non-subpleural",
+      "display": "Interstitial lung changes - non-subpleural",
+      "definition": "Non-subpleural interstitial lung changes (>5% of lung volume)"
+    },
+    {
+      "code": "interstitial-subpleural-non-fibrotic",
+      "display": "Interstitial lung changes - subpleural non-fibrotic",
+      "definition": "Subpleural non-fibrotic interstitial lung changes"
+    },
+    {
+      "code": "interstitial-subpleural-fibrous",
+      "display": "Interstitial lung changes - subpleural fibrous",
+      "definition": "Subpleural fibrous interstitial lung changes"
+    },
+    {
+      "code": "interstitial-rb-ipl",
+      "display": "Respiratory bronchiolitis (RB-IPL)",
+      "definition": "Respiratory bronchiolitis-associated interstitial lung disease"
+    },
+    {
+      "code": "cac-none",
+      "display": "No coronary calcification",
+      "definition": "No coronary artery calcification detected by visual assessment"
+    },
+    {
+      "code": "cac-mild",
+      "display": "Mild coronary calcification",
+      "definition": "Mild coronary artery calcification by visual assessment"
+    },
+    {
+      "code": "cac-moderate",
+      "display": "Moderate coronary calcification",
+      "definition": "Moderate coronary artery calcification by visual assessment"
+    },
+    {
+      "code": "cac-severe",
+      "display": "Severe coronary calcification",
+      "definition": "Severe coronary artery calcification by visual assessment"
+    },
+    {
+      "code": "calcified",
+      "display": "Calcified",
+      "definition": "Calcified density or texture finding"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 9
+}

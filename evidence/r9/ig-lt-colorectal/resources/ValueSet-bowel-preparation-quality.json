@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BowelPreparationQualityVS",
+  "id": "bowel-preparation-quality",
+  "title": "Bowel Preparation Quality",
+  "description": "SNOMED CT codes representing the overall quality of bowel preparation for a colonoscopy procedure.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bowel-preparation-quality",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "703141002",
+            "display": "Effective bowel preparation for procedure (finding)"
+          },
+          {
+            "code": "413261003",
+            "display": "Inadequate bowel preparation (finding)"
+          },
+          {
+            "code": "722825000",
+            "display": "Bowel preparation not done (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

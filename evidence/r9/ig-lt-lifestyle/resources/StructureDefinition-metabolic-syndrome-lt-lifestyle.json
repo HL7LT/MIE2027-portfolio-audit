@@ -1,0 +1,101 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "metabolic-syndrome-lt-lifestyle",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/metabolic-syndrome-lt-lifestyle",
+  "version": "1.0.0",
+  "name": "MetabolicSyndromeLtLifestyle",
+  "title": "Metabolic Syndrome (NCEP ATP III)",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-31T12:00:00+02:00",
+  "publisher": "HL7 Lithuania",
+  "description": "Observation indicating presence of metabolic syndrome according to NCEP ATP III criteria (≥3 of 5 signs).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "364392006",
+              "system": "http://snomed.info/sct",
+              "display": "Metabolic observable"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/metabolic-syndrome-assessment"
+        }
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Interpretation of metabolic syndrome risk (if applicable)",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-interpretation"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

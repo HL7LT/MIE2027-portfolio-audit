@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "BreastParenchymaVS",
+  "id": "breast-parenchyma",
+  "title": "Breast Parenchyma Structure",
+  "description": "Ultrasound breast parenchyma structure classification.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-parenchyma",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-breast-extension",
+        "concept": [
+          {
+            "code": "parenchyma-fatty",
+            "display": "Homogeneous adipose tissue"
+          },
+          {
+            "code": "parenchyma-fibroglandular",
+            "display": "Homogeneous fibroglandular"
+          },
+          {
+            "code": "parenchyma-heterogeneous",
+            "display": "Heterogeneous"
+          }
+        ]
+      }
+    ]
+  }
+}

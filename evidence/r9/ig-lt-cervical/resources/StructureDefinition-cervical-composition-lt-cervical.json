@@ -1,0 +1,412 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cervical-composition-lt-cervical",
+  "url": "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-composition-lt-cervical",
+  "name": "CervicalCompositionLtCervical",
+  "title": "Cervical Composition (LT Cervical)",
+  "status": "active",
+  "description": "Cervical cancer screening episode composition extending the base imaging composition. Links all diagnostic reports (HPV, cytology, colposcopy, histopathology) produced during the cervical cancer screening and diagnostic pathway into a single clinical document.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.section:history",
+        "path": "Composition.section",
+        "sliceName": "history"
+      },
+      {
+        "id": "Composition.section:history.entry",
+        "path": "Composition.section.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resolve()"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Composition.section:history.entry:clinicalHistory",
+        "path": "Composition.section.entry",
+        "sliceName": "clinicalHistory",
+        "short": "Pre-analytic clinical history (cycle day, menopause, therapy, conization)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-screening-clinical-history-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:history.entry:colposcopyHistory",
+        "path": "Composition.section.entry",
+        "sliceName": "colposcopyHistory",
+        "short": "Previous colposcopy history",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-history-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:procedure",
+        "path": "Composition.section",
+        "sliceName": "procedure"
+      },
+      {
+        "id": "Composition.section:procedure.entry:procedure",
+        "path": "Composition.section.entry",
+        "sliceName": "procedure",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:procedure.entry:colposcopyProcedure",
+        "path": "Composition.section.entry",
+        "sliceName": "colposcopyProcedure",
+        "short": "Colposcopy procedure",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-procedure-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:procedure.entry:biopsyProcedure",
+        "path": "Composition.section.entry",
+        "sliceName": "biopsyProcedure",
+        "short": "Biopsy procedure during colposcopy",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-biopsy-procedure-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings",
+        "path": "Composition.section",
+        "sliceName": "findings"
+      },
+      {
+        "id": "Composition.section:findings.entry:finding",
+        "path": "Composition.section.entry",
+        "sliceName": "finding",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:findings.entry:hpvResult",
+        "path": "Composition.section.entry",
+        "sliceName": "hpvResult",
+        "short": "HPV DNA test result with genotyping",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-test-result-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:cytologyConclusion",
+        "path": "Composition.section.entry",
+        "sliceName": "cytologyConclusion",
+        "short": "Cytology Bethesda classification conclusion",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/cytology-conclusion-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:colposcopyFinding",
+        "path": "Composition.section.entry",
+        "sliceName": "colposcopyFinding",
+        "short": "Colposcopy finding (adequacy, Swede score)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-finding-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:histopathologyConclusion",
+        "path": "Composition.section.entry",
+        "sliceName": "histopathologyConclusion",
+        "short": "Histopathology diagnostic conclusion",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-conclusion-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:hpvReport",
+        "path": "Composition.section",
+        "sliceName": "hpvReport",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:hpvReport.title",
+        "path": "Composition.section.title",
+        "patternString": "HPV Testing"
+      },
+      {
+        "id": "Composition.section:hpvReport.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "35904009",
+              "system": "http://snomed.info/sct",
+              "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:hpvReport.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-diagnostic-report-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:cytologyReport",
+        "path": "Composition.section",
+        "sliceName": "cytologyReport",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:cytologyReport.title",
+        "path": "Composition.section.title",
+        "patternString": "Cervical Cytology (Pap Test)"
+      },
+      {
+        "id": "Composition.section:cytologyReport.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "416107004",
+              "system": "http://snomed.info/sct",
+              "display": "Cervical cytology test (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:cytologyReport.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/cytology-diagnostic-report-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:colposcopyReport",
+        "path": "Composition.section",
+        "sliceName": "colposcopyReport",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:colposcopyReport.title",
+        "path": "Composition.section.title",
+        "patternString": "Colposcopy Examination"
+      },
+      {
+        "id": "Composition.section:colposcopyReport.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "392003006",
+              "system": "http://snomed.info/sct",
+              "display": "Colposcopy (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:colposcopyReport.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-diagnostic-report-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:histologyReport",
+        "path": "Composition.section",
+        "sliceName": "histologyReport",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:histologyReport.title",
+        "path": "Composition.section.title",
+        "patternString": "Histopathology"
+      },
+      {
+        "id": "Composition.section:histologyReport.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "714797009",
+              "system": "http://snomed.info/sct",
+              "display": "Histologic test (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:histologyReport.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-diagnostic-report-lt-cervical"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:lifestyle",
+        "path": "Composition.section",
+        "sliceName": "lifestyle",
+        "short": "Cross-IG references to lifestyle observations (tobacco use, physical activity)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:lifestyle.title",
+        "path": "Composition.section.title",
+        "patternString": "Lifestyle Factors"
+      },
+      {
+        "id": "Composition.section:lifestyle.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "443781008",
+              "system": "http://snomed.info/sct",
+              "display": "Assessment of lifestyle (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:lifestyle.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:vitals",
+        "path": "Composition.section",
+        "sliceName": "vitals",
+        "short": "Cross-IG references to vital sign observations (BMI, blood pressure)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Composition.section:vitals.title",
+        "path": "Composition.section.title",
+        "patternString": "Vital Signs"
+      },
+      {
+        "id": "Composition.section:vitals.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "118227000",
+              "system": "http://snomed.info/sct",
+              "display": "Vital signs finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:vitals.entry",
+        "path": "Composition.section.entry",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

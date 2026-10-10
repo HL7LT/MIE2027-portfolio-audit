@@ -1,0 +1,26 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodyStructure-prostate-peripheral-zone-mid-right-example",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core"
+    ]
+  },
+  "includedStructure": [
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "716921007",
+            "system": "http://snomed.info/sct",
+            "display": "Structure of posterolateral middle regional part of peripheral zone of right half prostate"
+          }
+        ]
+      }
+    }
+  ],
+  "active": true,
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  }
+}

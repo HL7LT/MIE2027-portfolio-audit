@@ -1,0 +1,558 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-pathology-example",
+  "item": [
+    {
+      "linkId": "grp-referral",
+      "text": "Referral to perform pathology test"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "48501019999"
+            }
+          ],
+          "linkId": "patient-personal-code",
+          "text": "Personal code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Janette"
+            }
+          ],
+          "linkId": "patient-name",
+          "text": "Name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Petrauskaite"
+            }
+          ],
+          "linkId": "patient-surname",
+          "text": "Surname"
+        },
+        {
+          "answer": [
+            {
+              "valueDate": "1985-01-01"
+            }
+          ],
+          "linkId": "patient-birth-date",
+          "text": "Date of birth"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 40
+            }
+          ],
+          "linkId": "patient-age",
+          "text": "Age"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "female",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Female"
+              }
+            }
+          ],
+          "linkId": "patient-gender",
+          "text": "Gender"
+        }
+      ],
+      "linkId": "grp-patient",
+      "text": "Patient information"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-03-07T09:15:00+02:00"
+            }
+          ],
+          "linkId": "specimen-collection-date",
+          "text": "Date of material collection"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-03-07T10:00:00+02:00"
+            }
+          ],
+          "linkId": "specimen-shipment-date",
+          "text": "Shipment / formation date"
+        }
+      ],
+      "linkId": "grp-specimen-dates",
+      "text": "Specimen dates"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "C50.4"
+            }
+          ],
+          "linkId": "diagnosis-icd10-code",
+          "text": "Clinical diagnosis ICD-10-AM code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Malignant neoplasm of upper-outer quadrant of breast"
+            }
+          ],
+          "linkId": "diagnosis-name",
+          "text": "Clinical diagnosis name"
+        }
+      ],
+      "linkId": "grp-clinical-diagnosis",
+      "text": "Clinical diagnosis"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "fixation-formalin",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Fixed (10% formalin buffered solution)"
+              }
+            }
+          ],
+          "linkId": "fixation-type",
+          "text": "Material fixation type"
+        }
+      ],
+      "linkId": "grp-material",
+      "text": "Material fixation"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "proc-none",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No important information"
+              }
+            }
+          ],
+          "linkId": "previous-procedures",
+          "text": "Key clinical data"
+        },
+        {
+          "linkId": "previous-procedures-other",
+          "text": "Other information"
+        }
+      ],
+      "linkId": "grp-previous-procedures",
+      "text": "Previous procedures and key clinical data"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "IHC panel (ER, PR, HER2, Ki67)"
+            }
+          ],
+          "linkId": "special-tests-required",
+          "text": "Special tests required"
+        }
+      ],
+      "linkId": "grp-special-tests",
+      "text": "Special tests"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "radiology-performed",
+          "text": "Radiological examination performed"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "71651007",
+                "system": "http://snomed.info/sct",
+                "display": "Mammography"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "16310003",
+                "system": "http://snomed.info/sct",
+                "display": "Ultrasonography"
+              }
+            }
+          ],
+          "linkId": "radiology-exam-type",
+          "text": "Examination type"
+        },
+        {
+          "answer": [
+            {
+              "valueDate": "2025-03-05"
+            }
+          ],
+          "linkId": "radiology-exam-date",
+          "text": "Examination date"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            }
+          ],
+          "linkId": "birads-right",
+          "text": "BI-RADS right breast"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-left",
+          "text": "BI-RADS left breast"
+        }
+      ],
+      "linkId": "grp-radiological-data",
+      "text": "Radiological examination data"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "op-thick-needle-biopsy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Thick needle biopsy"
+              }
+            }
+          ],
+          "linkId": "operation-nature",
+          "text": "Nature of operation"
+        },
+        {
+          "linkId": "operation-other-details",
+          "text": "Other operation details"
+        }
+      ],
+      "linkId": "grp-operation",
+      "text": "Operation details"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "1 container, labelled 'Left breast UOQ, CNB'"
+            }
+          ],
+          "linkId": "sample-container-info",
+          "text": "Container information"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Left breast, upper-outer quadrant, 2 o'clock position, 5 cm from nipple"
+            }
+          ],
+          "linkId": "sample-biopsy-location",
+          "text": "Biopsy location"
+        }
+      ],
+      "linkId": "grp-histological-sample",
+      "text": "Description of histological sample / object"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 15,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mm"
+              }
+            }
+          ],
+          "linkId": "macro-biopsy-size",
+          "text": "Biopsy size (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "4 tissue cores, pale grey, firm, longest 15 mm"
+            }
+          ],
+          "linkId": "macro-fragment-details",
+          "text": "Fragment details"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Entirely submitted in 2 cassettes"
+            }
+          ],
+          "linkId": "macro-notes",
+          "text": "Notes"
+        }
+      ],
+      "linkId": "grp-macroscopic",
+      "text": "Description of macroscopic examination"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Core biopsy fragments showing invasive carcinoma of no special type (NST). Tumour cells arranged in nests, cords and tubular structures, surrounded by desmoplastic stroma. Moderate nuclear pleomorphism, mitotic count 8/10 HPF. No definite in-situ component identified in this limited sample."
+            }
+          ],
+          "linkId": "microscopic-description",
+          "text": "Microscopic examination description"
+        }
+      ],
+      "linkId": "grp-microscopic",
+      "text": "Description of microscopic examination"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "ihc-strong",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Strong (+++)"
+              }
+            }
+          ],
+          "linkId": "ihc-er-status",
+          "text": "Estrogen receptors ER"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 90,
+                "code": "%",
+                "system": "http://unitsofmeasure.org",
+                "unit": "%"
+              }
+            }
+          ],
+          "linkId": "ihc-er-percent",
+          "text": "ER expression in nuclei (%)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "ihc-moderate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Moderate (++)"
+              }
+            }
+          ],
+          "linkId": "ihc-pr-status",
+          "text": "Progesterone receptors PR"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 60,
+                "code": "%",
+                "system": "http://unitsofmeasure.org",
+                "unit": "%"
+              }
+            }
+          ],
+          "linkId": "ihc-pr-percent",
+          "text": "PR expression in nuclei (%)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "her2-borderline",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2: expression borderline (2+)"
+              }
+            }
+          ],
+          "linkId": "ihc-her2-status",
+          "text": "HER2 status"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "her2-eval-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2 evaluation: 2+"
+              }
+            }
+          ],
+          "linkId": "ihc-her2-evaluation",
+          "text": "HER2 evaluation"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 25,
+                "code": "%",
+                "system": "http://unitsofmeasure.org",
+                "unit": "%"
+              }
+            }
+          ],
+          "linkId": "ihc-ki67",
+          "text": "Ki67 proliferation index (%)"
+        }
+      ],
+      "linkId": "grp-ihc",
+      "text": "Immunohistochemistry (IHC)"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "fish-not-evaluated",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: not to be evaluated"
+              }
+            }
+          ],
+          "linkId": "fish-result",
+          "text": "FISH result"
+        },
+        {
+          "linkId": "fish-her2-average",
+          "text": "HER2 average"
+        },
+        {
+          "linkId": "fish-cep17-average",
+          "text": "Average CEP17"
+        },
+        {
+          "linkId": "fish-her2-cep17-ratio",
+          "text": "HER2/CEP17 ratio"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "cish-not-evaluated",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "CISH/SISH: not to be evaluated"
+              }
+            }
+          ],
+          "linkId": "cish-sish-result",
+          "text": "CISH/SISH result"
+        }
+      ],
+      "linkId": "grp-molecular",
+      "text": "Molecular studies"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Invasive breast carcinoma of no special type (NST) (ICD-O 8500/3)"
+            }
+          ],
+          "linkId": "conclusion-who-diagnosis",
+          "text": "WHO Classification diagnosis"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "grade-g2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "G2 (moderately differentiated)"
+              }
+            }
+          ],
+          "linkId": "conclusion-tumour-grade",
+          "text": "Tumour grade"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 18,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mm"
+              }
+            }
+          ],
+          "linkId": "conclusion-tumour-size",
+          "text": "Tumour size (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "lvi-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-0: not detected"
+              }
+            }
+          ],
+          "linkId": "conclusion-lvi",
+          "text": "Lymphovascular invasion"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-pathology-lt-breast",
+  "status": "completed",
+  "authored": "2025-03-10T14:30:00+02:00",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-hpv-result-group-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-test-result-lt-cervical"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "243584004",
+            "system": "http://snomed.info/sct",
+            "display": "Genus Papillomavirus (organism)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "medium",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+            "display": "Medium-risk genotype group (31, 33, 35, 45, 52, 58)"
+          }
+        ]
+      }
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Organization/organization-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "35904009",
+        "system": "http://snomed.info/sct",
+        "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-02-18",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "720005005",
+        "system": "http://snomed.info/sct",
+        "display": "Human papillomavirus deoxyribonucleic acid detected, high risk on cervical specimen (finding)"
+      }
+    ]
+  }
+}

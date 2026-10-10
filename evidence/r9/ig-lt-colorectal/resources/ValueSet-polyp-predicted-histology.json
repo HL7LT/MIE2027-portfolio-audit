@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypPredictedHistologyVS",
+  "id": "polyp-predicted-histology",
+  "title": "Polyp Predicted Histology",
+  "description": "Virtual chromoendoscopy-based predicted histological type of a colorectal polyp.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/polyp-predicted-histology",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "721691004",
+            "display": "Disorder of large intestine caused by hyperplastic polyp (disorder)"
+          },
+          {
+            "code": "1230009008",
+            "display": "Sessile serrated lesion of large intestine (disorder)"
+          },
+          {
+            "code": "399432003",
+            "display": "Adenoma of large intestine (disorder)"
+          },
+          {
+            "code": "162572001",
+            "display": "Suspected malignant neoplasm of colon (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "resourceType": "Composition",
+  "id": "skl03-composition-1",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/composition-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11369-6",
+          "system": "http://loinc.org",
+          "display": "History of Immunization note"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "78710-1",
+        "system": "http://loinc.org",
+        "display": "Cardiology Progress note"
+      }
+    ],
+    "text": "ŠKL prevencijos priemonių plano pasiekimų vertinimas"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "section": [
+    {
+      "section": [
+        {
+          "entry": [
+            {
+              "reference": "CarePlan/skl03-care-plan-3"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "18776-5",
+                "system": "http://loinc.org",
+                "display": "Plan of care note"
+              }
+            ]
+          },
+          "title": "Plan of care note"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl03-observation-vitals-panel-6"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "8716-3",
+                "system": "http://loinc.org",
+                "display": "Vital signs note"
+              }
+            ]
+          },
+          "title": "Vital signs note"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl03-observation-lab-panel-14"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          },
+          "title": "Laboratory studies (set)"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl03-observation-comment-4"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "48767-8",
+                "system": "http://loinc.org",
+                "display": "Annotation comment [Interpretation] Narrative"
+              }
+            ]
+          },
+          "title": "Komentarai"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "55752-0",
+            "system": "http://loinc.org",
+            "display": "Clinical information"
+          }
+        ]
+      },
+      "title": "Clinical information"
+    }
+  ],
+  "status": "preliminary",
+  "date": "2014-10-27T20:40:40+02:00",
+  "title": "ŠKL prevencijos priemonių plano pasiekimų vertinimas",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  },
+  "encounter": {
+    "reference": "Encounter/1000017570"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-bowel-prep-total-effective-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "722819004",
+            "system": "http://snomed.info/sct",
+            "display": "Boston bowel preparation scale finding (finding)"
+          }
+        ]
+      },
+      "valueInteger": 6
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "225106003",
+        "system": "http://snomed.info/sct",
+        "display": "Preparation of bowel for procedure (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "703141002",
+        "system": "http://snomed.info/sct",
+        "display": "Effective bowel preparation for procedure (finding)"
+      }
+    ]
+  }
+}

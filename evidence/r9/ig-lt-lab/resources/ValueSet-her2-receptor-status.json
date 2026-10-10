@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Her2ReceptorStatusVSLtLab",
+  "id": "her2-receptor-status",
+  "title": "Her2 Receptor Statuses",
+  "description": "The data item records the Her2 (human epidermal growth factor receptor 2) expression status of the tumour.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/her2-receptor-status",
+  "version": "0.1.0",
+  "experimental": false,
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/her2-receptor-status"
+      }
+    ]
+  }
+}

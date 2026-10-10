@@ -1,0 +1,28 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-tumor-biopsy-postponed-example",
+  "reason": [
+    {
+      "reference": {
+        "reference": "Observation/observation-tumor-found-example"
+      }
+    }
+  ],
+  "statusReason": {
+    "text": "Tumor biopsy postponed due to risk of excessive bleeding."
+  },
+  "status": "not-done",
+  "code": {
+    "coding": [
+      {
+        "code": "80050006",
+        "system": "http://snomed.info/sct",
+        "display": "Endoscopic biopsy of large intestine (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26"
+}

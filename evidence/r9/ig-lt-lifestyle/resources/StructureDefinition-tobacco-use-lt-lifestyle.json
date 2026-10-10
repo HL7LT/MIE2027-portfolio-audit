@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tobacco-use-lt-lifestyle",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-lt-lifestyle",
+  "version": "1.0.0",
+  "name": "TobaccoUseLtLifestyle",
+  "title": "Tobacco Use",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-25T19:10:07+03:00",
+  "publisher": "HL7 Lithuania",
+  "description": "This profile constrains the Observation resource to represent Tobacco use assessment in a patient summary.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "social-history",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Social History"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:loincCode",
+        "path": "Observation.code.coding",
+        "sliceName": "loincCode",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "72166-2",
+          "system": "http://loinc.org",
+          "display": "Tobacco smoking status"
+        }
+      },
+      {
+        "id": "Observation.code.coding:loincCode.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.code.coding:sctCode",
+        "path": "Observation.code.coding",
+        "sliceName": "sctCode",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "229819007",
+          "system": "http://snomed.info/sct",
+          "display": "Tobacco use and exposure (observable entity)"
+        }
+      },
+      {
+        "id": "Observation.code.coding:sctCode.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/smoking-status"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

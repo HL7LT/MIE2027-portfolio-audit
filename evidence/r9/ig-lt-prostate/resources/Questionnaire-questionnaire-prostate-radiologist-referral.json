@@ -1,0 +1,471 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-prostate-radiologist-referral",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "N40",
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "display": "Hyperplasia of prostate"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "C61",
+                "system": "http://hl7.org/fhir/sid/icd-10",
+                "display": "Malignant neoplasm of prostate"
+              }
+            }
+          ],
+          "linkId": "diagnosis",
+          "text": "Diagnosis (ICD-10)",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1279715000",
+                "system": "http://snomed.info/sct",
+                "display": "ISUP (International Society of Urological Pathology) grade group 1 (Gleason score 3 + 3 = 6)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1279714001",
+                "system": "http://snomed.info/sct",
+                "display": "ISUP (International Society of Urological Pathology) grade group 2 (Gleason score 3 + 4 = 7)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1279716004",
+                "system": "http://snomed.info/sct",
+                "display": "ISUP (International Society of Urological Pathology) grade group 3 (Gleason score 4 + 3 = 7)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1279717008",
+                "system": "http://snomed.info/sct",
+                "display": "ISUP (International Society of Urological Pathology) grade group 4 (Gleason score 4 + 4 = 8)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1279720000",
+                "system": "http://snomed.info/sct",
+                "display": "ISUP (International Society of Urological Pathology) grade group 5 (Gleason score 4 + 5 = 9)"
+              }
+            }
+          ],
+          "linkId": "diagnosis-grade-group",
+          "text": "Grade group (if C61)",
+          "type": "coding",
+          "required": false
+        },
+        {
+          "initial": [
+            {
+              "valueString": "Radiologist"
+            }
+          ],
+          "linkId": "specialist-qualification",
+          "text": "Specialist qualification",
+          "type": "string",
+          "required": true,
+          "readOnly": true
+        },
+        {
+          "linkId": "institution",
+          "text": "Referring institution",
+          "type": "string",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "screening-programme",
+          "text": "Screening programme participant",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-referral-context",
+      "text": "Referral context",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "complaints-anamnesis",
+          "text": "Complaints / anamnesis",
+          "type": "text",
+          "required": false
+        },
+        {
+          "linkId": "condition-assessment-info",
+          "text": "Condition assessment information",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "linkId": "grp-clinical",
+      "text": "Clinical information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-prostate",
+          "text": "Prostate cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-breast",
+          "text": "Breast cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-ovarian",
+          "text": "Ovarian cancer",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ynk-yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ynk-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "family-hx-colon",
+          "text": "Colorectal cancer",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-family-history",
+      "text": "Family oncological history (first-degree)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "standard-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Standard prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "276387009",
+                "system": "http://snomed.info/sct",
+                "display": "Hard prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "276385001",
+                "system": "http://snomed.info/sct",
+                "display": "Soft prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "flexible-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Flexible prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "inflexible-prostate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+                "display": "Inflexible prostate (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "443607001",
+                "system": "http://snomed.info/sct",
+                "display": "Palpable mass (finding)"
+              }
+            }
+          ],
+          "linkId": "dre-findings",
+          "text": "DRE findings (select all that apply)",
+          "type": "coding",
+          "required": false,
+          "repeats": true
+        }
+      ],
+      "linkId": "grp-dre",
+      "text": "Digital rectal examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "height-cm",
+          "text": "Height (cm)",
+          "type": "quantity",
+          "required": true
+        },
+        {
+          "linkId": "weight-kg",
+          "text": "Weight (kg)",
+          "type": "quantity",
+          "required": true
+        },
+        {
+          "linkId": "bmi-kg-m2",
+          "text": "BMI (kg/m2)",
+          "type": "quantity",
+          "readOnly": true
+        }
+      ],
+      "linkId": "grp-vitals",
+      "text": "Anthropometrics",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "first-psa-ngml",
+          "text": "First PSA (ng/ml)",
+          "type": "quantity",
+          "required": true
+        },
+        {
+          "linkId": "first-psa-date",
+          "text": "First PSA date",
+          "type": "date",
+          "required": true
+        }
+      ],
+      "linkId": "grp-psa",
+      "text": "PSA",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "prior-mpmri",
+          "text": "Prior mpMRI documented",
+          "type": "boolean"
+        },
+        {
+          "linkId": "prior-mpmri-date",
+          "text": "Prior mpMRI date",
+          "type": "date"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pirads-cat-1-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 1–2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 4"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 5"
+              }
+            }
+          ],
+          "linkId": "prior-mpmri-pirads",
+          "text": "Prior mpMRI PI-RADS category",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-prior-imaging",
+      "text": "Prior prostate mpMRI",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "prior-prostatectomy",
+          "text": "Prior prostate surgery",
+          "type": "boolean"
+        },
+        {
+          "linkId": "prior-prostatectomy-date",
+          "text": "Prostate surgery date",
+          "type": "date"
+        },
+        {
+          "linkId": "prior-prostate-radiation",
+          "text": "Prior prostate radiotherapy",
+          "type": "boolean"
+        },
+        {
+          "linkId": "prior-prostate-radiation-date",
+          "text": "Prostate radiotherapy date",
+          "type": "date"
+        }
+      ],
+      "linkId": "grp-prior-therapy",
+      "text": "Prior prostate-directed therapy",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "anticoagulant-use",
+          "text": "Anticoagulant use",
+          "type": "boolean"
+        }
+      ],
+      "linkId": "grp-related",
+      "text": "Related information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "specialist-additional-info",
+          "text": "Additional description for specialist",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-additional",
+      "text": "Additional information",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-radiologist-referral",
+  "version": "0.1.0",
+  "name": "ProstateRadiologistReferral",
+  "title": "Referral to a radiologist (E027)",
+  "status": "draft",
+  "date": "2025-06-01",
+  "publisher": "HL7 Lithuania"
+}

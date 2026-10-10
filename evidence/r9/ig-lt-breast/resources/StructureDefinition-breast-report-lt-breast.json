@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "breast-report-lt-breast",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/breast-report-lt-breast",
+  "name": "BreastReportLtBreast",
+  "title": "Breast Diagnostic Report (LT Breast)",
+  "status": "active",
+  "description": "Overall breast diagnostic report covering the entire breast cancer diagnostic pathway. Wraps a BreastCompositionLtBreast and aggregates structured results including BI-RADS assessments, mammographic findings, ultrasound findings, gland density, and nipple observations.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 2
+      },
+      {
+        "id": "DiagnosticReport.code.coding:doc-type",
+        "path": "DiagnosticReport.code.coding",
+        "sliceName": "doc-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "4231000179109",
+          "system": "http://snomed.info/sct",
+          "display": "Mammography report (record artifact)"
+        }
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "short": "Breast diagnostic results: BI-RADS assessments, mammographic/ultrasound findings, gland density, nipple observations",
+        "definition": "References to Observation resources that carry the structured findings of the breast diagnostic process."
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/breast-composition-lt-breast"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

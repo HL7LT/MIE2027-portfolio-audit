@@ -1,0 +1,39 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-fobt-qualitative-not-detected-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/colorectal/StructureDefinition/fecal-occult-blood-test-report-lt-colorectal"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/specimen-stool-fobt-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-fobt-qualitative-not-detected-example"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "80372-6",
+        "system": "http://loinc.org",
+        "display": "Hemoglobin [Presence] in Stool from gastrointestinal by Rapid immunoassay"
+      }
+    ]
+  },
+  "effectiveDateTime": "2026-02-26",
+  "conclusion": "No fecal occult blood detected."
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-her2-receptor-status-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "31150-6",
+        "system": "http://loinc.org",
+        "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2022-10-25T13:35:00+01:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "1",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/her2-receptor-status",
+        "display": "Her2 overexpressed or gene amplified"
+      }
+    ]
+  }
+}

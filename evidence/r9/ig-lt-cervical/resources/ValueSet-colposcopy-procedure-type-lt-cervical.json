@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColposcopyProcedureTypeLtCervicalVS",
+  "id": "colposcopy-procedure-type-lt-cervical",
+  "title": "Colposcopy-related Procedures (LT Cervical)",
+  "description": "Procedures that may be performed during colposcopy in the Lithuanian cervical cancer screening pathway.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-procedure-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "51675008",
+            "display": "Punch biopsy of cervix (procedure)"
+          },
+          {
+            "code": "23140002",
+            "display": "Loop electrosurgical excision procedure of cervix (procedure)"
+          },
+          {
+            "code": "54535009",
+            "display": "Cone biopsy of cervix (procedure)"
+          },
+          {
+            "code": "52889002",
+            "display": "Endocervical curettage (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

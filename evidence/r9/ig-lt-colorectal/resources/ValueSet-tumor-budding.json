@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TumorBuddingVS",
+  "id": "tumor-budding",
+  "title": "Tumor Budding",
+  "description": "Tumor budding classification for colorectal carcinoma.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tumor-budding",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "filter": [
+          {
+            "property": "code",
+            "op": "regex",
+            "value": "budding-.*"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-plan-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+  "name": "CarePlanLt",
+  "title": "CarePlanLt",
+  "status": "active",
+  "description": "Lithuanian Base CarePlan profile, used for describing care plans.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/CarePlanEu",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.identifier",
+        "path": "CarePlan.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.basedOn",
+        "path": "CarePlan.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+              "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.replaces",
+        "path": "CarePlan.replaces",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.status",
+        "path": "CarePlan.status",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.category",
+        "path": "CarePlan.category",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.title",
+        "path": "CarePlan.title",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.title.extension:translation",
+        "path": "CarePlan.title.extension",
+        "sliceName": "translation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/translation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.description",
+        "path": "CarePlan.description",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.org/fhir/StructureDefinition/Group"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.encounter",
+        "path": "CarePlan.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.custodian",
+        "path": "CarePlan.custodian",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.contributor",
+        "path": "CarePlan.contributor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.careTeam",
+        "path": "CarePlan.careTeam",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.addresses",
+        "path": "CarePlan.addresses",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.goal",
+        "path": "CarePlan.goal",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/goal-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity.plannedActivityReference",
+        "path": "CarePlan.activity.plannedActivityReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/appointment-lt",
+              "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/DeviceRequest",
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/NutritionOrder",
+              "http://hl7.org/fhir/StructureDefinition/Task",
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt",
+              "http://hl7.org/fhir/StructureDefinition/VisionPrescription",
+              "http://hl7.org/fhir/StructureDefinition/RequestOrchestration",
+              "http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation",
+              "http://hl7.org/fhir/StructureDefinition/SupplyRequest"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.note",
+        "path": "CarePlan.note",
+        "mustSupport": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mammographic-examination-finding-lt-breast",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast",
+  "name": "MammographicExaminationFindingLtBreast",
+  "title": "Mammographic Examination Findings",
+  "status": "active",
+  "description": "Observation representing mammographic breast changes using BodyStructure.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "constraint": [
+          {
+            "key": "mammo-diameter-only-for-mass",
+            "severity": "warning",
+            "human": "Diameter component is allowed only when Type component represents a mammographic mass.",
+            "expression": "(component.where(code.coding.code='248530000').exists()) implies (component.where(value.coding.code='129788004').exists())",
+            "source": "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+          }
+        ]
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "71651007",
+              "system": "http://snomed.info/sct",
+              "display": "Mammography (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site"
+        }
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "short": "Breast side and breast quadrants involved in finding",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "short": "Details of mammographic finding"
+      },
+      {
+        "id": "Observation.component:evolution",
+        "path": "Observation.component",
+        "sliceName": "evolution",
+        "short": "Evolution of mammographic finding",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:evolution.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "288531002",
+              "system": "http://snomed.info/sct",
+              "display": "Finding status values"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:evolution.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/finding-evolution"
+        }
+      },
+      {
+        "id": "Observation.component:Type",
+        "path": "Observation.component",
+        "sliceName": "Type",
+        "short": "Mammographic finding",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:Type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "129714008",
+              "system": "http://snomed.info/sct",
+              "display": "Mammography finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:Type.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/mammographic-finding"
+        }
+      },
+      {
+        "id": "Observation.component:Diameter",
+        "path": "Observation.component",
+        "sliceName": "Diameter",
+        "short": "Diameter in mm (only for masses)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:Diameter.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "248530000",
+              "system": "http://snomed.info/sct",
+              "display": "Diameter of lump (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:Diameter.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "patternQuantity": {
+          "code": "mm",
+          "system": "http://unitsofmeasure.org"
+        }
+      }
+    ]
+  }
+}

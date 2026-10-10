@@ -1,0 +1,13 @@
+{
+  "resourceType": "MedicationDispense",
+  "id": "1000043",
+  "medication": {
+    "concept": {
+      "text": "DSTU1 dispensed medication (id:1000043)"
+    }
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

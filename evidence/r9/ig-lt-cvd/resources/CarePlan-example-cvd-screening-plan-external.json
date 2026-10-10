@@ -1,0 +1,108 @@
+{
+  "resourceType": "CarePlan",
+  "id": "example-cvd-screening-plan-external",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+    ]
+  },
+  "contributor": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example",
+      "display": "Dr. Petras Kazlauskas, Vilniaus miesto ligoninė"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "display": "Specialist's workstation: Cardiologist"
+    },
+    {
+      "reference": "Observation/observation-risk-group-high-example",
+      "display": "Cardiovascular disease risk assessment: 24% (High)"
+    }
+  ],
+  "goal": [
+    {
+      "reference": "Goal/example-goal-ldl"
+    },
+    {
+      "reference": "Goal/example-goal-bmi"
+    },
+    {
+      "reference": "Goal/example-goal-bp"
+    }
+  ],
+  "activity": [
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "702388001",
+                "system": "http://snomed.info/sct",
+                "display": "Tobacco use cessation education (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "Pharmacological and behavior change tools selected."
+        }
+      ]
+    },
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "370847001",
+                "system": "http://snomed.info/sct",
+                "display": "Dietary needs education (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "Dietary recommendations include fruits and vegetables >200 g/day, fiber 35–45 g/day, fish twice a week, limited meat and alcohol, salt <5 g/day."
+        }
+      ]
+    },
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "819961005",
+                "system": "http://snomed.info/sct",
+                "display": "Physical activity guidance (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "30–60 minutes of moderate activity daily."
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Follow-up visit with cardiologist in 3 months."
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "created": "2025-10-31T10:00:00+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

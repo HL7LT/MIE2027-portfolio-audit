@@ -1,0 +1,195 @@
+{
+  "resourceType": "CarePlan",
+  "id": "example-cvd-screening-plan",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+    ]
+  },
+  "contributor": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example",
+      "display": "Dr. Petras Kazlauskas, Vilniaus miesto ligoninė"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "display": "Specialist's workstation: Cardiologist"
+    },
+    {
+      "reference": "Observation/observation-risk-group-high-example",
+      "display": "Cardiovascular disease risk assessment: 24% (High)"
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "Goal",
+      "id": "goal-ldl-cvdp",
+      "description": {
+        "text": "Target LDL Cholesterol < 1.8 mmol/L based on cardiovascular risk group."
+      },
+      "target": [
+        {
+          "detailQuantity": {
+            "value": 1.8,
+            "unit": "mmol/L",
+            "system": "http://unitsofmeasure.org",
+            "code": "mmol/L"
+          },
+          "measure": {
+            "coding": [
+              {
+                "code": "13457-7",
+                "system": "http://loinc.org",
+                "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation"
+              }
+            ]
+          },
+          "dueDate": "2026-10-31"
+        }
+      ],
+      "lifecycleStatus": "active",
+      "subject": {
+        "reference": "Patient/patient-male-example"
+      }
+    },
+    {
+      "resourceType": "Goal",
+      "id": "goal-bmi-cvdp",
+      "description": {
+        "text": "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9)."
+      },
+      "target": [
+        {
+          "detailQuantity": {
+            "value": 22.5,
+            "unit": "kg/m2",
+            "system": "http://unitsofmeasure.org",
+            "code": "kg/m2"
+          },
+          "measure": {
+            "coding": [
+              {
+                "code": "39156-5",
+                "system": "http://loinc.org",
+                "display": "Body mass index (BMI) [Ratio]"
+              }
+            ]
+          }
+        }
+      ],
+      "lifecycleStatus": "active",
+      "subject": {
+        "reference": "Patient/patient-male-example"
+      }
+    },
+    {
+      "resourceType": "Goal",
+      "id": "goal-bp-cvdp",
+      "description": {
+        "text": "Target BP 120–129/<80 mmHg."
+      },
+      "target": [
+        {
+          "measure": {
+            "coding": [
+              {
+                "code": "85354-9",
+                "system": "http://loinc.org",
+                "display": "Blood pressure panel with all children optional"
+              }
+            ]
+          }
+        }
+      ],
+      "lifecycleStatus": "active",
+      "subject": {
+        "reference": "Patient/patient-male-example"
+      }
+    }
+  ],
+  "goal": [
+    {
+      "reference": "#goal-ldl-cvdp"
+    },
+    {
+      "reference": "#goal-bmi-cvdp"
+    },
+    {
+      "reference": "#goal-bp-cvdp"
+    }
+  ],
+  "activity": [
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "702388001",
+                "system": "http://snomed.info/sct",
+                "display": "Tobacco use cessation education (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "Pharmacological and behavior change tools selected."
+        }
+      ]
+    },
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "370847001",
+                "system": "http://snomed.info/sct",
+                "display": "Dietary needs education (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "Dietary recommendations: fruits and vegetables >200 g/day, 35–45 g of fiber (mainly from grains), moderate unsalted nuts (30 g/day), fish 1–2 servings per week (one fatty), limited lean meat, low-fat dairy, and vegetable oils. Saturated fats <10% of total fat intake (replace with polyunsaturated fats), trans fats <1% of total energy (avoid processed foods). Salt <5–6 g/day. Alcohol <100 g per week (<15 g/day). Avoid sugary soft drinks and high-energy foods."
+        }
+      ]
+    },
+    {
+      "performedActivity": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "819961005",
+                "system": "http://snomed.info/sct",
+                "display": "Physical activity guidance (procedure)"
+              }
+            ]
+          }
+        }
+      ],
+      "progress": [
+        {
+          "text": "30–60 minutes of moderate activity daily."
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Follow-up visit with cardiologist in 3 months."
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "created": "2025-10-31T10:00:00+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

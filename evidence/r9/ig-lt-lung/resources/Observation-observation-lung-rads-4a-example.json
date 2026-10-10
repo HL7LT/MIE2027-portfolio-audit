@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-lung-rads-4a-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "method": {
+    "text": "LUNG-RADS v2022"
+  },
+  "note": [
+    {
+      "text": "Suspicious pulmonary lesion detected in the right upper lobe. Short-term follow-up LDCT is recommended."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "1362105002",
+        "system": "http://snomed.info/sct",
+        "display": "Lung Imaging Reporting and Data System category"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:30:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "4A",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-category",
+        "display": "Category 4A – Suspicious"
+      }
+    ]
+  }
+}

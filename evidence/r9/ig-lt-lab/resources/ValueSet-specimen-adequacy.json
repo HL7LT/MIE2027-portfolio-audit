@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SpecimenAdequacyVSLtLab",
+  "id": "specimen-adequacy",
+  "title": "Specimen Adequacy Code",
+  "description": "Codes for specimen adequacy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/specimen-adequacy",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "125152006",
+            "display": "Specimen satisfactory for evaluation (finding)"
+          },
+          {
+            "code": "125154007",
+            "display": "Specimen unsatisfactory for evaluation (finding)"
+          },
+          {
+            "code": "281266006",
+            "display": "No specimen received"
+          }
+        ]
+      }
+    ]
+  }
+}

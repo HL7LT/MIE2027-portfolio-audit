@@ -1,0 +1,62 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BodyWeightAssociatedSituation",
+  "id": "body-weight-associated-situation",
+  "title": "Body Weight Associated Situation",
+  "description": "SNOMED CT code system values and temporary code system values that describe situations to be considered when interpreting measured values.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "118643004",
+            "display": "Cast device (physical object)"
+          },
+          {
+            "code": "257308009",
+            "display": "Oxygenator (physical object)"
+          },
+          {
+            "code": "53350007",
+            "display": "Prosthesis, device (physical object)"
+          },
+          {
+            "code": "248160001",
+            "display": "Undressed (finding)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension",
+        "concept": [
+          {
+            "code": "961000205106",
+            "display": "Wearing street clothes, no shoes (finding)"
+          },
+          {
+            "code": "971000205103",
+            "display": "Wearing street clothes with shoes (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "prostate-report-lt-prostate",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-report-lt-prostate",
+  "version": "0.1.0",
+  "name": "ProstateReportLtProstate",
+  "title": "DiagnosticReport: Prostate programme report (LT)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Anchor resource for the Lithuanian prostate cancer prevention and early diagnostic programme: links **ProstateCompositionLtProstate** (Base imaging composition) with **Observation** results (PSA, PI-RADS, sequence scores, PI-QUAL, PRECISE, Gleason/ISUP, etc.). Parent **ImagingReportLt** follows the national imaging-report pattern. Pathology **DiagnosticReport** resources from **LT Lab** are not listed in `result` (see **DiagnosticReportLt**); link them via encounter, bundles, or documentation.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/gleason-isup-observation-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/pelvic-organ-changes-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate",
+              "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-other-conditions-lt-prostate",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-composition-lt-prostate"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

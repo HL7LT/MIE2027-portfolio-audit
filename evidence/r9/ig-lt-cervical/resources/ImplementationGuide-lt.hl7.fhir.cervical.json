@@ -1,0 +1,953 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.cervical",
+  "url": "https://hl7.lt/fhir/cervical/ImplementationGuide/lt.hl7.fhir.cervical",
+  "version": "0.0.1",
+  "name": "LTCervical",
+  "title": "Lithuanian Cervical Cancer Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Cervical Cancer Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.cervical",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-biopsy-quadrant"
+        },
+        "name": "Cervical Biopsy Quadrant",
+        "description": "Anatomical quadrants of the uterine cervix used to localize biopsy sites.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-biopsy-site-lt-cervical"
+        },
+        "name": "Cervical Biopsy Site (LT Cervical)",
+        "description": "Anatomical localization of cervical biopsy sampling sites during colposcopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cervical-report-lt-cervical"
+        },
+        "name": "Cervical Cancer Screening Report (LT Cervical)",
+        "description": "Overall cervical cancer diagnostic report covering the entire screening and diagnostic pathway. Wraps a CervicalCompositionLtCervical and aggregates structured results including HPV testing, cytology, colposcopy findings, and histopathology conclusions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cervical-composition-lt-cervical"
+        },
+        "name": "Cervical Composition (LT Cervical)",
+        "description": "Cervical cancer screening episode composition extending the base imaging composition. Links all diagnostic reports (HPV, cytology, colposcopy, histopathology) produced during the cervical cancer screening and diagnostic pathway into a single clinical document.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-cytology-test-type"
+        },
+        "name": "Cervical Cytology Test Types",
+        "description": "Types of cytological examinations ordered in the cervical cancer prevention program. Used in ServiceRequest.code and DiagnosticReport.code to classify the specific test type.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-histological-grade"
+        },
+        "name": "Cervical Histological Grade",
+        "description": "Histological differentiation grades for cervical cancer, based on AJCC grading system.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-histopathology-diagnosis"
+        },
+        "name": "Cervical Histopathology Diagnosis",
+        "description": "Histopathological diagnostic conclusions for cervical tissue examination, aligned with WHO Classification of Female Genital Tumours (2020).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-microflora"
+        },
+        "name": "Cervical Microflora",
+        "description": "Microflora types observed during cervical cytological examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-pathogen"
+        },
+        "name": "Cervical Pathogen",
+        "description": "Pathogens identified during cervical cytological examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-sample-collection-site-lt-cervical"
+        },
+        "name": "Cervical Sample Collection Site (LT Cervical)",
+        "description": "Anatomical locations for sample collection.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-surgical-margins"
+        },
+        "name": "Cervical Surgical Margins",
+        "description": "Status of surgical margins in cervical excision specimens.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-tnm-pr"
+        },
+        "name": "Cervical TNM pR Stage",
+        "description": "Pathological residual tumor (pR) classification for cervical cancer, AJCC 8th edition.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-tnm-pt"
+        },
+        "name": "Cervical TNM pT Stage [RETIRED]",
+        "description": "RETIRED — Use CervicalTumorStageTLtLab from the Lab IG instead, which includes full pTX–pT4 staging. This ValueSet only covered pTX–pT1b2.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cytology-conclusion-lt-cervical"
+        },
+        "name": "Cervix - Cytology Conclusion (LT Cervical)",
+        "description": "Cytological diagnostic conclusions and specimen adequacy categories used in the Lithuanian cervical cancer screening and diagnostic pathway (ADP), aligned with Bethesda terminology.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cytology-preparation-method-lt-cervical"
+        },
+        "name": "Cervix - Cytology Preparation Method (LT Cervical)",
+        "description": "Specimen preparation methods for cervical cytology in the Lithuanian cervical cancer screening pathway (conventional smear vs liquid-based cytology).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hpv-genotype-lt-cervical"
+        },
+        "name": "Cervix - HPV Genotypes (LT Cervical)",
+        "description": "High-risk Human Papillomavirus (HPV) genotypes and groups detected in cervical cancer screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hpv-test-result-lt-cervical"
+        },
+        "name": "Cervix - HPV Test Result (LT Cervical)",
+        "description": "Overall result codes for HPV DNA testing.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-cervix-hpv-example"
+        },
+        "name": "Cervix HPV Specimen example",
+        "description": "Example cervix HPV specimen used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cervix-score-lt-cervical"
+        },
+        "name": "Cervix Scoring Instruments (LT Cervical) [RETIRED]",
+        "description": "Local codes for cervical cancer screening scoring instruments.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colposcopy-adequacy-lt-cervical"
+        },
+        "name": "Colposcopy Adequacy (LT Cervical)",
+        "description": "Suitability of colposcopy examination for clinical assessment in the Lithuanian cervical cancer screening pathway. Uses specimen adequacy findings from the Lab IG.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-colposcopy-example"
+        },
+        "name": "Colposcopy Diagnostic Report example",
+        "description": "Sample colposcopy diagnostic report used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colposcopy-finding-example"
+        },
+        "name": "Colposcopy Finding Observation example",
+        "description": "Example colposcopy finding observation used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colposcopy-history-example"
+        },
+        "name": "Colposcopy History Observation example",
+        "description": "Example colposcopy history observation used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colposcopy-example"
+        },
+        "name": "Colposcopy Procedure example",
+        "description": "Example colposcopy procedure used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colposcopy-swede-risk-lt-cervical"
+        },
+        "name": "Colposcopy Swede Score Risk Category (LT Cervical)",
+        "description": "Risk categories derived from Swede score during colposcopy examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colposcopy-procedure-type-lt-cervical"
+        },
+        "name": "Colposcopy-related Procedures (LT Cervical)",
+        "description": "Procedures that may be performed during colposcopy in the Lithuanian cervical cancer screening pathway.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-cervical-screening-episode-example"
+        },
+        "name": "Composition: Cervical Cancer Screening Episode (example)",
+        "description": "Example of a cervical cancer screening episode composition linking HPV, cytology, and colposcopy diagnostic reports.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-composition-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cervical-condition-lt-cervical"
+        },
+        "name": "Condition: Cervical Cancer (LT Cervical)",
+        "description": "Cervical cancer condition with pathological TNM staging (pT, pN, pR) and morphology classification. Follows the pattern established by ProstateConditionLtLab.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Condition/condition-cervical-cancer-stage-example"
+        },
+        "name": "Condition: Cervical Cancer pT1a1 Stage (example)",
+        "description": "Example of a cervical cancer condition with pathological TNM staging and ICD-O morphology.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-condition-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cytology-conclusion-lt-cervical"
+        },
+        "name": "Cytology Conclusion",
+        "description": "Final cytological diagnostic conclusion of cervical cytology examination in the Lithuanian cervical cancer screening and diagnostic pathway (ADP).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cytology-conclusion-example"
+        },
+        "name": "Cytology Conclusion Observation example",
+        "description": "Example cytology conclusion observation used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-cytology-example"
+        },
+        "name": "Cytology Diagnostic Report example",
+        "description": "Sample cytology diagnostic report used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-cervical-report-example"
+        },
+        "name": "DiagnosticReport: Cervical Cancer Screening Report (example)",
+        "description": "Example of a cervical cancer screening report linking HPV, cytology, and colposcopy results.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-report-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cytology-diagnostic-report-lt-cervical"
+        },
+        "name": "DiagnosticReport: Cervical Cytology (Pap Test)",
+        "description": "Laboratory diagnostic report representing cervical cytology examination in the Lithuanian cervical cancer screening pathway (ADP).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/histopathology-diagnostic-report-lt-cervical"
+        },
+        "name": "DiagnosticReport: Cervical Histopathology (LT Cervical)",
+        "description": "Histopathological examination report for cervical tissue obtained from biopsy or excisional procedures. Based on DiagnosticReportLt with pathology-specific constraints for cervical cancer.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-histopathology-example"
+        },
+        "name": "DiagnosticReport: Cervical Histopathology Report (example)",
+        "description": "Example of a cervical histopathology report documenting HSIL/CIN2 diagnosis from cone biopsy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-diagnostic-report-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colposcopy-diagnostic-report-lt-cervical"
+        },
+        "name": "DiagnosticReport: Colposcopy",
+        "description": "Diagnostic report summarizing findings and procedures performed during colposcopy in the Lithuanian cervical cancer screening pathway.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-hpv-example"
+        },
+        "name": "DiagnosticReport: HPV DNA Test (example)",
+        "description": "HPV laboratory diagnostic report for cervical cancer screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-diagnostic-report-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hpv-diagnostic-report-lt-cervical"
+        },
+        "name": "DiagnosticReport: HPV Test",
+        "description": "Laboratory diagnostic report representing HPV DNA testing in the Lithuanian cervical cancer screening pathway (ADP).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-hpv-result-group-example"
+        },
+        "name": "HPV Result Group Observation example",
+        "description": "Example HPV result group observation used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-hpv-result-example"
+        },
+        "name": "HPV Result Observation example",
+        "description": "Example HPV result observation used in the LT Cervical IG",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/hpv-risk-group-lt-cervical"
+        },
+        "name": "HPV Risk Groups CodeSystem (LT Cervical)",
+        "description": "Specific HPV risk groupings",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hpv-risk-group-vs-lt-cervical"
+        },
+        "name": "HPV Risk Groups ValueSet (LT Cervical)",
+        "description": "ValueSet containing the ADP-specific risk buckets.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hpv-test-result-lt-cervical"
+        },
+        "name": "HPV Test Result",
+        "description": "HPV DNA test result with optional component for specifying detected high-risk genotypes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hpv-vaccination-status-lt-cervical"
+        },
+        "name": "HPV Vaccination Status (LT Cervical)",
+        "description": "Status of HPV vaccination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/histopathology-conclusion-lt-cervical"
+        },
+        "name": "Observation: Cervical Histopathology Conclusion (LT Cervical)",
+        "description": "Histopathological diagnostic conclusion for cervical tissue examination. Records the morphological diagnosis, histological grade, lymphovascular invasion (pLVI), and surgical margin status.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-histopathology-conclusion-example"
+        },
+        "name": "Observation: Cervical Histopathology Conclusion – HSIL/CIN2 (example)",
+        "description": "Example of a cervical histopathology conclusion showing HSIL/CIN2 with G2 grade, clear margins, and no lymphovascular invasion.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/histopathology-conclusion-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tumor-measurement-cervical-example"
+        },
+        "name": "Observation: Cervical Tumor Measurement (example)",
+        "description": "Example of a cervical lesion measurement showing dimensions obtained from histopathological examination.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cervical-screening-clinical-history-lt-cervical"
+        },
+        "name": "Observation: Clinical History",
+        "description": "A panel of pre-analytic clinical observations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-clinical-history-complex-example"
+        },
+        "name": "Observation: Clinical History - Complex (example)",
+        "description": "A clinical history illustrating the usage of >1 year comparator for chemotherapy, DateTime for previous conization, and Yes/No/Unknown codeable concepts.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-screening-clinical-history-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-clinical-history-routine-example"
+        },
+        "name": "Observation: Clinical History - Routine (example)",
+        "description": "A standard history for a young patient with no prior treatments.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-screening-clinical-history-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colposcopy-finding-lt-cervical"
+        },
+        "name": "Observation: Colposcopy Findings",
+        "description": "Clinical findings recorded during colposcopy, including suitability for assessment and Swede score.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colposcopy-history-lt-cervical"
+        },
+        "name": "Observation: History of Colposcopy",
+        "description": "Indicates whether the patient has a history of colposcopy examination, when detailed procedure data is not available.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-hpv-result-complex-mixed-example"
+        },
+        "name": "Observation: HPV Complex - Type 16 AND Medium Risk Group (example)",
+        "description": "A scenario where the patient is coinfected. The lab identified HPV 16 specifically, but also found a positive signal for the Medium Risk pool.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-test-result-lt-cervical"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-example"
+        },
+        "name": "Organization: Vilniaus miesto ligoninė (example)",
+        "description": "Example of a healthcare organization",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-female-example"
+        },
+        "name": "Patient: Female (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Dr. Petras Kazlauskas (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitioner-role-example"
+        },
+        "name": "PractitionerRole: Dr. Petras Kazlauskas – Gynecologist (example)",
+        "description": "An example PractitionerRole linking the practitioner to the organization.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colposcopy-biopsy-procedure-lt-cervical"
+        },
+        "name": "Procedure: Cervical Biopsy during Colposcopy",
+        "description": "Biopsy or excisional procedures performed during colposcopy as part of the Lithuanian cervical cancer screening pathway.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colposcopy-procedure-lt-cervical"
+        },
+        "name": "Procedure: Colposcopy",
+        "description": "Colposcopy procedure performed as part of the Lithuanian cervical cancer screening and diagnostic pathway (ADP).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cervical-colposcopy-espbi"
+        },
+        "name": "Questionnaire: Cervical Colposcopy ESPBI Form",
+        "description": "ESPBI form for capturing colposcopy examination data in the Lithuanian cervical cancer screening programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cervical-cytology-hpv-espbi"
+        },
+        "name": "Questionnaire: Cervical Cytology and HPV ESPBI Form",
+        "description": "ESPBI form for cervical cancer screening: HPV testing and cytological examination. Based on ADP Table 7.1 (cervical cancer prevention program cytology and HPV kit).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cervical-histology-espbi"
+        },
+        "name": "Questionnaire: Cervical Histopathological Examination – ESPBI (definition)",
+        "description": "ESPBI form for cervical histopathological examination based on ADP document Table 7.2.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cervical-pathological-diagnosis-espbi"
+        },
+        "name": "Questionnaire: Cervical Pathological Diagnosis ESPBI Form",
+        "description": "ESPBI form for structured coding of cervical pathological diagnoses using VLK, ICD-10-AM, ICD-O, and SNOMED CT classification systems.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/qr-cervical-colposcopy-espbi-example"
+        },
+        "name": "QuestionnaireResponse: Cervical Colposcopy ESPBI (example)",
+        "description": "Example response for the colposcopy ESPBI form: adequate colposcopy with Swede score 3 (low risk), punch biopsy from left superior quadrant.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/qr-cervical-cytology-hpv-espbi-example"
+        },
+        "name": "QuestionnaireResponse: Cervical Cytology and HPV ESPBI Form (example)",
+        "description": "Completed ESPBI form for routine cervical screening: HPV 16 detected (highest risk), LSIL on cytology, p16/Ki-67 positive.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/qr-cervical-histology-espbi-example"
+        },
+        "name": "QuestionnaireResponse: Cervical Histopathology – HSIL/CIN2, Cone Biopsy (example)",
+        "description": "Completed ESPBI cervical histopathological examination response: cone biopsy from left superior quadrant with HSIL/CIN2 diagnosis, G2 grade, clear margins, no pLVI, pTis staging.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/qr-cervical-path-diag-espbi-example"
+        },
+        "name": "QuestionnaireResponse: Cervical Pathological Diagnosis ESPBI (example)",
+        "description": "Example response for the pathological diagnosis ESPBI form: HSIL/CIN2 with VLK 2238, ICD-10 D06.9, ICD-O 8077/2, SNOMED 400049009.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-cervical-biopsy-example"
+        },
+        "name": "Specimen: Cervical Cone Biopsy (example)",
+        "description": "Example of a cervical tissue specimen obtained via cone biopsy for histopathological examination.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/yes-no-unknown-lt-cervical"
+        },
+        "name": "Yes / No / Unknown (SNOMED CT) (LT Cervical)",
+        "description": "Codes used to represent clinical presence or absence.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaire.html",
+          "sourceUrl": "questionnaire.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/cervix-score"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-biopsy-quadrant"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-biopsy-site"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-cytology-test-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-histological-grade"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-histopathology-diagnosis"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-microflora"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-pathogen"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-sample-collection-site"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-surgical-margins"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-tnm-pr"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-tnm-pt"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-adequacy"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-procedure-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-swede-risk"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cytology-conclusion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cytology-preparation-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/hpv-genotype"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/hpv-risk-group"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/hpv-test-result"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/hpv-vaccination-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/yes-no-unknown"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

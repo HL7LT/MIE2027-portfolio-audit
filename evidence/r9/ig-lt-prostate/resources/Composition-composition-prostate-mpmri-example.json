@@ -1,0 +1,276 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-prostate-mpmri-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt"
+    ]
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/practitioner-role-radiologist-example"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/prostate/composition-id",
+      "value": "mpmri-report-2025-0001"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticreport-prostate-mpmri-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "MR",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Magnetic Resonance"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "113011001",
+                "system": "http://snomed.info/sct",
+                "display": "Palpation (procedure)"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "Procedure/procedure-prostate-mri-example"
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+        }
+      ],
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Multiparametric prostate MRI performed.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18726-0"
+          }
+        ]
+      },
+      "title": "Imaging Study"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Order information not available.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Clinical history not documented.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "History",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure details not specified.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Procedure",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No prior imaging available for comparison.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>PI-RADS 3 lesion noted.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Findings consistent with prostate cancer screening.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Clinical recommendations pending.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendation",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "status": "final",
+  "date": "2025-09-22T10:30:00Z",
+  "title": "Multiparametric prostate MRI report",
+  "custodian": {
+    "reference": "Organization/organization-lt-example"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostatic-capsule-invasion-present-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "371487005",
+        "system": "http://snomed.info/sct",
+        "display": "Presence of direct invasion by neoplasm (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "52101004",
+        "system": "http://snomed.info/sct",
+        "display": "Present (qualifier value)"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/bodyStructure-prostatic-capsule-right-example"
+  }
+}

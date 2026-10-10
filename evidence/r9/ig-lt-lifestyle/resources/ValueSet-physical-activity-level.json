@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PhysicalActivityLevelLtLifestyle",
+  "id": "physical-activity-level",
+  "title": "Physical Activity Level",
+  "description": "Categorical assessment of whether the patient's physical activity meets, exceeds, or falls below recommended levels.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/physical-activity-level",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "424805008",
+            "display": "Exercise above recommended level (finding)"
+          },
+          {
+            "code": "228448000",
+            "display": "Exercises regularly (finding)"
+          },
+          {
+            "code": "413300002",
+            "display": "Exercise below recommended level (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "breast-nipple-inversion-lt-breast",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/breast-nipple-inversion-lt-breast",
+  "version": "1.0.0",
+  "name": "BreastNippleInversionLtBreast",
+  "title": "Breast Nipple Inversion",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Observation representing nipple inversion assessment in a patient summary.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "364377005",
+              "system": "http://snomed.info/sct",
+              "display": "Appearance of nipple"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-nipple-appearance-finding"
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

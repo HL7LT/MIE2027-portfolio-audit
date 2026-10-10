@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BbpsColonSegmentsVS",
+  "id": "bbps-colon-segments",
+  "title": "BBPS Colon Segments",
+  "description": "SNOMED CT codes representing the three segments of the colon evaluated in the Boston Bowel Preparation Scale.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bbps-colon-segments",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "55572008",
+            "display": "Left colon structure (body structure)"
+          },
+          {
+            "code": "485005",
+            "display": "Transverse colon structure (body structure)"
+          },
+          {
+            "code": "51342009",
+            "display": "Right colon structure (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

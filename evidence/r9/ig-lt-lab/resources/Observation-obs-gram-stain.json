@@ -1,0 +1,23 @@
+{
+  "resourceType": "Observation",
+  "id": "obs-gram-stain",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "664-3",
+        "system": "http://loinc.org",
+        "display": "Microscopic observation [Identifier] in Specimen by Gram stain"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "valueString": "Gram positive cocci"
+}

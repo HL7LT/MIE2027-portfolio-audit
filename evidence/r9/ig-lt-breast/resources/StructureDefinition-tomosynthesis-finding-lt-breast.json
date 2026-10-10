@@ -1,0 +1,286 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tomosynthesis-finding-lt-breast",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/tomosynthesis-finding-lt-breast",
+  "name": "TomosynthesisFindingLtBreast",
+  "title": "Tomosynthesis Examination Finding (LT Breast)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Observation representing tomosynthesis breast findings including finding type, size, cross-section localization in CC and MLO projections, and finding evolution.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "imaging",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Imaging"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "450566007",
+              "system": "http://snomed.info/sct",
+              "display": "Digital breast tomosynthesis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site"
+        }
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "short": "Breast side and quadrant(s) of finding",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "BI-RADS assessment conclusion for this tomosynthesis examination",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/breast/StructureDefinition/birads-assessment-lt-breast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:Type",
+        "path": "Observation.component",
+        "sliceName": "Type",
+        "short": "Tomosynthesis finding type (mass, calcification, deformation)",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:Type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "129714008",
+              "system": "http://snomed.info/sct",
+              "display": "Mammography finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:Type.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/mammographic-finding"
+        }
+      },
+      {
+        "id": "Observation.component:Diameter",
+        "path": "Observation.component",
+        "sliceName": "Diameter",
+        "short": "Largest dimension of finding (mm)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:Diameter.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "248530000",
+              "system": "http://snomed.info/sct",
+              "display": "Diameter of lump (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:Diameter.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "code": "mm",
+          "system": "http://unitsofmeasure.org"
+        }
+      },
+      {
+        "id": "Observation.component:evolution",
+        "path": "Observation.component",
+        "sliceName": "evolution",
+        "short": "Evolution of finding compared to previous studies",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:evolution.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "288531002",
+              "system": "http://snomed.info/sct",
+              "display": "Finding status values"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:evolution.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/finding-evolution"
+        }
+      },
+      {
+        "id": "Observation.component:cc-cross-section",
+        "path": "Observation.component",
+        "sliceName": "cc-cross-section",
+        "short": "Cross-sections in CC projection",
+        "definition": "Free text describing which cross-sectional slices in the craniocaudal (CC) projection show the finding (e.g. slices 42-58).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:cc-cross-section.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "399162004",
+              "system": "http://snomed.info/sct",
+              "display": "Craniocaudal projection"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:cc-cross-section.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:mlo-cross-section",
+        "path": "Observation.component",
+        "sliceName": "mlo-cross-section",
+        "short": "Cross-sections in MLO projection",
+        "definition": "Free text describing which cross-sectional slices in the mediolateral oblique (MLO) projection show the finding.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:mlo-cross-section.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "399368009",
+              "system": "http://snomed.info/sct",
+              "display": "Medio-lateral oblique projection"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mlo-cross-section.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

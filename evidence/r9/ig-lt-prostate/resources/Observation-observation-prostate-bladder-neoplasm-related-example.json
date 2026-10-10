@@ -1,0 +1,82 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-bladder-neoplasm-related-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "260905004",
+            "system": "http://snomed.info/sct",
+            "display": "Condition (attribute)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "415684004",
+            "system": "http://snomed.info/sct",
+            "display": "Suspected (qualifier value)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "134198009",
+            "system": "http://snomed.info/sct",
+            "display": "Etiology (attribute)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "change-neoplasm-related",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+            "display": "Related to prostate neoplasm (finding)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Bladder wall thickening at base; likely neoplasm-related."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "364636000",
+        "system": "http://snomed.info/sct",
+        "display": "Lesion observable (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/bodyStructure-prostate-urinary-bladder-example"
+  }
+}

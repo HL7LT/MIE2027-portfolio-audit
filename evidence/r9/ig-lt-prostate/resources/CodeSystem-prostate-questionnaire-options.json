@@ -1,0 +1,344 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstateQuestionnaireOptions",
+  "id": "prostate-questionnaire-options",
+  "title": "Prostate questionnaire answer options (illustrative)",
+  "description": "Illustrative codes for **Questionnaire** answer options for prostate ESPBI-style forms in this IG. Register or replace with national coded values in production.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+  "concept": [
+    {
+      "code": "specimen-satisfactory",
+      "display": "Specimen satisfactory for evaluation"
+    },
+    {
+      "code": "specimen-limited",
+      "display": "Specimen satisfactory but limited"
+    },
+    {
+      "code": "specimen-insufficient",
+      "display": "Insufficient tissue for diagnosis"
+    },
+    {
+      "code": "treatment-unknown",
+      "display": "Treatment effect unknown"
+    },
+    {
+      "code": "treatment-unidentifiable",
+      "display": "Treatment effect unidentifiable"
+    },
+    {
+      "code": "treatment-radiotherapy",
+      "display": "Observed radiotherapy effect"
+    },
+    {
+      "code": "treatment-hormone",
+      "display": "Observed hormone therapy effect"
+    },
+    {
+      "code": "treatment-other",
+      "display": "Observed other therapy effect"
+    },
+    {
+      "code": "hist-acinar",
+      "display": "Acinar adenocarcinoma (conventional)"
+    },
+    {
+      "code": "hist-acinar-signet-ring",
+      "display": "Acinar adenocarcinoma, signet-ring cell-like"
+    },
+    {
+      "code": "hist-acinar-pleomorphic",
+      "display": "Acinar adenocarcinoma, pleomorphic giant cell"
+    },
+    {
+      "code": "hist-acinar-sarcomatoid",
+      "display": "Acinar adenocarcinoma, sarcomatoid"
+    },
+    {
+      "code": "hist-acinar-pin-like",
+      "display": "Acinar adenocarcinoma, PIN-like"
+    },
+    {
+      "code": "hist-idc-isolated",
+      "display": "Isolated intraductal carcinoma"
+    },
+    {
+      "code": "hist-ductal",
+      "display": "Ductal adenocarcinoma"
+    },
+    {
+      "code": "hist-adenosquamous",
+      "display": "Adenosquamous carcinoma"
+    },
+    {
+      "code": "hist-squamous",
+      "display": "Squamous cell carcinoma"
+    },
+    {
+      "code": "hist-basal-cell",
+      "display": "Basal cell (adenoid cystic) carcinoma"
+    },
+    {
+      "code": "hist-neuro-adeno",
+      "display": "Adenocarcinoma with neuroendocrine differentiation"
+    },
+    {
+      "code": "hist-neuro-well-diff",
+      "display": "Well-differentiated neuroendocrine tumor"
+    },
+    {
+      "code": "hist-neuro-small-cell",
+      "display": "Small cell neuroendocrine carcinoma"
+    },
+    {
+      "code": "hist-neuro-large-cell",
+      "display": "Large cell neuroendocrine carcinoma"
+    },
+    {
+      "code": "hist-unassessable",
+      "display": "Carcinoma, type unassessable"
+    },
+    {
+      "code": "hist-other",
+      "display": "Other histological type (see comment)"
+    },
+    {
+      "code": "isup-gg1",
+      "display": "ISUP Grade Group 1 (Gleason 3+3)"
+    },
+    {
+      "code": "isup-gg2",
+      "display": "ISUP Grade Group 2 (Gleason 3+4)"
+    },
+    {
+      "code": "isup-gg3",
+      "display": "ISUP Grade Group 3 (Gleason 4+3)"
+    },
+    {
+      "code": "isup-gg4",
+      "display": "ISUP Grade Group 4 (Gleason 4+4 or equivalent)"
+    },
+    {
+      "code": "isup-gg5",
+      "display": "ISUP Grade Group 5 (Gleason 4+5 / 5+4 / 5+5)"
+    },
+    {
+      "code": "idc-absent",
+      "display": "Intraductal carcinoma not identified"
+    },
+    {
+      "code": "idc-present",
+      "display": "Intraductal carcinoma identifiable"
+    },
+    {
+      "code": "cribriform-na",
+      "display": "Cribriform not applicable"
+    },
+    {
+      "code": "cribriform-unknown",
+      "display": "Cribriform undefined"
+    },
+    {
+      "code": "cribriform-present",
+      "display": "Cribriform identifiable"
+    },
+    {
+      "code": "dre-not-done",
+      "display": "DRE not performed"
+    },
+    {
+      "code": "dre-normal",
+      "display": "DRE normal"
+    },
+    {
+      "code": "dre-suspicious",
+      "display": "DRE suspicious"
+    },
+    {
+      "code": "referral-screening",
+      "display": "Referral for screening"
+    },
+    {
+      "code": "referral-elevated-psa",
+      "display": "Referral for elevated PSA"
+    },
+    {
+      "code": "referral-other",
+      "display": "Other referral reason"
+    },
+    {
+      "code": "ynk-yes",
+      "display": "Yes"
+    },
+    {
+      "code": "ynk-no",
+      "display": "No"
+    },
+    {
+      "code": "ynk-unknown",
+      "display": "Unknown"
+    },
+    {
+      "code": "pirads-cat-1-2",
+      "display": "PI-RADS 1–2"
+    },
+    {
+      "code": "pirads-cat-3",
+      "display": "PI-RADS 3"
+    },
+    {
+      "code": "pirads-cat-4",
+      "display": "PI-RADS 4"
+    },
+    {
+      "code": "pirads-cat-5",
+      "display": "PI-RADS 5"
+    },
+    {
+      "code": "pattern4-pct-na",
+      "display": "Pattern 4 %: not applicable"
+    },
+    {
+      "code": "pattern4-pct-lte5",
+      "display": "Pattern 4 %: ≤5%"
+    },
+    {
+      "code": "pattern4-pct-6-10",
+      "display": "Pattern 4 %: 6–10%"
+    },
+    {
+      "code": "pattern4-pct-gt40",
+      "display": "Pattern 4 %: >40%"
+    },
+    {
+      "code": "tumor-pct-lt1",
+      "display": "Tumour % in biopsy: <1%"
+    },
+    {
+      "code": "tumor-pct-1-5",
+      "display": "Tumour % in biopsy: 1–5%"
+    },
+    {
+      "code": "tumor-pct-gt90",
+      "display": "Tumour % in biopsy: >90%"
+    },
+    {
+      "code": "tumor-pct-uneval",
+      "display": "Tumour %: cannot be evaluated"
+    },
+    {
+      "code": "periprostatic-unknown",
+      "display": "Periprostatic fat invasion: unidentifiable"
+    },
+    {
+      "code": "periprostatic-absent",
+      "display": "Periprostatic fat invasion: not identified"
+    },
+    {
+      "code": "periprostatic-present",
+      "display": "Periprostatic fat invasion: present"
+    },
+    {
+      "code": "biopsy-initial",
+      "display": "Initial biopsy"
+    },
+    {
+      "code": "biopsy-repeat",
+      "display": "Repeat biopsy"
+    },
+    {
+      "code": "fixative-buffered-formalin",
+      "display": "10% buffered formalin"
+    },
+    {
+      "code": "fixative-unfixed",
+      "display": "Unfixed (no fixative)"
+    },
+    {
+      "code": "dx-n40-gph",
+      "display": "N40 Glandular prostatic hyperplasia"
+    },
+    {
+      "code": "dx-c61",
+      "display": "C61 Malignant neoplasm of prostate"
+    },
+    {
+      "code": "ct-1c",
+      "display": "cT1c"
+    },
+    {
+      "code": "ct-2",
+      "display": "cT2"
+    },
+    {
+      "code": "ct-3a",
+      "display": "cT3a"
+    },
+    {
+      "code": "ct-3b",
+      "display": "cT3b"
+    },
+    {
+      "code": "op-transperineal",
+      "display": "Transperineal biopsy"
+    },
+    {
+      "code": "op-transrectal",
+      "display": "Transrectal biopsy"
+    },
+    {
+      "code": "proc-systematic",
+      "display": "Systematic biopsy"
+    },
+    {
+      "code": "proc-adaptive",
+      "display": "Adaptive biopsy"
+    },
+    {
+      "code": "proc-systematic-targeted",
+      "display": "Systematic + targeted biopsy"
+    },
+    {
+      "code": "proc-applicative-perifocal",
+      "display": "Applicative + perifocal biopsy"
+    },
+    {
+      "code": "perineural-present",
+      "display": "Perineural invasion present"
+    },
+    {
+      "code": "perineural-absent",
+      "display": "Perineural invasion not identified"
+    },
+    {
+      "code": "perineural-ambiguous",
+      "display": "Perineural invasion ambiguous"
+    },
+    {
+      "code": "perineural-uneval",
+      "display": "Perineural invasion cannot be evaluated"
+    },
+    {
+      "code": "lymphovascular-present",
+      "display": "Lymphovascular invasion identifiable"
+    },
+    {
+      "code": "lymphovascular-absent",
+      "display": "Lymphovascular invasion unidentifiable / not available"
+    },
+    {
+      "code": "lymphovascular-ambiguous",
+      "display": "Lymphovascular invasion ambiguous"
+    },
+    {
+      "code": "lymphovascular-uneval",
+      "display": "Lymphovascular invasion cannot be evaluated"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 82
+}

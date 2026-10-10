@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Range-uv-ips",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pc"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/Range-uv-ips",
+  "version": "1.1.0",
+  "name": "RangeIPS",
+  "title": "Range (IPS)",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "Health Level Seven International - Patient Care Work Group",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare"
+        }
+      ]
+    }
+  ],
+  "description": "Range constrained to UCUM as the code system for units.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
+  "purpose": "Requires UCUM as the code system for units",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Range",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Range",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Range.low",
+        "path": "Range.low",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/uv/ips/StructureDefinition/SimpleQuantity-uv-ips"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Range.high",
+        "path": "Range.high",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/uv/ips/StructureDefinition/SimpleQuantity-uv-ips"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

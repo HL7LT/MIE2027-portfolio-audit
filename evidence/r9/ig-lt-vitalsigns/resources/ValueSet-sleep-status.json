@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SleepStatusVitalSigns",
+  "id": "sleep-status",
+  "title": "Sleep Status in Vital Signs Measurements",
+  "description": "SNOMED CT code system values that contains terms used to indicate the state of wakefulness during measurement.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/sleep-status",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "248220008",
+            "display": "Asleep (finding)"
+          },
+          {
+            "code": "248218005",
+            "display": "Awake (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

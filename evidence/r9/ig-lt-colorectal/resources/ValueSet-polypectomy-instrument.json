@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyInstrumentVS",
+  "id": "polypectomy-instrument",
+  "title": "Polypectomy Instrument",
+  "description": "Instruments used for polypectomy during colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-instrument",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "polypectomy-snare",
+            "display": "Snare/loop"
+          },
+          {
+            "code": "polypectomy-forceps",
+            "display": "Forceps"
+          }
+        ]
+      }
+    ]
+  }
+}

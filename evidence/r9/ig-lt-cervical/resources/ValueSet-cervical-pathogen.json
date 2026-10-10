@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalPathogenVS",
+  "id": "cervical-pathogen",
+  "title": "Cervical Pathogen",
+  "description": "Pathogens identified during cervical cytological examination.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-pathogen",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "168418000",
+            "display": "Cervical smear - candida (finding)"
+          },
+          {
+            "code": "168417005",
+            "display": "Cervical smear - trichomonas (finding)"
+          },
+          {
+            "code": "168422005",
+            "display": "Cervical smear - actinomyces (finding)"
+          },
+          {
+            "code": "373875003",
+            "display": "Cellular changes consistent with Herpes simplex (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

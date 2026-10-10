@@ -1,0 +1,89 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-hpv-result-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/hpv-test-result-lt-cervical"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "9482002",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus (organism)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "115326008",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus, type 16 (organism)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "9482002",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus (organism)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "1269507002",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus type 45 (organism)"
+          }
+        ]
+      }
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Organization/organization-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "35904009",
+        "system": "http://snomed.info/sct",
+        "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-01-12",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "720005005",
+        "system": "http://snomed.info/sct",
+        "display": "Human papillomavirus deoxyribonucleic acid detected, high risk on cervical specimen (finding)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CoronaryCalcificationScoreVS",
+  "id": "coronary-calcification-score",
+  "title": "Coronary Calcification Visual Score",
+  "description": "Visual semi-quantitative scoring of coronary artery calcification during LDCT screening (ADP 1.2.2.2 item 1).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/coronary-calcification-score",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code",
+        "concept": [
+          {
+            "code": "cac-none",
+            "display": "No coronary calcification"
+          },
+          {
+            "code": "cac-mild",
+            "display": "Mild coronary calcification"
+          },
+          {
+            "code": "cac-moderate",
+            "display": "Moderate coronary calcification"
+          },
+          {
+            "code": "cac-severe",
+            "display": "Severe coronary calcification"
+          }
+        ]
+      }
+    ]
+  }
+}

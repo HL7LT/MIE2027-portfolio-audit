@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "WaistCircumferenceResultInterpretation",
+  "id": "waist-circumference-result-interpretation",
+  "title": "WaistCircumference Result Interpretation value set",
+  "description": " that describes interpretations associated with a measured value.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation",
+  "version": "1.0.0",
+  "experimental": true,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "249533007",
+            "display": "Obese abdomen (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "retired",
+  "content": "complete",
+  "name": "CervixScoreLtCervical",
+  "id": "cervix-score-lt-cervical",
+  "title": "Cervix Scoring Instruments (LT Cervical) [RETIRED]",
+  "description": "Local codes for cervical cancer screening scoring instruments.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/cervix-score",
+  "concept": [
+    {
+      "code": "swede-score",
+      "display": "Swede score",
+      "definition": "RETIRED: Use SNOMED CT 1389350002 instead"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": false,
+  "publisher": "HL7 Lithuania",
+  "count": 1
+}

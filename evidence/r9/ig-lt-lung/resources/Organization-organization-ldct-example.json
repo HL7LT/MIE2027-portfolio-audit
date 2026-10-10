@@ -1,0 +1,12 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-ldct-example",
+  "identifier": [
+    {
+      "system": "https://registrai.lt/organization",
+      "value": "111111111"
+    }
+  ],
+  "active": true,
+  "name": "Vilniaus universiteto ligonines Santaros klinikos"
+}

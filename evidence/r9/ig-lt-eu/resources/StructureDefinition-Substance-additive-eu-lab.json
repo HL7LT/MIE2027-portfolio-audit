@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Substance-additive-eu-lab",
+  "language": "en",
+  "url": "http://hl7.eu/fhir/laboratory/StructureDefinition/Substance-additive-eu-lab",
+  "version": "0.2.0-ci",
+  "name": "SpecimenAdditiveSubstance",
+  "title": "Substance: Specimen Additive Substance (Eu Lab)",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "This profile defines how to represent Specimen Additive Substances in HL7 FHIR for the purpose of this guide.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Substance",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Substance",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Substance.code",
+        "path": "Substance.code",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-specimenAdditive-eu-lab"
+        }
+      }
+    ]
+  }
+}

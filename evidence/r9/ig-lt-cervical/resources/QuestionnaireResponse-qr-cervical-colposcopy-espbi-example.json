@@ -1,0 +1,341 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "qr-cervical-colposcopy-espbi-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "48501019999"
+            }
+          ],
+          "linkId": "patient.personalCode",
+          "text": "Personal code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Janette"
+            }
+          ],
+          "linkId": "patient.name",
+          "text": "Name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Petrauskaite"
+            }
+          ],
+          "linkId": "patient.surname",
+          "text": "Surname"
+        }
+      ],
+      "linkId": "patient",
+      "text": "Patient identification"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.previousColposcopy",
+          "text": "Previous colposcopy performed"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "HPV 16 positive, ASC-US cytology result"
+            }
+          ],
+          "linkId": "clinicalHistory.indication",
+          "text": "Indication (reason for colposcopy)"
+        }
+      ],
+      "linkId": "clinicalHistory",
+      "text": "Previous test history"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "colposcopyPerformed.performed",
+          "text": "Colposcopy performed"
+        },
+        {
+          "answer": [
+            {
+              "valueDate": "2025-03-15"
+            }
+          ],
+          "linkId": "colposcopyPerformed.procedureDate",
+          "text": "Procedure date"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "colposcopyPerformed.anesthesia",
+          "text": "Anesthesia used"
+        }
+      ],
+      "linkId": "colposcopyPerformed",
+      "text": "Colposcopy procedure"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "adequacy.adequate",
+          "text": "Adequacy of colposcopy"
+        }
+      ],
+      "linkId": "adequacy",
+      "text": "Colposcopy adequacy"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "swedeScore.acetoWhiteReaction",
+          "text": "Acetowhite reaction (0-2)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 0
+            }
+          ],
+          "linkId": "swedeScore.marginsAndSurface",
+          "text": "Margins and surface (0-2)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "swedeScore.vessels",
+          "text": "Vessels (0-2)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 1
+            }
+          ],
+          "linkId": "swedeScore.lesionSize",
+          "text": "Lesion size (0-2)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 0
+            }
+          ],
+          "linkId": "swedeScore.iodineStaining",
+          "text": "Iodine staining (0-2)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "swedeScore.totalScore",
+          "text": "Total Swede score (0-10)"
+        }
+      ],
+      "linkId": "swedeScore",
+      "text": "Swede score (0-10)"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "723505004",
+                "system": "http://snomed.info/sct",
+                "display": "Low risk (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "risk.riskLevel",
+          "text": "Risk level"
+        }
+      ],
+      "linkId": "risk",
+      "text": "Risk assessment based on Swede score"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.biopsyPerformed",
+          "text": "Biopsy performed"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "51675008",
+                "system": "http://snomed.info/sct",
+                "display": "Punch biopsy of cervix (procedure)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.procedureType",
+          "text": "Biopsy procedure type"
+        }
+      ],
+      "linkId": "biopsyProcedure",
+      "text": "Biopsy procedure"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "127900007",
+                "system": "http://snomed.info/sct",
+                "display": "Left superior quadrant of uterine cervix"
+              }
+            }
+          ],
+          "linkId": "biopsySite.site",
+          "text": "Biopsy site"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Acetowhite area at 10 o'clock position, approximately 5 mm"
+            }
+          ],
+          "linkId": "biopsySite.notes",
+          "text": "Notes"
+        }
+      ],
+      "linkId": "biopsySite",
+      "text": "Biopsy site"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Minor acetowhite changes in the transformation zone at 10 o'clock. No atypical vessels. Transformation zone type 1."
+            }
+          ],
+          "linkId": "impression.impression",
+          "text": "Colposcopic impression"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Await biopsy result. Follow-up in 6 months with HPV co-testing."
+            }
+          ],
+          "linkId": "impression.recommendation",
+          "text": "Recommendation"
+        }
+      ],
+      "linkId": "impression",
+      "text": "Colposcopic impression"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Jonas"
+            }
+          ],
+          "linkId": "signatures.examinerName",
+          "text": "Examiner name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Kazlauskas"
+            }
+          ],
+          "linkId": "signatures.examinerSurname",
+          "text": "Examiner surname"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "LT-GYN-2024-0042"
+            }
+          ],
+          "linkId": "signatures.examinerPressNumber",
+          "text": "Examiner press number"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-03-15T10:30:00+02:00"
+            }
+          ],
+          "linkId": "signatures.examDate",
+          "text": "Examination date"
+        }
+      ],
+      "linkId": "signatures",
+      "text": "Signatures"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-colposcopy-espbi",
+  "status": "completed",
+  "authored": "2025-03-15T10:30:00+02:00",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

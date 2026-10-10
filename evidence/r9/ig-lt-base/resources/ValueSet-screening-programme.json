@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ScreeningProgrammeLtCvd",
+  "id": "screening-programme",
+  "title": "Screening Programme",
+  "description": "Represents the various screening programmes supported in Lithuania.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/screening-programme",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "171149006",
+            "display": "Screening for malignant neoplasm of cervix (procedure)"
+          },
+          {
+            "code": "444822002",
+            "display": "Screening for malignant neoplasm of prostate (procedure)"
+          },
+          {
+            "code": "275981009",
+            "display": "Screening for malignant neoplasm of lung (procedure)"
+          },
+          {
+            "code": "268547008",
+            "display": "Screening for malignant neoplasm of breast (procedure)"
+          },
+          {
+            "code": "275978004",
+            "display": "Screening for malignant neoplasm of colon (procedure)"
+          },
+          {
+            "code": "300007000",
+            "display": "Screening for cardiovascular system disease (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-skl-risk-assessment-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/composition-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11369-6",
+          "system": "http://loinc.org",
+          "display": "History of Immunization note"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "83539-7",
+        "system": "http://loinc.org",
+        "display": "Cardiology Risk assessment and screening note"
+      }
+    ],
+    "text": "ŠKL rizikos vertinimas"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "section": [
+    {
+      "section": [
+        {
+          "entry": [
+            {
+              "reference": "List/skl01-list-diagnoses"
+            }
+          ],
+          "title": "Hospital discharge diagnosis note",
+          "code": {
+            "coding": [
+              {
+                "code": "11535-2",
+                "system": "http://loinc.org",
+                "display": "Hospital discharge diagnosis note"
+              }
+            ]
+          }
+        },
+        {
+          "section": [
+            {
+              "entry": [
+                {
+                  "reference": "List/skl01-list-meds-dispensed"
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "code": "60590-7",
+                    "system": "http://loinc.org",
+                    "display": "Medication dispensed.brief Document"
+                  }
+                ]
+              }
+            },
+            {
+              "entry": [
+                {
+                  "reference": "List/skl01-list-meds-statement"
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "code": "104205-0",
+                    "system": "http://loinc.org",
+                    "display": "Patient generated medication list [Identifier] Episode Pharmacy"
+                  }
+                ]
+              }
+            }
+          ],
+          "title": "Medication current Set",
+          "code": {
+            "coding": [
+              {
+                "code": "18605-6",
+                "system": "http://loinc.org",
+                "display": "Medication current Set"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "List/skl01-list-cvd-risk-factors"
+            }
+          ],
+          "title": "ŠKL rizikos veiksniai",
+          "code": {
+            "coding": [
+              {
+                "code": "83539-7",
+                "system": "http://loinc.org",
+                "display": "Cardiology Risk assessment and screening note"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "List/skl01-list-concomitant-risk-factors"
+            }
+          ],
+          "title": "Rizikos veiksniai",
+          "code": {
+            "coding": [
+              {
+                "code": "46467-7",
+                "system": "http://loinc.org",
+                "display": "Risk factors"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl01-observation-vitals-panel-19"
+            }
+          ],
+          "title": "Vital signs note",
+          "code": {
+            "coding": [
+              {
+                "code": "8716-3",
+                "system": "http://loinc.org",
+                "display": "Vital signs note"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl01-observation-lab-panel-191"
+            }
+          ],
+          "title": "Laboratory studies (set)",
+          "code": {
+            "coding": [
+              {
+                "code": "26436-6",
+                "system": "http://loinc.org",
+                "display": "Laboratory studies (set)"
+              }
+            ]
+          }
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl01-observation-evaluation-panel-110"
+            }
+          ],
+          "title": "Evaluation note",
+          "code": {
+            "coding": [
+              {
+                "code": "51848-0",
+                "system": "http://loinc.org",
+                "display": "Evaluation note"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Clinical information",
+      "code": {
+        "coding": [
+          {
+            "code": "55752-0",
+            "system": "http://loinc.org",
+            "display": "Clinical information"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "preliminary",
+  "date": "2014-10-27T20:40:40+02:00",
+  "title": "ŠKL rizikos vertinimas",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  }
+}

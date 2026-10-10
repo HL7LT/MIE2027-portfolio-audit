@@ -1,0 +1,362 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-colorectal-colonoscopy-questionnaire-to-fhir",
+  "url": "https://hl7.lt/fhir/colorectal/ConceptMap/conceptmap-colorectal-colonoscopy-questionnaire-to-fhir",
+  "title": "ESPBI colonoscopy Questionnaire items to FHIR mapping (prototype)",
+  "description": "Maps clinically meaningful linkIds of the ESPBI colonoscopy Questionnaire to Colorectal / foundation profiles. Prototype skeleton supplied with the JMIR Med Inform implementation report.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "procedure-colonoscopy",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyProcedureLtColorectal.performedPeriod. StructureDefinition: https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-procedure-lt-colorectal."
+            }
+          ],
+          "code": "basicInfo.procedureDate",
+          "display": "Procedure date/time"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-colonoscopy",
+              "relationship": "related-to",
+              "comment": "ColonoscopyProcedureLtColorectal.extension (anaesthesia indicator); also referenced by colonoscopy-anesthesia-procedure example."
+            }
+          ],
+          "code": "basicInfo.anesthesia"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-colonoscopy",
+              "relationship": "related-to",
+              "comment": "ColonoscopyProcedureLtColorectal.usedReference Device — video colonoscope flag."
+            }
+          ],
+          "code": "basicInfo.videoColonoscope"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-colonoscopy",
+              "relationship": "related-to",
+              "comment": "ColonoscopyProcedureLtColorectal.extension[withdrawalTime] Quantity (minutes)."
+            }
+          ],
+          "code": "basicInfo.withdrawalTime"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-colonoscopy",
+              "relationship": "related-to",
+              "comment": "ColonoscopyProcedureLtColorectal.extension[retroflexionRectum] Boolean."
+            }
+          ],
+          "code": "basicInfo.retroflexionRectum"
+        },
+        {
+          "target": [
+            {
+              "code": "colonoscopy-composition",
+              "relationship": "related-to",
+              "comment": "ColonoscopyCompositionLtColorectal.section[history] — boolean flag for prior abdominal surgery (context for scope reach)."
+            }
+          ],
+          "code": "basicInfo.previousAbdominalSurgery"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-quality",
+              "relationship": "equivalent",
+              "comment": "BowelPreparationQualityLtColorectal.valueCodeableConcept bound to bowel-preparation-quality-lt-colorectal."
+            }
+          ],
+          "code": "bowelPrep.prepQuality"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-score",
+              "relationship": "equivalent",
+              "comment": "ObservationLt — BBPS right colon score bound to bowel-preparation-score-values-lt-colorectal."
+            }
+          ],
+          "code": "bowelPrep.bbpsRight"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-score",
+              "relationship": "equivalent",
+              "comment": "ObservationLt — BBPS transverse colon score."
+            }
+          ],
+          "code": "bowelPrep.bbpsTransverse"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-score",
+              "relationship": "equivalent",
+              "comment": "ObservationLt — BBPS left colon score."
+            }
+          ],
+          "code": "bowelPrep.bbpsLeft"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-score",
+              "relationship": "related-to",
+              "comment": "ObservationLt — derived total BBPS (derivedFrom the three segment scores)."
+            }
+          ],
+          "code": "bowelPrep.totalBbps"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-method",
+              "relationship": "equivalent",
+              "comment": "ObservationLt — bowel preparation method bound to bowel-prep-method-lt-colorectal."
+            }
+          ],
+          "code": "bowelPrep.prepMethod"
+        },
+        {
+          "target": [
+            {
+              "code": "bowel-prep-substance",
+              "relationship": "equivalent",
+              "comment": "ObservationLt — preparation substance bound to bowel-preparation-substance-lt-colorectal."
+            }
+          ],
+          "code": "bowelPrep.usedPreparations"
+        },
+        {
+          "target": [
+            {
+              "code": "scope-reach",
+              "relationship": "equivalent",
+              "comment": "ColonoscopeReachLtColorectal.valueCodeableConcept bound to colonoscope-reach-lt-colorectal."
+            }
+          ],
+          "code": "scopeReach.reachLocation"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-observation",
+              "relationship": "equivalent",
+              "comment": "Observation — colon polyp detection flag; zero-to-many Observations per polyp (see lab/examples-colon-polyps)."
+            }
+          ],
+          "code": "polypFindings.polypFound"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-observation",
+              "relationship": "related-to",
+              "comment": "Observation.bodySite bound to colon-segments-lt-colorectal / bowel-segments-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.location"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-size",
+              "relationship": "equivalent",
+              "comment": "Observation.component[size] Quantity (mm)."
+            }
+          ],
+          "code": "polypFindings.sizeMm"
+        },
+        {
+          "target": [
+            {
+              "code": "paris-classification",
+              "relationship": "equivalent",
+              "comment": "Observation.component[paris] bound to paris-classification-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.parisClassification"
+        },
+        {
+          "target": [
+            {
+              "code": "nice-classification",
+              "relationship": "equivalent",
+              "comment": "Observation.component[nice] bound to nice-classification-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.niceClassification"
+        },
+        {
+          "target": [
+            {
+              "code": "predicted-histology",
+              "relationship": "equivalent",
+              "comment": "Observation.component[predictedHistology] bound to polyp-predicted-histology-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.predictedHistology"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-removal",
+              "relationship": "related-to",
+              "comment": "Procedure (polypectomy); status=completed when removed, not-done otherwise."
+            }
+          ],
+          "code": "polypFindings.polypRemoved"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-removal",
+              "relationship": "equivalent",
+              "comment": "Procedure.code or extension bound to polypectomy-method-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.removalMethod"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-removal",
+              "relationship": "related-to",
+              "comment": "Procedure.extension bound to resection-type-lt-colorectal."
+            }
+          ],
+          "code": "polypFindings.resectionType"
+        },
+        {
+          "target": [
+            {
+              "code": "polyp-histology",
+              "relationship": "related-to",
+              "comment": "Boolean flag; downstream HistologicalDiagnosisLtColorectal links back via DiagnosticReportLt.basedOn Procedure."
+            }
+          ],
+          "code": "polypFindings.sentForHistology"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-finding",
+              "relationship": "equivalent",
+              "comment": "TumorFindingLtColorectal (presence flag)."
+            }
+          ],
+          "code": "tumorFindings.tumorFound"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-finding",
+              "relationship": "related-to",
+              "comment": "TumorFindingLtColorectal.bodySite bound to colon-segments-lt-colorectal."
+            }
+          ],
+          "code": "tumorFindings.tumorLocation"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-finding",
+              "relationship": "related-to",
+              "comment": "Procedure (biopsy) linked to the TumorFindingLtColorectal via focus or basedOn."
+            }
+          ],
+          "code": "tumorFindings.biopsyPerformed"
+        },
+        {
+          "target": [
+            {
+              "code": "complication-presence",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyComplicationPresenceLtColorectal.valueBoolean."
+            }
+          ],
+          "code": "complications.complicationPresence"
+        },
+        {
+          "target": [
+            {
+              "code": "complication-type",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyComplicationTypeLtColorectal bound to colonoscopy-complication-type-lt-colorectal."
+            }
+          ],
+          "code": "complications.complicationType"
+        },
+        {
+          "target": [
+            {
+              "code": "wall-injury",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyWallInjuryDetailLtColorectal.component[action] bound to colonoscopy-wall-injury-action-lt-colorectal."
+            }
+          ],
+          "code": "complications.wallInjury"
+        },
+        {
+          "target": [
+            {
+              "code": "bleeding-control",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyBleedingControlLtColorectal bound to bleeding-control-method-lt-colorectal."
+            }
+          ],
+          "code": "complications.bleedingControl"
+        },
+        {
+          "target": [
+            {
+              "code": "colonoscopy-conclusion",
+              "relationship": "equivalent",
+              "comment": "ColonoscopyConclusionLtColorectal bound to conclusions-lt-colorectal."
+            }
+          ],
+          "code": "conclusions.conclusion"
+        },
+        {
+          "target": [
+            {
+              "code": "recommendation-followup",
+              "relationship": "related-to",
+              "comment": "CarePlanLt.activity.detail.scheduledTiming — next colonoscopy follow-up window."
+            }
+          ],
+          "code": "recommendations.nextColonoscopy"
+        }
+      ],
+      "source": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-colonoscopy-questionnaire-item",
+      "target": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-fhir-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "ColorectalColonoscopyQuestionnaireToFhir",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-04-20",
+  "publisher": "HL7 Lithuania"
+}

@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HydropreparationSubstanceVS",
+  "id": "hydropreparation-substance",
+  "title": "Hydropreparation Substance",
+  "description": "Substances used for submucosal injection (hydropreparation) during polypectomy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/hydropreparation-substance",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "hydro-saline",
+            "display": "Normal saline"
+          },
+          {
+            "code": "hydro-adrenaline",
+            "display": "Adrenaline"
+          },
+          {
+            "code": "hydro-methylene-blue",
+            "display": "Methylene blue"
+          },
+          {
+            "code": "hydro-gelofusine",
+            "display": "Gelofusine"
+          }
+        ]
+      }
+    ]
+  }
+}

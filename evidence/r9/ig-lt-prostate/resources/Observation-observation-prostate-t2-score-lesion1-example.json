@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-t2-score-lesion1-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+    ]
+  },
+  "focus": [
+    {
+      "reference": "BodyStructure/bodyStructure-prostate-lesion1-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "T2 score 5 in transition zone lesion."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "110805",
+        "system": "http://dicom.nema.org/resources/ontology/DCM",
+        "display": "T2 Weighted MR Signal Intensity"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2024-05-27T10:30:00Z",
+  "valueInteger": 5
+}

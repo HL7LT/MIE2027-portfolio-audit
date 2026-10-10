@@ -1,0 +1,224 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-pre-ldct-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-11-20"
+            }
+          ],
+          "linkId": "registration-date",
+          "text": "CT study registration date"
+        }
+      ],
+      "linkId": "grp-registration",
+      "text": "Registration"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "self-care",
+          "text": "Do you serve yourself?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bedridden",
+          "text": "Bedridden/chairbound"
+        }
+      ],
+      "linkId": "grp-functional-status",
+      "text": "Functional status"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "prior-chest-ct",
+          "text": "Previous chest (lung) CT in the last 3 years"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "recent-respiratory-infection",
+          "text": "Acute respiratory infection within 3 months prior to the invitation"
+        }
+      ],
+      "linkId": "grp-prior-exams",
+      "text": "Prior examinations"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 178,
+                "code": "cm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "cm"
+              }
+            }
+          ],
+          "linkId": "height",
+          "text": "Height (cm)"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 82,
+                "code": "kg",
+                "system": "http://unitsofmeasure.org",
+                "unit": "kg"
+              }
+            }
+          ],
+          "linkId": "weight",
+          "text": "Body mass weight (kg)"
+        }
+      ],
+      "linkId": "grp-anthropometrics",
+      "text": "Anthropometrics"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "smokes",
+          "text": "Currently smokes"
+        },
+        {
+          "answer": [
+            {
+              "item": [
+                {
+                  "answer": [
+                    {
+                      "valueInteger": 20
+                    }
+                  ],
+                  "linkId": "cigarettes-per-day",
+                  "text": "Number of cigarettes per day"
+                },
+                {
+                  "answer": [
+                    {
+                      "valueDecimal": 30
+                    }
+                  ],
+                  "linkId": "pack-years",
+                  "text": "Number of pack-years"
+                }
+              ],
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "cigarettes",
+          "text": "Cigarettes"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "e-cigarettes",
+          "text": "Electronic cigarettes"
+        }
+      ],
+      "linkId": "grp-current-smoking",
+      "text": "Current smoking status"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "smoked-before",
+          "text": "Smoked before"
+        }
+      ],
+      "linkId": "grp-smoking-history",
+      "text": "Smoking history"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "J44.1 Chronic obstructive pulmonary disease with acute exacerbation, unspecified"
+            }
+          ],
+          "linkId": "diagnoses",
+          "text": "Diagnoses before examination (ICD codes)"
+        }
+      ],
+      "linkId": "grp-diagnoses",
+      "text": "Diagnoses before examination"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/lung/Questionnaire/questionnaire-pre-ldct-lt-lung",
+  "status": "completed",
+  "authored": "2025-11-20T13:00:00Z",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

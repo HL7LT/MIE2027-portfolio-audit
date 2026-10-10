@@ -1,0 +1,111 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "coronary-calcium-score-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/coronary-calcium-score-lt-cvd",
+  "version": "1.0.0",
+  "name": "CoronaryCalciumScoreLtCvd",
+  "title": "Coronary Artery Calcium Score (Agatston)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Coronary artery calcium score (Agatston method) for CVD risk stratification.\nOrdered when the need for medication treatment is unclear or the patient does not tolerate statins.\nSix-level interpretation: 0 (no calcification), 1-10 (minimal), 11-100 (mild),\n101-400 (moderate), 401-1000 (significant), > 1000 (very significant).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "450734004",
+              "system": "http://snomed.info/sct",
+              "display": "Coronary artery calcium score (assessment scale)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x].unit",
+        "path": "Observation.value[x].unit",
+        "patternString": "score"
+      },
+      {
+        "id": "Observation.value[x].system",
+        "path": "Observation.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.value[x].code",
+        "path": "Observation.value[x].code",
+        "patternCode": "{score}"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Six-level Agatston score interpretation (0 to > 1000)",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/coronary-calcium-interpretation"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

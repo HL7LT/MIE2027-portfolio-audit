@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+  "name" : "LTBase",
+  "title" : "Lithuanian Base Implementation Guide",
+  "description" : "Lithuanian Base Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.base",
+  "ig-ver" : "0.4.0",
+  "date" : "Thu, 08 Oct, 2026 15:30:28 +0300",
+  "dateISO8601" : "2026-10-08T15:30:28+03:00",
+  "errs" : 0,
+  "warnings" : 129,
+  "hints" : 1856,
+  "suppressed-hints" : 33,
+  "suppressed-warnings" : 4,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1414831088
+}

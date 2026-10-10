@@ -1,0 +1,4 @@
+cross_guide,sets_sharing,guides,members
+yes,2,ig-lt-lab ig-lt-cervical,ig-lt-lab:histological-grading == ig-lt-cervical:cervical-histological-grade
+no,2,ig-lt-lung,ig-lt-lung:finding-density == ig-lt-lung:kidney-lesion-density
+no,2,ig-lt-cervical,ig-lt-cervical:cervical-biopsy-quadrant == ig-lt-cervical:cervical-biopsy-site-lt-cervical

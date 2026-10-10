@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-cholesterol-hdl-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-hdl-lab-lt"
+    ]
+  },
+  "valueQuantity": {
+    "value": 55
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "HDL cholesterol within healthy range (>= 40 (male) or >= 50 (female) mg/dL and <= 60 mg/dL)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "2085-9",
+        "system": "http://loinc.org",
+        "display": "Cholesterol in HDL [Mass/volume] in Serum or Plasma"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

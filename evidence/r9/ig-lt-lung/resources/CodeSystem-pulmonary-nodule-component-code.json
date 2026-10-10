@@ -1,0 +1,39 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PulmonaryNoduleComponentCode",
+  "id": "pulmonary-nodule-component-code",
+  "title": "Pulmonary Nodule Observation Component Codes",
+  "description": "Local component codes for pulmonary nodule observation elements used in the\nLithuanian lung cancer early diagnosis programme when no suitable SNOMED CT\ncode is available in the source dataset.",
+  "url": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+  "concept": [
+    {
+      "code": "ct-slice-number",
+      "display": "CT slice number"
+    },
+    {
+      "code": "morphology",
+      "display": "Morphology"
+    },
+    {
+      "code": "solid-part-mean-diameter",
+      "display": "Solid part mean diameter"
+    },
+    {
+      "code": "solid-part-long-axis",
+      "display": "Solid part long axis"
+    },
+    {
+      "code": "solid-part-short-axis",
+      "display": "Solid part short axis"
+    },
+    {
+      "code": "solid-part-volume",
+      "display": "Solid part volume"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 6
+}

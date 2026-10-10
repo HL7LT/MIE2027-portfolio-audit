@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalHistologicalGradeVS",
+  "id": "cervical-histological-grade",
+  "title": "Cervical Histological Grade",
+  "description": "Histological differentiation grades for cervical cancer, based on AJCC grading system.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-histological-grade",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1228848004",
+            "display": "American Joint Committee on Cancer grade G1 (qualifier value)"
+          },
+          {
+            "code": "1228850007",
+            "display": "American Joint Committee on Cancer grade G2 (qualifier value)"
+          },
+          {
+            "code": "1228851006",
+            "display": "American Joint Committee on Cancer grade G3 (qualifier value)"
+          },
+          {
+            "code": "1228845001",
+            "display": "American Joint Committee on Cancer grade GX (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

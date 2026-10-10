@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "IhcExpressionLevelVS",
+  "id": "ihc-expression-level",
+  "title": "IHC Expression Level (VS)",
+  "description": "Immunohistochemical expression level for receptor status (negative, weak, moderate, strong).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/ihc-expression-level",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/ihc-expression-level"
+      }
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "bowel-preparation-quality-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/bowel-preparation-quality-lt-colorectal",
+  "name": "BowelPreparationQualityLtColorectal",
+  "title": "Bowel Preparation Quality (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording bowel preparation quality assessment using the Boston Bowel Preparation Scale (BBPS) in the Lithuanian colorectal cancer screening program. Quality is poor when total < 6 points, or at least one segment has a score of 0 or 1.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "722819004",
+              "system": "http://snomed.info/sct",
+              "display": "Boston bowel preparation scale finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Overall quality: effective, inadequate, or not done",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bowel-preparation-quality"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:bbpsLeft",
+        "path": "Observation.component",
+        "sliceName": "bbpsLeft",
+        "short": "BBPS left colon segment score (0-3)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:bbpsLeft.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "55572008",
+              "system": "http://snomed.info/sct",
+              "display": "Left colon structure (body structure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bbpsLeft.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-score-values"
+        }
+      },
+      {
+        "id": "Observation.component:bbpsTransverse",
+        "path": "Observation.component",
+        "sliceName": "bbpsTransverse",
+        "short": "BBPS transverse colon segment score (0-3)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:bbpsTransverse.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "485005",
+              "system": "http://snomed.info/sct",
+              "display": "Transverse colon structure (body structure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bbpsTransverse.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-score-values"
+        }
+      },
+      {
+        "id": "Observation.component:bbpsRight",
+        "path": "Observation.component",
+        "sliceName": "bbpsRight",
+        "short": "BBPS right colon segment score (0-3)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:bbpsRight.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "51342009",
+              "system": "http://snomed.info/sct",
+              "display": "Right colon structure (body structure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bbpsRight.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-score-values"
+        }
+      }
+    ]
+  }
+}

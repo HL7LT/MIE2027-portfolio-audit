@@ -1,0 +1,901 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cervical-histology-espbi",
+  "url": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-histology-espbi",
+  "title": "Cervical Histopathological Examination – ESPBI Form",
+  "description": "Structured questionnaire capturing cervical histopathological examination data for the Lithuanian ESPBI system, aligned with ADP Table 7.2.",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "referral.personalCode",
+          "text": "Personal code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referral.name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referral.surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referral.dateOfBirth",
+          "text": "Date of birth",
+          "type": "date"
+        },
+        {
+          "linkId": "referral.clinicalDiagnosis",
+          "text": "Clinical diagnosis (ICD-10 code with name)",
+          "type": "string"
+        }
+      ],
+      "linkId": "referral",
+      "text": "Referral to perform pathology test",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "261665006",
+                "system": "http://snomed.info/sct",
+                "display": "Unknown (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "previousProcedures.hasPreviousProcedure",
+          "text": "Has previous procedure",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "previousProcedures.hasPreviousProcedure",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "50796003",
+                "system": "http://snomed.info/sct",
+                "display": "Cervical biopsy (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "108941000119102",
+                "system": "http://snomed.info/sct",
+                "display": "History of cervical conization (situation)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125211000119106",
+                "system": "http://snomed.info/sct",
+                "display": "History of antineoplastic chemotherapy (situation)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "429479009",
+                "system": "http://snomed.info/sct",
+                "display": "History of radiation therapy (situation)"
+              }
+            }
+          ],
+          "linkId": "previousProcedures.procedureType",
+          "text": "Type of previous procedure",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "previousProcedures.hasPreviousProcedure",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "previousProcedures.procedureDate",
+          "text": "Procedure date",
+          "type": "date"
+        }
+      ],
+      "linkId": "previousProcedures",
+      "text": "Previous procedures history",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "392003006",
+                "system": "http://snomed.info/sct",
+                "display": "Colposcopy (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "416237000",
+                "system": "http://snomed.info/sct",
+                "display": "Procedure not done (situation)"
+              }
+            }
+          ],
+          "linkId": "colposcopyData.colposcopyStatus",
+          "text": "Colposcopy status",
+          "type": "coding"
+        },
+        {
+          "linkId": "colposcopyData.swedeScore",
+          "text": "Swede score (0-10)",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "125152006",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen satisfactory for evaluation (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125154007",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen unsatisfactory for evaluation (finding)"
+              }
+            }
+          ],
+          "linkId": "colposcopyData.adequacy",
+          "text": "Adequacy of colposcopy",
+          "type": "coding"
+        }
+      ],
+      "linkId": "colposcopyData",
+      "text": "Colposcopy examination data",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "51675008",
+                "system": "http://snomed.info/sct",
+                "display": "Punch biopsy of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "23140002",
+                "system": "http://snomed.info/sct",
+                "display": "Loop electrosurgical excision procedure of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "54535009",
+                "system": "http://snomed.info/sct",
+                "display": "Cone biopsy of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "52889002",
+                "system": "http://snomed.info/sct",
+                "display": "Endocervical curettage (procedure)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.procedureType",
+          "text": "Procedure type",
+          "type": "coding"
+        }
+      ],
+      "linkId": "biopsyProcedure",
+      "text": "Nature of operation/procedure",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "127900007",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of left superior quadrant of uterine cervix"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "127902004",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of right superior quadrant of uterine cervix"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "127901006",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of right inferior quadrant of uterine cervix"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "127899002",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of left inferior quadrant of uterine cervix"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "56739004",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of cervical canal of uterus"
+                  }
+                }
+              ],
+              "linkId": "biopsySites.containers.biopsySite",
+              "text": "Biopsy site",
+              "type": "coding"
+            },
+            {
+              "linkId": "biopsySites.containers.anatomicalNotes",
+              "text": "Anatomical notes",
+              "type": "text"
+            },
+            {
+              "linkId": "biopsySites.containers.numberOfFragments",
+              "text": "Number of fragments",
+              "type": "integer"
+            }
+          ],
+          "linkId": "biopsySites.containers",
+          "text": "Container",
+          "type": "group",
+          "repeats": true
+        }
+      ],
+      "linkId": "biopsySites",
+      "text": "Biopsy site description",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "macroscopic.tissueSizeX",
+          "text": "Tissue size X (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "macroscopic.tissueSizeY",
+          "text": "Tissue size Y (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "macroscopic.tissueSizeZ",
+          "text": "Tissue size Z (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "macroscopic.ectocervixSizeX",
+          "text": "Ectocervix size X (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "macroscopic.ectocervixSizeY",
+          "text": "Ectocervix size Y (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "macroscopic.otherFindingsSize",
+          "text": "Other findings / size",
+          "type": "text"
+        },
+        {
+          "linkId": "macroscopic.notes",
+          "text": "Notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "macroscopic",
+      "text": "Macroscopic examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "microscopic.description",
+          "text": "Microscopic description",
+          "type": "text"
+        }
+      ],
+      "linkId": "microscopic",
+      "text": "Microscopic examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "30389008",
+                "system": "http://snomed.info/sct",
+                "display": "Normal tissue (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125513006",
+                "system": "http://snomed.info/sct",
+                "display": "Reactive cellular changes (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125154007",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen unsatisfactory for evaluation (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "400002005",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 1 (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "400049009",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1162893000",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "12478003",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1157180003",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus-associated adenocarcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1157186009",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus-independent adenocarcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "783212001",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "783213006",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus negative squamous cell carcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1162767002",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1187332001",
+                "system": "http://snomed.info/sct",
+                "display": "Adenocarcinoma (morphologic abnormality)"
+              }
+            }
+          ],
+          "linkId": "conclusion.diagnosisCategory",
+          "text": "Diagnosis category",
+          "type": "coding"
+        }
+      ],
+      "linkId": "conclusion",
+      "text": "Conclusion / Diagnosis",
+      "type": "group"
+    },
+    {
+      "enableWhen": [
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "12478003",
+            "system": "http://snomed.info/sct",
+            "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "783212001",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "783213006",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus negative squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "1162767002",
+            "system": "http://snomed.info/sct",
+            "display": "Squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "1187332001",
+            "system": "http://snomed.info/sct",
+            "display": "Adenocarcinoma (morphologic abnormality)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1228848004",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228850007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228851006",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G3 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228845001",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade GX (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "grade.grade",
+          "text": "Grade",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grade",
+      "text": "Histological grade",
+      "type": "group",
+      "enableBehavior": "any"
+    },
+    {
+      "enableWhen": [
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "12478003",
+            "system": "http://snomed.info/sct",
+            "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "783212001",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "783213006",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus negative squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "1162767002",
+            "system": "http://snomed.info/sct",
+            "display": "Squamous cell carcinoma (morphologic abnormality)"
+          }
+        },
+        {
+          "question": "conclusion.diagnosisCategory",
+          "operator": "=",
+          "answerCoding": {
+            "code": "1187332001",
+            "system": "http://snomed.info/sct",
+            "display": "Adenocarcinoma (morphologic abnormality)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "tumorSize.horizontal",
+          "text": "Horizontal extent (mm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "tumorSize.depth",
+          "text": "Depth of invasion (mm)",
+          "type": "decimal"
+        }
+      ],
+      "linkId": "tumorSize",
+      "text": "Tumor size",
+      "type": "group",
+      "enableBehavior": "any"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "261665006",
+                "system": "http://snomed.info/sct",
+                "display": "Unknown (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "pLVI.status",
+          "text": "pLVI status",
+          "type": "coding"
+        }
+      ],
+      "linkId": "pLVI",
+      "text": "Lymphovascular invasion (pLVI)",
+      "type": "group"
+    },
+    {
+      "enableWhen": [
+        {
+          "question": "biopsyProcedure.procedureType",
+          "operator": "=",
+          "answerCoding": {
+            "code": "23140002",
+            "system": "http://snomed.info/sct",
+            "display": "Loop electrosurgical excision procedure of cervix (procedure)"
+          }
+        },
+        {
+          "question": "biopsyProcedure.procedureType",
+          "operator": "=",
+          "answerCoding": {
+            "code": "54535009",
+            "system": "http://snomed.info/sct",
+            "display": "Cone biopsy of cervix (procedure)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "310342002",
+                "system": "http://snomed.info/sct",
+                "display": "Excision - clear margin (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "396256001",
+                "system": "http://snomed.info/sct",
+                "display": "Surgical exocervical margin involved by malignant neoplasm (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "396246000",
+                "system": "http://snomed.info/sct",
+                "display": "Surgical endocervical margin involved by malignant neoplasm (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "395544008",
+                "system": "http://snomed.info/sct",
+                "display": "Surgical deep margin involved by malignant neoplasm (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "395537004",
+                "system": "http://snomed.info/sct",
+                "display": "Surgical margin involvement by tumor cannot be assessed (finding)"
+              }
+            }
+          ],
+          "linkId": "margins.marginStatus",
+          "text": "Margin status",
+          "type": "coding"
+        }
+      ],
+      "linkId": "margins",
+      "text": "Surgical margins",
+      "type": "group",
+      "enableBehavior": "any"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1228950008",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTX (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228951007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT0 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228953005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTis (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228960004",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1a1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228961000",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1a2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229844006",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1b1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229845007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1b2 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnm.pT",
+          "text": "pT stage",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1222641001",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer RX (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222638005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R0 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222639002",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222640000",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R2 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnm.pR",
+          "text": "pR stage",
+          "type": "coding"
+        },
+        {
+          "linkId": "tnm.icd10Code",
+          "text": "ICD-10 code",
+          "type": "string"
+        },
+        {
+          "linkId": "tnm.icdOCode",
+          "text": "ICD-O code",
+          "type": "string"
+        },
+        {
+          "linkId": "tnm.snomedCode",
+          "text": "SNOMED CT code",
+          "type": "string"
+        }
+      ],
+      "linkId": "tnm",
+      "text": "TNM staging",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "conductedBy.conductedName",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.conductedSurname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.conductedPressNumber",
+          "text": "Medical press number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.responseDate",
+          "text": "Response date",
+          "type": "dateTime"
+        }
+      ],
+      "linkId": "conductedBy",
+      "text": "Conducted by",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "confirmedBy.confirmedName",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.confirmedSurname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.confirmedPressNumber",
+          "text": "Medical press number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.confirmationDate",
+          "text": "Confirmation date",
+          "type": "dateTime"
+        }
+      ],
+      "linkId": "confirmedBy",
+      "text": "Confirmed by",
+      "type": "group"
+    }
+  ],
+  "version": "0.0.1",
+  "name": "CervicalHistologyEspbiQuestionnaire",
+  "status": "active",
+  "date": "2025-04-01",
+  "publisher": "Lithuanian Medical Library"
+}

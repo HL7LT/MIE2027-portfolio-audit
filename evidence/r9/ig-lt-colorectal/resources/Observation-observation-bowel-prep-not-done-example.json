@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-bowel-prep-not-done-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "225106003",
+        "system": "http://snomed.info/sct",
+        "display": "Preparation of bowel for procedure (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "722825000",
+        "system": "http://snomed.info/sct",
+        "display": "Bowel preparation not done (situation)"
+      }
+    ]
+  }
+}

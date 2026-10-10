@@ -1,0 +1,268 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/ConceptMap/conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate",
+  "title": "ADPP Questionnaire items to FHIR mapping",
+  "description": "Maps ADPP primary assessment Questionnaire linkIds to LT Base / VitalSigns / Lifestyle / Lab patterns. Not a substitute for $extract or national transform logic.",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "encounter-period",
+              "display": "Encounter.period",
+              "relationship": "related-to",
+              "comment": "Maps to EncounterLt.period (or effectiveDateTime on Observations created in this visit). Example: Encounter-encounter-prostate-diagnostic-example."
+            }
+          ],
+          "code": "assessment-datetime",
+          "display": "Assessment date and time"
+        },
+        {
+          "target": [
+            {
+              "code": "servicerequest-reason",
+              "display": "ServiceRequest.reasonCode",
+              "relationship": "related-to",
+              "comment": "Populate ServiceRequestLt.reasonCode or Encounter.reasonCode. Example: ServiceRequest-servicerequest-pathology-prostate-order-example (LT Lab CI)."
+            }
+          ],
+          "code": "referral-reason",
+          "display": "Reason for referral / programme entry"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "display": "Observation: PSA LOINC 2857-1",
+              "relationship": "related-to",
+              "comment": "Boolean flag; actual value is ObservationLt with LOINC 2857-1. Example: Observation-observation-prostate-psa-example."
+            }
+          ],
+          "code": "psa-recorded",
+          "display": "PSA measured at this visit (flag)"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "display": "Observation: DRE finding",
+              "relationship": "related-to",
+              "comment": "No dedicated DRE profile in LT Prostate; use ObservationLt (exam) with SNOMED or national codes. National spreadsheets add texture options (e.g. 276385001 Soft prostate) — extend answerOption and map to valueCodeableConcept."
+            }
+          ],
+          "code": "dre-result",
+          "display": "Digital rectal examination (summary)"
+        },
+        {
+          "target": [
+            {
+              "code": "family-member-history-cancer",
+              "display": "FamilyMemberHistory",
+              "relationship": "related-to",
+              "comment": "Use FamilyMemberHistory with SNOMED situation codes (e.g. 414205003) as in national form notes. LT Base FamilyMemberHistory if profiled."
+            }
+          ],
+          "code": "family-hx-prostate",
+          "display": "Family history: prostate cancer"
+        },
+        {
+          "target": [
+            {
+              "code": "family-member-history-cancer",
+              "relationship": "related-to",
+              "comment": "Same as family-hx-prostate; different relationship code."
+            }
+          ],
+          "code": "family-hx-breast",
+          "display": "Family history: breast cancer"
+        },
+        {
+          "target": [
+            {
+              "code": "family-member-history-cancer",
+              "relationship": "related-to",
+              "comment": "Same pattern as other family history items."
+            }
+          ],
+          "code": "family-hx-ovarian",
+          "display": "Family history: ovarian cancer"
+        },
+        {
+          "target": [
+            {
+              "code": "family-member-history-cancer",
+              "relationship": "related-to",
+              "comment": "Same pattern as other family history items."
+            }
+          ],
+          "code": "family-hx-colon",
+          "display": "Family history: colorectal cancer"
+        },
+        {
+          "target": [
+            {
+              "code": "body-height",
+              "relationship": "related-to",
+              "comment": "LT VitalSigns body height Observation. CI: Observation-observation-body-height-example."
+            }
+          ],
+          "code": "height-cm",
+          "display": "Height (cm)"
+        },
+        {
+          "target": [
+            {
+              "code": "body-weight",
+              "relationship": "related-to",
+              "comment": "LT VitalSigns body weight Observation."
+            }
+          ],
+          "code": "weight-kg",
+          "display": "Weight (kg)"
+        },
+        {
+          "target": [
+            {
+              "code": "bmi",
+              "relationship": "related-to",
+              "comment": "BMI Observation (LOINC 39156-5 or SNOMED 60621009). May be derived from height/weight."
+            }
+          ],
+          "code": "bmi-kg-m2",
+          "display": "BMI (kg/m²)"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-prior-psa",
+              "relationship": "related-to",
+              "comment": "ObservationLt PSA with effectiveDate aligned to first-psa-date."
+            }
+          ],
+          "code": "first-psa-ngml",
+          "display": "First PSA (ng/ml)"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-prior-psa",
+              "relationship": "related-to",
+              "comment": "Observation.effective for the first PSA Observation."
+            }
+          ],
+          "code": "first-psa-date",
+          "display": "First PSA date"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-prior-psa",
+              "relationship": "related-to",
+              "comment": "Second PSA Observation instance with effectiveDate from second-psa-date."
+            }
+          ],
+          "code": "second-psa-ngml",
+          "display": "Second PSA (ng/ml)"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-prior-psa",
+              "relationship": "related-to",
+              "comment": "Observation.effective for the second PSA Observation."
+            }
+          ],
+          "code": "second-psa-date",
+          "display": "Second PSA date"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-mpmri-history",
+              "relationship": "related-to",
+              "comment": "Procedure or ImagingStudy + DiagnosticReport summary; or Observation with history context. Link to PI-RADS via prior-mpmri-pirads."
+            }
+          ],
+          "code": "prior-mpmri",
+          "display": "Prior mpMRI documented"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-mpmri-history",
+              "relationship": "related-to",
+              "comment": "Align with PIRADSAssessmentLtProstate or past report narrative; not a substitute for full mpMRI bundle."
+            }
+          ],
+          "code": "prior-mpmri-pirads",
+          "display": "Prior mpMRI PI-RADS category"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-prior-prostate-surgery",
+              "relationship": "related-to",
+              "comment": "Procedure completed (ProcedureLt); national form also captures date — add Observation or Procedure.performedPeriod when available."
+            }
+          ],
+          "code": "prior-prostatectomy",
+          "display": "Prior prostatectomy"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-prior-prostate-radiation",
+              "relationship": "related-to",
+              "comment": "Procedure or History of radiation therapy (429479009) as situation Observation."
+            }
+          ],
+          "code": "prior-prostate-radiation",
+          "display": "Prior prostate radiotherapy"
+        },
+        {
+          "target": [
+            {
+              "code": "medicationstatement-anticoagulant",
+              "relationship": "related-to",
+              "comment": "MedicationStatement or MedicationRequest; not profiled in this IG."
+            }
+          ],
+          "code": "anticoagulant-use",
+          "display": "Anticoagulant use"
+        },
+        {
+          "target": [
+            {
+              "code": "clinical-impression-or-note",
+              "relationship": "related-to",
+              "comment": "Free text: Encounter.reasonCode text, ClinicalImpression.summary, or DocumentReference."
+            }
+          ],
+          "code": "complaints-anamnesis",
+          "display": "Complaints, anamnesis"
+        },
+        {
+          "target": [
+            {
+              "code": "clinical-impression-or-note",
+              "relationship": "related-to",
+              "comment": "Same as complaints-anamnesis; often copied to ServiceRequest.note or referral DocumentReference."
+            }
+          ],
+          "code": "specialist-additional-info",
+          "display": "Additional information for specialist"
+        }
+      ],
+      "source": "https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item",
+      "target": "https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "ProstateAdppQuestionnaireToFhir",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-03-24",
+  "publisher": "HL7 Lithuania"
+}

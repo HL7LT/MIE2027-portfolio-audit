@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ResectionTypeVS",
+  "id": "resection-type",
+  "title": "Resection Type",
+  "description": "Whether the lesion was removed en bloc or piecemeal.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/resection-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "resection-en-bloc",
+            "display": "En bloc resection"
+          },
+          {
+            "code": "resection-piecemeal",
+            "display": "Piecemeal resection"
+          }
+        ]
+      }
+    ]
+  }
+}

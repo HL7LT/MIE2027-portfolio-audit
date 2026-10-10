@@ -1,0 +1,96 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CytologyConclusionLtCervicalVS",
+  "id": "cytology-conclusion-lt-cervical",
+  "title": "Cervix - Cytology Conclusion (LT Cervical)",
+  "description": "Cytological diagnostic conclusions and specimen adequacy categories used in the Lithuanian cervical cancer screening and diagnostic pathway (ADP), aligned with Bethesda terminology.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cytology-conclusion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "125152006",
+            "display": "Specimen satisfactory for evaluation (finding)"
+          },
+          {
+            "code": "50110003",
+            "display": "Cervical smear - endocervical cells absent (finding)"
+          },
+          {
+            "code": "125154007",
+            "display": "Specimen unsatisfactory for evaluation (finding)"
+          },
+          {
+            "code": "123836007",
+            "display": "Unsatisfactory for evaluation due to obscuring blood (finding)"
+          },
+          {
+            "code": "123837003",
+            "display": "Unsatisfactory for evaluation due to obscuring inflammation (finding)"
+          },
+          {
+            "code": "125162004",
+            "display": "Unsatisfactory for evaluation due to air drying artifact (finding)"
+          },
+          {
+            "code": "125161006",
+            "display": "Unsatisfactory for evaluation due to scant squamous epithelial component (finding)"
+          },
+          {
+            "code": "373887005",
+            "display": "Negative for intraepithelial lesion or malignancy (finding)"
+          },
+          {
+            "code": "416032004",
+            "display": "Cervicovaginal cytology normal or benign (finding)"
+          },
+          {
+            "code": "441087007",
+            "display": "Atypical squamous cells of undetermined significance on cervical Papanicolaou smear (finding)"
+          },
+          {
+            "code": "441088002",
+            "display": "Atypical squamous cells on cervical Papanicolaou smear cannot exclude high grade squamous intraepithelial lesion (finding)"
+          },
+          {
+            "code": "62051000119105",
+            "display": "Low grade squamous intraepithelial lesion on cervical Papanicolaou smear (finding)"
+          },
+          {
+            "code": "62061000119107",
+            "display": "High grade squamous intraepithelial lesion on cervical Papanicolaou smear (finding)"
+          },
+          {
+            "code": "441219009",
+            "display": "Atypical glandular cells on cervical Papanicolaou smear (finding)"
+          },
+          {
+            "code": "373883009",
+            "display": "Atypical glandular cells, favor neoplastic (morphologic abnormality)"
+          },
+          {
+            "code": "1162767002",
+            "display": "Squamous cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "51642000",
+            "display": "Adenocarcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "1187332001",
+            "display": "Adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "373885002",
+            "display": "Endometrial cells in a woman forty years of age or older, negative for squamous intraepithelial lesion (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

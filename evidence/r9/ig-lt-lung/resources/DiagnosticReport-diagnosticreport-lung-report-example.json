@@ -1,0 +1,63 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-lung-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/lung-report-lt-lung"
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "4261000179100",
+        "system": "http://snomed.info/sct",
+        "display": "Computed tomography imaging report"
+      },
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "PractitionerRole/practitionerrole-radiologist-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-lung-rads-4a-example"
+    },
+    {
+      "reference": "Observation/observation-pulmonary-nodule-solid-example"
+    },
+    {
+      "reference": "Observation/observation-incidental-coronary-calcification-example"
+    },
+    {
+      "reference": "Observation/observation-lung-recommendation-3m-example"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-11-20T14:30:00Z",
+  "issued": "2025-11-20T16:00:00+02:00",
+  "composition": {
+    "reference": "Composition/lung-composition-ldct-example"
+  },
+  "conclusion": "LUNG-RADS 4A: Suspicious solid nodule in right upper lobe (9mm). Moderate coronary artery calcification. Recommend 3-month follow-up LDCT."
+}

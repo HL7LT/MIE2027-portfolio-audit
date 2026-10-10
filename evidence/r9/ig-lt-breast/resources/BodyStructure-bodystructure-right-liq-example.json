@@ -1,0 +1,34 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodystructure-right-liq-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+    ]
+  },
+  "includedStructure": [
+    {
+      "laterality": {
+        "coding": [
+          {
+            "code": "24028007",
+            "system": "http://snomed.info/sct",
+            "display": "Right"
+          }
+        ]
+      },
+      "structure": {
+        "coding": [
+          {
+            "code": "19100000",
+            "system": "http://snomed.info/sct",
+            "display": "Lower inner quadrant of breast"
+          }
+        ]
+      }
+    }
+  ],
+  "patient": {
+    "reference": "Patient/example-patient-female"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Ratio-uv-ips",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pc"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/Ratio-uv-ips",
+  "version": "1.1.0",
+  "name": "RatioIPS",
+  "title": "Ratio (IPS)",
+  "status": "draft",
+  "publisher": "Health Level Seven International - Patient Care Work Group",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare"
+        }
+      ]
+    }
+  ],
+  "description": "Ratio data type, constrained to use UCUM as the code system for units.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
+  "purpose": "Allow only UCUM as the code system for units.",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Ratio",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Ratio",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Ratio",
+        "path": "Ratio"
+      }
+    ]
+  }
+}

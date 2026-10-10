@@ -1,0 +1,354 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-prostate-pathologist-referral",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "sending-institution",
+          "text": "Sending institution",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sending-section",
+          "text": "Section / department",
+          "type": "string"
+        },
+        {
+          "linkId": "treating-physician-name",
+          "text": "Treating physician (full name)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "treating-physician-email",
+          "text": "Treating physician e-mail",
+          "type": "string"
+        },
+        {
+          "linkId": "treating-physician-phone",
+          "text": "Treating physician phone",
+          "type": "string"
+        },
+        {
+          "linkId": "referring-doctor-name",
+          "text": "Referring doctor (full name)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referring-doctor-email",
+          "text": "Referring doctor e-mail",
+          "type": "string"
+        },
+        {
+          "linkId": "referring-doctor-phone",
+          "text": "Referring doctor phone",
+          "type": "string"
+        }
+      ],
+      "linkId": "grp-referral-info",
+      "text": "Referral information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "biopsy-initial",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Initial biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "biopsy-repeat",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Repeat biopsy"
+              }
+            }
+          ],
+          "linkId": "biopsy-type",
+          "text": "Biopsy type",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-biopsy-type",
+      "text": "Biopsy type",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "fixative-buffered-formalin",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "10% buffered formalin"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fixative-unfixed",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Unfixed (no fixative)"
+              }
+            }
+          ],
+          "linkId": "tissue-fixing-material",
+          "text": "Tissue-fixing material",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-tissue-fixing",
+      "text": "Tissue fixing",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "dx-n40-gph",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "N40 Glandular prostatic hyperplasia"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "dx-c61",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "C61 Malignant neoplasm of prostate"
+              }
+            }
+          ],
+          "linkId": "clinical-diagnosis",
+          "text": "Clinical diagnosis",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ct-1c",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "cT1c"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ct-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "cT2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ct-3a",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "cT3a"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ct-3b",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "cT3b"
+              }
+            }
+          ],
+          "linkId": "clinical-t-stage",
+          "text": "Clinical T stage (if C61)",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-clinical-diagnosis",
+      "text": "Clinical diagnosis",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "op-transperineal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Transperineal biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "op-transrectal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Transrectal biopsy"
+              }
+            }
+          ],
+          "linkId": "operation-name",
+          "text": "Operation name",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "proc-systematic",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Systematic biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-adaptive",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Adaptive biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-systematic-targeted",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Systematic + targeted biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-applicative-perifocal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Applicative + perifocal biopsy"
+              }
+            }
+          ],
+          "linkId": "procedure-type",
+          "text": "Procedure type",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-procedure",
+      "text": "Procedure",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "specimens-right-pz",
+          "text": "Right peripheral zone (number of biopsies)",
+          "type": "integer"
+        },
+        {
+          "linkId": "specimens-left-pz",
+          "text": "Left peripheral zone (number of biopsies)",
+          "type": "integer"
+        },
+        {
+          "linkId": "specimens-focus-1",
+          "text": "Focus 1 (number of biopsies)",
+          "type": "integer"
+        },
+        {
+          "linkId": "specimens-focus-2",
+          "text": "Focus 2 (number of biopsies)",
+          "type": "integer"
+        },
+        {
+          "linkId": "specimens-focus-3",
+          "text": "Focus 3 (number of biopsies)",
+          "type": "integer"
+        }
+      ],
+      "linkId": "grp-specimens",
+      "text": "Description of histological object (number of biopsies per location)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "psa-ngml",
+          "text": "PSA (ng/ml)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "psat-ngml-ml",
+          "text": "PSAT (ng/ml/ml)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "prostate-volume-ml",
+          "text": "Prostate volume (ml)",
+          "type": "quantity"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pirads-cat-1-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 1–2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 3"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 4"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pirads-cat-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "PI-RADS 5"
+              }
+            }
+          ],
+          "linkId": "mpmri-pirads",
+          "text": "mpMRI PI-RADS assessment",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-clinical-data",
+      "text": "Clinical data",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "additional-info",
+          "text": "Additional information",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-additional",
+      "text": "Additional information",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathologist-referral",
+  "version": "0.1.0",
+  "name": "ProstatePathologistReferral",
+  "title": "Referral to pathologist (E014, form 014-1-1/a)",
+  "status": "draft",
+  "date": "2025-06-01",
+  "publisher": "HL7 Lithuania"
+}

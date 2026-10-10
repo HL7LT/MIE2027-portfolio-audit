@@ -1,0 +1,50 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-gland-density-fatty-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-gland-density-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "note": [
+    {
+      "text": "Mammography shows predominantly fatty breast density."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "733851004",
+        "system": "http://snomed.info/sct",
+        "display": "Breast consistency (observable entity)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "129716005",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "bodySite": {
+    "coding": [
+      {
+        "code": "76752008",
+        "system": "http://snomed.info/sct",
+        "display": "Breast"
+      }
+    ]
+  }
+}

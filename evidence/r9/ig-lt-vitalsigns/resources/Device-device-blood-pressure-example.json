@@ -1,0 +1,43 @@
+{
+  "resourceType": "Device",
+  "id": "device-blood-pressure-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-blood-pressure"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "258057004",
+          "system": "http://snomed.info/sct",
+          "display": "Non-invasive blood pressure monitor (physical object)"
+        }
+      ]
+    }
+  ],
+  "property": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "528391",
+            "system": "urn:iso:std:iso:11073:10101"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "720737000",
+            "system": "http://snomed.info/sct",
+            "display": "Blood pressure cuff, adult size (physical object)"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "active",
+  "manufacturer": "Omron Healthcare"
+}

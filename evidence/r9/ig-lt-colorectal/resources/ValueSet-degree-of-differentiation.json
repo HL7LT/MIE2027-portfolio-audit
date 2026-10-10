@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DegreeOfDifferentiationVS",
+  "id": "degree-of-differentiation",
+  "title": "Degree of Differentiation",
+  "description": "Histologic grade / degree of differentiation for colorectal carcinoma.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/degree-of-differentiation",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "395529007",
+            "display": "Low grade (well to moderately differentiated) (finding)"
+          },
+          {
+            "code": "1155708003",
+            "display": "Low histologic grade (qualifier value)"
+          },
+          {
+            "code": "395530002",
+            "display": "High grade (poorly differentiated to undifferentiated) (finding)"
+          },
+          {
+            "code": "1155707008",
+            "display": "High histologic grade (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

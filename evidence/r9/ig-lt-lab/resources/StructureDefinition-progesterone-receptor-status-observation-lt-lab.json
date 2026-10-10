@@ -1,0 +1,177 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "progesterone-receptor-status-observation-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/progesterone-receptor-status-observation-lt-lab",
+  "name": "ProgesteroneReceptorStatusObservationLtLab",
+  "title": "Observation: Progesterone Receptor Status",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Immunohistochemical progesterone receptor (PR) status observation with expression level and percentage in tumor cell nuclei.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "16113-3",
+              "system": "http://loinc.org",
+              "display": "Progesterone receptor [Interpretation] in Tissue"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:expression-level",
+        "path": "Observation.component",
+        "sliceName": "expression-level",
+        "short": "PR expression level",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:expression-level.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85339-0",
+              "system": "http://loinc.org",
+              "display": "Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:expression-level.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/ihc-expression-level"
+        }
+      },
+      {
+        "id": "Observation.component:percentage",
+        "path": "Observation.component",
+        "sliceName": "percentage",
+        "short": "Percentage of positive tumor cell nuclei",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:percentage.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85312-7",
+              "system": "http://loinc.org",
+              "display": "Extent of inferior margin carcinoma involvement in Breast cancer specimen Qualitative by Light microscopy"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:percentage.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:percentage.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:percentage.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "%"
+      }
+    ]
+  }
+}

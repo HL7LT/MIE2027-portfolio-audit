@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyLumenFillingLtColorectal",
+  "id": "polypectomy-lumen-filling-lt-colorectal",
+  "title": "Colorectal - Polypectomy Lumen Filling VS",
+  "description": "Medium used to distend the bowel lumen during polypectomy: air or water.",
+  "url": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-lumen-filling-lt-colorectal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-lumen-filling-codes-lt",
+        "concept": [
+          {
+            "code": "fill-air"
+          },
+          {
+            "code": "fill-water"
+          }
+        ]
+      }
+    ]
+  }
+}

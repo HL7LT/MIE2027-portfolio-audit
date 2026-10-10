@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "NiceClassificationVS",
+  "id": "nice-classification",
+  "title": "NICE Classification",
+  "description": "NBI International Colorectal Endoscopic (NICE) classification for prediction of polyp histology.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/nice-classification",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "nice-1",
+            "display": "NICE Type I"
+          },
+          {
+            "code": "nice-2",
+            "display": "NICE Type II"
+          },
+          {
+            "code": "nice-3",
+            "display": "NICE Type III"
+          },
+          {
+            "code": "nice-not-evaluated",
+            "display": "NICE Not evaluated"
+          }
+        ]
+      }
+    ]
+  }
+}

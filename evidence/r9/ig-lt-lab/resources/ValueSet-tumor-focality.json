@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TumorFocalityLtLab",
+  "id": "tumor-focality",
+  "title": "Tumor Focality",
+  "description": "Codes for tumor focality.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tumor-focality",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "399389000",
+            "display": "Unifocal tumor (finding)"
+          },
+          {
+            "code": "399506006",
+            "display": "Multifocal tumor (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

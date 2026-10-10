@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SmokingStatusLtLifestyle",
+  "id": "smoking-status",
+  "title": "Tobacco. Current Smoking Status",
+  "description": "HL7 LT SNOMED value set for smoking status.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/smoking-status",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "266919005",
+            "display": "Never smoked tobacco (finding)"
+          },
+          {
+            "code": "77176002",
+            "display": "Smoker (finding)"
+          },
+          {
+            "code": "8517006",
+            "display": "Ex-smoker (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

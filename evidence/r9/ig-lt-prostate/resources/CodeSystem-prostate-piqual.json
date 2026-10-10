@@ -1,0 +1,35 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstatePiqualScale",
+  "id": "prostate-piqual",
+  "title": "Prostate PI-QUAL scale (v1, PRECISION trial, 2020)",
+  "description": "Prostate Imaging Quality assessment scores.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual",
+  "concept": [
+    {
+      "code": "1",
+      "display": "No mpMRI sequences are of diagnostic quality"
+    },
+    {
+      "code": "2",
+      "display": "Some diagnostic quality, but insufficient"
+    },
+    {
+      "code": "3",
+      "display": "Sufficient diagnostic quality"
+    },
+    {
+      "code": "4",
+      "display": "Good diagnostic quality"
+    },
+    {
+      "code": "5",
+      "display": "Optimal diagnostic quality (all sequences independently optimal)"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 5
+}

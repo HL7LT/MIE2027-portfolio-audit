@@ -1,0 +1,162 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "prostate-condition-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/prostate-condition-lt-lab",
+  "name": "ProstateConditionLtLab",
+  "title": "Condition: Prostate Cancer",
+  "status": "draft",
+  "description": "A profile on Condition for Prostate Cancer with staging for TNM and morphology.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      },
+      {
+        "id": "Condition.stage",
+        "path": "Condition.stage",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open",
+          "description": "Slicing based on TNM stage components"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageT",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageT",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageT.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-t"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageT.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "78873005",
+              "system": "http://snomed.info/sct",
+              "display": "T category (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageN",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageN",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageN.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-n"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageN.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "277206009",
+              "system": "http://snomed.info/sct",
+              "display": "N category (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageM",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageM",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageM.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-m"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageM.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "277208005",
+              "system": "http://snomed.info/sct",
+              "display": "M category (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:morphology",
+        "path": "Condition.stage",
+        "sliceName": "morphology",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:morphology.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/icd-o-3"
+        }
+      },
+      {
+        "id": "Condition.stage:morphology.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "116676008",
+              "system": "http://snomed.info/sct",
+              "display": "Associated morphology (attribute)"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

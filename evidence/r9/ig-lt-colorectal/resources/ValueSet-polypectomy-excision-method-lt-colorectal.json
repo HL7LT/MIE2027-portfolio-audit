@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyExcisionMethodLtColorectal",
+  "id": "polypectomy-excision-method-lt-colorectal",
+  "title": "Colorectal - Polypectomy Excision Method VS",
+  "description": "Whether the polyp was excised en bloc or piecemeal.",
+  "url": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-excision-method-lt-colorectal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-codes-lt",
+        "concept": [
+          {
+            "code": "exc-en-bloc"
+          },
+          {
+            "code": "exc-parts"
+          }
+        ]
+      }
+    ]
+  }
+}

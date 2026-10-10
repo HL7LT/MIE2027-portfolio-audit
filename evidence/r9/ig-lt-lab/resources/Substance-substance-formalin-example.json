@@ -1,0 +1,21 @@
+{
+  "resourceType": "Substance",
+  "id": "substance-formalin-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/substance-additive-lt-lab"
+    ]
+  },
+  "instance": true,
+  "code": {
+    "concept": {
+      "coding": [
+        {
+          "code": "434162003",
+          "system": "http://snomed.info/sct",
+          "display": "Neutral buffered formalin (substance)"
+        }
+      ]
+    }
+  }
+}

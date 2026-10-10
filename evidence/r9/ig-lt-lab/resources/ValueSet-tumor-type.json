@@ -1,0 +1,61 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TumorTypeLtLab",
+  "id": "tumor-type",
+  "title": "Tumor Type",
+  "description": "ValueSet for tumor types, coded from SNOMED CT.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tumor-type",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "45410002",
+            "display": "Acinar cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "59367005",
+            "display": "Adenosquamous carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1162767002",
+            "display": "Squamous cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "34603009",
+            "display": "Basal cell adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128704005",
+            "display": "Adenocarcinoma with neuroendocrine differentiation (morphologic abnormality)"
+          },
+          {
+            "code": "1286768001",
+            "display": "Well-differentiated neuroendocrine tumor (morphologic abnormality)"
+          },
+          {
+            "code": "74364000",
+            "display": "Small cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128628002",
+            "display": "Large cell neuroendocrine carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1187425009",
+            "display": "Carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "785766008",
+            "display": "Mixed neuroendocrine-non-neuroendocrine neoplasm (morphologic abnormality)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyHydroprepLtColorectal",
+  "id": "polypectomy-hydroprep-lt-colorectal",
+  "title": "Colorectal - Polypectomy Hydropreparation VS",
+  "description": "Solution injected to lift the polyp before excision, including the case where the choice is still pending.",
+  "url": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-hydroprep-lt-colorectal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-hydroprep-codes-lt",
+        "concept": [
+          {
+            "code": "hydro-pending"
+          },
+          {
+            "code": "hydro-phys-sol"
+          },
+          {
+            "code": "hydro-adrenaline"
+          },
+          {
+            "code": "hydro-meth-blue"
+          },
+          {
+            "code": "hydro-gelofusine"
+          }
+        ]
+      }
+    ]
+  }
+}

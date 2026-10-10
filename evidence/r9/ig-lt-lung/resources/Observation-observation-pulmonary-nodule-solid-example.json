@@ -1,0 +1,155 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-pulmonary-nodule-solid-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "364637009",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion feature (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "35702001",
+            "system": "http://snomed.info/sct",
+            "display": "Solid"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "ct-slice-number",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "CT slice number"
+          }
+        ]
+      },
+      "valueInteger": 84
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "morphology",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Morphology"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "129742005",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion with spiculated margin"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "255586005",
+            "system": "http://snomed.info/sct",
+            "display": "Mean"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 11,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "103339001",
+            "system": "http://snomed.info/sct",
+            "display": "Long axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 12,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "103340004",
+            "system": "http://snomed.info/sct",
+            "display": "Short axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 10,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "118565006",
+            "system": "http://snomed.info/sct",
+            "display": "Volume"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 610,
+        "code": "mm3",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "427359005",
+        "system": "http://snomed.info/sct",
+        "display": "Solitary nodule of lung"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:20:00Z",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "42400003",
+        "system": "http://snomed.info/sct",
+        "display": "Structure of upper lobe of right lung"
+      }
+    ]
+  }
+}

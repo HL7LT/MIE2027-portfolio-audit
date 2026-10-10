@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "EkgResultInterpretationVS",
+  "id": "ekg-result-interpretation",
+  "title": "EKG Result Interpretation",
+  "description": "SNOMED CT codes for interpreting electrocardiogram (EKG/ECG) findings within the Lithuanian CVD screening programme.\nIncludes both high-level interpretation (normal/abnormal) and specific finding codes.\nMultiple findings may be recorded simultaneously (e.g., abnormal + atrial fibrillation).\nFree-text \"Other\" findings should be captured in Observation.note.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "164854000",
+            "display": "Electrocardiogram normal (finding)"
+          },
+          {
+            "code": "102594003",
+            "display": "Electrocardiogram abnormal (finding)"
+          },
+          {
+            "code": "55930002",
+            "display": "ST-T wave changes on electrocardiogram (finding)"
+          },
+          {
+            "code": "164889003",
+            "display": "Electrocardiogram: atrial fibrillation (finding)"
+          },
+          {
+            "code": "164890007",
+            "display": "Electrocardiogram: atrial flutter (finding)"
+          },
+          {
+            "code": "164909002",
+            "display": "Electrocardiogram: left bundle branch block (finding)"
+          },
+          {
+            "code": "164887001",
+            "display": "Electrocardiogram: supraventricular arrhythmia (finding)"
+          },
+          {
+            "code": "164883002",
+            "display": "Electrocardiogram: extrasystoles (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

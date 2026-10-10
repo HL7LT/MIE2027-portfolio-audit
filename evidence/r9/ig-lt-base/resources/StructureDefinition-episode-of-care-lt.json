@@ -1,0 +1,118 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "episode-of-care-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/episode-of-care-lt",
+  "name": "EpisodeOfCareLt",
+  "title": "EpisodeOfCareLt",
+  "status": "active",
+  "description": "Lithuanian Base EpisodeOfCare profile, used for composing episodes of care.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "EpisodeOfCare",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "EpisodeOfCare.identifier",
+        "path": "EpisodeOfCare.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.status",
+        "path": "EpisodeOfCare.status",
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis",
+        "path": "EpisodeOfCare.diagnosis",
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.diagnosis.condition",
+        "path": "EpisodeOfCare.diagnosis.condition",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.patient",
+        "path": "EpisodeOfCare.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.managingOrganization",
+        "path": "EpisodeOfCare.managingOrganization",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.period",
+        "path": "EpisodeOfCare.period",
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.referralRequest",
+        "path": "EpisodeOfCare.referralRequest",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.careManager",
+        "path": "EpisodeOfCare.careManager",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "EpisodeOfCare.careTeam",
+        "path": "EpisodeOfCare.careTeam",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

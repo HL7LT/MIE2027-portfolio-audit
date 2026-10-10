@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MetabolicSyndromeAssessmentLtLifestyle",
+  "id": "metabolic-syndrome-assessment",
+  "title": "Metabolic Syndrome Assessment (NCEP ATP III)",
+  "description": "Assessment of metabolic syndrome presence according to NCEP ATP III criteria.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/metabolic-syndrome-assessment",
+  "experimental": false,
+  "language": "en",
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "373572006",
+            "display": "Clinical finding absent (situation)"
+          },
+          {
+            "code": "237602007",
+            "display": "Metabolic syndrome X (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

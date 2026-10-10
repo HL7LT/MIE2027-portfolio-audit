@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalSurgicalMarginsVS",
+  "id": "cervical-surgical-margins",
+  "title": "Cervical Surgical Margins",
+  "description": "Status of surgical margins in cervical excision specimens.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-surgical-margins",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "310342002",
+            "display": "Excision - clear margin (finding)"
+          },
+          {
+            "code": "396256001",
+            "display": "Surgical exocervical margin involved by malignant neoplasm (finding)"
+          },
+          {
+            "code": "396246000",
+            "display": "Surgical endocervical margin involved by malignant neoplasm (finding)"
+          },
+          {
+            "code": "395544008",
+            "display": "Surgical deep margin involved by malignant neoplasm (finding)"
+          },
+          {
+            "code": "395537004",
+            "display": "Surgical margin involvement by tumor cannot be assessed (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

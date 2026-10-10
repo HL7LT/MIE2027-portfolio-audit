@@ -1,0 +1,533 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-prostate-pathology-espbi",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "bioptate-length-mm",
+          "text": "Bioptate length (mm)",
+          "type": "quantity"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "specimen-satisfactory",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Specimen satisfactory for evaluation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "specimen-limited",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Specimen satisfactory but limited"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "specimen-insufficient",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Insufficient tissue for diagnosis"
+              }
+            }
+          ],
+          "linkId": "specimen-quality",
+          "text": "Quality of materials",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-specimen",
+      "text": "Specimen and macroscopic context",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "treatment-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Treatment effect unknown"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "treatment-unidentifiable",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Treatment effect unidentifiable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "treatment-radiotherapy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Observed radiotherapy effect"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "treatment-hormone",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Observed hormone therapy effect"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "treatment-other",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Observed other therapy effect"
+              }
+            }
+          ],
+          "linkId": "treatment-effect",
+          "text": "Treatment effect on tumour",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-treatment-effect",
+      "text": "Treatment effect (selected)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "hist-acinar",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma (conventional)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-acinar-signet-ring",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma, signet-ring cell-like"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-acinar-pleomorphic",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma, pleomorphic giant cell"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-acinar-sarcomatoid",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma, sarcomatoid"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-acinar-pin-like",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma, PIN-like"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-idc-isolated",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Isolated intraductal carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-ductal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Ductal adenocarcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-adenosquamous",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Adenosquamous carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-squamous",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Squamous cell carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-basal-cell",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Basal cell (adenoid cystic) carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-neuro-adeno",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Adenocarcinoma with neuroendocrine differentiation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-neuro-well-diff",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Well-differentiated neuroendocrine tumor"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-neuro-small-cell",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Small cell neuroendocrine carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-neuro-large-cell",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Large cell neuroendocrine carcinoma"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-unassessable",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Carcinoma, type unassessable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "hist-other",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Other histological type (see comment)"
+              }
+            }
+          ],
+          "linkId": "histological-type",
+          "text": "Primary histological type",
+          "type": "coding"
+        },
+        {
+          "linkId": "histological-comment",
+          "text": "Histological type comment",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-histology",
+      "text": "Histological tumour type",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "isup-gg1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 1 (Gleason 3+3)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "isup-gg2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 2 (Gleason 3+4)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "isup-gg3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 3 (Gleason 4+3)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "isup-gg4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 4 (Gleason 4+4 or equivalent)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "isup-gg5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 5 (Gleason 4+5 / 5+4 / 5+5)"
+              }
+            }
+          ],
+          "linkId": "isup-grade-group",
+          "text": "International Society of Urological Pathology grade group",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-grade",
+      "text": "Grade (ISUP)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "idc-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Intraductal carcinoma not identified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "idc-present",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Intraductal carcinoma identifiable"
+              }
+            }
+          ],
+          "linkId": "idc-status",
+          "text": "Intraductal carcinoma (IDC)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "cribriform-na",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Cribriform not applicable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cribriform-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Cribriform undefined"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cribriform-present",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Cribriform identifiable"
+              }
+            }
+          ],
+          "linkId": "cribriform-status",
+          "text": "Cribriform glands",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-idc-cribriform",
+      "text": "IDC and cribriform",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pattern4-pct-na",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Pattern 4 %: not applicable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pattern4-pct-lte5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Pattern 4 %: ≤5%"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pattern4-pct-6-10",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Pattern 4 %: 6–10%"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pattern4-pct-gt40",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Pattern 4 %: >40%"
+              }
+            }
+          ],
+          "linkId": "pattern4-pct-band",
+          "text": "Quantity of Pattern 4 (percent band)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "tumor-pct-lt1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Tumour % in biopsy: <1%"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "tumor-pct-1-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Tumour % in biopsy: 1–5%"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "tumor-pct-gt90",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Tumour % in biopsy: >90%"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "tumor-pct-uneval",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Tumour %: cannot be evaluated"
+              }
+            }
+          ],
+          "linkId": "tumor-percent-in-biopsy",
+          "text": "Tumour percentage in biopsy tissue",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-additional-grade-burden",
+      "text": "Additional grade and tumour burden (subset)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "periprostatic-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Periprostatic fat invasion: unidentifiable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "periprostatic-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Periprostatic fat invasion: not identified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "periprostatic-present",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Periprostatic fat invasion: present"
+              }
+            }
+          ],
+          "linkId": "periprostatic-fat-invasion",
+          "text": "Tumour infiltration in periprostatic adipose tissue",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "perineural-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Perineural invasion not identified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "perineural-present",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Perineural invasion present"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "perineural-ambiguous",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Perineural invasion ambiguous"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "perineural-uneval",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Perineural invasion cannot be evaluated"
+              }
+            }
+          ],
+          "linkId": "perineural-invasion",
+          "text": "Perineural invasion",
+          "type": "coding"
+        },
+        {
+          "linkId": "perineural-invasion-notes",
+          "text": "Perineural invasion notes",
+          "type": "text"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "lymphovascular-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Lymphovascular invasion unidentifiable / not available"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lymphovascular-present",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Lymphovascular invasion identifiable"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lymphovascular-ambiguous",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Lymphovascular invasion ambiguous"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lymphovascular-uneval",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Lymphovascular invasion cannot be evaluated"
+              }
+            }
+          ],
+          "linkId": "lymphovascular-invasion",
+          "text": "Lymphatic and/or vascular tumour invasion",
+          "type": "coding"
+        },
+        {
+          "linkId": "lymphovascular-invasion-notes",
+          "text": "Lymphovascular invasion notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-invasion",
+      "text": "Local invasion (subset)",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi",
+  "version": "0.1.0",
+  "name": "ProstatePathologyEspbi",
+  "title": "Prostate pathology structured report",
+  "status": "draft",
+  "date": "2025-03-24",
+  "publisher": "HL7 Lithuania"
+}

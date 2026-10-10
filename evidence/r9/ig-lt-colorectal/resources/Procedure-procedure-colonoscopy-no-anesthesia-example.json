@@ -1,0 +1,18 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-colonoscopy-no-anesthesia-example",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "444783004",
+        "system": "http://snomed.info/sct",
+        "display": "Screening colonoscopy (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26"
+}

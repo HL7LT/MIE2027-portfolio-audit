@@ -1,0 +1,463 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "LungQuestionnaireOptions",
+  "id": "lung-questionnaire-options",
+  "title": "Lung questionnaire answer options",
+  "description": "Illustrative answer option codes for ESPBI questionnaire forms used in the Lithuanian lung cancer prevention programme.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+  "concept": [
+    {
+      "code": "yes",
+      "display": "Yes"
+    },
+    {
+      "code": "no",
+      "display": "No"
+    },
+    {
+      "code": "unknown",
+      "display": "Unknown"
+    },
+    {
+      "code": "solid",
+      "display": "Solid"
+    },
+    {
+      "code": "part-solid",
+      "display": "Part solid"
+    },
+    {
+      "code": "ground-glass",
+      "display": "Ground glass nodule"
+    },
+    {
+      "code": "calcified",
+      "display": "Calcified"
+    },
+    {
+      "code": "cavitary",
+      "display": "Cavitary"
+    },
+    {
+      "code": "right-upper",
+      "display": "Upper lobe of the right lung"
+    },
+    {
+      "code": "right-middle",
+      "display": "Middle lobe of the right lung"
+    },
+    {
+      "code": "right-lower",
+      "display": "Lower lobe of the right lung"
+    },
+    {
+      "code": "left-upper",
+      "display": "Upper lobe of the left lung"
+    },
+    {
+      "code": "left-lower",
+      "display": "Lower lobe of the left lung"
+    },
+    {
+      "code": "spiculated",
+      "display": "With spicules"
+    },
+    {
+      "code": "irregular-margins",
+      "display": "Irregular contours"
+    },
+    {
+      "code": "pleural-related",
+      "display": "Related to pleura"
+    },
+    {
+      "code": "lung-rads-0",
+      "display": "LUNG-RADS 0 – Images cannot be evaluated"
+    },
+    {
+      "code": "lung-rads-1",
+      "display": "LUNG-RADS 1 – No findings detected in the lungs"
+    },
+    {
+      "code": "lung-rads-2",
+      "display": "LUNG-RADS 2 – Very likely benign formation"
+    },
+    {
+      "code": "lung-rads-3",
+      "display": "LUNG-RADS 3 – Likely benign formation"
+    },
+    {
+      "code": "lung-rads-4a",
+      "display": "LUNG-RADS 4A – Detected suspicious formation"
+    },
+    {
+      "code": "lung-rads-4b",
+      "display": "LUNG-RADS 4B – Detected very suspicious formation"
+    },
+    {
+      "code": "lung-rads-4x",
+      "display": "LUNG-RADS 4X – Detected extremely suspicious formation"
+    },
+    {
+      "code": "lung-rads-s",
+      "display": "LUNG-RADS S – Additional recommendation"
+    },
+    {
+      "code": "moderate",
+      "display": "Moderate"
+    },
+    {
+      "code": "severe",
+      "display": "Severe / expressed"
+    },
+    {
+      "code": "right",
+      "display": "Right"
+    },
+    {
+      "code": "left",
+      "display": "Left"
+    },
+    {
+      "code": "bilateral",
+      "display": "Bilateral"
+    },
+    {
+      "code": "interstitial-changes",
+      "display": "Interstitial lung changes (>5% of lung volume)"
+    },
+    {
+      "code": "non-subpleural",
+      "display": "Non-subpleural"
+    },
+    {
+      "code": "subpleural-non-fibrotic",
+      "display": "Subpleural non-fibrotic"
+    },
+    {
+      "code": "subpleural-fibrous",
+      "display": "Subpleural fibrous"
+    },
+    {
+      "code": "respiratory-bronchiolitis",
+      "display": "Respiratory bronchiolitis (RB-IPL)"
+    },
+    {
+      "code": "emphysema",
+      "display": "Emphysema"
+    },
+    {
+      "code": "bronchiectasis",
+      "display": "Bronchiectasis"
+    },
+    {
+      "code": "pleural-fluid",
+      "display": "Fluid in the pleural cavity"
+    },
+    {
+      "code": "pleural-changes",
+      "display": "Pleural changes"
+    },
+    {
+      "code": "suspected-malignant-pleura",
+      "display": "Suspected malignant pleural changes"
+    },
+    {
+      "code": "asbestosis-plaque",
+      "display": "Asbestosis pleural plaque"
+    },
+    {
+      "code": "pleural-calcification",
+      "display": "Pleural calcification"
+    },
+    {
+      "code": "pneumothorax",
+      "display": "Pneumothorax"
+    },
+    {
+      "code": "pneumomediastinum",
+      "display": "Pneumomediastinum"
+    },
+    {
+      "code": "diaphragm-changes",
+      "display": "Changes in diaphragms"
+    },
+    {
+      "code": "suspected-malignant-diaphragm",
+      "display": "Suspected malignancy of diaphragm"
+    },
+    {
+      "code": "large-hernia",
+      "display": "Large hernia"
+    },
+    {
+      "code": "complicated-hernia",
+      "display": "Complicated hernia"
+    },
+    {
+      "code": "consolidation",
+      "display": "Consolidation"
+    },
+    {
+      "code": "likely-inflammatory",
+      "display": "Likely inflammatory"
+    },
+    {
+      "code": "possibly-malignant",
+      "display": "Possibly malignant"
+    },
+    {
+      "code": "tuberculosis",
+      "display": "Tuberculosis, likely active"
+    },
+    {
+      "code": "suspected-tuberculosis-other",
+      "display": "Suspected tuberculosis differentiated from other diseases"
+    },
+    {
+      "code": "small-amount",
+      "display": "Small amount"
+    },
+    {
+      "code": "large-amount",
+      "display": "Large amount"
+    },
+    {
+      "code": "local",
+      "display": "Local"
+    },
+    {
+      "code": "diffuse",
+      "display": "Diffuse"
+    },
+    {
+      "code": "neck",
+      "display": "Neck"
+    },
+    {
+      "code": "paraclavicular",
+      "display": "Paraclavicular"
+    },
+    {
+      "code": "mediastinal",
+      "display": "Mediastinal"
+    },
+    {
+      "code": "hilar-right",
+      "display": "Hilar - right"
+    },
+    {
+      "code": "hilar-left",
+      "display": "Hilar - left"
+    },
+    {
+      "code": "hilar-both",
+      "display": "Hilar - both"
+    },
+    {
+      "code": "axillary-right",
+      "display": "Axillary - right"
+    },
+    {
+      "code": "axillary-left",
+      "display": "Axillary - left"
+    },
+    {
+      "code": "axillary-both",
+      "display": "Axillary - both"
+    },
+    {
+      "code": "coronary-calcification",
+      "display": "Coronary artery calcification"
+    },
+    {
+      "code": "aortic-valve-calcification",
+      "display": "Aortic valve calcification"
+    },
+    {
+      "code": "thoracic-aortic-aneurysm",
+      "display": "Thoracic aortic aneurysm"
+    },
+    {
+      "code": "mediastinal-mass",
+      "display": "Mediastinal mass"
+    },
+    {
+      "code": "lymphadenopathy",
+      "display": "Lymphadenopathy"
+    },
+    {
+      "code": "neck-lymph",
+      "display": "Neck"
+    },
+    {
+      "code": "paraclavicular-lymph",
+      "display": "Paraclavicular areas"
+    },
+    {
+      "code": "mediastinal-lymph",
+      "display": "Mediastinal"
+    },
+    {
+      "code": "hilar-lymph",
+      "display": "Lung roots (hilar)"
+    },
+    {
+      "code": "axillary-lymph",
+      "display": "Armpits (axillary)"
+    },
+    {
+      "code": "thyroid-nodule",
+      "display": "Thyroid changes (suspicious nodules)"
+    },
+    {
+      "code": "pericardial-effusion",
+      "display": "Fluid in the pericardial cavity"
+    },
+    {
+      "code": "esophageal-changes",
+      "display": "Changes in the esophagus"
+    },
+    {
+      "code": "esophageal-dilation",
+      "display": "Significant lumen expansion of esophagus"
+    },
+    {
+      "code": "esophageal-mass",
+      "display": "Esophageal mass"
+    },
+    {
+      "code": "abdominal-aortic-aneurysm",
+      "display": "Abdominal aortic aneurysm"
+    },
+    {
+      "code": "breast-findings",
+      "display": "Suspicious findings in the breasts"
+    },
+    {
+      "code": "liver-lesions",
+      "display": "Liver lesions"
+    },
+    {
+      "code": "kidney-lesions",
+      "display": "Kidney lesions"
+    },
+    {
+      "code": "bone-changes",
+      "display": "Changes in bones"
+    },
+    {
+      "code": "osteopenia",
+      "display": "Osteopenia (L1 vertebra 100-130HV)"
+    },
+    {
+      "code": "osteoporosis",
+      "display": "Osteoporosis (L1 vertebra <100HV)"
+    },
+    {
+      "code": "vertebral-compression",
+      "display": "Vertebral compression fracture (>50% height reduction)"
+    },
+    {
+      "code": "bone-destruction",
+      "display": "Bone destruction"
+    },
+    {
+      "code": "adrenal-formations",
+      "display": "Adrenal formations"
+    },
+    {
+      "code": "gallbladder-changes",
+      "display": "Changes in the gallbladder"
+    },
+    {
+      "code": "acute-cholecystitis",
+      "display": "Suspected acute cholecystitis"
+    },
+    {
+      "code": "gallbladder-mass",
+      "display": "Infiltration with masses in gallbladder"
+    },
+    {
+      "code": "cystic",
+      "display": "Cystic"
+    },
+    {
+      "code": "solid-texture",
+      "display": "Solid"
+    },
+    {
+      "code": "mixed-complex",
+      "display": "Mixed-complex"
+    },
+    {
+      "code": "singular",
+      "display": "Singular"
+    },
+    {
+      "code": "multiple",
+      "display": "Multiple"
+    },
+    {
+      "code": "hypodense",
+      "display": "Hypodense"
+    },
+    {
+      "code": "hyperdense",
+      "display": "Hyperdense"
+    },
+    {
+      "code": "calcified-density",
+      "display": "Calcified"
+    },
+    {
+      "code": "cigarettes",
+      "display": "Cigarettes"
+    },
+    {
+      "code": "e-cigarettes",
+      "display": "Electronic cigarettes"
+    },
+    {
+      "code": "heated-tobacco",
+      "display": "Heated tobacco"
+    },
+    {
+      "code": "tobacco",
+      "display": "Tobacco"
+    },
+    {
+      "code": "pipe",
+      "display": "Pipe"
+    },
+    {
+      "code": "self-care",
+      "display": "Self-care capable"
+    },
+    {
+      "code": "bedridden",
+      "display": "Bedridden/chairbound"
+    },
+    {
+      "code": "cac-none",
+      "display": "0 = None"
+    },
+    {
+      "code": "cac-small",
+      "display": "1 = Small"
+    },
+    {
+      "code": "cac-average",
+      "display": "2 = Average"
+    },
+    {
+      "code": "cac-difficult",
+      "display": "3 = Difficult"
+    }
+  ],
+  "caseSensitive": true,
+  "experimental": false,
+  "count": 112
+}

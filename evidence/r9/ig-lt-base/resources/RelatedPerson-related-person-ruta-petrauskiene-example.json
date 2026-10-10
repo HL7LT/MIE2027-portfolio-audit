@@ -1,0 +1,32 @@
+{
+  "resourceType": "RelatedPerson",
+  "id": "related-person-ruta-petrauskiene-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt"
+    ]
+  },
+  "relationship": [
+    {
+      "coding": [
+        {
+          "code": "ECON",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleClass",
+          "display": "emergency contact"
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Rūta"
+      ],
+      "family": "Petrauskienė",
+      "text": "Rūta Petrauskienė"
+    }
+  ],
+  "patient": {
+    "reference": "Patient/patient-example"
+  }
+}

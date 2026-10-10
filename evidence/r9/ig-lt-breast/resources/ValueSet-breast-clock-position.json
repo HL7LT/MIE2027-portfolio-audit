@@ -1,0 +1,69 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastClockPositionVS",
+  "id": "breast-clock-position",
+  "title": "Breast Clock Position",
+  "description": "Clock positions (1-12 o'clock) for localizing breast findings.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-clock-position",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "language": "en",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "260318004",
+            "display": "1 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260328008",
+            "display": "2 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260330005",
+            "display": "3 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260333007",
+            "display": "4 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260335000",
+            "display": "5 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260337008",
+            "display": "6 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260339006",
+            "display": "7 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260341007",
+            "display": "8 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260343005",
+            "display": "9 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260322009",
+            "display": "10 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260324005",
+            "display": "11 o'clock position (qualifier value)"
+          },
+          {
+            "code": "260326007",
+            "display": "12 o'clock position (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

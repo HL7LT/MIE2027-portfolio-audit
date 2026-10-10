@@ -1,0 +1,17 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://registrai.lt/jar",
+      "value": "123456789"
+    }
+  ],
+  "active": true,
+  "name": "Vilnius Heart Clinic"
+}

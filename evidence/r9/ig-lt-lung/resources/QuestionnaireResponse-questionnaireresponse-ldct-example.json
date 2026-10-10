@@ -1,0 +1,290 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-ldct-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-11-20T14:30:00Z"
+            }
+          ],
+          "linkId": "exam-date",
+          "text": "LDCT examination date"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 3.2,
+                "code": "mGy",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mGy"
+              }
+            }
+          ],
+          "linkId": "ctdivol",
+          "text": "Volume CT Dose Index – CTDIvol (mGy)"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 105,
+                "code": "mGy.cm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mGy.cm"
+              }
+            }
+          ],
+          "linkId": "dlp",
+          "text": "Dose Length Product – DLP (mGy x cm)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Radiology technologist"
+            }
+          ],
+          "linkId": "technologist-qualification",
+          "text": "Professional qualification of the technologist"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Jonas"
+            }
+          ],
+          "linkId": "technologist-first-name",
+          "text": "Technologist first name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Jonaitis"
+            }
+          ],
+          "linkId": "technologist-last-name",
+          "text": "Technologist last name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Vilniaus universiteto ligonines Santaros klinikos"
+            }
+          ],
+          "linkId": "facility-name",
+          "text": "Healthcare institution name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "111111111"
+            }
+          ],
+          "linkId": "facility-code",
+          "text": "Healthcare institution code"
+        }
+      ],
+      "linkId": "grp-general",
+      "text": "General information"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "solid",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Solid"
+              }
+            }
+          ],
+          "linkId": "nodule-type",
+          "text": "Type of lesion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "right-upper",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Upper lobe of the right lung"
+              }
+            }
+          ],
+          "linkId": "nodule-lobe",
+          "text": "Lung lobe"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 142
+            }
+          ],
+          "linkId": "ct-slice-number",
+          "text": "CT image slice number"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "morphology-spiculated",
+          "text": "With spicules"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "morphology-irregular",
+          "text": "Irregular contours"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 9,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mm"
+              }
+            }
+          ],
+          "linkId": "nodule-mean-diameter",
+          "text": "Size – average diameter (mm)"
+        }
+      ],
+      "linkId": "grp-nodules",
+      "text": "Nodule findings"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "emphysema",
+          "text": "Emphysema"
+        }
+      ],
+      "linkId": "grp-incidental-lung",
+      "text": "Significant incidental findings in the lungs"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "coronary-calcification",
+          "text": "Coronary artery calcification"
+        }
+      ],
+      "linkId": "grp-incidental-extra",
+      "text": "Significant incidental findings not in the lungs"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "lung-rads-4a",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 4A – Detected suspicious formation"
+              }
+            }
+          ],
+          "linkId": "lung-rads-category",
+          "text": "LUNG-RADS findings category"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "followup-3m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Follow-up LDCT after 3 months"
+              }
+            }
+          ],
+          "linkId": "recommendation",
+          "text": "Recommendation"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Suspicious solid nodule right upper lobe 9mm with spiculated margins. Recommend 3-month follow-up LDCT. Moderate coronary calcification noted."
+            }
+          ],
+          "linkId": "conclusion-notes",
+          "text": "Conclusion notes"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Radiologist"
+            }
+          ],
+          "linkId": "specialist-qualification",
+          "text": "Professional qualification of the specialist"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Petras"
+            }
+          ],
+          "linkId": "specialist-first-name",
+          "text": "First name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Gydytojaitis"
+            }
+          ],
+          "linkId": "specialist-last-name",
+          "text": "Last name"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion and recommendations"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/lung/Questionnaire/questionnaire-ldct-lt-lung",
+  "status": "completed",
+  "authored": "2025-11-20T15:00:00Z",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "author": {
+    "reference": "Practitioner/practitioner-radiologist-example"
+  }
+}

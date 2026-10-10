@@ -1,0 +1,53 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-conclusion-normal-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "No structural pathologies were found in the examined segments."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "371524004",
+        "system": "http://snomed.info/sct",
+        "display": "Clinical report (record artifact)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "313170008",
+        "system": "http://snomed.info/sct",
+        "display": "Colonoscopy normal (finding)"
+      }
+    ]
+  }
+}

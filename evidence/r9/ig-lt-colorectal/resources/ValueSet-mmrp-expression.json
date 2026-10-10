@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MmrpExpressionVS",
+  "id": "mmrp-expression",
+  "title": "MMRP Expression Status",
+  "description": "Mismatch repair protein expression status (microsatellite instability assessment) for colorectal carcinoma.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/mmrp-expression",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "443412009",
+            "display": "Degree of microsatellite instability (observable entity)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "mmrp-normal",
+            "display": "Normal expression (MMR proficient, MSS)"
+          },
+          {
+            "code": "mmrp-loss",
+            "display": "Loss of expression (MMR deficient, MSI)"
+          },
+          {
+            "code": "mmrp-invaluable",
+            "display": "MMRP Invaluable"
+          },
+          {
+            "code": "mmrp-postponed",
+            "display": "MMRP Postponed"
+          },
+          {
+            "code": "mmrp-undefined",
+            "display": "MMRP Undefined (MSS)"
+          }
+        ]
+      }
+    ]
+  }
+}

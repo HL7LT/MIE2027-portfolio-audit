@@ -1,0 +1,26 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ABIComponentCS",
+  "id": "abi-component",
+  "title": "ABI Component",
+  "description": "Component codes for ankle-brachial index observations (laterality).",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/abi-component",
+  "concept": [
+    {
+      "code": "right-abi",
+      "display": "Right ankle-brachial index",
+      "definition": "Ankle-brachial pressure index measured on the right side."
+    },
+    {
+      "code": "left-abi",
+      "display": "Left ankle-brachial index",
+      "definition": "Ankle-brachial pressure index measured on the left side."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 2
+}

@@ -1,0 +1,494 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-colonoscopy-espbi-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ],
+          "linkId": "basicInfo.postponedColonoscopy",
+          "text": "Was colonoscopy postponed for screening?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed"
+              }
+            }
+          ],
+          "linkId": "basicInfo.anesthesia",
+          "text": "Anesthesia"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "basicInfo.videoColonoscope",
+          "text": "Video colonoscope used?"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 8
+            }
+          ],
+          "linkId": "basicInfo.withdrawalTime",
+          "text": "Withdrawal time (minutes)"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-03-12T10:00:00+02:00"
+            }
+          ],
+          "linkId": "basicInfo.procedureDate",
+          "text": "Procedure date"
+        }
+      ],
+      "linkId": "basicInfo",
+      "text": "Basic descriptive part"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.prepQuality",
+          "text": "Bowel preparation quality adequate?"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 2
+            }
+          ],
+          "linkId": "bowelPrep.bbpsRight",
+          "text": "BBPS Right colon / ascending (0-3)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 2
+            }
+          ],
+          "linkId": "bowelPrep.bbpsTransverse",
+          "text": "BBPS Transverse colon (0-3)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "bowelPrep.bbpsLeft",
+          "text": "BBPS Left colon / descending + sigmoid (0-3)"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 7
+            }
+          ],
+          "linkId": "bowelPrep.totalBbps",
+          "text": "Total BBPS score (0-9)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.dietaryRecommendations",
+          "text": "Were dietary recommendations given?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.splitDose",
+          "text": "Was split-dose protocol used?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.writtenInfo",
+          "text": "Was written information about preparation given?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "712567003",
+                "system": "http://snomed.info/sct",
+                "display": "Macrogol 4000 (substance)"
+              }
+            }
+          ],
+          "linkId": "bowelPrep.usedPreparations",
+          "text": "Used preparations for bowel preparation"
+        }
+      ],
+      "linkId": "bowelPrep",
+      "text": "Bowel preparation assessment"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "32713005",
+                "system": "http://snomed.info/sct",
+                "display": "Cecum structure"
+              }
+            }
+          ],
+          "linkId": "scopeReach.reachLocation",
+          "text": "Deepest point reached by colonoscope"
+        }
+      ],
+      "linkId": "scopeReach",
+      "text": "Colonoscope reach"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "polypFindings.polypFound",
+          "text": "Polyp found?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "60184004",
+                "system": "http://snomed.info/sct",
+                "display": "Sigmoid colon structure"
+              }
+            }
+          ],
+          "linkId": "polypFindings.location",
+          "text": "Polyp location"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 8
+            }
+          ],
+          "linkId": "polypFindings.sizeMm",
+          "text": "Polyp size (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "IIa Slightly elevated"
+              }
+            }
+          ],
+          "linkId": "polypFindings.parisClassification",
+          "text": "Paris endoscopic classification"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Type II (Adenoma)"
+              }
+            }
+          ],
+          "linkId": "polypFindings.niceClassification",
+          "text": "NICE classification"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Adenoma"
+              }
+            }
+          ],
+          "linkId": "polypFindings.predictedHistology",
+          "text": "Predicted histology"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Left side"
+              }
+            }
+          ],
+          "linkId": "polypFindings.locationSide",
+          "text": "Location side"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Easy"
+              }
+            }
+          ],
+          "linkId": "polypFindings.accessDifficulty",
+          "text": "Access difficulty"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 5
+            }
+          ],
+          "linkId": "polypFindings.smsaScore",
+          "text": "SMSA total score"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Level 1 (4-5 points)"
+              }
+            }
+          ],
+          "linkId": "polypFindings.smsaLevel",
+          "text": "SMSA level"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "polypFindings.polypRemoved",
+          "text": "Was polyp removed?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Cold snare"
+              }
+            }
+          ],
+          "linkId": "polypFindings.removalMethod",
+          "text": "Removal method"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "polypFindings.complicationAfterRemoval",
+          "text": "Complication after polyp removal?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "polypFindings.allPolypsRemovedSimultaneously",
+          "text": "All polyps removed simultaneously?"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "polypFindings.sentForHistology",
+          "text": "Sent for histological examination?"
+        }
+      ],
+      "linkId": "polypFindings",
+      "text": "Polyp findings"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueBoolean": false
+            }
+          ],
+          "linkId": "tumorFindings.tumorFound",
+          "text": "Tumor found?"
+        }
+      ],
+      "linkId": "tumorFindings",
+      "text": "Tumor findings"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "complications.complicationPresence",
+          "text": "Were there complications?"
+        }
+      ],
+      "linkId": "complications",
+      "text": "Complications after colonoscopy"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "Polyps found"
+              }
+            }
+          ],
+          "linkId": "conclusions.conclusion",
+          "text": "Conclusion"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Single 8mm adenomatous polyp in the sigmoid colon, removed with cold snare. No other pathology detected."
+            }
+          ],
+          "linkId": "conclusions.conclusionNotes",
+          "text": "Conclusion notes"
+        }
+      ],
+      "linkId": "conclusions",
+      "text": "Final conclusions"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "display": "3 years"
+              }
+            }
+          ],
+          "linkId": "recommendations.nextColonoscopy",
+          "text": "Recommended interval for next colonoscopy"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Polyp sent for histological examination. Patient informed about the follow-up plan."
+            }
+          ],
+          "linkId": "recommendations.additionalNotes",
+          "text": "Additional notes"
+        }
+      ],
+      "linkId": "recommendations",
+      "text": "Follow-up recommendations"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Jonas"
+            }
+          ],
+          "linkId": "signatures.examinerName",
+          "text": "Examiner first name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Kazlauskas"
+            }
+          ],
+          "linkId": "signatures.examinerSurname",
+          "text": "Examiner surname"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-03-12T14:30:00+02:00"
+            }
+          ],
+          "linkId": "signatures.examDate",
+          "text": "Examination date"
+        }
+      ],
+      "linkId": "signatures",
+      "text": "Signatures"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/colorectal/Questionnaire/questionnaire-colonoscopy-espbi",
+  "status": "completed",
+  "authored": "2026-03-12T14:30:00+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

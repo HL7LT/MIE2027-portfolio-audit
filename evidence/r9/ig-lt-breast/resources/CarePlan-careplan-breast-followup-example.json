@@ -1,0 +1,17 @@
+{
+  "resourceType": "CarePlan",
+  "id": "careplan-breast-followup-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt"
+    ]
+  },
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-breast-step2-imaging-example"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-pulmonary-nodule-part-solid-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "364637009",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion feature (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "part-solid",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/pulmonary-nodule-type-local",
+            "display": "Part-solid"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "ct-slice-number",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "CT slice number"
+          }
+        ]
+      },
+      "valueInteger": 102
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "morphology",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Morphology"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "129739004",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion with microlobulated margin"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "morphology",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Morphology"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "896998003",
+            "system": "http://snomed.info/sct",
+            "display": "Structural abnormality of subpleural tissue"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "255586005",
+            "system": "http://snomed.info/sct",
+            "display": "Mean"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 18,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "103339001",
+            "system": "http://snomed.info/sct",
+            "display": "Long axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 20,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "103340004",
+            "system": "http://snomed.info/sct",
+            "display": "Short axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 16,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "118565006",
+            "system": "http://snomed.info/sct",
+            "display": "Volume"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 1450,
+        "code": "mm3",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "solid-part-mean-diameter",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Solid part mean diameter"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 7,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "solid-part-long-axis",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Solid part long axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 8,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "solid-part-short-axis",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Solid part short axis"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 6,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "solid-part-volume",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Solid part volume"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 180,
+        "code": "mm3",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "427359005",
+        "system": "http://snomed.info/sct",
+        "display": "Solitary nodule of lung"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:25:00Z",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "44714003",
+        "system": "http://snomed.info/sct",
+        "display": "Structure of upper lobe of left lung"
+      }
+    ]
+  }
+}

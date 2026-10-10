@@ -1,0 +1,207 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "number-of-steps-lt-lifestyle",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/number-of-steps-lt-lifestyle",
+  "version": "1.0.0",
+  "name": "NumberOfStepsLtLifestyle",
+  "title": "Number of Steps",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "The measurement tracks the count of steps taken by an individual during one day.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Number of Steps Profile (EE)",
+        "definition": "This profile defines how to represent number of steps observations in FHIR using a standard LOINC code and UCUM units of measure.",
+        "constraint": [
+          {
+            "key": "vs-ns-1",
+            "human": "if Observation.effective[x] (as dateTime) has a value then that value shall be precise at least to the day",
+            "source": "https://hl7.lt/fhir/lifestyle/StructureDefinition/number-of-steps-lt-lifestyle",
+            "severity": "error",
+            "expression": "(effective as dateTime).toString().length() >= 8"
+          },
+          {
+            "key": "vs-ns-2",
+            "human": "For single vital signs observations (that do not require use of components or hasMember), then either a value[x] or a data absent reason must be present.",
+            "source": "https://hl7.lt/fhir/lifestyle/StructureDefinition/number-of-steps-lt-lifestyle",
+            "severity": "error",
+            "expression": "dataAbsentReason.exists() or value.exists()"
+          }
+        ]
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.category:VSCat",
+        "path": "Observation.category",
+        "sliceName": "VSCat",
+        "definition": "The physical activity",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "activity",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category:NumberOfStepsCode",
+        "path": "Observation.category",
+        "sliceName": "NumberOfStepsCode",
+        "definition": "Number of steps in 24 hour Measured",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "41950-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Number of steps in 24 hour",
+        "definition": "Number of steps in 24 hour.",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "41950-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Vital Signs are point in time measurements and are recorded using the dateTime data type",
+        "definition": "Vital Signs are point in time measurements and are recorded using the dateTime data type.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "condition": [
+          "vs-ns-1"
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "condition": [
+          "vs-ns-2",
+          "obs-6"
+        ]
+      },
+      {
+        "id": "Observation.value[x].unit",
+        "path": "Observation.value[x].unit",
+        "patternString": "{#}/{24.h}"
+      },
+      {
+        "id": "Observation.value[x].system",
+        "path": "Observation.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.value[x].code",
+        "path": "Observation.value[x].code",
+        "patternCode": "/d"
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "condition": [
+          "vs-ns-2"
+        ]
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "max": "0"
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "short": "Physical Activity Measurement Device",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-device-lt-lifestyle"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

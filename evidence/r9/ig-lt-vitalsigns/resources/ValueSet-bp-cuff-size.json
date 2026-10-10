@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BloodPressureCuffSize",
+  "id": "bp-cuff-size",
+  "title": "Blood Pressure Cuff Size",
+  "description": "SNOMED CT code system values that describe the size of blood pressure cuff in use.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "720736009",
+            "display": "Blood pressure cuff, pediatric size (physical object)"
+          },
+          {
+            "code": "720737000",
+            "display": "Blood pressure cuff, adult size (physical object)"
+          }
+        ]
+      }
+    ]
+  }
+}

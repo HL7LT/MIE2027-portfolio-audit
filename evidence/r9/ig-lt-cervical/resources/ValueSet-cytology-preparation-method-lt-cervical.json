@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CytologyPreparationMethodLtCervicalVS",
+  "id": "cytology-preparation-method-lt-cervical",
+  "title": "Cervix - Cytology Preparation Method (LT Cervical)",
+  "description": "Specimen preparation methods for cervical cytology in the Lithuanian cervical cancer screening pathway (conventional smear vs liquid-based cytology).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cytology-preparation-method",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "440623000",
+            "display": "Microscopic examination of cervical Papanicolaou smear (procedure)"
+          },
+          {
+            "code": "417036008",
+            "display": "Liquid based cervical cytology screening (procedure)"
+          },
+          {
+            "code": "726444000",
+            "display": "Liquid-based preparation technique (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

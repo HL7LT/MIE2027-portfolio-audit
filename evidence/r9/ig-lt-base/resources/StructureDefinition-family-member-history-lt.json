@@ -1,0 +1,97 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "family-member-history-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/family-member-history-lt",
+  "name": "FamilyMemberHistoryLt",
+  "title": "FamilyMemberHistoryLt",
+  "status": "active",
+  "description": "Lithuanian Base FamilyMemberHistory profile, used for health conditions for a person related to the patient.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "FamilyMemberHistory",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "FamilyMemberHistory.status",
+        "path": "FamilyMemberHistory.status",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.patient",
+        "path": "FamilyMemberHistory.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.participant.actor",
+        "path": "FamilyMemberHistory.participant.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-team-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FamilyMemberHistory.age[x]",
+        "path": "FamilyMemberHistory.age[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.deceased[x]",
+        "path": "FamilyMemberHistory.deceased[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.reason",
+        "path": "FamilyMemberHistory.reason",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/document-reference-lt",
+              "http://hl7.org/fhir/StructureDefinition/AllergyIntolerance",
+              "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FamilyMemberHistory.note",
+        "path": "FamilyMemberHistory.note",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.condition",
+        "path": "FamilyMemberHistory.condition",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.procedure",
+        "path": "FamilyMemberHistory.procedure",
+        "mustSupport": true
+      }
+    ]
+  }
+}

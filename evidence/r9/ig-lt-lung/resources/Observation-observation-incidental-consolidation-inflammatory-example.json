@@ -1,0 +1,59 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-incidental-consolidation-inflammatory-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "363714003",
+            "system": "http://snomed.info/sct",
+            "display": "Interprets (attribute)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "257552002",
+            "system": "http://snomed.info/sct",
+            "display": "Inflammation"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "404684003",
+        "system": "http://snomed.info/sct",
+        "display": "Clinical finding (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-11-20T14:30:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "95436008",
+        "system": "http://snomed.info/sct",
+        "display": "Lung consolidation (disorder)"
+      }
+    ]
+  }
+}

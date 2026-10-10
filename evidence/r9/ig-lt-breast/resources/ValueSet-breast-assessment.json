@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastAssessmentVS",
+  "id": "breast-assessment",
+  "title": "Breast Assessment Services and Procedures",
+  "description": "This ValueSet includes all clinical services and procedures related to the assessment and diagnostic evaluation of the breast, such as imaging, biopsy, and specialist referrals.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-assessment",
+  "language": "en",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "16310003",
+            "display": "Ultrasonography (procedure)"
+          },
+          {
+            "code": "306300002",
+            "display": "Referral to breast surgeon (procedure)"
+          },
+          {
+            "code": "308535007",
+            "display": "Screening call (procedure)"
+          },
+          {
+            "code": "71651007",
+            "display": "Mammography (procedure)"
+          },
+          {
+            "code": "86273004",
+            "display": "Biopsy (procedure)"
+          },
+          {
+            "code": "450566007",
+            "display": "Digital tomosynthesis of breast (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

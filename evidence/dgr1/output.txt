@@ -1,0 +1,29 @@
+
+== `in` with a SINGLE item on the left (the documented case)
+  expression : 1 in (1 | 2 | 3)
+  single -> true
+
+== `in` with MULTIPLE items on the left (what dgr-1 produces)
+  expression : (1 | 2) in (1 | 2 | 3)
+  multi -> THREW PathEngineException: Error evaluating FHIRPath expression: left operand to in can only have 1 value, but has 2 values (1,2) (@char 1)
+
+== `in` with an EMPTY left operand (the other dgr-1 case)
+  expression : {} in (1 | 2 | 3)
+  empty -> { } (empty)
+
+== the same test wrapped the way R6 rewrote dgr-1
+  expression : (1 | 2).all($this in (1 | 2 | 3))
+  R6 .all() -> true
+
+  expression : (1 | 2).subsetOf(1 | 2 | 3)
+  subsetOf -> true
+
+== a whole constraint shaped like R5 dgr-1, left side multi-item
+  expression : true implies ((1 | 2) in (1 | 2 | 3))
+  R5 shape -> THREW PathEngineException: Error evaluating FHIRPath expression: left operand to in can only have 1 value, but has 2 values (1,2) (@char 15)
+
+== a whole constraint shaped like R5 dgr-1, left side empty
+  expression : true implies ({} in (1 | 2 | 3))
+  R5 shape/empty -> { } (empty)
+
+Binary file (standard input) matches

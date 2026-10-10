@@ -1,0 +1,201 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-cvd-prevention-plan-questionnaire",
+  "url": "https://hl7.lt/fhir/cvd/ConceptMap/conceptmap-cvd-prevention-plan-questionnaire",
+  "title": "CVD prevention plan questionnaire item to profile mapping",
+  "description": "Maps ESPBI form 2 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. Human-readable narrative is in each target.comment. Source: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Section header for plan metadata, risk group, LDL target, and smoking cessation (CarePlanLtCvd). Example: care-plan-cvd-screening-example. CVD IG: https://hl7.lt/fhir/cvd/ImplementationGuide/lt.hl7.fhir.cvd"
+            }
+          ],
+          "code": "grp-plan-header"
+        },
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "CarePlan.created / period on CarePlanLtCvd. StructureDefinition: https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd. Example: care-plan-cvd-screening-example."
+            }
+          ],
+          "code": "plan-created-datetime"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-group-ext-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Risk group on the plan: RiskGroupExtLtCvd on CarePlan and/or persisted RiskGroupObservationLtCvd. Extension: https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd. Example observation: observation-risk-group-high-example."
+            }
+          ],
+          "code": "plan-risk-group"
+        },
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Target LDL as CarePlan.goal (e.g. LOINC 18262-6) on CarePlanLtCvd; compare to CholesterolLdlLabLt at follow-up. Lab profile: https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-ldl-lab-lt"
+            }
+          ],
+          "code": "plan-target-ldl"
+        },
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "CarePlan.activity for cessation interventions; related behaviour may appear as TobaccoUseLtLifestyle. Lifestyle: https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-lt-lifestyle"
+            }
+          ],
+          "code": "plan-smoking-cessation"
+        },
+        {
+          "target": [
+            {
+              "code": "physical-activity-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "Section header for lifestyle and weight (physical activity, target BMI)."
+            }
+          ],
+          "code": "grp-plan-lifestyle"
+        },
+        {
+          "target": [
+            {
+              "code": "physical-activity-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "PhysicalActivityLtLifestyle. StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-lt-lifestyle. CI: https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-physical-activity-below-example.html"
+            }
+          ],
+          "code": "plan-physical-activity"
+        },
+        {
+          "target": [
+            {
+              "code": "bmi",
+              "relationship": "related-to",
+              "comment": "Target BMI as goal on CarePlan; measured BMI uses vitalsigns BMI profile. StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/bmi"
+            }
+          ],
+          "code": "plan-target-bmi"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "Achievement evaluation section; aligns with follow-up Observations in this IG (e.g. observation-cvd-followup-*). CVD IG examples bundle with CvdReportLtCvd / CvdCompositionLtCvd as appropriate."
+            }
+          ],
+          "code": "grp-achievement"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "Effective time on follow-up Observations or encounter context. Base profile: https://hl7.lt/fhir/base/StructureDefinition/observation-lt. LT Base IG: https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base"
+            }
+          ],
+          "code": "achievement-datetime"
+        },
+        {
+          "target": [
+            {
+              "code": "cholesterol-ldl-lab-lt",
+              "relationship": "related-to",
+              "comment": "Achieved LDL: CholesterolLdlLabLt. CI lipidogram: https://build.fhir.org/ig/HL7LT/ig-lt-lab/Observation-observation-lipidogram-example.html"
+            }
+          ],
+          "code": "achievement-ldl-mmol"
+        },
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Interpret against CarePlan LDL goals and latest CholesterolLdlLabLt Observation."
+            }
+          ],
+          "code": "achievement-ldl-target-met"
+        },
+        {
+          "target": [
+            {
+              "code": "blood-pressure-panel",
+              "relationship": "related-to",
+              "comment": "BloodPressurePanel systolic component. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-blood-pressure-example.html"
+            }
+          ],
+          "code": "achievement-bp-systolic"
+        },
+        {
+          "target": [
+            {
+              "code": "blood-pressure-panel",
+              "relationship": "related-to",
+              "comment": "BloodPressurePanel diastolic component; same Observation as systolic."
+            }
+          ],
+          "code": "achievement-bp-diastolic"
+        },
+        {
+          "target": [
+            {
+              "code": "care-plan-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Interpret against CarePlan BP goals and BloodPressurePanel Observations."
+            }
+          ],
+          "code": "achievement-bp-target-met"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "Free-text comments; may appear as note on ObservationLt or related resource. StructureDefinition: https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            }
+          ],
+          "code": "achievement-comments"
+        },
+        {
+          "target": [
+            {
+              "code": "tobacco-use-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "mapping.md row 24 — Smoking cessation at achievement; TobaccoUseLtLifestyle vs plan smoking cessation items."
+            }
+          ],
+          "code": "achievement-smoking-quit"
+        }
+      ],
+      "source": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-prevention-plan-item",
+      "target": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "CvdPreventionPlanQuestionnaireItemMap",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-01",
+  "publisher": "HL7 Lithuania"
+}

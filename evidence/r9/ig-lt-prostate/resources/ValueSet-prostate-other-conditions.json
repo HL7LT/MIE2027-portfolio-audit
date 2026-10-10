@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateOtherConditionsVS",
+  "id": "prostate-other-conditions",
+  "title": "Prostate - Other (Incidental) Conditions",
+  "description": "Incidental prostate conditions observed during mpMRI or PRECISE assessment: benign prostatic hyperplasia, prostatitis, and fibrotic changes.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-other-conditions",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "266569009",
+            "display": "Benign prostatic hyperplasia (disorder)"
+          },
+          {
+            "code": "9713002",
+            "display": "Prostatitis (disorder)"
+          },
+          {
+            "code": "263756000",
+            "display": "Fibrosis (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

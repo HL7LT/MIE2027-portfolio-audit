@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+  "name" : "LTLifestyle",
+  "title" : "Lithuanian Lifestyle Implementation Guide",
+  "description" : "Lithuanian Lifestyle Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.lifestyle",
+  "ig-ver" : "0.1.0",
+  "date" : "Thu, 08 Oct, 2026 19:33:20 +0300",
+  "dateISO8601" : "2026-10-08T19:33:20+03:00",
+  "errs" : 0,
+  "warnings" : 373,
+  "hints" : 524,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 17,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 4091511504
+}

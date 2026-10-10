@@ -1,0 +1,97 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "LungPreLdctQuestionnaireItem",
+  "id": "lung-pre-ldct-questionnaire-item",
+  "title": "Pre-LDCT screening intake Questionnaire item (linkId)",
+  "description": "Stable linkId values for the pre-LDCT radiologist intake Questionnaire; source codes for the Lung ConceptMap prototype.",
+  "url": "https://hl7.lt/fhir/lung/CodeSystem/lung-pre-ldct-questionnaire-item",
+  "concept": [
+    {
+      "code": "registration-date",
+      "display": "Registration date"
+    },
+    {
+      "code": "self-care",
+      "display": "Self-care capability"
+    },
+    {
+      "code": "bedridden",
+      "display": "Bedridden status"
+    },
+    {
+      "code": "prior-chest-ct",
+      "display": "Prior chest CT documented"
+    },
+    {
+      "code": "prior-chest-ct-date",
+      "display": "Prior chest CT date"
+    },
+    {
+      "code": "recent-respiratory-infection",
+      "display": "Recent respiratory infection flag"
+    },
+    {
+      "code": "height",
+      "display": "Height (cm)"
+    },
+    {
+      "code": "weight",
+      "display": "Weight (kg)"
+    },
+    {
+      "code": "smokes",
+      "display": "Currently smokes"
+    },
+    {
+      "code": "cigarettes",
+      "display": "Cigarette use"
+    },
+    {
+      "code": "cigarettes-per-day",
+      "display": "Cigarettes per day"
+    },
+    {
+      "code": "pack-years",
+      "display": "Pack-years"
+    },
+    {
+      "code": "e-cigarettes",
+      "display": "E-cigarette use"
+    },
+    {
+      "code": "heated-tobacco",
+      "display": "Heated tobacco use"
+    },
+    {
+      "code": "tobacco",
+      "display": "Loose tobacco use"
+    },
+    {
+      "code": "pipe",
+      "display": "Pipe use"
+    },
+    {
+      "code": "smoked-before",
+      "display": "Ever smoked"
+    },
+    {
+      "code": "years-smoked",
+      "display": "Years smoked"
+    },
+    {
+      "code": "years-quit",
+      "display": "Years since quit"
+    },
+    {
+      "code": "diagnoses",
+      "display": "Relevant diagnoses (ICD-10)"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 20
+}

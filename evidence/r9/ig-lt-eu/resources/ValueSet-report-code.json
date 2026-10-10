@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ReportCode",
+  "id": "report-code",
+  "title": "Report Code",
+  "description": "Diagnostic report codes including all subtypes of Clinical procedure report, excluding the root concept itself.",
+  "url": "https://hl7.lt/fhir/eu/ValueSet/report-code",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "descendent-of",
+            "value": "371525003"
+          }
+        ]
+      }
+    ]
+  }
+}

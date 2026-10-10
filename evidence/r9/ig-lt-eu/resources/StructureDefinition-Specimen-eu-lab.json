@@ -1,0 +1,160 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Specimen-eu-lab",
+  "language": "en",
+  "url": "http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab",
+  "version": "0.2.0-ci",
+  "name": "SpecimenEu",
+  "title": "Specimen: Laboratory (Eu Lab)",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "This profile defines how to represent Specimens in HL7 FHIR for the purpose of this guide.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Specimen",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Specimen",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Specimen",
+        "path": "Specimen",
+        "short": "Laboratory Specimen",
+        "definition": "Laboratory specimen"
+      },
+      {
+        "id": "Specimen.type",
+        "path": "Specimen.type",
+        "comment": "If the specimen.type conveys information about the site the specimen has been collected from, then, if the bodySite if present it shall be coherent with the type.",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-specimenType-eu-lab"
+        }
+      },
+      {
+        "id": "Specimen.subject",
+        "path": "Specimen.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-eu",
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-animal-eu-core",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "http://hl7.org/fhir/StructureDefinition/Substance",
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.parent",
+        "path": "Specimen.parent",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.request",
+        "path": "Specimen.request",
+        "short": "Why the specimen was collected.",
+        "comment": "If the specimen information are known when the order is created then the ServiceRequest.specimen should be used.\nIf the ServiceRequest can be updated when the specimen is collected then the ServiceRequest.specimen or the Specimen.request could be used.\nOtherwise the relationship is recorded in the Specimen.request element"
+      },
+      {
+        "id": "Specimen.collection.bodySite",
+        "path": "Specimen.collection.bodySite",
+        "comment": "If the specimen.type conveys information about the site the specimen has been collected from, then, if the bodySite is present, it shall be coherent with the type",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        }
+      },
+      {
+        "id": "Specimen.processing.additive",
+        "path": "Specimen.processing.additive",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Substance",
+              "http://hl7.eu/fhir/laboratory/StructureDefinition/Substance-additive-eu-lab"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.container.extension",
+        "path": "Specimen.container.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Specimen.container.extension:type",
+        "path": "Specimen.container.extension",
+        "sliceName": "type",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/specimen-container-type"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

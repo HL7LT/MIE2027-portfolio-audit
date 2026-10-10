@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PulmonaryNoduleTypeVS",
+  "id": "pulmonary-nodule-type",
+  "title": "Pulmonary Nodule Type",
+  "description": "Allowed pulmonary nodule type values used in the Lithuanian lung cancer\nearly diagnosis programme.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-type",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "35702001",
+            "display": "Solid"
+          },
+          {
+            "code": "1217294009",
+            "display": "Ground glass lung opacity"
+          },
+          {
+            "code": "255347005",
+            "display": "Hollow"
+          },
+          {
+            "code": "129748009",
+            "display": "Radiographic calcification finding (finding)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/pulmonary-nodule-type-local",
+        "concept": [
+          {
+            "code": "part-solid",
+            "display": "Part-solid"
+          }
+        ]
+      }
+    ]
+  }
+}

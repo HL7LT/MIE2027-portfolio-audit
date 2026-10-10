@@ -1,0 +1,113 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ImImageIidViewerEndpoint",
+  "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImageIidViewerEndpoint",
+  "name": "ImImageIidViewerEndpoint",
+  "title": "IM Image Viewer Endpoint",
+  "status": "draft",
+  "date": "2025-05-14T15:47:13+02:00",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "This profile defines a placeholder for an Endpoint for a viewer that can be used to access the study, serie it is present on.\nThe application is based on [IHE-IID](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_IID.pdf).",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Endpoint",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/EndpointEu",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Endpoint.connectionType",
+        "path": "Endpoint.connectionType",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Endpoint.connectionType:iid",
+        "path": "Endpoint.connectionType",
+        "sliceName": "iid",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ihe-iid",
+              "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/codesystem-endpoint-terminology",
+              "display": "IHE IID endpoint"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Endpoint.payload",
+        "path": "Endpoint.payload",
+        "min": 1
+      },
+      {
+        "id": "Endpoint.payload.type",
+        "path": "Endpoint.payload.type",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Endpoint.payload.type.text",
+        "path": "Endpoint.payload.type.text",
+        "patternString": "IHE IID"
+      },
+      {
+        "id": "Endpoint.payload.mimeType",
+        "path": "Endpoint.payload.mimeType",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Endpoint.payload.mimeType:text-html",
+        "path": "Endpoint.payload.mimeType",
+        "sliceName": "text-html",
+        "min": 1,
+        "max": "1",
+        "patternCode": "text/html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,621 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "precise-assessment-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate",
+  "name": "PreciseAssessmentLtProstate",
+  "title": "Observation: PRECISE Longitudinal Assessment",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "PRECISE is an exam-level longitudinal assessment for prostate MRI follow-up.\nIt summarizes overall change compared to a prior MRI examination, using the PRECISE framework.\n\nPRECISE does not replace PI-RADS (which is lesion-level). Instead, it provides a\npatient/exam-level progression/regression category informed by lesion changes.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "precise-assessment",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "PRECISE longitudinal assessment"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-category"
+        }
+      },
+      {
+        "id": "Observation.derivedFrom",
+        "path": "Observation.derivedFrom",
+        "short": "Prior ImagingStudy used as baseline for PRECISE longitudinal comparison",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ImagingStudy"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:newLesion",
+        "path": "Observation.component",
+        "sliceName": "newLesion",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:newLesion.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "new-lesion",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "New lesion indicator"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:newLesion.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:changePattern",
+        "path": "Observation.component",
+        "sliceName": "changePattern",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:changePattern.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "change-pattern",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Change pattern"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:changePattern.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-change-pattern"
+        }
+      },
+      {
+        "id": "Observation.component:bestSequence",
+        "path": "Observation.component",
+        "sliceName": "bestSequence",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:bestSequence.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "best-sequence",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Best MRI sequence for change assessment"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:bestSequence.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type"
+        }
+      },
+      {
+        "id": "Observation.component:sizeChangeMm",
+        "path": "Observation.component",
+        "sliceName": "sizeChangeMm",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:sizeChangeMm.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "size-change-mm",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Size change in millimeters"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:sizeChangeMm.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:sizeChangeMm.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:sizeChangeMm.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:sizeChangeMm.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:dimension1",
+        "path": "Observation.component",
+        "sliceName": "dimension1",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dimension1.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "dimension-1-mm",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Dimension 1 (mm, axial)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dimension1.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:dimension1.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:dimension1.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:dimension2",
+        "path": "Observation.component",
+        "sliceName": "dimension2",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dimension2.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "dimension-2-mm",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Dimension 2 (mm, axial)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dimension2.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:dimension2.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:dimension2.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:dimension3",
+        "path": "Observation.component",
+        "sliceName": "dimension3",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dimension3.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "dimension-3-mm",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Dimension 3 (mm, coronal/sagittal)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dimension3.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:dimension3.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:dimension3.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:changeVolume",
+        "path": "Observation.component",
+        "sliceName": "changeVolume",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:changeVolume.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "change-volume-cm3",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Change volume (cm³)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:changeVolume.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:changeVolume.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:changeVolume.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "cm3"
+      },
+      {
+        "id": "Observation.component:likertScale",
+        "path": "Observation.component",
+        "sliceName": "likertScale",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:likertScale.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "273575009",
+              "system": "http://snomed.info/sct",
+              "display": "Likert scale (assessment scale)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:likertScale.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "prostate-score-min-1",
+            "severity": "error",
+            "human": "Score must be at least 1.",
+            "expression": "$this >= 1",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+          },
+          {
+            "key": "prostate-score-max-5",
+            "severity": "error",
+            "human": "Score must be at most 5.",
+            "expression": "$this <= 5",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:priorPirads",
+        "path": "Observation.component",
+        "sliceName": "priorPirads",
+        "short": "Prior PI-RADS score",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:priorPirads.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "350501000146102",
+              "system": "http://snomed.info/sct",
+              "display": "Prostate Imaging-Reporting and Data System score"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:priorPirads.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "prostate-score-min-1",
+            "severity": "error",
+            "human": "Score must be at least 1.",
+            "expression": "$this >= 1",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+          },
+          {
+            "key": "prostate-score-max-5",
+            "severity": "error",
+            "human": "Score must be at most 5.",
+            "expression": "$this <= 5",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:priorTnmStage",
+        "path": "Observation.component",
+        "sliceName": "priorTnmStage",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:priorTnmStage.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "prior-tnm-stage",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+              "display": "Prior TNM stage"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:priorTnmStage.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:priorCapsuleDamage",
+        "path": "Observation.component",
+        "sliceName": "priorCapsuleDamage",
+        "short": "Prior capsule damage",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:priorCapsuleDamage.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "60405008",
+              "system": "http://snomed.info/sct",
+              "display": "Structure of capsule of prostate (body structure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:priorCapsuleDamage.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status"
+        }
+      },
+      {
+        "id": "Observation.component:priorVesicleDamage",
+        "path": "Observation.component",
+        "sliceName": "priorVesicleDamage",
+        "short": "Prior seminal vesicle damage",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:priorVesicleDamage.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "64739004",
+              "system": "http://snomed.info/sct",
+              "display": "Seminal vesicle structure (body structure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:priorVesicleDamage.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status"
+        }
+      }
+    ]
+  }
+}

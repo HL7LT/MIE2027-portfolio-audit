@@ -1,0 +1,127 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "healthcare-service-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/healthcare-service-lt",
+  "name": "HealthcareServiceLt",
+  "title": "HealthcareServiceLt",
+  "status": "active",
+  "description": "Lithuanian Base HealthcareService profile, used for describing provided healthcare services.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "HealthcareService",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "HealthcareService.providedBy",
+        "path": "HealthcareService.providedBy",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.offeredIn",
+        "path": "HealthcareService.offeredIn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/healthcare-service-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "HealthcareService.category",
+        "path": "HealthcareService.category",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.type",
+        "path": "HealthcareService.type",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.specialty",
+        "path": "HealthcareService.specialty",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.location",
+        "path": "HealthcareService.location",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/location-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.name",
+        "path": "HealthcareService.name",
+        "short": "Name Healthcare Services (in Lithuanian)",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.name.extension",
+        "path": "HealthcareService.name.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "short": "Name Healthcare Services (in English)"
+      },
+      {
+        "id": "HealthcareService.name.extension:translation",
+        "path": "HealthcareService.name.extension",
+        "sliceName": "translation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/translation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.contact",
+        "path": "HealthcareService.contact",
+        "mustSupport": true
+      },
+      {
+        "id": "HealthcareService.coverageArea",
+        "path": "HealthcareService.coverageArea",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/location-lt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

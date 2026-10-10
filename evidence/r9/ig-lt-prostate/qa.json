@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/prostate/ImplementationGuide/lt.hl7.fhir.prostate",
+  "name" : "LTProstate",
+  "title" : "Lithuanian Prostate Diagnostics Implementation Guide",
+  "description" : "Lithuanian Prostate Diagnostics Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.prostate",
+  "ig-ver" : "0.0.1",
+  "date" : "Thu, 08 Oct, 2026 22:01:00 +0300",
+  "dateISO8601" : "2026-10-08T22:01:00+03:00",
+  "errs" : 3,
+  "warnings" : 573,
+  "hints" : 598,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 3204763248
+}

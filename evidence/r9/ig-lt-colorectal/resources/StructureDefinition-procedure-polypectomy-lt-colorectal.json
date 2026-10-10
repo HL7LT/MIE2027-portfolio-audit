@@ -1,0 +1,163 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "procedure-polypectomy-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/procedure-polypectomy-lt-colorectal",
+  "name": "ProcedurePolypectomyLtColorectal",
+  "title": "Colonic Polypectomy Procedure (LT Colorectal)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "description": "Profile enforcing the mandatory documentation of the polypectomy technique, tools, and histology outcome using local codes.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.extension",
+        "path": "Procedure.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Procedure.extension:method",
+        "path": "Procedure.extension",
+        "sliceName": "method",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/colorectal/StructureDefinition/procedure-method"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Procedure.extension:method.value[x]",
+        "path": "Procedure.extension.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-excision-method-lt-colorectal"
+        }
+      },
+      {
+        "id": "Procedure.category",
+        "path": "Procedure.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "387713003",
+              "system": "http://snomed.info/sct",
+              "display": "Surgical procedure (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "274025005",
+              "system": "http://snomed.info/sct",
+              "display": "Colonic polypectomy (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Procedure.outcome",
+        "path": "Procedure.outcome",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-histology-status-lt-colorectal"
+        }
+      },
+      {
+        "id": "Procedure.used",
+        "path": "Procedure.used",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "concept.coding.system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 3
+      },
+      {
+        "id": "Procedure.used:lumenFilling",
+        "path": "Procedure.used",
+        "sliceName": "lumenFilling",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-lumen-filling-lt-colorectal"
+        }
+      },
+      {
+        "id": "Procedure.used:lumenFilling.concept.coding.system",
+        "path": "Procedure.used.concept.coding.system",
+        "min": 1,
+        "patternUri": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-lumen-filling-codes-lt"
+      },
+      {
+        "id": "Procedure.used:instrument",
+        "path": "Procedure.used",
+        "sliceName": "instrument",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-instrument-lt-colorectal"
+        }
+      },
+      {
+        "id": "Procedure.used:instrument.concept.coding.system",
+        "path": "Procedure.used.concept.coding.system",
+        "min": 1,
+        "patternUri": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-instrument-codes-lt"
+      },
+      {
+        "id": "Procedure.used:hydroprep",
+        "path": "Procedure.used",
+        "sliceName": "hydroprep",
+        "min": 1,
+        "max": "*",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-hydroprep-lt-colorectal"
+        }
+      },
+      {
+        "id": "Procedure.used:hydroprep.concept.coding.system",
+        "path": "Procedure.used.concept.coding.system",
+        "min": 1,
+        "patternUri": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-hydroprep-codes-lt"
+      }
+    ]
+  }
+}

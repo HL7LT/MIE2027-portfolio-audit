@@ -1,0 +1,36 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-breast-screening-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-service-request-lt-breast"
+    ]
+  },
+  "occurrencePeriod": {
+    "start": "2025-08-01T00:00:00Z",
+    "end": "2025-12-01T00:00:00Z"
+  },
+  "status": "active",
+  "intent": "order",
+  "code": {
+    "concept": {
+      "coding": [
+        {
+          "code": "rec-mammographic-control",
+          "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+          "display": "Mammographic control"
+        }
+      ]
+    }
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-first-visit-example"
+  },
+  "requester": {
+    "reference": "Practitioner/example-practitioner"
+  },
+  "authoredOn": "2024-06-15T09:20:00+03:00"
+}

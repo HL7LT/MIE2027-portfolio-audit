@@ -1,0 +1,35 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodyStructure-prostate-lesion1-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/lesion-lt-prostate"
+    ]
+  },
+  "includedStructure": [
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "716913001",
+            "system": "http://snomed.info/sct",
+            "display": "Structure of anterior middle regional part of transition zone of right half prostate"
+          }
+        ]
+      }
+    }
+  ],
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  },
+  "morphology": {
+    "coding": [
+      {
+        "code": "49755003",
+        "system": "http://snomed.info/sct",
+        "display": "Morphologically abnormal structure"
+      }
+    ]
+  },
+  "description": "MRI-visible anterior transition zone lesion (~32 mm), predominantly right-sided with extension across midline to the left (mid-gland)."
+}

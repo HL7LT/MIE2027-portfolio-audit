@@ -1,0 +1,84 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "TumorComponentLtLab",
+  "id": "tumor-component-lt-lab",
+  "title": "Tumor Observable Component Codes (LT Lab)",
+  "description": "Local codes for TumorObservableLtLab component slicing. Used until equivalent SNOMED CT observable entity codes are available.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+  "concept": [
+    {
+      "code": "biopsy-count",
+      "display": "Quantity of biopsies submitted"
+    },
+    {
+      "code": "biopsy-with-tumor-count",
+      "display": "Quantity of biopsies containing tumor"
+    },
+    {
+      "code": "tumor-volume-methodology",
+      "display": "Methodology for determining tumor volume"
+    },
+    {
+      "code": "tumor-percent-in-biopsy",
+      "display": "Tumor percentage in biopsy tissue"
+    },
+    {
+      "code": "tumor-nodule-length-mm",
+      "display": "Length of tumor nodule in biopsy (mm)"
+    },
+    {
+      "code": "periprostatic-fat-invasion",
+      "display": "Periprostatic fat invasion finding"
+    },
+    {
+      "code": "seminal-vesicle-invasion",
+      "display": "Seminal vesicle invasion finding"
+    },
+    {
+      "code": "perineural-invasion",
+      "display": "Perineural invasion finding"
+    },
+    {
+      "code": "tumor-microfocus",
+      "display": "Tumor microfocus status"
+    },
+    {
+      "code": "degree-of-differentiation",
+      "display": "Degree of tumor differentiation (histologic grade)"
+    },
+    {
+      "code": "lvi-not-identified",
+      "display": "Lymphovascular invasion not identified"
+    },
+    {
+      "code": "lvi-present",
+      "display": "Lymphovascular invasion present"
+    },
+    {
+      "code": "lvi-ambiguous",
+      "display": "Lymphovascular invasion ambiguous"
+    },
+    {
+      "code": "lvi-cannot-evaluate",
+      "display": "Lymphovascular invasion cannot be evaluated"
+    },
+    {
+      "code": "vol-single-solid",
+      "display": "One solid tumor"
+    },
+    {
+      "code": "vol-multifocal-continuous",
+      "display": "Multiple tumor foci treated as continuous"
+    },
+    {
+      "code": "vol-multifocal-discontinuous",
+      "display": "Multiple tumor foci treated as discontinuous"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 17
+}

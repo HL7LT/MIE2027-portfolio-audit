@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TobaccoTypeUserLtLifestyle",
+  "id": "tobacco-type-user",
+  "title": "Tobacco Type User",
+  "description": "Records the type of tobacco product currently or previously used by the person (e.g., cigarettes, cigars, e-cigarettes).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tobacco-type-user",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "65568007",
+            "display": "Cigarette smoker (finding)"
+          },
+          {
+            "code": "722499006",
+            "display": "Electronic cigarette user (finding)"
+          },
+          {
+            "code": "59978006",
+            "display": "Cigar smoker (finding)"
+          },
+          {
+            "code": "82302008",
+            "display": "Pipe smoker (finding)"
+          },
+          {
+            "code": "228504007",
+            "display": "User of moist powdered tobacco (finding)"
+          },
+          {
+            "code": "228494002",
+            "display": "Snuff user (finding)"
+          },
+          {
+            "code": "81703003",
+            "display": "Chews tobacco (finding)"
+          },
+          {
+            "code": "698188003",
+            "display": "Chews betel quid (finding)"
+          },
+          {
+            "code": "698289004",
+            "display": "Hookah pipe smoker (finding)"
+          },
+          {
+            "code": "733460004",
+            "display": "Marijuana user (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

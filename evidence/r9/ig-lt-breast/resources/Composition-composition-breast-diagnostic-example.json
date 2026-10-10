@@ -1,0 +1,269 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-breast-diagnostic-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-composition-lt-breast"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://example.org/documents",
+      "value": "BREAST-ADP-2026-0001"
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/example-patient-female"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/example-practitioner-role"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticreport-breast-imaging-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "MG",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Mammography"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "ImagingStudy/imagingstudy-mammography-example"
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "71651007",
+                "system": "http://snomed.info/sct",
+                "display": "Mammography (procedure)"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "Procedure/procedure-mammography-example"
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Screening mammography performed.</div>"
+      },
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-mammography-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18726-0"
+          }
+        ]
+      },
+      "title": "Imaging Study"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Screening mammography ordered.</div>"
+      },
+      "entry": [
+        {
+          "reference": "ServiceRequest/servicerequest-breast-screening-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Asymptomatic screening participant.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-history-disease-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "History"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Bilateral digital mammography performed.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/procedure-mammography-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Procedure"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Compared with prior mammogram from 2024.</div>"
+      },
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-mammography-previous-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Suspicious lesion in left breast.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-breast-scar-example"
+        },
+        {
+          "reference": "Observation/observation-breast-skin-formation-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">BI-RADS 4: Suspicious abnormality.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-birads-cat4-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Core needle biopsy recommended.</div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/careplan-breast-followup-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendation"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "status": "final",
+  "date": "2026-01-10T10:00:00+02:00",
+  "title": "Breast Cancer Prevention Program – Diagnostic Process Summary",
+  "custodian": {
+    "reference": "Organization/example-organization"
+  }
+}

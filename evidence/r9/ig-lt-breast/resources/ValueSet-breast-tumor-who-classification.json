@@ -1,0 +1,340 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "BreastTumorWhoClassificationVS",
+  "id": "breast-tumor-who-classification",
+  "title": "WHO Breast Tumor Classification",
+  "description": "Breast tumor pathological diagnosis codes according to the WHO Classification of Tumours, 5th edition. Used for pathological histological examination conclusion/diagnosis in the breast cancer prevention program.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-tumor-who-classification",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "290084006",
+            "display": "Breast normal (finding)"
+          },
+          {
+            "code": "472906008",
+            "display": "Usual ductal hyperplasia (morphologic abnormality)"
+          },
+          {
+            "code": "55465005",
+            "display": "Columnar cell atypia (morphologic abnormality)"
+          },
+          {
+            "code": "6660000",
+            "display": "Atypical intraductal hyperplasia (morphologic abnormality)"
+          },
+          {
+            "code": "50916005",
+            "display": "Fibrosing adenosis (morphologic abnormality)"
+          },
+          {
+            "code": "36318001",
+            "display": "Apocrine adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "133855003",
+            "display": "Radial scar (morphologic abnormality)"
+          },
+          {
+            "code": "1156654007",
+            "display": "Benign tubular adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "128651002",
+            "display": "Lactating adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "5244003",
+            "display": "Intraductal papilloma (morphologic abnormality)"
+          },
+          {
+            "code": "8360001",
+            "display": "Pleomorphic adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "128765009",
+            "display": "Adenomyoepithelioma (morphologic abnormality)"
+          },
+          {
+            "code": "703644009",
+            "display": "Adenomyoepithelioma with carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "30566004",
+            "display": "Noninfiltrating intraductal papillary adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "703545003",
+            "display": "Encapsulated papillary carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "703547006",
+            "display": "Encapsulated papillary carcinoma with invasion (morphologic abnormality)"
+          },
+          {
+            "code": "734075007",
+            "display": "Intraductal papillary neoplasm with invasive carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "703546002",
+            "display": "Solid papillary carcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "703594003",
+            "display": "Solid papillary carcinoma with invasion (morphologic abnormality)"
+          },
+          {
+            "code": "33889003",
+            "display": "Atypical lobular hyperplasia (morphologic abnormality)"
+          },
+          {
+            "code": "77284006",
+            "display": "Lobular carcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "444591006",
+            "display": "Pleomorphic lobular carcinoma in situ (morphologic abnormality)"
+          },
+          {
+            "code": "1162814007",
+            "display": "Non-infiltrating intraductal carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "82711006",
+            "display": "Infiltrating duct carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "57596004",
+            "display": "Oxyphilic adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "74280008",
+            "display": "Glycogen-rich carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "443933007",
+            "display": "Ductal carcinoma in situ with microinvasion (morphologic abnormality)"
+          },
+          {
+            "code": "89740008",
+            "display": "Lobular carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "4631006",
+            "display": "Tubular adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "30156004",
+            "display": "Cribriform carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "72495009",
+            "display": "Mucinous adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "79143006",
+            "display": "Mucinous cystadenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "703578005",
+            "display": "Invasive micropapillary carcinoma of breast (morphologic abnormality)"
+          },
+          {
+            "code": "57141000",
+            "display": "Apocrine adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128705006",
+            "display": "Metaplastic carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "45410002",
+            "display": "Acinar cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "11671000",
+            "display": "Adenoid cystic carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "41919003",
+            "display": "Juvenile carcinoma of the breast (morphologic abnormality)"
+          },
+          {
+            "code": "4079000",
+            "display": "Mucoepidermoid carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128702009",
+            "display": "Polymorphous low grade adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1286768001",
+            "display": "Well-differentiated neuroendocrine tumor (morphologic abnormality)"
+          },
+          {
+            "code": "1286769009",
+            "display": "Well-differentiated neuroendocrine tumor grade 1 (morphologic abnormality)"
+          },
+          {
+            "code": "1286770005",
+            "display": "Well-differentiated neuroendocrine tumor grade 2 (morphologic abnormality)"
+          },
+          {
+            "code": "1286767006",
+            "display": "Neuroendocrine carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "74364000",
+            "display": "Small cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "128628002",
+            "display": "Large cell neuroendocrine carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1156873009",
+            "display": "Benign fibroadenoma (morphologic abnormality)"
+          },
+          {
+            "code": "115230008",
+            "display": "Fibroepithelial neoplasm (morphologic abnormality)"
+          },
+          {
+            "code": "16566002",
+            "display": "Benign phyllodes tumor (morphologic abnormality)"
+          },
+          {
+            "code": "71232009",
+            "display": "Borderline phyllodes tumor (morphologic abnormality)"
+          },
+          {
+            "code": "87913009",
+            "display": "Malignant phyllodes tumor (morphologic abnormality)"
+          },
+          {
+            "code": "51398009",
+            "display": "Hamartoma (morphologic abnormality)"
+          },
+          {
+            "code": "2985005",
+            "display": "Paget's disease, mammary (morphologic abnormality)"
+          },
+          {
+            "code": "65787003",
+            "display": "Adenoma of the nipple (morphologic abnormality)"
+          },
+          {
+            "code": "703552001",
+            "display": "Syringomatous tumor of nipple (morphologic abnormality)"
+          },
+          {
+            "code": "253053003",
+            "display": "Benign hemangioma (morphologic abnormality)"
+          },
+          {
+            "code": "47669001",
+            "display": "Hemangiomatosis (morphologic abnormality)"
+          },
+          {
+            "code": "817949008",
+            "display": "Atypical vascular lesion (morphologic abnormality)"
+          },
+          {
+            "code": "863926008",
+            "display": "Angiosarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "703616008",
+            "display": "Nodular fasciitis (morphologic abnormality)"
+          },
+          {
+            "code": "128738002",
+            "display": "Myofibroblastoma (morphologic abnormality)"
+          },
+          {
+            "code": "47284001",
+            "display": "Aggressive fibromatosis (morphologic abnormality)"
+          },
+          {
+            "code": "1290860006",
+            "display": "Inflammatory myofibroblastic tumor (morphologic abnormality)"
+          },
+          {
+            "code": "985004",
+            "display": "Schwannoma (morphologic abnormality)"
+          },
+          {
+            "code": "1156930004",
+            "display": "Benign neurofibroma (morphologic abnormality)"
+          },
+          {
+            "code": "1336225003",
+            "display": "Benign granular cell tumor (morphologic abnormality)"
+          },
+          {
+            "code": "13238004",
+            "display": "Granular cell tumor, malignant (morphologic abnormality)"
+          },
+          {
+            "code": "1162890002",
+            "display": "Leiomyoma (morphologic abnormality)"
+          },
+          {
+            "code": "1163022006",
+            "display": "Leiomyosarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "134328007",
+            "display": "Lipoma morphology (morphologic abnormality)"
+          },
+          {
+            "code": "73219006",
+            "display": "Angiolipoma (morphologic abnormality)"
+          },
+          {
+            "code": "1162815008",
+            "display": "Liposarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "705153001",
+            "display": "Pseudoangiomatous stromal hyperplasia (morphologic abnormality)"
+          },
+          {
+            "code": "397350003",
+            "display": "Extranodal marginal zone B-cell lymphoma of mucosa-associated lymphoid tissue (morphologic abnormality)"
+          },
+          {
+            "code": "55150002",
+            "display": "Follicular lymphoma (morphologic abnormality)"
+          },
+          {
+            "code": "1172695008",
+            "display": "Diffuse large B cell malignant lymphoma (morphologic abnormality)"
+          },
+          {
+            "code": "77381001",
+            "display": "Burkitt lymphoma (morphologic abnormality)"
+          },
+          {
+            "code": "1172730009",
+            "display": "Breast implant-associated anaplastic large cell lymphoma (morphologic abnormality)"
+          },
+          {
+            "code": "125154007",
+            "display": "Specimen unsatisfactory for evaluation (finding)"
+          },
+          {
+            "code": "56246009",
+            "display": "Hypertrophy (morphologic abnormality)"
+          }
+        ]
+      }
+    ]
+  }
+}

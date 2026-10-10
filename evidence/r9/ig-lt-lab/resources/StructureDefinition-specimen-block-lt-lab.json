@@ -1,0 +1,121 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "specimen-block-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/specimen-block-lt-lab",
+  "name": "SpecimenBlockLtLab",
+  "title": "Specimen: Tissue Block",
+  "status": "draft",
+  "description": "A profile for paraffin-embedded tissue blocks derived from a parent specimen.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Specimen",
+  "baseDefinition": "http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Specimen.accessionIdentifier",
+        "path": "Specimen.accessionIdentifier",
+        "short": "The lab-assigned block ID (e.g., A1, B2)",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.accessionIdentifier.use",
+        "path": "Specimen.accessionIdentifier.use",
+        "patternCode": "secondary"
+      },
+      {
+        "id": "Specimen.type",
+        "path": "Specimen.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1201985008",
+              "system": "http://snomed.info/sct",
+              "display": "Tissue block specimen (specimen)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Specimen.type.text",
+        "path": "Specimen.type.text",
+        "patternString": "Paraffin embedded block"
+      },
+      {
+        "id": "Specimen.subject",
+        "path": "Specimen.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-animal-eu-core"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.parent",
+        "path": "Specimen.parent",
+        "short": "The parent specimen this block was cut from",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+            ],
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy",
+                "valueBoolean": true
+              }
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection.collector",
+        "path": "Specimen.collection.collector",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.collection.quantity",
+        "path": "Specimen.collection.quantity",
+        "short": "The number of slices",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.processing",
+        "path": "Specimen.processing",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.processing.method",
+        "path": "Specimen.processing.method",
+        "short": "The method of block processing",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "702941008",
+              "system": "http://snomed.info/sct",
+              "display": "Paraffin embedding"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

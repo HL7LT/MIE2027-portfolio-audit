@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MolecularTestTypeVS",
+  "id": "molecular-test-type",
+  "title": "Molecular Test Type",
+  "description": "Types of molecular tests performed in the colorectal cancer screening program: MSI, KRAS, NRAS, and BRAF V600E.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "msi-test",
+            "display": "MSI (Microsatellite instability study)"
+          },
+          {
+            "code": "kras-test",
+            "display": "KRAS mutation test"
+          },
+          {
+            "code": "nras-test",
+            "display": "NRAS mutation test"
+          },
+          {
+            "code": "braf-v600e-test",
+            "display": "BRAF V600E mutation test"
+          }
+        ]
+      }
+    ]
+  }
+}

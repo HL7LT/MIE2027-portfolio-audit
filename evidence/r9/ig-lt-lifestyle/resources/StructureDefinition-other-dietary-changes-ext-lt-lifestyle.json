@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "other-dietary-changes-ext-lt-lifestyle",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle",
+  "name": "OtherDietaryChangesExtLtLifestyle",
+  "title": "Other Desired Dietary Changes",
+  "status": "draft",
+  "description": "Additional information provided about desired dietary changes (text field).",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Other Desired Dietary Changes",
+        "definition": "Additional information provided about desired dietary changes (text field)."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

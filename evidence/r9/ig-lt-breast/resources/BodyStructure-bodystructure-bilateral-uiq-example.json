@@ -1,0 +1,54 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodystructure-bilateral-uiq-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+    ]
+  },
+  "includedStructure": [
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "77831004",
+            "system": "http://snomed.info/sct",
+            "display": "Upper inner quadrant of breast"
+          }
+        ]
+      },
+      "laterality": {
+        "coding": [
+          {
+            "code": "7771000",
+            "system": "http://snomed.info/sct",
+            "display": "Left"
+          }
+        ]
+      }
+    },
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "77831004",
+            "system": "http://snomed.info/sct",
+            "display": "Upper inner quadrant of breast"
+          }
+        ]
+      },
+      "laterality": {
+        "coding": [
+          {
+            "code": "24028007",
+            "system": "http://snomed.info/sct",
+            "display": "Right"
+          }
+        ]
+      }
+    }
+  ],
+  "patient": {
+    "reference": "Patient/example-patient-female"
+  }
+}

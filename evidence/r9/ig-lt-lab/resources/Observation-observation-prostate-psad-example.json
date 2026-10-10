@@ -1,0 +1,58 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-psad-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "15325-4",
+        "system": "http://loinc.org",
+        "display": "Prostate specific Ag/Prostate volume calculated"
+      }
+    ],
+    "text": "PSA Density"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "H",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "High"
+        }
+      ],
+      "text": "Elevated density (>0.15 indicates risk)"
+    }
+  ],
+  "note": [
+    {
+      "text": "Calculated based on PSA of 9.0 ng/mL and Volume of 50 cc."
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2024-01-20T10:00:00Z",
+  "valueQuantity": {
+    "value": 0.18,
+    "code": "ng/mL.cm3",
+    "system": "http://unitsofmeasure.org",
+    "unit": "ng/mL/cc"
+  }
+}

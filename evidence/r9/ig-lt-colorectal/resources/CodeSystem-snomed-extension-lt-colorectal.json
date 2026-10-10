@@ -1,0 +1,350 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "SnomedExtensionLtColorectalCS",
+  "id": "snomed-extension-lt-colorectal",
+  "title": "SNOMED CT Extension for Colorectal Screening",
+  "description": "Extension CodeSystem for concepts used in the Lithuanian colorectal cancer screening program that are not available in SNOMED CT.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+  "concept": [
+    {
+      "code": "paris-classification",
+      "display": "Paris endoscopic classification",
+      "definition": "Paris endoscopic classification of superficial neoplastic lesions"
+    },
+    {
+      "code": "nice-classification",
+      "display": "NICE classification",
+      "definition": "NBI International Colorectal Endoscopic classification"
+    },
+    {
+      "code": "polyp-access",
+      "display": "Access to polyp",
+      "definition": "Difficulty of access to the polyp during endoscopy"
+    },
+    {
+      "code": "smsa-score",
+      "display": "SMSA score",
+      "definition": "Size, Morphology, Site, and Access score for polypectomy difficulty"
+    },
+    {
+      "code": "predicted-histology",
+      "display": "Predicted histology",
+      "definition": "Predicted histological type based on endoscopic appearance"
+    },
+    {
+      "code": "paris-Is",
+      "display": "Paris 0-Is (sessile/polypoid)"
+    },
+    {
+      "code": "paris-Isp",
+      "display": "Paris 0-Isp (semi-pedunculated)"
+    },
+    {
+      "code": "paris-Ip",
+      "display": "Paris 0-Ip (pedunculated)"
+    },
+    {
+      "code": "paris-IIa",
+      "display": "Paris 0-IIa (slightly elevated)"
+    },
+    {
+      "code": "paris-IIb",
+      "display": "Paris 0-IIb (flat)"
+    },
+    {
+      "code": "paris-IIc",
+      "display": "Paris 0-IIc (slightly depressed)"
+    },
+    {
+      "code": "lst-g-h",
+      "display": "LST-G-H (Laterally spreading, granular type, homogeneous)",
+      "definition": "Equivalent to Paris 0-IIa"
+    },
+    {
+      "code": "lst-g-nm",
+      "display": "LST-G-NM (Laterally spreading, granular type, non-homogeneous)",
+      "definition": "Equivalent to Paris 0-IIa + Is"
+    },
+    {
+      "code": "lst-ng-fe",
+      "display": "LST-NG-FE (Laterally spreading, non-granular type, flat elevation)",
+      "definition": "Equivalent to Paris 0-IIa"
+    },
+    {
+      "code": "lst-ng-pd",
+      "display": "LST-NG-PD (Laterally spreading, non-granular type, depressed)",
+      "definition": "Equivalent to Paris 0-IIa + IIc"
+    },
+    {
+      "code": "nice-1",
+      "display": "NICE Type I",
+      "definition": "Hyperplastic/sessile serrated lesion"
+    },
+    {
+      "code": "nice-2",
+      "display": "NICE Type II",
+      "definition": "Adenoma (low/high grade dysplasia)"
+    },
+    {
+      "code": "nice-3",
+      "display": "NICE Type III",
+      "definition": "Deep submucosal invasive cancer"
+    },
+    {
+      "code": "nice-not-evaluated",
+      "display": "NICE Not evaluated"
+    },
+    {
+      "code": "access-easy",
+      "display": "Easy",
+      "definition": "Easy access to the polyp. SMSA scale: 1 point."
+    },
+    {
+      "code": "access-heavy",
+      "display": "Heavy",
+      "definition": "Difficult access to the polyp. SMSA scale: 3 points."
+    },
+    {
+      "code": "budding-bd0",
+      "display": "No tumor budding (Bd0)",
+      "definition": "0 buds per 20X field"
+    },
+    {
+      "code": "budding-bd1",
+      "display": "Bd1 (1-4 / 20X RL)",
+      "definition": "Low tumor budding: 1-4 buds per 20X field"
+    },
+    {
+      "code": "budding-bd2",
+      "display": "Bd2 (5-9 / 20X RL)",
+      "definition": "Intermediate tumor budding: 5-9 buds per 20X field"
+    },
+    {
+      "code": "budding-bd3",
+      "display": "Bd3 (10+ / 20X RL)",
+      "definition": "High tumor budding: 10 or more buds per 20X field"
+    },
+    {
+      "code": "budding-invaluable",
+      "display": "Invaluable",
+      "definition": "Tumor budding cannot be assessed"
+    },
+    {
+      "code": "pdc-none",
+      "display": "No poorly differentiated clusters"
+    },
+    {
+      "code": "pdc-g1",
+      "display": "PDC-G1 (1-4 / 20X RL)"
+    },
+    {
+      "code": "pdc-g2",
+      "display": "PDC-G2 (5-9 / 20X RL)"
+    },
+    {
+      "code": "pdc-g3",
+      "display": "PDC-G3 (10+ / 20X RL)"
+    },
+    {
+      "code": "pdc-invaluable",
+      "display": "PDC Invaluable"
+    },
+    {
+      "code": "mmrp-normal",
+      "display": "Normal expression (MMR proficient, MSS)"
+    },
+    {
+      "code": "mmrp-loss",
+      "display": "Loss of expression (MMR deficient, MSI)"
+    },
+    {
+      "code": "mmrp-invaluable",
+      "display": "MMRP Invaluable"
+    },
+    {
+      "code": "mmrp-postponed",
+      "display": "MMRP Postponed"
+    },
+    {
+      "code": "mmrp-undefined",
+      "display": "MMRP Undefined (MSS)"
+    },
+    {
+      "code": "mol-postponed",
+      "display": "Postponed",
+      "definition": "Molecular test has been postponed"
+    },
+    {
+      "code": "mol-detected",
+      "display": "Detected mutation",
+      "definition": "Mutation has been detected"
+    },
+    {
+      "code": "mol-not-detected",
+      "display": "Undefined mutation",
+      "definition": "No mutation detected / undefined"
+    },
+    {
+      "code": "mol-set",
+      "display": "Set (MSI)",
+      "definition": "MSI status has been established"
+    },
+    {
+      "code": "msi-test",
+      "display": "MSI (Microsatellite instability study)",
+      "definition": "Microsatellite instability study. KLTN code: XLT00915-2"
+    },
+    {
+      "code": "kras-test",
+      "display": "KRAS mutation test",
+      "definition": "KRAS gene mutation analysis"
+    },
+    {
+      "code": "nras-test",
+      "display": "NRAS mutation test",
+      "definition": "NRAS gene mutation analysis"
+    },
+    {
+      "code": "braf-v600e-test",
+      "display": "BRAF V600E mutation test",
+      "definition": "Study of BRAF gene V600 variants. KLTN code: XLT00914-5"
+    },
+    {
+      "code": "haggitt-0",
+      "display": "Haggitt 0"
+    },
+    {
+      "code": "haggitt-1",
+      "display": "Haggitt 1"
+    },
+    {
+      "code": "haggitt-2",
+      "display": "Haggitt 2"
+    },
+    {
+      "code": "haggitt-3",
+      "display": "Haggitt 3"
+    },
+    {
+      "code": "haggitt-4",
+      "display": "Haggitt 4"
+    },
+    {
+      "code": "kikuchi-sm1",
+      "display": "Sm1 according to Kikuchi"
+    },
+    {
+      "code": "kikuchi-sm2",
+      "display": "Sm2 according to Kikuchi"
+    },
+    {
+      "code": "kikuchi-sm3",
+      "display": "Sm3 according to Kikuchi"
+    },
+    {
+      "code": "invasion-invaluable",
+      "display": "Invasion depth invaluable"
+    },
+    {
+      "code": "prep-split-two-day",
+      "display": "Two-day split preparation",
+      "definition": "Two-day split-dose bowel preparation protocol"
+    },
+    {
+      "code": "prep-same-day",
+      "display": "Same-day non-split preparation",
+      "definition": "Same-day non-split bowel preparation protocol"
+    },
+    {
+      "code": "polypectomy-snare",
+      "display": "Snare/loop",
+      "definition": "Polypectomy performed using a snare or loop"
+    },
+    {
+      "code": "polypectomy-forceps",
+      "display": "Forceps",
+      "definition": "Polypectomy performed using forceps"
+    },
+    {
+      "code": "polypectomy-hot",
+      "display": "Hot technique",
+      "definition": "Polypectomy using electrocautery (hot)"
+    },
+    {
+      "code": "polypectomy-cold",
+      "display": "Cold technique",
+      "definition": "Polypectomy without electrocautery (cold)"
+    },
+    {
+      "code": "resection-en-bloc",
+      "display": "En bloc resection",
+      "definition": "Complete removal of lesion in one piece"
+    },
+    {
+      "code": "resection-piecemeal",
+      "display": "Piecemeal resection",
+      "definition": "Removal of lesion in multiple fragments"
+    },
+    {
+      "code": "lumen-air",
+      "display": "Air insufflation",
+      "definition": "Colonic lumen distension using air"
+    },
+    {
+      "code": "lumen-water",
+      "display": "Water immersion",
+      "definition": "Colonic lumen distension using water"
+    },
+    {
+      "code": "lumen-co2",
+      "display": "CO2 insufflation",
+      "definition": "Colonic lumen distension using carbon dioxide"
+    },
+    {
+      "code": "hydro-saline",
+      "display": "Normal saline",
+      "definition": "Submucosal injection of normal saline for lesion lifting"
+    },
+    {
+      "code": "hydro-adrenaline",
+      "display": "Adrenaline",
+      "definition": "Submucosal injection of adrenaline for lesion lifting"
+    },
+    {
+      "code": "hydro-methylene-blue",
+      "display": "Methylene blue",
+      "definition": "Submucosal injection of methylene blue for lesion lifting"
+    },
+    {
+      "code": "hydro-gelofusine",
+      "display": "Gelofusine",
+      "definition": "Submucosal injection of Gelofusine for lesion lifting"
+    },
+    {
+      "code": "bleeding-clip",
+      "display": "Hemostatic clipping",
+      "definition": "Bleeding control using hemostatic clips"
+    },
+    {
+      "code": "bleeding-adrenaline-injection",
+      "display": "Adrenaline injection",
+      "definition": "Bleeding control using local adrenaline injection"
+    },
+    {
+      "code": "bleeding-coagulation",
+      "display": "Thermal coagulation",
+      "definition": "Bleeding control using thermal coagulation"
+    },
+    {
+      "code": "bleeding-other",
+      "display": "Other bleeding control method",
+      "definition": "Other method of bleeding control not specified above"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 72
+}

@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyTechniqueVS",
+  "id": "polypectomy-technique",
+  "title": "Polypectomy Technique",
+  "description": "Thermal technique used during polypectomy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-technique",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "polypectomy-hot",
+            "display": "Hot technique"
+          },
+          {
+            "code": "polypectomy-cold",
+            "display": "Cold technique"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-breast-skin-formation-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-observation-finding-lt-breast"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "BodyStructure",
+      "id": "bodystructure-multisite-example",
+      "meta": {
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      "includedStructure": [
+        {
+          "laterality": {
+            "coding": [
+              {
+                "code": "7771000",
+                "system": "http://snomed.info/sct",
+                "display": "Left"
+              }
+            ]
+          },
+          "structure": {
+            "coding": [
+              {
+                "code": "76365002",
+                "system": "http://snomed.info/sct",
+                "display": "Upper outer quadrant of breast"
+              }
+            ]
+          }
+        },
+        {
+          "laterality": {
+            "coding": [
+              {
+                "code": "24028007",
+                "system": "http://snomed.info/sct",
+                "display": "Right"
+              }
+            ]
+          },
+          "structure": {
+            "coding": [
+              {
+                "code": "33564002",
+                "system": "http://snomed.info/sct",
+                "display": "Lower outer quadrant of breast"
+              }
+            ]
+          }
+        }
+      ],
+      "patient": {
+        "reference": "Patient/example-patient-female"
+      }
+    }
+  ],
+  "bodyStructure": {
+    "reference": "#bodystructure-multisite-example"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "364370007",
+        "system": "http://snomed.info/sct",
+        "display": "Breast observable"
+      }
+    ]
+  },
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/encounter-palpation-example"
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2024-06-15T10:00:00+03:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "297960002",
+        "system": "http://snomed.info/sct",
+        "display": "Mass of skin"
+      }
+    ]
+  }
+}

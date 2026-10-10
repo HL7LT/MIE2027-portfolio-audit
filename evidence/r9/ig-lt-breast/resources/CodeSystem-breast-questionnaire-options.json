@@ -1,0 +1,416 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "BreastQuestionnaireOptions",
+  "id": "breast-questionnaire-options",
+  "title": "Breast questionnaire answer options (illustrative)",
+  "description": "Illustrative codes for Questionnaire answer options used in breast ESPBI-style forms. Register or replace with national coded values in production.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+  "concept": [
+    {
+      "code": "yes",
+      "display": "Yes"
+    },
+    {
+      "code": "no",
+      "display": "No"
+    },
+    {
+      "code": "unknown",
+      "display": "Unknown"
+    },
+    {
+      "code": "acr-a",
+      "display": "ACR A – Almost entirely fatty"
+    },
+    {
+      "code": "acr-b",
+      "display": "ACR B – Scattered areas of fibroglandular density"
+    },
+    {
+      "code": "acr-c",
+      "display": "ACR C – Heterogeneously dense"
+    },
+    {
+      "code": "acr-d",
+      "display": "ACR D – Extremely dense"
+    },
+    {
+      "code": "birads-0",
+      "display": "BI-RADS 0 – Incomplete examination"
+    },
+    {
+      "code": "birads-1",
+      "display": "BI-RADS 1 – No changes found"
+    },
+    {
+      "code": "birads-2",
+      "display": "BI-RADS 2 – Benign changes found"
+    },
+    {
+      "code": "birads-3",
+      "display": "BI-RADS 3 – Possibly benign changes"
+    },
+    {
+      "code": "birads-4",
+      "display": "BI-RADS 4 – Suspicious malignant finding"
+    },
+    {
+      "code": "birads-5",
+      "display": "BI-RADS 5 – Highly probable malignant finding"
+    },
+    {
+      "code": "finding-formation",
+      "display": "Formation (mass)"
+    },
+    {
+      "code": "finding-calcification",
+      "display": "Calcification"
+    },
+    {
+      "code": "finding-deformation",
+      "display": "Architectural deformation"
+    },
+    {
+      "code": "finding-asymmetry",
+      "display": "Focal asymmetric tissue"
+    },
+    {
+      "code": "dynamics-none",
+      "display": "Image without negative dynamics"
+    },
+    {
+      "code": "dynamics-negative",
+      "display": "Negative dynamics observed"
+    },
+    {
+      "code": "biopsy-us-guided",
+      "display": "Biopsy under ultrasound guidance"
+    },
+    {
+      "code": "biopsy-xray-guided",
+      "display": "Biopsy under X-ray guidance"
+    },
+    {
+      "code": "parenchyma-fatty",
+      "display": "Homogeneous adipose tissue"
+    },
+    {
+      "code": "parenchyma-fibroglandular",
+      "display": "Homogeneous fibroglandular"
+    },
+    {
+      "code": "parenchyma-heterogeneous",
+      "display": "Heterogeneous"
+    },
+    {
+      "code": "nature-cyst",
+      "display": "Cyst"
+    },
+    {
+      "code": "nature-lymph-node",
+      "display": "Breast lymph node"
+    },
+    {
+      "code": "nature-fibroadenoma",
+      "display": "Fibroadenoma"
+    },
+    {
+      "code": "nature-papilloma",
+      "display": "Papilloma"
+    },
+    {
+      "code": "nature-lipoma",
+      "display": "Lipoma"
+    },
+    {
+      "code": "nature-malignant",
+      "display": "Tumor (malignant)"
+    },
+    {
+      "code": "nature-abscess",
+      "display": "Abscess"
+    },
+    {
+      "code": "nature-other",
+      "display": "Other (free text)"
+    },
+    {
+      "code": "ducts-normal",
+      "display": "Ducts not expanded"
+    },
+    {
+      "code": "ducts-expanded",
+      "display": "Ducts expanded"
+    },
+    {
+      "code": "right",
+      "display": "Right"
+    },
+    {
+      "code": "left",
+      "display": "Left"
+    },
+    {
+      "code": "ln-level-n1",
+      "display": "N1"
+    },
+    {
+      "code": "ln-level-n2",
+      "display": "N2"
+    },
+    {
+      "code": "ln-level-n3",
+      "display": "N3"
+    },
+    {
+      "code": "fixation-formalin",
+      "display": "Fixed (10% formalin buffered solution)"
+    },
+    {
+      "code": "fixation-unfixed",
+      "display": "Unfixed"
+    },
+    {
+      "code": "proc-none",
+      "display": "No important information"
+    },
+    {
+      "code": "proc-biopsy",
+      "display": "Biopsy"
+    },
+    {
+      "code": "proc-excision",
+      "display": "Excision"
+    },
+    {
+      "code": "proc-other-operation",
+      "display": "Other operation"
+    },
+    {
+      "code": "proc-chemotherapy",
+      "display": "Chemotherapy"
+    },
+    {
+      "code": "proc-radiation",
+      "display": "Radiation (breast)"
+    },
+    {
+      "code": "proc-immunotherapy",
+      "display": "Immunotherapy"
+    },
+    {
+      "code": "op-thick-needle-biopsy",
+      "display": "Thick needle biopsy"
+    },
+    {
+      "code": "op-excision",
+      "display": "Excision"
+    },
+    {
+      "code": "op-other",
+      "display": "Other (free text)"
+    },
+    {
+      "code": "ihc-negative",
+      "display": "Negative"
+    },
+    {
+      "code": "ihc-weak",
+      "display": "Weak (+)"
+    },
+    {
+      "code": "ihc-moderate",
+      "display": "Moderate (++)"
+    },
+    {
+      "code": "ihc-strong",
+      "display": "Strong (+++)"
+    },
+    {
+      "code": "her2-negative",
+      "display": "HER2: expression absent (0)"
+    },
+    {
+      "code": "her2-low",
+      "display": "HER2: low immunohistochemical expression (1+)"
+    },
+    {
+      "code": "her2-borderline",
+      "display": "HER2: expression borderline (2+)"
+    },
+    {
+      "code": "her2-positive",
+      "display": "HER2: expression positive (3+)"
+    },
+    {
+      "code": "her2-eval-0",
+      "display": "HER2 evaluation: 0+"
+    },
+    {
+      "code": "her2-eval-1",
+      "display": "HER2 evaluation: 1+"
+    },
+    {
+      "code": "her2-eval-2",
+      "display": "HER2 evaluation: 2+"
+    },
+    {
+      "code": "her2-eval-3",
+      "display": "HER2 evaluation: 3+"
+    },
+    {
+      "code": "fish-amplified",
+      "display": "FISH: HER2 amplified"
+    },
+    {
+      "code": "fish-amplified-clusters",
+      "display": "FISH: amplified (clusters)"
+    },
+    {
+      "code": "fish-co-amplified",
+      "display": "FISH: co-amplified (HER2>=6, HER2/CEP17<2)"
+    },
+    {
+      "code": "fish-borderline",
+      "display": "FISH: borderline (4<=HER2<6, HER2/CEP17<2)"
+    },
+    {
+      "code": "fish-monosomic",
+      "display": "FISH: monosomic (HER2<4, HER2/CEP17>=2)"
+    },
+    {
+      "code": "fish-negative",
+      "display": "FISH: negative (HER2<4, HER2/CEP17<2)"
+    },
+    {
+      "code": "fish-not-evaluated",
+      "display": "FISH: not to be evaluated"
+    },
+    {
+      "code": "cish-amplified",
+      "display": "CISH/SISH: HER2 amplified"
+    },
+    {
+      "code": "cish-not-amplified",
+      "display": "CISH/SISH: HER2 not amplified"
+    },
+    {
+      "code": "cish-not-evaluated",
+      "display": "CISH/SISH: not to be evaluated"
+    },
+    {
+      "code": "grade-g1",
+      "display": "G1 (well-differentiated)"
+    },
+    {
+      "code": "grade-g2",
+      "display": "G2 (moderately differentiated)"
+    },
+    {
+      "code": "grade-g3",
+      "display": "G3 (poorly differentiated)"
+    },
+    {
+      "code": "grade-gx",
+      "display": "Gx (degree of differentiation undetermined)"
+    },
+    {
+      "code": "lvi-0",
+      "display": "pLVI-0: not detected"
+    },
+    {
+      "code": "lvi-1",
+      "display": "pLVI-1: spreading, otherwise unclassified"
+    },
+    {
+      "code": "lvi-2",
+      "display": "pLVI-2: only in lymphatic vessels and small blood vessels"
+    },
+    {
+      "code": "lvi-3",
+      "display": "pLVI-3: only in veins (large, thick-walled blood vessels)"
+    },
+    {
+      "code": "lvi-4",
+      "display": "pLVI-4: present in both lymphatic vessels and veins"
+    },
+    {
+      "code": "lvi-9",
+      "display": "pLVI-9: undetectable/unknown"
+    },
+    {
+      "code": "uoq",
+      "display": "Upper outer quadrant"
+    },
+    {
+      "code": "uiq",
+      "display": "Upper inner quadrant"
+    },
+    {
+      "code": "loq",
+      "display": "Lower outer quadrant"
+    },
+    {
+      "code": "liq",
+      "display": "Lower inner quadrant"
+    },
+    {
+      "code": "rec-mammographic-control",
+      "display": "Mammographic control"
+    },
+    {
+      "code": "rec-additional-mammography",
+      "display": "Additional mammography"
+    },
+    {
+      "code": "rec-spot-compression",
+      "display": "Local compression with magnification"
+    },
+    {
+      "code": "rec-ultrasound",
+      "display": "Ultrasound examination"
+    },
+    {
+      "code": "rec-breast-specialist",
+      "display": "Breast specialist consultation"
+    },
+    {
+      "code": "rec-consultation",
+      "display": "Consultation with breast specialist"
+    },
+    {
+      "code": "rec-biopsy-ultrasound",
+      "display": "Biopsy under ultrasound"
+    },
+    {
+      "code": "rec-biopsy",
+      "display": "Biopsy indicated"
+    },
+    {
+      "code": "rec-stereotactic-biopsy",
+      "display": "Stereotactic biopsy"
+    },
+    {
+      "code": "rec-mri",
+      "display": "MRI examination"
+    },
+    {
+      "code": "rec-next-mammography",
+      "display": "Next mammography after N months"
+    },
+    {
+      "code": "rec-follow-up-6m",
+      "display": "Follow-up in 6 months"
+    },
+    {
+      "code": "rec-biopsy-indicated",
+      "display": "Biopsy indicated"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 100
+}

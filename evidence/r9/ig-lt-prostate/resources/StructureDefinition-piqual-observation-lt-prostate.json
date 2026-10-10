@@ -1,0 +1,94 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "piqual-observation-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate",
+  "name": "PiqualObservationLtProstate",
+  "title": "Observation: I-QUAL Score",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "PI-QUAL is a quality assurance score for prostate MRI examinations.\nIt reflects whether the technical image quality of a specific MRI exam\nis sufficient to allow reliable interpretation and PI-RADS assessment.\n\nThis score applies to the entire MRI examination (not to individual lesions).\n\nLow PI-QUAL scores indicate that PI-RADS results should be interpreted\nwith caution or may not be reliable.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-piqual"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "prostate-score-min-1",
+            "severity": "error",
+            "human": "Score must be at least 1.",
+            "expression": "$this >= 1",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate"
+          },
+          {
+            "key": "prostate-score-max-3",
+            "severity": "error",
+            "human": "Score must be at most 3.",
+            "expression": "$this <= 3",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate"
+          }
+        ]
+      }
+    ]
+  }
+}

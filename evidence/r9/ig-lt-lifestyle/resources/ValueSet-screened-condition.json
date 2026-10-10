@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ScreenedConditionsLt",
+  "id": "screened-condition",
+  "title": "Family Member History Screening Program Diseases",
+  "description": "Indicates whether the patient has a family member history related to the screening program.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/screened-condition",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "49601007",
+            "display": "Disorder of cardiovascular system"
+          },
+          {
+            "code": "46635009",
+            "display": "Diabetes mellitus type 1"
+          },
+          {
+            "code": "44054006",
+            "display": "Diabetes mellitus type 2"
+          },
+          {
+            "code": "398036000",
+            "display": "Familial hypercholesterolemia"
+          }
+        ]
+      }
+    ]
+  }
+}

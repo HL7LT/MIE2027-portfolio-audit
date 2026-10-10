@@ -1,0 +1,96 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-alcohol-history-yes-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/alcohol-use-history-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "social-history",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Social History"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "260864003",
+            "system": "http://snomed.info/sct",
+            "display": "Frequency (attribute)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "69620002",
+            "system": "http://snomed.info/sct",
+            "display": "Daily (qualifier value)"
+          }
+        ]
+      }
+    },
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "35748005",
+            "system": "http://snomed.info/sct",
+            "display": "Wine (substance)"
+          }
+        ],
+        "text": "Wine"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "53527002",
+            "system": "http://snomed.info/sct",
+            "display": "Alcoholic beverage (substance)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient drinks daily, typically wine."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "897148007",
+        "system": "http://snomed.info/sct",
+        "display": "Alcoholic beverage intake (observable entity)"
+      },
+      {
+        "code": "74013-4",
+        "system": "http://loinc.org",
+        "display": "Alcoholic drinks per day"
+      }
+    ]
+  },
+  "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "373066001",
+        "system": "http://snomed.info/sct",
+        "display": "Yes (qualifier value)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

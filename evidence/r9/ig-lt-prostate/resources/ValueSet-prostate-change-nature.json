@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateChangeNatureVS",
+  "id": "prostate-change-nature",
+  "title": "Prostate - Change Nature / Etiology",
+  "description": "Nature of observed change in pelvic organs: neoplasm-related, benign, or non-neoplastic/incidental.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-change-nature",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+        "concept": [
+          {
+            "code": "change-neoplasm-related",
+            "display": "Related to prostate neoplasm (finding)"
+          },
+          {
+            "code": "change-benign",
+            "display": "Benign change (finding)"
+          },
+          {
+            "code": "change-non-neoplastic",
+            "display": "Non-neoplastic / incidental (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

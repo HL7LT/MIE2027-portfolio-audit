@@ -1,0 +1,62 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-palpation-mass-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "76752008",
+          "system": "http://snomed.info/sct",
+          "display": "Breast structure (body structure)"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/example-practitioner-role"
+      },
+      "function": {
+        "coding": [
+          {
+            "code": "223366009",
+            "system": "http://snomed.info/sct",
+            "display": "Healthcare professional"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "113011001",
+        "system": "http://snomed.info/sct",
+        "display": "Palpation (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-first-visit-example"
+  },
+  "occurrenceDateTime": "2023-08-01T10:20:00Z",
+  "statusReason": {
+    "coding": [
+      {
+        "code": "443607001",
+        "system": "http://snomed.info/sct",
+        "display": "Palpable mass (finding)"
+      }
+    ]
+  }
+}

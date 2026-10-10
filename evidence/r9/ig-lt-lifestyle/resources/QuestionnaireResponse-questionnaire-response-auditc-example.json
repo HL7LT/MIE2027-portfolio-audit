@@ -1,0 +1,10 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaire-response-auditc-example",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "questionnaire": "https://hl7.lt/fhir/lifestyle/Questionnaire/questionnaire-audit-c-example",
+  "authored": "2025-10-28T09:58:00+03:00"
+}

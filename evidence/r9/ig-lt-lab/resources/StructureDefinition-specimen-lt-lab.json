@@ -1,0 +1,174 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "specimen-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab",
+  "version": "0.1.0",
+  "name": "SpecimenLtLab",
+  "title": "Specimen (LT Lab)",
+  "status": "draft",
+  "publisher": "HL7 LT",
+  "contact": [
+    {
+      "name": "HL7 LT",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir/lt"
+        }
+      ]
+    }
+  ],
+  "description": "This profile defines how to represent Specimens in HL7 FHIR for the purpose of this guide, based on the Specimen profile from HL7 Europe with additional constraints and extensions specific to the needs of the LT Lab use case.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Specimen",
+  "baseDefinition": "http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Specimen.identifier",
+        "path": "Specimen.identifier",
+        "short": "The healthcare facility assigned specimen number (preferrable barcode)",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.accessionIdentifier",
+        "path": "Specimen.accessionIdentifier",
+        "short": "Laboratorijos priskirtas identifikatorius / Identifier assigned by the lab",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.type",
+        "path": "Specimen.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.subject",
+        "path": "Specimen.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-animal-eu-core"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.receivedTime",
+        "path": "Specimen.receivedTime",
+        "short": "Ėminio gavimo laboratorijoje laikas / The time when specimen is received by the testing laboratory",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.parent",
+        "path": "Specimen.parent",
+        "max": "0"
+      },
+      {
+        "id": "Specimen.request",
+        "path": "Specimen.request",
+        "short": "Tyrimai, dėl kurių buvo paimtas ėminys / Why the specimen was collected",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection",
+        "path": "Specimen.collection",
+        "short": "Paimto ėminio informacija / Collection details",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection.extension",
+        "path": "Specimen.collection.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Specimen.collection.extension:receivedBy",
+        "path": "Specimen.collection.extension",
+        "sliceName": "receivedBy",
+        "short": "Ėminį priėmęs specialistas / Whoever has received the specimen",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-received-by"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection.collector",
+        "path": "Specimen.collection.collector",
+        "short": "Ėminį paėmęs specialistas / Who collected the specimen",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection.collected[x]",
+        "path": "Specimen.collection.collected[x]",
+        "short": "Ėminio paėmimo laikas / Collection time",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.collection.quantity",
+        "path": "Specimen.collection.quantity",
+        "mustSupport": true
+      },
+      {
+        "id": "Specimen.processing.additive",
+        "path": "Specimen.processing.additive",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lab/StructureDefinition/substance-additive-lt-lab"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Specimen.note",
+        "path": "Specimen.note",
+        "short": "Pastabos / Comments",
+        "mustSupport": true
+      }
+    ]
+  }
+}

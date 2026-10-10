@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "breast-biopsy-procedure-lt-breast",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/breast-biopsy-procedure-lt-breast",
+  "name": "BreastBiopsyProcedureLtBreast",
+  "title": "Breast Biopsy Procedure (LT Breast)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Breast biopsy procedure profile for the breast cancer prevention program, covering ultrasound-guided and X-ray-guided biopsy types.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-biopsy-procedure-type"
+        }
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.occurrence[x]",
+        "path": "Procedure.occurrence[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.bodySite",
+        "path": "Procedure.bodySite",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site"
+        }
+      }
+    ]
+  }
+}

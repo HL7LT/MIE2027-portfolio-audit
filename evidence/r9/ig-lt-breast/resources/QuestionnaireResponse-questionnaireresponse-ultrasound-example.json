@@ -1,0 +1,269 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-ultrasound-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-01-15T11:00:00+02:00"
+            }
+          ],
+          "linkId": "exam-date",
+          "text": "Date of examination"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Targeted test for mammographic findings"
+            }
+          ],
+          "linkId": "exam-indication",
+          "text": "Indication for ultrasound (e.g. review for dense tissue, targeted for findings)"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "parenchyma-fibroglandular",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Homogeneous fibroglandular"
+              }
+            }
+          ],
+          "linkId": "right-parenchyma",
+          "text": "Structure of parenchyma"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-findings-present",
+          "text": "Findings present"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "ducts-normal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Ducts not expanded"
+              }
+            }
+          ],
+          "linkId": "right-ducts",
+          "text": "Condition of ducts"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-lymph-changes",
+          "text": "Lymph node changes"
+        }
+      ],
+      "linkId": "grp-right-breast",
+      "text": "Right breast"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "parenchyma-fibroglandular",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Homogeneous fibroglandular"
+              }
+            }
+          ],
+          "linkId": "left-parenchyma",
+          "text": "Structure of parenchyma"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "left-findings-present",
+          "text": "Findings present"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "2 o'clock"
+            }
+          ],
+          "linkId": "left-finding-localization",
+          "text": "Finding localization (clock position)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Well-circumscribed anechoic lesion, smooth margins, posterior acoustic enhancement"
+            }
+          ],
+          "linkId": "left-change-properties",
+          "text": "Change properties"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 8,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          ],
+          "linkId": "left-size-length",
+          "text": "Size – length (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 6,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          ],
+          "linkId": "left-size-width",
+          "text": "Size – width (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "nature-cyst",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Cyst"
+              }
+            }
+          ],
+          "linkId": "left-nature",
+          "text": "Nature of change"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "ducts-normal",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Ducts not expanded"
+              }
+            }
+          ],
+          "linkId": "left-ducts",
+          "text": "Condition of ducts"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-lymph-changes",
+          "text": "Lymph node changes"
+        }
+      ],
+      "linkId": "grp-left-breast",
+      "text": "Left breast"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Simple cyst, no solid component. No vascularity on Doppler."
+            }
+          ],
+          "linkId": "notes",
+          "text": "Additional notes"
+        }
+      ],
+      "linkId": "grp-notes",
+      "text": "Notes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            }
+          ],
+          "linkId": "birads-right",
+          "text": "BI-RADS – right breast"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 2 – Benign changes found"
+              }
+            }
+          ],
+          "linkId": "birads-left",
+          "text": "BI-RADS – left breast"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "rec-follow-up-6m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Follow-up in 6 months"
+              }
+            }
+          ],
+          "linkId": "recommendations",
+          "text": "Recommendations"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-ultrasound-lt-breast",
+  "status": "completed",
+  "authored": "2026-01-15T11:30:00+02:00",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  }
+}

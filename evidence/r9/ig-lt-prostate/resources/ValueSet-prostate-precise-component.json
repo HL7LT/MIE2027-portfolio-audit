@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstatePreciseComponentVS",
+  "id": "prostate-precise-component",
+  "title": "Prostate - PRECISE Component",
+  "description": "Codes for detailed PRECISE assessment components used in longitudinal prostate MRI follow-up evaluation.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-component",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component"
+      }
+    ]
+  }
+}

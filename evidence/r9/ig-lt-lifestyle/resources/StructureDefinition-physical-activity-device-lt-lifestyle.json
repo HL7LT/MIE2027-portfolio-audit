@@ -1,0 +1,23 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "physical-activity-device-lt-lifestyle",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-device-lt-lifestyle",
+  "name": "PhysicalActivityDeviceLtLifestyle",
+  "title": "Physical Activity Measurement Device",
+  "status": "draft",
+  "description": "Device used to measure physical activity metrics such as number of steps.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device",
+        "path": "Device"
+      }
+    ]
+  }
+}

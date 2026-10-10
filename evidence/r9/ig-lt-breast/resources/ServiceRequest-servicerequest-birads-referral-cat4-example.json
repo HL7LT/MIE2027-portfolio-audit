@@ -1,0 +1,50 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-birads-referral-cat4-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-service-request-lt-breast"
+    ]
+  },
+  "reason": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "397144001",
+            "system": "http://snomed.info/sct",
+            "display": "Mammography assessment (Category 4) - Suspicious abnormality, biopsy should be considered (finding)"
+          }
+        ]
+      }
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": {
+        "reference": "Observation/observation-birads-cat4-example"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "priority": "routine",
+  "code": {
+    "concept": {
+      "coding": [
+        {
+          "code": "rec-breast-specialist",
+          "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+          "display": "Breast specialist consultation"
+        }
+      ]
+    }
+  },
+  "occurrenceDateTime": "2025-12-15T09:00:00Z",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "requester": {
+    "reference": "Practitioner/example-practitioner"
+  }
+}

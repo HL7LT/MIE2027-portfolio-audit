@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "IntravascularInvasionVS",
+  "id": "intravascular-invasion",
+  "title": "Intravascular Invasion",
+  "description": "Vascular invasion status for colorectal carcinoma.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/intravascular-invasion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "372287009",
+            "display": "Vascular invasion by tumor present (finding)"
+          },
+          {
+            "code": "127494000",
+            "display": "No vascular invasion by tumor (finding)"
+          },
+          {
+            "code": "127495004",
+            "display": "Vascular invasion by tumor is indeterminate (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

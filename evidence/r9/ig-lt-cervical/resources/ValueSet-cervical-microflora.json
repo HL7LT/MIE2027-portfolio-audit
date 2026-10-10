@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalMicrofloraVS",
+  "id": "cervical-microflora",
+  "title": "Cervical Microflora",
+  "description": "Microflora types observed during cervical cytological examination.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-microflora",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "31021000087105",
+            "display": "Microbiota of genitourinary system normal (finding)"
+          },
+          {
+            "code": "44762009",
+            "display": "Genus Bacillus (organism)"
+          },
+          {
+            "code": "83045001",
+            "display": "Cocci (organism)"
+          },
+          {
+            "code": "250440009",
+            "display": "Clue cells present (finding)"
+          },
+          {
+            "code": "80153006",
+            "display": "Segmented neutrophil (cell)"
+          },
+          {
+            "code": "56972008",
+            "display": "Lymphocyte (cell)"
+          },
+          {
+            "code": "41898006",
+            "display": "Erythrocyte (cell)"
+          },
+          {
+            "code": "26859008",
+            "display": "Cervical mucus (substance)"
+          }
+        ]
+      }
+    ]
+  }
+}

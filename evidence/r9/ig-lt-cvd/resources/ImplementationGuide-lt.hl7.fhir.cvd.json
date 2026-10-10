@@ -1,0 +1,1331 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.cvd",
+  "url": "https://hl7.lt/fhir/cvd/ImplementationGuide/lt.hl7.fhir.cvd",
+  "version": "0.0.1",
+  "name": "LTCvd",
+  "title": "Lithuanian CVD Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian CVD Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.cvd",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "CodeSystem/abi-component"
+        },
+        "name": "ABI Component",
+        "description": "Component codes for ankle-brachial index observations (laterality).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ankle-brachial-index-lt-cvd"
+        },
+        "name": "Ankle-Brachial Index (ABI)",
+        "description": "Ankle-brachial pressure index for peripheral arterial disease assessment.\nIndicated for diabetic patients and smokers within the CVD screening programme.\nInterpretation: > 0.9 normal, 0.41-0.90 mild/moderate PAD, <= 0.40 severe PAD.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/abi-interpretation"
+        },
+        "name": "Ankle-Brachial Index Interpretation",
+        "description": "Interpretation categories for ankle-brachial index (ABI) peripheral arterial disease severity.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/abi-interpretation"
+        },
+        "name": "Ankle-Brachial Index Interpretation Value Set",
+        "description": "Interpretation categories for ankle-brachial index (ABI) peripheral arterial disease severity.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/arterial-stiffness-lt-cvd"
+        },
+        "name": "Arterial Stiffness (PWV)",
+        "description": "Pulse wave velocity (PWV) carotid-femoral measurement for arterial stiffness assessment.\nNormal value: < 10 m/s. Values >= 10 m/s indicate increased arterial stiffness.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/arterial-stiffness-interpretation"
+        },
+        "name": "Arterial Stiffness Interpretation",
+        "description": "Interpretation of pulse wave velocity (PWV) carotid-femoral measurement: normal (< 10 m/s) or increased (>= 10 m/s).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cvd-risk-degree"
+        },
+        "name": "Cardiovascular Disease Risk Degree (SCORE2)",
+        "description": "Degree of cardiovascular disease risk according to SCORE2 risk estimation table.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cvd-risk-group"
+        },
+        "name": "Cardiovascular Disease Risk Group",
+        "description": "Defines the interpretation categories for cardiovascular disease risk assessment results, based on HL7 Observation Interpretation codes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/care-plan-lt-cvd"
+        },
+        "name": "Care Plan: CVD prevention measures (LT)",
+        "description": "Care plan for cardiovascular disease prevention within the Lithuanian CVD screening programme.\nCaptures prevention targets (LDL cholesterol, blood pressure, BMI), lifestyle interventions\n(smoking cessation, diet, physical activity), and follow-up achievement evaluation.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/care-plan-cvd-screening-example"
+        },
+        "name": "Care Plan: CVD Screening (example)",
+        "description": "An example instance of a CarePlan for a patient at risk of Cardiovascular Disease (CVD), covering goals and activities related to lifestyle changes.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/skl02-care-plan-3"
+        },
+        "name": "Care Plan: ŠKL prevention plan (SKL02)",
+        "description": "Plan of care with LDL, BP, smoking cessation, diet, physical activity, BMI goals. Migrated from DSTU1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/skl03-care-plan-3"
+        },
+        "name": "Care Plan: ŠKL progress assessment (SKL03)",
+        "description": "Care plan goals with achievement status. Migrated from DSTU1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/example-cvd-screening-plan-external"
+        },
+        "name": "CarePlan: CVD Screening with External Goals (example)",
+        "description": "CVD screening plan for a patient at high cardiovascular risk, where goals are separate Goal resources referenced by the CarePlan.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/example-cvd-screening-plan"
+        },
+        "name": "CarePlan: CVD Screening with Inline Goals (example)",
+        "description": "CVD screening plan for a patient at high cardiovascular risk, including goals, risk group, lifestyle recommendations and medication instructions.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/carotid-plaque-category"
+        },
+        "name": "Carotid Plaque Category",
+        "description": "Categories for atherosclerotic plaque assessment in carotid arteries.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/carotid-plaque-category"
+        },
+        "name": "Carotid Plaque Category Value Set",
+        "description": "Categories for atherosclerotic plaque assessment in carotid arteries.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/carotid-ultrasound-lt-cvd"
+        },
+        "name": "Carotid Ultrasound",
+        "description": "Carotid artery ultrasound for atherosclerotic plaque assessment within CVD screening.\nCaptures plaque categories (none, present, stenosis grades) and intima-media thickness (IMT)\nfor right and left common carotid arteries. IMT > 1.5 mm is considered pathological.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/carotid-component"
+        },
+        "name": "Carotid Ultrasound Component",
+        "description": "Component codes for carotid artery ultrasound observations (plaque and IMT, laterality).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-cvd-example"
+        },
+        "name": "Composition: CVD programme document (example)",
+        "description": "Synoptic CVD prevention document with assessment (risk and findings), prevention plan (CarePlan), and achievement evaluation (follow-up observations).",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cvd-composition-lt-cvd"
+        },
+        "name": "Composition: CVD programme document (LT)",
+        "description": "Combined composition for the Lithuanian CVD prevention programme, containing all three sections (risk assessment, prevention plan, and achievement evaluation) in a single document.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-cvd-eu-im-example"
+        },
+        "name": "Composition: CVD Risk Assessment (EU IM style, cross-IG examples)",
+        "description": "CVD questionnaire/plan narrative composition: local CVD profiles plus Base, VitalSigns, Lab, Lifestyle analogue examples per mapping.md.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/skl02-composition-1"
+        },
+        "name": "Composition: ŠKL Plan of care (SKL02)",
+        "description": "ŠKL prevencijos priemonių planas. Migrated from DSTU1 SKL02.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/skl03-composition-1"
+        },
+        "name": "Composition: ŠKL Progress note (SKL03)",
+        "description": "ŠKL prevencijos priemonių plano pasiekimų vertinimas. Migrated from DSTU1 SKL03.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-skl-risk-assessment-example"
+        },
+        "name": "Composition: ŠKL Risk Assessment (SKL01 format)",
+        "description": "Example composition mirroring SKL01 XML structure; references migrated skl01 instances.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/skl01-composition-1"
+        },
+        "name": "Composition: ŠKL Risk Assessment (SKL01)",
+        "description": "ŠKL rizikos vertinimas. Migrated from DSTU1 SKL01.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Condition/condition-cvd-heart-failure-example"
+        },
+        "name": "Condition: CVD Heart Failure (example)",
+        "description": "Example instance showing a patient with a high-risk condition of heart failure.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-chronic-condition-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Condition/351"
+        },
+        "name": "Condition: DSTU1 Legacy chronic condition (id:351)",
+        "description": "Minimal stub for the DSTU1 chronic disease referenced in the SKL01 diagnosis list.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/coronary-calcium-score-lt-cvd"
+        },
+        "name": "Coronary Artery Calcium Score (Agatston)",
+        "description": "Coronary artery calcium score (Agatston method) for CVD risk stratification.\nOrdered when the need for medication treatment is unclear or the patient does not tolerate statins.\nSix-level interpretation: 0 (no calcification), 1-10 (minimal), 11-100 (mild),\n101-400 (moderate), 401-1000 (significant), > 1000 (very significant).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/coronary-calcium-interpretation"
+        },
+        "name": "Coronary Artery Calcium Score Interpretation",
+        "description": "Six-level interpretation scale for coronary artery calcium (Agatston) score.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/coronary-calcium-interpretation"
+        },
+        "name": "Coronary Artery Calcium Score Interpretation Value Set",
+        "description": "Six-level interpretation scale for coronary artery calcium (Agatston) score.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cvd-questionnaire-options"
+        },
+        "name": "CVD - Questionnaire Answer Options CS",
+        "description": "Local answer-option codes used by the cardiovascular screening programme questionnaires.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cvd-composition-code"
+        },
+        "name": "CVD Composition Codes",
+        "description": "Concepts representing codes used in Cvd Composition.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cvd-chronic-condition-lt-cvd"
+        },
+        "name": "CVD High Risk Condition",
+        "description": "Condition profile for CVD high-risk chronic conditions (e.g. heart failure, CKD).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cvd-high-risk-condition"
+        },
+        "name": "CVD High Risk Conditions",
+        "description": "ICD-10 codes representing conditions that significantly increase cardiovascular disease risk, often used for risk stratification in Screening programs.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cvd-questionnaire-prevention-plan-item"
+        },
+        "name": "CVD prevention plan questionnaire item (linkId)",
+        "description": "Stable linkId values for the illustrative ESPBI form 2 Questionnaire; used as ConceptMap source codes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-cvd-prevention-plan-questionnaire"
+        },
+        "name": "CVD prevention plan Questionnaire item → profile mapping",
+        "description": "Maps ESPBI form 2 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. Human-readable narrative is in each target.comment. Source: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cvd-questionnaire-mapping-target"
+        },
+        "name": "CVD questionnaire mapping target (profiles)",
+        "description": "Target codes for ConceptMap rows: Lithuanian programme StructureDefinitions and related profiles referenced from ESPBI Questionnaires.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/cvd-questionnaire-risk-assessment-item"
+        },
+        "name": "CVD risk assessment questionnaire item (linkId)",
+        "description": "Stable linkId values for the illustrative ESPBI form 1 Questionnaire; used as ConceptMap source codes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-cvd-risk-assessment-questionnaire"
+        },
+        "name": "CVD risk assessment Questionnaire item → profile mapping",
+        "description": "Maps ESPBI form 1 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. \nHuman-readable narrative is in each target.comment; Questionnaire.item.definition repeats canonical StructureDefinition URIs where applicable. \nSource: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target).\n\nAligned with DSTU1 data structures.\n\nIn DSTU1, the CarePlan used inline `<goal>` elements with extensions for target values and\n`<activity>` elements for lifestyle interventions. In R5:\n\n- **Goals** are referenced via `CarePlan.goal` pointing to standalone `Goal` resources\n  (or contained inline). Goal types: LDL target, BP target, BMI target, weight loss ≥5%.\n- **Activities** use `CarePlan.activity.plannedActivityReference` for structured references\n  or `CarePlan.activity.performedActivity` for completed activities.\n- **Risk group** moved from DSTU1 inline Observation to an extension on CarePlan.\n- **Informational text** (healthy nutrition, healthy weight, regular medication) is carried\n  in `CarePlan.note` or `CarePlan.supportingInfo.display`.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/risk-group-observation-lt-cvd"
+        },
+        "name": "CVD Risk Group",
+        "description": "Records the patient's cardiovascular Screening risk classification, expressed as a percentage value and interpreted using HL7 Observation Interpretation codes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/risk-group-ext-lt-cvd"
+        },
+        "name": "CVD Risk Group Extension",
+        "description": "Cardiovascular disease risk classification for the patient (Large or Very large).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-cvd-example"
+        },
+        "name": "DiagnosticReport: CVD programme report (example)",
+        "description": "Example DiagnosticReport anchoring the CVD composition and listing all Observations included in the programme document (assessment and achievement).",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-report-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cvd-report-lt-cvd"
+        },
+        "name": "DiagnosticReport: CVD programme report (LT)",
+        "description": "Anchor resource for the Lithuanian CVD prevention programme document: links a **CvdComposition** narrative with **Observation** results (SCORE2, risk group, EKG, etc.). Modelled after the **ImagingReport** pattern (DiagnosticReport + Composition) but specialised for cardiovascular screening and prevention rather than imaging.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/echocardiography-lt-cvd"
+        },
+        "name": "Echocardiography",
+        "description": "Echocardiography observation for CVD screening.\nCaptures left ventricular ejection fraction (EF), EF category, and optional established pathology (ICD-10).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ejection-fraction-category"
+        },
+        "name": "Ejection Fraction Category",
+        "description": "Categories for left ventricular ejection fraction (LVEF) classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ejection-fraction-category"
+        },
+        "name": "Ejection Fraction Category Value Set",
+        "description": "Categories for left ventricular ejection fraction (LVEF) classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ekg-lt-cvd"
+        },
+        "name": "EKG",
+        "description": "Electrocardiogram (EKG/ECG) observation using 12 leads and SampledData data type.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ekg-result-interpretation"
+        },
+        "name": "EKG Result Interpretation",
+        "description": "SNOMED CT codes for interpreting electrocardiogram (EKG/ECG) findings within the Lithuanian CVD screening programme.\nIncludes both high-level interpretation (normal/abnormal) and specific finding codes.\nMultiple findings may be recorded simultaneously (e.g., abnormal + atrial fibrillation).\nFree-text \"Other\" findings should be captured in Observation.note.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Encounter/1000017570"
+        },
+        "name": "Encounter: DSTU1 Legacy (id:1000017570)",
+        "description": "Minimal stub for the DSTU1 encounter referenced by SKL01/02/03 migration composition examples.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Goal/example-goal-bp"
+        },
+        "name": "Goal: Blood Pressure (example)",
+        "description": "Target BP 120–129/<80 mmHg.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Goal/example-goal-bmi"
+        },
+        "name": "Goal: Body Mass Index (example)",
+        "description": "Target BMI 22.5 kg/m² (healthy weight range 18.5–24.9).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Goal/example-goal-ldl"
+        },
+        "name": "Goal: LDL Cholesterol (example)",
+        "description": "Target LDL Cholesterol < 1.8 mmol/L.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "List/skl01-list-concomitant-risk-factors"
+        },
+        "name": "List: Concomitant risk factors (SKL01)",
+        "description": "Rizikos veiksniai. Migrated from DSTU1 cid:18espbi.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "List/skl01-list-cvd-risk-factors"
+        },
+        "name": "List: CVD risk factors (SKL01)",
+        "description": "ŠKL rizikos veiksniai. Migrated from DSTU1 cid:18cvd.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "List/skl01-list-meds-dispensed"
+        },
+        "name": "List: Medication dispensed (SKL01)",
+        "description": "Prescription medications list. Migrated from DSTU1 cid:3disp.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "List/skl01-list-diagnoses"
+        },
+        "name": "List: Past and current chronic diseases (SKL01)",
+        "description": "Hospital discharge diagnosis note list. Migrated from DSTU1 cid:2.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "List/skl01-list-meds-statement"
+        },
+        "name": "List: Patient medication list (SKL01)",
+        "description": "Non-prescription medications. Migrated from DSTU1 cid:3stmt.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Medication/1000017575"
+        },
+        "name": "Medication: DSTU1 Legacy (id:1000017575)",
+        "description": "Minimal stub for the DSTU1 medication referenced in the SKL01 MedicationStatement.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationDispense/1000043"
+        },
+        "name": "MedicationDispense: DSTU1 Legacy (id:1000043)",
+        "description": "Minimal stub for the DSTU1 dispensed medication referenced in the SKL01 medications-dispensed list.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/skl01-medication-statement-32"
+        },
+        "name": "MedicationStatement: Current medication (SKL01)",
+        "description": "Non-prescription medication. Migrated from DSTU1 cid:32.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/medication-statement-screening-example"
+        },
+        "name": "MedicationStatement: Screening (example)",
+        "description": "Example instance of a MedicationStatement for screening programs.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-alcohol-189"
+        },
+        "name": "Observation: Alcohol consumption (SKL01)",
+        "description": "Alkoholio vartojimas. Migrated from DSTU1 cid:189.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-bp-panel-197"
+        },
+        "name": "Observation: Blood pressure panel (SKL01)",
+        "description": "Sistolinis ir diastolinis kraujospūdis. Migrated from DSTU1 cid:197, with the systolic and diastolic readings from cid:1971 and cid:1981 folded in as components.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-bp-panel-8"
+        },
+        "name": "Observation: Blood pressure panel (SKL03)",
+        "description": "Blood pressure systolic and diastolic. Migrated from DSTU1 cid:8, with the systolic and diastolic readings from cid:81 and cid:82 folded in as components.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-bmi-196"
+        },
+        "name": "Observation: BMI (SKL01)",
+        "description": "KMI 26.23 kg/m2. Migrated from DSTU1 cid:196.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-bmi-11"
+        },
+        "name": "Observation: BMI (SKL03)",
+        "description": "Body mass index 29.1 kg/m2. Migrated from DSTU1 cid:11.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-height-8"
+        },
+        "name": "Observation: Body height (SKL01)",
+        "description": "Body height 188 cm. Migrated from DSTU1 cid:8.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-height-9"
+        },
+        "name": "Observation: Body height (SKL03)",
+        "description": "Body height 176 cm. Migrated from DSTU1 cid:9.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-weight-9"
+        },
+        "name": "Observation: Body weight (SKL01)",
+        "description": "Kūno svoris 76 kg. Migrated from DSTU1 cid:9.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-weight-10"
+        },
+        "name": "Observation: Body weight (SKL03)",
+        "description": "Body weight 90 kg. Migrated from DSTU1 cid:10.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-comment-4"
+        },
+        "name": "Observation: Comment (SKL03)",
+        "description": "Annotation comment. Migrated from DSTU1 cid:4.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-risk-group-1104"
+        },
+        "name": "Observation: CVD risk group (SKL01)",
+        "description": "Širdies ir kraujagyslių ligų rizikos grupė – High. Migrated from DSTU1 cid:1104.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-risk-group-high-example"
+        },
+        "name": "Observation: CVD Risk Group High (example)",
+        "description": "Example showing a patient assessed as having a 24% cardiovascular disease risk, categorized as High.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-diabetes-duration-gt10-example"
+        },
+        "name": "Observation: Diabetes Duration > 10 Years (example)",
+        "description": "Example showing a patient who has had Diabetes Mellitus for more than 10 years.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-diabetes-duration-184"
+        },
+        "name": "Observation: Diabetes duration >10 years (SKL01)",
+        "description": "Ar CD > 10 metų? Migrated from DSTU1 cid:184.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-diabetes-183"
+        },
+        "name": "Observation: Diabetes risk factor (SKL01)",
+        "description": "Cukrinis diabetas – Yra. Migrated from DSTU1 cid:183.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-diabetes-untreated-example"
+        },
+        "name": "Observation: Diabetes Untreated (example)",
+        "description": "Example showing a patient with confirmed diabetes mellitus but not yet receiving treatment.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-diet-188"
+        },
+        "name": "Observation: Diet (SKL01)",
+        "description": "Mityba. Migrated from DSTU1 cid:188.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-dyslipidemia-182"
+        },
+        "name": "Observation: Dyslipidemia risk factor (SKL01)",
+        "description": "Dislipidemija – Yra. Migrated from DSTU1 cid:182.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-dyslipidemia-treated-example"
+        },
+        "name": "Observation: Dyslipidemia Treated (example)",
+        "description": "Example showing a patient with confirmed dyslipidemia currently under lipid-lowering therapy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-ekg-normal-example"
+        },
+        "name": "Observation: EKG Normal (example)",
+        "description": "Example of a normal 12-lead EKG recording with sampled waveform data.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/ekg-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-evaluation-panel-110"
+        },
+        "name": "Observation: Evaluation note panel (SKL01)",
+        "description": "Automatiniai skaičiavimai/vertinimai. Migrated from DSTU1 cid:110.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cvd-followup-bp-example"
+        },
+        "name": "Observation: Follow-up blood pressure (example)",
+        "description": "Example follow-up systolic/diastolic blood pressure for achievement evaluation.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cvd-followup-ldl-example"
+        },
+        "name": "Observation: Follow-up LDL cholesterol (example)",
+        "description": "Example follow-up LDL measurement for achievement evaluation (CVD prevention programme).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-heart-rate-199"
+        },
+        "name": "Observation: Heart rate (SKL01)",
+        "description": "Širdies susitraukimų dažnis 72 bpm. Migrated from DSTU1 cid:199.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-hypertension-negligible-example"
+        },
+        "name": "Observation: Hypertension Negligible Risk (example)",
+        "description": "Example showing a patient with negligible risk for hypertension; treatment not indicated.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-hypertension-181"
+        },
+        "name": "Observation: Hypertension risk factor (SKL01)",
+        "description": "Hipertenzija – Yra. Migrated from DSTU1 cid:181.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-impaired-glucose-tolerance-example"
+        },
+        "name": "Observation: Impaired Glucose Tolerance (example)",
+        "description": "Example showing a patient identified with impaired glucose tolerance or impaired fasting glycemia.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-igt-185"
+        },
+        "name": "Observation: Impaired glucose tolerance (SKL01)",
+        "description": "Gliukozės tolerancijos sutrikimas – Yra. Migrated from DSTU1 cid:185.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-lab-panel-191"
+        },
+        "name": "Observation: Laboratory studies panel (SKL01)",
+        "description": "Laboratoriniai tyrimai. Migrated from DSTU1 cid:191.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-lab-panel-14"
+        },
+        "name": "Observation: Laboratory studies panel (SKL03)",
+        "description": "Laboratory studies set with LDL result. Migrated from DSTU1 cid:14.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-ldl-1915"
+        },
+        "name": "Observation: LDL cholesterol (SKL01)",
+        "description": "MTL cholesterolis 2.8 mmol/L. Migrated from DSTU1 cid:1915.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-ldl-7"
+        },
+        "name": "Observation: LDL cholesterol (SKL03)",
+        "description": "LDL cholesterol 1.7 mmol/L. Migrated from DSTU1 cid:7 (medicinosnk.lt code 39469-2).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-metabolic-syndrome-1102"
+        },
+        "name": "Observation: Metabolic syndrome (SKL01)",
+        "description": "Metabolinis sindromas – No. Migrated from DSTU1 cid:1102.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl02-observation-recommendations-4"
+        },
+        "name": "Observation: Other recommendations (SKL02)",
+        "description": "Diagnosis recommendations narrative. Migrated from DSTU1.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-overweight-193"
+        },
+        "name": "Observation: Overweight or obesity (SKL01)",
+        "description": "Antsvoris arba nutukimas – Yra. Migrated from DSTU1 cid:193.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-physical-activity-187"
+        },
+        "name": "Observation: Physical activity (SKL01)",
+        "description": "Fizinis aktyvumas. Migrated from DSTU1 cid:187.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-score2-1103"
+        },
+        "name": "Observation: SCORE2 (SKL01)",
+        "description": "Bendras ŠKL rizikos vertinimas 20%. Migrated from DSTU1 cid:1103.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cvd-risk-assessment-example"
+        },
+        "name": "Observation: SCORE2 Cardiovascular Disease Risk Assessment (example)",
+        "description": "Example of SCORE2 risk assessment showing 24% estimated risk (high).",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-smoking-186"
+        },
+        "name": "Observation: Smoking risk factor (SKL01)",
+        "description": "Rūkymas. Migrated from DSTU1 cid:186.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-total-cholesterol-1912"
+        },
+        "name": "Observation: Total cholesterol (SKL01)",
+        "description": "Bendras cholesterolis. Migrated from DSTU1 cid:1912.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-treatment"
+        },
+        "name": "Observation: Treatment status (SKL01)",
+        "description": "Yra ir gydoma. Migrated from DSTU1 cid:18treatment.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-glucose-1910"
+        },
+        "name": "Observation: Venous glucose (SKL01)",
+        "description": "Gliukozė veniniame kraujyje 15 mmol/L. Migrated from DSTU1 cid:1910.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-vitals-panel-19"
+        },
+        "name": "Observation: Vital signs panel (SKL01)",
+        "description": "Vital signs note panel. Migrated from DSTU1 cid:19.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-vitals-panel-6"
+        },
+        "name": "Observation: Vital signs panel (SKL03)",
+        "description": "Vital signs note panel with members. Migrated from DSTU1 cid:6.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl01-observation-waist-194"
+        },
+        "name": "Observation: Waist circumference (SKL01)",
+        "description": "Liemens apimtis 103 cm. Migrated from DSTU1 cid:194.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/skl03-observation-weight-first-visit-12"
+        },
+        "name": "Observation: Weight at first visit (SKL03)",
+        "description": "Body weight at first visit 95 kg. Migrated from DSTU1 cid:12.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-example"
+        },
+        "name": "Organization: Vilniaus miesto ligoninė (example)",
+        "description": "Example of a healthcare organization",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-male-example"
+        },
+        "name": "Patient: Jonas Petrauskas (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Dr. Petras Kazlauskas (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitioner-role-example"
+        },
+        "name": "PractitionerRole: Dr. Petras Kazlauskas at Vilniaus miesto ligoninė (example)",
+        "description": "An example PractitionerRole linking a practitioner to an organization.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cvd-prevention-plan"
+        },
+        "name": "Questionnaire: CVD prevention plan and achievement (ESPBI form 2)",
+        "description": "Illustrative FHIR Questionnaire for the **CVD prevention measures plan** and **achievement evaluation** electronic form (PDF table 10.10+). Extend with full national field parity in production.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-cvd-risk-assessment"
+        },
+        "name": "Questionnaire: CVD risk assessment (ESPBI form 1)",
+        "description": "Illustrative FHIR Questionnaire for the national **patient cardiovascular disease risk assessment** electronic form (PDF tables 10.5–10.9). Extend with full field parity in production.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-cvd-prevention-plan-example"
+        },
+        "name": "QuestionnaireResponse: CVD prevention plan and achievement (example)",
+        "description": "Example answers for the prevention plan Questionnaire including a follow-up achievement block.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-cvd-risk-assessment-example"
+        },
+        "name": "QuestionnaireResponse: CVD risk assessment (example)",
+        "description": "Example answers for the CVD risk assessment Questionnaire, aligned with other CVD IG examples (SCORE2 24%, high risk group).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/risk-factor-status-lt-cvd"
+        },
+        "name": "Risk Factor Status",
+        "description": "Generic structure for recording Screening-related risk factors,\nsuch as hypertension, diabetes, or dyslipidemia.\nCaptures both the assessed risk probability and the treatment status.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/risk-factor-type"
+        },
+        "name": "Risk Factor Type",
+        "description": "SNOMED CT concepts representing screening-related risk factors within the Lithuanian CVD screening programme.\nCentral obesity is assessed based on waist circumference (WaistCircumference profile from LT VitalSigns):\nmen >= 102 cm, women >= 88 cm.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cvd-risk-assessment-lt-cvd"
+        },
+        "name": "SCORE2. General Assessment of Cardiovascular Disease Risk",
+        "description": "SCORE2 (Systematic Coronary Risk Estimation) cardiovascular disease risk assessment estimate.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "CVD Report",
+          "generation": "markdown",
+          "name": "cvd-report.html",
+          "sourceUrl": "cvd-report.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaires.html",
+          "sourceUrl": "questionnaires.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/abi-component"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/abi-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/carotid-plaque-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/coronary-calcium-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/ejection-fraction-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/abi-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/arterial-stiffness-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/carotid-plaque-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/coronary-calcium-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cvd-high-risk-condition"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cvd-risk-degree"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/ejection-fraction-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/risk-factor-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/vd-composition-code"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

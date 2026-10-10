@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-diabetes-duration-gt10-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient reports having diabetes for approximately 12 years."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "161445009",
+        "system": "http://snomed.info/sct",
+        "display": "History of diabetes mellitus (situation)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "373066001",
+        "system": "http://snomed.info/sct",
+        "display": "Yes (qualifier value)"
+      }
+    ]
+  }
+}

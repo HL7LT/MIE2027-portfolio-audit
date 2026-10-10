@@ -1,0 +1,264 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "her2-fish-observation-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/her2-fish-observation-lt-lab",
+  "name": "Her2FishObservationLtLab",
+  "title": "Observation: HER2 FISH/CISH/SISH Molecular Test",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "HER2 gene amplification molecular test observation (FISH, CISH, or SISH) with numeric HER2 average, CEP17 average, HER2/CEP17 ratio, and result classification.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "31150-6",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "short": "FISH, CISH, or SISH",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:her2-average",
+        "path": "Observation.component",
+        "sliceName": "her2-average",
+        "short": "HER2 average signal count",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:her2-average.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85318-4",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:her2-average.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:her2-average.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:her2-average.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{copies}/{nucleus}"
+      },
+      {
+        "id": "Observation.component:cep17-average",
+        "path": "Observation.component",
+        "sliceName": "cep17-average",
+        "short": "CEP17 average signal count",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:cep17-average.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85319-2",
+              "system": "http://loinc.org",
+              "display": "HER2 Ag [Presence] in Breast cancer specimen by Immune stain"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:cep17-average.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:cep17-average.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:cep17-average.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{copies}/{nucleus}"
+      },
+      {
+        "id": "Observation.component:her2-cep17-ratio",
+        "path": "Observation.component",
+        "sliceName": "her2-cep17-ratio",
+        "short": "HER2/CEP17 ratio",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:her2-cep17-ratio.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "49683-6",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:her2-cep17-ratio.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:her2-cep17-ratio.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:her2-cep17-ratio.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{ratio}"
+      },
+      {
+        "id": "Observation.component:result-classification",
+        "path": "Observation.component",
+        "sliceName": "result-classification",
+        "short": "Amplification result classification",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:result-classification.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85320-0",
+              "system": "http://loinc.org",
+              "display": "Foci [Type] in Breast cancer specimen by Light microscopy"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:result-classification.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/her2-fish-result"
+        }
+      }
+    ]
+  }
+}

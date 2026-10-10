@@ -1,0 +1,28 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "use": "usual",
+      "system": "http://hospital.org/patient-id",
+      "value": "10005"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "John"
+      ],
+      "use": "official",
+      "family": "Doe",
+      "text": "John Doe"
+    }
+  ],
+  "active": true,
+  "gender": "male"
+}

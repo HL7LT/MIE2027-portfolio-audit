@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PeriprostaticFatInvasionVS",
+  "id": "periprostatic-fat-invasion",
+  "title": "Periprostatic Fat Invasion",
+  "description": "Microscopic finding of tumor infiltration in periprostatic adipose tissue.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/periprostatic-fat-invasion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "384998007",
+            "display": "Periprostatic fat invasion by tumor not identified (finding)"
+          },
+          {
+            "code": "372291004",
+            "display": "Periprostatic fat invasion by tumor present (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

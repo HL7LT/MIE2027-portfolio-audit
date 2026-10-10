@@ -1,0 +1,329 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "histological-diagnosis-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/histological-diagnosis-lt-colorectal",
+  "name": "HistologicalDiagnosisLtColorectal",
+  "title": "Histological Diagnosis (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording histological diagnosis results from polyp or tumor biopsy specimens in the Lithuanian colorectal cancer screening program. Captures histological type, dysplasia grade, radicalism of removal, tumor budding, invasion depth, and MMR protein expression.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "714797009",
+              "system": "http://snomed.info/sct",
+              "display": "Histologic test (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:histologicalType",
+        "path": "Observation.component",
+        "sliceName": "histologicalType",
+        "short": "Histological type of the specimen",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:histologicalType.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Histological diagnosis"
+      },
+      {
+        "id": "Observation.component:histologicalType.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/colorectal-histological-diagnosis"
+        }
+      },
+      {
+        "id": "Observation.component:dysplasiaGrade",
+        "path": "Observation.component",
+        "sliceName": "dysplasiaGrade",
+        "short": "Grade of dysplasia",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:dysplasiaGrade.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Dysplasia grade"
+      },
+      {
+        "id": "Observation.component:dysplasiaGrade.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/dysplasia-grade"
+        }
+      },
+      {
+        "id": "Observation.component:radicalismOfRemoval",
+        "path": "Observation.component",
+        "sliceName": "radicalismOfRemoval",
+        "short": "Completeness of polyp removal (R0, R1, Rx)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:radicalismOfRemoval.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Radicalism of removal"
+      },
+      {
+        "id": "Observation.component:radicalismOfRemoval.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/radicalism-of-removal"
+        }
+      },
+      {
+        "id": "Observation.component:tumorBudding",
+        "path": "Observation.component",
+        "sliceName": "tumorBudding",
+        "short": "Tumor budding assessment",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tumorBudding.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Tumor budding"
+      },
+      {
+        "id": "Observation.component:tumorBudding.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/tumor-budding"
+        }
+      },
+      {
+        "id": "Observation.component:invasionDepth",
+        "path": "Observation.component",
+        "sliceName": "invasionDepth",
+        "short": "Depth of submucosal invasion",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:invasionDepth.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Invasion depth"
+      },
+      {
+        "id": "Observation.component:invasionDepth.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/invasion-depth"
+        }
+      },
+      {
+        "id": "Observation.component:mmrpExpression",
+        "path": "Observation.component",
+        "sliceName": "mmrpExpression",
+        "short": "Mismatch repair protein (MMRp) expression status",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:mmrpExpression.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "MMR protein expression"
+      },
+      {
+        "id": "Observation.component:mmrpExpression.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/mmrp-expression"
+        }
+      },
+      {
+        "id": "Observation.component:pdcGrade",
+        "path": "Observation.component",
+        "sliceName": "pdcGrade",
+        "short": "PDC grade (poorly differentiated clusters)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:pdcGrade.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Poorly differentiated clusters"
+      },
+      {
+        "id": "Observation.component:pdcGrade.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/pdc-grade"
+        }
+      },
+      {
+        "id": "Observation.component:intravascularInvasion",
+        "path": "Observation.component",
+        "sliceName": "intravascularInvasion",
+        "short": "Vascular invasion status",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:intravascularInvasion.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Intravascular invasion"
+      },
+      {
+        "id": "Observation.component:intravascularInvasion.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/intravascular-invasion"
+        }
+      },
+      {
+        "id": "Observation.component:differentiationGrade",
+        "path": "Observation.component",
+        "sliceName": "differentiationGrade",
+        "short": "Histologic grade (G1-G2 low / G3 high)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:differentiationGrade.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Degree of differentiation"
+      },
+      {
+        "id": "Observation.component:differentiationGrade.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/degree-of-differentiation"
+        }
+      },
+      {
+        "id": "Observation.component:sccGrade",
+        "path": "Observation.component",
+        "sliceName": "sccGrade",
+        "short": "SCC grading (G1/G2/G3), used only for squamous cell carcinoma",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:sccGrade.code.text",
+        "path": "Observation.component.code.text",
+        "patternString": "Squamous cell carcinoma grade"
+      },
+      {
+        "id": "Observation.component:sccGrade.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/scc-grading"
+        }
+      }
+    ]
+  }
+}

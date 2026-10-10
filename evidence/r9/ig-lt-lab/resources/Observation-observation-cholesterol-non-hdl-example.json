@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-cholesterol-non-hdl-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-non-hdl-lab-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "unit": "mmol/L",
+    "system": "http://unitsofmeasure.org",
+    "code": "mmol/L",
+    "value": 3.1
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Non-HDL cholesterol within recommended range (<3.8 mmol/L)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "70204-3",
+        "system": "http://loinc.org",
+        "display": "Cholesterol non HDL [Moles/volume] in Serum or Plasma"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

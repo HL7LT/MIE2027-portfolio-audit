@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "BreastDuctConditionVS",
+  "id": "breast-duct-condition",
+  "title": "Breast Duct Condition",
+  "description": "Breast duct condition as assessed by ultrasound examination.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-duct-condition",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-breast-extension",
+        "concept": [
+          {
+            "code": "ducts-normal",
+            "display": "Ducts not expanded"
+          },
+          {
+            "code": "ducts-expanded",
+            "display": "Ducts expanded"
+          }
+        ]
+      }
+    ]
+  }
+}

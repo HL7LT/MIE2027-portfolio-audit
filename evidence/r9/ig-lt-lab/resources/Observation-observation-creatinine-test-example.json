@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-creatinine-test-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/creatinine-test-lab-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "unit": "µmol/L",
+    "system": "http://unitsofmeasure.org",
+    "code": "umol/L",
+    "value": 85
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient's creatinine level within normal range."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "14682-9",
+        "system": "http://loinc.org",
+        "display": "Creatinine [Moles/volume] in Serum or Plasma"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

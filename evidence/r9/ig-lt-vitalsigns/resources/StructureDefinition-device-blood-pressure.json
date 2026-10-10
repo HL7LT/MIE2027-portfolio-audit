@@ -1,0 +1,116 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "device-blood-pressure",
+  "url": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-blood-pressure",
+  "version": "1.0.0",
+  "name": "DeviceBloodPressure",
+  "title": "Device for Blood Pressure Measurement",
+  "status": "draft",
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "Device used to measure blood pressure.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device.identifier",
+        "path": "Device.identifier",
+        "short": "Device identifier (e.g. serial number)"
+      },
+      {
+        "id": "Device.displayName",
+        "path": "Device.displayName",
+        "short": "Human-readable name"
+      },
+      {
+        "id": "Device.manufacturer",
+        "path": "Device.manufacturer",
+        "short": "Manufacturer (Organization or string)"
+      },
+      {
+        "id": "Device.type",
+        "path": "Device.type",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure"
+        }
+      },
+      {
+        "id": "Device.property",
+        "path": "Device.property",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Device.property:BPCuffSize",
+        "path": "Device.property",
+        "sliceName": "BPCuffSize",
+        "short": "Cuff Size",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.property:BPCuffSize.type",
+        "path": "Device.property.type",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "528391",
+              "system": "urn:iso:std:iso:11073:10101"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Device.property:BPCuffSize.value[x]",
+        "path": "Device.property.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size"
+        }
+      }
+    ]
+  }
+}

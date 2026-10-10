@@ -1,0 +1,51 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RiskFactorTypeLtCvd",
+  "id": "risk-factor-type",
+  "title": "Risk Factor Type",
+  "description": "SNOMED CT concepts representing screening-related risk factors within the Lithuanian CVD screening programme.\nCentral obesity is assessed based on waist circumference (WaistCircumference profile from LT VitalSigns):\nmen >= 102 cm, women >= 88 cm.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/risk-factor-type",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "38341003",
+            "display": "Hypertensive disorder, systemic arterial (disorder)"
+          },
+          {
+            "code": "370992007",
+            "display": "Disorder of lipoprotein metabolism (disorder)"
+          },
+          {
+            "code": "73211009",
+            "display": "Diabetes mellitus (disorder)"
+          },
+          {
+            "code": "9414007",
+            "display": "Impaired glucose tolerance (disorder)"
+          },
+          {
+            "code": "390951007",
+            "display": "Impaired fasting glycemia (disorder)"
+          },
+          {
+            "code": "473145005",
+            "display": "Possible familial hypercholesterolemia (situation)"
+          },
+          {
+            "code": "248311001",
+            "display": "Central obesity (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

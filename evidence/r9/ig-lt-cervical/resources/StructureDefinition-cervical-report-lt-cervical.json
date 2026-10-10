@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cervical-report-lt-cervical",
+  "url": "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-report-lt-cervical",
+  "name": "CervicalReportLtCervical",
+  "title": "Cervical Cancer Screening Report (LT Cervical)",
+  "status": "active",
+  "description": "Overall cervical cancer diagnostic report covering the entire screening and diagnostic pathway. Wraps a CervicalCompositionLtCervical and aggregates structured results including HPV testing, cytology, colposcopy findings, and histopathology conclusions.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 2
+      },
+      {
+        "id": "DiagnosticReport.code.coding:doc-type",
+        "path": "DiagnosticReport.code.coding",
+        "sliceName": "doc-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "721981007",
+          "system": "http://snomed.info/sct",
+          "display": "Diagnostic studies report (record artifact)"
+        }
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "short": "Cervical diagnostic results: HPV test results, cytology conclusions, colposcopy findings, histopathology conclusions",
+        "definition": "References to Observation resources that carry the structured findings of the cervical cancer diagnostic process."
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-composition-lt-cervical"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

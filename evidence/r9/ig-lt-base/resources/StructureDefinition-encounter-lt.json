@@ -1,0 +1,230 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "encounter-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt",
+  "name": "EncounterLt",
+  "title": "EncounterLt",
+  "status": "active",
+  "date": "2025-10-15",
+  "description": "Lithuanian Base Encounter profile, used to represent clinical encounters",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter.identifier",
+        "path": "Encounter.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.priority",
+        "path": "Encounter.priority",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.type",
+        "path": "Encounter.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceType",
+        "path": "Encounter.serviceType",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subjectStatus",
+        "path": "Encounter.subjectStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.episodeOfCare",
+        "path": "Encounter.episodeOfCare",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.basedOn",
+        "path": "Encounter.basedOn",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.careTeam",
+        "path": "Encounter.careTeam",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.partOf",
+        "path": "Encounter.partOf",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant",
+        "path": "Encounter.participant",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant.type",
+        "path": "Encounter.participant.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant.period",
+        "path": "Encounter.participant.period",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.participant.actor",
+        "path": "Encounter.participant.actor",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.appointment",
+        "path": "Encounter.appointment",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.virtualService",
+        "path": "Encounter.virtualService",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.actualPeriod",
+        "path": "Encounter.actualPeriod",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.plannedStartDate",
+        "path": "Encounter.plannedStartDate",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.plannedEndDate",
+        "path": "Encounter.plannedEndDate",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.length",
+        "path": "Encounter.length",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.reason",
+        "path": "Encounter.reason",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.reason.use",
+        "path": "Encounter.reason.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.reason.value",
+        "path": "Encounter.reason.value",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+              "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+              "http://hl7.org/fhir/StructureDefinition/Procedure",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis",
+        "path": "Encounter.diagnosis",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.condition",
+        "path": "Encounter.diagnosis.condition",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.diagnosis.use",
+        "path": "Encounter.diagnosis.use",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.account",
+        "path": "Encounter.account",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission",
+        "path": "Encounter.admission",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission.origin",
+        "path": "Encounter.admission.origin",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission.admitSource",
+        "path": "Encounter.admission.admitSource",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission.reAdmission",
+        "path": "Encounter.admission.reAdmission",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission.destination",
+        "path": "Encounter.admission.destination",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.admission.dischargeDisposition",
+        "path": "Encounter.admission.dischargeDisposition",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location",
+        "path": "Encounter.location",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.location.location",
+        "path": "Encounter.location.location",
+        "mustSupport": true
+      }
+    ]
+  }
+}

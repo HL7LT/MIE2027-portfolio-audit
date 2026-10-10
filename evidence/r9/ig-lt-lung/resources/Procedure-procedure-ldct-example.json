@@ -1,0 +1,18 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-ldct-example",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "16334891000119106",
+        "system": "http://snomed.info/sct",
+        "display": "Low dose computed tomography of chest without contrast (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2025-11-20T14:30:00Z"
+}

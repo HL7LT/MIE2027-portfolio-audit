@@ -1,0 +1,269 @@
+{
+  "resourceType": "Composition",
+  "id": "lung-composition-ldct-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/lung-composition-lt-lung"
+    ]
+  },
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/lung/composition-id",
+      "value": "LDCT-2025-001"
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/practitionerrole-radiologist-example"
+    }
+  ],
+  "attester": [
+    {
+      "mode": {
+        "coding": [
+          {
+            "code": "professional",
+            "system": "http://hl7.org/fhir/composition-attestation-mode",
+            "display": "Professional"
+          }
+        ]
+      },
+      "party": {
+        "reference": "PractitionerRole/practitionerrole-radiologist-example"
+      },
+      "time": "2025-11-04T09:20:00+02:00"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticreport-lung-report-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "reference": {
+            "reference": "ImagingStudy/imagingstudy-ldct-example"
+          },
+          "concept": {
+            "coding": [
+              {
+                "code": "CT",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Computed Tomography"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "reference": {
+            "reference": "Procedure/procedure-ldct-example"
+          },
+          "concept": {
+            "coding": [
+              {
+                "code": "16334891000119106",
+                "system": "http://snomed.info/sct",
+                "display": "Low dose computed tomography of chest without contrast (procedure)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-ldct-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18726-0"
+          }
+        ]
+      },
+      "title": "Imaging Study"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No imaging order was recorded for this examination.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Active smoker, 30 pack-years. No prior chest CT.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "History"
+    },
+    {
+      "entry": [
+        {
+          "reference": "Procedure/procedure-ldct-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Procedure"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No prior imaging study was available for comparison.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "entry": [
+        {
+          "reference": "Observation/observation-pulmonary-nodule-solid-example"
+        },
+        {
+          "reference": "Observation/observation-incidental-coronary-calcification-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "entry": [
+        {
+          "reference": "Observation/observation-lung-rads-4a-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression"
+    },
+    {
+      "entry": [
+        {
+          "reference": "Observation/observation-lung-recommendation-3m-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendation"
+    }
+  ],
+  "status": "final",
+  "date": "2025-11-20T15:00:00Z",
+  "title": "Low-Dose Chest CT Screening Report",
+  "custodian": {
+    "reference": "Organization/organization-ldct-example"
+  }
+}

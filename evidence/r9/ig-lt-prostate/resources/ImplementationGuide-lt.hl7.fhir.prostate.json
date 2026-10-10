@@ -1,0 +1,1426 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.prostate",
+  "url": "https://hl7.lt/fhir/prostate/ImplementationGuide/lt.hl7.fhir.prostate",
+  "version": "0.0.1",
+  "name": "LTProstate",
+  "title": "Lithuanian Prostate Diagnostics Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Prostate Diagnostics Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.prostate",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "GroupA",
+        "name": "LT Prostate profiles",
+        "description": "Lithuanian Prostate Diagnostics profiles"
+      },
+      {
+        "id": "GroupQuestionnaireMapping",
+        "name": "Questionnaire mapping (CodeSystems & ConceptMaps)",
+        "description": "LinkId vocabularies, FHIR mapping targets, and ConceptMaps from Questionnaire items to LT profiles"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-adpp-questionnaire-item"
+        },
+        "name": "ADPP primary assessment Questionnaire item (linkId)",
+        "description": "Codes equal to **linkId** values on **Questionnaire/prostate-adpp-primary-assessment**. Used as **ConceptMap.group.source**.",
+        "groupingId": "GroupQuestionnaireMapping",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-peripheral-zone-mid-right-example"
+        },
+        "name": "BodyStructure: Peripheral zone, mid-gland right (example)",
+        "description": "Right mid-gland peripheral zone sector (PI-RADS 39-sector map).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-base-of-seminal-vesicle-example"
+        },
+        "name": "BodyStructure: Prostate - Base of Seminal Vesicle (example)",
+        "description": "Base of seminal vesicle without laterality.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-bone-example"
+        },
+        "name": "BodyStructure: Prostate - Bone (example)",
+        "description": "Bone structure relevant for metastatic assessment.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-neurovascular-bundle-right-example"
+        },
+        "name": "BodyStructure: Prostate - Neurovascular Bundle (Right) (example)",
+        "description": "Neurovascular bundle (blood vessel structure) with right laterality.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostatic-capsule-right-example"
+        },
+        "name": "BodyStructure: Prostate - Prostatic Capsule (Right) (example)",
+        "description": "Prostate prostatic capsule with right laterality.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-rectum-example"
+        },
+        "name": "BodyStructure: Prostate - Rectum (example)",
+        "description": "Rectum.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-regional-lymph-node-left-example"
+        },
+        "name": "BodyStructure: Prostate - Regional Lymph Node (Left) (example)",
+        "description": "Regional lymph node with left laterality.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-seminal-vesicle-left-example"
+        },
+        "name": "BodyStructure: Prostate - Seminal Vesicle (Left) (example)",
+        "description": "Seminal vesicle with left laterality.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-urinary-bladder-example"
+        },
+        "name": "BodyStructure: Prostate - Urinary Bladder (example)",
+        "description": "Urinary bladder.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lesion-lt-prostate"
+        },
+        "name": "BodyStructure: Prostate Lesion",
+        "description": "An anatomical prostate lesion identified on MRI and localized using\nthe PI-RADS 39-sector model.\nLesion location is encoded using specific SNOMED CT body structure\nconcepts representing exact prostate sectors (base/mid/apex, zone,\nside and position).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodyStructure-prostate-lesion1-example"
+        },
+        "name": "BodyStructure: Prostate – Lesion, anterior mid transition zone (example)",
+        "description": "Prostate lesion in the anterior mid transition zone, crossing midline, identified on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/lesion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/careplan-prostate-screening-example"
+        },
+        "name": "CarePlan: Prostate screening programme (example)",
+        "description": "Example of an ADPP prostate cancer screening programme CarePlan for a 55-year-old male participant.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/screening-careplan-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/screening-careplan-lt-prostate"
+        },
+        "name": "CarePlan: Prostate Screening Programme (LT Prostate)",
+        "description": "CarePlan tracking the ADPP (Early Diagnosis and Prevention Programme) cycle\nfor prostate cancer screening. Captures programme enrollment, current status,\nscheduled activities (PSA testing, urologist consultations, mpMRI referrals),\nand risk group assignment.\n\nUsed by the ESPBI IS subsystem to track participant lifecycle through the\nscreening programme workflow (steps T1–T29 in the operational model).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-prostate-mpmri-report-adp-example"
+        },
+        "name": "Composition: Prostate - mpMRI Report (ADP) Example",
+        "description": "ImComposition example summarizing prostate mpMRI findings for ADP diagnostic process.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-prostate-mpmri-example"
+        },
+        "name": "Composition: Prostate mpMRI (example)",
+        "description": "Base imaging composition for prostate mpMRI report.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-prostate-mpmri-report-example"
+        },
+        "name": "Composition: Prostate mpMRI imaging report (example)",
+        "description": "EU Imaging Composition for prostate mpMRI with structured sections.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-prostate-programme-example"
+        },
+        "name": "Composition: Prostate programme document (example)",
+        "description": "Imaging composition for the national prostate programme, paired with ProstateReportLtProstate. Mirrors ADP mpMRI layout; pathology remains in LT Lab.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-composition-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/prostate-composition-lt-prostate"
+        },
+        "name": "Composition: Prostate programme document (LT)",
+        "description": "Synoptic imaging composition for the prostate programme: inherits the **ImagingCompositionLt** section layout (imaging study, order, history, procedure, comparison, findings, impression, recommendation). Used as the narrative partner for **ProstateReportLtProstate**. Authoritative pathology documents remain profiled in **LT Lab**; cross-reference them in **section.text** or exchange bundles when needed.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate"
+        },
+        "name": "ConceptMap: ADPP Questionnaire → FHIR mapping",
+        "description": "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-item** to a **prostate-fhir-mapping-target** code. Use **target.comment** for implementation notes. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment`.",
+        "groupingId": "GroupQuestionnaireMapping",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate"
+        },
+        "name": "ConceptMap: Prostate pathology Questionnaire → FHIR mapping",
+        "description": "Maps each **linkId** in **CodeSystem/prostate-pathology-questionnaire-item** to a **prostate-fhir-mapping-target** code. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi`.",
+        "groupingId": "GroupQuestionnaireMapping",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mpmri-report-lt-prostate"
+        },
+        "name": "Diagnostic Report: Prostate mpMRI",
+        "description": "Diagnostic report representing a prostate MRI examination (bi-parametric or multi-parametric) that serves as the clinical anchor for imaging-based prostate assessment.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-prostate-mpmri-example"
+        },
+        "name": "DiagnosticReport: Prostate mpMRI (example)",
+        "description": "Example mpMRI report anchor for the base composition. Structured results are linked as separate observations.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/mpmri-report-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticReport-prostate-mpmri-report-example"
+        },
+        "name": "DiagnosticReport: Prostate mpMRI report (example)",
+        "description": "Multiparametric prostate MRI diagnostic report with structured results.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/mpmri-report-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-prostate-programme-report-example"
+        },
+        "name": "DiagnosticReport: Prostate programme report (example)",
+        "description": "ImagingReportLt-based programme anchor listing prostate observations; composition links narrative sections.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-report-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/prostate-report-lt-prostate"
+        },
+        "name": "DiagnosticReport: Prostate programme report (LT)",
+        "description": "Anchor resource for the Lithuanian prostate cancer prevention and early diagnostic programme: links **ProstateCompositionLtProstate** (Base imaging composition) with **Observation** results (PSA, PI-RADS, sequence scores, PI-QUAL, PRECISE, Gleason/ISUP, etc.). Parent **ImagingReportLt** follows the national imaging-report pattern. Pathology **DiagnosticReport** resources from **LT Lab** are not listed in `result` (see **DiagnosticReportLt**); link them via encounter, bundles, or documentation.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/digital-rectal-examination"
+        },
+        "name": "Digital Rectal Examination Findings",
+        "description": "Findings from digital rectal examination (DRE) of the prostate, including consistency and palpable mass.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Encounter/encounter-prostate-diagnostic-example"
+        },
+        "name": "Encounter: Prostate diagnostic visit (example)",
+        "description": "Ambulatory prostate cancer screening encounter.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/imfinding-prostate-lesion1-example"
+        },
+        "name": "ImagingFinding: Prostate Lesion 1 (example)",
+        "description": "Imaging finding representing a prostate lesion identified on mpMRI.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+        },
+        "name": "ImagingStudy: Prostate mpMRI (example)",
+        "description": "Example multiparametric prostate MRI imaging study referenced by compositions and PRECISE observations.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-adc-score-lesion1-example"
+        },
+        "name": "Observation: ADC Score, Lesion 1 (example)",
+        "description": "ADC sequence score for prostate lesion 1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/bladder-changes-lt-prostate"
+        },
+        "name": "Observation: Bladder Changes (LT Prostate)",
+        "description": "Bladder changes observed during prostate cancer MRI staging.\nCaptures both the presence/absence status and the nature of the change\n(neoplasm-related, benign, or non-neoplastic/incidental) as required by\nthe national mpMRI reporting form.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-urinary-bladder-changes-example"
+        },
+        "name": "Observation: Bladder wall thickening, suspected (example)",
+        "description": "Suspected urinary bladder wall thickening on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-bladder-benign-example"
+        },
+        "name": "Observation: Bladder – benign changes (example)",
+        "description": "Benign bladder changes unrelated to prostate neoplasm.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-bladder-neoplasm-related-example"
+        },
+        "name": "Observation: Bladder – neoplasm-related changes (example)",
+        "description": "Bladder changes suspected to be related to prostate neoplasm.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/bone-metastasis-lt-prostate"
+        },
+        "name": "Observation: Bone Metastasis Assessment (LT Prostate)",
+        "description": "Assessment of bone metastatic changes on prostate MRI.\nRecords whether bone metastases are absent, present (SNOMED 94222008),\nor unclear/requiring further investigation.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-bone-metastasis-absent-example"
+        },
+        "name": "Observation: Bone metastasis – absent (example)",
+        "description": "No bone metastatic changes on prostate MRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-bone-metastasis-present-example"
+        },
+        "name": "Observation: Bone metastasis – present (example)",
+        "description": "Bone metastatic changes detected on prostate MRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-capsule-invasion-suspected-example"
+        },
+        "name": "Observation: Capsular invasion, suspected (example)",
+        "description": "Suspected capsular involvement with long tumour contact anteriorly.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-dce-score-lesion1-example"
+        },
+        "name": "Observation: DCE Score, Lesion 1, positive (example)",
+        "description": "Dynamic contrast enhanced MRI score for prostate lesion 1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/dre-observation-lt-prostate"
+        },
+        "name": "Observation: Digital Rectal Examination (LT Prostate)",
+        "description": "Digital rectal examination (DRE) finding for prostate assessment.\nRecords the palpation findings from the urologist's examination as part of\nthe prostate cancer early diagnosis programme (ADPP step T21).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-dre-hard-example"
+        },
+        "name": "Observation: DRE – hard prostate (example)",
+        "description": "Digital rectal examination finding: hard prostate consistency.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/dre-observation-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-dre-palpable-mass-example"
+        },
+        "name": "Observation: DRE – palpable mass (example)",
+        "description": "Digital rectal examination finding: palpable mass detected.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/dre-observation-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-dwi-score-lesion1-example"
+        },
+        "name": "Observation: DWI Score, Lesion 1 (example)",
+        "description": "DWI sequence score for prostate lesion 1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-dwi-score-lesion1-example2"
+        },
+        "name": "Observation: DWI Score, Lesion 1 (standalone example)",
+        "description": "DWI sequence score 5 for prostate lesion 1, as a standalone example outside the mpMRI report.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/gleason-isup-observation-lt-prostate"
+        },
+        "name": "Observation: Gleason / ISUP Grade Group",
+        "description": "Histopathological grading of prostate cancer using Gleason score and ISUP Grade Group.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-gleason-gradegroup-example"
+        },
+        "name": "Observation: Gleason / ISUP Grade Group 1 (example)",
+        "description": "Histopathological grading: ISUP Grade Group 1 (Gleason 3+3).",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/gleason-isup-observation-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/piqual-observation-lt-prostate"
+        },
+        "name": "Observation: I-QUAL Score",
+        "description": "PI-QUAL is a quality assurance score for prostate MRI examinations.\nIt reflects whether the technical image quality of a specific MRI exam\nis sufficient to allow reliable interpretation and PI-RADS assessment.\n\nThis score applies to the entire MRI examination (not to individual lesions).\n\nLow PI-QUAL scores indicate that PI-RADS results should be interpreted\nwith caution or may not be reliable.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sequence-score-lt-prostate"
+        },
+        "name": "Observation: MRI Sequence Score",
+        "description": "Observation representing a numeric (1–5) assessment score for a specific prostate\nMRI sequence (T2-weighted, DWI, ADC or DCE), evaluated for a defined prostate lesion.\nThese sequence-level scores represent the individual imaging components used\nto derive the overall PI-RADS assessment, but do not themselves constitute a\nfinal diagnostic conclusion.\nAnatomical localization is provided via the referenced prostate lesion.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/neoplasm-invasion-lt-prostate"
+        },
+        "name": "Observation: Neoplasm Invasion",
+        "description": "Direct invasion of prostate-related structures by neoplasm.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-neurovascular-bundle-invasion-example"
+        },
+        "name": "Observation: Neurovascular bundle invasion, absent (example)",
+        "description": "No neurovascular bundle involvement on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/prostate-other-conditions-lt-prostate"
+        },
+        "name": "Observation: Other Prostate Conditions (LT Prostate)",
+        "description": "Incidental prostate conditions observed during mpMRI or PRECISE assessment\n(e.g. benign prostatic hyperplasia, prostatitis, fibrotic changes).\nValue is coded from ProstateOtherConditionsVS with extensible binding,\nallowing free-text descriptions via CodeableConcept.text.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pelvic-organ-changes-lt-prostate"
+        },
+        "name": "Observation: Pelvic Organ Changes",
+        "description": "Rectal and other pelvic organ changes in prostate cancer staging.\nFor bladder-specific changes use BladderChangesLtProstate (with change nature component).\nFor bone metastasis use BoneMetastasisLtProstate.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-peripheral-zone-diffuse-enhancement-example"
+        },
+        "name": "Observation: Peripheral zone diffuse enhancement (example)",
+        "description": "Diffuse contrast enhancement in the peripheral zone without focal lesion.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-piqual-example"
+        },
+        "name": "Observation: PI-QUAL Score (example)",
+        "description": "PI-QUAL image quality score 3 (sufficient diagnostic quality) for prostate MRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pirads-assessment-lt-prostate"
+        },
+        "name": "Observation: PI-RADS Assessment",
+        "description": "PI-RADS assessment (score 1–5) assigned to a specific prostate lesion\nbased on mpMRI findings.\nThe anatomical location is represented using detailed PI-RADS\nsector-based prostate body structures (39-sector map).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-pirads-lesion1-example"
+        },
+        "name": "Observation: PI-RADS Assessment, Lesion 1 (example)",
+        "description": "PI-RADS 5 assessment for anterior transition zone lesion.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-precise-followup-example2"
+        },
+        "name": "Observation: PRECISE assessment, likely progression (example)",
+        "description": "PRECISE category 4 (likely progression) with dimensions, volume, Likert, and prior study context.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-precise-followup-example"
+        },
+        "name": "Observation: PRECISE assessment, stable (example)",
+        "description": "PRECISE category 3 (stable disease) longitudinal follow-up assessment.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/precise-assessment-lt-prostate"
+        },
+        "name": "Observation: PRECISE Longitudinal Assessment",
+        "description": "PRECISE is an exam-level longitudinal assessment for prostate MRI follow-up.\nIt summarizes overall change compared to a prior MRI examination, using the PRECISE framework.\n\nPRECISE does not replace PI-RADS (which is lesion-level). Instead, it provides a\npatient/exam-level progression/regression category informed by lesion changes.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-seminal-base-invasion-suspected-example"
+        },
+        "name": "Observation: Prostate - Base of Seminal Vesicle Invasion (Suspected) (example)",
+        "description": "Shows suspected direct invasion by neoplasm to the base of seminal vesicle.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-bone-changes-present-example"
+        },
+        "name": "Observation: Prostate - Bone Changes (Present) (example)",
+        "description": "Shows present bone metastatic changes with narrative text.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostatic-capsule-invasion-present-example"
+        },
+        "name": "Observation: Prostate - Capsular Invasion (Present, Right) (example)",
+        "description": "Shows present direct invasion by neoplasm to the prostatic capsule with right laterality.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-neurovascular-invasion-absent-r-example"
+        },
+        "name": "Observation: Prostate - Neurovascular Bundle Invasion (Absent, Right) (example)",
+        "description": "Shows absent direct invasion by neoplasm to the neurovascular bundle with right laterality.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-pirads-lesion1-example2"
+        },
+        "name": "Observation: Prostate - PI-RADS Assessment (Lesion 1) (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/prostate-psad-example"
+        },
+        "name": "Observation: Prostate - PSA Density Example",
+        "description": "Prostate-Specific Antigen Density (PSAD) Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/prostate-psa-example"
+        },
+        "name": "Observation: Prostate - PSA Example",
+        "description": "Prostate Specific Antigen (PSA) Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-rectal-changes-absent-example"
+        },
+        "name": "Observation: Prostate - Rectal Changes (Absent) (example)",
+        "description": "Shows absent rectal changes with narrative text.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/pelvic-organ-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-lymphnode-invasion-present-l-example"
+        },
+        "name": "Observation: Prostate - Regional Lymph Node Involvement (Present, Left) (example)",
+        "description": "Shows present direct invasion by neoplasm to a regional lymph node with left laterality; narrative includes location and size.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-seminal-vesicle-invasion-suspected-l-example"
+        },
+        "name": "Observation: Prostate - Seminal Vesicle Invasion (Suspected, Left) (example)",
+        "description": "Shows suspected direct invasion by neoplasm to the seminal vesicle with left laterality.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-urinary-bladder-changes-suspected-example"
+        },
+        "name": "Observation: Prostate - Urinary Bladder Wall Thickening (Suspected) (example)",
+        "description": "Shows suspected urinary bladder changes with change nature classification.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/prostate-volume-example"
+        },
+        "name": "Observation: Prostate - Volume Example",
+        "description": "Prostate Volume Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-volume-example"
+        },
+        "name": "Observation: Prostate Volume (example)",
+        "description": "Prostate volume measurement derived from MRI.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-psa-example"
+        },
+        "name": "Observation: PSA (example)",
+        "description": "Prostate-specific antigen (PSA) serum level.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-psad-example"
+        },
+        "name": "Observation: PSA Density (example)",
+        "description": "PSA density (PSAD) calculated from PSA and prostate volume.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-rectum-changes-example"
+        },
+        "name": "Observation: Rectal changes, absent (example)",
+        "description": "No rectal wall changes on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/pelvic-organ-changes-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-regional-lymph-node-invasion-example"
+        },
+        "name": "Observation: Regional lymph node involvement, absent (example)",
+        "description": "No regional lymphadenopathy on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-seminal-vesicle-invasion-example"
+        },
+        "name": "Observation: Seminal vesicle invasion, absent (example)",
+        "description": "No seminal vesicle invasion identified on mpMRI.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/neoplasm-invasion-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-t2-score-lesion1-example"
+        },
+        "name": "Observation: T2 Score, Lesion 1 (example)",
+        "description": "T2-weighted MRI sequence score for prostate lesion 1.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-lt-example"
+        },
+        "name": "Organization: LT (example)",
+        "description": "Example of a healthcare organization",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-male-example"
+        },
+        "name": "Patient: Male (example)",
+        "description": "An example male Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/practitioner-role-lt"
+        },
+        "name": "Practitioner Role (LT Base)",
+        "description": "Lithuanian Base Practitioner Role profile, used to define roles of the healthcare practitioner in the healthcare facilities",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-doctor-example"
+        },
+        "name": "Practitioner: Dr. Example Doctor (example)",
+        "description": "An example Practitioner representing a doctor.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-eucore-example"
+        },
+        "name": "Practitioner: LT Base (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitioner-role-lt-example"
+        },
+        "name": "PractitionerRole: LT Base (example)",
+        "description": "An example Practitioner Role conforming to the Lithuanian Base Profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/prostate/StructureDefinition/practitioner-role-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/practitioner-role-radiologist-example"
+        },
+        "name": "PractitionerRole: Radiologist (example)",
+        "description": "Radiologist practitioner role for prostate mpMRI reporting.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-prostate-mpmri-example"
+        },
+        "name": "Procedure: Prostate mpMRI (example)",
+        "description": "Example multiparametric prostate MRI procedure referenced by the mpMRI and programme compositions.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-prostate-mri-example"
+        },
+        "name": "Procedure: Prostate MRI (example)",
+        "description": "Example MRI procedure referenced by the base mpMRI composition.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-structure-prostate"
+        },
+        "name": "Prostate - Body Structure",
+        "description": "Body structures that may be affected by prostate cancer invasion or local organ changes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-change-nature"
+        },
+        "name": "Prostate - Change Nature / Etiology",
+        "description": "Nature of observed change in pelvic organs: neoplasm-related, benign, or non-neoplastic/incidental.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-damage-status"
+        },
+        "name": "Prostate - Damage Status",
+        "description": "Status of previously detected damage (capsule, seminal vesicle) from prior investigation: present, absent, or unknown.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-isup-grade-group"
+        },
+        "name": "Prostate - ISUP Grade Group",
+        "description": "ISUP Grade Groups for prostate cancer histopathology, aligned with Gleason grading. Includes sub-combination codes for Grade Groups 4 and 5.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-sequence-type"
+        },
+        "name": "Prostate - mpMRI Sequence Type",
+        "description": "Sequence/image types used in prostate mpMRI scoring (DICOM terminology).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-mri-type"
+        },
+        "name": "Prostate - MRI Examination Type",
+        "description": "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-other-conditions"
+        },
+        "name": "Prostate - Other (Incidental) Conditions",
+        "description": "Incidental prostate conditions observed during mpMRI or PRECISE assessment: benign prostatic hyperplasia, prostatitis, and fibrotic changes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-piqual"
+        },
+        "name": "Prostate - PI-QUAL",
+        "description": "Prostate Imaging Quality score for prostate MRI image quality assessment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-pirads-sector"
+        },
+        "name": "Prostate - PI-RADS Sector (39-Sector Map)",
+        "description": "PI-RADS prostate sector locations based on the 39-sector PI-RADS map.\nIncludes detailed SNOMED CT body structure codes for base/mid/apex,\nzone, side, and anterior/posterior subdivisions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-precise-category"
+        },
+        "name": "Prostate - PRECISE Category",
+        "description": "Allowed PRECISE categories for longitudinal prostate MRI assessment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-precise-category"
+        },
+        "name": "Prostate - PRECISE Category CS",
+        "description": "PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.\nThese categories describe overall change compared to a prior MRI examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-precise-change-pattern"
+        },
+        "name": "Prostate - PRECISE Change Pattern CS",
+        "description": "Pattern of change on follow-up MRI.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/precise-change-pattern"
+        },
+        "name": "Prostate - PRECISE Change Pattern VS",
+        "description": "Pattern of change observed on follow-up prostate MRI examination (local, diffuse).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-precise-component"
+        },
+        "name": "Prostate - PRECISE Component",
+        "description": "Codes for detailed PRECISE assessment components used in longitudinal prostate MRI follow-up evaluation.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-precise-component"
+        },
+        "name": "Prostate - PRECISE Component CS",
+        "description": "Local codes for detailed PRECISE assessment components.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-pathology-questionnaire-item"
+        },
+        "name": "Prostate pathology ESPBI Questionnaire item (linkId)",
+        "description": "Codes equal to **linkId** values on **Questionnaire/prostate-pathology-espbi**. Used as **ConceptMap.group.source**.",
+        "groupingId": "GroupQuestionnaireMapping",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-piqual"
+        },
+        "name": "Prostate PI-QUAL scale (v1, PRECISION trial, 2020)",
+        "description": "Prostate Imaging Quality assessment scores.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-questionnaire-options"
+        },
+        "name": "Prostate questionnaire answer options (illustrative)",
+        "description": "Illustrative codes for **Questionnaire** answer options for prostate ESPBI-style forms in this IG. Register or replace with national coded values in production.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/prostate-fhir-mapping-target"
+        },
+        "name": "Prostate questionnaire → FHIR mapping target (illustrative)",
+        "description": "Target **codes** for **ConceptMap** entries: each code denotes a logical FHIR mapping destination (profile or element path). Used with **prostate-adpp-questionnaire-item** and **prostate-pathology-questionnaire-item** source codes.",
+        "groupingId": "GroupQuestionnaireMapping",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-prostate-adpp-primary-assessment"
+        },
+        "name": "Questionnaire: ADPP primary assessment (expanded illustrative)",
+        "description": "Illustrative Questionnaire aligned with consultation / ADPP spreadsheet blocks (Patient demographics omitted). Coverage and FHIR mapping: IG page Questionnaires and ConceptMap prostate-adpp-questionnaire-to-fhir.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-prostate-pathology-espbi"
+        },
+        "name": "Questionnaire: Prostate pathology report (ESPBI / dr-prostate subset)",
+        "description": "Illustrative FHIR Questionnaire aligned with dr-prostate spreadsheet (subset). Full coverage gaps and FHIR mapping: IG page Questionnaires and ConceptMap prostate-pathology-questionnaire-to-fhir.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-prostate-pathologist-referral"
+        },
+        "name": "Questionnaire: Referral to pathologist (E014)",
+        "description": "Questionnaire for the Referral to a pathologist form (E014, form 014-1-1/a) in the Lithuanian prostate cancer screening programme. Patient demographics omitted (sourced from PatientLt).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-prostate-radiologist-referral"
+        },
+        "name": "Questionnaire: Referral to radiologist (E027)",
+        "description": "Questionnaire for the referral to a radiologist (form E027) in the Lithuanian prostate cancer screening programme. Patient demographics are omitted — they come from PatientLt.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-prostate-adpp-primary-assessment-example"
+        },
+        "name": "QuestionnaireResponse: ADPP primary assessment (example)",
+        "description": "Example answers for the expanded ADPP primary assessment Questionnaire.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-prostate-pathology-espbi-example"
+        },
+        "name": "QuestionnaireResponse: Prostate pathology ESPBI (example)",
+        "description": "Example answers using **valueCoding** for choice questions.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/snomed-prostate-extension"
+        },
+        "name": "SNOMED CT Prostate Extension",
+        "description": "Local codes extending SNOMED CT for prostate-related clinical findings not yet available in SNOMED CT. To be used until adopted by SNOMED CT.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-damage-and-change-status"
+        },
+        "name": "ValueSet: Prostate - Damage and Change Status",
+        "description": "Absent, suspected, or present damage and change status for prostate cancer staging.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "Prostate report",
+          "generation": "markdown",
+          "name": "prostate-report.html",
+          "sourceUrl": "prostate-report.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaire.html",
+          "sourceUrl": "questionnaire.html"
+        },
+        {
+          "title": "MRI Example",
+          "generation": "markdown",
+          "name": "prostate-mpmri-example.html",
+          "sourceUrl": "prostate-mpmri-example.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-change-pattern"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-structure-prostate"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-change-nature"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-and-change-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-isup-grade-group"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-mri-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-other-conditions"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-piqual"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-change-pattern"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-component"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

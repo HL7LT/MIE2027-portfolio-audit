@@ -1,0 +1,423 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cervical-colposcopy-espbi",
+  "url": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-colposcopy-espbi",
+  "title": "Questionnaire: Cervical Colposcopy ESPBI Form",
+  "description": "ESPBI form for capturing colposcopy examination data in the Lithuanian cervical cancer screening programme.",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "patient.personalCode",
+          "text": "Personal code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient.name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient.surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "linkId": "patient",
+      "text": "Patient identification",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.previousColposcopy",
+          "text": "Previous colposcopy performed",
+          "type": "coding"
+        },
+        {
+          "linkId": "clinicalHistory.previousColposcopyDate",
+          "text": "Previous colposcopy date",
+          "type": "date"
+        },
+        {
+          "linkId": "clinicalHistory.indication",
+          "text": "Indication (reason for colposcopy)",
+          "type": "text"
+        }
+      ],
+      "linkId": "clinicalHistory",
+      "text": "Previous test history",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "385660001",
+                "system": "http://snomed.info/sct",
+                "display": "Not done (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "colposcopyPerformed.performed",
+          "text": "Colposcopy performed",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "colposcopyPerformed.performed",
+              "operator": "=",
+              "answerCoding": {
+                "code": "385660001",
+                "system": "http://snomed.info/sct",
+                "display": "Not done (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "colposcopyPerformed.postponedDate",
+          "text": "Postponed date",
+          "type": "date"
+        },
+        {
+          "linkId": "colposcopyPerformed.procedureDate",
+          "text": "Procedure date",
+          "type": "date"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "colposcopyPerformed.anesthesia",
+          "text": "Anesthesia used",
+          "type": "coding"
+        }
+      ],
+      "linkId": "colposcopyPerformed",
+      "text": "Colposcopy procedure",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "398166005",
+                "system": "http://snomed.info/sct",
+                "display": "Performed (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "385660001",
+                "system": "http://snomed.info/sct",
+                "display": "Not done (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "adequacy.adequate",
+          "text": "Adequacy of colposcopy",
+          "type": "coding"
+        }
+      ],
+      "linkId": "adequacy",
+      "text": "Colposcopy adequacy",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "swedeScore.acetoWhiteReaction",
+          "text": "Acetowhite reaction (0-2)",
+          "type": "integer"
+        },
+        {
+          "linkId": "swedeScore.marginsAndSurface",
+          "text": "Margins and surface (0-2)",
+          "type": "integer"
+        },
+        {
+          "linkId": "swedeScore.vessels",
+          "text": "Vessels (0-2)",
+          "type": "integer"
+        },
+        {
+          "linkId": "swedeScore.lesionSize",
+          "text": "Lesion size (0-2)",
+          "type": "integer"
+        },
+        {
+          "linkId": "swedeScore.iodineStaining",
+          "text": "Iodine staining (0-2)",
+          "type": "integer"
+        },
+        {
+          "linkId": "swedeScore.totalScore",
+          "text": "Total Swede score (0-10)",
+          "type": "integer"
+        }
+      ],
+      "linkId": "swedeScore",
+      "text": "Swede score (0-10)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "723505004",
+                "system": "http://snomed.info/sct",
+                "display": "Low risk (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "723509005",
+                "system": "http://snomed.info/sct",
+                "display": "High risk (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "risk.riskLevel",
+          "text": "Risk level",
+          "type": "coding"
+        }
+      ],
+      "linkId": "risk",
+      "text": "Risk assessment based on Swede score",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.biopsyPerformed",
+          "text": "Biopsy performed",
+          "type": "coding"
+        },
+        {
+          "enableWhen": [
+            {
+              "question": "biopsyProcedure.biopsyPerformed",
+              "operator": "=",
+              "answerCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "51675008",
+                "system": "http://snomed.info/sct",
+                "display": "Punch biopsy of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "23140002",
+                "system": "http://snomed.info/sct",
+                "display": "Loop electrosurgical excision procedure of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "54535009",
+                "system": "http://snomed.info/sct",
+                "display": "Cone biopsy of cervix (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "52889002",
+                "system": "http://snomed.info/sct",
+                "display": "Endocervical curettage (procedure)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.procedureType",
+          "text": "Biopsy procedure type",
+          "type": "coding"
+        }
+      ],
+      "linkId": "biopsyProcedure",
+      "text": "Biopsy procedure",
+      "type": "group"
+    },
+    {
+      "enableWhen": [
+        {
+          "question": "biopsyProcedure.biopsyPerformed",
+          "operator": "=",
+          "answerCoding": {
+            "code": "373066001",
+            "system": "http://snomed.info/sct",
+            "display": "Yes (qualifier value)"
+          }
+        }
+      ],
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "127900007",
+                "system": "http://snomed.info/sct",
+                "display": "Left superior quadrant of uterine cervix"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "127902004",
+                "system": "http://snomed.info/sct",
+                "display": "Right superior quadrant of uterine cervix"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "127901006",
+                "system": "http://snomed.info/sct",
+                "display": "Right inferior quadrant of uterine cervix"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "127899002",
+                "system": "http://snomed.info/sct",
+                "display": "Left inferior quadrant of uterine cervix"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "56739004",
+                "system": "http://snomed.info/sct",
+                "display": "Structure of cervical canal of uterus (body structure)"
+              }
+            }
+          ],
+          "linkId": "biopsySite.site",
+          "text": "Biopsy site",
+          "type": "coding"
+        },
+        {
+          "linkId": "biopsySite.notes",
+          "text": "Notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "biopsySite",
+      "text": "Biopsy site",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "impression.impression",
+          "text": "Colposcopic impression",
+          "type": "text"
+        },
+        {
+          "linkId": "impression.recommendation",
+          "text": "Recommendation",
+          "type": "text"
+        }
+      ],
+      "linkId": "impression",
+      "text": "Colposcopic impression",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "signatures.examinerName",
+          "text": "Examiner name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signatures.examinerSurname",
+          "text": "Examiner surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signatures.examinerPressNumber",
+          "text": "Examiner press number",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signatures.examDate",
+          "text": "Examination date",
+          "type": "dateTime"
+        }
+      ],
+      "linkId": "signatures",
+      "text": "Signatures",
+      "type": "group"
+    }
+  ],
+  "status": "active",
+  "name": "CervicalColposcopyEspbi"
+}

@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "skl01-observation-overweight-193",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "248311001",
+        "system": "http://snomed.info/sct",
+        "display": "Central obesity (disorder)"
+      }
+    ],
+    "text": "Antsvoris arba nutukimas"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "effectiveDateTime": "2012-09-17T16:13:54+02:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "373066001",
+        "system": "http://snomed.info/sct",
+        "display": "Yes"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

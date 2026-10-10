@@ -1,0 +1,32 @@
+{
+  "resourceType": "Location",
+  "id": "location-vilnius-hospital-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/location-lt"
+    ]
+  },
+  "address": {
+    "line": [
+      "Santariškių g. 2"
+    ],
+    "city": "Vilnius",
+    "postalCode": "08661",
+    "country": "LT"
+  },
+  "language": "en",
+  "status": "active",
+  "name": "Vilniaus miesto ligoninė",
+  "description": "Pagrindinė Vilniaus miesto ligoninė, teikianti įvairias sveikatos priežiūros paslaugas.",
+  "form": {
+    "coding": [
+      {
+        "code": "building",
+        "display": "Building"
+      }
+    ]
+  },
+  "managingOrganization": {
+    "reference": "Organization/organization-example"
+  }
+}

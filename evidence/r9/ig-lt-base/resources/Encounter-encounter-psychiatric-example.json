@@ -1,0 +1,109 @@
+{
+  "resourceType": "Encounter",
+  "id": "encounter-psychiatric-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+    ]
+  },
+  "class": [
+    {
+      "coding": [
+        {
+          "code": "IMP",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "Inpatient encounter"
+        }
+      ]
+    }
+  ],
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "code": "ATND",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "display": "attender"
+            }
+          ]
+        }
+      ],
+      "period": {
+        "start": "2024-01-01T10:00:00Z",
+        "end": "2024-01-01T11:00:00Z"
+      }
+    }
+  ],
+  "reason": [
+    {
+      "value": [
+        {
+          "reference": {
+            "reference": "Condition/condition-cancer-example"
+          }
+        }
+      ]
+    }
+  ],
+  "actualPeriod": {
+    "start": "2024-01-01T10:00:00Z",
+    "end": "2024-01-01T11:00:00Z"
+  },
+  "diagnosis": [
+    {
+      "condition": [
+        {
+          "reference": {
+            "reference": "Condition/condition-cancer-example"
+          }
+        }
+      ]
+    }
+  ],
+  "admission": {
+    "admitSource": {
+      "coding": [
+        {
+          "code": "psych",
+          "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+          "display": "From psychiatric hospital"
+        }
+      ]
+    },
+    "reAdmission": {
+      "coding": [
+        {
+          "code": "R",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0092",
+          "display": "Re-admission"
+        }
+      ]
+    },
+    "dischargeDisposition": {
+      "coding": [
+        {
+          "code": "home",
+          "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+          "display": "Home"
+        }
+      ]
+    }
+  },
+  "status": "completed",
+  "priority": {
+    "coding": [
+      {
+        "code": "EM",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+        "display": "Emergency"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "plannedStartDate": "2024-01-01T10:00:00Z",
+  "plannedEndDate": "2024-01-01T11:00:00Z"
+}

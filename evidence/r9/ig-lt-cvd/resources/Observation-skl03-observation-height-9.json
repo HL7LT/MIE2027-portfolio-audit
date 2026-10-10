@@ -1,0 +1,50 @@
+{
+  "resourceType": "Observation",
+  "id": "skl03-observation-height-9",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "3137-7",
+        "system": "http://loinc.org",
+        "display": "Body height measured"
+      },
+      {
+        "code": "8302-2",
+        "system": "http://loinc.org",
+        "display": "Body height"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "value": 176,
+    "code": "cm",
+    "system": "http://unitsofmeasure.org",
+    "unit": "cm"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "effectiveDateTime": "2014-10-27T20:40:40+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

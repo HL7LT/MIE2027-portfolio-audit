@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LungLobeVS",
+  "id": "lung-lobe",
+  "title": "Lung Lobe",
+  "description": "Allowed lung lobe body structure codes for localisation of pulmonary nodules\nin the Lithuanian lung cancer early diagnosis programme.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lung-lobe",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "42400003",
+            "display": "Structure of upper lobe of right lung"
+          },
+          {
+            "code": "72481006",
+            "display": "Structure of middle lobe of right lung"
+          },
+          {
+            "code": "266005",
+            "display": "Structure of lower lobe of right lung"
+          },
+          {
+            "code": "44714003",
+            "display": "Structure of upper lobe of left lung"
+          },
+          {
+            "code": "41224006",
+            "display": "Structure of lower lobe of left lung"
+          }
+        ]
+      }
+    ]
+  }
+}

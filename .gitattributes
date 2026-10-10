@@ -1,0 +1,4 @@
+# This is an evidence package: hashes.txt records the SHA-256 of every file, and a reader
+# is meant to be able to verify them. Git must therefore not rewrite line endings on
+# checkout or commit, so every file is treated as binary for that purpose.
+* -text

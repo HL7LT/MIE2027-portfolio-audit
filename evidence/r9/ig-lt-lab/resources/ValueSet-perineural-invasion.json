@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PerineuralInvasionVS",
+  "id": "perineural-invasion",
+  "title": "Perineural Invasion",
+  "description": "Microscopic finding of perineural invasion by tumor.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/perineural-invasion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "370051000",
+            "display": "Perineural invasion by tumor absent (finding)"
+          },
+          {
+            "code": "385001000",
+            "display": "Perineural invasion by tumor not identified (finding)"
+          },
+          {
+            "code": "369731000",
+            "display": "Perineural invasion by tumor present (finding)"
+          },
+          {
+            "code": "396393005",
+            "display": "Perineural invasion by tumor indeterminate (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

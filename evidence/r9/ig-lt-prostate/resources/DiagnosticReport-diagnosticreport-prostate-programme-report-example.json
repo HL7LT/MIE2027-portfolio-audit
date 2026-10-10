@@ -1,0 +1,131 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-prostate-programme-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/prostate-report-lt-prostate"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/prostate/sid/diagnostic-report",
+      "value": "PR-PROG-2024-0001"
+    }
+  ],
+  "performer": [
+    {
+      "reference": "PractitionerRole/practitioner-role-radiologist-example"
+    }
+  ],
+  "study": [
+    {
+      "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/imfinding-prostate-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-pirads-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-t2-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-dwi-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-adc-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-dce-score-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-piqual-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-precise-followup-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-gleason-gradegroup-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-psa-example"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": {
+        "reference": "Observation/observation-prostate-psa-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "RSLT",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    },
+    {
+      "reference": {
+        "reference": "Observation/observation-prostate-volume-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "RSLT",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    },
+    {
+      "reference": {
+        "reference": "Observation/observation-prostate-psad-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "SCI",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2024-05-27T10:30:00Z",
+  "issued": "2024-05-27T10:35:00Z",
+  "composition": {
+    "reference": "Composition/composition-prostate-programme-example"
+  },
+  "conclusion": "PI-RADS 5 lesion; PI-QUAL adequate; PRECISE 3 stable. Programme imaging results in linked Observations."
+}

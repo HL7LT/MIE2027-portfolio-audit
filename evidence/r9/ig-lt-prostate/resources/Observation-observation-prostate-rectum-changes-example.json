@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-rectum-changes-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/pelvic-organ-changes-lt-prostate"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "No rectal wall changes."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "364636000",
+        "system": "http://snomed.info/sct",
+        "display": "Lesion observable (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "2667000",
+        "system": "http://snomed.info/sct",
+        "display": "Absent (qualifier value)"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/bodyStructure-prostate-rectum-example"
+  }
+}

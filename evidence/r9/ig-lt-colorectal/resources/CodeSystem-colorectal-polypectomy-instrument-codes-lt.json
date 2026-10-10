@@ -1,0 +1,28 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColorectalPolypectomyInstrumentCodesLt",
+  "id": "colorectal-polypectomy-instrument-codes-lt",
+  "title": "Colorectal - Polypectomy Instrument Codes CS",
+  "description": "Instrument and energy method used to remove the polyp.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-instrument-codes-lt",
+  "concept": [
+    {
+      "code": "inst-loop-hot",
+      "display": "With a loop - Hot method"
+    },
+    {
+      "code": "inst-loop-cold",
+      "display": "With a loop - Cold method"
+    },
+    {
+      "code": "inst-pliers",
+      "display": "With pliers"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 3
+}

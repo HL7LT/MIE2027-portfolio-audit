@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-nutrition-balanced-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/nutrition-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "social-history",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Social History"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient reports balanced meals consistent with dietary recommendations."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "384759009",
+        "system": "http://snomed.info/sct",
+        "display": "Nutrition, function (observable entity)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "226229006",
+        "system": "http://snomed.info/sct",
+        "display": "Balanced diet (finding)"
+      }
+    ]
+  }
+}

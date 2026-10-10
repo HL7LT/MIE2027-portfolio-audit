@@ -1,0 +1,119 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-lesion-left-3-oclock-fibroadenoma-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-ultrasound-finding-lt-breast"
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "364636000",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion observable"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "254845004",
+            "system": "http://snomed.info/sct",
+            "display": "Fibroadenoma of breast (disorder)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "272485000",
+            "system": "http://snomed.info/sct",
+            "display": "Clockface position (qualifier value)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "260330005",
+            "system": "http://snomed.info/sct",
+            "display": "3 o'clock position (qualifier value)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "439932008",
+            "system": "http://snomed.info/sct",
+            "display": "Length of structure by imaging measurement"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "value": 8
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "440357003",
+            "system": "http://snomed.info/sct",
+            "display": "Width of structure by imaging measurement"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "value": 5
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Oval shape"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "47079000",
+        "system": "http://snomed.info/sct",
+        "display": "Ultrasonography of breast (procedure)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "80248007",
+        "system": "http://snomed.info/sct",
+        "display": "Left breast"
+      }
+    ]
+  },
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "code": "not-applicable",
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "bmi",
+  "url": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/bmi",
+  "version": "1.0.0",
+  "name": "BMI",
+  "title": "Body Mass Index",
+  "status": "draft",
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "Body Mass Index (BMI) is a measure of body fat based on height and weight.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Body Mass Index Profile",
+        "definition": "This profile defines  how to represent body mass index observations in FHIR using a standard LOINC code and UCUM units of measure."
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.category:VSCat",
+        "path": "Observation.category",
+        "sliceName": "VSCat",
+        "definition": "Vital signs",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Body Mass Index",
+        "definition": "Body mass index. LOINC required; SNOMED CT optional for dual coding."
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:LOINC",
+        "path": "Observation.code.coding",
+        "sliceName": "LOINC",
+        "short": "Body Mass Index (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bmi-observation"
+        }
+      },
+      {
+        "id": "Observation.code.coding:LOINC.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.code.coding:SNOMED",
+        "path": "Observation.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Body Mass Index (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bmi-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.code.coding:SNOMED.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Vital Signs are point in time measurements and are recorded using the dateTime data type",
+        "definition": "Vital Signs are point in time measurements and are recorded using the dateTime data type.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "condition": [
+          "vs-bh-2",
+          "obs-6"
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bmi-unit",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
+              "valueMarkdown": "Common UCUM units for BMI."
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "BMIUnit"
+            }
+          ],
+          "description": "kg/m2"
+        }
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "condition": [
+          "vs-bw-2"
+        ]
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic"
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "max": "0"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "max": "0"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

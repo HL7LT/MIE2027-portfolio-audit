@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-metabolic-syndrome-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/metabolic-syndrome-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "There are at least 3 of 5 signs present (NCEP ATP III criteria)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "364392006",
+        "system": "http://snomed.info/sct",
+        "display": "Metabolic observable"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "237602007",
+        "system": "http://snomed.info/sct",
+        "display": "Metabolic syndrome X (disorder)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://registrai.lt/sveidra/asmuo",
+      "value": "LT-12345"
+    }
+  ],
+  "name": [
+    {
+      "text": "Registrar"
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "224538006",
+            "system": "http://snomed.info/sct",
+            "display": "Triage nurse (occupation)"
+          }
+        ]
+      }
+    }
+  ]
+}

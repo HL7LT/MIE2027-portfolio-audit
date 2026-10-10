@@ -1,0 +1,121 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "qr-cervical-path-diag-espbi-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "2238"
+            }
+          ],
+          "linkId": "diagnosisMapping.vlkServiceCode",
+          "text": "VLK service code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "D06.9"
+            }
+          ],
+          "linkId": "diagnosisMapping.icd10Code",
+          "text": "ICD-10-AM code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "8077/2"
+            }
+          ],
+          "linkId": "diagnosisMapping.icdOCode",
+          "text": "ICD-O morphology code"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "400049009",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+              }
+            }
+          ],
+          "linkId": "diagnosisMapping.snomedCode",
+          "text": "SNOMED CT concept ID"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "HSIL/CIN2 - High-grade squamous intraepithelial lesion, cervical intraepithelial neoplasia grade 2"
+            }
+          ],
+          "linkId": "diagnosisMapping.diagnosisDescription",
+          "text": "Diagnosis description"
+        }
+      ],
+      "linkId": "diagnosisMapping",
+      "text": "Pathological diagnosis codes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1228953005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTis (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnmStaging.pT",
+          "text": "Pathological T category (pT)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1222638005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R0 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnmStaging.pR",
+          "text": "Residual tumour (pR)"
+        }
+      ],
+      "linkId": "tnmStaging",
+      "text": "TNM staging codes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1228850007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G2 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "grading.grade",
+          "text": "Histological grade"
+        }
+      ],
+      "linkId": "grading",
+      "text": "Histological grading"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-pathological-diagnosis-espbi",
+  "status": "completed",
+  "authored": "2025-04-10T14:00:00+02:00",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

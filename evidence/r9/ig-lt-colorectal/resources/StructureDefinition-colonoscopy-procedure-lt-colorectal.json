@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colonoscopy-procedure-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-procedure-lt-colorectal",
+  "name": "ColonoscopyProcedureLtColorectal",
+  "title": "Colonoscopy Procedure (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording the colonoscopy procedure in the Lithuanian colorectal cancer screening program. Captures whether the procedure was performed with or without anesthesia, video colonoscope usage, and withdrawal time.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "73761001",
+              "system": "http://snomed.info/sct",
+              "display": "Colonoscopy (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.occurrence[x]",
+        "path": "Procedure.occurrence[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      }
+    ]
+  }
+}

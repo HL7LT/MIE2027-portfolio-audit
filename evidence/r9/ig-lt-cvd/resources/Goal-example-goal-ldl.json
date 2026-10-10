@@ -1,0 +1,31 @@
+{
+  "resourceType": "Goal",
+  "id": "example-goal-ldl",
+  "description": {
+    "text": "Target LDL Cholesterol < 1.8 mmol/L."
+  },
+  "target": [
+    {
+      "detailQuantity": {
+        "value": 1.8,
+        "unit": "mmol/L",
+        "system": "http://unitsofmeasure.org",
+        "code": "mmol/L"
+      },
+      "measure": {
+        "coding": [
+          {
+            "code": "13457-7",
+            "system": "http://loinc.org",
+            "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation"
+          }
+        ]
+      },
+      "dueDate": "2026-10-31"
+    }
+  ],
+  "lifecycleStatus": "active",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

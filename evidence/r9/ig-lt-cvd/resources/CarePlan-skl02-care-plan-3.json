@@ -1,0 +1,24 @@
+{
+  "resourceType": "CarePlan",
+  "id": "skl02-care-plan-3",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+    ]
+  },
+  "contributor": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Tikslinis MTL Cholesterolis: 1.8 mmol/l; Tikslinis kraujo spaudimas: 120-129 mm[Hg]; Metimas rūkyti: Farmakologinės, Elgesio keitimo priemonės; Kita (mityba); Fizinis aktyvumas; Siektinas KMI: 23,0 kg/m2"
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

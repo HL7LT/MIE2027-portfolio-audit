@@ -1,0 +1,148 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColorectalHistologicalDiagnosisVS",
+  "id": "colorectal-histological-diagnosis",
+  "title": "Colorectal Histological Diagnosis",
+  "description": "Histological diagnosis categories for pathological examination in the colorectal cancer screening program.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colorectal-histological-diagnosis",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1156654007",
+            "display": "Benign tubular adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "61722000",
+            "display": "Tubulovillous adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "128859003",
+            "display": "Villous adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "62047007",
+            "display": "Hyperplastic polyp (morphologic abnormality)"
+          },
+          {
+            "code": "443157008",
+            "display": "Sessile serrated adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "783210009",
+            "display": "Sessile serrated adenoma with dysplasia (morphologic abnormality)"
+          },
+          {
+            "code": "443734007",
+            "display": "Traditional serrated adenoma (morphologic abnormality)"
+          },
+          {
+            "code": "41329004",
+            "display": "Polyp (morphologic abnormality)"
+          },
+          {
+            "code": "134328007",
+            "display": "Lipoma morphology (morphologic abnormality)"
+          },
+          {
+            "code": "1162890002",
+            "display": "Leiomyoma (morphologic abnormality)"
+          },
+          {
+            "code": "1187332001",
+            "display": "Adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "72495009",
+            "display": "Mucinous adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "87737001",
+            "display": "Signet ring cell carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "32913002",
+            "display": "Medullary carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "450948005",
+            "display": "Serrated adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "733878002",
+            "display": "Micropapillary adenocarcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "59367005",
+            "display": "Adenosquamous carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "38549000",
+            "display": "Carcinoma, undifferentiated (morphologic abnormality)"
+          },
+          {
+            "code": "23109009",
+            "display": "Pseudosarcomatous carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1286767006",
+            "display": "Neuroendocrine carcinoma (morphologic abnormality)"
+          },
+          {
+            "code": "1286768001",
+            "display": "Well-differentiated neuroendocrine tumor (morphologic abnormality)"
+          },
+          {
+            "code": "1286769009",
+            "display": "Well-differentiated neuroendocrine tumor grade 1 (morphologic abnormality)"
+          },
+          {
+            "code": "1286770005",
+            "display": "Well-differentiated neuroendocrine tumor grade 2 (morphologic abnormality)"
+          },
+          {
+            "code": "1286772002",
+            "display": "Well-differentiated neuroendocrine tumor grade 3 (morphologic abnormality)"
+          },
+          {
+            "code": "785766008",
+            "display": "Mixed neuroendocrine-non neuroendocrine neoplasm (morphologic abnormality)"
+          },
+          {
+            "code": "128756002",
+            "display": "Gastrointestinal stromal sarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "1162635006",
+            "display": "Malignant melanoma (morphologic abnormality)"
+          },
+          {
+            "code": "1163043007",
+            "display": "Malignant lymphoma (morphologic abnormality)"
+          },
+          {
+            "code": "1187396000",
+            "display": "Sarcoma (morphologic abnormality)"
+          },
+          {
+            "code": "14799000",
+            "display": "Neoplasm, metastatic (morphologic abnormality)"
+          },
+          {
+            "code": "1240414004",
+            "display": "Malignant neoplasm (morphologic abnormality)"
+          },
+          {
+            "code": "30389008",
+            "display": "Normal tissue (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "carotid-ultrasound-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/carotid-ultrasound-lt-cvd",
+  "version": "1.0.0",
+  "name": "CarotidUltrasoundLtCvd",
+  "title": "Carotid Ultrasound",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Carotid artery ultrasound for atherosclerotic plaque assessment within CVD screening.\nCaptures plaque categories (none, present, stenosis grades) and intima-media thickness (IMT)\nfor right and left common carotid arteries. IMT > 1.5 mm is considered pathological.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "276021004",
+              "system": "http://snomed.info/sct",
+              "display": "Ultrasonography of carotid artery"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:rightPlaque",
+        "path": "Observation.component",
+        "sliceName": "rightPlaque",
+        "short": "Atherosclerotic plaque in right carotid artery",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:rightPlaque.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "right-plaque",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component",
+              "display": "Right carotid artery plaque"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:rightPlaque.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/carotid-plaque-category"
+        }
+      },
+      {
+        "id": "Observation.component:leftPlaque",
+        "path": "Observation.component",
+        "sliceName": "leftPlaque",
+        "short": "Atherosclerotic plaque in left carotid artery",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:leftPlaque.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "left-plaque",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component",
+              "display": "Left carotid artery plaque"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:leftPlaque.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/carotid-plaque-category"
+        }
+      },
+      {
+        "id": "Observation.component:rightIMT",
+        "path": "Observation.component",
+        "sliceName": "rightIMT",
+        "short": "Right carotid intima-media thickness (mm). Pathological > 1.5 mm.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:rightIMT.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "right-imt",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component",
+              "display": "Right carotid IMT"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:rightIMT.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:rightIMT.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:rightIMT.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:rightIMT.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:leftIMT",
+        "path": "Observation.component",
+        "sliceName": "leftIMT",
+        "short": "Left carotid intima-media thickness (mm). Pathological > 1.5 mm.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:leftIMT.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "left-imt",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component",
+              "display": "Left carotid IMT"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:leftIMT.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:leftIMT.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:leftIMT.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:leftIMT.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      }
+    ]
+  }
+}

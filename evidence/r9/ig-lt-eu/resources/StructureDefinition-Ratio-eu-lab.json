@@ -1,0 +1,81 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "Ratio-eu-lab",
+  "language": "en",
+  "url": "http://hl7.eu/fhir/laboratory/StructureDefinition/Ratio-eu-lab",
+  "name": "RatioEuLab",
+  "title": "Ratio (Eu Lab)",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "This profile constrains the Ratio data type to use UCUM as the code system for units and optionally share measurement uncertainty",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "purpose": "This profile of the Ratio data type imposes the usage of the UCUM as the code system for units and allows expressing uncertainty of measurement",
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Ratio",
+  "baseDefinition": "http://hl7.org/fhir/uv/ips/StructureDefinition/Ratio-uv-ips",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Ratio",
+        "path": "Ratio",
+        "short": "A measured ratio using UCUM",
+        "definition": "A measured ratio (or a ratio that can potentially be measured) and uncertainty of the measurement. This profile imposes that the code system for units be UCUM."
+      },
+      {
+        "id": "Ratio.extension:uncertainty",
+        "path": "Ratio.extension",
+        "sliceName": "uncertainty",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/iso21090-uncertainty"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Ratio.extension:uncertaintyType",
+        "path": "Ratio.extension",
+        "sliceName": "uncertaintyType",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/iso21090-uncertaintyType"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

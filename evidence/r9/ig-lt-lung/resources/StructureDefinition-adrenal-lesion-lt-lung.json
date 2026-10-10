@@ -1,0 +1,128 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "adrenal-lesion-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/adrenal-lesion-lt-lung",
+  "name": "AdrenalLesionLtLung",
+  "title": "Adrenal Lesion (LT Lung)",
+  "status": "active",
+  "description": "Adrenal gland lesion incidental finding detected during LDCT screening,\nper ADP dataset section 1.2.2.2 item 14.\nCaptures laterality, largest dimension, and density in Hounsfield units (HV).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "237783006",
+              "system": "http://snomed.info/sct",
+              "display": "Mass of adrenal gland (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "short": "Location: right or left adrenal gland",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/adrenal-laterality"
+        }
+      },
+      {
+        "id": "Observation.component:density",
+        "path": "Observation.component",
+        "sliceName": "density",
+        "max": "0"
+      },
+      {
+        "id": "Observation.component:largestDimension",
+        "path": "Observation.component",
+        "sliceName": "largestDimension",
+        "short": "Largest dimension in the axial plane (mm)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:largestDimension.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "439933003",
+              "system": "http://snomed.info/sct",
+              "display": "Long axis length of structure by imaging measurement (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:densityHU",
+        "path": "Observation.component",
+        "sliceName": "densityHU",
+        "short": "Density in Hounsfield units (HV)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:densityHU.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "28328005",
+              "system": "http://snomed.info/sct",
+              "display": "Abnormal radiologic density (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:densityHU.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:densityHU.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:densityHU.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "[hnsf'U]"
+      }
+    ]
+  }
+}

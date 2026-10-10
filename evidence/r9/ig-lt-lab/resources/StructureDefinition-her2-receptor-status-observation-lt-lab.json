@@ -1,0 +1,198 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "her2-receptor-status-observation-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab",
+  "version": "0.1.0",
+  "name": "Her2ReceptorStatusObservationLtLab",
+  "title": "Observation: Her2 Receptor Status",
+  "status": "draft",
+  "publisher": "HL7 LT",
+  "description": "Definition of the Observation for the Her2 receptor status",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Pathology Observation Her2 Receptor Status",
+        "constraint": [
+          {
+            "key": "inv-obs-1",
+            "human": "Observation must have either value[x] or dataAbsentReason",
+            "source": "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab",
+            "severity": "error",
+            "expression": "value.exists() or dataAbsentReason.exists()"
+          }
+        ]
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "31150-6",
+              "system": "http://loinc.org",
+              "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Patient",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.subject.reference",
+        "path": "Observation.subject.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Practitioner if resident physician or Organization Department if hospital",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer.reference",
+        "path": "Observation.performer.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept",
+        "path": "Observation.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "short": "The Her2 (human epidermal growth factor receptor 2) expression status of the tumour.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "inv-her2receptorstatus",
+            "human": "At least one of the codings should come from the preferred value set",
+            "source": "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab",
+            "severity": "warning",
+            "expression": "coding.where(code.memberOf('https://tx.hl7.lt/fhir/ValueSet/her2-receptor-status')).exists()"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/her2-receptor-status"
+        }
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding",
+        "path": "Observation.value[x].coding",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding.system",
+        "path": "Observation.value[x].coding.system",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]:valueCodeableConcept.coding.code",
+        "path": "Observation.value[x].coding.code",
+        "min": 1
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "short": "The Her2 expression status of the tumour is not performed or unknown whether performed or not"
+      },
+      {
+        "id": "Observation.dataAbsentReason.coding",
+        "path": "Observation.dataAbsentReason.coding",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "inv-obs-2",
+            "human": "The value for code must be either 'unknown' or 'not-performed'",
+            "source": "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab",
+            "severity": "error",
+            "expression": "code='unknown' or code='not-performed'"
+          }
+        ]
+      },
+      {
+        "id": "Observation.dataAbsentReason.coding.system",
+        "path": "Observation.dataAbsentReason.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      },
+      {
+        "id": "Observation.dataAbsentReason.coding.code",
+        "path": "Observation.dataAbsentReason.coding.code",
+        "min": 1
+      }
+    ]
+  }
+}

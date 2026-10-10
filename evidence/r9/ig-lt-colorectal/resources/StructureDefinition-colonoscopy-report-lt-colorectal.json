@@ -1,0 +1,66 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colonoscopy-report-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-report-lt-colorectal",
+  "name": "ColonoscopyReportLtColorectal",
+  "title": "Colonoscopy Report (LT Colorectal)",
+  "status": "active",
+  "description": "Colonoscopy screening report for the Lithuanian colorectal cancer prevention program. Wraps a ColonoscopyCompositionLtColorectal and aggregates structured results from the colonoscopy procedure.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 2
+      },
+      {
+        "id": "DiagnosticReport.code.coding:doc-type",
+        "path": "DiagnosticReport.code.coding",
+        "sliceName": "doc-type",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "73761001",
+          "system": "http://snomed.info/sct",
+          "display": "Colonoscopy (procedure)"
+        }
+      },
+      {
+        "id": "DiagnosticReport.encounter",
+        "path": "DiagnosticReport.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "short": "Colonoscopy results: scope reach, bowel prep, polyps, tumors, complications, conclusions",
+        "definition": "References to Observation and Procedure resources carrying the structured findings of the colonoscopy examination."
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-composition-lt-colorectal"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

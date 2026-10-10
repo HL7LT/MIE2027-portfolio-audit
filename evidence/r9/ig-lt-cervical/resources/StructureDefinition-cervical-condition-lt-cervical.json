@@ -1,0 +1,167 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cervical-condition-lt-cervical",
+  "url": "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-condition-lt-cervical",
+  "name": "CervicalConditionLtCervical",
+  "title": "Condition: Cervical Cancer (LT Cervical)",
+  "status": "draft",
+  "description": "Cervical cancer condition with pathological TNM staging (pT, pN, pR) and morphology classification. Follows the pattern established by ProstateConditionLtLab.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "short": "ICD-10 diagnosis code for cervical cancer",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      },
+      {
+        "id": "Condition.stage",
+        "path": "Condition.stage",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "open",
+          "description": "Slicing based on TNM stage components"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageT",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageT",
+        "short": "Pathological T stage (pTX–pT4)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageT.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-t"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageT.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "78873005",
+              "system": "http://snomed.info/sct",
+              "display": "T category (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageN",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageN",
+        "short": "Regional lymph node stage (pNX–pN2)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageN.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-n"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageN.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "277206009",
+              "system": "http://snomed.info/sct",
+              "display": "N category (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageR",
+        "path": "Condition.stage",
+        "sliceName": "tumourStageR",
+        "short": "Residual tumor classification (pRX–pR2)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:tumourStageR.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cervical-tnm-pr"
+        }
+      },
+      {
+        "id": "Condition.stage:tumourStageR.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "396631001",
+              "system": "http://snomed.info/sct",
+              "display": "Surgical margin observable (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.stage:morphology",
+        "path": "Condition.stage",
+        "sliceName": "morphology",
+        "short": "ICD-O-3 morphology code",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.stage:morphology.summary",
+        "path": "Condition.stage.summary",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/icd-o-3"
+        }
+      },
+      {
+        "id": "Condition.stage:morphology.type",
+        "path": "Condition.stage.type",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "116676008",
+              "system": "http://snomed.info/sct",
+              "display": "Associated morphology (attribute)"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

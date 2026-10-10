@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-impaired-glucose-tolerance-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "80943009",
+            "system": "http://snomed.info/sct",
+            "display": "Risk factor"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "certain",
+            "system": "http://terminology.hl7.org/CodeSystem/risk-probability",
+            "display": "Certain"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "443938003",
+            "system": "http://snomed.info/sct",
+            "display": "Procedure carried out on subject"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "183964008",
+            "system": "http://snomed.info/sct",
+            "display": "Treatment not indicated (situation)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient shows impaired fasting glucose; monitoring recommended, no treatment initiated."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "390951007",
+        "system": "http://snomed.info/sct",
+        "display": "Impaired fasting glycemia (disorder)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

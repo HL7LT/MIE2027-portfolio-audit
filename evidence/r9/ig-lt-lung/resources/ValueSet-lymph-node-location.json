@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LymphNodeLocationVS",
+  "id": "lymph-node-location",
+  "title": "Lymph Node Location",
+  "description": "Locations of lymphadenopathy detected during LDCT screening.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lymph-node-location",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "704281009",
+            "display": "Head and neck lymphadenopathy (disorder)"
+          },
+          {
+            "code": "12928009",
+            "display": "Clavicular region structure (body structure)"
+          },
+          {
+            "code": "52324001",
+            "display": "Mediastinal lymphadenopathy (disorder)"
+          },
+          {
+            "code": "87500009",
+            "display": "Hilar lymphadenopathy (disorder)"
+          },
+          {
+            "code": "127189005",
+            "display": "Axillary lymphadenopathy (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

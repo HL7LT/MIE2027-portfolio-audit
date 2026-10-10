@@ -1,0 +1,55 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstatePreciseComponentCS",
+  "id": "prostate-precise-component",
+  "title": "Prostate - PRECISE Component CS",
+  "description": "Local codes for detailed PRECISE assessment components.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+  "concept": [
+    {
+      "code": "precise-assessment",
+      "display": "PRECISE longitudinal assessment"
+    },
+    {
+      "code": "new-lesion",
+      "display": "New lesion indicator"
+    },
+    {
+      "code": "change-pattern",
+      "display": "Change pattern"
+    },
+    {
+      "code": "best-sequence",
+      "display": "Best MRI sequence for change assessment"
+    },
+    {
+      "code": "size-change-mm",
+      "display": "Size change in millimeters"
+    },
+    {
+      "code": "dimension-1-mm",
+      "display": "Dimension 1 (mm, axial)"
+    },
+    {
+      "code": "dimension-2-mm",
+      "display": "Dimension 2 (mm, axial)"
+    },
+    {
+      "code": "dimension-3-mm",
+      "display": "Dimension 3 (mm, coronal/sagittal)"
+    },
+    {
+      "code": "change-volume-cm3",
+      "display": "Change volume (cm³)"
+    },
+    {
+      "code": "prior-tnm-stage",
+      "display": "Prior TNM stage"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 10
+}

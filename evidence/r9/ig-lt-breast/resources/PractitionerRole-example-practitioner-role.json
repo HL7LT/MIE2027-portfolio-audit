@@ -1,0 +1,21 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "example-practitioner-role",
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "223366009",
+          "system": "http://snomed.info/sct",
+          "display": "Healthcare professional"
+        }
+      ]
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/example-doctor"
+  },
+  "organization": {
+    "reference": "Organization/example-organization"
+  }
+}

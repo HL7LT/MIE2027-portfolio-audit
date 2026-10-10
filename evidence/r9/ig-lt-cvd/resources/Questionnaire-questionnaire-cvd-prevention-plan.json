@@ -1,0 +1,222 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cvd-prevention-plan",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "plan-created-datetime",
+          "text": "Plan creation date and time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "cvd-rg-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Large"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cvd-rg-very-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Very large"
+              }
+            }
+          ],
+          "linkId": "plan-risk-group",
+          "text": "Risk group for heart and vascular diseases (plan)",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ldl-target-26",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "<2.6 mmol/l"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ldl-target-18",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "<1.8 mmol/l"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ldl-target-14",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "<1.4 mmol/l"
+              }
+            }
+          ],
+          "linkId": "plan-target-ldl",
+          "text": "Target LDL cholesterol considering risk group",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "linkId": "plan-target-bp",
+          "text": "Target blood pressure: 120-129/<80 mmHg",
+          "type": "display"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "cessation-pharmacological",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Pharmacological"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cessation-behavior",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Behavior change tools"
+              }
+            }
+          ],
+          "linkId": "plan-smoking-cessation",
+          "text": "Quitting smoking (interventions)",
+          "type": "coding",
+          "repeats": true
+        }
+      ],
+      "linkId": "grp-plan-header",
+      "text": "Plan",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pa-moderate-daily",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "30-60 minutes moderate activity daily"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pa-other",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Other"
+              }
+            }
+          ],
+          "linkId": "plan-physical-activity",
+          "text": "Physical activity plan",
+          "type": "coding"
+        },
+        {
+          "linkId": "plan-target-bmi",
+          "text": "Target BMI (kg/m²)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "info-healthy-nutrition",
+          "text": "Healthy nutrition — Mediterranean diet recommended; reduce salt (<5 g/day), saturated fats, and added sugar.",
+          "type": "display"
+        },
+        {
+          "linkId": "info-healthy-weight",
+          "text": "Healthy weight — target BMI < 25 kg/m²; waist circumference men < 94 cm, women < 80 cm.",
+          "type": "display"
+        },
+        {
+          "linkId": "info-regular-medication",
+          "text": "Regular medication — take all prescribed medications (statins, antihypertensives) regularly and as directed.",
+          "type": "display"
+        }
+      ],
+      "linkId": "grp-plan-lifestyle",
+      "text": "Lifestyle and weight",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "achievement-datetime",
+          "text": "Achievement evaluation date and time",
+          "type": "dateTime"
+        },
+        {
+          "linkId": "achievement-ldl-mmol",
+          "text": "Achieved LDL cholesterol (mmol/l)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "achievement-ldl-target-met",
+          "text": "Has the target LDL cholesterol been achieved?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "achievement-bp-systolic",
+          "text": "Current systolic blood pressure (mmHg)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "achievement-bp-diastolic",
+          "text": "Current diastolic blood pressure (mmHg)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "achievement-bp-target-met",
+          "text": "Has the target BP been achieved?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "achievement-smoking-quit",
+          "text": "Smoking cessation achieved (at follow-up)",
+          "type": "boolean"
+        },
+        {
+          "linkId": "achievement-height-cm",
+          "text": "Height (cm)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "achievement-weight-kg",
+          "text": "Weight (kg)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "achievement-bmi",
+          "text": "Achieved BMI (kg/m², automatically calculated)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "achievement-comments",
+          "text": "Comments from the achievement evaluator",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-achievement",
+      "text": "Achievement evaluation",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-prevention-plan",
+  "version": "0.1.0",
+  "name": "CvdPreventionPlan",
+  "title": "Plan of cardiovascular disease prevention measures and achievement evaluation",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "HL7 Lithuania",
+  "description": "Representative subset: plan metadata, risk group, LDL target, lifestyle areas, and achievement follow-up."
+}

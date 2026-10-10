@@ -1,0 +1,82 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-adrenal-lesion-right-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/adrenal-lesion-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "439933003",
+            "system": "http://snomed.info/sct",
+            "display": "Long axis length of structure by imaging measurement (observable entity)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 18,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm"
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "[hnsf'U]",
+        "value": 12,
+        "unit": "HU"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "28328005",
+            "system": "http://snomed.info/sct",
+            "display": "Abnormal radiologic density (finding)"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "404684003",
+        "system": "http://snomed.info/sct",
+        "display": "Clinical finding (finding)"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "237783006",
+        "system": "http://snomed.info/sct",
+        "display": "Mass of adrenal gland (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-11-20T14:30:00Z",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "53085002",
+        "system": "http://snomed.info/sct",
+        "display": "Right adrenal gland structure (body structure)"
+      }
+    ]
+  }
+}

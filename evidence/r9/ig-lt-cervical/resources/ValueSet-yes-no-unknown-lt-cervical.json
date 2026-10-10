@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "YesNoUnknownLtCervicalVS",
+  "id": "yes-no-unknown-lt-cervical",
+  "title": "Yes / No / Unknown (SNOMED CT) (LT Cervical)",
+  "description": "Codes used to represent clinical presence or absence.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/yes-no-unknown",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "373066001",
+            "display": "Yes (qualifier value)"
+          },
+          {
+            "code": "373067005",
+            "display": "No (qualifier value)"
+          },
+          {
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

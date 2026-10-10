@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colposcopy-biopsy-procedure-lt-cervical",
+  "url": "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-biopsy-procedure-lt-cervical",
+  "name": "ColposcopyBiopsyProcedureLtCervical",
+  "title": "Procedure: Cervical Biopsy during Colposcopy",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "Biopsy or excisional procedures performed during colposcopy as part of the Lithuanian cervical cancer screening pathway.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-procedure-type"
+        }
+      },
+      {
+        "id": "Procedure.occurrence[x]",
+        "path": "Procedure.occurrence[x]",
+        "min": 1
+      },
+      {
+        "id": "Procedure.bodySite",
+        "path": "Procedure.bodySite",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cervical-biopsy-site"
+        }
+      }
+    ]
+  }
+}

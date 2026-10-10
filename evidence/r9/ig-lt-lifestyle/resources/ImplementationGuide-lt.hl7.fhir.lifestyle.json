@@ -1,0 +1,818 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.lifestyle",
+  "url": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+  "version": "0.1.0",
+  "name": "LTLifestyle",
+  "title": "Lithuanian Lifestyle Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Lifestyle Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.lifestyle",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/alcohol-consumption-lt-lifestyle"
+        },
+        "name": "Alcohol Consumption",
+        "description": "Observation of a patient's current alcohol consumption status. Optionally includes an AUDIT-C score component when alcohol intake is present.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/alcohol-consumption-status"
+        },
+        "name": "Alcohol Consumption Status",
+        "description": "Whether the patient currently consumes alcohol, does not consume alcohol, or the status is unknown.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-audit-c-example"
+        },
+        "name": "Alcohol Use Disorder Identification Test - Consumption [AUDIT-C]",
+        "description": "The Alcohol Use Disorder Identification Test - Consumption (AUDIT-C) is a 3-item alcohol screen that can help identify persons who are hazardous drinkers or have active alcohol use disorders (including alcohol abuse or dependence). It is a subset of the 10-question AUDIT instrument and has been found to be as effective as the full AUDIT in identifying patients who are hazardous drinkers or have active alcohol use disorders. [PMID: 12695273]",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/alcohol-use-frequency"
+        },
+        "name": "Alcohol Use Frequency",
+        "description": "Frequency of alcohol consumption.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/alcohol-use-history-lt-lifestyle"
+        },
+        "name": "Alcohol Use History",
+        "description": "This profile constrains the Observation resource to represent a simple yes/no alcohol use history item.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/audit-c-lt-lifestyle"
+        },
+        "name": "AUDIT-C Total Score",
+        "description": "AUDIT-C total score (0–12) as a quantitative Observation; linked to QuestionnaireResponse if necessary.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Condition/condition-hypercholesterolemia-example"
+        },
+        "name": "Condition: Hypercholesterolemia (example)",
+        "description": "Patient has a confirmed diagnosis of hypercholesterolemia.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Device/device-physical-activity-example"
+        },
+        "name": "Device: Physical Activity (example)",
+        "description": "A smartwatch used to measure and record the number of steps taken.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-device-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/diabetes-duration-status-lt-lifestyle"
+        },
+        "name": "Diabetes Mellitus Duration Over 10 Years",
+        "description": "Observation indicating whether the patient has had Diabetes Mellitus for 10 years or more.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Organization/example-organization"
+        },
+        "name": "example-organization",
+        "description": "Example of a healthcare organization",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/family-history-cvd-lt-lifestyle"
+        },
+        "name": "Family History of Cardiovascular Disease",
+        "description": "Observation indicating whether the patient has a family history of cardiovascular disease.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/family-history-diabetes-lt-lifestyle"
+        },
+        "name": "Family History of Diabetes",
+        "description": "Observation indicating whether the patient has a family history of diabetes mellitus.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/family-member-screening-history-lt-lifestyle"
+        },
+        "name": "Family Member History for screening program",
+        "description": "Family Member History record.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/screened-condition"
+        },
+        "name": "Family Member History Screening Program Diseases",
+        "description": "Indicates whether the patient has a family member history related to the screening program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "FamilyMemberHistory/family-member-screeninghistory-mother-disease-absent-example"
+        },
+        "name": "FamilyMemberHistory: Mother disease absent (example)",
+        "description": "Patient reports a positive family member history of cardiovascular disease.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-member-screening-history-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "FamilyMemberHistory/family-member-screening-history-positive-example"
+        },
+        "name": "FamilyMemberHistory: Positive CVD (example)",
+        "description": "Patient reports a positive family member history of cardiovascular disease, diabetes milites and familial hypercholesterolemia.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-member-screening-history-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/medication-statement-lt-lifestyle"
+        },
+        "name": "Medication Statement for screening programs",
+        "description": "A simplified profile for MedicationStatement focusing on essential elements.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/medication-taken"
+        },
+        "name": "Medication taken by patient during treatment",
+        "description": "SNOMED CT concepts representing medication given/used during treatment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/medication-timing-ext-lt-lifestyle"
+        },
+        "name": "Medication Timing Extension for LT Lifestyle",
+        "description": "The timing instructions for the medication (e.g., 'Before Meals', 'With Food').",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "MedicationStatement/medication-statement-screening-example"
+        },
+        "name": "MedicationStatement: Screening (example)",
+        "description": "Example instance of a MedicationStatement for screening programs.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-statement-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/metabolic-syndrome-lt-lifestyle"
+        },
+        "name": "Metabolic Syndrome (NCEP ATP III)",
+        "description": "Observation indicating presence of metabolic syndrome according to NCEP ATP III criteria (≥3 of 5 signs).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/metabolic-syndrome-assessment"
+        },
+        "name": "Metabolic Syndrome Assessment (NCEP ATP III)",
+        "description": "Assessment of metabolic syndrome presence according to NCEP ATP III criteria.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/number-of-steps-lt-lifestyle"
+        },
+        "name": "Number of Steps",
+        "description": "The measurement tracks the count of steps taken by an individual during one day.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/nutrition-lt-lifestyle"
+        },
+        "name": "Nutrition",
+        "description": "Observation profile representing the patient's nutrition status (balanced vs. unbalanced).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/nutrition-status"
+        },
+        "name": "Nutrition Status",
+        "description": "Categorical assessment of whether the patient's nutrition is balanced or unbalanced.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-alcohol-history-yes-example"
+        },
+        "name": "Observation: Alcohol Consumption History – Yes (example)",
+        "description": "Patient reports alcohol consumption with additional structured details.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/alcohol-use-history-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-alcohol-consumption-no-example"
+        },
+        "name": "Observation: Alcohol Consumption – No (example)",
+        "description": "Patient is currently not drinking alcohol (sober) at the time of assessment.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/alcohol-consumption-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-auditc-example"
+        },
+        "name": "Observation: AUDIT-C (example)",
+        "description": "AUDIT-C total score with reference to the answer.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/audit-c-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-family-history-cvd-positive-example"
+        },
+        "name": "Observation: Family History of Cardiovascular Disease – Positive (example)",
+        "description": "Patient reports a positive family history of cardiovascular disease.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-history-cvd-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-family-history-diabetes-positive-example"
+        },
+        "name": "Observation: Family History of Diabetes – Positive (example)",
+        "description": "Patient reports a family history of diabetes mellitus.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-history-diabetes-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-metabolic-syndrome-example"
+        },
+        "name": "Observation: Metabolic Syndrome Assessment (example)",
+        "description": "Example showing metabolic syndrome present according to NCEP ATP III criteria.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/metabolic-syndrome-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-number-of-steps-example"
+        },
+        "name": "Observation: Number of Steps (example)",
+        "description": "Example observation representing the number of steps taken by a person in 24 hours.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/number-of-steps-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-nutrition-balanced-example"
+        },
+        "name": "Observation: Nutrition – Balanced (example)",
+        "description": "Example showing a patient with balanced (healthy) nutrition.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/nutrition-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-physical-activity-below-example"
+        },
+        "name": "Observation: Physical Activity - Below Recommended Level (example)",
+        "description": "Example instance showing a patient whose physical activity level is below recommended standards.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tobacco-smoking-consumption-example"
+        },
+        "name": "Observation: Smoking Consumption - Light cigarette smoker (example)",
+        "description": "Example instance showing a patient who is a light cigarette smoker.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-smoking-consumption-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tobacco-use-current-smoker-example"
+        },
+        "name": "Observation: Smoking Status - Current Smoker (example)",
+        "description": "Example instance showing a patient who currently smokes.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tobacco-smoking-stopped-example"
+        },
+        "name": "Observation: Tobacco Smoking Stopped - 2 years ago (example)",
+        "description": "Example instance showing a patient who has stopped smoking 2 years ago.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-smoking-stopped-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tobacco-type-used-example"
+        },
+        "name": "Observation: Tobacco Type Used - Cigarette smoker (example)",
+        "description": "Example instance showing a patient who is a cigarette smoker.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-type-used-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tobacco-use-duration-example"
+        },
+        "name": "Observation: Tobacco Use Duration - 5 years (example)",
+        "description": "Example instance showing a patient who has been smoking for 5 years.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-duration-lt-lifestyle"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/activity-other-description-ext-lt-lifestyle"
+        },
+        "name": "Other Activity Description",
+        "description": "Free text description required when the 'Other' option is selected for physical activity or a similar behavioral intervention.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/other-dietary-changes-ext-lt-lifestyle"
+        },
+        "name": "Other Desired Dietary Changes",
+        "description": "Additional information provided about desired dietary changes (text field).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-male-example"
+        },
+        "name": "Patient: Jonas Petrauskas (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/physical-activity-lt-lifestyle"
+        },
+        "name": "Physical Activity",
+        "description": "This profile constrains the Observation resource to represent the patient's level of physical activity compared to recommended standards.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/physical-activity-level"
+        },
+        "name": "Physical Activity Level",
+        "description": "Categorical assessment of whether the patient's physical activity meets, exceeds, or falls below recommended levels.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/physical-activity-device-lt-lifestyle"
+        },
+        "name": "Physical Activity Measurement Device",
+        "description": "Device used to measure physical activity metrics such as number of steps.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Dr. Petras Kazlauskas (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaire-response-auditc-example"
+        },
+        "name": "QuestionnaireResponse: AUDIT-C (example)",
+        "description": "Minimal QR to which the Observation refers.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/family-history-cvd-status"
+        },
+        "name": "Status of the Family History of Cardiovascular Disease",
+        "description": "Indicates whether the patient has a family history of cardiovascular disease.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/family-history-diabetes-status"
+        },
+        "name": "Status of the Family History of Diabetes",
+        "description": "Indicates whether the patient has a family history of diabetes mellitus.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tobacco-smoking-consumption-lt-lifestyle"
+        },
+        "name": "Tobacco Smoking Consumption",
+        "description": "This profile constrains the Observation resource to represent Tobacco smoking consumption assessment in a patient summary.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tobacco-smoking-consumption"
+        },
+        "name": "Tobacco Smoking Consumption - Cigarettes per day",
+        "description": "Categorical representation of average cigarettes smoked per day.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tobacco-smoking-stopped-lt-lifestyle"
+        },
+        "name": "Tobacco Smoking Stopped - Number of Years Ago",
+        "description": "Records how long it has been since the patient stopped smoking, as a quantitative time interval (e.g., years). ",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tobacco-type-used-lt-lifestyle"
+        },
+        "name": "Tobacco Type Used",
+        "description": "Records the type of tobacco product currently or previously used by the patient (e.g., cigarettes, cigars, e-cigarettes).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tobacco-type-user"
+        },
+        "name": "Tobacco Type User",
+        "description": "Records the type of tobacco product currently or previously used by the person (e.g., cigarettes, cigars, e-cigarettes).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tobacco-use-lt-lifestyle"
+        },
+        "name": "Tobacco Use",
+        "description": "This profile constrains the Observation resource to represent Tobacco use assessment in a patient summary.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tobacco-use-duration-lt-lifestyle"
+        },
+        "name": "Tobacco Use Duration - Number in Years",
+        "description": "Amount of time (e.g. years) the patient has used smoking or smokeless tobacco products",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/smoking-status"
+        },
+        "name": "Tobacco. Current Smoking Status",
+        "description": "HL7 LT SNOMED value set for smoking status.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/treatment-status"
+        },
+        "name": "Treatment Status",
+        "description": "Indicates whether a screening treatment or intervention has been provided for a risk factor.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/yes-no"
+        },
+        "name": "Yes-No options",
+        "description": "Selection Yes or No.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Translation Information",
+          "generation": "markdown",
+          "name": "translationinfo.html",
+          "sourceUrl": "translationinfo.html"
+        },
+        {
+          "title": "Changelog",
+          "generation": "markdown",
+          "name": "changelog.html",
+          "sourceUrl": "changelog.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/alcohol-consumption-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/alcohol-use-frequency"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/family-history-cvd-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/family-history-diabetes-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/medication-taken"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/metabolic-syndrome-assessment"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/nutrition-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/physical-activity-level"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/screened-condition"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/screening-programme"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/smoking-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tobacco-smoking-consumption"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tobacco-type-user"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/treatment-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/yes-no"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

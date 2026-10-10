@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LungRadsModifierVS",
+  "id": "lung-rads-modifier",
+  "title": "LUNG-RADS Assessment Modifier Codes",
+  "description": "Allowed LUNG-RADS assessment modifier codes used in the Lithuanian\nlung cancer early diagnosis programme.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-modifier",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-modifier"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "HpvRiskGroupLtCervical",
+  "id": "hpv-risk-group-lt-cervical",
+  "title": "HPV Risk Groups CodeSystem (LT Cervical)",
+  "description": "Specific HPV risk groupings",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+  "concept": [
+    {
+      "code": "highest",
+      "display": "Highest risk genotype group (16, 18)"
+    },
+    {
+      "code": "medium",
+      "display": "Medium-risk genotype group (31, 33, 35, 45, 52, 58)"
+    },
+    {
+      "code": "lower",
+      "display": "Lower risk genotype group (39, 51, 56, 59, 68)"
+    },
+    {
+      "code": "low",
+      "display": "Low-risk HPV genotype group (53, 66, others)"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 4
+}

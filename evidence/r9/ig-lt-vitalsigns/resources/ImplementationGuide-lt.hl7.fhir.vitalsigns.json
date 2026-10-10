@@ -1,0 +1,1209 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.vitalsigns",
+  "url": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+  "version": "0.1.0",
+  "name": "LTVitalSigns",
+  "title": "Lithuanian Vital Signs Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Vital Signs Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.vitalsigns",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "profiles",
+        "name": "Profiles",
+        "description": "Observation, Device, and BodyStructure profiles for vital signs"
+      },
+      {
+        "id": "extensions",
+        "name": "Extensions",
+        "description": "Extensions for vital signs context"
+      },
+      {
+        "id": "terminology",
+        "name": "Terminology",
+        "description": "ValueSets and CodeSystems for vital signs"
+      },
+      {
+        "id": "examples",
+        "name": "Examples",
+        "description": "Example instances for vital signs and devices"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/blood-pressure-panel"
+        },
+        "name": "Blood Pressure Panel",
+        "description": "Blood Pressure Panel; a grouping of systolic, diastolic, and mean arterial blood pressure components.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-height"
+        },
+        "name": "Body Height",
+        "description": "The measurement in centimeters or feet and inches from the top of the head to the heel, usually while standing.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/bmi"
+        },
+        "name": "Body Mass Index",
+        "description": "Body Mass Index (BMI) is a measure of body fat based on height and weight.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-weight"
+        },
+        "name": "Body Weight",
+        "description": "The measured mass of an individual's body.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/heart-rate"
+        },
+        "name": "Heart Rate",
+        "description": "The number of heart beats in a minute.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/head-circumference"
+        },
+        "name": "Head Circumference",
+        "description": "Head Occipital-frontal circumference by Tape measure. The measurement in centimeters or inches around the largest part of the head.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/waist-circumference"
+        },
+        "name": "Waist Circumference",
+        "description": "Waist circumference by Tape measure. The measurement in centimeters or inches around the narrowest part of the waist.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/device-blood-pressure"
+        },
+        "name": "Device for Blood Pressure Measurement",
+        "description": "Device used to measure blood pressure.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/device-body-height"
+        },
+        "name": "Device for Body Height Measurement",
+        "description": "Device used to measure body height.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/device-body-weight"
+        },
+        "name": "Body Weight Measurement Device",
+        "description": "Device used to measure body weight.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/device-heart-rate"
+        },
+        "name": "Device for Heart Rate Measurement",
+        "description": "Device used to measure heart rate.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-structure-blood-pressure"
+        },
+        "name": "Body Structure for Blood Pressure",
+        "description": "Body Structure profile to describe where on the body a blood pressure measurement was taken.",
+        "groupingId": "profiles",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/associated-situation"
+        },
+        "name": "Associated Situation Extension",
+        "description": "Situations that may affect the measurement or assessment.",
+        "groupingId": "extensions",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-position"
+        },
+        "name": "Body Position Extension",
+        "description": "The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code.",
+        "groupingId": "extensions",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/exercise-association"
+        },
+        "name": "Exercise Association Extension",
+        "description": "The exercise state associated with the measurement.",
+        "groupingId": "extensions",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/measurement-setting"
+        },
+        "name": "Measurement Setting Extension",
+        "description": "The location or setting the subject was in when the measurement was obtained. For example, home, clinic, hospital. etc.",
+        "groupingId": "extensions",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sleep-status"
+        },
+        "name": "Sleep Status Extension",
+        "description": "The state of wakefulness during the measurement.",
+        "groupingId": "extensions",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-cuff-size"
+        },
+        "name": "Blood Pressure Cuff Size",
+        "description": "SNOMED CT code system values that describe the size of blood pressure cuff in use.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-panel-observation"
+        },
+        "name": "BP Panel observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial systolic and diastolic BP panel of vital signs measurements in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-panel-observation-snomed"
+        },
+        "name": "Blood Pressure Panel observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for blood pressure panel vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-systolic-observation"
+        },
+        "name": "BP Systolic observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial systolic BP vital sign measurement in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-systolic-observation-snomed"
+        },
+        "name": "BP Systolic observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for systolic blood pressure component in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-diastolic-observation"
+        },
+        "name": "BP Diastolic observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing an arterial diastolic BP vital sign measurement in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-diastolic-observation-snomed"
+        },
+        "name": "BP Diastolic observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for diastolic blood pressure component in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-mean-observation"
+        },
+        "name": "BP Mean observation codes (LOINC)",
+        "description": "LOINC codes for mean arterial blood pressure component in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-mean-observation-snomed"
+        },
+        "name": "BP Mean observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for mean arterial blood pressure component in Observation.component.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-unit"
+        },
+        "name": "Blood Pressure Units",
+        "description": "UCUM units for recording blood pressure.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-measurement-body-location"
+        },
+        "name": "Blood Pressure Measurement Body Location",
+        "description": "SELECT SNOMED CT code system values that describe the location on the body where the blood pressure was measured.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bp-measurement-method"
+        },
+        "name": "Blood Pressure Measurement Method",
+        "description": "SNOMED CT code system values that describe how a blood pressure was measured.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/heart-rate-observation"
+        },
+        "name": "Heart Rate observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing heart rate vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/heart-rate-observation-snomed"
+        },
+        "name": "Heart Rate observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for heart rate vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/heart-rate-measurement-body-location"
+        },
+        "name": "Heart Rate Measurement Body Location",
+        "description": "SNOMED CT code system values that describe where on the body the heart rate was measured.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/heart-rate-measurement-method"
+        },
+        "name": "Heart Rate Measurement Method",
+        "description": "SNOMED CT code system values that describe how the heart rate was measured.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-height-observation"
+        },
+        "name": "Body Height observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing body height (including body length) vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-height-observation-snomed"
+        },
+        "name": "Body Height observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for body height vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-weight-observation"
+        },
+        "name": "Body Weight observation codes",
+        "description": "This value set defines the set of LOINC codes considered to be appropriate for representing body weight vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-weight-observation-snomed"
+        },
+        "name": "Body Weight observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for body weight vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bmi-observation"
+        },
+        "name": "Body Mass Index observation codes (LOINC)",
+        "description": "LOINC codes for body mass index vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bmi-observation-snomed"
+        },
+        "name": "Body Mass Index observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for body mass index vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bmi-unit"
+        },
+        "name": "BMI Units",
+        "description": "UCUM units for recording BMI",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-length-unit"
+        },
+        "name": "Body Length Units",
+        "description": "UCUM units for recording body length measures such as height and head circumference",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-weight-associated-situation"
+        },
+        "name": "Body Weight Associated Situation",
+        "description": "SNOMED CT code system values and temporary code system values that describe situations to be considered when interpreting measured values.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/vital-signs-rate-unit"
+        },
+        "name": "Rate Units",
+        "description": "UCUM rate units for recording vital signs including heart and respiratory rate.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/height-length-measurement-method"
+        },
+        "name": "Height Length Measurement Method",
+        "description": "SNOMED CT code system values that describe how the height/length was measured.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/head-circumference-observation"
+        },
+        "name": "Head Circumference observation codes (LOINC)",
+        "description": "LOINC codes for head circumference vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/head-circumference-observation-snomed"
+        },
+        "name": "Head Circumference observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for head circumference vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/waist-circumference-observation-loinc"
+        },
+        "name": "Waist Circumference observation codes (LOINC)",
+        "description": "LOINC codes for waist circumference vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/waist-circumference-observation-snomed"
+        },
+        "name": "Waist Circumference observation codes (SNOMED CT)",
+        "description": "SNOMED CT codes for waist circumference vital sign measurements in Observation.code.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/waist-circumference-result-interpretation"
+        },
+        "name": "WaistCircumference Result Interpretation value set",
+        "description": " that describes interpretations associated with a measured value.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/device-type-blood-pressure"
+        },
+        "name": "Device Types for Blood Pressure Measurement",
+        "description": "SNOMED CT code system values that describe the isntrument used to measure the blood pressure.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/device-type-height-length"
+        },
+        "name": "Device Types for Height Length Measurement",
+        "description": "SNOMED CT code system values that describe the instrument used to measure the body height/length.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/device-type-weight"
+        },
+        "name": "Device Types for Weight Measurement",
+        "description": "SNOMED CT code system values that describe the instrument used to measure the body weight.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/device-type-heart-rate"
+        },
+        "name": "Device Types for Heart Rate Measurement",
+        "description": "SELECT SNOMED CT code system values that describe the instrument used to measure the heart rate.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/body-position"
+        },
+        "name": "Body Position used in Vital Signs Measurements",
+        "description": "SNOMED CT code system values the position in which the individual was in during a measurement.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/sleep-status"
+        },
+        "name": "Sleep Status in Vital Signs Measurements",
+        "description": "SNOMED CT code system values that contains terms used to indicate the state of wakefulness during measurement.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/exertion-phase"
+        },
+        "name": "Exertion Phase",
+        "description": "SNOMED CT code system values that contains terms for exercise associated with a measurement.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/measurement-environment"
+        },
+        "name": "Measurement Environment",
+        "description": "Environment that indicate the surroundings the individual was in during the measurement (i.e. home, clinic, hospital, etc.).",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/numeric-result-interpretation"
+        },
+        "name": "Numeric Result Interpretation value set",
+        "description": "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/numeric-result-interpretation-non-panic"
+        },
+        "name": "Numeric Result Interpretation without panic values, value set",
+        "description": "The HL7 V3:ObservationInterpretation code set (OID: 2.16.840.1.113883.5.83) that describes interpretations associated with a measured value, constrained to terms that are not those associated with 'panic' terms.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/snomed-vitalsigns-extension"
+        },
+        "name": "SNOMED CT Vital Signs Extension",
+        "description": "A set of codes that are defined in the Vital Signs extension to the SNOMED CT code system. To be used until they are adopted by SNOMED CT.",
+        "groupingId": "terminology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-example"
+        },
+        "name": "Patient: John Doe (example)",
+        "description": "An example Patient.",
+        "groupingId": "examples",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-blood-pressure-example"
+        },
+        "name": "Observation: Blood Pressure (example)",
+        "description": "Example observation representing a patient's blood pressure measurement.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-heart-rate-example"
+        },
+        "name": "Observation: Heart Rate (example)",
+        "description": "Example observation representing the patient's heart rate measured at rest.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/heart-rate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-body-height-example"
+        },
+        "name": "Observation: Body Height (example)",
+        "description": "Example observation representing the patient's body height measured in centimeters.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-height"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-body-weight-example"
+        },
+        "name": "Observation: Body Weight (example)",
+        "description": "Example observation representing the patient's body weight measured in kilograms.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-weight"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bmi-example"
+        },
+        "name": "Observation: Body Mass Index (example)",
+        "description": "An example BMI measurement for a patient.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/bmi"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-head-circumference-example"
+        },
+        "name": "Observation: Head Circumference (example)",
+        "description": "Measured head circumference using a tape measure.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/head-circumference"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-waist-circumference-example"
+        },
+        "name": "Observation: Waist Circumference (example)",
+        "description": "Measured waist circumference using a tape measure.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/waist-circumference"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Device/device-blood-pressure-example"
+        },
+        "name": "Device: Blood Pressure Measurement (example)",
+        "description": "Automated digital blood pressure monitor with adult cuff.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-blood-pressure"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Device/device-body-height-example"
+        },
+        "name": "Device: Body Height Measurement (example)",
+        "description": "A stadiometer used to measure the patient's height.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-body-height"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Device/device-body-weight-example"
+        },
+        "name": "Device: Body Weight Measurement (example)",
+        "description": "A weighing scale used to measure the patient's body weight.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-body-weight"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Device/device-heart-rate-example"
+        },
+        "name": "Device: Heart Rate Measurement (example)",
+        "description": "An automated digital heart rate monitor used for the measurement.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-heart-rate"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodystructure-blood-pressure-example"
+        },
+        "name": "BodyStructure: Blood Pressure Measurement Site (example)",
+        "description": "Example showing where on the body a blood pressure measurement was taken.",
+        "groupingId": "examples",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-structure-blood-pressure"
+        ]
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Guidance",
+          "generation": "markdown",
+          "name": "guidance.html",
+          "sourceUrl": "guidance.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Change Log",
+          "generation": "markdown",
+          "name": "changelog.html",
+          "sourceUrl": "changelog.html"
+        },
+        {
+          "title": "Translation",
+          "generation": "markdown",
+          "name": "translationinfo.html",
+          "sourceUrl": "translationinfo.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bmi-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bmi-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bmi-unit"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-height-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-height-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-length-unit"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-position"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-weight-associated-situation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-weight-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/body-weight-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-cuff-size"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-measurement-body-location"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bp-unit"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/device-type-blood-pressure"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/device-type-height-length"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/device-type-weight"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/exertion-phase"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/head-circumference-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-device"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/measurement-environment"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation-non-panic"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/rate-unit"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/sleep-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-snomed"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-result-interpretation"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

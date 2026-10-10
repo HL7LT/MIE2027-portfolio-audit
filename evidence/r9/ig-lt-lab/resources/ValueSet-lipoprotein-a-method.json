@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "LipoproteinAMethodLabLt",
+  "id": "lipoprotein-a-method",
+  "title": "Lipoprotein(a) Method",
+  "description": "LOINC codes for measuring lipoprotein(a) — mass (mg/dL) and molar (nmol/L) methods.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lipoprotein-a-method",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "10835-7",
+            "display": "Lipoprotein a [Mass/volume] in Serum or Plasma"
+          },
+          {
+            "code": "43583-4",
+            "display": "Lipoprotein a [Moles/volume] in Serum or Plasma"
+          }
+        ]
+      }
+    ]
+  }
+}

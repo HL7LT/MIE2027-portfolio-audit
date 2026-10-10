@@ -1,0 +1,44 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "BreastBiopsyProcedureTypeVS",
+  "id": "breast-biopsy-procedure-type",
+  "title": "Breast Biopsy Procedure Type",
+  "description": "Types of breast biopsy procedures used in the breast cancer prevention program.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-biopsy-procedure-type",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "432550005",
+            "display": "Core needle biopsy of breast using ultrasound guidance (procedure)"
+          },
+          {
+            "code": "432337008",
+            "display": "Fine needle aspiration biopsy of breast using ultrasound guidance (procedure)"
+          },
+          {
+            "code": "702556008",
+            "display": "Biopsy of lymph node using ultrasound guidance (procedure)"
+          },
+          {
+            "code": "44578009",
+            "display": "Core needle biopsy of breast (procedure)"
+          },
+          {
+            "code": "387736007",
+            "display": "Fine needle aspiration of breast (procedure)"
+          },
+          {
+            "code": "392090004",
+            "display": "Operation on breast (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

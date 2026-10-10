@@ -1,0 +1,193 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CvdQuestionnaireMappingTarget",
+  "id": "cvd-questionnaire-mapping-target",
+  "title": "CVD questionnaire mapping target (profiles)",
+  "description": "Target codes for ConceptMap rows: Lithuanian programme StructureDefinitions and related profiles referenced from ESPBI Questionnaires.",
+  "url": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target",
+  "concept": [
+    {
+      "code": "cvd-risk-assessment-lt-cvd",
+      "display": "CVDRiskAssessmentLtCvd"
+    },
+    {
+      "code": "cvd-chronic-condition-lt-cvd",
+      "display": "CvdChronicConditionLtCvd"
+    },
+    {
+      "code": "risk-factor-status-lt-cvd",
+      "display": "RiskFactorStatusLtCvd"
+    },
+    {
+      "code": "tobacco-use-lt-lifestyle",
+      "display": "TobaccoUseLtLifestyle"
+    },
+    {
+      "code": "body-height",
+      "display": "BodyHeight (Vital Signs)"
+    },
+    {
+      "code": "body-weight",
+      "display": "BodyWeight (Vital Signs)"
+    },
+    {
+      "code": "waist-circumference",
+      "display": "WaistCircumference (Vital Signs)"
+    },
+    {
+      "code": "blood-pressure-panel",
+      "display": "BloodPressurePanel (Vital Signs)"
+    },
+    {
+      "code": "total-cholesterol-lab-lt",
+      "display": "TotalCholesterolLabLt"
+    },
+    {
+      "code": "cholesterol-hdl-lab-lt",
+      "display": "CholesterolHdlLabLt"
+    },
+    {
+      "code": "cholesterol-ldl-lab-lt",
+      "display": "CholesterolLdlLabLt"
+    },
+    {
+      "code": "triglycerides-lab-lt",
+      "display": "TriglyceridesLabLt"
+    },
+    {
+      "code": "lipidogram-lab-lt",
+      "display": "LipidogramLabLt"
+    },
+    {
+      "code": "risk-group-observation-lt-cvd",
+      "display": "RiskGroupObservationLtCvd"
+    },
+    {
+      "code": "care-plan-lt-cvd",
+      "display": "CarePlanLtCvd"
+    },
+    {
+      "code": "risk-group-ext-lt-cvd",
+      "display": "RiskGroupExtLtCvd"
+    },
+    {
+      "code": "physical-activity-lt-lifestyle",
+      "display": "PhysicalActivityLtLifestyle"
+    },
+    {
+      "code": "bmi",
+      "display": "BMI (Vital Signs)"
+    },
+    {
+      "code": "observation-lt",
+      "display": "ObservationLt (LT Base)"
+    },
+    {
+      "code": "encounter-lt",
+      "display": "EncounterLt (LT Base)"
+    },
+    {
+      "code": "practitioner-role-lt",
+      "display": "PractitionerRoleLt (LT Base)"
+    },
+    {
+      "code": "service-request-lt",
+      "display": "ServiceRequestLt (LT Base)"
+    },
+    {
+      "code": "appointment-lt",
+      "display": "AppointmentLt (LT Base)"
+    },
+    {
+      "code": "patient-lt",
+      "display": "PatientLt (LT Base)"
+    },
+    {
+      "code": "practitioner-lt",
+      "display": "PractitionerLt (LT Base)"
+    },
+    {
+      "code": "organization-lt",
+      "display": "OrganizationLt (LT Base)"
+    },
+    {
+      "code": "heart-rate",
+      "display": "HeartRate (Vital Signs)"
+    },
+    {
+      "code": "glucose-venous-lab-lt",
+      "display": "GlucoseVenousLabLt"
+    },
+    {
+      "code": "hba1c-lab-lt",
+      "display": "Hba1cLabLt"
+    },
+    {
+      "code": "creatinine-test-lab-lt",
+      "display": "CreatinineTestLabLt"
+    },
+    {
+      "code": "egfr-lab-lt",
+      "display": "EgfrLabLt"
+    },
+    {
+      "code": "alcohol-consumption-lt-lifestyle",
+      "display": "AlcoholConsumptionLtLifestyle"
+    },
+    {
+      "code": "nutrition-lt-lifestyle",
+      "display": "NutritionLtLifestyle"
+    },
+    {
+      "code": "family-history-cvd-lt-lifestyle",
+      "display": "FamilyHistoryCvdLtLifestyle"
+    },
+    {
+      "code": "ekg-lt-cvd",
+      "display": "EKGLtCvd"
+    },
+    {
+      "code": "medication-statement-lt-lifestyle",
+      "display": "MedicationStatementLtLifestyle"
+    },
+    {
+      "code": "diabetes-duration-status-lt-lifestyle",
+      "display": "DiabetesDurationStatusLtLifestyle"
+    },
+    {
+      "code": "tobacco-use-duration-lt-lifestyle",
+      "display": "TobaccoUseDurationLtLifestyle"
+    },
+    {
+      "code": "tobacco-type-used-lt-lifestyle",
+      "display": "TobaccoTypeUsedLtLifestyle"
+    },
+    {
+      "code": "audit-c-lt-lifestyle",
+      "display": "AuditCLtLifestyle"
+    },
+    {
+      "code": "family-history-diabetes-lt-lifestyle",
+      "display": "FamilyHistoryDiabetesLtLifestyle"
+    },
+    {
+      "code": "metabolic-syndrome-lt-lifestyle",
+      "display": "MetabolicSyndromeLtLifestyle"
+    },
+    {
+      "code": "acr-lab-lt",
+      "display": "AcrLabLt"
+    },
+    {
+      "code": "cholesterol-non-hdl-lab-lt",
+      "display": "CholesterolNonHdlLabLt"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 44
+}

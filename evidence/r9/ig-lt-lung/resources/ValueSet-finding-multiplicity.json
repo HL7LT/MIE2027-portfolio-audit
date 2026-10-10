@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FindingMultiplicityVS",
+  "id": "finding-multiplicity",
+  "title": "Finding Multiplicity",
+  "description": "Number of occurrences of a finding: singular or multiple.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/finding-multiplicity",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "50607009",
+            "display": "Singular"
+          },
+          {
+            "code": "255204007",
+            "display": "Multiple"
+          }
+        ]
+      }
+    ]
+  }
+}

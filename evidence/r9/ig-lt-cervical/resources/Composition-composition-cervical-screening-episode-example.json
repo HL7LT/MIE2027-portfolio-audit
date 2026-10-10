@@ -1,0 +1,402 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-cervical-screening-episode-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/cervical-composition-lt-cervical"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.330.1",
+      "value": "CERVICAL-COMP-2025-0001"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/patient-female-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticreport-cervical-report-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "US",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Ultrasound"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "171149006",
+                "system": "http://snomed.info/sct",
+                "display": "Screening for malignant neoplasm of cervix (procedure)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Cervical cancer screening referral.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No prior studies available for comparison.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Regular menstrual cycle, day 14. No hormone therapy. No previous conization.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-clinical-history-routine-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "Clinical History"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Colposcopy performed on 2025-02-10.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/procedure-colposcopy-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Colposcopy Procedure"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HPV 16 detected. Cytology: LSIL. Colposcopy: adequate, Swede score 3, low risk.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-hpv-result-example"
+        },
+        {
+          "reference": "Observation/observation-cytology-conclusion-example"
+        },
+        {
+          "reference": "Observation/observation-colposcopy-finding-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Low-risk findings. Follow-up in 12 months recommended.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Repeat HPV and cytology in 12 months.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendations",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No additional communications.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "73568-8",
+            "display": "Communication of critical results [Description] Document"
+          }
+        ]
+      },
+      "title": "Communications",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HPV DNA detected: type 16.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "DiagnosticReport/diagnosticreport-hpv-example"
+        }
+      ],
+      "title": "HPV Testing",
+      "code": {
+        "coding": [
+          {
+            "code": "35904009",
+            "system": "http://snomed.info/sct",
+            "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Cytology conclusion: LSIL.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "DiagnosticReport/diagnosticreport-cytology-example"
+        }
+      ],
+      "title": "Cervical Cytology (Pap Test)",
+      "code": {
+        "coding": [
+          {
+            "code": "416107004",
+            "system": "http://snomed.info/sct",
+            "display": "Cervical cytology test (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Colposcopy: adequate, Swede score 3, low risk.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "DiagnosticReport/diagnosticreport-colposcopy-example"
+        }
+      ],
+      "title": "Colposcopy Examination",
+      "code": {
+        "coding": [
+          {
+            "code": "392003006",
+            "system": "http://snomed.info/sct",
+            "display": "Colposcopy (procedure)"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>See <a href=\"https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-tobacco-use-example.html\">Tobacco Use</a> and <a href=\"https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-physical-activity-example.html\">Physical Activity</a> examples from the Lifestyle IG.</p></div>"
+      },
+      "title": "Lifestyle Factors",
+      "code": {
+        "coding": [
+          {
+            "code": "443781008",
+            "system": "http://snomed.info/sct",
+            "display": "Assessment of lifestyle (procedure)"
+          }
+        ]
+      },
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>See <a href=\"https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-bmi-example.html\">BMI</a> example from the VitalSigns IG.</p></div>"
+      },
+      "title": "Vital Signs",
+      "code": {
+        "coding": [
+          {
+            "code": "118227000",
+            "system": "http://snomed.info/sct",
+            "display": "Vital signs finding (finding)"
+          }
+        ]
+      },
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "unavailable",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Unavailable"
+          }
+        ]
+      }
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      },
+      {
+        "code": "721981007",
+        "system": "http://snomed.info/sct",
+        "display": "Diagnostic studies report (record artifact)"
+      }
+    ]
+  },
+  "status": "final",
+  "date": "2025-03-20",
+  "title": "Cervical Cancer Screening Episode"
+}

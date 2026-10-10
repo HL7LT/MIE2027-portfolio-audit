@@ -1,0 +1,97 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "location-eu-core",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 2
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+      "valueCode": "trial-use"
+    }
+  ],
+  "url": "http://hl7.eu/fhir/base-r5/StructureDefinition/location-eu",
+  "version": "2.0.0-ballot",
+  "name": "LocationEuCore",
+  "title": "Location (EU core)",
+  "status": "active",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "This profile sets minimum expectations for the Location resource to be used for the purpose of this guide.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright HL7 Europe. Licensed under creative commons public domain (CC0 1.0).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Location",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Location.identifier",
+        "path": "Location.identifier",
+        "short": "Location identifier"
+      },
+      {
+        "id": "Location.name",
+        "path": "Location.name",
+        "short": "Location name"
+      },
+      {
+        "id": "Location.type",
+        "path": "Location.type",
+        "short": "Location type"
+      },
+      {
+        "id": "Location.contact",
+        "path": "Location.contact",
+        "short": "Location telecom"
+      },
+      {
+        "id": "Location.address",
+        "path": "Location.address",
+        "type": [
+          {
+            "code": "Address",
+            "profile": [
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/Address-eu"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Location.managingOrganization",
+        "path": "Location.managingOrganization",
+        "short": "Managing organization",
+        "comment": "The managing organization is the organization responsible for the location, such as a hospital or clinic."
+      },
+      {
+        "id": "Location.partOf",
+        "path": "Location.partOf",
+        "short": "Location this one is physically a part of"
+      }
+    ]
+  }
+}

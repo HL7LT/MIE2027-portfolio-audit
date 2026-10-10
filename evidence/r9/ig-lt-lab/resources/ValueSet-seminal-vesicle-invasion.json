@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SeminalVesicleInvasionVS",
+  "id": "seminal-vesicle-invasion",
+  "title": "Seminal Vesicle Invasion",
+  "description": "Microscopic finding of tumor infiltration in seminal vesicles or ejaculatory duct.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/seminal-vesicle-invasion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "385000004",
+            "display": "Seminal vesicle invasion by tumor not identified (finding)"
+          },
+          {
+            "code": "372294007",
+            "display": "Seminal vesicle invasion by tumor present (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1556 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.lab",
+  "url": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+  "version": "0.1.0",
+  "name": "LtLab",
+  "title": "Lithuanian Laboratory Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Laboratory Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.lab",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "GroupA",
+        "name": "Clinical Chemistry",
+        "description": "Clinical Chemistry observations and related profiles"
+      },
+      {
+        "id": "GroupF",
+        "name": "Liver Function",
+        "description": "Liver function enzyme observations"
+      },
+      {
+        "id": "GroupG",
+        "name": "Electrolytes",
+        "description": "Electrolyte observations"
+      },
+      {
+        "id": "GroupB",
+        "name": "Glycemic Control",
+        "description": "Glycemic Control observations and Diabetes Monitoring"
+      },
+      {
+        "id": "GroupC",
+        "name": "Renal Function",
+        "description": "Renal Function (Kidney) Panel"
+      },
+      {
+        "id": "GroupD",
+        "name": "Pathology",
+        "description": "Pathology orders, reports, and related profiles"
+      },
+      {
+        "id": "GroupE",
+        "name": "Specimen",
+        "description": "Specimen and specimen-related observations"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/acr-lab-lt"
+        },
+        "name": "Albumin/Creatinine Ratio (ACR)",
+        "description": "Observation representing the urine albumin-to-creatinine ratio (ACR), used to assess kidney function in diabetic patients.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/alt-lab-lt"
+        },
+        "name": "ALT (GPT)",
+        "description": "Observation representing alanine aminotransferase (ALT/GPT) enzymatic activity in serum or plasma.\nSupports two method variants: with P-5'-P (LOINC 1743-4) and without P-5'-P (LOINC 1744-2).\nIFCC guidelines recommend the method with P-5'-P.",
+        "groupingId": "GroupF",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/alt-method"
+        },
+        "name": "ALT (GPT) Method",
+        "description": "LOINC codes for measuring alanine aminotransferase (ALT/GPT) — with and without pyridoxal-5'-phosphate (P-5-P).",
+        "groupingId": "GroupF",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/apolipoprotein-b-lab-lt"
+        },
+        "name": "Apolipoprotein B",
+        "description": "Observation representing the patient's apolipoprotein B (Apo B) concentration in serum or plasma.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ast-lab-lt"
+        },
+        "name": "AST (GOT)",
+        "description": "Observation representing aspartate aminotransferase (AST/GOT) enzymatic activity in serum or plasma.\nSupports two method variants: with P-5'-P (LOINC 88112-8) and without P-5'-P (LOINC 30239-8).\nIFCC guidelines recommend the method with P-5'-P.",
+        "groupingId": "GroupF",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ast-method"
+        },
+        "name": "AST (GOT) Method",
+        "description": "LOINC codes for measuring aspartate aminotransferase (AST/GOT) — with and without pyridoxal-5'-phosphate (P-5-P).",
+        "groupingId": "GroupF",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-tumor-stage-n"
+        },
+        "name": "Cervical Tumor Stage pN",
+        "description": "Pathological regional lymph node (pN) staging for cervical cancer, AJCC 8th edition.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cervical-tumor-stage-t"
+        },
+        "name": "Cervical Tumor Stage pT",
+        "description": "Pathological primary tumor (pT) staging for cervical cancer, AJCC 8th edition. Includes pTX through pT4.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cholesterol-hdl-lab-lt"
+        },
+        "name": "Cholesterol HDL",
+        "description": "Observation representing the patient's high-density lipoprotein (HDL) cholesterol concentration in serum or plasma.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cholesterol-ldl-lab-lt"
+        },
+        "name": "Cholesterol LDL",
+        "description": "Observation representing the patient's low-density lipoprotein (LDL) cholesterol concentration in serum or plasma, measured either directly or by calculation.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/cholesterol-ldl-method"
+        },
+        "name": "Cholesterol LDL Method",
+        "description": "Allowed LOINC codes for LDL cholesterol measurements (direct or calculated).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/cholesterol-non-hdl-lab-lt"
+        },
+        "name": "Cholesterol Non-HDL",
+        "description": "Observation representing the patient's non-HDL cholesterol concentration in serum or plasma, calculated as total cholesterol minus HDL cholesterol.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/total-cholesterol-lab-lt"
+        },
+        "name": "Cholesterol Total",
+        "description": "Observation representing the patient's total cholesterol concentration in serum or plasma.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-pathology-example"
+        },
+        "name": "Composition: Pathology Document (example)",
+        "description": "Synoptic pathology composition conforming to PathologyCompositionLtLab: Pre-Analytic, Macro, Micro, and Synthesis (LOINC section codes). Entries reference breast histopathology examples for the main pathway; synthesis also references an example prostate cancer Condition to illustrate TNM and morphology staging in this guide.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/pathology-composition-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pathology-composition-lt-lab"
+        },
+        "name": "Composition: Pathology Document (LT Lab)",
+        "description": "Synoptic pathology Composition with four fixed LOINC-coded sections (Pre-Analytic, Macro, Micro, Synthesis). Each top-level section and each nested subsection must carry a human-readable Narrative for clinicians, alongside references to supporting resources.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/prostate-condition-lt-lab"
+        },
+        "name": "Condition: Prostate Cancer",
+        "description": "A profile on Condition for Prostate Cancer with staging for TNM and morphology.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Condition/condition-prostate-cancer-example"
+        },
+        "name": "Condition: Prostate Cancer (example)",
+        "description": "Example of pathological T category with clinical N and M categories and ICD-O-3 morphology, for use alongside synoptic pathology reporting.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/prostate-condition-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/creatinine-test-lab-lt"
+        },
+        "name": "Creatinine Test",
+        "description": "Observation representing the patient's serum or plasma creatinine concentration.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-pathology-report-example"
+        },
+        "name": "DiagnosticReport: Pathology Report (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/pathology-report-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/egfr-method"
+        },
+        "name": "eGFR",
+        "description": "LOINC codes representing eGFR measurement methos calculated using CKD-EPI formulas (original and 2021 revision).",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/glucose-venous-lab-lt"
+        },
+        "name": "Glucose in Venous Blood",
+        "description": "This profile constrains the Observation resource to represent glucose concentration in venous blood.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hba1c-lab-lt"
+        },
+        "name": "HbA1c. Glycated Hemoglobin Test",
+        "description": "Observation representing Glycated Hemoglobin (HbA1c) test results in blood, reported as a percentage.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/her2-fish-result"
+        },
+        "name": "HER2 FISH/CISH/SISH Result Classification",
+        "description": "Classification of HER2 gene amplification results from FISH, CISH, or SISH molecular testing.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/her2-fish-result"
+        },
+        "name": "HER2 FISH/CISH/SISH Result Classification (VS)",
+        "description": "Classification of HER2 gene amplification results.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/her2-ihc-score"
+        },
+        "name": "HER2 IHC Score",
+        "description": "HER2 immunohistochemical scoring system (0+ to 3+).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/her2-ihc-score"
+        },
+        "name": "HER2 IHC Score (VS)",
+        "description": "HER2 immunohistochemical scoring system (0+ to 3+).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/her2-receptor-status"
+        },
+        "name": "Her2 Receptor Status",
+        "description": "The data item records the Her2 (human epidermal growth factor receptor 2) expression status of the tumour.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/her2-receptor-status"
+        },
+        "name": "Her2 Receptor Statuses",
+        "description": "The data item records the Her2 (human epidermal growth factor receptor 2) expression status of the tumour.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hs-crp-lab-lt"
+        },
+        "name": "High-sensitivity CRP",
+        "description": "Observation representing high-sensitivity C-reactive protein (hs-CRP) concentration in serum or plasma.\nUsed for cardiovascular risk stratification: CRP > 2 mg/L indicates increased CVD risk.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/histological-grading"
+        },
+        "name": "Histological Grading",
+        "description": "Histological grade of tumor differentiation according to AJCC grading system.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/icd-o-3"
+        },
+        "name": "ICD-O-3 Morphology",
+        "description": "Cancer morphology",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ihc-expression-level"
+        },
+        "name": "IHC Expression Level",
+        "description": "Immunohistochemical expression level classification for receptor status assessment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ihc-expression-level"
+        },
+        "name": "IHC Expression Level (VS)",
+        "description": "Immunohistochemical expression level for receptor status (negative, weak, moderate, strong).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lipidogram-lab-lt"
+        },
+        "name": "Lipidogram (Lipid Panel – Serum or Plasma)",
+        "description": "Lipid panel (Lipidogram) including Total Cholesterol, LDL-C, HDL-C, and Triglycerides.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/lipoprotein-a-lab-lt"
+        },
+        "name": "Lipoprotein(a)",
+        "description": "Observation representing the patient's lipoprotein(a) [Lp(a)] concentration in serum or plasma.\nSupports both mass (mg/dL, LOINC 10835-7) and molar (nmol/L, LOINC 43583-4) measurement methods.\nThe recommended method is molar concentration (nmol/L).",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lipoprotein-a-method"
+        },
+        "name": "Lipoprotein(a) Method",
+        "description": "LOINC codes for measuring lipoprotein(a) — mass (mg/dL) and molar (nmol/L) methods.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/ucum"
+        },
+        "name": "Lithuanian UCUM localisation",
+        "description": "Localized Lithuanian UCUM units described as display designation and alternative code as synonym",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lymphovascular-invasion"
+        },
+        "name": "Lymphovascular Invasion",
+        "description": "Microscopic finding of lymphatic and/or vascular tumor invasion.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-acr-example"
+        },
+        "name": "Observation: ACR (example)",
+        "description": "Example observation of a patient's urine albumin-to-creatinine ratio.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/acr-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cholesterol-hdl-example"
+        },
+        "name": "Observation: Cholesterol HDL (example)",
+        "description": "Example observation showing a patient's HDL cholesterol level within normal range.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-hdl-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cholesterol-ldl-example"
+        },
+        "name": "Observation: Cholesterol LDL (example)",
+        "description": "Example observation showing a patient's calculated LDL cholesterol level.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-ldl-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-cholesterol-non-hdl-example"
+        },
+        "name": "Observation: Cholesterol Non-HDL (example)",
+        "description": "Example observation showing a patient's non-HDL cholesterol level within normal range.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-non-hdl-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-creatinine-test-example"
+        },
+        "name": "Observation: Creatinine Test (example)",
+        "description": "Example observation of serum creatinine concentration.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/creatinine-test-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-egfr-example"
+        },
+        "name": "Observation: eGFR (example)",
+        "description": "Example showing a patient's eGFR result calculated using the CKD-EPI 2021 formula.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/egfr-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/estrogen-receptor-status-observation-lt-lab"
+        },
+        "name": "Observation: Estrogen Receptor Status",
+        "description": "Immunohistochemical estrogen receptor (ER) status observation with expression level and percentage in tumor cell nuclei.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-estrogen-receptor-status-example"
+        },
+        "name": "Observation: Estrogen Receptor Status (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/estrogen-receptor-status-observation-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-glucose-venous-example"
+        },
+        "name": "Observation: Glucose Venous (example)",
+        "description": "Example of laboratory glucose measurement in venous blood.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/glucose-venous-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/obs-gram-stain"
+        },
+        "name": "Observation: Gram Stain (example)",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-hba1c-example"
+        },
+        "name": "Observation: HbA1c (example)",
+        "description": "Example of HbA1c test result for a patient with moderately elevated glycemia.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/hba1c-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-her2-fish-example"
+        },
+        "name": "Observation: HER2 FISH Molecular Test (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/her2-fish-observation-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/her2-fish-observation-lt-lab"
+        },
+        "name": "Observation: HER2 FISH/CISH/SISH Molecular Test",
+        "description": "HER2 gene amplification molecular test observation (FISH, CISH, or SISH) with numeric HER2 average, CEP17 average, HER2/CEP17 ratio, and result classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/her2-receptor-status-observation-lt-lab"
+        },
+        "name": "Observation: Her2 Receptor Status",
+        "description": "Definition of the Observation for the Her2 receptor status",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-her2-receptor-status-example"
+        },
+        "name": "Observation: Her2 Receptor Status (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/her2-receptor-status-observation-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ki67-proliferation-observation-lt-lab"
+        },
+        "name": "Observation: Ki-67 Proliferation Index",
+        "description": "Ki-67 proliferation index observation expressed as a percentage of tumor cells with positive nuclear staining.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-ki67-proliferation-example"
+        },
+        "name": "Observation: Ki-67 Proliferation Index (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/ki67-proliferation-observation-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/egfr-lab-lt"
+        },
+        "name": "Observation: Lab - eGFR",
+        "description": "Observation representing estimated glomerular filtration rate (eGFR) calculated using the CKD-EPI or CKD-EPI 2021 formula.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lipidogram-example"
+        },
+        "name": "Observation: Lipidogram (example)",
+        "description": "Example lipid panel with high LDL and normal HDL.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/lipidogram-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/progesterone-receptor-status-observation-lt-lab"
+        },
+        "name": "Observation: Progesterone Receptor Status",
+        "description": "Immunohistochemical progesterone receptor (PR) status observation with expression level and percentage in tumor cell nuclei.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-progesterone-receptor-status-example"
+        },
+        "name": "Observation: Progesterone Receptor Status (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/progesterone-receptor-status-observation-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-psa-example"
+        },
+        "name": "Observation: Prostate PSA (example)",
+        "description": "Prostate Specific Antigen (PSA) Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-psad-example"
+        },
+        "name": "Observation: Prostate PSA Density (example)",
+        "description": "Prostate-Specific Antigen Density (PSAD) Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-prostate-volume-example"
+        },
+        "name": "Observation: Prostate Volume (example)",
+        "description": "Prostate Volume Observation Example",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/radiation-dose-lt-lab"
+        },
+        "name": "Observation: Radiation Dose (LT Lab)",
+        "description": "Radiation dose observation for imaging procedures, based on the EU Imaging Radiation Dose profile. Records dose exposure during CT, fluoroscopy, or other radiological examinations.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-adequacy-lt-lab"
+        },
+        "name": "Observation: Specimen Adequacy",
+        "description": "Definition of the Observation for the Specimen Adequacy.",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-specimen-adequacy-example"
+        },
+        "name": "Observation: Specimen Adequacy (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-adequacy-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-measurement-lt-lab"
+        },
+        "name": "Observation: Specimen Measurement",
+        "description": "Definition of the Observation for the Specimen Measurement, which includes the physical measurements of the specimen and its number of lymph nodes.",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-specimen-measurement-example"
+        },
+        "name": "Observation: Specimen Measurement (example)",
+        "description": "An example instance of the Specimen Measurement observation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-measurement-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-total-cholesterol-example"
+        },
+        "name": "Observation: Total Cholesterol (example)",
+        "description": "Example observation showing a patient's total cholesterol level within normal range.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/total-cholesterol-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-triglycerides-standalone-example"
+        },
+        "name": "Observation: Triglycerides (example)",
+        "description": "Example observation showing a patient's triglyceride level within normal range.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/triglycerides-lab-lt"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tumor-measurement-lt-lab"
+        },
+        "name": "Observation: Tumor Measurement",
+        "description": "Definition of the Observation for the Tumor Measurement",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tumor-measurement-example"
+        },
+        "name": "Observation: Tumor Measurement (example)",
+        "description": "An example instance of the Tumor Measurement observation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/tumor-measurement-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tumor-observable-lt-lab"
+        },
+        "name": "Observation: Tumor Observable",
+        "description": "Definition of the Observation for the Tumor Observable",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tumor-observable-example"
+        },
+        "name": "Observation: Tumor Observable (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/tumor-observable-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-example"
+        },
+        "name": "Organization: Vilnius Heart Clinic (example)",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pathology-procedure"
+        },
+        "name": "Pathology Procedure",
+        "description": "SNOMED CT procedure codes for classifying pathology diagnostic reports (cytology, histology, screening, autopsy).",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pathology-service"
+        },
+        "name": "Pathology Service Code",
+        "description": "Codes for pathology services.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-example"
+        },
+        "name": "Patient: Jonas Petrauskas (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/perineural-invasion"
+        },
+        "name": "Perineural Invasion",
+        "description": "Microscopic finding of perineural invasion by tumor.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/periprostatic-fat-invasion"
+        },
+        "name": "Periprostatic Fat Invasion",
+        "description": "Microscopic finding of tumor infiltration in periprostatic adipose tissue.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/plvi-classification"
+        },
+        "name": "pLVI Classification",
+        "description": "Peritumoral lymphovascular invasion (pLVI) 6-level classification for breast cancer pathology.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/plvi-classification"
+        },
+        "name": "pLVI Classification (VS)",
+        "description": "Peritumoral lymphovascular invasion (pLVI) 6-level classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/potassium-lab-lt"
+        },
+        "name": "Potassium",
+        "description": "Observation representing the patient's serum or plasma potassium (K+) concentration.",
+        "groupingId": "GroupG",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Registrar (example)",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/biopsy-procedure-lt-lab"
+        },
+        "name": "Procedure: Biopsy (LT Lab)",
+        "description": "Biopsy procedure performed for histopathological examination.\nCaptures the surgical collection of tissue specimens for laboratory analysis,\nincluding biopsy type, body site, and links to collected specimens.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-breast-biopsy-example"
+        },
+        "name": "Procedure: Breast Biopsy (example)",
+        "description": "Example of a breast biopsy procedure performed for histopathology.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/biopsy-procedure-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-histology-example"
+        },
+        "name": "Procedure: Histology (example)",
+        "description": "Example of a histology procedure performed during pathology evaluation.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-tumor-stage-m"
+        },
+        "name": "Prostate Tumor Stage M",
+        "description": "Codes for prostate tumor stages M.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-tumor-stage-n"
+        },
+        "name": "Prostate Tumor Stage N",
+        "description": "Codes for prostate tumor stages N.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/prostate-tumor-stage-t"
+        },
+        "name": "Prostate Tumor Stage T",
+        "description": "Codes for prostate tumor stages T.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/sample-examination"
+        },
+        "name": "Sample Examination Methods",
+        "description": "Microscopic or Microscopic examinations of the specimen.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/seminal-vesicle-invasion"
+        },
+        "name": "Seminal Vesicle Invasion",
+        "description": "Microscopic finding of tumor infiltration in seminal vesicles or ejaculatory duct.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/servicerequest-pathology-order-example"
+        },
+        "name": "ServiceRequest: Pathology Order (example)",
+        "description": "Example of the pathology order.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/pathology-order-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pathology-order-lt-lab"
+        },
+        "name": "ServiceRequest: Pathology Order (Lt)",
+        "description": "This profile defines how to represent an pathology orders.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/servicerequest-pathology-prostate-order-example"
+        },
+        "name": "ServiceRequest: Pathology Order — Prostate (example)",
+        "description": "Example pathology order for prostate-related examination using a PathologyProcedure code (prostate neoplasm screening).",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/pathology-order-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/pathology-report-lt-lab"
+        },
+        "name": "ServiceRequest: Pathology Report (Lt)",
+        "description": "This profile defines how to represent an pathology report.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-lt-lab"
+        },
+        "name": "Specimen (LT Lab)",
+        "description": "This profile defines how to represent Specimens in HL7 FHIR for the purpose of this guide, based on the Specimen profile from HL7 Europe with additional constraints and extensions specific to the needs of the LT Lab use case.",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/specimen-additive"
+        },
+        "name": "Specimen Additive",
+        "description": "Additives used in specimen collection and processing, based on HL7 EU Laboratory specimen additive ValueSet with additional codes for Lithuanian use.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/specimen-adequacy"
+        },
+        "name": "Specimen Adequacy Code",
+        "description": "Codes for specimen adequacy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-block-1-example"
+        },
+        "name": "Specimen Block: #A1 from Left Breast (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-block-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-received-by"
+        },
+        "name": "Specimen reciever",
+        "description": "Ėminį priėmęs specialistas. / Whoever has received the specimen.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-left-breast-example"
+        },
+        "name": "Specimen: Left Breast Tissue (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-right-breast-example"
+        },
+        "name": "Specimen: Right Breast Tissue (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-block-lt-lab"
+        },
+        "name": "Specimen: Tissue Block",
+        "description": "A profile for paraffin-embedded tissue blocks derived from a parent specimen.",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-venous-example"
+        },
+        "name": "Specimen: Venous Blood (example)",
+        "description": "Venous blood sample used for glucose testing.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Substance/substance-formalin-example"
+        },
+        "name": "Substance: Neutral Buffered Formalin (example)",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/lab/StructureDefinition/substance-additive-lt-lab"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/substance-additive-lt-lab"
+        },
+        "name": "Substance: Specimen Additive (LT Lab)",
+        "description": "This profile defines how to represent Specimen Additive Substances for the Lithuanian Laboratory IG, based on the EU Lab Substance Additive profile.",
+        "groupingId": "GroupE",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/triglycerides-lab-lt"
+        },
+        "name": "Triglycerides",
+        "description": "Observation representing the patient's triglyceride concentration in serum or plasma, used to assess lipid metabolism and cardiovascular risk.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tumor-focality"
+        },
+        "name": "Tumor Focality",
+        "description": "Codes for tumor focality.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/tumor-component-lt-lab"
+        },
+        "name": "Tumor Observable Component Codes (LT Lab)",
+        "description": "Local codes for TumorObservableLtLab component slicing. Used until equivalent SNOMED CT observable entity codes are available.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tumor-type"
+        },
+        "name": "Tumor Type",
+        "description": "ValueSet for tumor types, coded from SNOMED CT.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tumor-volume-methodology"
+        },
+        "name": "Tumor Volume Methodology",
+        "description": "Methodology used for determining tumor volume in biopsy specimens.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Pathology Report",
+          "generation": "markdown",
+          "name": "pathology-report.html",
+          "sourceUrl": "pathology-report.html"
+        },
+        {
+          "title": "Pathology Workflow",
+          "generation": "markdown",
+          "name": "pathology-workflow.html",
+          "sourceUrl": "pathology-workflow.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/ucum"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/her2-receptor-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/her2-receptor-status"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cholesterol-ldl-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/egfr-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/pathology-procedure"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/pathology-service"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-m"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-n"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-t"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/sample-examination"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/specimen-adequacy"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tumor-focality"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tumor-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/screening-programme"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lipoprotein-a-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/ast-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/alt-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://terminology.hl7.org/ValueSet/icd-o-3"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/icd-o-3"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/ValueSet/lab-specimenContainer-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/ValueSet/lab-specimenType-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/specimen-identifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/periprostatic-fat-invasion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/seminal-vesicle-invasion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/perineural-invasion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lymphovascular-invasion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tumor-volume-methodology"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/ihc-expression-level"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/ihc-expression-level"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/her2-ihc-score"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/her2-ihc-score"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/her2-fish-result"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/her2-fish-result"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/histological-grading"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/plvi-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/plvi-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/specimen-additive"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-t"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-n"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-effective-dose-units"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-gray-square-units"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

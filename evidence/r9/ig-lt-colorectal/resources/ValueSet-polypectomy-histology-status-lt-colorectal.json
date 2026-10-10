@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyHistologyStatusLtColorectal",
+  "id": "polypectomy-histology-status-lt-colorectal",
+  "title": "Colorectal - Polypectomy Histology Status VS",
+  "description": "Whether the excised polyp was sent for histological examination, and the state of that request.",
+  "url": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-histology-status-lt-colorectal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-codes-lt",
+        "concept": [
+          {
+            "code": "hist-sent"
+          },
+          {
+            "code": "hist-not-sent"
+          }
+        ]
+      }
+    ]
+  }
+}

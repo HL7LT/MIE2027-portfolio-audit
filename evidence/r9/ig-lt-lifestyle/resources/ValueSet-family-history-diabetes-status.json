@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FamilyHistoryDiabetesStatusLtLifestyle",
+  "id": "family-history-diabetes-status",
+  "title": "Status of the Family History of Diabetes",
+  "description": "Indicates whether the patient has a family history of diabetes mellitus.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/family-history-diabetes-status",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "160274005",
+            "display": "No family history of diabetes mellitus (situation)"
+          },
+          {
+            "code": "160303001",
+            "display": "Family history of diabetes mellitus (situation)"
+          },
+          {
+            "code": "407559004",
+            "display": "Family history unknown (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

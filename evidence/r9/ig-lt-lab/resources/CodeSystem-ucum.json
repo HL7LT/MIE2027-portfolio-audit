@@ -1,0 +1,1678 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "supplement",
+  "name": "UCUMLt",
+  "id": "ucum",
+  "title": "Lithuanian UCUM localisation",
+  "description": "Localized Lithuanian UCUM units described as display designation and alternative code as synonym",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/ucum",
+  "concept": [
+    {
+      "code": "kPa",
+      "display": "KiloPascal",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Kilopaskalis"
+        }
+      ]
+    },
+    {
+      "code": "pg/mL",
+      "display": "PicoGramsPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Pikogramai Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "pg/ml"
+        }
+      ]
+    },
+    {
+      "code": "ng/mL",
+      "display": "NanoGramsPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Nanogramai Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ng/ml"
+        }
+      ]
+    },
+    {
+      "code": "g/L",
+      "display": "GramsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Gramai Litre"
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "g/l"
+        }
+      ]
+    },
+    {
+      "code": "pmol/L",
+      "display": "PicoMolesPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Pikomoliai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "pmol/l"
+        }
+      ]
+    },
+    {
+      "code": "nmol/L",
+      "display": "NanoMolesPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Nanomoliai Litre"
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "nmol/l"
+        }
+      ]
+    },
+    {
+      "code": "g/mL",
+      "display": "GramsPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Gramai Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "g/ml"
+        }
+      ]
+    },
+    {
+      "code": "umol/L",
+      "display": "MicroMolesPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikromoliai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "μmol/l"
+        }
+      ]
+    },
+    {
+      "code": "/uL",
+      "display": "PerMicroLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikrolitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "µl"
+        }
+      ]
+    },
+    {
+      "code": "mm[Hg]",
+      "display": "MilliMetersOfMercury",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimetrai Gyvsidabrio stulpelio",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "%",
+      "display": "Percent",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Procentas",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "fL",
+      "display": "FemtoLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Femtolitras",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "fl"
+        }
+      ]
+    },
+    {
+      "code": "10*6",
+      "display": "Million",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milijonas",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "mmol/mol",
+      "display": "MilliMolesPerMole",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimoliai Molyje",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "deg",
+      "display": "DegreesOfArc",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Laipsnis (plokštumos kampas)",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "Laipsnis"
+        }
+      ]
+    },
+    {
+      "code": "Cel",
+      "display": "DegreesCelsius",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Laipsniai Celsijaus",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "cm",
+      "display": "CentiMeter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Centimetras",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "min",
+      "display": "Minute",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Minutė",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "h",
+      "display": "Hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Valanda",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "mL",
+      "display": "MilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mililitras",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ml"
+        }
+      ]
+    },
+    {
+      "code": "/mL",
+      "display": "PerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "/ml"
+        }
+      ]
+    },
+    {
+      "code": "10*6/mL",
+      "display": "MillionPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milijonas Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^6/ml"
+        }
+      ]
+    },
+    {
+      "code": "10*3/L",
+      "display": "ThousandPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Tūkstantis Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^3/l"
+        }
+      ]
+    },
+    {
+      "code": "10*6/L",
+      "display": "MillionPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milijonas Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^6/l"
+        }
+      ]
+    },
+    {
+      "code": "10*12/L",
+      "display": "TrillionPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Trilijonas Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^12/l"
+        }
+      ]
+    },
+    {
+      "code": "ng/L",
+      "display": "NanoGramsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Nanogramai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ng/l"
+        }
+      ]
+    },
+    {
+      "code": "ng/dL",
+      "display": "NanoGramsPerDeciLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Nanogramai Decilitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ng/dl"
+        }
+      ]
+    },
+    {
+      "code": "nmol/(24.h)",
+      "display": "nanomole per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Nanomoliai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "mmol/(24.h)",
+      "display": "Millimole per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimoliai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "g/(24.h)",
+      "display": "Gram per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Gramai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "g/mmol",
+      "display": "Gram per millimole",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Gramai milimolyje",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "umol/(24.h)",
+      "display": "Micromole per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikromoliai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "µmol/24h"
+        }
+      ]
+    },
+    {
+      "code": "U/(24.h)",
+      "display": "Enzyme unit per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Fermento vienetas per 24 val",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "L/(24.h)",
+      "display": "Liter per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Litrai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "l/24h"
+        }
+      ]
+    },
+    {
+      "code": "ug/(24.h)",
+      "display": "Microgram per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikrogramai per 24 val",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "μg/24h"
+        }
+      ]
+    },
+    {
+      "code": "{titer}",
+      "display": "Titer",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Titras",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "{ratio}",
+      "display": "Ratio",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Santykis",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "santykis"
+        }
+      ]
+    },
+    {
+      "code": "{index}",
+      "display": "Index",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Indeksas",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "indeksas"
+        }
+      ]
+    },
+    {
+      "code": "{copies}",
+      "display": "Copies",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Kopijų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "kopijos"
+        }
+      ]
+    },
+    {
+      "code": "mmol/L",
+      "display": "MilliMolesPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimoliai litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "mmol/l"
+        }
+      ]
+    },
+    {
+      "code": "mmol/mol{creat}.1",
+      "display": "Millimole per mole of creatinine",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimoliai molyje creatinino",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "mmol/mol kreatinino"
+        }
+      ]
+    },
+    {
+      "code": "mL/min",
+      "display": "Milliliter per minute",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mililitrai per minutę",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ml/min"
+        }
+      ]
+    },
+    {
+      "code": "um/s",
+      "display": "Micrometer per second",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikrometras per sekundę",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "µm/s"
+        }
+      ]
+    },
+    {
+      "code": "mL/min/{1.73_m2}",
+      "display": "Milliliter per minute per 1.73 square meter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mililitrai per minutę per 1,73 m2",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ml/min/1,73m^2"
+        }
+      ]
+    },
+    {
+      "code": "{#}",
+      "display": "Number",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "skaičius"
+        }
+      ]
+    },
+    {
+      "code": "mm/h",
+      "display": "Millimeter per hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimetrai per valandą",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "{CAG_repeats}",
+      "display": "CAG trinucleotide repeats",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "CAG pasikartojimų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "CAG pasikartojimai"
+        }
+      ]
+    },
+    {
+      "code": "mg/mmol",
+      "display": "Milligram per millimole",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Miligramai milimolyje",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "Ohm",
+      "display": "Ohm",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Omas",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "Ω"
+        }
+      ]
+    },
+    {
+      "code": "Ohm/min",
+      "display": "Ohm per minute",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Ω/min",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "Ω/min"
+        }
+      ]
+    },
+    {
+      "code": "Ohm.min",
+      "display": "Ohm times minute",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Ω.min",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "Ω.min"
+        }
+      ]
+    },
+    {
+      "code": "{ARU}",
+      "display": "Aspirin response unit",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Atsako į aspiriną vienetai",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "ARU"
+        }
+      ]
+    },
+    {
+      "code": "{PRU}",
+      "display": "P2Y12 response units",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "P2Y12 atsako vienetai",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "PRU"
+        }
+      ]
+    },
+    {
+      "code": "{CCTG_repeats}",
+      "display": "CCTG repeats",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "CCTG pasikartojimų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "CCTG pasikartojimai"
+        }
+      ]
+    },
+    {
+      "code": "ug/g",
+      "display": "MicroGramsPerGram",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikrogramai Grame",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "µg/g"
+        }
+      ]
+    },
+    {
+      "code": "{OD_unit}",
+      "display": "Optical density unit",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Optinis tankis",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "OD"
+        }
+      ]
+    },
+    {
+      "code": "[CFU]",
+      "display": "ColonyFormingUnits",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Koloniją formuojantis vienetas",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "KFV"
+        }
+      ]
+    },
+    {
+      "code": "[CFU]/mL",
+      "display": "ColonyFormingUnitsPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Koloniją formuojantys vienetai mėginio mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "KFV/mL"
+        }
+      ]
+    },
+    {
+      "code": "[CFU]/L",
+      "display": "ColonyFormingUnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Koloniją formuojantys vienetai mėginio litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "KFV/L"
+        }
+      ]
+    },
+    {
+      "code": "pg",
+      "display": "PicoGram",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Pikogramas",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "[IU]",
+      "display": "InternationalUnit",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Tarptautinis vienetas",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "mmol/mol{creat}",
+      "display": "MilliMolesPerMoleCreatinine",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimoliai Molyje Kreatinino",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "mmol/mol Kreatinino"
+        }
+      ]
+    },
+    {
+      "code": "mm",
+      "display": "MilliMeter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milimetras",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "s",
+      "display": "Second",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Sekundė",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "U/L",
+      "display": "UnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Vienetai litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "U/l"
+        }
+      ]
+    },
+    {
+      "code": "ug/L",
+      "display": "MicroGramsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikrogramai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "μg/l"
+        }
+      ]
+    },
+    {
+      "code": "umol/mol",
+      "display": "MicroMolesPerMole",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mikromoliai Molyje",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "μmol/mol"
+        }
+      ]
+    },
+    {
+      "code": "[beth'U]",
+      "display": "Bethesda unit",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Betesda vienetai",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "beth'U"
+        }
+      ]
+    },
+    {
+      "code": "{CTG_repeats}",
+      "display": "CTG trinucleotide repeats",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "CTG pasikartojimų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "CTG pasikartojimai"
+        }
+      ]
+    },
+    {
+      "code": "{GGGGCC_repeats}",
+      "display": "GGGGCC repeats",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "GGGGCC pasikartojimų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "GGGGCC pasikartojimai"
+        }
+      ]
+    },
+    {
+      "code": "10*6/kg",
+      "display": "Million per kilogram",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milijonas kilogramui",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^6/kg"
+        }
+      ]
+    },
+    {
+      "code": "/[LPF]",
+      "display": "Per low power field",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Mažajame padidinimo lauke"
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "/MPF"
+        }
+      ]
+    },
+    {
+      "code": "/[HPF]",
+      "display": "Per high power field",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Didžajame padidinimo lauke",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "/DPL"
+        }
+      ]
+    },
+    {
+      "code": "mg/(24.h)",
+      "display": "Milligram per 24 hour",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Miligramai per 24 valandą",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "{CGG_repeats}",
+      "display": "CGG trinucleotide repeats",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "CGG pasikartojimų skaičius",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "CGG pasikartojimai"
+        }
+      ]
+    },
+    {
+      "code": "k[IU]/L",
+      "display": "Kilo international unit per liter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Kilo tarptautiniai vienetai litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "kIU/l"
+        }
+      ]
+    },
+    {
+      "code": "[IU]/L",
+      "display": "InternationalUnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Tarptautiniai vienetai litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "IU/l"
+        }
+      ]
+    },
+    {
+      "code": "mosm/kg",
+      "display": "MilliOsmolesPerKiloGram",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "MiliOsmoliai Kilograme",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "{copies}/mL",
+      "display": "CopiesPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Kopijos Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "Kopijos/ml"
+        }
+      ]
+    },
+    {
+      "code": "10*9/L",
+      "display": "BillionPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Milijardas litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "10^9/l"
+        }
+      ]
+    },
+    {
+      "code": "mg/L",
+      "display": "MilliGramsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Miligramai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "mg/l"
+        }
+      ]
+    },
+    {
+      "code": "[IU]/mL",
+      "display": "InternationalUnitsPerMilliLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Tarptautiniai vienetai Mililitre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "IU/ml"
+        }
+      ]
+    },
+    {
+      "code": "m[IU]/L",
+      "display": "MilliInternationalUnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "MiliTarptautiniai vienetai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "mIU/l"
+        }
+      ]
+    },
+    {
+      "code": "/100{WBCs}",
+      "display": "Per100WBC",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "100 Leukocitų",
+          "use": {
+            "code": "display"
+          }
+        }
+      ]
+    },
+    {
+      "code": "kU/L",
+      "display": "KiloUnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Kilo vienetai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "kU/l"
+        }
+      ]
+    },
+    {
+      "code": "[arb'U]/L",
+      "display": "ArbitraryUnitsPerLiter",
+      "designation": [
+        {
+          "language": "lt",
+          "value": "Arbitrary Vienetai Litre",
+          "use": {
+            "code": "display"
+          }
+        },
+        {
+          "language": "lt",
+          "use": {
+            "code": "900000000000013009",
+            "system": "http://snomed.info/sct",
+            "display": "Synonym"
+          },
+          "value": "[arb'U]/l"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "supplements": "http://unitsofmeasure.org"
+}

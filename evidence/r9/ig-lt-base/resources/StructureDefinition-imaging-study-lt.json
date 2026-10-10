@@ -1,0 +1,177 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "imaging-study-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt",
+  "name": "ImagingStudyLt",
+  "title": "ImagingStudyLt",
+  "status": "active",
+  "description": "Lithuanian Base Imaging Study profile, used for documenting general imaging studies and their characteristics.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ImagingStudy",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImagingStudy",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ImagingStudy.identifier",
+        "path": "ImagingStudy.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.status",
+        "path": "ImagingStudy.status",
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.modality",
+        "path": "ImagingStudy.modality",
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.subject",
+        "path": "ImagingStudy.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.encounter",
+        "path": "ImagingStudy.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.basedOn:other",
+        "path": "ImagingStudy.basedOn",
+        "sliceName": "other",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/service-request-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/appointment-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+              "http://hl7.org/fhir/StructureDefinition/Task"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.partOf",
+        "path": "ImagingStudy.partOf",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.referrer",
+        "path": "ImagingStudy.referrer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.reason",
+        "path": "ImagingStudy.reason",
+        "type": [
+          {
+            "code": "CodeableReference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/document-reference-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.note",
+        "path": "ImagingStudy.note",
+        "mustSupport": true
+      },
+      {
+        "id": "ImagingStudy.series.performer:performer",
+        "path": "ImagingStudy.series.performer",
+        "sliceName": "performer"
+      },
+      {
+        "id": "ImagingStudy.series.performer:performer.actor",
+        "path": "ImagingStudy.series.performer.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.series.performer:device",
+        "path": "ImagingStudy.series.performer",
+        "sliceName": "device"
+      },
+      {
+        "id": "ImagingStudy.series.performer:device.actor",
+        "path": "ImagingStudy.series.performer.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImagingDevice"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ImagingStudy.series.performer:custodian",
+        "path": "ImagingStudy.series.performer",
+        "sliceName": "custodian"
+      },
+      {
+        "id": "ImagingStudy.series.performer:custodian.actor",
+        "path": "ImagingStudy.series.performer.actor",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

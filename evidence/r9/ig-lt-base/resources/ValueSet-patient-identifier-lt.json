@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PatientIdentifierLt",
+  "id": "patient-identifier-lt",
+  "title": "Patient Identifier",
+  "description": "A curated list of identifier systems for patients.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/patient-identifier",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/identifier-domain",
+        "concept": [
+          {
+            "code": "http://esveikata.lt/Identifier/ESPBI"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/PersonalCode"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/Patient/ESI"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/Patient/DIK"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/Patient/SveidraID"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/Patient/eFormNumber"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/Patient/ForeignPersonalCode"
+          },
+          {
+            "code": "http://esveikata.lt/Identifier/eDelivery"
+          },
+          {
+            "code": "http://esveikata.lt/classifiers/IdentityDocument/SerieNumber"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "PlviClassificationLtLab",
+  "id": "plvi-classification",
+  "title": "pLVI Classification",
+  "description": "Peritumoral lymphovascular invasion (pLVI) 6-level classification for breast cancer pathology.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/plvi-classification",
+  "concept": [
+    {
+      "code": "plvi-0",
+      "display": "pLVI-0: not detected",
+      "definition": "No lymphovascular invasion detected"
+    },
+    {
+      "code": "plvi-1",
+      "display": "pLVI-1: spreading, otherwise unclassified",
+      "definition": "Lymphovascular invasion present, otherwise not classified"
+    },
+    {
+      "code": "plvi-2",
+      "display": "pLVI-2: only in lymphatic vessels and small blood vessels (L)",
+      "definition": "Present only in lymphatic vessels and small blood vessels"
+    },
+    {
+      "code": "plvi-3",
+      "display": "pLVI-3: only in veins (large, thick-walled blood vessels) (V)",
+      "definition": "Present only in veins (large, thick-walled blood vessels)"
+    },
+    {
+      "code": "plvi-4",
+      "display": "pLVI-4: present in both lymphatic vessels and veins (LV)",
+      "definition": "Present in both lymphatic vessels and veins"
+    },
+    {
+      "code": "plvi-9",
+      "display": "pLVI-9: undetectable/unknown",
+      "definition": "Lymphovascular invasion status not determined or unknown"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 6
+}

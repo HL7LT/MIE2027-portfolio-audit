@@ -1,0 +1,53 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tobacco-type-used-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-type-used-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "social-history",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Social History"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "81228-9",
+        "display": "Tobacco product"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "53661000146106",
+        "display": "Type of tobacco used"
+      }
+    ]
+  },
+  "note": [
+    {
+      "text": "Patient reports to be a cigarette smoker."
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "65568007",
+        "system": "http://snomed.info/sct",
+        "display": "Cigarette smoker (finding)"
+      }
+    ]
+  }
+}

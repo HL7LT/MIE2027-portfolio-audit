@@ -1,0 +1,23 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "practitionerrole-radiologist-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+    ]
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "66862007",
+          "system": "http://snomed.info/sct",
+          "display": "Radiologist (occupation)"
+        }
+      ]
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/practitioner-radiologist-example"
+  }
+}

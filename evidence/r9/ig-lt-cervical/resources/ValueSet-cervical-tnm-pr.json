@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalTnmPrVS",
+  "id": "cervical-tnm-pr",
+  "title": "Cervical TNM pR Stage",
+  "description": "Pathological residual tumor (pR) classification for cervical cancer, AJCC 8th edition.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-tnm-pr",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1222641001",
+            "display": "American Joint Committee on Cancer RX (qualifier value)"
+          },
+          {
+            "code": "1222638005",
+            "display": "American Joint Committee on Cancer R0 (qualifier value)"
+          },
+          {
+            "code": "1222639002",
+            "display": "American Joint Committee on Cancer R1 (qualifier value)"
+          },
+          {
+            "code": "1222640000",
+            "display": "American Joint Committee on Cancer R2 (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

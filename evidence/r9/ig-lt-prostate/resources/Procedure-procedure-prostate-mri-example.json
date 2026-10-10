@@ -1,0 +1,22 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-prostate-mri-example",
+  "note": [
+    {
+      "text": "Prostate MRI examination."
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "719178004",
+        "system": "http://snomed.info/sct",
+        "display": "Multiparametric magnetic resonance imaging of prostate (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

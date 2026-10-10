@@ -1,0 +1,165 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-biopsy-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-02-03T13:45:00+02:00"
+            }
+          ],
+          "linkId": "exam-date",
+          "text": "Date of procedure"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "biopsy-us-guided",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy under ultrasound guidance"
+              }
+            }
+          ],
+          "linkId": "procedure-type",
+          "text": "Type of procedure"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 2
+            }
+          ],
+          "linkId": "sample-container-count",
+          "text": "Number of sample containers"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "right",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Right"
+              }
+            }
+          ],
+          "linkId": "localization-side",
+          "text": "Breast side"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "10 o'clock"
+            }
+          ],
+          "linkId": "localization-position",
+          "text": "Localization by clock position or quadrant"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 15,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org"
+              }
+            }
+          ],
+          "linkId": "entity-size",
+          "text": "Size of entity (mm)"
+        }
+      ],
+      "linkId": "grp-localization",
+      "text": "Localization of change"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-changes",
+          "text": "Changes in biopsied lymph nodes"
+        }
+      ],
+      "linkId": "grp-lymph-nodes",
+      "text": "Lymph nodes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-conclusion",
+          "text": "BI-RADS conclusion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-malignancy-suspicion",
+          "text": "Lymph node malignancy suspicion"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Vilnius University Hospital Santaros Klinikos"
+            }
+          ],
+          "linkId": "facility-name",
+          "text": "Facility name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Dr. Jonas Kazlauskas"
+            }
+          ],
+          "linkId": "doctor-name",
+          "text": "Doctor name"
+        }
+      ],
+      "linkId": "grp-facility",
+      "text": "Facility information"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-biopsy-lt-breast",
+  "status": "completed",
+  "authored": "2026-02-03T14:15:00+02:00",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  }
+}

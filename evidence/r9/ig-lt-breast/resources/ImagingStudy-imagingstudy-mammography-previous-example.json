@@ -1,0 +1,59 @@
+{
+  "resourceType": "ImagingStudy",
+  "id": "imagingstudy-mammography-previous-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:dicom:uid",
+      "value": "urn:oid:1.2.840.113619.2.55.3.604688654.8888"
+    }
+  ],
+  "modality": [
+    {
+      "coding": [
+        {
+          "code": "MG",
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "display": "Mammography"
+        }
+      ]
+    }
+  ],
+  "series": [
+    {
+      "uid": "1.2.840.113619.2.55.3.604688654.1234",
+      "modality": {
+        "coding": [
+          {
+            "code": "MG",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "Mammography"
+          }
+        ]
+      },
+      "bodySite": {
+        "concept": {
+          "coding": [
+            {
+              "code": "76752008",
+              "system": "http://snomed.info/sct",
+              "display": "Breast structure"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "status": "available",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-breast-step2-imaging-example"
+  },
+  "started": "2023-05-11T10:10:00+03:00"
+}

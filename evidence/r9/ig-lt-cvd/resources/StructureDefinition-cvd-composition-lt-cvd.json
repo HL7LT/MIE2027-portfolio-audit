@@ -1,0 +1,195 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cvd-composition-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd",
+  "version": "1.0.0",
+  "name": "CvdCompositionLtCvd",
+  "title": "Composition: CVD programme document (LT)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Combined composition for the Lithuanian CVD prevention programme, containing all three sections (risk assessment, prevention plan, and achievement evaluation) in a single document.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "CVD prevention programme composition (combined)"
+      },
+      {
+        "id": "Composition.text",
+        "path": "Composition.text",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/vd-composition-code"
+        }
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "11488-4",
+              "system": "http://loinc.org",
+              "display": "Consult note"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 1
+      },
+      {
+        "id": "Composition.section.text",
+        "path": "Composition.section.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.text.status",
+        "path": "Composition.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section.text.div",
+        "path": "Composition.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:assessment",
+        "path": "Composition.section",
+        "sliceName": "assessment",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:assessment.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "29299-5",
+              "system": "http://loinc.org",
+              "display": "Reason for visit Narrative"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:assessment.entry",
+        "path": "Composition.section.entry",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:preventionPlan",
+        "path": "Composition.section",
+        "sliceName": "preventionPlan",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preventionPlan.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "18776-5",
+              "system": "http://loinc.org",
+              "display": "Plan of care note"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:preventionPlan.entry",
+        "path": "Composition.section.entry",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:achievementEvaluation",
+        "path": "Composition.section",
+        "sliceName": "achievementEvaluation",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:achievementEvaluation.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "11506-3",
+              "system": "http://loinc.org",
+              "display": "Progress note"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

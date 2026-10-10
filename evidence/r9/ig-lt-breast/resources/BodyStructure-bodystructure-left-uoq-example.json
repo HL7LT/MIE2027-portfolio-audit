@@ -1,0 +1,34 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodystructure-left-uoq-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+    ]
+  },
+  "includedStructure": [
+    {
+      "laterality": {
+        "coding": [
+          {
+            "code": "7771000",
+            "system": "http://snomed.info/sct",
+            "display": "Left"
+          }
+        ]
+      },
+      "structure": {
+        "coding": [
+          {
+            "code": "76365002",
+            "system": "http://snomed.info/sct",
+            "display": "Upper outer quadrant of breast"
+          }
+        ]
+      }
+    }
+  ],
+  "patient": {
+    "reference": "Patient/example-patient-female"
+  }
+}

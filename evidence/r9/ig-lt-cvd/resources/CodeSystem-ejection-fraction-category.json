@@ -1,0 +1,31 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "EjectionFractionCategoryCS",
+  "id": "ejection-fraction-category",
+  "title": "Ejection Fraction Category",
+  "description": "Categories for left ventricular ejection fraction (LVEF) classification.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/ejection-fraction-category",
+  "concept": [
+    {
+      "code": "preserved",
+      "display": "Preserved (EF >= 50%)",
+      "definition": "Left ventricular ejection fraction is preserved (>= 50%)."
+    },
+    {
+      "code": "mildly-reduced",
+      "display": "Mildly reduced (EF 41-49%)",
+      "definition": "Left ventricular ejection fraction is mildly reduced (41-49%)."
+    },
+    {
+      "code": "reduced",
+      "display": "Reduced (EF <= 40%)",
+      "definition": "Left ventricular ejection fraction is reduced (<= 40%)."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 3
+}

@@ -1,0 +1,23 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-doctor-example",
+  "name": [
+    {
+      "given": [
+        "Example"
+      ],
+      "prefix": [
+        "Dr."
+      ],
+      "use": "official",
+      "family": "Doctor"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+37065555555",
+      "use": "work"
+    }
+  ]
+}

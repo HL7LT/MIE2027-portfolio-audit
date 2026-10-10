@@ -1,0 +1,34 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FamilyHistoryCVDStatusLtLifestyle",
+  "id": "family-history-cvd-status",
+  "title": "Status of the Family History of Cardiovascular Disease",
+  "description": "Indicates whether the patient has a family history of cardiovascular disease.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/family-history-cvd-status",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "160270001",
+            "display": "No family history: Cardiovascular disease (situation)"
+          },
+          {
+            "code": "266894000",
+            "display": "Family history: Cardiovascular disease (situation)"
+          },
+          {
+            "code": "407559004",
+            "display": "Family history unknown (situation)"
+          }
+        ]
+      }
+    ]
+  }
+}

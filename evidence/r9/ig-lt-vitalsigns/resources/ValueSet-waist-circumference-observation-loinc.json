@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "WaistCircumferenceObservationLOINC",
+  "id": "waist-circumference-observation-loinc",
+  "title": "Waist Circumference observation codes (LOINC)",
+  "description": "LOINC codes for waist circumference vital sign measurements in Observation.code.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/waist-circumference-observation-loinc",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "8280-0",
+            "display": "Waist Circumference at umbilicus by Tape measure"
+          }
+        ]
+      }
+    ]
+  }
+}

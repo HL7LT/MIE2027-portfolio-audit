@@ -1,0 +1,57 @@
+{
+  "resourceType": "FamilyMemberHistory",
+  "id": "family-member-screening-history-positive-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-member-screening-history-lt-lifestyle"
+    ]
+  },
+  "relationship": {
+    "text": "Unspecified family member"
+  },
+  "condition": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "49601007",
+            "system": "http://snomed.info/sct",
+            "display": "Disorder of cardiovascular system"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "44054006",
+            "system": "http://snomed.info/sct",
+            "display": "Diabetes mellitus type 2"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "398036000",
+            "system": "http://snomed.info/sct",
+            "display": "Familial hypercholesterolemia"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient reports cardiovascular disease, diabetes milites and familial hypercholesterolemia in a first-degree relative."
+    }
+  ],
+  "status": "completed",
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  },
+  "date": "2025-10-01T09:00:00Z"
+}

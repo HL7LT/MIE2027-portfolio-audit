@@ -1,0 +1,87 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "diabetes-duration-status-lt-lifestyle",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/diabetes-duration-status-lt-lifestyle",
+  "version": "1.0.0",
+  "name": "DiabetesDurationStatusLtLifestyle",
+  "title": "Diabetes Mellitus Duration Over 10 Years",
+  "status": "draft",
+  "date": "2025-11-02",
+  "publisher": "HL7 Lithuania",
+  "description": "Observation indicating whether the patient has had Diabetes Mellitus for 10 years or more.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Presence and duration of diabetes in patient history",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "161445009",
+              "system": "http://snomed.info/sct",
+              "display": "History of diabetes mellitus (situation)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Indicates whether diabetes duration exceeds 10 years.",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/yes-no"
+        }
+      }
+    ]
+  }
+}

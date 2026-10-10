@@ -1,0 +1,961 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.eu",
+  "url": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+  "version": "0.0.3",
+  "name": "Hl7Eu",
+  "title": "HL7 Europe IG Snapshot",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "The copy of the Laboratory Report and Imaging Report Implementation Guide, to enable them for development of the Lithuanian Implementation Guides. The content is based on the HL7 Europe IGs. This IG should be removed after publication of the official IG-s.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.eu",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "id": "hl7tx",
+      "packageId": "hl7.terminology.r5",
+      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "version": "7.1.0"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    },
+    {
+      "id": "hl7euextr5",
+      "packageId": "hl7.fhir.eu.extensions.r5",
+      "uri": "http://hl7.eu/fhir/extensions/ImplementationGuide/hl7.fhir.eu.extensions",
+      "version": "1.2.0"
+    }
+  ],
+  "definition": {
+    "grouping": [
+      {
+        "id": "GroupA",
+        "name": "HL7 EU Base profiles",
+        "description": "Temporary copy of the EU profiles"
+      },
+      {
+        "id": "GroupB",
+        "name": "HL7 EU Imaging profiles",
+        "description": "HL7 EU Imaging profiles"
+      },
+      {
+        "id": "GroupC",
+        "name": "EU Lab profiles",
+        "description": "EU Lab profiles"
+      },
+      {
+        "id": "GroupD",
+        "name": "IPS data types",
+        "description": "IPS data types"
+      }
+    ],
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/CodeableConcept-uv-ips"
+        },
+        "name": "Codeable Concept (IPS)",
+        "description": "This profile represents the constraint applied to the CodeableConcept data type by the International Patient Summary (IPS) FHIR Implementation Guide to use the Coding-uv-ips data type profile.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Coding-uv-ips"
+        },
+        "name": "Coding with translations (IPS)",
+        "description": "This profile extends the capabilities of the coding data type to support multi-language designations (display).\nIt relies on the Translation extension.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Composition-eu-lab"
+        },
+        "name": "Composition: Laboratory Report (Eu Lab)",
+        "description": "Clinical document used to represent a Laboratory Report for the scope of the HL7 Europe project.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/DiagnosticReport-eu-lab"
+        },
+        "name": "DiagnosticReport: Laboratory Report (Eu Lab)",
+        "description": "DiagnosticReport used to represent an entry of a Laboratory Report, including its context, for the scope of the HL7 Europe project.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/im-dose-length-units"
+        },
+        "name": "Dose Length Units (Eu Imaging)",
+        "description": "Units for Dose Length.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/im-effective-dose-units"
+        },
+        "name": "Effective Dose Units (Eu Imaging)",
+        "description": "Units for Effective Dose.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CarePlanEu"
+        },
+        "name": "EU CarePlan",
+        "description": "Care plan for the patient. \nContains the narrative containing the plan including proposals, goals, and order requests for monitoring, tracking, or improving the condition of the patient. In the future it is expected that the care plan could be provided in a structured and coded format.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CompositionEu"
+        },
+        "name": "EU Composition",
+        "description": "Clinical document used to represent a report for the scope of the HL7 Europe project.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ConditionEu"
+        },
+        "name": "EU Condition",
+        "description": "A condition profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/DocumentReferenceEu"
+        },
+        "name": "EU DocumentReference",
+        "description": "A DocumentReference profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/EndpointEu"
+        },
+        "name": "EU Endpoint",
+        "description": "The FHIR endpoint resource with EU specific references.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/CrossVersionMediaViewExtension"
+        },
+        "name": "EU Media.view extension",
+        "description": "This cross version extension includes the FHIR R4 version of the Media.view field which has at this point in time (April 18, 2025), not yet been included in the extension pack.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ObservationEu"
+        },
+        "name": "EU Observation",
+        "description": "A observation profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ProcedureEu"
+        },
+        "name": "EU Procedure",
+        "description": "A procedure profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/quantity-eu"
+        },
+        "name": "EU Quantity",
+        "description": "A quantity profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/range-eu"
+        },
+        "name": "EU Range",
+        "description": "A range profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SimpleQuantityEu"
+        },
+        "name": "EU SimpleQuantity",
+        "description": "A simple quantity profile for the EU.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/composition-diagnosticReportReference"
+        },
+        "name": "Extension: Document DiagnosticReport Reference (Eu Lab)",
+        "description": "This extension provides a reference to the DiagnosticReport instance that is associated with this Composition.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen-container-type"
+        },
+        "name": "Extension: Specimen Container Type",
+        "description": "Type of container used for the specimen.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/im-gray-square-units"
+        },
+        "name": "Gray Square Units (Eu Imaging)",
+        "description": "Units for Gray Square.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImComposition"
+        },
+        "name": "IM Composition",
+        "description": "Clinical document used to represent a Imaging Study Report for the scope of the HL7 Europe project.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImDiagnosticReport"
+        },
+        "name": "IM Diagnostic Report",
+        "description": "Diagnostic Report profile for Imaging Reports. This document represents the report of an imaging study. It is the anchor resource that refers to all structured data as well as the `Composition` resource that contains the narrative text of the report.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/im-composition-diagnosticReportReference"
+        },
+        "name": "IM Document DiagnosticReport Reference",
+        "description": "This extension provides a reference to the DiagnosticReport instance that is associated with this Composition.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImFinding"
+        },
+        "name": "IM Finding",
+        "description": "Finding during imaging procedure.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImImageIidViewerEndpoint"
+        },
+        "name": "IM Image Viewer Endpoint",
+        "description": "This profile defines a placeholder for an Endpoint for a viewer that can be used to access the study, serie it is present on.\nThe application is based on [IHE-IID](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_IID.pdf).",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/im-accession-number-identifier"
+        },
+        "name": "IM Imaging Accession Number Identifier",
+        "description": "This profile on Identifier represents the Accession Number for the Imaging Order.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImImagingDevice"
+        },
+        "name": "IM Imaging Device",
+        "description": "The device the made the image.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImOrder"
+        },
+        "name": "IM Imaging Order",
+        "description": "This profile on ServiceRequest represents the order for the Imaging Study and report.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImProcedure"
+        },
+        "name": "IM Imaging Procedure",
+        "description": "This profile on Procedure represents the imaging procedure.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImImagingSelection"
+        },
+        "name": "IM Imaging Selection",
+        "description": "Imaging Selection",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImImagingStudy"
+        },
+        "name": "IM Imaging Study",
+        "description": "This profile represents an imaging study instance.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/instance-description"
+        },
+        "name": "IM Instance Description",
+        "description": "A description of the instance in an ImagingStudy.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImKeyImageDocumentReference"
+        },
+        "name": "IM Key Image Document Reference",
+        "description": "A document containing key images for a patient. It can refer to a DICOM or non-DICOM image. When referring to a DICOM image, the DocumentReference.content.attachment.url should be a WADO-URI. When referring to a non-DICOM image, the DocumentReference.content.attachment.url should be a direct URL to the image.\n\nWhen the resource represents a DICOM instance it SHALL contain a the SOP Instance UID in the identifier element. When the resource represents a DICOM series it SHALL contain the Series Instance UID in the identifier element. ",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImKeyImageImagingSelection"
+        },
+        "name": "IM Key images represented as an ImagingSelection",
+        "description": "Key images represented as an ImagingSelection",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/im-study-instance-uid-identifier"
+        },
+        "name": "IM Study Instance UID Identifier",
+        "description": "This profile on Identifier represents the Study Instance UID (0020,000D) for the Imaging Order.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ImWadoEndpoint"
+        },
+        "name": "IM WADO Endpoint",
+        "description": "This profile defines the WADO endpoint for accessing imaging study content.",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/location-eu-core"
+        },
+        "name": "Location (EU core)",
+        "description": "This profile sets minimum expectations for the Location resource to be used for the purpose of this guide.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/medicalTestResult-eu-core"
+        },
+        "name": "MedicalTestResult (EU core)",
+        "description": "This profile sets minimum expectations for the Observation resource for Medical Test Results common to most of the use cases.",
+        "groupingId": "GroupA",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Observation-resultslab-eu-lab"
+        },
+        "name": "Observation Results: laboratory (Eu Lab)",
+        "description": "This profile constrains the Observation resource to represent results produced by laboratory tests or panels/studies for the  HL7 Europe project.\nThis observation may represent the result of a simple laboratory test such as hematocrit or it may group the set of results produced by a multi-test study or panel such as a complete blood count, a dynamic function test, a urine specimen study. In the latter case, the observation carries the overall conclusion of the study and or a global interpretation by the producer of the study, in the comment element; and references the atomic results of the study as \"has-member\" child observations.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ObservationRadiationDoseEuImaging"
+        },
+        "name": "Observation: Radiation Dose (Eu Imaging)",
+        "description": "A record for the radiation dose the subject has been exposed to during an imaging procedure.\nBased on information from https://dicom.nema.org/medical/dicom/current/output/html/part16.html and https://build.fhir.org/ig/HL7/fhir-radiation-dose-summary-ig/index.html",
+        "groupingId": "GroupB",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Quantity-eu-lab"
+        },
+        "name": "Quantity (Eu Lab)",
+        "description": "This profile constrains the Quantity data type to use UCUM as the code system for units and optionally share measurement uncertainty",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Quantity-uv-ips"
+        },
+        "name": "Quantity (IPS)",
+        "description": "Data type Quantity constrained to use UCUM as the code system for units",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Range-uv-ips"
+        },
+        "name": "Range (IPS)",
+        "description": "Range constrained to UCUM as the code system for units.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Ratio-eu-lab"
+        },
+        "name": "Ratio (Eu Lab)",
+        "description": "This profile constrains the Ratio data type to use UCUM as the code system for units and optionally share measurement uncertainty",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Ratio-uv-ips"
+        },
+        "name": "Ratio (IPS)",
+        "description": "Ratio data type, constrained to use UCUM as the code system for units.",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/report-code"
+        },
+        "name": "Report Code",
+        "description": "Diagnostic report codes including all subtypes of Clinical procedure report, excluding the root concept itself.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ServiceRequest-eu-lab"
+        },
+        "name": "ServiceRequest: Laboratory Order (Eu Lab)",
+        "description": "This profile defines how to represent an laboratory orders using the HL7 FHIR ServiceRequest for the purpose of this guide.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SimpleQuantity-uv-ips"
+        },
+        "name": "SimpleQuantity (IPS)",
+        "description": "Data type profile SimpleQuantity constrained to use UCUM as the code system for units",
+        "groupingId": "GroupD",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Specimen-eu-lab"
+        },
+        "name": "Specimen: Laboratory (Eu Lab)",
+        "description": "This profile defines how to represent Specimens in HL7 FHIR for the purpose of this guide.",
+        "groupingId": "GroupC",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Substance-additive-eu-lab"
+        },
+        "name": "Substance: Specimen Additive Substance (Eu Lab)",
+        "description": "This profile defines how to represent Specimen Additive Substances in HL7 FHIR for the purpose of this guide.",
+        "groupingId": "GroupC",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/base-r5/StructureDefinition/location-eu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/CarePlanEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ConditionEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/CrossVersionMediaViewExtension"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/DocumentReferenceEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/EndpointEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImComposition"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImDiagnosticReport"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImFinding"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImageIidViewerEndpoint"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImagingDevice"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImagingSelection"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImImagingStudy"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImKeyImageDocumentReference"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImKeyImageImagingSelection"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImOrder"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImProcedure"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImWadoEndpoint"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ProcedureEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/SimpleQuantityEu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-accession-number-identifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-study-instance-uid-identifier"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/instance-description"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/range-eu"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-effective-dose-units"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-gray-square-units"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Composition-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/DiagnosticReport-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-resultslab-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Quantity-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Ratio-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/Substance-additive-eu-lab"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-diagnosticReportReference"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/StructureDefinition/specimen-container-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/CodeableConcept-uv-ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/Coding-uv-ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/Quantity-uv-ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/Range-uv-ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/Ratio-uv-ips"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "http://hl7.org/fhir/uv/ips/StructureDefinition/SimpleQuantity-uv-ips"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

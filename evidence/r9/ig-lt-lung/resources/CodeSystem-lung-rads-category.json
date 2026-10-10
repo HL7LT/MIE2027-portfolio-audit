@@ -1,0 +1,43 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "LungRadsCategory",
+  "id": "lung-rads-category",
+  "title": "LUNG-RADS Assessment Categories",
+  "description": "Main LUNG-RADS assessment categories used in the Lithuanian lung cancer\nearly diagnosis programme.\n\nThese codes represent the primary final assessment category assigned\nto the low-dose chest CT screening examination.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-category",
+  "concept": [
+    {
+      "code": "0",
+      "display": "Category 0 – Incomplete"
+    },
+    {
+      "code": "1",
+      "display": "Category 1 – Negative"
+    },
+    {
+      "code": "2",
+      "display": "Category 2 – Benign appearance or behavior"
+    },
+    {
+      "code": "3",
+      "display": "Category 3 – Probably benign"
+    },
+    {
+      "code": "4A",
+      "display": "Category 4A – Suspicious"
+    },
+    {
+      "code": "4B",
+      "display": "Category 4B – Very suspicious"
+    },
+    {
+      "code": "4X",
+      "display": "Category 4X – Extremely suspicious"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 7
+}

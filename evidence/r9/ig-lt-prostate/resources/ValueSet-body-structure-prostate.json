@@ -1,0 +1,52 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BodyStructureProstateVS",
+  "id": "body-structure-prostate",
+  "title": "Prostate - Body Structure",
+  "description": "Body structures that may be affected by prostate cancer invasion or local organ changes.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/body-structure-prostate",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "60405008",
+            "display": "Structure of capsule of prostate (body structure)"
+          },
+          {
+            "code": "64739004",
+            "display": "Seminal vesicle structure (body structure)"
+          },
+          {
+            "code": "279669004",
+            "display": "Structure of lower pole of seminal vesicle (body structure)"
+          },
+          {
+            "code": "59820001",
+            "display": "Blood vessel structure (body structure)"
+          },
+          {
+            "code": "312500006",
+            "display": "Regional lymph node structure (body structure)"
+          },
+          {
+            "code": "89837001",
+            "display": "Urinary bladder structure (body structure)"
+          },
+          {
+            "code": "34402009",
+            "display": "Rectum structure (body structure)"
+          },
+          {
+            "code": "272673000",
+            "display": "Bone structure (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "screening-careplan-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/screening-careplan-lt-colorectal",
+  "name": "ScreeningCarePlanLtColorectal",
+  "title": "Screening CarePlan (LT Colorectal)",
+  "status": "active",
+  "publisher": "HL7 Lithuania",
+  "description": "CarePlan tracking the colorectal cancer screening programme cycle.\nCaptures programme enrollment, current status, scheduled activities\n(FOBT testing, colonoscopy referrals, follow-up intervals),\nand care recommendations after colonoscopy.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/screening-careplan-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.category",
+        "path": "CarePlan.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "268548003",
+              "system": "http://snomed.info/sct",
+              "display": "Screening for malignant neoplasm of large intestine (procedure)"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

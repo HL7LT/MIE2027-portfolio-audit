@@ -1,0 +1,101 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-dyslipidemia-treated-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "80943009",
+            "system": "http://snomed.info/sct",
+            "display": "Risk factor"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "certain",
+            "system": "http://terminology.hl7.org/CodeSystem/risk-probability",
+            "display": "Certain"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "443938003",
+            "system": "http://snomed.info/sct",
+            "display": "Procedure carried out on subject"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "182992009",
+            "system": "http://snomed.info/sct",
+            "display": "Treatment completed (situation)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "129019007",
+            "system": "http://snomed.info/sct",
+            "display": "Taking medication (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "182833002",
+            "system": "http://snomed.info/sct",
+            "display": "Medication given (situation)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient diagnosed with dyslipidemia and treated with statins."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "370992007",
+        "system": "http://snomed.info/sct",
+        "display": "Dyslipidemia (disorder)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

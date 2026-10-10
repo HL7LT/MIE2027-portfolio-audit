@@ -1,0 +1,34 @@
+{
+  "resourceType": "CarePlan",
+  "id": "careplan-prostate-screening-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/screening-careplan-lt-prostate"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "444822002",
+          "system": "http://snomed.info/sct",
+          "display": "Screening for malignant neoplasm of prostate (procedure)"
+        }
+      ]
+    }
+  ],
+  "period": {
+    "start": "2025-01-15"
+  },
+  "note": [
+    {
+      "text": "Patient enrolled in ADPP prostate screening programme. Standard risk group (age 50-69). Next PSA test scheduled."
+    }
+  ],
+  "intent": "plan",
+  "status": "active",
+  "title": "Prostate Cancer Early Diagnosis Programme",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-progesterone-receptor-status-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/progesterone-receptor-status-observation-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "85339-0",
+            "system": "http://loinc.org",
+            "display": "Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "moderate",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/ihc-expression-level",
+            "display": "Moderate (++)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "85312-7",
+            "system": "http://loinc.org",
+            "display": "Extent of inferior margin carcinoma involvement in Breast cancer specimen Qualitative by Light microscopy"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 60,
+        "code": "%",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "16113-3",
+        "system": "http://loinc.org",
+        "display": "Progesterone receptor [Interpretation] in Tissue"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-01-15T11:00:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  }
+}

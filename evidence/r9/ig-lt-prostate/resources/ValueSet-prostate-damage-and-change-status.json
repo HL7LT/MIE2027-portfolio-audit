@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateDamageAndChangeStatusVS",
+  "id": "prostate-damage-and-change-status",
+  "title": "ValueSet: Prostate - Damage and Change Status",
+  "description": "Absent, suspected, or present damage and change status for prostate cancer staging.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-and-change-status",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "2667000",
+            "display": "Absent (qualifier value)"
+          },
+          {
+            "code": "415684004",
+            "display": "Suspected (qualifier value)"
+          },
+          {
+            "code": "52101004",
+            "display": "Present (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

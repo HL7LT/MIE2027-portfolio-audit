@@ -1,0 +1,41 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CarotidPlaqueCategoryCS",
+  "id": "carotid-plaque-category",
+  "title": "Carotid Plaque Category",
+  "description": "Categories for atherosclerotic plaque assessment in carotid arteries.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/carotid-plaque-category",
+  "concept": [
+    {
+      "code": "none",
+      "display": "No plaque",
+      "definition": "No atherosclerotic plaque detected."
+    },
+    {
+      "code": "present",
+      "display": "Plaque present",
+      "definition": "Atherosclerotic plaque present, stenosis not quantified."
+    },
+    {
+      "code": "lt50",
+      "display": "Stenosis < 50%",
+      "definition": "Atherosclerotic plaque with stenosis less than 50%."
+    },
+    {
+      "code": "50-69",
+      "display": "Stenosis 50-69%",
+      "definition": "Atherosclerotic plaque with stenosis 50-69%."
+    },
+    {
+      "code": "gt70",
+      "display": "Stenosis > 70%",
+      "definition": "Atherosclerotic plaque with stenosis greater than 70%."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 5
+}

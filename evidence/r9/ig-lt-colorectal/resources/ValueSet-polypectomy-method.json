@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyMethodVS",
+  "id": "polypectomy-method",
+  "title": "Polypectomy Method",
+  "description": "Methods used for polypectomy during colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-method",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "10371000132109",
+            "display": "Colonoscopic snare polypectomy of the colon (procedure)"
+          },
+          {
+            "code": "274025005",
+            "display": "Colonic polypectomy (procedure)"
+          },
+          {
+            "code": "47491000087108",
+            "display": "Endoscopic excision of polyp of large intestine using injection to lift polyp (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

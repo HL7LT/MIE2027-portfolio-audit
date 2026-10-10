@@ -1,0 +1,108 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sequence-score-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate",
+  "name": "SequenceScoreLtProstate",
+  "title": "Observation: MRI Sequence Score",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "Observation representing a numeric (1–5) assessment score for a specific prostate\nMRI sequence (T2-weighted, DWI, ADC or DCE), evaluated for a defined prostate lesion.\nThese sequence-level scores represent the individual imaging components used\nto derive the overall PI-RADS assessment, but do not themselves constitute a\nfinal diagnostic conclusion.\nAnatomical localization is provided via the referenced prostate lesion.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/prostate/StructureDefinition/lesion-lt-prostate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "prostate-score-min-1",
+            "severity": "error",
+            "human": "Score must be at least 1.",
+            "expression": "$this >= 1",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+          },
+          {
+            "key": "prostate-score-max-5",
+            "severity": "error",
+            "human": "Score must be at most 5.",
+            "expression": "$this <= 5",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+          }
+        ]
+      }
+    ]
+  }
+}

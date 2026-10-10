@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RadicalismOfRemovalVS",
+  "id": "radicalism-of-removal",
+  "title": "Radicalism of Removal",
+  "description": "Assessment of completeness of lesion removal (R classification).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/radicalism-of-removal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "310342002",
+            "display": "Excision - clear margin (finding)"
+          },
+          {
+            "code": "370109009",
+            "display": "Surgical margin involved by tumor (finding)"
+          },
+          {
+            "code": "395537004",
+            "display": "Surgical margin involvement by tumor cannot be assessed (finding)"
+          },
+          {
+            "code": "385305003",
+            "display": "Surgical margin involvement by tumor not applicable (finding)"
+          },
+          {
+            "code": "1222638005",
+            "display": "American Joint Committee on Cancer R0 (qualifier value)"
+          },
+          {
+            "code": "1222639002",
+            "display": "American Joint Committee on Cancer R1 (qualifier value)"
+          },
+          {
+            "code": "1222641001",
+            "display": "American Joint Committee on Cancer RX (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

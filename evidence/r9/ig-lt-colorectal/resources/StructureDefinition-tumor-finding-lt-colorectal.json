@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tumor-finding-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/tumor-finding-lt-colorectal",
+  "name": "TumorFindingLtColorectal",
+  "title": "Tumor Finding (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording tumor findings during colonoscopy in the Lithuanian colorectal cancer screening program. Captures location, description, and links to biopsy procedures.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "363406005",
+              "system": "http://snomed.info/sct",
+              "display": "Malignant neoplasm of colon (disorder)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Whether tumor was found (Yes/No)",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "short": "Local notes and tumor description"
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "short": "Anatomical location of tumor",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/colorectal-anatomy"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "short": "Related biopsy procedure or histological examination"
+      }
+    ]
+  }
+}

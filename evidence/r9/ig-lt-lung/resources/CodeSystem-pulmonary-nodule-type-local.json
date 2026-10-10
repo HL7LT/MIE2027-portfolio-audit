@@ -1,0 +1,19 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "PulmonaryNoduleTypeLocal",
+  "id": "pulmonary-nodule-type-local",
+  "title": "Pulmonary Nodule Type Local Codes",
+  "description": "Local codes for pulmonary nodule types used in the Lithuanian lung cancer\nearly diagnosis programme when no suitable SNOMED CT code is available\nin the source dataset.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/pulmonary-nodule-type-local",
+  "concept": [
+    {
+      "code": "part-solid",
+      "display": "Part-solid"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 1
+}

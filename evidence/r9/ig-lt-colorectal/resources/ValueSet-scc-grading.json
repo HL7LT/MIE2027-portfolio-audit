@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SccGradingVS",
+  "id": "scc-grading",
+  "title": "Squamous Cell Carcinoma Grading",
+  "description": "Grading for squamous cell carcinoma of the colorectum.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/scc-grading",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "54102005",
+            "display": "G1 grade (finding)"
+          },
+          {
+            "code": "1663004",
+            "display": "G2 grade (finding)"
+          },
+          {
+            "code": "61026006",
+            "display": "G3 grade (radjums)"
+          }
+        ]
+      }
+    ]
+  }
+}

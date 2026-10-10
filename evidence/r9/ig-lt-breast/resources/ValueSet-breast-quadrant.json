@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastQuadrantVS",
+  "id": "breast-quadrant",
+  "title": "Breast Quadrants",
+  "description": "Quadrants of the breast.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-quadrant",
+  "experimental": false,
+  "language": "en",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "76365002",
+            "display": "Upper outer quadrant of breast"
+          },
+          {
+            "code": "77831004",
+            "display": "Upper inner quadrant of breast"
+          },
+          {
+            "code": "19100000",
+            "display": "Lower inner quadrant of breast"
+          },
+          {
+            "code": "33564002",
+            "display": "Lower outer quadrant of breast"
+          }
+        ]
+      }
+    ]
+  }
+}

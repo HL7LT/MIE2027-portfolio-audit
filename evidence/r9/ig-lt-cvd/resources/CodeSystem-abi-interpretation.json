@@ -1,0 +1,31 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ABIInterpretationCS",
+  "id": "abi-interpretation",
+  "title": "Ankle-Brachial Index Interpretation",
+  "description": "Interpretation categories for ankle-brachial index (ABI) peripheral arterial disease severity.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/abi-interpretation",
+  "concept": [
+    {
+      "code": "normal",
+      "display": "Normal (ABI > 0.9)",
+      "definition": "No significant peripheral arterial disease."
+    },
+    {
+      "code": "mild-moderate",
+      "display": "Mild to moderate PAD (ABI 0.41-0.90)",
+      "definition": "Mild to moderate peripheral arterial disease."
+    },
+    {
+      "code": "severe",
+      "display": "Severe PAD (ABI <= 0.40)",
+      "definition": "Severe peripheral arterial disease."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 3
+}

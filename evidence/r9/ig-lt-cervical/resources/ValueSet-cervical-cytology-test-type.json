@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalCytologyTestTypeVS",
+  "id": "cervical-cytology-test-type",
+  "title": "Cervical Cytology Test Types",
+  "description": "Types of cytological examinations ordered in the cervical cancer prevention program. Used in ServiceRequest.code and DiagnosticReport.code to classify the specific test type.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-cytology-test-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "440623000",
+            "display": "Microscopic examination of cervical Papanicolaou smear (procedure)"
+          },
+          {
+            "code": "416107004",
+            "display": "Cervical cytology test (procedure)"
+          },
+          {
+            "code": "417036008",
+            "display": "Liquid based cervical cytology screening (procedure)"
+          },
+          {
+            "code": "609040007",
+            "display": "Microscopic cytologic examination of smear of specimen from female genital tract prepared using Papanicolaou technique (procedure)"
+          },
+          {
+            "code": "395126005",
+            "display": "Immunocytochemistry test (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "laboratory-composition-lt",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/laboratory-composition-lt",
+  "version": "0.2.0-ci",
+  "name": "LaboratoryCompositionLt",
+  "title": "LaboratoryCompositionLt",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "Composition: Laboratory Summary (Eu Lab). Clinical document used to represent a Laboratory Report for the scope of the HL7 Europe project.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Laboratory Report composition",
+        "definition": "Laboratory Report composition.\n\r\nA composition is a set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement. \r\nWhile a Composition defines the structure, it does not actually contain the content: rather the full content of a document is contained in a Bundle, of which the Composition is the first resource contained."
+      },
+      {
+        "id": "Composition.text",
+        "path": "Composition.text",
+        "short": "Narrative text"
+      },
+      {
+        "id": "Composition.extension",
+        "path": "Composition.extension",
+        "min": 1
+      },
+      {
+        "id": "Composition.extension:information-recipient",
+        "path": "Composition.extension",
+        "sliceName": "information-recipient",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.eu/fhir/StructureDefinition/information-recipient"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:information-recipient.value[x]",
+        "path": "Composition.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:diagnosticReport-reference",
+        "path": "Composition.extension",
+        "sliceName": "diagnosticReport-reference",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.eu/fhir/laboratory/StructureDefinition/composition-diagnosticReportReference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:diagnosticReport-reference.value[x]",
+        "path": "Composition.extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/laboratory-report-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.extension:diagnosticReport-reference.value[x].reference",
+        "path": "Composition.extension.value[x].reference",
+        "comment": "Added to the FHIR R4 guide to strictly conform with the R4 rules for document bundle resources inclusion.\n  Using this extension implies to accept a circular reference Composition to/from DiagnosticReport",
+        "min": 1
+      },
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "definition": "Identifiers assigned to this Laboratory Report by the performer or other systems. It shall be common to several report versions"
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "short": "Status of the Report",
+        "comment": "DiagnosticReport.status and Composition.status shall be aligned, based on the http://hl7.eu/fhir/laboratory/ConceptMap/ConceptMap-eu-diagRptStatus2CompStatus mapping"
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Type of (Laboratory) Report",
+        "definition": "Specifies that it refers to a Laboratory Report",
+        "comment": "At least one DiagnosticReport.code.coding and Composition.type.coding SHALL be equal",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-reportType-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "short": "Report Category",
+        "definition": "A code that classifies this laboratory report. Two basic categories has been selected in this guide: laboratory specialty and Study type. Laboratory specialty is characteristic of the laboratory that produced the test result while Study type is an arbitrary classificion of the test type.",
+        "comment": "DiagnosticReport.category and Composition.category shall be aligned"
+      },
+      {
+        "id": "Composition.category:studyType",
+        "path": "Composition.category",
+        "sliceName": "studyType",
+        "short": "The way of grouping of the test results into clinically meaningful domains (e.g. hematology study, microbiology study, etc.)",
+        "definition": "Laboratory services, i.e., results of tests performed, could be characterized using typology of services, commonly called study types. Study type could be seen as an attribute or grouping mechanism that assigns a common clinical sense to certain types of laboratory test results., e.g., Hemoglobin, Platelet count, etc. belongs to 'Hematology study'.",
+        "comment": "In comparison to the laboratory specialty which is an attribute of laboratory, study type is a categorization of laboratory service. It needs to be mentioned that classification of test to study types in not standardized.",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-studyType-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.category:specialty",
+        "path": "Composition.category",
+        "sliceName": "specialty",
+        "short": "The clinical domain of the laboratory performing the observation (e.g. microbiology, toxicology, chemistry)",
+        "definition": "Laboratory specialty is an attribute of any laboratory setting representing professional qualification of the laboratory to execute certain kind of laboratory tests.",
+        "comment": "Specialty could be used as parameter for searching/querying of laboratory test results.",
+        "min": 0,
+        "max": "*",
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-specialty-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "short": "Who and/or what this report is about",
+        "definition": "Who or what this report is about. The report can be about a human patient, a living subject, a device (e.g. a machine), a location or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).",
+        "comment": "DiagnosticReport and Composition SHALL have the same subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt",
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-animal-eu-core",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "https://hl7.lt/fhir/base/StructureDefinition/location-lt",
+              "http://hl7.org/fhir/StructureDefinition/Device"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "short": "The healthcare event which this Laboratory Report is about (when test ordered).",
+        "definition": "The healthcare event (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.",
+        "comment": "This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission laboratory tests).\n\n  DiagnosticReport and Composition SHALL have the same encounter."
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "short": "Who and/or what authored the Laboratory Report",
+        "definition": "Identifies who is responsible for the information in the Laboratory Report, not necessarily who typed it in.",
+        "comment": "If a DiagnosticReport.resultsInterpreter exists this is expected to be a Composition.author; otherwise a DiagnosticReport.performer should be an author."
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "short": "Laboratory Report",
+        "definition": "Official human-readable label for the composition.\r\n\r\nFor this document should be \"Laboratory Report\" or any equivalent translation"
+      },
+      {
+        "id": "Composition.attester",
+        "path": "Composition.attester",
+        "short": "Attests the report accuracy"
+      },
+      {
+        "id": "Composition.attester.mode",
+        "path": "Composition.attester.mode",
+        "short": "The type of attestation"
+      },
+      {
+        "id": "Composition.attester.time",
+        "path": "Composition.attester.time",
+        "short": "When the report was attested by the party"
+      },
+      {
+        "id": "Composition.attester.party",
+        "path": "Composition.attester.party",
+        "short": "Who attested the report",
+        "comment": "For a Laboratory Report it is usually non expected that the attester would be a Patient or a RealtedPerson"
+      },
+      {
+        "id": "Composition.event",
+        "path": "Composition.event",
+        "short": "The laboratory service(s) being documented"
+      },
+      {
+        "id": "Composition.event.period",
+        "path": "Composition.event.period",
+        "short": "Period of time covered by the documentation"
+      },
+      {
+        "id": "Composition.event.detail",
+        "path": "Composition.event.detail",
+        "short": "The laboratory service(s) being documented"
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "exists",
+              "path": "section"
+            },
+            {
+              "type": "exists",
+              "path": "entry"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "definition": "The \\\"body\\\" of the report is organized as a tree of up to two levels of sections: top level sections represent laboratory specialties. A top level section SHALL contain either one text block carrying all the text results produced for this specialty along with Laboratory Data Entries or a set of Laboratory Report Item Sections. In the first case the specialty section happens to also be a leaf section. In the latter case, each (second level) leaf section contained in the (top level) specialty section represents a Report Item: i.e., a battery, a specimen study (especially in microbiology), or an individual test. In addition, any leaf section SHALL contain a Laboratory Data Entries containing the observations of that section in a machine-readable format.",
+        "min": 1
+      },
+      {
+        "id": "Composition.section.title",
+        "path": "Composition.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section.code",
+        "path": "Composition.section.code",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:lab-no-subsections",
+        "path": "Composition.section",
+        "sliceName": "lab-no-subsections",
+        "short": "Variant 1: EU Laboratory Report section with entries and no sub-sections",
+        "definition": "Variant 1: With this option, all laboratory report data entries are provided in the top level sections and no sub-sections are allowed.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:lab-no-subsections.code",
+        "path": "Composition.section.code",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-studyType-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.section:lab-no-subsections.text",
+        "path": "Composition.section.text",
+        "short": "Text summary of the section, for human interpretation."
+      },
+      {
+        "id": "Composition.section:lab-no-subsections.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:lab-no-subsections.section",
+        "path": "Composition.section.section",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:lab-subsections",
+        "path": "Composition.section",
+        "sliceName": "lab-subsections",
+        "short": "Variant 2: EU Laboratory Report section with one to many subsections Laboratory Report Item",
+        "definition": "Variant 2: With this option, this top level section doesn't include NEITHER a top level text NOR entry elements. Each Report Item is contained in a corresponding sub-sections which contains the Lab Report Data Entry.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:lab-subsections.code",
+        "path": "Composition.section.code",
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-studyType-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.section:lab-subsections.text",
+        "path": "Composition.section.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:lab-subsections.entry",
+        "path": "Composition.section.entry",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:lab-subsections.section",
+        "path": "Composition.section.section",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:lab-subsections.section.title",
+        "path": "Composition.section.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:lab-subsections.section.code",
+        "path": "Composition.section.section.code",
+        "min": 1,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://hl7.eu/fhir/laboratory/ValueSet/lab-studyType-eu-lab"
+        }
+      },
+      {
+        "id": "Composition.section:lab-subsections.section.text",
+        "path": "Composition.section.section.text",
+        "short": "Text summary of the section, for human interpretation."
+      },
+      {
+        "id": "Composition.section:lab-subsections.section.entry",
+        "path": "Composition.section.section.entry",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:lab-subsections.section.section",
+        "path": "Composition.section.section.section",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:annotations",
+        "path": "Composition.section",
+        "sliceName": "annotations",
+        "short": "Annotation comment",
+        "definition": "Narrative expression of comments accompanying the report, such as suggestions for evaluation, technical notes from the laboratory, etc.\n\nExamples:\nSuggestion: This result should be evaluated in relation to the patient's medical history and clinical condition.\nTechnical note: A list of accredited examination(s) is available at www.laboratory.com. ",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:annotations.code",
+        "path": "Composition.section.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48767-8",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:annotations.text",
+        "path": "Composition.section.text",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:annotations.entry",
+        "path": "Composition.section.entry",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:annotations.section",
+        "path": "Composition.section.section",
+        "max": "0"
+      }
+    ]
+  }
+}

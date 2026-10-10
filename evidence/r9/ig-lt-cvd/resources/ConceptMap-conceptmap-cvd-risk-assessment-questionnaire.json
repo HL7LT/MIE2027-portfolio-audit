@@ -1,0 +1,503 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-cvd-risk-assessment-questionnaire",
+  "url": "https://hl7.lt/fhir/cvd/ConceptMap/conceptmap-cvd-risk-assessment-questionnaire",
+  "title": "CVD risk assessment questionnaire item to profile mapping",
+  "description": "Maps ESPBI form 1 Questionnaire linkIds to Lithuanian FHIR profiles and related IGs. \nHuman-readable narrative is in each target.comment; Questionnaire.item.definition repeats canonical StructureDefinition URIs where applicable. \nSource: linkId codes; target: profile identifiers (CodeSystem cvd-questionnaire-mapping-target).\n\nAligned with DSTU1 data structures.\n\nIn DSTU1, the CarePlan used inline `<goal>` elements with extensions for target values and\n`<activity>` elements for lifestyle interventions. In R5:\n\n- **Goals** are referenced via `CarePlan.goal` pointing to standalone `Goal` resources\n  (or contained inline). Goal types: LDL target, BP target, BMI target, weight loss ≥5%.\n- **Activities** use `CarePlan.activity.plannedActivityReference` for structured references\n  or `CarePlan.activity.performedActivity` for completed activities.\n- **Risk group** moved from DSTU1 inline Observation to an extension on CarePlan.\n- **Informational text** (healthy nutrition, healthy weight, regular medication) is carried\n  in `CarePlan.note` or `CarePlan.supportingInfo.display`.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "display": "ObservationLt (LT Base)",
+              "relationship": "related-to",
+              "comment": "Section header. Registrar, institution, and workstation context typically use LT Base Patient, Practitioner, Organization, and PractitionerRole (not itemised in the illustrative Questionnaire). LT Base IG: https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base"
+            }
+          ],
+          "code": "grp-context",
+          "display": "Context group"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-risk-assessment-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Aligns with Observation.effectiveDateTime on CVDRiskAssessmentLtCvd. StructureDefinition: https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd. Example: observation-cvd-risk-assessment-example. CVD IG: https://hl7.lt/fhir/cvd/ImplementationGuide/lt.hl7.fhir.cvd"
+            }
+          ],
+          "code": "evaluation-datetime"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-chronic-condition-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Section header for accompanying chronic diseases; child items use CvdChronicConditionLtCvd."
+            }
+          ],
+          "code": "grp-chronic"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-chronic-condition-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Map programme text to Condition with CvdChronicConditionLtCvd (ICD-10). StructureDefinition: https://hl7.lt/fhir/cvd/StructureDefinition/cvd-chronic-condition-lt-cvd. Example: condition-cvd-heart-failure-example."
+            }
+          ],
+          "code": "chronic-condition-summary"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-factor-status-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Section header for programme risk-factor items (RiskFactorStatusLtCvd)."
+            }
+          ],
+          "code": "grp-risk-factors"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-factor-status-lt-cvd",
+              "relationship": "related-to",
+              "comment": "RiskFactorStatusLtCvd. Example: observation-hypertension-negligible-example. StructureDefinition: https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd"
+            }
+          ],
+          "code": "risk-factor-hypertension"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-factor-status-lt-cvd",
+              "relationship": "related-to",
+              "comment": "RiskFactorStatusLtCvd. Example: observation-dyslipidemia-treated-example."
+            }
+          ],
+          "code": "risk-factor-dyslipidemia"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-factor-status-lt-cvd",
+              "relationship": "related-to",
+              "comment": "RiskFactorStatusLtCvd. Example: observation-diabetes-untreated-example."
+            }
+          ],
+          "code": "risk-factor-diabetes"
+        },
+        {
+          "target": [
+            {
+              "code": "tobacco-use-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle (LT Lifestyle). StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/tobacco-use-lt-lifestyle. CI example: https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-tobacco-use-current-smoker-example.html"
+            }
+          ],
+          "code": "risk-factor-smoking"
+        },
+        {
+          "target": [
+            {
+              "code": "body-height",
+              "relationship": "related-to",
+              "comment": "Section header for anthropometrics and blood pressure (LT Vital Signs IG). See child items for BodyHeight, BodyWeight, WaistCircumference, BloodPressurePanel. Vital Signs IG: https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns"
+            }
+          ],
+          "code": "grp-objective"
+        },
+        {
+          "target": [
+            {
+              "code": "body-height",
+              "relationship": "related-to",
+              "comment": "BodyHeight. StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-height. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-body-height-example.html"
+            }
+          ],
+          "code": "height-cm"
+        },
+        {
+          "target": [
+            {
+              "code": "body-weight",
+              "relationship": "related-to",
+              "comment": "BodyWeight. StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-weight. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-body-weight-example.html"
+            }
+          ],
+          "code": "weight-kg"
+        },
+        {
+          "target": [
+            {
+              "code": "waist-circumference",
+              "relationship": "related-to",
+              "comment": "WaistCircumference. StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/waist-circumference. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-waist-circumference-example.html"
+            }
+          ],
+          "code": "waist-cm"
+        },
+        {
+          "target": [
+            {
+              "code": "blood-pressure-panel",
+              "relationship": "related-to",
+              "comment": "BloodPressurePanel (systolic component). StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-blood-pressure-example.html"
+            }
+          ],
+          "code": "bp-systolic"
+        },
+        {
+          "target": [
+            {
+              "code": "blood-pressure-panel",
+              "relationship": "related-to",
+              "comment": "BloodPressurePanel (diastolic component); same Observation as systolic."
+            }
+          ],
+          "code": "bp-diastolic"
+        },
+        {
+          "target": [
+            {
+              "code": "lipidogram-lab-lt",
+              "relationship": "related-to",
+              "comment": "Lipid panel section. Composite lab example: observation-lipidogram-example. Lab IG: https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab. CI: https://build.fhir.org/ig/HL7LT/ig-lt-lab/Observation-observation-lipidogram-example.html"
+            }
+          ],
+          "code": "grp-lipidogram"
+        },
+        {
+          "target": [
+            {
+              "code": "total-cholesterol-lab-lt",
+              "relationship": "related-to",
+              "comment": "TotalCholesterolLabLt. StructureDefinition: https://hl7.lt/fhir/lab/StructureDefinition/total-cholesterol-lab-lt. Same CI lipidogram example as other lipid items."
+            }
+          ],
+          "code": "lipid-tc"
+        },
+        {
+          "target": [
+            {
+              "code": "cholesterol-hdl-lab-lt",
+              "relationship": "related-to",
+              "comment": "CholesterolHdlLabLt. StructureDefinition: https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-hdl-lab-lt."
+            }
+          ],
+          "code": "lipid-hdl"
+        },
+        {
+          "target": [
+            {
+              "code": "cholesterol-ldl-lab-lt",
+              "relationship": "related-to",
+              "comment": "CholesterolLdlLabLt. StructureDefinition: https://hl7.lt/fhir/lab/StructureDefinition/cholesterol-ldl-lab-lt."
+            }
+          ],
+          "code": "lipid-ldl"
+        },
+        {
+          "target": [
+            {
+              "code": "triglycerides-lab-lt",
+              "relationship": "related-to",
+              "comment": "TriglyceridesLabLt. StructureDefinition: https://hl7.lt/fhir/lab/StructureDefinition/triglycerides-lab-lt."
+            }
+          ],
+          "code": "lipid-tg"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-risk-assessment-lt-cvd",
+              "relationship": "related-to",
+              "comment": "Section for SCORE2 and programme risk group (CVD IG)."
+            }
+          ],
+          "code": "grp-risk-estimate"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-risk-assessment-lt-cvd",
+              "relationship": "related-to",
+              "comment": "SCORE2 as valueQuantity (%). CVDRiskAssessmentLtCvd. Example: observation-cvd-risk-assessment-example."
+            }
+          ],
+          "code": "score2-percent"
+        },
+        {
+          "target": [
+            {
+              "code": "risk-group-observation-lt-cvd",
+              "relationship": "related-to",
+              "comment": "RiskGroupObservationLtCvd. StructureDefinition: https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd. Example: observation-risk-group-high-example."
+            }
+          ],
+          "code": "risk-group-cvd"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "Section for input/fsh/migration/mapping.md parity: concepts listed as missing in sibling IGs or as extended investigations. Rows 3–12,16–17 (BP, vitals, lipids, smoking) are covered by sibling items above."
+            }
+          ],
+          "code": "grp-migration-md-parity"
+        },
+        {
+          "target": [
+            {
+              "code": "encounter-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 1 — Encounter. StructureDefinition: https://hl7.lt/fhir/base/StructureDefinition/encounter-lt. Base example: encounter-psychiatric-example."
+            }
+          ],
+          "code": "mig-encounter"
+        },
+        {
+          "target": [
+            {
+              "code": "practitioner-role-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 2 — PractitionerRole. StructureDefinition: https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt. Example: practitioner-role-doctor-vilnius-hospital-example."
+            }
+          ],
+          "code": "mig-practitioner-role"
+        },
+        {
+          "target": [
+            {
+              "code": "heart-rate",
+              "relationship": "related-to",
+              "comment": "mapping.md row 4 — Heart rate. Vital Signs heart-rate profile. CI: https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/"
+            }
+          ],
+          "code": "mig-heart-rate"
+        },
+        {
+          "target": [
+            {
+              "code": "bmi",
+              "relationship": "related-to",
+              "comment": "mapping.md row 7 — BMI. StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/bmi"
+            }
+          ],
+          "code": "mig-bmi"
+        },
+        {
+          "target": [
+            {
+              "code": "glucose-venous-lab-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 13 — Fasting glucose. Lab: glucose-venous-lab-lt."
+            }
+          ],
+          "code": "mig-glucose-fasting"
+        },
+        {
+          "target": [
+            {
+              "code": "hba1c-lab-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 14 — HbA1c. Lab: hba1c-lab-lt."
+            }
+          ],
+          "code": "mig-hba1c"
+        },
+        {
+          "target": [
+            {
+              "code": "creatinine-test-lab-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 15 — Creatinine. Lab: creatinine-test-lab-lt."
+            }
+          ],
+          "code": "mig-creatinine"
+        },
+        {
+          "target": [
+            {
+              "code": "egfr-lab-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 15 — eGFR. Lab: egfr-lab-lt."
+            }
+          ],
+          "code": "mig-egfr"
+        },
+        {
+          "target": [
+            {
+              "code": "alcohol-consumption-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "mapping.md row 18 — Alcohol. Lifestyle: alcohol-consumption-lt-lifestyle."
+            }
+          ],
+          "code": "mig-alcohol"
+        },
+        {
+          "target": [
+            {
+              "code": "physical-activity-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "mapping.md row 19 — Physical activity. Lifestyle: physical-activity-lt-lifestyle."
+            }
+          ],
+          "code": "mig-physical-activity"
+        },
+        {
+          "target": [
+            {
+              "code": "nutrition-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "mapping.md row 20 — Dietary habits. Lifestyle: nutrition-lt-lifestyle."
+            }
+          ],
+          "code": "mig-nutrition"
+        },
+        {
+          "target": [
+            {
+              "code": "family-history-cvd-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "mapping.md row 21 — Family CVD history. Lifestyle: family-history-cvd-lt-lifestyle."
+            }
+          ],
+          "code": "mig-family-cvd"
+        },
+        {
+          "target": [
+            {
+              "code": "service-request-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 22 — Referral. Base ServiceRequestLt (no example in IGs; profile only)."
+            }
+          ],
+          "code": "mig-referral"
+        },
+        {
+          "target": [
+            {
+              "code": "appointment-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 23 — Follow-up visit. Base AppointmentLt (no example in IGs; profile only)."
+            }
+          ],
+          "code": "mig-follow-up-appointment"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "mapping.md row 24 — Achievement evaluation at second timepoint; use prevention Questionnaire achievement group or repeat vitals/labs/lifestyle Observations."
+            }
+          ],
+          "code": "mig-achievement-round"
+        },
+        {
+          "target": [
+            {
+              "code": "cvd-chronic-condition-lt-cvd",
+              "relationship": "related-to",
+              "comment": "mapping.md row 25 — Additional chronic conditions (depression, COPD, AF, …). CvdChronicConditionLtCvd."
+            }
+          ],
+          "code": "mig-chronic-additional"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lt",
+              "relationship": "related-to",
+              "comment": "Section for migration already-covered table: context notes and EKG/medication/diabetes duration."
+            }
+          ],
+          "code": "grp-ig-example-parity"
+        },
+        {
+          "target": [
+            {
+              "code": "patient-lt",
+              "relationship": "related-to",
+              "comment": "Maps to PatientLt; QuestionnaireResponse.subject typically carries the Patient. Example: patient-male-example."
+            }
+          ],
+          "code": "ac-patient-context"
+        },
+        {
+          "target": [
+            {
+              "code": "practitioner-lt",
+              "relationship": "related-to",
+              "comment": "Maps to PractitionerLt; QuestionnaireResponse.author. Example: practitioner-example."
+            }
+          ],
+          "code": "ac-practitioner-context"
+        },
+        {
+          "target": [
+            {
+              "code": "organization-lt",
+              "relationship": "related-to",
+              "comment": "Maps to OrganizationLt; use context in CarePlan/Encounter. Example: organization-example."
+            }
+          ],
+          "code": "ac-organization-context"
+        },
+        {
+          "target": [
+            {
+              "code": "ekg-lt-cvd",
+              "relationship": "related-to",
+              "comment": "mapping.md already covered — ECG. EKGLtCvd. Example: observation-ekg-normal-example."
+            }
+          ],
+          "code": "ac-ekg-summary"
+        },
+        {
+          "target": [
+            {
+              "code": "medication-statement-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "MedicationStatementLtLifestyle (LT Lifestyle). StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-statement-lt-lifestyle. Example: medication-statement-screening-example."
+            }
+          ],
+          "code": "ac-medication-context"
+        },
+        {
+          "target": [
+            {
+              "code": "diabetes-duration-status-lt-lifestyle",
+              "relationship": "related-to",
+              "comment": "DiabetesDurationStatusLtLifestyle (LT Lifestyle). StructureDefinition: https://hl7.lt/fhir/lifestyle/StructureDefinition/diabetes-duration-status-lt-lifestyle. Example: observation-diabetes-duration-gt10-example."
+            }
+          ],
+          "code": "ac-diabetes-duration"
+        }
+      ],
+      "source": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-risk-assessment-item",
+      "target": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "CvdRiskAssessmentQuestionnaireItemMap",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-01",
+  "publisher": "HL7 Lithuania"
+}

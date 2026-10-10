@@ -1,0 +1,15 @@
+{
+  "resourceType": "Device",
+  "id": "device-heart-rate-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-heart-rate"
+    ]
+  },
+  "type": [
+    {
+      "text": "Digital heart rate monitor"
+    }
+  ],
+  "status": "active"
+}

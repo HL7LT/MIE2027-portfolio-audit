@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "family-member-screening-history-lt-lifestyle",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/family-member-screening-history-lt-lifestyle",
+  "version": "1.0.0",
+  "name": "FamilyMemberScreeningHistoryLtLifestyle",
+  "title": "Family Member History for screening program",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-27T19:55:00+03:00",
+  "publisher": "HL7 Lithuania",
+  "description": "Family Member History record.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "FamilyMemberHistory",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/family-member-history-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "FamilyMemberHistory.dataAbsentReason",
+        "path": "FamilyMemberHistory.dataAbsentReason",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.date",
+        "path": "FamilyMemberHistory.date",
+        "mustSupport": true
+      },
+      {
+        "id": "FamilyMemberHistory.condition.code",
+        "path": "FamilyMemberHistory.condition.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/screened-condition"
+        }
+      }
+    ]
+  }
+}

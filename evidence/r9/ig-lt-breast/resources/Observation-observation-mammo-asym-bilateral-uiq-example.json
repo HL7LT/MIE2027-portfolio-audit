@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-mammo-asym-bilateral-uiq-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "288531002",
+            "system": "http://snomed.info/sct",
+            "display": "Finding status values"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "35105006",
+            "system": "http://snomed.info/sct",
+            "display": "Increased"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "129714008",
+            "system": "http://snomed.info/sct",
+            "display": "Mammography finding (finding)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "129789007",
+            "system": "http://snomed.info/sct",
+            "display": "Focal asymmetric breast tissue finding"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "71651007",
+        "system": "http://snomed.info/sct",
+        "display": "Mammography (procedure)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2024-11-20T10:00:00+02:00",
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "code": "not-applicable",
+        "system": "http://terminology.hl7.org/CodeSystem/data-absent-reason"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/bodystructure-bilateral-uiq-example"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-mammogram-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-10-15T10:00:00Z"
+            }
+          ],
+          "linkId": "exam-date",
+          "text": "Date of test"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 2.5,
+                "code": "mGy",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mGy"
+              }
+            }
+          ],
+          "linkId": "radiation-dose",
+          "text": "Radiation dose (mGy)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Rima Kazlauskiene"
+            }
+          ],
+          "linkId": "technologist-name",
+          "text": "Radiology technologist"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Hologic Selenia Dimensions"
+            }
+          ],
+          "linkId": "equipment-name",
+          "text": "Equipment name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Vilniaus universiteto ligonines Santaros klinikos"
+            }
+          ],
+          "linkId": "facility-name",
+          "text": "Facility name"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "skin-formations",
+          "text": "Skin formations"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "scars",
+          "text": "Scars"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "nipple-inversion",
+          "text": "Nipple inversion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "prior-breast-surgery",
+          "text": "Prior breast surgery"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "breast-injuries",
+          "text": "Breast injuries"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "breast-diseases",
+          "text": "Breast diseases"
+        }
+      ],
+      "linkId": "grp-palpable-changes",
+      "text": "Palpable / visible changes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "acr-b",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "ACR B – Scattered areas of fibroglandular density"
+              }
+            }
+          ],
+          "linkId": "acr-density",
+          "text": "ACR breast density category"
+        }
+      ],
+      "linkId": "grp-gland-density",
+      "text": "Gland density"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-changes-present",
+          "text": "Changes present"
+        }
+      ],
+      "linkId": "grp-findings-right",
+      "text": "Findings – right breast"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-changes-present",
+          "text": "Changes present"
+        }
+      ],
+      "linkId": "grp-findings-left",
+      "text": "Findings – left breast"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "dynamics-none",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Image without negative dynamics"
+              }
+            }
+          ],
+          "linkId": "dynamics",
+          "text": "Dynamic changes"
+        }
+      ],
+      "linkId": "grp-dynamics",
+      "text": "Dynamic changes compared to previous examination"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "skin-changes",
+          "text": "Skin changes"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "nipple-changes",
+          "text": "Nipple changes"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-node-changes",
+          "text": "Lymph node changes"
+        }
+      ],
+      "linkId": "grp-related-changes",
+      "text": "Related changes"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            }
+          ],
+          "linkId": "birads-conclusion",
+          "text": "BI-RADS conclusion"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Routine screening mammogram. No suspicious findings."
+            }
+          ],
+          "linkId": "conclusion-notes",
+          "text": "Notes"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-mammogram-lt-breast",
+  "status": "completed",
+  "authored": "2025-10-15T11:30:00Z",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "author": {
+    "reference": "Practitioner/example-practitioner"
+  }
+}

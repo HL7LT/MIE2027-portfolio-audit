@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CVDRiskGroupLtCvd",
+  "id": "cvd-risk-group",
+  "title": "Cardiovascular Disease Risk Group",
+  "description": "Defines the interpretation categories for cardiovascular disease risk assessment results, based on HL7 Observation Interpretation codes.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "Includes content from HL7 v3 Observation Interpretation CodeSystem (http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation).",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+        "concept": [
+          {
+            "code": "N",
+            "display": "Normal"
+          },
+          {
+            "code": "H",
+            "display": "High"
+          },
+          {
+            "code": "HU",
+            "display": "Significantly high"
+          }
+        ]
+      }
+    ]
+  }
+}

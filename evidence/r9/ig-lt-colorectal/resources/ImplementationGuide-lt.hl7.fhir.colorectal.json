@@ -1,0 +1,1429 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/ImplementationGuide/lt.hl7.fhir.colorectal",
+  "version": "0.0.1",
+  "name": "LTColorectal",
+  "title": "Lithuanian Colorectal Cancer Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Colorectal Cancer Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.colorectal",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "ValueSet/bbps-colon-segments"
+        },
+        "name": "BBPS Colon Segments",
+        "description": "SNOMED CT codes representing the three segments of the colon evaluated in the Boston Bowel Preparation Scale.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bleeding-control-method"
+        },
+        "name": "Bleeding Control Method",
+        "description": "Methods used for controlling bleeding during or after colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bowel-prep-method"
+        },
+        "name": "Bowel Preparation Method",
+        "description": "Methods of bowel preparation timing for colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bowel-preparation-quality"
+        },
+        "name": "Bowel Preparation Quality",
+        "description": "SNOMED CT codes representing the overall quality of bowel preparation for a colonoscopy procedure.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/bowel-preparation-quality-lt-colorectal"
+        },
+        "name": "Bowel Preparation Quality (LT Colorectal)",
+        "description": "Profile for recording bowel preparation quality assessment using the Boston Bowel Preparation Scale (BBPS) in the Lithuanian colorectal cancer screening program. Quality is poor when total < 6 points, or at least one segment has a score of 0 or 1.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bowel-prep-score-values"
+        },
+        "name": "Bowel Preparation Score Values (Boston Scale)",
+        "description": "SNOMED CT codes representing the Boston Bowel Preparation Scale segment scores (0 to 3 points).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/bowel-preparation-substance"
+        },
+        "name": "Bowel Preparation Substances",
+        "description": "Substances used for bowel preparation before colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/observation-polyp-lt-colorectal"
+        },
+        "name": "Colon Polyp Observation (LT Colorectal)",
+        "description": "Profile for recording a colon polyp, enforcing the inclusion of size, Paris/NICE classifications, and SMSA scoring.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/procedure-polypectomy-lt-colorectal"
+        },
+        "name": "Colonic Polypectomy Procedure (LT Colorectal)",
+        "description": "Profile enforcing the mandatory documentation of the polypectomy technique, tools, and histology outcome using local codes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colonoscope-reach"
+        },
+        "name": "Colonoscope Reach",
+        "description": "SNOMED CT anatomical structures identifying how far the colonoscope reached during the examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscope-reach-lt-colorectal"
+        },
+        "name": "Colonoscope Reach (LT Colorectal)",
+        "description": "Profile for recording how far the colonoscope reached during a colorectal cancer screening program. Used to calculate the Cecum intubation rate.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-bleeding-control-lt-colorectal"
+        },
+        "name": "Colonoscopy Bleeding Control (LT Colorectal)",
+        "description": "Profile for recording bleeding control procedures performed during colonoscopy in the Lithuanian colorectal cancer screening program. Captures the method used (clip, epinephrine injection, etc.).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-complication-presence-lt-colorectal"
+        },
+        "name": "Colonoscopy Complication Presence (LT Colorectal)",
+        "description": "Profile for recording whether there was a complication after diagnostic colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colonoscopy-complication-type"
+        },
+        "name": "Colonoscopy Complication Type",
+        "description": "Complications that may occur after diagnostic colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-complication-type-lt-colorectal"
+        },
+        "name": "Colonoscopy Complication Type (LT Colorectal)",
+        "description": "Profile for recording the complication type after diagnostic colonoscopy. This observation is recorded only if complication presence is Yes.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-composition-lt-colorectal"
+        },
+        "name": "Colonoscopy Composition (LT Colorectal)",
+        "description": "Colonoscopy screening episode composition for the Lithuanian colorectal cancer prevention program. Links all observations and procedures from a colonoscopy examination into a single clinical document.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-conclusion-lt-colorectal"
+        },
+        "name": "Colonoscopy Conclusion (LT Colorectal)",
+        "description": "Profile for recording the final diagnostic conclusion of a colonoscopy examination in the Lithuanian colorectal cancer screening program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-procedure-lt-colorectal"
+        },
+        "name": "Colonoscopy Procedure (LT Colorectal)",
+        "description": "Profile for recording the colonoscopy procedure in the Lithuanian colorectal cancer screening program. Captures whether the procedure was performed with or without anesthesia, video colonoscope usage, and withdrawal time.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-report-lt-colorectal"
+        },
+        "name": "Colonoscopy Report (LT Colorectal)",
+        "description": "Colonoscopy screening report for the Lithuanian colorectal cancer prevention program. Wraps a ColonoscopyCompositionLtColorectal and aggregates structured results from the colonoscopy procedure.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colonoscopy-wall-injury-action"
+        },
+        "name": "Colonoscopy Wall Injury Action",
+        "description": "Actions taken after colon wall injury during diagnostic colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/colonoscopy-wall-injury-detail-lt-colorectal"
+        },
+        "name": "Colonoscopy Wall Injury Detail (LT Colorectal)",
+        "description": "Profile for recording Sydney classification and action taken after colon wall injury during diagnostic colonoscopy. This observation is recorded only if accidental organ perforation during a procedure or perforation of large intestine was selected as the complication type.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-polyp-codes-lt"
+        },
+        "name": "Colorectal - Local Polyp Codes CS",
+        "description": "Local codes for polyp classifications (Paris, NICE, Access, SMSA) used in the Lithuanian colorectal screening program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-polypectomy-codes-lt"
+        },
+        "name": "Colorectal - Local Polypectomy Codes CS",
+        "description": "Local codes for polypectomy excision method and histology status. The lumen filling, instrument and hydropreparation concepts live in their own code systems so that Procedure.used can be sliced on the code system.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-excision-method-lt-colorectal"
+        },
+        "name": "Colorectal - Polypectomy Excision Method VS",
+        "description": "Whether the polyp was excised en bloc or piecemeal.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-histology-status-lt-colorectal"
+        },
+        "name": "Colorectal - Polypectomy Histology Status VS",
+        "description": "Whether the excised polyp was sent for histological examination, and the state of that request.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-polypectomy-hydroprep-codes-lt"
+        },
+        "name": "Colorectal - Polypectomy Hydropreparation Codes CS",
+        "description": "Solution injected to lift the polyp before excision.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-hydroprep-lt-colorectal"
+        },
+        "name": "Colorectal - Polypectomy Hydropreparation VS",
+        "description": "Solution injected to lift the polyp before excision, including the case where the choice is still pending.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-polypectomy-instrument-codes-lt"
+        },
+        "name": "Colorectal - Polypectomy Instrument Codes CS",
+        "description": "Instrument and energy method used to remove the polyp.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-instrument-lt-colorectal"
+        },
+        "name": "Colorectal - Polypectomy Instrument VS",
+        "description": "Instrument used to remove the polyp: hot snare, cold snare, or forceps.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-polypectomy-lumen-filling-codes-lt"
+        },
+        "name": "Colorectal - Polypectomy Lumen Filling Codes CS",
+        "description": "Medium used to distend the bowel lumen during polypectomy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-lumen-filling-lt-colorectal"
+        },
+        "name": "Colorectal - Polypectomy Lumen Filling VS",
+        "description": "Medium used to distend the bowel lumen during polypectomy: air or water.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colorectal-anatomy"
+        },
+        "name": "Colorectal Anatomy",
+        "description": "Shared SNOMED CT codes representing the anatomical segments of the colon and rectum. Used for recording locations of tumors, polyps, and colonoscope reach.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-colonoscopy-questionnaire-item"
+        },
+        "name": "Colorectal colonoscopy ESPBI Questionnaire item (linkId)",
+        "description": "Stable linkId values for the ESPBI colonoscopy Questionnaire; source codes for the Colorectal ConceptMap prototype.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colorectal-conclusion"
+        },
+        "name": "Colorectal Conclusion",
+        "description": "SNOMED CT codes representing the final diagnostic conclusions of the colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/colorectal-histological-diagnosis"
+        },
+        "name": "Colorectal Histological Diagnosis",
+        "description": "Histological diagnosis categories for pathological examination in the colorectal cancer screening program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/colorectal-fhir-mapping-target"
+        },
+        "name": "Colorectal Questionnaire → FHIR mapping target",
+        "description": "Short identifiers for the FHIR profile / element combinations referenced by the Colorectal ConceptMap prototype.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/conceptmap-colorectal-colonoscopy-questionnaire-to-fhir"
+        },
+        "name": "ConceptMap: ESPBI colonoscopy Questionnaire → FHIR mapping (prototype)",
+        "description": "Maps clinically meaningful linkIds of the ESPBI colonoscopy Questionnaire to Colorectal / foundation profiles. Prototype skeleton supplied with the JMIR Med Inform implementation report.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/degree-of-differentiation"
+        },
+        "name": "Degree of Differentiation",
+        "description": "Histologic grade / degree of differentiation for colorectal carcinoma.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/fecal-occult-blood-test-report-lt-colorectal"
+        },
+        "name": "Diagnostic Report: Fecal Occult Blood Test",
+        "description": "Diagnostic report representing a fecal occult blood test examination based on stool specimen analysis using an immunochemical method.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-fobt-qualitative-not-detected-example"
+        },
+        "name": "Diagnostic Report: FOBT Qualitative Not Detected (example)",
+        "description": "Example of a diagnostic report for a qualitative fecal occult blood test with 'Not detected' result.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/fecal-occult-blood-test-report-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dysplasia-grade"
+        },
+        "name": "Dysplasia Grade",
+        "description": "Grades of dysplasia for histological assessment in colorectal pathology.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/fecal-occult-blood-test-codes"
+        },
+        "name": "Fecal Occult Blood Test Codes",
+        "description": "LOINC codes for fecal occult blood (hemoglobin) testing.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/fecal-occult-blood-qualitative-result"
+        },
+        "name": "FOBT Qualitative Result",
+        "description": "Qualitative result values for fecal occult blood testing.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/histological-diagnosis-lt-colorectal"
+        },
+        "name": "Histological Diagnosis (LT Colorectal)",
+        "description": "Profile for recording histological diagnosis results from polyp or tumor biopsy specimens in the Lithuanian colorectal cancer screening program. Captures histological type, dysplasia grade, radicalism of removal, tumor budding, invasion depth, and MMR protein expression.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hydropreparation-substance"
+        },
+        "name": "Hydropreparation Substance",
+        "description": "Substances used for submucosal injection (hydropreparation) during polypectomy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/intravascular-invasion"
+        },
+        "name": "Intravascular Invasion",
+        "description": "Vascular invasion status for colorectal carcinoma.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/invasion-depth"
+        },
+        "name": "Invasion Depth",
+        "description": "Depth of invasion classification (Haggitt and Kikuchi) for colorectal lesions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lumen-filling"
+        },
+        "name": "Lumen Filling Method",
+        "description": "Method used to distend the colonic lumen during polypectomy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mmrp-expression"
+        },
+        "name": "MMRP Expression Status",
+        "description": "Mismatch repair protein expression status (microsatellite instability assessment) for colorectal carcinoma.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/molecular-test-result"
+        },
+        "name": "Molecular Test Result",
+        "description": "Result values for molecular testing in the colorectal cancer screening program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/molecular-test-result-lt-colorectal"
+        },
+        "name": "Molecular Test Result (LT Colorectal)",
+        "description": "Profile for recording molecular test results in the Lithuanian colorectal cancer\nscreening program. Covers MSI (microsatellite instability), KRAS, NRAS, and\nBRAF V600E mutation testing. Each test is a separate Observation instance.\n\nDefault for adenocarcinoma: all molecular tests are automatically indicated\nbut may be postponed.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/molecular-test-type"
+        },
+        "name": "Molecular Test Type",
+        "description": "Types of molecular tests performed in the colorectal cancer screening program: MSI, KRAS, NRAS, and BRAF V600E.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/nice-classification"
+        },
+        "name": "NICE Classification",
+        "description": "NBI International Colorectal Endoscopic (NICE) classification for prediction of polyp histology.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-comp-perforation-example"
+        },
+        "name": "Observation: Accidental Organ Perforation During Procedure (example)",
+        "description": "Example of an observation recording accidental organ perforation during a procedure after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-type-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-complication-anesthesia-example"
+        },
+        "name": "Observation: Anesthesia Complication After Diagnostic Colonoscopy (example)",
+        "description": "Example of an observation recording complication of anesthesia after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-type-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bowel-prep-effective-example"
+        },
+        "name": "Observation: Bowel Prep Quality Effective (example)",
+        "description": "Example of an observation recording that the bowel preparation was effective (adequate quality).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bowel-prep-inadequate-example"
+        },
+        "name": "Observation: Bowel Prep Quality Inadequate (example)",
+        "description": "Example of an observation recording that the bowel preparation was inadequate (poor quality).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-braf-postponed-example"
+        },
+        "name": "Observation: BRAF V600E - Postponed (example)",
+        "description": "Example of a BRAF V600E mutation test that has been postponed.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscope-reach-cecum-example"
+        },
+        "name": "Observation: Colonoscope Reach Cecum (example)",
+        "description": "Example of an observation recording that the colonoscope reached the Cecum.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscope-reach-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscope-reach-ileum-example"
+        },
+        "name": "Observation: Colonoscope Reach Terminal Ileum (example)",
+        "description": "Example of an observation recording that the colonoscope reached the Terminal ileum.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscope-reach-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bbps-left-colon-example"
+        },
+        "name": "Observation: Colorectal - BBPS Left Colon (3 points)",
+        "description": "Example of an observation recording an excellent (3 points) Boston scale score for the Left colon.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bbps-transverse-colon-example"
+        },
+        "name": "Observation: Colorectal - BBPS Transverse Colon (2 points)",
+        "description": "Example of an observation recording a good (2 points) Boston scale score for the Transverse colon.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bowel-prep-total-effective-example"
+        },
+        "name": "Observation: Colorectal - Bowel Prep Quality & Total Score (Effective)",
+        "description": "Example of a single observation recording both the overall Effective quality and the Total Boston Scale score.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bowel-prep-total-inadequate-example"
+        },
+        "name": "Observation: Colorectal - Bowel Prep Quality & Total Score (Inadequate)",
+        "description": "Example of a single observation recording both the overall Inadequate quality and the Total Boston Scale score.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-bowel-prep-not-done-example"
+        },
+        "name": "Observation: Colorectal - Bowel Prep Quality (Not Done)",
+        "description": "Example of an observation recording that the bowel preparation was not done (no Boston scale score applicable).",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-conclusion-normal-example"
+        },
+        "name": "Observation: Colorectal - Conclusion (Normal)",
+        "description": "Records the final conclusion of the procedure as Normal.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-conclusion-polyps-example"
+        },
+        "name": "Observation: Colorectal - Conclusion (Polyps & Diverticulosis)",
+        "description": "Records the final conclusion showing Polyps and Diverticulosis.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-polyp-found-example"
+        },
+        "name": "Observation: Colorectal - Polyp Found (with SMSA & Details)",
+        "description": "Example recording a colon polyp, properly mapped to the ColorectalPolypCodesLt CodeSystem.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/observation-polyp-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-tumor-found-example"
+        },
+        "name": "Observation: Colorectal - Tumor (Found)",
+        "description": "Example recording the presence of a tumor, including its location and description.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-complication-presence-no-example"
+        },
+        "name": "Observation: Diagnostic Colonoscopy Complication Presence No (example)",
+        "description": "Example of an observation recording that no complication occurred after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-presence-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-complication-presence-yes-example"
+        },
+        "name": "Observation: Diagnostic Colonoscopy Complication Presence Yes (example)",
+        "description": "Example of an observation recording that a complication occurred after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-presence-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/observation-fecal-occult-blood-test-result-lt-colorectal"
+        },
+        "name": "Observation: Fecal Occult Blood Test Result",
+        "description": "Profile for recording the result of a fecal occult blood test in the context of colorectal cancer screening.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-fobt-qualitative-detected-example"
+        },
+        "name": "Observation: FOBT Qualitative Detected (example)",
+        "description": "Example of a qualitative fecal occult blood test result with 'Detected' value.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-fobt-qualitative-not-detected-example"
+        },
+        "name": "Observation: FOBT Qualitative Not Detected (example)",
+        "description": "Example of a qualitative fecal occult blood test result with 'Not detected' value.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-fobt-quantitative-example"
+        },
+        "name": "Observation: FOBT Quantitative (example)",
+        "description": "Example of a quantitative fecal occult blood test result.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-complication-hemorrhage-example"
+        },
+        "name": "Observation: Hemorrhage After Diagnostic Colonoscopy (example)",
+        "description": "Example of an observation recording hemorrhage of colon after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-type-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-kras-detected-example"
+        },
+        "name": "Observation: KRAS - Detected mutation (example)",
+        "description": "Example of a KRAS mutation test with detected mutation result.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-msi-detected-example"
+        },
+        "name": "Observation: MSI - Set (example)",
+        "description": "Example of a microsatellite instability (MSI) test with established result.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-nras-not-detected-example"
+        },
+        "name": "Observation: NRAS - Undefined mutation (example)",
+        "description": "Example of an NRAS mutation test with no mutation detected.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-complication-large-perforation-example"
+        },
+        "name": "Observation: Perforation of Large Intestine (example)",
+        "description": "Example of an observation recording perforation of large intestine after diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-type-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-wall-injury-clip-type3-example"
+        },
+        "name": "Observation: Wall Injury Detail Type 3 with Clip (example)",
+        "description": "Example showing Sydney classification type 3 and closure by clip after colon wall injury during diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-wall-injury-detail-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-wall-injury-suture-type4-example"
+        },
+        "name": "Observation: Wall Injury Detail Type 4 with Suture (example)",
+        "description": "Example showing Sydney classification type 4 and closure by suture after colon wall injury during diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-wall-injury-detail-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-colonoscopy-wall-injury-operation-type5-example"
+        },
+        "name": "Observation: Wall Injury Detail Type 5 with Operation (example)",
+        "description": "Example showing Sydney classification type 5 and operation on colon after colon wall injury during diagnostic colonoscopy.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-wall-injury-detail-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Organization/organization-example"
+        },
+        "name": "Organization: Vilniaus miesto ligoninė (example)",
+        "description": "Example of a healthcare organization",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/paris-classification"
+        },
+        "name": "Paris Endoscopic Classification",
+        "description": "Paris endoscopic classification of superficial neoplastic lesions for polyp morphology assessment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Patient/patient-male-example"
+        },
+        "name": "Patient: Jonas Petrauskas (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polyp-access"
+        },
+        "name": "Polyp Access Difficulty",
+        "description": "Difficulty of access to the polyp during endoscopy, used in SMSA scoring.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polyp-predicted-histology"
+        },
+        "name": "Polyp Predicted Histology",
+        "description": "Virtual chromoendoscopy-based predicted histological type of a colorectal polyp.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-instrument"
+        },
+        "name": "Polypectomy Instrument",
+        "description": "Instruments used for polypectomy during colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-method"
+        },
+        "name": "Polypectomy Method",
+        "description": "Methods used for polypectomy during colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/polypectomy-technique"
+        },
+        "name": "Polypectomy Technique",
+        "description": "Thermal technique used during polypectomy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/pdc-grade"
+        },
+        "name": "Poorly Differentiated Clusters (PDC) Grade",
+        "description": "Grading of poorly differentiated clusters in colorectal carcinoma.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/practitioner-example"
+        },
+        "name": "Practitioner: Dr. Petras Kazlauskas (example)",
+        "description": "An example Practitioner conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/procedure-method"
+        },
+        "name": "Procedure Method",
+        "description": "The method or technique used to perform the procedure.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colonoscopy-bleed-clip-example"
+        },
+        "name": "Procedure: Bleeding Control by Clip (example)",
+        "description": "Example showing closure by clip under the reason of bleeding control.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colonoscopy-bleed-epinephrine-example"
+        },
+        "name": "Procedure: Bleeding Control by Epinephrine (example)",
+        "description": "Example showing injection of epinephrine under reason of bleeding control.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colonoscopy-colon-bleeding-example"
+        },
+        "name": "Procedure: Colonoscopic control of colon bleeding (example)",
+        "description": "Example of colonoscopic control of colon bleeding.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-polypectomy-example"
+        },
+        "name": "Procedure: Colorectal - Polypectomy (Cold Snare, En Bloc, Adrenaline)",
+        "description": "Example recording the removal of a polyp perfectly conforming to the strict Polypectomy profile.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/colorectal/StructureDefinition/procedure-polypectomy-lt-colorectal"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-tumor-biopsy-postponed-example"
+        },
+        "name": "Procedure: Colorectal - Tumor Biopsy (Postponed)",
+        "description": "Example recording that the biopsy of the discovered tumor was postponed.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colonoscopy-no-anesthesia-example"
+        },
+        "name": "Procedure: Screening Colonoscopy (example)",
+        "description": "Example of screening colonoscopy.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-colonoscopy-with-anesthesia-example"
+        },
+        "name": "Procedure: Screening Colonoscopy With Anesthesia (example)",
+        "description": "Example of screening colonoscopy where anesthesia and/or sedation is recorded as the reason.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-colonoscopy-espbi"
+        },
+        "name": "Questionnaire: ESPBI Colonoscopy Form",
+        "description": "ESPBI form for colonoscopy in the Lithuanian colorectal cancer screening programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-colonoscopy-espbi-example"
+        },
+        "name": "QuestionnaireResponse: ESPBI Colonoscopy (example)",
+        "description": "A completed ESPBI colonoscopy form for the Lithuanian colorectal cancer screening programme. Shows a colonoscopy with anesthesia, adequate bowel preparation (BBPS 7), cecum reached, one sigmoid polyp removed with cold snare, no complications, conclusion: polyps found, next colonoscopy in 3 years.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/radicalism-of-removal"
+        },
+        "name": "Radicalism of Removal",
+        "description": "Assessment of completeness of lesion removal (R classification).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/resection-type"
+        },
+        "name": "Resection Type",
+        "description": "Whether the lesion was removed en bloc or piecemeal.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/screening-careplan-lt-colorectal"
+        },
+        "name": "Screening CarePlan (LT Colorectal)",
+        "description": "CarePlan tracking the colorectal cancer screening programme cycle.\nCaptures programme enrollment, current status, scheduled activities\n(FOBT testing, colonoscopy referrals, follow-up intervals),\nand care recommendations after colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/snomed-extension-lt-colorectal"
+        },
+        "name": "SNOMED CT Extension for Colorectal Screening",
+        "description": "Extension CodeSystem for concepts used in the Lithuanian colorectal cancer screening program that are not available in SNOMED CT.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-stool-fobt-example"
+        },
+        "name": "Specimen: Stool for FOBT (example)",
+        "description": "Example of a stool specimen used for fecal occult blood testing.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/scc-grading"
+        },
+        "name": "Squamous Cell Carcinoma Grading",
+        "description": "Grading for squamous cell carcinoma of the colorectum.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/sydney-classification"
+        },
+        "name": "Sydney Classification",
+        "description": "Sydney classification types for colon wall injury during diagnostic colonoscopy.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/sydney-classification-cs"
+        },
+        "name": "Sydney Classification for Colon Wall Injury",
+        "description": "Sydney classification for deep mural injury (DMI) of the colon occurring during colonoscopy. The classification describes the severity of injury to the colon wall layers and helps guide appropriate management.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tumor-budding"
+        },
+        "name": "Tumor Budding",
+        "description": "Tumor budding classification for colorectal carcinoma.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tumor-finding-lt-colorectal"
+        },
+        "name": "Tumor Finding (LT Colorectal)",
+        "description": "Profile for recording tumor findings during colonoscopy in the Lithuanian colorectal cancer screening program. Captures location, description, and links to biopsy procedures.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaire.html",
+          "sourceUrl": "questionnaire.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/sydney-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bbps-colon-segments"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bleeding-control-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-score-values"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bowel-preparation-quality"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/bowel-preparation-substance"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colonoscope-reach"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-complication-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-wall-injury-action"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colorectal-anatomy"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colorectal-conclusion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/colorectal-histological-diagnosis"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/degree-of-differentiation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/dysplasia-grade"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/fecal-occult-blood-qualitative-result"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/fecal-occult-blood-test-codes"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/hydropreparation-substance"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/intravascular-invasion"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/invasion-depth"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lumen-filling"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/mmrp-expression"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-result"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/nice-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/paris-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/pdc-grade"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/polyp-access"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/polyp-predicted-histology"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-instrument"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-method"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/polypectomy-technique"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/radicalism-of-removal"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/resection-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/scc-grading"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/sydney-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/tumor-budding"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

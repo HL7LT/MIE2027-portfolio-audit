@@ -1,0 +1,46 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-cervix-hpv-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.330.1",
+      "value": "SPEC-HPV-2025-0001"
+    }
+  ],
+  "collection": {
+    "collectedDateTime": "2025-01-12T08:45:00+02:00",
+    "collector": {
+      "reference": "Practitioner/practitioner-example"
+    },
+    "bodySite": {
+      "concept": {
+        "coding": [
+          {
+            "code": "71252005",
+            "system": "http://snomed.info/sct",
+            "display": "Cervix uteri structure (body structure)"
+          }
+        ]
+      }
+    }
+  },
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "code": "276446009",
+        "system": "http://snomed.info/sct",
+        "display": "Cervical smear specimen (specimen)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "receivedTime": "2025-01-12T09:15:00+02:00"
+}

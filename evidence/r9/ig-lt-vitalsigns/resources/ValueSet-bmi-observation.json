@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BMIObservation",
+  "id": "bmi-observation",
+  "title": "Body Mass Index observation codes (LOINC)",
+  "description": "LOINC codes for body mass index vital sign measurements in Observation.code.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bmi-observation",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "39156-5",
+            "display": "Body mass index (BMI) [Ratio]"
+          }
+        ]
+      }
+    ]
+  }
+}

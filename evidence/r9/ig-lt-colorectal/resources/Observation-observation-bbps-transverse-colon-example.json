@@ -1,0 +1,57 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-bbps-transverse-colon-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "722819004",
+        "system": "http://snomed.info/sct",
+        "display": "Boston bowel preparation scale finding (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "485005",
+        "system": "http://snomed.info/sct",
+        "display": "Transverse colon structure (body structure)"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "10301000132102",
+        "system": "http://snomed.info/sct",
+        "display": "Minor amount of residual staining, small fragments of stool and/or opaque liquid, but mucosa of colon segment seen well (finding)"
+      }
+    ]
+  }
+}

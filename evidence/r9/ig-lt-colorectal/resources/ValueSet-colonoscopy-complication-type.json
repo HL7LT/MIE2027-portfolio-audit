@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColonoscopyComplicationTypeVS",
+  "id": "colonoscopy-complication-type",
+  "title": "Colonoscopy Complication Type",
+  "description": "Complications that may occur after diagnostic colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-complication-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "95540002",
+            "display": "Hemorrhage of colon (disorder)"
+          },
+          {
+            "code": "33211000",
+            "display": "Complication of anesthesia (disorder)"
+          },
+          {
+            "code": "269304002",
+            "display": "Accidental organ perforation during a procedure (disorder)"
+          },
+          {
+            "code": "303078007",
+            "display": "Perforation of large intestine (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

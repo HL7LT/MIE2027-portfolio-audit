@@ -1,0 +1,66 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BodyLengthUnit",
+  "id": "body-length-unit",
+  "title": "Body Length Units",
+  "description": "UCUM units for recording body length measures such as height and head circumference",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/body-length-unit",
+  "meta": {
+    "lastUpdated": "2025-10-26T17:42:56.640+00:00",
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/valueset-extensible",
+      "valueBoolean": false
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "oo"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.4.642.3.958"
+    },
+    {
+      "use": "old",
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.4.642.3.873"
+    }
+  ],
+  "version": "6.0.0",
+  "experimental": false,
+  "publisher": "FHIR Project",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "UCUM is Copyright © 1999-2013 Regenstrief Institute, Inc. and The UCUM Organization, Indianapolis, IN. All rights reserved. See http://unitsofmeasure.org/trac//wiki/TermsOfUse for details",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "cm"
+          },
+          {
+            "code": "[in_i]"
+          }
+        ]
+      }
+    ]
+  }
+}

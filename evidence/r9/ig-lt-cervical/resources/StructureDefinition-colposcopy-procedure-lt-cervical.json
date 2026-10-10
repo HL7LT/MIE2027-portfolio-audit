@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colposcopy-procedure-lt-cervical",
+  "url": "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-procedure-lt-cervical",
+  "name": "ColposcopyProcedureLtCervical",
+  "title": "Procedure: Colposcopy",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "Colposcopy procedure performed as part of the Lithuanian cervical cancer screening and diagnostic pathway (ADP).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "392003006",
+              "system": "http://snomed.info/sct",
+              "display": "Colposcopy (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.occurrence[x]",
+        "path": "Procedure.occurrence[x]",
+        "min": 1
+      },
+      {
+        "id": "Procedure.performer",
+        "path": "Procedure.performer",
+        "min": 1
+      }
+    ]
+  }
+}

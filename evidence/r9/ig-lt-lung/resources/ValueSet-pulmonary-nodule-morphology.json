@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PulmonaryNoduleMorphologyVS",
+  "id": "pulmonary-nodule-morphology",
+  "title": "Pulmonary Nodule Morphology Features",
+  "description": "Allowed morphology characteristics for pulmonary nodules in the Lithuanian\nlung cancer early diagnosis programme.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-morphology",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "129742005",
+            "display": "Lesion with spiculated margin"
+          },
+          {
+            "code": "129739004",
+            "display": "Lesion with microlobulated margin"
+          },
+          {
+            "code": "896998003",
+            "display": "Structural abnormality of subpleural tissue (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

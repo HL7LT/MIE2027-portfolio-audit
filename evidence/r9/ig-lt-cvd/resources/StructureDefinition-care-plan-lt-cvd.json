@@ -1,0 +1,118 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "care-plan-lt-cvd",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd",
+  "name": "CarePlanLtCvd",
+  "title": "Care Plan: CVD prevention measures (LT)",
+  "status": "draft",
+  "description": "Care plan for cardiovascular disease prevention within the Lithuanian CVD screening programme.\nCaptures prevention targets (LDL cholesterol, blood pressure, BMI), lifestyle interventions\n(smoking cessation, diet, physical activity), and follow-up achievement evaluation.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.extension",
+        "path": "CarePlan.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "CarePlan.extension:riskGroup",
+        "path": "CarePlan.extension",
+        "sliceName": "riskGroup",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.extension:activityOtherDesc",
+        "path": "CarePlan.extension",
+        "sliceName": "activityOtherDesc",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.extension:otherDietaryChanges",
+        "path": "CarePlan.extension",
+        "sliceName": "otherDietaryChanges",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.created",
+        "path": "CarePlan.created",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.custodian",
+        "path": "CarePlan.custodian",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.goal",
+        "path": "CarePlan.goal",
+        "short": "Programme goals: target LDL cholesterol, target blood pressure, target BMI, weight loss of at least 5%",
+        "definition": "References to Goal resources for the cardiovascular prevention targets used by the programme:\n\n* target LDL cholesterol (<2.6 / <1.8 / <1.4 mmol/l by CVD risk group);\n* target blood pressure (120–129/<80 mmHg per programme protocol);\n* target body-mass index;\n* weight reduction of at least 5% of initial body weight, from the DSTU1 SKL03 achievement evaluation criteria.",
+        "mustSupport": true
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "short": "Lifestyle interventions (smoking, diet, exercise)",
+        "definition": "Planned or performed lifestyle interventions: smoking cessation (pharmacological / behavioral), dietary changes, physical activity recommendations."
+      },
+      {
+        "id": "CarePlan.note",
+        "path": "CarePlan.note",
+        "short": "Other recommendations, informational text (healthy nutrition, healthy weight, regular medication)"
+      }
+    ]
+  }
+}

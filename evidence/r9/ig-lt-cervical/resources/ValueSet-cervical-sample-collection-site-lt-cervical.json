@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalSampleCollectionSiteLtCervicalVS",
+  "id": "cervical-sample-collection-site-lt-cervical",
+  "title": "Cervical Sample Collection Site (LT Cervical)",
+  "description": "Anatomical locations for sample collection.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-sample-collection-site",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "36973007",
+            "display": "Endocervical structure (body structure)"
+          },
+          {
+            "code": "28349006",
+            "display": "Exocervical structure (body structure)"
+          },
+          {
+            "code": "76784001",
+            "display": "Vaginal structure (body structure)"
+          },
+          {
+            "code": "45292006",
+            "display": "Vulval structure (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

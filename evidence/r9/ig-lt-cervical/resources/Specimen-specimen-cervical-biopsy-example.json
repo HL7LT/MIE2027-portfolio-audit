@@ -1,0 +1,55 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-cervical-biopsy-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.4.330.1",
+      "value": "SPEC-CERV-2025-0042"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "119376003",
+        "system": "http://snomed.info/sct",
+        "display": "Tissue specimen (specimen)"
+      }
+    ],
+    "text": "Cervical cone biopsy specimen"
+  },
+  "collection": {
+    "collectedDateTime": "2025-04-10T09:00:00+02:00",
+    "collector": {
+      "reference": "Practitioner/practitioner-example"
+    },
+    "bodySite": {
+      "concept": {
+        "coding": [
+          {
+            "code": "71252005",
+            "system": "http://snomed.info/sct",
+            "display": "Cervix uteri structure (body structure)"
+          }
+        ]
+      }
+    },
+    "method": {
+      "coding": [
+        {
+          "code": "54535009",
+          "system": "http://snomed.info/sct",
+          "display": "Cone biopsy of cervix (procedure)"
+        }
+      ]
+    }
+  },
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "receivedTime": "2025-04-10T10:30:00+02:00"
+}

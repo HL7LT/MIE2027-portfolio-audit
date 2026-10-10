@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FindingDensityVS",
+  "id": "finding-density",
+  "title": "Finding Density",
+  "description": "Radiologic density or texture types of a lesion detected during LDCT screening.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/finding-density",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "20476009",
+            "display": "Cystic"
+          },
+          {
+            "code": "35702001",
+            "display": "Solid"
+          },
+          {
+            "code": "103360007",
+            "display": "Complex"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code",
+        "concept": [
+          {
+            "code": "calcified",
+            "display": "Calcified"
+          }
+        ]
+      }
+    ]
+  }
+}

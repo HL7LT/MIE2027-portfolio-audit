@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SimpleQuantity-uv-ips",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "pc"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "is-continuous"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "has-units"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/ips/StructureDefinition/SimpleQuantity-uv-ips",
+  "version": "1.1.0",
+  "name": "SimpleQuantityIPS",
+  "title": "SimpleQuantity (IPS)",
+  "status": "draft",
+  "publisher": "Health Level Seven International - Patient Care Work Group",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/patientcare"
+        }
+      ]
+    }
+  ],
+  "description": "Data type profile SimpleQuantity constrained to use UCUM as the code system for units",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
+  "purpose": "This profile of the SimpleQuantity data type profile imposes the usage of the UCUM code system for units",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "type": "Quantity",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/SimpleQuantity",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Quantity",
+        "path": "Quantity",
+        "short": "A measured amount using UCUM",
+        "definition": "A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.\r\nThis profile imposes that the code system for units be UCUM."
+      },
+      {
+        "id": "Quantity.system",
+        "path": "Quantity.system",
+        "short": "UCUM system for units",
+        "min": 1,
+        "fixedUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Quantity.code",
+        "path": "Quantity.code",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

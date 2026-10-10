@@ -1,0 +1,32 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColorectalPolypectomyCodesLt",
+  "id": "colorectal-polypectomy-codes-lt",
+  "title": "Colorectal - Local Polypectomy Codes CS",
+  "description": "Local codes for polypectomy excision method and histology status. The lumen filling, instrument and hydropreparation concepts live in their own code systems so that Procedure.used can be sliced on the code system.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-codes-lt",
+  "concept": [
+    {
+      "code": "exc-en-bloc",
+      "display": "En bloc"
+    },
+    {
+      "code": "exc-parts",
+      "display": "Parts (Piecemeal)"
+    },
+    {
+      "code": "hist-sent",
+      "display": "Sent for histological examination"
+    },
+    {
+      "code": "hist-not-sent",
+      "display": "Not sent"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 4
+}

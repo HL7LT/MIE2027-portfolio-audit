@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "risk-group-ext-lt-cvd",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics",
+      "valueCode": "can-bind"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd",
+  "name": "RiskGroupExtLtCvd",
+  "title": "CVD Risk Group Extension",
+  "status": "draft",
+  "description": "Cardiovascular disease risk classification for the patient (Large or Very large).",
+  "fhirVersion": "5.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "CVD Risk Group Extension",
+        "definition": "Cardiovascular disease risk classification for the patient (Large or Very large)."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-ext-lt-cvd"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group"
+        }
+      }
+    ]
+  }
+}

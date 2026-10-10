@@ -1,0 +1,24 @@
+{
+  "resourceType": "CarePlan",
+  "id": "skl03-care-plan-3",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/care-plan-lt-cvd"
+    ]
+  },
+  "contributor": [
+    {
+      "reference": "PractitionerRole/practitioner-role-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "MTL Cholesterolis: achieved; Kraujo spaudimas: in progress; Metimas rūkyti: in progress; KMI: in progress; Svoris sumažėjo >= 5%: achieved"
+    }
+  ],
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

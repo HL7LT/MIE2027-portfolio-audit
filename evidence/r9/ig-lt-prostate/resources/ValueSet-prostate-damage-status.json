@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateDamageStatusVS",
+  "id": "prostate-damage-status",
+  "title": "Prostate - Damage Status",
+  "description": "Status of previously detected damage (capsule, seminal vesicle) from prior investigation: present, absent, or unknown.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "52101004",
+            "display": "Present (qualifier value)"
+          },
+          {
+            "code": "2667000",
+            "display": "Absent (qualifier value)"
+          },
+          {
+            "code": "261665006",
+            "display": "Unknown (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

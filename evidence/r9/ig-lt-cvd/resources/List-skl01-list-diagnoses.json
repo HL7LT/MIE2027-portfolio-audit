@@ -1,0 +1,27 @@
+{
+  "resourceType": "List",
+  "id": "skl01-list-diagnoses",
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "entry": [
+    {
+      "item": {
+        "reference": "Condition/351"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "11535-2",
+        "system": "http://loinc.org",
+        "display": "Hospital discharge diagnosis note"
+      }
+    ]
+  },
+  "mode": "working",
+  "status": "current"
+}

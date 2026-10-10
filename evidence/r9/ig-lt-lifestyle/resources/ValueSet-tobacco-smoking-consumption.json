@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TobaccoSmokingConsumptionVSLtLifestyle",
+  "id": "tobacco-smoking-consumption",
+  "title": "Tobacco Smoking Consumption - Cigarettes per day",
+  "description": "Categorical representation of average cigarettes smoked per day.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tobacco-smoking-consumption",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "266920004",
+            "display": "Trivial cigarette smoker (less than one cigarette/day)"
+          },
+          {
+            "code": "160603005",
+            "display": "Light cigarette smoker (1-9 cigs/day)"
+          },
+          {
+            "code": "160604004",
+            "display": "Moderate cigarette smoker (10-19 cigs/day)"
+          },
+          {
+            "code": "160605003",
+            "display": "Heavy cigarette smoker (20-39 cigs/day)"
+          },
+          {
+            "code": "160606002",
+            "display": "Very heavy cigarette smoker (40+ cigs/day)"
+          },
+          {
+            "code": "230065006",
+            "display": "Chain smoker"
+          }
+        ]
+      }
+    ]
+  }
+}

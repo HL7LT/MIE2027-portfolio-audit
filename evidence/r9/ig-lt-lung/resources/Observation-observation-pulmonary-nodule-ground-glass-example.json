@@ -1,0 +1,123 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-pulmonary-nodule-ground-glass-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "364637009",
+            "system": "http://snomed.info/sct",
+            "display": "Lesion feature (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "1217294009",
+            "system": "http://snomed.info/sct",
+            "display": "Ground glass lung opacity"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "ct-slice-number",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "CT slice number"
+          }
+        ]
+      },
+      "valueInteger": 91
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "morphology",
+            "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+            "display": "Morphology"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "896998003",
+            "system": "http://snomed.info/sct",
+            "display": "Structural abnormality of subpleural tissue"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "255586005",
+            "system": "http://snomed.info/sct",
+            "display": "Mean"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 9,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "118565006",
+            "system": "http://snomed.info/sct",
+            "display": "Volume"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 320,
+        "code": "mm3",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "427359005",
+        "system": "http://snomed.info/sct",
+        "display": "Solitary nodule of lung"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:28:00Z",
+  "bodySite": {
+    "coding": [
+      {
+        "code": "72481006",
+        "system": "http://snomed.info/sct",
+        "display": "Structure of middle lobe of right lung"
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ankle-brachial-index-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/ankle-brachial-index-lt-cvd",
+  "version": "1.0.0",
+  "name": "AnkleBrachialIndexLtCvd",
+  "title": "Ankle-Brachial Index (ABI)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Ankle-brachial pressure index for peripheral arterial disease assessment.\nIndicated for diabetic patients and smokers within the CVD screening programme.\nInterpretation: > 0.9 normal, 0.41-0.90 mild/moderate PAD, <= 0.40 severe PAD.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "446841001",
+              "system": "http://snomed.info/sct",
+              "display": "Ankle brachial pressure index (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Overall ABI interpretation: normal / mild-moderate / severe PAD",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/abi-interpretation"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:rightABI",
+        "path": "Observation.component",
+        "sliceName": "rightABI",
+        "short": "Right-side ABI ratio",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:rightABI.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "right-abi",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/abi-component",
+              "display": "Right ankle-brachial index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:rightABI.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:rightABI.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "ratio"
+      },
+      {
+        "id": "Observation.component:rightABI.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:rightABI.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{ratio}"
+      },
+      {
+        "id": "Observation.component:leftABI",
+        "path": "Observation.component",
+        "sliceName": "leftABI",
+        "short": "Left-side ABI ratio",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:leftABI.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "left-abi",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/abi-component",
+              "display": "Left ankle-brachial index"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:leftABI.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:leftABI.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "ratio"
+      },
+      {
+        "id": "Observation.component:leftABI.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:leftABI.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "{ratio}"
+      }
+    ]
+  }
+}

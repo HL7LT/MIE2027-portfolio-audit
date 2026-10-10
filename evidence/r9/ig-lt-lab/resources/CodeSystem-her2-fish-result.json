@@ -1,0 +1,44 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "Her2FishResultLtLab",
+  "id": "her2-fish-result",
+  "title": "HER2 FISH/CISH/SISH Result Classification",
+  "description": "Classification of HER2 gene amplification results from FISH, CISH, or SISH molecular testing.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/her2-fish-result",
+  "concept": [
+    {
+      "code": "amplified",
+      "display": "Amplified (HER2>=4, HER2/CEP17>=2)"
+    },
+    {
+      "code": "amplified-clusters",
+      "display": "Amplified (clusters)"
+    },
+    {
+      "code": "co-amplified",
+      "display": "Co-amplified (HER2>=6, HER2/CEP17<2)"
+    },
+    {
+      "code": "borderline",
+      "display": "Borderline (4<=HER2<6, HER2/CEP17<2)"
+    },
+    {
+      "code": "monosomic",
+      "display": "Monosomic (HER2<4, HER2/CEP17>=2)"
+    },
+    {
+      "code": "negative",
+      "display": "Negative (HER2<4, HER2/CEP17<2)"
+    },
+    {
+      "code": "not-evaluated",
+      "display": "Not to be evaluated"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 7
+}

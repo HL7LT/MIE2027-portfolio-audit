@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColposcopySwedeRiskLtCervicalVS",
+  "id": "colposcopy-swede-risk-lt-cervical",
+  "title": "Colposcopy Swede Score Risk Category (LT Cervical)",
+  "description": "Risk categories derived from Swede score during colposcopy examination.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colposcopy-swede-risk",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "723505004",
+            "display": "Low risk (qualifier value)"
+          },
+          {
+            "code": "723509005",
+            "display": "High risk (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

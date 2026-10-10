@@ -1,0 +1,48 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "body-structure-lt-breast",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast",
+  "version": "1.0.0",
+  "name": "BodyStructureLtBreast",
+  "title": "Breast Body Structure",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "BodyStructure profile representing breast structures including laterality and quadrants.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "BodyStructure",
+  "baseDefinition": "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "BodyStructure.includedStructure",
+        "path": "BodyStructure.includedStructure",
+        "mustSupport": true
+      },
+      {
+        "id": "BodyStructure.includedStructure.structure",
+        "path": "BodyStructure.includedStructure.structure",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/breast-quadrant"
+        }
+      },
+      {
+        "id": "BodyStructure.includedStructure.laterality",
+        "path": "BodyStructure.includedStructure.laterality",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "BodyStructure.includedStructure.qualifier",
+        "path": "BodyStructure.includedStructure.qualifier",
+        "max": "0"
+      }
+    ]
+  }
+}

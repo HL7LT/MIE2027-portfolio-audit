@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-physical-activity-below-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/physical-activity-lt-lifestyle"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "activity",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Activity"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient reports engaging in physical activity twice a week, below recommended 150 minutes per week."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "68130003",
+        "system": "http://snomed.info/sct",
+        "display": "Physical activity (observable entity)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "413300002",
+        "system": "http://snomed.info/sct",
+        "display": "Exercise below recommended level (finding)"
+      }
+    ]
+  }
+}

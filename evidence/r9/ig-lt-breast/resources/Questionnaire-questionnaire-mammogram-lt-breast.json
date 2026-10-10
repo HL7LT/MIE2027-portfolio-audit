@@ -1,0 +1,740 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-mammogram-lt-breast",
+  "url": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-mammogram-lt-breast",
+  "title": "Questionnaire: Mammogram ESPBI Form (LT Breast)",
+  "description": "Structured data-capture form for mammogram reporting based on ADP Table 7.1.",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "exam-date",
+          "text": "Date of test",
+          "type": "dateTime"
+        },
+        {
+          "linkId": "radiation-dose",
+          "text": "Radiation dose (mGy)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "technologist-name",
+          "text": "Radiology technologist",
+          "type": "string"
+        },
+        {
+          "linkId": "equipment-name",
+          "text": "Equipment name",
+          "type": "string"
+        },
+        {
+          "linkId": "facility-name",
+          "text": "Facility name",
+          "type": "string"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "skin-formations",
+          "text": "Skin formations",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "scars",
+          "text": "Scars",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "nipple-inversion",
+          "text": "Nipple inversion",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "prior-breast-surgery",
+          "text": "Prior breast surgery",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "breast-injuries",
+          "text": "Breast injuries",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "breast-diseases",
+          "text": "Breast diseases",
+          "type": "coding"
+        },
+        {
+          "linkId": "other-information",
+          "text": "Other information",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-palpable-changes",
+      "text": "Palpable / visible changes",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "acr-a",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "ACR A – Almost entirely fatty"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "acr-b",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "ACR B – Scattered areas of fibroglandular density"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "acr-c",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "ACR C – Heterogeneously dense"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "acr-d",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "ACR D – Extremely dense"
+              }
+            }
+          ],
+          "linkId": "acr-density",
+          "text": "ACR breast density category",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-gland-density",
+      "text": "Gland density",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-changes-present",
+          "text": "Changes present",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "uoq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Upper outer quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "uiq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Upper inner quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "loq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Lower outer quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "liq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Lower inner quadrant"
+                  }
+                }
+              ],
+              "linkId": "right-formations-quadrant",
+              "text": "Quadrant location",
+              "type": "coding"
+            }
+          ],
+          "linkId": "right-formations",
+          "text": "Formations",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-calcifications",
+          "text": "Calcifications",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-deformation",
+          "text": "Deformation",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "right-asymmetric-tissue",
+          "text": "Asymmetric tissue",
+          "type": "coding"
+        },
+        {
+          "linkId": "right-dataset-size",
+          "text": "Dataset size (mm)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-findings-right",
+      "text": "Findings – right breast",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-changes-present",
+          "text": "Changes present",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "uoq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Upper outer quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "uiq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Upper inner quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "loq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Lower outer quadrant"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "liq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Lower inner quadrant"
+                  }
+                }
+              ],
+              "linkId": "left-formations-quadrant",
+              "text": "Quadrant location",
+              "type": "coding"
+            }
+          ],
+          "linkId": "left-formations",
+          "text": "Formations",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-calcifications",
+          "text": "Calcifications",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-deformation",
+          "text": "Deformation",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "left-asymmetric-tissue",
+          "text": "Asymmetric tissue",
+          "type": "coding"
+        },
+        {
+          "linkId": "left-dataset-size",
+          "text": "Dataset size (mm)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-findings-left",
+      "text": "Findings – left breast",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "dynamics-none",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Image without negative dynamics"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "dynamics-negative",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Negative dynamics observed"
+              }
+            }
+          ],
+          "linkId": "dynamics",
+          "text": "Dynamic changes",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-dynamics",
+      "text": "Dynamic changes compared to previous examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "skin-changes",
+          "text": "Skin changes",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "nipple-changes",
+          "text": "Nipple changes",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-node-changes",
+          "text": "Lymph node changes",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-related-changes",
+      "text": "Related changes",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "birads-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 0 – Incomplete examination"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 2 – Benign changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 3 – Possibly benign changes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 5 – Highly probable malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-conclusion",
+          "text": "BI-RADS conclusion",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "rec-mammographic-control",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Mammographic control"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-additional-mammography",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Additional mammography"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-ultrasound",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Ultrasound examination"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-mri",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "MRI examination"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-biopsy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy indicated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-consultation",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Consultation with breast specialist"
+              }
+            }
+          ],
+          "linkId": "recommendations",
+          "text": "Recommendations",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "linkId": "conclusion-notes",
+          "text": "Notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion",
+      "type": "group"
+    }
+  ],
+  "name": "MammogramQuestionnaireLtBreast",
+  "status": "active"
+}

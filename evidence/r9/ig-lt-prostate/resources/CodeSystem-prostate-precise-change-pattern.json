@@ -1,0 +1,23 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstatePreciseChangePatternCS",
+  "id": "prostate-precise-change-pattern",
+  "title": "Prostate - PRECISE Change Pattern CS",
+  "description": "Pattern of change on follow-up MRI.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-change-pattern",
+  "concept": [
+    {
+      "code": "local",
+      "display": "Local change"
+    },
+    {
+      "code": "diffuse",
+      "display": "Diffuse change"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 2
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastBodySiteVS",
+  "id": "breast-body-site",
+  "title": "Breast Body Site",
+  "description": "Entire breast and left/right breasts.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site",
+  "experimental": false,
+  "language": "en",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "76752008",
+            "display": "Breast"
+          },
+          {
+            "code": "80248007",
+            "display": "Left breast"
+          },
+          {
+            "code": "73056007",
+            "display": "Right breast"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TumorVolumeMethodologyVS",
+  "id": "tumor-volume-methodology",
+  "title": "Tumor Volume Methodology",
+  "description": "Methodology used for determining tumor volume in biopsy specimens.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/tumor-volume-methodology",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+        "concept": [
+          {
+            "code": "vol-single-solid",
+            "display": "One solid tumor"
+          },
+          {
+            "code": "vol-multifocal-continuous",
+            "display": "Multiple tumor foci treated as continuous"
+          },
+          {
+            "code": "vol-multifocal-discontinuous",
+            "display": "Multiple tumor foci treated as discontinuous"
+          }
+        ]
+      }
+    ]
+  }
+}

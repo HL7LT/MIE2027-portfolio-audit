@@ -1,0 +1,56 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColorectalAnatomyVS",
+  "id": "colorectal-anatomy",
+  "title": "Colorectal Anatomy",
+  "description": "Shared SNOMED CT codes representing the anatomical segments of the colon and rectum. Used for recording locations of tumors, polyps, and colonoscope reach.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colorectal-anatomy",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "85774003",
+            "display": "Structure of distal portion of ileum (body structure)"
+          },
+          {
+            "code": "32713005",
+            "display": "Cecum structure (body structure)"
+          },
+          {
+            "code": "9040008",
+            "display": "Ascending colon structure (body structure)"
+          },
+          {
+            "code": "48338005",
+            "display": "Structure of right colic flexure (body structure)"
+          },
+          {
+            "code": "485005",
+            "display": "Transverse colon structure (body structure)"
+          },
+          {
+            "code": "72592005",
+            "display": "Structure of left colic flexure (body structure)"
+          },
+          {
+            "code": "32622004",
+            "display": "Descending colon structure (body structure)"
+          },
+          {
+            "code": "60184004",
+            "display": "Sigmoid colon structure (body structure)"
+          },
+          {
+            "code": "34402009",
+            "display": "Rectum structure (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

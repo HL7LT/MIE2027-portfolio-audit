@@ -1,0 +1,593 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ObservationRadiationDoseEuImaging",
+  "language": "en",
+  "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging",
+  "version": "0.2.0-ci",
+  "name": "ObservationRadiationDoseEuImaging",
+  "title": "Observation: Radiation Dose (Eu Imaging)",
+  "status": "draft",
+  "publisher": "HL7 Europe",
+  "contact": [
+    {
+      "name": "HL7 Europe",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.eu"
+        }
+      ]
+    }
+  ],
+  "description": "A record for the radiation dose the subject has been exposed to during an imaging procedure.\nBased on information from https://dicom.nema.org/medical/dicom/current/output/html/part16.html and https://build.fhir.org/ig/HL7/fhir-radiation-dose-summary-ig/index.html",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "copyright": "Used by permission of HL7 Europe, all rights reserved Creative Commons License",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationEu",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:radiation-dose",
+        "path": "Observation.code.coding",
+        "sliceName": "radiation-dose",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "73569-6",
+          "system": "http://loinc.org"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/patient-eu"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Dose Summary text.",
+        "comment": "Textual representation of the dose summary computed by the Dose Management system.",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "short": "Irradiating modality"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:doseAreaProductTotal",
+        "path": "Observation.component",
+        "sliceName": "doseAreaProductTotal",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:doseAreaProductTotal.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113722",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:doseAreaProductTotal.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-gray-square-units"
+        }
+      },
+      {
+        "id": "Observation.component:doseAreaProductTotal.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:fluorDoseAreaProductTotal",
+        "path": "Observation.component",
+        "sliceName": "fluorDoseAreaProductTotal",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:fluorDoseAreaProductTotal.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113726",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:fluorDoseAreaProductTotal.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-gray-square-units"
+        }
+      },
+      {
+        "id": "Observation.component:fluorDoseAreaProductTotal.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:doseAreaProduct",
+        "path": "Observation.component",
+        "sliceName": "doseAreaProduct",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:doseAreaProduct.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "122130",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:doseAreaProduct.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-gray-square-units"
+        }
+      },
+      {
+        "id": "Observation.component:doseAreaProduct.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:CTDoseLengthProductTotal",
+        "path": "Observation.component",
+        "sliceName": "CTDoseLengthProductTotal",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:CTDoseLengthProductTotal.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113813",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:CTDoseLengthProductTotal.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:CTDoseLengthProductTotal.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:DLP",
+        "path": "Observation.component",
+        "sliceName": "DLP",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:DLP.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113838",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:DLP.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:DLP.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:DLPAlertValue",
+        "path": "Observation.component",
+        "sliceName": "DLPAlertValue",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:DLPAlertValue.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113903",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:DLPAlertValue.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:DLPAlertValue.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:AccumulatedDLPForwardEstimate",
+        "path": "Observation.component",
+        "sliceName": "AccumulatedDLPForwardEstimate",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:AccumulatedDLPForwardEstimate.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113905",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:AccumulatedDLPForwardEstimate.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:AccumulatedDLPForwardEstimate.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:DLPNotificationValue",
+        "path": "Observation.component",
+        "sliceName": "DLPNotificationValue",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:DLPNotificationValue.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113911",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:DLPNotificationValue.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:DLPNotificationValue.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:DLPForwardEstimate",
+        "path": "Observation.component",
+        "sliceName": "DLPForwardEstimate",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:DLPForwardEstimate.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113913",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:DLPForwardEstimate.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:DLPForwardEstimate.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:CRDoseLengthProductSubTotal",
+        "path": "Observation.component",
+        "sliceName": "CRDoseLengthProductSubTotal",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:CRDoseLengthProductSubTotal.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "130745",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:CRDoseLengthProductSubTotal.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-dose-length-units"
+        }
+      },
+      {
+        "id": "Observation.component:CRDoseLengthProductSubTotal.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:CTEffectiveDoseTotal",
+        "path": "Observation.component",
+        "sliceName": "CTEffectiveDoseTotal",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:CTEffectiveDoseTotal.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113814",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:CTEffectiveDoseTotal.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-effective-dose-units"
+        }
+      },
+      {
+        "id": "Observation.component:CTEffectiveDoseTotal.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      },
+      {
+        "id": "Observation.component:EffectiveDose",
+        "path": "Observation.component",
+        "sliceName": "EffectiveDose",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:EffectiveDose.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "113839",
+              "system": "http://dicom.nema.org/resources/ontology/DCM"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:EffectiveDose.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu"
+            ]
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.eu/fhir/imaging-r5/ValueSet/im-effective-dose-units"
+        }
+      },
+      {
+        "id": "Observation.component:EffectiveDose.value[x].extension:dataAbsentReason",
+        "path": "Observation.component.value[x].extension",
+        "sliceName": "dataAbsentReason"
+      }
+    ]
+  }
+}

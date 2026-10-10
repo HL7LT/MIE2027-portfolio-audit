@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DysplasiaGradeVS",
+  "id": "dysplasia-grade",
+  "title": "Dysplasia Grade",
+  "description": "Grades of dysplasia for histological assessment in colorectal pathology.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/dysplasia-grade",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "25723000",
+            "display": "Dysplasia (morphologic abnormality)"
+          },
+          {
+            "code": "43185009",
+            "display": "Mild dysplasia (morphologic abnormality)"
+          },
+          {
+            "code": "55237006",
+            "display": "Severe dysplasia (morphologic abnormality)"
+          },
+          {
+            "code": "260413007",
+            "display": "Not applicable (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

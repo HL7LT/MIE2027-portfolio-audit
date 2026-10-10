@@ -1,0 +1,83 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-pathology-order-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/pathology-order-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/document-number",
+      "value": "ret4421"
+    }
+  ],
+  "code": {
+    "concept": {
+      "coding": [
+        {
+          "code": "252416005",
+          "system": "http://snomed.info/sct",
+          "display": "Histopathology test (procedure)"
+        }
+      ]
+    }
+  },
+  "encounter": {
+    "display": "Beverly Waver's encounter on 2014-02-14"
+  },
+  "occurrencePeriod": {
+    "start": "2025-01-10",
+    "end": "2025-01-31"
+  },
+  "reason": [
+    {
+      "concept": {
+        "text": "For consideration of Grommets"
+      }
+    },
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "268547008",
+            "system": "http://snomed.info/sct",
+            "display": "Screening for malignant neoplasm of breast"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "authorString": "Serena Shrink",
+      "time": "2025-01-10T10:00:00+02:00",
+      "text": "Suspicion of adenocarcinoma based on colonoscopy findings. Please perform routine histopathological examination, including H&E staining and assessment for dysplasia or malignancy. If indicated, proceed with immunohistochemistry for tumour markers."
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/specimen-right-breast-example"
+    },
+    {
+      "reference": "Specimen/specimen-left-breast-example"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": {
+        "reference": "Procedure/procedure-breast-biopsy-example"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "authoredOn": "2023-01-15T09:30:10+02:00",
+  "requester": {
+    "reference": "Practitioner/practitioner-example"
+  },
+  "priority": "asap"
+}

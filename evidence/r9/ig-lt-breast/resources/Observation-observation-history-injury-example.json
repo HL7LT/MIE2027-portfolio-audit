@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-history-injury-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "161797003",
+        "system": "http://snomed.info/sct",
+        "display": "History of breast problem (situation)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-palpation-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "161586000",
+        "system": "http://snomed.info/sct",
+        "display": "History of injury (situation)"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/breast-body-structure-right-uiq-example"
+  },
+  "effectiveDateTime": "2022-09-10T00:00:00+02:00"
+}

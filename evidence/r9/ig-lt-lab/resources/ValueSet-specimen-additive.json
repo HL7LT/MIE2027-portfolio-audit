@@ -1,0 +1,100 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "SpecimenAdditiveVS",
+  "id": "specimen-additive",
+  "title": "Specimen Additive",
+  "description": "Additives used in specimen collection and processing, based on HL7 EU Laboratory specimen additive ValueSet with additional codes for Lithuanian use.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/specimen-additive",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1259913003",
+            "display": "Heparin ammonium (substance)"
+          },
+          {
+            "code": "386961008",
+            "display": "Aprotinin (substance)"
+          },
+          {
+            "code": "29725000",
+            "display": "Heparin calcium (substance)"
+          },
+          {
+            "code": "21611007",
+            "display": "Boric acid (substance)"
+          },
+          {
+            "code": "30531001",
+            "display": "Calcium oxalate (substance)"
+          },
+          {
+            "code": "69519002",
+            "display": "Ethylenediamine tetraacetic acid (substance)"
+          },
+          {
+            "code": "372628006",
+            "display": "Edetate (substance)"
+          },
+          {
+            "code": "27763000",
+            "display": "Hydrochloric acid (substance)"
+          },
+          {
+            "code": "414407009",
+            "display": "Hirudin (substance)"
+          },
+          {
+            "code": "1256100007",
+            "display": "Edetate dipotassium (substance)"
+          },
+          {
+            "code": "1256101006",
+            "display": "Tripotassium edetate (substance)"
+          },
+          {
+            "code": "1256102004",
+            "display": "Heparin lithium (substance)"
+          },
+          {
+            "code": "387418006",
+            "display": "Edetate disodium (substance)"
+          },
+          {
+            "code": "412546005",
+            "display": "Sodium citrate (substance)"
+          },
+          {
+            "code": "50045009",
+            "display": "Heparin sodium (substance)"
+          },
+          {
+            "code": "6910009",
+            "display": "Sodium fluoride (substance)"
+          },
+          {
+            "code": "50306007",
+            "display": "Sodium tetraborate (substance)"
+          },
+          {
+            "code": "387168006",
+            "display": "Mannitol (substance)"
+          },
+          {
+            "code": "115281000146102",
+            "display": "Sodium formate (substance)"
+          },
+          {
+            "code": "434162003",
+            "display": "Neutral buffered formalin (substance)"
+          }
+        ]
+      }
+    ]
+  }
+}

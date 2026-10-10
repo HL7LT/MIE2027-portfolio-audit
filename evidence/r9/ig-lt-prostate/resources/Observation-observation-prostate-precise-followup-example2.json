@@ -1,0 +1,275 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-precise-followup-example2",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/precise-assessment-lt-prostate"
+    ]
+  },
+  "derivedFrom": [
+    {
+      "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "new-lesion",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "New lesion indicator"
+          }
+        ]
+      },
+      "valueBoolean": false
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "change-pattern",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Change pattern"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "local",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-change-pattern",
+            "display": "Local change"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "best-sequence",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Best MRI sequence for change assessment"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "113043",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "Diffusion weighted"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "best-sequence",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Best MRI sequence for change assessment"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "113041",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "Apparent Diffusion Coefficient"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "size-change-mm",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Size change in millimeters"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 3,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "dimension-1-mm",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Dimension 1 (mm, axial)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 12,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "dimension-2-mm",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Dimension 2 (mm, axial)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 9,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "dimension-3-mm",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Dimension 3 (mm, coronal/sagittal)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 11,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "change-volume-cm3",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Change volume (cm³)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 0.6,
+        "code": "cm3",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "273575009",
+            "system": "http://snomed.info/sct",
+            "display": "Likert scale (assessment scale)"
+          }
+        ]
+      },
+      "valueInteger": 4
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "350501000146102",
+            "system": "http://snomed.info/sct",
+            "display": "Prostate Imaging-Reporting and Data System score"
+          }
+        ]
+      },
+      "valueInteger": 3
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "prior-tnm-stage",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+            "display": "Prior TNM stage"
+          }
+        ]
+      },
+      "valueString": "cT2 N0 M0"
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "60405008",
+            "system": "http://snomed.info/sct",
+            "display": "Structure of capsule of prostate (body structure)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "2667000",
+            "system": "http://snomed.info/sct",
+            "display": "Absent (qualifier value)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "64739004",
+            "system": "http://snomed.info/sct",
+            "display": "Seminal vesicle structure (body structure)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "2667000",
+            "system": "http://snomed.info/sct",
+            "display": "Absent (qualifier value)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Follow-up MRI shows likely progression compared to prior study; progression driven by lesion growth and increased DWI restriction."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "precise-assessment",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component",
+        "display": "PRECISE longitudinal assessment"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2026-03-15T10:30:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "4",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-category",
+        "display": "PRECISE 4 - Likely progression"
+      }
+    ]
+  }
+}

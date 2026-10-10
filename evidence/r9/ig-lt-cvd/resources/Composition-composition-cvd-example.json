@@ -1,0 +1,142 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-cvd-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/cvd-composition",
+      "value": "cvd-comp-2025-001"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11488-4",
+          "system": "http://loinc.org",
+          "display": "Consult note"
+        }
+      ]
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "attester": [
+    {
+      "mode": {
+        "coding": [
+          {
+            "code": "legal",
+            "system": "http://hl7.org/fhir/composition-attestation-mode",
+            "display": "Legal"
+          }
+        ]
+      },
+      "time": "2025-10-01T14:30:00+03:00",
+      "party": {
+        "reference": "Organization/organization-example"
+      }
+    }
+  ],
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><strong>CVD programme document (example).</strong> Three sections: assessment (risk, conditions, ECG), prevention plan (CarePlan), achievement follow-up (LDL and BP).</p></div>"
+  },
+  "section": [
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Accompanying chronic condition, SCORE2 estimate, programme risk group classification, and ECG interpretation.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "Condition/condition-cvd-heart-failure-example"
+        },
+        {
+          "reference": "Observation/observation-cvd-risk-assessment-example"
+        },
+        {
+          "reference": "Observation/observation-risk-group-high-example"
+        },
+        {
+          "reference": "Observation/observation-ekg-normal-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "29299-5",
+            "system": "http://loinc.org",
+            "display": "Reason for visit Narrative"
+          }
+        ]
+      },
+      "title": "Risk assessment and objective findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Lifestyle, lipid and blood pressure targets, and medication areas as structured in the CarePlan.</p></div>"
+      },
+      "entry": [
+        {
+          "reference": "CarePlan/care-plan-cvd-screening-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "18776-5",
+            "system": "http://loinc.org",
+            "display": "Plan of care note"
+          }
+        ]
+      },
+      "title": "Prevention measures plan"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Follow-up LDL and blood pressure compared to programme targets. Structured measurements are referenced from the <strong>DiagnosticReport.result</strong> list (see linked report example) to satisfy FHIR <code>dgr-1</code> when both Composition and DiagnosticReport are present.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "11506-3",
+            "system": "http://loinc.org",
+            "display": "Progress note"
+          }
+        ]
+      },
+      "title": "Achievement evaluation"
+    }
+  ],
+  "language": "en",
+  "status": "final",
+  "type": {
+    "coding": [
+      {
+        "code": "51848-0",
+        "system": "http://loinc.org",
+        "display": "Evaluation note"
+      }
+    ]
+  },
+  "date": "2025-10-01T14:30:00+03:00",
+  "title": "Cardiovascular disease risk assessment and prevention plan",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  }
+}

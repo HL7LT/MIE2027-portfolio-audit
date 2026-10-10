@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-dre-hard-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/dre-observation-lt-prostate"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "410006001",
+        "system": "http://snomed.info/sct",
+        "display": "Digital examination of rectum (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2025-04-15",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "276387009",
+        "system": "http://snomed.info/sct",
+        "display": "Hard prostate (finding)"
+      }
+    ]
+  }
+}

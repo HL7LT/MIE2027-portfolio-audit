@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-adc-score-lesion1-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate"
+    ]
+  },
+  "focus": [
+    {
+      "reference": "BodyStructure/bodyStructure-prostate-lesion1-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Low ADC corresponding to restricted diffusion (ADC score 5)."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "113041",
+        "system": "http://dicom.nema.org/resources/ontology/DCM",
+        "display": "Apparent Diffusion Coefficient"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2024-05-27T10:30:00Z",
+  "valueInteger": 5
+}

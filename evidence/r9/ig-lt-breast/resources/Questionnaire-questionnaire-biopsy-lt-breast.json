@@ -1,0 +1,241 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-biopsy-lt-breast",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "exam-date",
+          "text": "Date of procedure",
+          "type": "dateTime"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "biopsy-us-guided",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy under ultrasound guidance"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "biopsy-xray-guided",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy under X-ray guidance"
+              }
+            }
+          ],
+          "linkId": "procedure-type",
+          "text": "Type of procedure",
+          "type": "coding"
+        },
+        {
+          "linkId": "sample-container-count",
+          "text": "Number of sample containers",
+          "type": "integer"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "right",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Right"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "left",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Left"
+              }
+            }
+          ],
+          "linkId": "localization-side",
+          "text": "Breast side",
+          "type": "coding"
+        },
+        {
+          "linkId": "localization-position",
+          "text": "Localization by clock position or quadrant",
+          "type": "string"
+        },
+        {
+          "linkId": "entity-size",
+          "text": "Size of entity (mm)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-localization",
+      "text": "Localization of change",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-changes",
+          "text": "Changes in biopsied lymph nodes",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "right",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Right"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "left",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Left"
+              }
+            }
+          ],
+          "linkId": "lymph-localization",
+          "text": "Localization of lymph node",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ln-level-n1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "N1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ln-level-n2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "N2"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ln-level-n3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "N3"
+              }
+            }
+          ],
+          "linkId": "lymph-level",
+          "text": "Level of involvement",
+          "type": "coding"
+        },
+        {
+          "linkId": "lymph-size",
+          "text": "Size of lymph nodes (mm)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-lymph-nodes",
+      "text": "Lymph nodes",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "birads-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 3 – Possibly benign changes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 5 – Highly probable malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-conclusion",
+          "text": "BI-RADS conclusion",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lymph-malignancy-suspicion",
+          "text": "Lymph node malignancy suspicion",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "facility-name",
+          "text": "Facility name",
+          "type": "string"
+        },
+        {
+          "linkId": "doctor-name",
+          "text": "Doctor name",
+          "type": "string"
+        }
+      ],
+      "linkId": "grp-facility",
+      "text": "Facility information",
+      "type": "group"
+    }
+  ],
+  "name": "BiopsyQuestionnaireLtBreast",
+  "url": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-biopsy-lt-breast",
+  "status": "active",
+  "title": "Biopsy ESPBI Form (LT Breast)"
+}

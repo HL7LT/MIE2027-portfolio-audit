@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HeightLengthMeasurementMethod",
+  "id": "height-length-measurement-method",
+  "title": "Height Length Measurement Method",
+  "description": "SNOMED CT code system values that describe how the height/length was measured.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/height-length-measurement-method",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "414135002",
+            "display": "Estimated (qualifier value)"
+          },
+          {
+            "code": "258104002",
+            "display": "Measured (qualifier value)"
+          },
+          {
+            "code": "733985002",
+            "display": "Reported (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

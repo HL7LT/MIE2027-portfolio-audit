@@ -1,0 +1,339 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "heart-rate",
+  "url": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/heart-rate",
+  "version": "1.0.0",
+  "name": "HeartRate",
+  "title": "Heart Rate",
+  "status": "draft",
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "The number of heart beats in a minute.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.extension",
+        "path": "Observation.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.extension:exerciseAssociation",
+        "path": "Observation.extension",
+        "sliceName": "exerciseAssociation",
+        "short": "Exercise Association",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/exercise-association"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.extension:measurementSetting",
+        "path": "Observation.extension",
+        "sliceName": "measurementSetting",
+        "short": "Measurement setting",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/measurement-setting"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.extension:sleepStatus",
+        "path": "Observation.extension",
+        "sliceName": "sleepStatus",
+        "short": "Sleep Status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/sleep-status"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.extension:associatedSituation",
+        "path": "Observation.extension",
+        "sliceName": "associatedSituation",
+        "short": "Associated Situation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/associated-situation"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.category:VSCat",
+        "path": "Observation.category",
+        "sliceName": "VSCat",
+        "definition": "This vital signs category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category:HeartRateCategory",
+        "path": "Observation.category",
+        "sliceName": "HeartRateCategory",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "8867-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Heart Rate",
+        "definition": "Heart rate. LOINC required; SNOMED CT optional for dual coding."
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:LOINC",
+        "path": "Observation.code.coding",
+        "sliceName": "LOINC",
+        "short": "Heart Rate (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation"
+        }
+      },
+      {
+        "id": "Observation.code.coding:LOINC.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.code.coding:SNOMED",
+        "path": "Observation.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Heart Rate (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.code.coding:SNOMED.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Vital Signs are point in time measurements and are recorded using the dateTime data type",
+        "definition": "Vital Signs are point in time measurements and are recorded using the dateTime data type.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "condition": [
+          "vshree-1"
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "short": "Common UCUM rate units for vital signs including heart and respiratory rate. <br/>R6! Proper link is https://build.fhir.org/valueset-ucum-vitalsignsrate.html.",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "condition": [
+          "vshree-2",
+          "obs-6"
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/rate-unit",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-definition",
+              "valueMarkdown": "Common UCUM rate units for vital signs including heart and respiratory rate."
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "VitalSignsRateUnit"
+            }
+          ],
+          "description": "/min"
+        }
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "condition": [
+          "vshree-2"
+        ]
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation"
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-body-location"
+        }
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "short": "Describe body characteristics where on/in body an observation or procedure took place",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-structure-blood-pressure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/heart-rate-measurement-method"
+        }
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "short": "Heart Rate Measurement Device",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-heart-rate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

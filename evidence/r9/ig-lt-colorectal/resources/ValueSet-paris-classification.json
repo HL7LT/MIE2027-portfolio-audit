@@ -1,0 +1,60 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ParisClassificationVS",
+  "id": "paris-classification",
+  "title": "Paris Endoscopic Classification",
+  "description": "Paris endoscopic classification of superficial neoplastic lesions for polyp morphology assessment.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/paris-classification",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "paris-Is",
+            "display": "Paris 0-Is (sessile/polypoid)"
+          },
+          {
+            "code": "paris-Isp",
+            "display": "Paris 0-Isp (semi-pedunculated)"
+          },
+          {
+            "code": "paris-Ip",
+            "display": "Paris 0-Ip (pedunculated)"
+          },
+          {
+            "code": "paris-IIa",
+            "display": "Paris 0-IIa (slightly elevated)"
+          },
+          {
+            "code": "paris-IIb",
+            "display": "Paris 0-IIb (flat)"
+          },
+          {
+            "code": "paris-IIc",
+            "display": "Paris 0-IIc (slightly depressed)"
+          },
+          {
+            "code": "lst-g-h",
+            "display": "LST-G-H (Laterally spreading, granular type, homogeneous)"
+          },
+          {
+            "code": "lst-g-nm",
+            "display": "LST-G-NM (Laterally spreading, granular type, non-homogeneous)"
+          },
+          {
+            "code": "lst-ng-fe",
+            "display": "LST-NG-FE (Laterally spreading, non-granular type, flat elevation)"
+          },
+          {
+            "code": "lst-ng-pd",
+            "display": "LST-NG-PD (Laterally spreading, non-granular type, depressed)"
+          }
+        ]
+      }
+    ]
+  }
+}

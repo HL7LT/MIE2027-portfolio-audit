@@ -1,0 +1,61 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalTumorStageTLtLab",
+  "id": "cervical-tumor-stage-t",
+  "title": "Cervical Tumor Stage pT",
+  "description": "Pathological primary tumor (pT) staging for cervical cancer, AJCC 8th edition. Includes pTX through pT4.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-t",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1228950008",
+            "display": "American Joint Committee on Cancer pTX (qualifier value)"
+          },
+          {
+            "code": "1228951007",
+            "display": "American Joint Committee on Cancer pT0 (qualifier value)"
+          },
+          {
+            "code": "1228953005",
+            "display": "American Joint Committee on Cancer pTis (qualifier value)"
+          },
+          {
+            "code": "1228960004",
+            "display": "American Joint Committee on Cancer pT1a1 (qualifier value)"
+          },
+          {
+            "code": "1228961000",
+            "display": "American Joint Committee on Cancer pT1a2 (qualifier value)"
+          },
+          {
+            "code": "1229844006",
+            "display": "American Joint Committee on Cancer pT1b1 (qualifier value)"
+          },
+          {
+            "code": "1229845007",
+            "display": "American Joint Committee on Cancer pT1b2 (qualifier value)"
+          },
+          {
+            "code": "1229846008",
+            "display": "American Joint Committee on Cancer pT2 (qualifier value)"
+          },
+          {
+            "code": "1229859000",
+            "display": "American Joint Committee on Cancer pT3 (qualifier value)"
+          },
+          {
+            "code": "1229864001",
+            "display": "American Joint Committee on Cancer pT4 (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

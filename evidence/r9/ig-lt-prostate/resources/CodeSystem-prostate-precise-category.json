@@ -1,0 +1,43 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstatePreciseCategoryCS",
+  "id": "prostate-precise-category",
+  "title": "Prostate - PRECISE Category CS",
+  "description": "PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.\nThese categories describe overall change compared to a prior MRI examination.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-category",
+  "concept": [
+    {
+      "code": "1",
+      "display": "PRECISE 1 - Resolution or definite regression"
+    },
+    {
+      "code": "2",
+      "display": "PRECISE 2 - Likely regression"
+    },
+    {
+      "code": "3",
+      "display": "PRECISE 3 - Stable disease"
+    },
+    {
+      "code": "3v",
+      "display": "PRECISE 3V - Stable volume but suspicious change"
+    },
+    {
+      "code": "4",
+      "display": "PRECISE 4 - Likely progression"
+    },
+    {
+      "code": "5",
+      "display": "PRECISE 5 - Definite progression"
+    },
+    {
+      "code": "x",
+      "display": "PRECISE X - Inadequate comparison or non-evaluable"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 7
+}

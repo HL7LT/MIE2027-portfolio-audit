@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "KidneyLesionDensityVS",
+  "id": "kidney-lesion-density",
+  "title": "Kidney Lesion Density",
+  "description": "Density types for kidney lesions detected during LDCT screening. Calcified can co-occur with cystic, solid, or complex.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/kidney-lesion-density",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "20476009",
+            "display": "Cystic (qualifier value)"
+          },
+          {
+            "code": "35702001",
+            "display": "Solid (qualifier value)"
+          },
+          {
+            "code": "103360007",
+            "display": "Complex (qualifier value)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code",
+        "concept": [
+          {
+            "code": "calcified",
+            "display": "Calcified"
+          }
+        ]
+      }
+    ]
+  }
+}

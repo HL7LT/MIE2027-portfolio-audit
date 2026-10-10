@@ -1,0 +1,24 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-radiologist-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/sid/lt-practitioner-license",
+      "value": "RAD-12345"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Petras"
+      ],
+      "family": "Gydytojaitis"
+    }
+  ],
+  "active": true
+}

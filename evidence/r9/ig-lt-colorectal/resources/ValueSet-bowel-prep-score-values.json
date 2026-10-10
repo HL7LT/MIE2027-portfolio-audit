@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BowelPrepScoreValuesVS",
+  "id": "bowel-prep-score-values",
+  "title": "Bowel Preparation Score Values (Boston Scale)",
+  "description": "SNOMED CT codes representing the Boston Bowel Preparation Scale segment scores (0 to 3 points).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-score-values",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "10311000132100",
+            "display": "Entire mucosa of colon segment seen well with no residual staining, small fragments of stool or opaque liquid (finding)"
+          },
+          {
+            "code": "10301000132102",
+            "display": "Minor amount of residual staining, small fragments of stool and/or opaque liquid, but mucosa of colon segment seen well (finding)"
+          },
+          {
+            "code": "10291000132101",
+            "display": "Portion of mucosa of colon segment seen, but other areas of colon segment not well seen due to staining, residual stool and/or opaque liquid (finding)"
+          },
+          {
+            "code": "10281000132103",
+            "display": "Unprepared colon segment with mucosa not seen due to solid stool that cannot be cleared (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

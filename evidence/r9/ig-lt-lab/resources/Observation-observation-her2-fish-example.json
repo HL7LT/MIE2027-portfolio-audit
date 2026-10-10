@@ -1,0 +1,107 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-her2-fish-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/her2-fish-observation-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "method": {
+    "text": "FISH"
+  },
+  "component": [
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "{copies}/{nucleus}",
+        "value": 2.1,
+        "unit": "copies/nucleus"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "85318-4",
+            "system": "http://loinc.org",
+            "display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "{copies}/{nucleus}",
+        "value": 1.8,
+        "unit": "copies/nucleus"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "85319-2",
+            "system": "http://loinc.org",
+            "display": "HER2 Ag [Presence] in Breast cancer specimen by Immune stain"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "{ratio}",
+        "value": 1.17,
+        "unit": "ratio"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "49683-6",
+            "system": "http://loinc.org",
+            "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "85320-0",
+            "system": "http://loinc.org",
+            "display": "Foci [Type] in Breast cancer specimen by Light microscopy"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "negative",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/her2-fish-result",
+            "display": "Negative (HER2<4, HER2/CEP17<2)"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "31150-6",
+        "system": "http://loinc.org",
+        "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-01-20T14:00:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  }
+}

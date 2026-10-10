@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstatePreciseChangePatternVS",
+  "id": "precise-change-pattern",
+  "title": "Prostate - PRECISE Change Pattern VS",
+  "description": "Pattern of change observed on follow-up prostate MRI examination (local, diffuse).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-precise-change-pattern",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-change-pattern"
+      }
+    ]
+  }
+}

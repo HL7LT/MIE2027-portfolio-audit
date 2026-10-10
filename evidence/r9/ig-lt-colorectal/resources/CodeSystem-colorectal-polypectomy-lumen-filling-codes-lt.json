@@ -1,0 +1,24 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColorectalPolypectomyLumenFillingCodesLt",
+  "id": "colorectal-polypectomy-lumen-filling-codes-lt",
+  "title": "Colorectal - Polypectomy Lumen Filling Codes CS",
+  "description": "Medium used to distend the bowel lumen during polypectomy.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-lumen-filling-codes-lt",
+  "concept": [
+    {
+      "code": "fill-air",
+      "display": "Filling the space with air"
+    },
+    {
+      "code": "fill-water",
+      "display": "Filling the container with water"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 2
+}

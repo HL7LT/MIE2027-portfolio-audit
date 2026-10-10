@@ -1,0 +1,25 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "medication-statement-screening-example",
+  "medication": {
+    "concept": {
+      "text": "Tylenol PM"
+    }
+  },
+  "dosage": [
+    {
+      "text": "1 tablet, 3 times per day after meals"
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient cannot take acetaminophen as per Dr instructions"
+    }
+  ],
+  "status": "recorded",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2015-01-23",
+  "dateAsserted": "2015-02-22"
+}

@@ -1,0 +1,26 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodyStructure-prostate-base-of-seminal-vesicle-example",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core"
+    ]
+  },
+  "includedStructure": [
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "279669004",
+            "system": "http://snomed.info/sct",
+            "display": "Structure of lower pole of seminal vesicle (body structure)"
+          }
+        ]
+      }
+    }
+  ],
+  "active": true,
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  }
+}

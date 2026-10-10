@@ -1,0 +1,273 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CvdQuestionnaireRiskAssessmentItem",
+  "id": "cvd-questionnaire-risk-assessment-item",
+  "title": "CVD risk assessment questionnaire item (linkId)",
+  "description": "Stable linkId values for the illustrative ESPBI form 1 Questionnaire; used as ConceptMap source codes.",
+  "url": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-risk-assessment-item",
+  "concept": [
+    {
+      "code": "grp-context",
+      "display": "Context group"
+    },
+    {
+      "code": "evaluation-datetime",
+      "display": "Evaluation date and time"
+    },
+    {
+      "code": "grp-chronic",
+      "display": "Accompanying chronic diseases"
+    },
+    {
+      "code": "chronic-condition-summary",
+      "display": "Chronic conditions summary"
+    },
+    {
+      "code": "grp-risk-factors",
+      "display": "Risk factors"
+    },
+    {
+      "code": "risk-factor-hypertension",
+      "display": "Arterial hypertension"
+    },
+    {
+      "code": "risk-factor-dyslipidemia",
+      "display": "Dyslipidemia"
+    },
+    {
+      "code": "risk-factor-diabetes",
+      "display": "Diabetes"
+    },
+    {
+      "code": "risk-factor-glucose-tolerance",
+      "display": "Glucose tolerance disorder or fasting glucose disorder"
+    },
+    {
+      "code": "risk-factor-familial-hypercholesterolemia",
+      "display": "Familial hypercholesterolemia"
+    },
+    {
+      "code": "risk-factor-smoking",
+      "display": "Smoking"
+    },
+    {
+      "code": "smoking-duration-years",
+      "display": "Smoking duration (years)"
+    },
+    {
+      "code": "smoking-type",
+      "display": "Form of smoking"
+    },
+    {
+      "code": "risk-factor-physical-activity",
+      "display": "Physical activity"
+    },
+    {
+      "code": "risk-factor-nutrition",
+      "display": "Nutrition"
+    },
+    {
+      "code": "risk-factor-alcohol",
+      "display": "Alcohol consumption"
+    },
+    {
+      "code": "audit-c-score",
+      "display": "AUDIT/AUDIT-C score"
+    },
+    {
+      "code": "risk-factor-family-cvd",
+      "display": "Family history of early CVD"
+    },
+    {
+      "code": "risk-factor-family-diabetes",
+      "display": "Family history of diabetes"
+    },
+    {
+      "code": "grp-objective",
+      "display": "Objective condition and investigations"
+    },
+    {
+      "code": "height-cm",
+      "display": "Height (cm)"
+    },
+    {
+      "code": "weight-kg",
+      "display": "Weight (kg)"
+    },
+    {
+      "code": "waist-cm",
+      "display": "Waist circumference (cm)"
+    },
+    {
+      "code": "bp-systolic",
+      "display": "Systolic blood pressure (mmHg)"
+    },
+    {
+      "code": "bp-diastolic",
+      "display": "Diastolic blood pressure (mmHg)"
+    },
+    {
+      "code": "heart-rate-item",
+      "display": "Heart rate (bpm)"
+    },
+    {
+      "code": "bmi-calculated",
+      "display": "BMI (kg/m², calculated)"
+    },
+    {
+      "code": "abdominal-obesity",
+      "display": "Abdominal obesity"
+    },
+    {
+      "code": "obesity-bmi",
+      "display": "Obesity (BMI ≥ 25)"
+    },
+    {
+      "code": "grp-lipidogram",
+      "display": "Lipidogram"
+    },
+    {
+      "code": "lipid-tc",
+      "display": "Total cholesterol (mmol/l)"
+    },
+    {
+      "code": "lipid-hdl",
+      "display": "HDL cholesterol (mmol/l)"
+    },
+    {
+      "code": "lipid-non-hdl",
+      "display": "Non-HDL cholesterol (mmol/l)"
+    },
+    {
+      "code": "lipid-ldl",
+      "display": "LDL cholesterol (mmol/l)"
+    },
+    {
+      "code": "lipid-tg",
+      "display": "Triglycerides (mmol/l)"
+    },
+    {
+      "code": "grp-risk-estimate",
+      "display": "Risk estimate and group"
+    },
+    {
+      "code": "score2-percent",
+      "display": "SCORE2 cardiovascular risk (%)"
+    },
+    {
+      "code": "metabolic-syndrome",
+      "display": "Metabolic syndrome"
+    },
+    {
+      "code": "risk-group-cvd",
+      "display": "Risk group for heart and vascular diseases"
+    },
+    {
+      "code": "albumin-creatinine-ratio",
+      "display": "Albumin/Creatinine ratio"
+    },
+    {
+      "code": "grp-migration-md-parity",
+      "display": "Migration mapping.md — extended parity"
+    },
+    {
+      "code": "mig-encounter",
+      "display": "Encounter (visit context)"
+    },
+    {
+      "code": "mig-practitioner-role",
+      "display": "PractitionerRole (workplace)"
+    },
+    {
+      "code": "mig-heart-rate",
+      "display": "Heart rate (bpm)"
+    },
+    {
+      "code": "mig-bmi",
+      "display": "BMI (kg/m²)"
+    },
+    {
+      "code": "mig-glucose-fasting",
+      "display": "Fasting glucose (mmol/l)"
+    },
+    {
+      "code": "mig-hba1c",
+      "display": "HbA1c (%)"
+    },
+    {
+      "code": "mig-creatinine",
+      "display": "Creatinine"
+    },
+    {
+      "code": "mig-egfr",
+      "display": "eGFR"
+    },
+    {
+      "code": "mig-alcohol",
+      "display": "Alcohol consumption"
+    },
+    {
+      "code": "mig-physical-activity",
+      "display": "Physical activity (summary)"
+    },
+    {
+      "code": "mig-nutrition",
+      "display": "Dietary habits / nutrition"
+    },
+    {
+      "code": "mig-family-cvd",
+      "display": "Family history of CVD"
+    },
+    {
+      "code": "mig-referral",
+      "display": "Referral"
+    },
+    {
+      "code": "mig-follow-up-appointment",
+      "display": "Follow-up visit / appointment"
+    },
+    {
+      "code": "mig-achievement-round",
+      "display": "Achievement evaluation (narrative)"
+    },
+    {
+      "code": "mig-chronic-additional",
+      "display": "Additional chronic conditions"
+    },
+    {
+      "code": "grp-ig-example-parity",
+      "display": "IG example parity (migration already-covered)"
+    },
+    {
+      "code": "ac-patient-context",
+      "display": "Patient (context note)"
+    },
+    {
+      "code": "ac-practitioner-context",
+      "display": "Practitioner (context note)"
+    },
+    {
+      "code": "ac-organization-context",
+      "display": "Organization (context note)"
+    },
+    {
+      "code": "ac-ekg-summary",
+      "display": "ECG (summary)"
+    },
+    {
+      "code": "ac-medication-context",
+      "display": "Medications (context)"
+    },
+    {
+      "code": "ac-diabetes-duration",
+      "display": "Diabetes duration"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 64
+}

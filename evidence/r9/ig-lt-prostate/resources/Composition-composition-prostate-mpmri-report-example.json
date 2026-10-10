@@ -1,0 +1,283 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-prostate-mpmri-report-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt"
+    ]
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/practitioner-role-radiologist-example"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/prostate/composition-id",
+      "value": "mpmri-report-example2-0001"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticReport-prostate-mpmri-report-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "MR",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Magnetic Resonance"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "103693007",
+                "system": "http://snomed.info/sct",
+                "display": "Diagnostic procedure (procedure)"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "Procedure/procedure-prostate-mpmri-example"
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+        }
+      ],
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Multiparametric prostate MRI performed. PI-RADS 5 anterior transition zone lesion (~32 mm). PRECISE 3 stable disease.</div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18726-0"
+          }
+        ]
+      },
+      "title": "Imaging Study"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Order information not specified.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Clinical history not documented.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "History",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure details not included.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Procedure",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>No prior studies available.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anterior transition zone lesion with PI-RADS 5. No seminal vesicle or neurovascular bundle invasion. Possible capsular contact anteriorly.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/imfinding-prostate-lesion1-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">PI-RADS 5 lesion in the anterior transition zone (~32 mm), extending across midline. PRECISE 3 stable disease. Imaging features consistent with high-suspicion malignancy.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/imfinding-prostate-lesion1-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Recommendations pending clinical review.</p></div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendation",
+      "emptyReason": {
+        "coding": [
+          {
+            "code": "notasked",
+            "system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
+            "display": "Not Asked"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "status": "final",
+  "date": "2024-05-27T10:30:00Z",
+  "title": "Multiparametric prostate MRI report"
+}

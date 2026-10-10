@@ -1,0 +1,99 @@
+{
+  "resourceType": "Composition",
+  "id": "skl02-composition-1",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/composition-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "11369-6",
+          "system": "http://loinc.org",
+          "display": "History of Immunization note"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "77442-2",
+        "system": "http://loinc.org",
+        "display": "Cardiology Plan of care note"
+      }
+    ],
+    "text": "ŠKL prevencijos priemonių planas"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "section": [
+    {
+      "section": [
+        {
+          "entry": [
+            {
+              "reference": "CarePlan/skl02-care-plan-3"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "18776-5",
+                "system": "http://loinc.org",
+                "display": "Plan of care note"
+              }
+            ]
+          },
+          "title": "Plan of care note"
+        },
+        {
+          "entry": [
+            {
+              "reference": "Observation/skl02-observation-recommendations-4"
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "code": "39223-3",
+                "system": "http://loinc.org",
+                "display": "Diagnosis recommendations, description (narrative) CPHS"
+              }
+            ]
+          },
+          "title": "Kitos rekomendacijos"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "code": "55752-0",
+            "system": "http://loinc.org",
+            "display": "Clinical information"
+          }
+        ]
+      },
+      "title": "Clinical information"
+    }
+  ],
+  "status": "preliminary",
+  "date": "2014-10-27T20:40:40+02:00",
+  "title": "ŠKL prevencijos priemonių planas",
+  "custodian": {
+    "reference": "Organization/organization-example"
+  },
+  "encounter": {
+    "reference": "Encounter/1000017570"
+  }
+}

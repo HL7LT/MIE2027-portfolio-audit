@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "KidneyLateralityVS",
+  "id": "kidney-laterality",
+  "title": "Kidney Laterality",
+  "description": "Kidney laterality for lesion location.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/kidney-laterality",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "9846003",
+            "display": "Right kidney structure (body structure)"
+          },
+          {
+            "code": "18639004",
+            "display": "Left kidney structure (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

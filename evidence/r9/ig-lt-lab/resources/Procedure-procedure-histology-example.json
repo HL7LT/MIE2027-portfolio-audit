@@ -1,0 +1,52 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-histology-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "108252007",
+          "system": "http://snomed.info/sct",
+          "display": "Laboratory procedure (procedure)"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/practitioner-example"
+      }
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "76752008",
+          "system": "http://snomed.info/sct",
+          "display": "Breast"
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "714797009",
+        "system": "http://snomed.info/sct",
+        "display": "Histologic test (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "occurrenceDateTime": "2025-01-10T15:20:00+02:00"
+}

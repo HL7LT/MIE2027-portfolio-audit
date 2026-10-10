@@ -1,0 +1,232 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-lung-pre-ldct-questionnaire-to-fhir",
+  "url": "https://hl7.lt/fhir/lung/ConceptMap/conceptmap-lung-pre-ldct-questionnaire-to-fhir",
+  "title": "Pre-LDCT Questionnaire items to FHIR mapping (prototype)",
+  "description": "Maps linkIds of the pre-LDCT intake Questionnaire to foundation (Base / VitalSigns / Lifestyle) profiles. Prototype skeleton supplied with the JMIR Med Inform implementation report.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "encounter-period",
+              "relationship": "related-to",
+              "comment": "EncounterLt.period (ig-lt-base). StructureDefinition: https://hl7.lt/fhir/base/StructureDefinition/encounter-lt."
+            }
+          ],
+          "code": "registration-date",
+          "display": "Registration date"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-functional-status",
+              "relationship": "related-to",
+              "comment": "ObservationLt with SNOMED CT Karnofsky / ECOG-equivalent; or custom functional-status Observation."
+            }
+          ],
+          "code": "self-care"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-functional-status",
+              "relationship": "related-to",
+              "comment": "Subcomponent of functional status; same Observation with component or sibling code."
+            }
+          ],
+          "code": "bedridden"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-prior-chest-ct",
+              "relationship": "related-to",
+              "comment": "ProcedureLt or DiagnosticReportLt summary representing prior chest CT."
+            }
+          ],
+          "code": "prior-chest-ct"
+        },
+        {
+          "target": [
+            {
+              "code": "procedure-prior-chest-ct",
+              "relationship": "related-to",
+              "comment": "Procedure.performedDateTime on the prior-chest-ct Procedure instance."
+            }
+          ],
+          "code": "prior-chest-ct-date"
+        },
+        {
+          "target": [
+            {
+              "code": "condition-diagnosis",
+              "relationship": "related-to",
+              "comment": "ConditionLt with SNOMED respiratory-infection code and clinicalStatus=active/recent."
+            }
+          ],
+          "code": "recent-respiratory-infection"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-body-height",
+              "relationship": "related-to",
+              "comment": "BodyHeightLt (ig-lt-vitalsigns). StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-height."
+            }
+          ],
+          "code": "height"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-body-weight",
+              "relationship": "related-to",
+              "comment": "BodyWeightLt (ig-lt-vitalsigns). StructureDefinition: https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-weight."
+            }
+          ],
+          "code": "weight"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "equivalent",
+              "comment": "TobaccoUseLtLifestyle (ig-lt-lifestyle). LOINC 72166-2 Smoking status. Also reused by CVD, Breast, Cervical."
+            }
+          ],
+          "code": "smokes"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle.component (tobacco product subtype) = cigarettes."
+            }
+          ],
+          "code": "cigarettes"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle.component 'cigarettes per day' (LOINC 8663-7)."
+            }
+          ],
+          "code": "cigarettes-per-day"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-pack-years",
+              "relationship": "equivalent",
+              "comment": "PackYearsLtLifestyle (ig-lt-lifestyle). LOINC 8664-5 Pack-years."
+            }
+          ],
+          "code": "pack-years"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle; code differentiates e-cigarette vs combustible."
+            }
+          ],
+          "code": "e-cigarettes"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle; code differentiates heated-tobacco product."
+            }
+          ],
+          "code": "heated-tobacco"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle; differentiates loose-tobacco product."
+            }
+          ],
+          "code": "tobacco"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tobacco-use",
+              "relationship": "related-to",
+              "comment": "TobaccoUseLtLifestyle; differentiates pipe product."
+            }
+          ],
+          "code": "pipe"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-smoking-cessation",
+              "relationship": "related-to",
+              "comment": "SmokingCessationLtLifestyle — history of tobacco use prior to current status."
+            }
+          ],
+          "code": "smoked-before"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-smoking-duration",
+              "relationship": "equivalent",
+              "comment": "SmokingDurationLtLifestyle. LOINC 88030-2 (Tobacco smoking duration years)."
+            }
+          ],
+          "code": "years-smoked"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-smoking-cessation",
+              "relationship": "related-to",
+              "comment": "SmokingCessationLtLifestyle.component years-since-cessation. LOINC 74010-0."
+            }
+          ],
+          "code": "years-quit"
+        },
+        {
+          "target": [
+            {
+              "code": "condition-diagnosis",
+              "relationship": "related-to",
+              "comment": "ConditionLt list (ICD-10 codes); relevant for LDCT eligibility / contra-indications."
+            }
+          ],
+          "code": "diagnoses"
+        }
+      ],
+      "source": "https://hl7.lt/fhir/lung/CodeSystem/lung-pre-ldct-questionnaire-item",
+      "target": "https://hl7.lt/fhir/lung/CodeSystem/lung-fhir-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "LungPreLdctQuestionnaireToFhir",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-04-20",
+  "publisher": "HL7 Lithuania"
+}

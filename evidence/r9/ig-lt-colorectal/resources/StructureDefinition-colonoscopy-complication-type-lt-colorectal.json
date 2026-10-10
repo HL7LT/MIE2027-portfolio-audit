@@ -1,0 +1,73 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colonoscopy-complication-type-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-complication-type-lt-colorectal",
+  "name": "ColonoscopyComplicationTypeLtColorectal",
+  "title": "Colonoscopy Complication Type (LT Colorectal)",
+  "status": "active",
+  "publisher": "HL7 Lithuania",
+  "description": "Profile for recording the complication type after diagnostic colonoscopy. This observation is recorded only if complication presence is Yes.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "363103008",
+              "system": "http://snomed.info/sct",
+              "display": "Endocrine system complication of procedure (disorder)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-complication-type"
+        }
+      }
+    ]
+  }
+}

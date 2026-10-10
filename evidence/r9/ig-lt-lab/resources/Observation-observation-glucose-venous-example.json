@@ -1,0 +1,53 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-glucose-venous-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/glucose-venous-lab-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "41652-9",
+        "display": "Glucose [Mass/volume] in Venous blood"
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "code": "122555007",
+        "display": "Venous blood specimen (specimen)"
+      }
+    ]
+  },
+  "valueQuantity": {
+    "unit": "mmol/L",
+    "system": "http://unitsofmeasure.org",
+    "code": "mmol/L",
+    "value": 5.4
+  },
+  "note": [
+    {
+      "text": "Normal fasting glucose level."
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-11-06T09:00:00Z",
+  "specimen": {
+    "reference": "Specimen/specimen-venous-example"
+  }
+}

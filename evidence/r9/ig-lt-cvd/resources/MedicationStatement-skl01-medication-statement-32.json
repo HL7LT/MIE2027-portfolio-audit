@@ -1,0 +1,18 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "skl01-medication-statement-32",
+  "dosage": [
+    {
+      "text": "22ml per dieną, 4 kartai"
+    }
+  ],
+  "status": "recorded",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "medication": {
+    "reference": {
+      "reference": "Medication/1000017575"
+    }
+  }
+}

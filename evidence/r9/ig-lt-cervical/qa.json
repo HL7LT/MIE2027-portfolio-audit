@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/cervical/ImplementationGuide/lt.hl7.fhir.cervical",
+  "name" : "LTCervical",
+  "title" : "Lithuanian Cervical Cancer Implementation Guide",
+  "description" : "Lithuanian Cervical Cancer Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.cervical",
+  "ig-ver" : "0.0.1",
+  "date" : "Thu, 08 Oct, 2026 22:27:02 +0300",
+  "dateISO8601" : "2026-10-08T22:27:02+03:00",
+  "errs" : 4,
+  "warnings" : 219,
+  "hints" : 344,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 7,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1657469680
+}

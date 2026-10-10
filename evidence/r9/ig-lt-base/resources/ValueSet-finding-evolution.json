@@ -1,0 +1,41 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FindingEvolutionVS",
+  "id": "finding-evolution",
+  "title": "Finding Evolution",
+  "description": "Evolution of findings across screening and diagnostic procedures — indicates whether a finding is new, changed, stable, or absent compared to prior examinations.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/finding-evolution",
+  "experimental": false,
+  "language": "en",
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "7147002",
+            "display": "New"
+          },
+          {
+            "code": "35105006",
+            "display": "Increased"
+          },
+          {
+            "code": "1250004",
+            "display": "Decreased"
+          },
+          {
+            "code": "260388006",
+            "display": "No status change"
+          },
+          {
+            "code": "373572006",
+            "display": "Clinical finding absent"
+          }
+        ]
+      }
+    ]
+  }
+}

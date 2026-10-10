@@ -1,0 +1,21 @@
+{
+  "resourceType": "Device",
+  "id": "device-body-height-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-body-height"
+    ]
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "24311000205101",
+          "system": "http://snomed.info/sct",
+          "display": "Stadiometer (physical object)"
+        }
+      ]
+    }
+  ],
+  "status": "active"
+}

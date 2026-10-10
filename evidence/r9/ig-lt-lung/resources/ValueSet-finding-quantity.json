@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FindingQuantityVS",
+  "id": "finding-quantity",
+  "title": "Finding Quantity",
+  "description": "Amount of a finding: small, medium, or large. Used for pleural fluid, pericardial effusion, and similar quantifiable incidental findings.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/finding-quantity",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "255507004",
+            "display": "Small (qualifier value)"
+          },
+          {
+            "code": "255508009",
+            "display": "Medium (qualifier value)"
+          },
+          {
+            "code": "255509001",
+            "display": "Large (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

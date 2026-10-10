@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HpvTestResultLtCervicalVS",
+  "id": "hpv-test-result-lt-cervical",
+  "title": "Cervix - HPV Test Result (LT Cervical)",
+  "description": "Overall result codes for HPV DNA testing.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/hpv-test-result",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "77851000146104",
+            "display": "High risk human papillomavirus not detected (finding)"
+          },
+          {
+            "code": "720005005",
+            "display": "Human papillomavirus deoxyribonucleic acid detected, high risk on cervical specimen (finding)"
+          },
+          {
+            "code": "125154007",
+            "display": "Specimen unsatisfactory for evaluation (finding)"
+          },
+          {
+            "code": "373880007",
+            "display": "Specimen rejected / not processed (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

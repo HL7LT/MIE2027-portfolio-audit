@@ -1,0 +1,256 @@
+{
+  "resourceType": "Composition",
+  "id": "composition-prostate-mpmri-report-adp-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/prostate/composition-id",
+      "value": "PROSTATE-ADP-MPMRI-2024-0001"
+    }
+  ],
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "author": [
+    {
+      "reference": "PractitionerRole/practitioner-role-radiologist-example"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference",
+      "valueReference": {
+        "reference": "DiagnosticReport/diagnosticReport-prostate-mpmri-report-example"
+      }
+    }
+  ],
+  "event": [
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "MR",
+                "system": "http://dicom.nema.org/resources/ontology/DCM",
+                "display": "Magnetic Resonance"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+          }
+        }
+      ]
+    },
+    {
+      "detail": [
+        {
+          "concept": {
+            "coding": [
+              {
+                "code": "103693007",
+                "system": "http://snomed.info/sct",
+                "display": "Diagnostic procedure (procedure)"
+              }
+            ]
+          },
+          "reference": {
+            "reference": "Procedure/procedure-prostate-mpmri-example"
+          }
+        }
+      ]
+    }
+  ],
+  "section": [
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Multiparametric prostate MRI performed.</div>"
+      },
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18726-0"
+          }
+        ]
+      },
+      "title": "Imaging Study"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">mpMRI of prostate ordered as part of ADP diagnostic pathway.</div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55115-0",
+            "display": "Requested imaging studies information Document"
+          }
+        ]
+      },
+      "title": "Order"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Elevated PSA. Patient under active surveillance for low-grade prostate cancer.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/observation-prostate-psa-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "11329-0",
+            "display": "History general Narrative - Reported"
+          }
+        ]
+      },
+      "title": "Clinical History"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Multiparametric prostate MRI with intravenous gadolinium contrast.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Procedure/procedure-prostate-mpmri-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "55111-9",
+            "display": "Current imaging procedure descriptions Document"
+          }
+        ]
+      },
+      "title": "Procedure"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Compared with prior prostate MRI.</div>"
+      },
+      "entry": [
+        {
+          "reference": "ImagingStudy/imagingstudy-prostate-mpmri-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18834-2",
+            "display": "Radiology Comparison study (narrative)"
+          }
+        ]
+      },
+      "title": "Comparison"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Anterior transition zone lesion with PI-RADS 5. No seminal vesicle, neurovascular bundle, or nodal invasion. Possible anterior capsular contact. Diffuse enhancement in right peripheral zone without focal lesion.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/imfinding-prostate-lesion1-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "59776-5",
+            "display": "Findings"
+          }
+        ]
+      },
+      "title": "Findings"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">PI-RADS 5 lesion in anterior transition zone (~32 mm). PRECISE 3: stable disease. Imaging features consistent with high-suspicion lesion without definite extracapsular extension.</div>"
+      },
+      "entry": [
+        {
+          "reference": "Observation/imfinding-prostate-lesion1-example"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "19005-8",
+            "display": "Radiology Imaging study [Impression] (narrative)"
+          }
+        ]
+      },
+      "title": "Impression"
+    },
+    {
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Continue active surveillance with mpMRI and PSA follow-up. Consider targeted biopsy if progression suspected.</div>"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "18783-1",
+            "display": "Radiology Study recommendation (narrative)"
+          }
+        ]
+      },
+      "title": "Recommendation"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      }
+    ]
+  },
+  "status": "final",
+  "date": "2024-05-27T10:30:00+02:00",
+  "title": "Prostate Cancer Prevention Program – mpMRI Report",
+  "custodian": {
+    "reference": "Organization/organization-lt-example"
+  }
+}

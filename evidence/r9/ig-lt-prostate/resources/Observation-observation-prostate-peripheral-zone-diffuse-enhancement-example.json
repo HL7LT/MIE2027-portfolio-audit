@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-peripheral-zone-diffuse-enhancement-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Diffuse contrast enhancement in the right peripheral zone; no discrete focal lesion identified. No focal PI-RADS lesion in PZ."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "364636000",
+        "system": "http://snomed.info/sct",
+        "display": "Lesion observable (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "415684004",
+        "system": "http://snomed.info/sct",
+        "display": "Suspected (qualifier value)"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/bodyStructure-prostate-peripheral-zone-mid-right-example"
+  }
+}

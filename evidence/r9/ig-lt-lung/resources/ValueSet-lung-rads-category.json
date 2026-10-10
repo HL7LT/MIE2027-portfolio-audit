@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LungRadsCategoryVS",
+  "id": "lung-rads-category",
+  "title": "LUNG-RADS Assessment Category",
+  "description": "Allowed primary LUNG-RADS assessment categories used in the Lithuanian\nlung cancer early diagnosis programme.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-category",
+  "experimental": false,
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-category"
+      }
+    ]
+  }
+}

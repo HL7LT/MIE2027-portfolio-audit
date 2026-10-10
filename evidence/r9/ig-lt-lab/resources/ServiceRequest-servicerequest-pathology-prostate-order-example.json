@@ -1,0 +1,65 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-pathology-prostate-order-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/pathology-order-lt-lab"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/document-number",
+      "value": "ret-prostate-8841"
+    }
+  ],
+  "code": {
+    "concept": {
+      "coding": [
+        {
+          "code": "444822002",
+          "system": "http://snomed.info/sct",
+          "display": "Screening for malignant neoplasm of prostate (procedure)"
+        }
+      ]
+    }
+  },
+  "occurrencePeriod": {
+    "start": "2025-02-01",
+    "end": "2025-02-28"
+  },
+  "reason": [
+    {
+      "concept": {
+        "text": "Elevated PSA; rule out prostate cancer."
+      }
+    },
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "444822002",
+            "system": "http://snomed.info/sct",
+            "display": "Screening for malignant neoplasm of prostate (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "authorString": "Urology clinic",
+      "time": "2025-01-20T08:05:00+02:00",
+      "text": "Order prostate pathology work-up aligned with screening and diagnostic pathway."
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "authoredOn": "2023-01-20T08:00:00+02:00",
+  "requester": {
+    "reference": "Practitioner/practitioner-example"
+  },
+  "priority": "routine"
+}

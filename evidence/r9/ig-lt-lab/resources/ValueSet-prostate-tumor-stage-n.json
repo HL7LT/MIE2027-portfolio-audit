@@ -1,0 +1,33 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateTumorStageNLtLab",
+  "id": "prostate-tumor-stage-n",
+  "title": "Prostate Tumor Stage N",
+  "description": "Codes for prostate tumor stages N.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-n",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1229966003",
+            "display": "cNX (AJCC)"
+          },
+          {
+            "code": "1229967007",
+            "display": "cN0 (AJCC)"
+          },
+          {
+            "code": "1229973008",
+            "display": "cN1 (AJCC)"
+          }
+        ]
+      }
+    ]
+  }
+}

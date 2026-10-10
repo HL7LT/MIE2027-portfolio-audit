@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "CoronaryCalciumInterpretationVS",
+  "id": "coronary-calcium-interpretation",
+  "title": "Coronary Artery Calcium Score Interpretation Value Set",
+  "description": "Six-level interpretation scale for coronary artery calcium (Agatston) score.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/coronary-calcium-interpretation",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/coronary-calcium-interpretation"
+      }
+    ]
+  }
+}

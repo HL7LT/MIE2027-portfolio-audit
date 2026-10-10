@@ -1,0 +1,576 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pulmonary-nodule-observation-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung",
+  "name": "PulmonaryNoduleObservationLtLung",
+  "title": "Pulmonary Nodule (LT Lung)",
+  "status": "draft",
+  "description": "Pulmonary nodule identified on low-dose chest CT (LDCT) in the Lithuanian\nlung cancer early diagnosis programme.\n\nOne observation represents one pulmonary nodule (Židinys). Multiple nodules\nare represented as multiple Observation instances.\n\nThe observation captures the nodule type, localisation, CT slice number,\nmorphological features, measurements, and optional note.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "427359005",
+              "system": "http://snomed.info/sct",
+              "display": "Solitary nodule of lung"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "short": "Optional free-text note about the nodule"
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "short": "Lung lobe where the nodule is located",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lung-lobe"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.component:noduleType",
+        "path": "Observation.component",
+        "sliceName": "noduleType",
+        "short": "Nodule type",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:noduleType.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "364637009",
+              "system": "http://snomed.info/sct",
+              "display": "Lesion feature (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:noduleType.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-type"
+        }
+      },
+      {
+        "id": "Observation.component:ctSliceNumber",
+        "path": "Observation.component",
+        "sliceName": "ctSliceNumber",
+        "short": "CT slice number",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:ctSliceNumber.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "ct-slice-number",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "CT slice number"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:ctSliceNumber.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:morphology",
+        "path": "Observation.component",
+        "sliceName": "morphology",
+        "short": "Morphology characteristics of the nodule; multiple values allowed",
+        "min": 1,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:morphology.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "morphology",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "Morphology"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:morphology.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/pulmonary-nodule-morphology"
+        }
+      },
+      {
+        "id": "Observation.component:meanDiameter",
+        "path": "Observation.component",
+        "sliceName": "meanDiameter",
+        "short": "Mean nodule diameter",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:meanDiameter.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "255586005",
+              "system": "http://snomed.info/sct",
+              "display": "Mean"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:meanDiameter.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:meanDiameter.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:meanDiameter.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:meanDiameter.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:longAxis",
+        "path": "Observation.component",
+        "sliceName": "longAxis",
+        "short": "Long axis of the nodule",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:longAxis.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "103339001",
+              "system": "http://snomed.info/sct",
+              "display": "Long axis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:longAxis.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:longAxis.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:longAxis.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:longAxis.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:shortAxis",
+        "path": "Observation.component",
+        "sliceName": "shortAxis",
+        "short": "Short axis of the nodule",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:shortAxis.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "103340004",
+              "system": "http://snomed.info/sct",
+              "display": "Short axis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:shortAxis.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:shortAxis.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:shortAxis.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:shortAxis.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:volume",
+        "path": "Observation.component",
+        "sliceName": "volume",
+        "short": "Nodule volume",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:volume.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "118565006",
+              "system": "http://snomed.info/sct",
+              "display": "Volume"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:volume.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:volume.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm3"
+      },
+      {
+        "id": "Observation.component:volume.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:volume.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm3"
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter",
+        "path": "Observation.component",
+        "sliceName": "solidPartMeanDiameter",
+        "short": "Mean diameter of the solid component in a part-solid nodule",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "solid-part-mean-diameter",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "Solid part mean diameter"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:solidPartMeanDiameter.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis",
+        "path": "Observation.component",
+        "sliceName": "solidPartLongAxis",
+        "short": "Long axis of the solid component",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "solid-part-long-axis",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "Solid part long axis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:solidPartLongAxis.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis",
+        "path": "Observation.component",
+        "sliceName": "solidPartShortAxis",
+        "short": "Short axis of the solid component",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "solid-part-short-axis",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "Solid part short axis"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:solidPartShortAxis.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:solidPartVolume",
+        "path": "Observation.component",
+        "sliceName": "solidPartVolume",
+        "short": "Volume of the solid component",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:solidPartVolume.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "solid-part-volume",
+              "system": "https://hl7.lt/fhir/lung/CodeSystem/pulmonary-nodule-component-code",
+              "display": "Solid part volume"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:solidPartVolume.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:solidPartVolume.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "mm3"
+      },
+      {
+        "id": "Observation.component:solidPartVolume.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:solidPartVolume.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm3"
+      }
+    ]
+  }
+}

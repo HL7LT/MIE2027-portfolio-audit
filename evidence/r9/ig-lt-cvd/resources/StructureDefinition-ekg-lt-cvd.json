@@ -1,0 +1,175 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ekg-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/ekg-lt-cvd",
+  "version": "1.0.0",
+  "name": "EKGLtCvd",
+  "title": "EKG",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Electrocardiogram (EKG/ECG) observation using 12 leads and SampledData data type.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "procedure",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Procedure"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.code.coding:mdc",
+        "path": "Observation.code.coding",
+        "sliceName": "mdc",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "131328",
+          "system": "urn:oid:2.16.840.1.113883.6.24",
+          "display": "MDC_ECG_ELEC_POTL"
+        }
+      },
+      {
+        "id": "Observation.code.coding:mdc.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "urn:oid:2.16.840.1.113883.6.24"
+      },
+      {
+        "id": "Observation.code.coding:snomed",
+        "path": "Observation.code.coding",
+        "sliceName": "snomed",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "268400002",
+          "system": "http://snomed.info/sct",
+          "display": "12 lead ECG"
+        }
+      },
+      {
+        "id": "Observation.code.coding:snomed.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.code.coding:loinc",
+        "path": "Observation.code.coding",
+        "sliceName": "loinc",
+        "min": 0,
+        "max": "1",
+        "patternCoding": {
+          "code": "11524-6",
+          "system": "http://loinc.org",
+          "display": "EKG study"
+        }
+      },
+      {
+        "id": "Observation.code.coding:loinc.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding.system"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.interpretation:ekgResult",
+        "path": "Observation.interpretation",
+        "sliceName": "ekgResult",
+        "short": "ECG findings: normal, abnormal, and/or specific findings (ST-T changes, A-fib, A-flutter, LBBB, etc.)",
+        "definition": "Clinical interpretation of the ECG. Multiple codes may be recorded: a high-level assessment (normal/abnormal) combined with specific finding codes (e.g., atrial fibrillation, ST-T changes). Use Observation.note for free-text 'Other' findings.",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/ekg-result-interpretation"
+        }
+      },
+      {
+        "id": "Observation.interpretation:ekgResult.coding.system",
+        "path": "Observation.interpretation.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.component.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "SampledData"
+          }
+        ]
+      }
+    ]
+  }
+}

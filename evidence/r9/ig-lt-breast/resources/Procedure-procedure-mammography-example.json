@@ -1,0 +1,33 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-mammography-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+    ]
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/example-practitioner"
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "71651007",
+        "system": "http://snomed.info/sct",
+        "display": "Mammography (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-breast-step2-imaging-example"
+  },
+  "occurrenceDateTime": "2024-06-15T10:10:00+03:00"
+}

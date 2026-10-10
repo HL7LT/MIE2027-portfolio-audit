@@ -1,0 +1,48 @@
+{
+  "resourceType": "ValueSet",
+  "status": "retired",
+  "name": "CervicalTnmPtVS",
+  "id": "cervical-tnm-pt",
+  "title": "Cervical TNM pT Stage [RETIRED]",
+  "description": "RETIRED — Use CervicalTumorStageTLtLab from the Lab IG instead, which includes full pTX–pT4 staging. This ValueSet only covered pTX–pT1b2.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-tnm-pt",
+  "experimental": false,
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "1228950008",
+            "display": "American Joint Committee on Cancer pTX (qualifier value)"
+          },
+          {
+            "code": "1228951007",
+            "display": "American Joint Committee on Cancer pT0 (qualifier value)"
+          },
+          {
+            "code": "1228953005",
+            "display": "American Joint Committee on Cancer pTis (qualifier value)"
+          },
+          {
+            "code": "1228960004",
+            "display": "American Joint Committee on Cancer pT1a1 (qualifier value)"
+          },
+          {
+            "code": "1228961000",
+            "display": "American Joint Committee on Cancer pT1a2 (qualifier value)"
+          },
+          {
+            "code": "1229844006",
+            "display": "American Joint Committee on Cancer pT1b1 (qualifier value)"
+          },
+          {
+            "code": "1229845007",
+            "display": "American Joint Committee on Cancer pT1b2 (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

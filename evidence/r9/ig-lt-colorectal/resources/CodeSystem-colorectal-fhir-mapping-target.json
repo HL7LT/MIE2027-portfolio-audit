@@ -1,0 +1,109 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ColorectalFhirMappingTarget",
+  "id": "colorectal-fhir-mapping-target",
+  "title": "Colorectal Questionnaire → FHIR mapping target",
+  "description": "Short identifiers for the FHIR profile / element combinations referenced by the Colorectal ConceptMap prototype.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-fhir-mapping-target",
+  "concept": [
+    {
+      "code": "encounter-period",
+      "display": "EncounterLt.period (ig-lt-base)"
+    },
+    {
+      "code": "procedure-colonoscopy",
+      "display": "ColonoscopyProcedureLtColorectal.performedPeriod"
+    },
+    {
+      "code": "colonoscopy-composition",
+      "display": "ColonoscopyCompositionLtColorectal"
+    },
+    {
+      "code": "colonoscopy-report",
+      "display": "ColonoscopyReportLtColorectal"
+    },
+    {
+      "code": "colonoscopy-conclusion",
+      "display": "ColonoscopyConclusionLtColorectal"
+    },
+    {
+      "code": "bowel-prep-quality",
+      "display": "BowelPreparationQualityLtColorectal"
+    },
+    {
+      "code": "bowel-prep-score",
+      "display": "ObservationLt — BBPS segment score"
+    },
+    {
+      "code": "bowel-prep-method",
+      "display": "ObservationLt — preparation method"
+    },
+    {
+      "code": "bowel-prep-substance",
+      "display": "ObservationLt — preparation substance"
+    },
+    {
+      "code": "scope-reach",
+      "display": "ColonoscopeReachLtColorectal"
+    },
+    {
+      "code": "polyp-observation",
+      "display": "Observation — colon polyp (component-based)"
+    },
+    {
+      "code": "polyp-size",
+      "display": "Observation.component size (mm)"
+    },
+    {
+      "code": "paris-classification",
+      "display": "Observation.component Paris classification"
+    },
+    {
+      "code": "nice-classification",
+      "display": "Observation.component NICE classification"
+    },
+    {
+      "code": "predicted-histology",
+      "display": "Observation.component predicted histology"
+    },
+    {
+      "code": "polyp-removal",
+      "display": "Procedure (polypectomy)"
+    },
+    {
+      "code": "polyp-histology",
+      "display": "DiagnosticReportLt / HistologicalDiagnosisLtColorectal"
+    },
+    {
+      "code": "tumor-finding",
+      "display": "TumorFindingLtColorectal"
+    },
+    {
+      "code": "complication-presence",
+      "display": "ColonoscopyComplicationPresenceLtColorectal"
+    },
+    {
+      "code": "complication-type",
+      "display": "ColonoscopyComplicationTypeLtColorectal"
+    },
+    {
+      "code": "wall-injury",
+      "display": "ColonoscopyWallInjuryDetailLtColorectal"
+    },
+    {
+      "code": "bleeding-control",
+      "display": "ColonoscopyBleedingControlLtColorectal"
+    },
+    {
+      "code": "recommendation-followup",
+      "display": "CarePlanLt — next colonoscopy recommendation"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 23
+}

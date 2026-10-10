@@ -1,0 +1,90 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CvdHighRiskConditionLtCvd",
+  "id": "cvd-high-risk-condition",
+  "title": "CVD High Risk Conditions",
+  "description": "ICD-10 codes representing conditions that significantly increase cardiovascular disease risk, often used for risk stratification in Screening programs.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cvd-high-risk-condition",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "concept": [
+          {
+            "code": "F31",
+            "display": "Bipolar affective disorder"
+          },
+          {
+            "code": "F41.1",
+            "display": "Generalized anxiety disorder"
+          },
+          {
+            "code": "N48.4",
+            "display": "Impotence of organic origin"
+          },
+          {
+            "code": "F52.2",
+            "display": "Failure of genital response"
+          },
+          {
+            "code": "M05",
+            "display": "Seropositive rheumatoid arthritis"
+          },
+          {
+            "code": "K50",
+            "display": "Crohn disease [regional enteritis]"
+          },
+          {
+            "code": "K51",
+            "display": "Ulcerative colitis"
+          },
+          {
+            "code": "J44",
+            "display": "Other chronic obstructive pulmonary disease"
+          },
+          {
+            "code": "I48",
+            "display": "Atrial fibrillation and flutter"
+          },
+          {
+            "code": "I50",
+            "display": "Heart failure"
+          },
+          {
+            "code": "N18",
+            "display": "Chronic kidney disease"
+          },
+          {
+            "code": "G43.1",
+            "display": "Migraine with aura"
+          },
+          {
+            "code": "G47.3",
+            "display": "Sleep apnoea"
+          },
+          {
+            "code": "O24.4",
+            "display": "Gestational diabetes mellitus"
+          },
+          {
+            "code": "O13",
+            "display": "Gestational hypertension without significant proteinuria"
+          },
+          {
+            "code": "O14",
+            "display": "Pre-eclampsia"
+          },
+          {
+            "code": "O15",
+            "display": "Eclampsia"
+          }
+        ]
+      }
+    ]
+  }
+}

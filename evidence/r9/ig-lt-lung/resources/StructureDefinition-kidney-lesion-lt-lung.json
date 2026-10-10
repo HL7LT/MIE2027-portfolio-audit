@@ -1,0 +1,96 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "kidney-lesion-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/kidney-lesion-lt-lung",
+  "name": "KidneyLesionLtLung",
+  "title": "Kidney Lesion (LT Lung)",
+  "status": "active",
+  "description": "Kidney lesion incidental finding detected during LDCT screening.\nSignificant lesions are 1 cm or larger, or smaller ones where malignancy\ncannot be excluded, per ADP dataset section 1.2.2.2 item 12.\nCalcified density can co-occur with cystic, solid, or complex.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "309088003",
+              "system": "http://snomed.info/sct",
+              "display": "Renal mass (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "short": "Location: right or left kidney",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/kidney-laterality"
+        }
+      },
+      {
+        "id": "Observation.component:density",
+        "path": "Observation.component",
+        "sliceName": "density",
+        "short": "Density: cystic, solid, complex, calcified. Calcified can co-occur with others via multiple codings."
+      },
+      {
+        "id": "Observation.component:density.value[x]",
+        "path": "Observation.component.value[x]",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/kidney-lesion-density"
+        }
+      },
+      {
+        "id": "Observation.component:largestDimension",
+        "path": "Observation.component",
+        "sliceName": "largestDimension",
+        "short": "Largest dimension in the axial plane (mm)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:largestDimension.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "439933003",
+              "system": "http://snomed.info/sct",
+              "display": "Long axis length of structure by imaging measurement (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      }
+    ]
+  }
+}

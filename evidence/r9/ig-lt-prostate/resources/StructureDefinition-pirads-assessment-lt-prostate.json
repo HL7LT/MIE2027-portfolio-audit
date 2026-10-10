@@ -1,0 +1,126 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pirads-assessment-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate",
+  "name": "PIRADSAssessmentLtProstate",
+  "title": "Observation: PI-RADS Assessment",
+  "status": "draft",
+  "description": "PI-RADS assessment (score 1–5) assigned to a specific prostate lesion\nbased on mpMRI findings.\nThe anatomical location is represented using detailed PI-RADS\nsector-based prostate body structures (39-sector map).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1345044005",
+              "system": "http://snomed.info/sct",
+              "display": "Assessment using Prostate Imaging-Reporting and Data System (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/prostate/StructureDefinition/lesion-lt-prostate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "constraint": [
+          {
+            "key": "prostate-score-min-1",
+            "severity": "error",
+            "human": "Score must be at least 1.",
+            "expression": "$this >= 1",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate"
+          },
+          {
+            "key": "prostate-score-max-5",
+            "severity": "error",
+            "human": "Score must be at most 5.",
+            "expression": "$this <= 5",
+            "source": "https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate"
+          }
+        ]
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector"
+        }
+      },
+      {
+        "id": "Observation.method.text",
+        "path": "Observation.method.text",
+        "short": "PI-RADS version (e.g., PI-RADS v2.1)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "InvasionDepthVS",
+  "id": "invasion-depth",
+  "title": "Invasion Depth",
+  "description": "Depth of invasion classification (Haggitt and Kikuchi) for colorectal lesions.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/invasion-depth",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "haggitt-0",
+            "display": "Haggitt 0"
+          },
+          {
+            "code": "haggitt-1",
+            "display": "Haggitt 1"
+          },
+          {
+            "code": "haggitt-2",
+            "display": "Haggitt 2"
+          },
+          {
+            "code": "haggitt-3",
+            "display": "Haggitt 3"
+          },
+          {
+            "code": "haggitt-4",
+            "display": "Haggitt 4"
+          },
+          {
+            "code": "kikuchi-sm1",
+            "display": "Sm1 according to Kikuchi"
+          },
+          {
+            "code": "kikuchi-sm2",
+            "display": "Sm2 according to Kikuchi"
+          },
+          {
+            "code": "kikuchi-sm3",
+            "display": "Sm3 according to Kikuchi"
+          },
+          {
+            "code": "invasion-invaluable",
+            "display": "Invasion depth invaluable"
+          }
+        ]
+      }
+    ]
+  }
+}

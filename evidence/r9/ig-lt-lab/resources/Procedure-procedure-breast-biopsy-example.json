@@ -1,0 +1,78 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-breast-biopsy-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/biopsy-procedure-lt-lab"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "387713003",
+          "system": "http://snomed.info/sct",
+          "display": "Surgical procedure"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/practitioner-example"
+      }
+    }
+  ],
+  "reason": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "363406005",
+            "system": "http://snomed.info/sct",
+            "display": "Malignant neoplasm of colon"
+          }
+        ]
+      }
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "76752008",
+          "system": "http://snomed.info/sct",
+          "display": "Breast"
+        }
+      ]
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "Specimen/specimen-right-breast-example"
+    },
+    {
+      "reference": "Specimen/specimen-left-breast-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Breast biopsy performed for suspected adenocarcinoma. Specimen sent for histopathology and immunohistochemistry."
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "122548005",
+        "system": "http://snomed.info/sct",
+        "display": "Biopsy of breast"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "occurrenceDateTime": "2025-01-10T09:15:00+02:00"
+}

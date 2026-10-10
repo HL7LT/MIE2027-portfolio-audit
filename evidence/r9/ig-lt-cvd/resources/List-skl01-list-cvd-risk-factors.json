@@ -1,0 +1,43 @@
+{
+  "resourceType": "List",
+  "id": "skl01-list-cvd-risk-factors",
+  "code": {
+    "coding": [
+      {
+        "code": "83539-7",
+        "system": "http://loinc.org",
+        "display": "Cardiology Risk assessment and screening note"
+      }
+    ],
+    "text": "ŠKL rizikos veiksniai"
+  },
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "entry": [
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-hypertension-181"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-dyslipidemia-182"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-diabetes-183"
+      }
+    },
+    {
+      "item": {
+        "reference": "Observation/skl01-observation-igt-185"
+      }
+    }
+  ],
+  "mode": "working",
+  "status": "current"
+}

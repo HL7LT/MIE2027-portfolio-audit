@@ -1,0 +1,178 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lung-composition-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/lung-composition-lt-lung",
+  "name": "LungCompositionLtLung",
+  "title": "Lung Composition (LT Lung)",
+  "status": "active",
+  "description": "Lung-specific imaging composition extending the base imaging composition with lung-specific constraints on findings, impression, and recommendation sections. Designed for use in the Lithuanian lung cancer prevention programme LDCT screening.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "short": "Specialist(s) who authored the composition (radiologist, technologist)"
+      },
+      {
+        "id": "Composition.relatesTo",
+        "path": "Composition.relatesTo",
+        "short": "Link to prior LDCT examination report or study, if available (ADP 1.1.8)"
+      },
+      {
+        "id": "Composition.section:findings",
+        "path": "Composition.section",
+        "sliceName": "findings"
+      },
+      {
+        "id": "Composition.section:findings.entry:finding",
+        "path": "Composition.section.entry",
+        "sliceName": "finding",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:findings.entry:pulmonaryNodule",
+        "path": "Composition.section.entry",
+        "sliceName": "pulmonaryNodule",
+        "short": "Pulmonary nodule observation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/pulmonary-nodule-observation-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:incidentalFinding",
+        "path": "Composition.section.entry",
+        "sliceName": "incidentalFinding",
+        "short": "Significant incidental finding (pulmonary or extra-pulmonary)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:mediastinalMass",
+        "path": "Composition.section.entry",
+        "sliceName": "mediastinalMass",
+        "short": "Mediastinal mass observation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/mediastinal-mass-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:kidneyLesion",
+        "path": "Composition.section.entry",
+        "sliceName": "kidneyLesion",
+        "short": "Kidney lesion observation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/kidney-lesion-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:adrenalLesion",
+        "path": "Composition.section.entry",
+        "sliceName": "adrenalLesion",
+        "short": "Adrenal gland lesion observation",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/adrenal-lesion-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings.entry:radiationDose",
+        "path": "Composition.section.entry",
+        "sliceName": "radiationDose",
+        "short": "Radiation dose observation (CTDIvol, DLP)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:impression",
+        "path": "Composition.section",
+        "sliceName": "impression"
+      },
+      {
+        "id": "Composition.section:impression.entry:lungRads",
+        "path": "Composition.section.entry",
+        "sliceName": "lungRads",
+        "short": "LUNG-RADS assessment category",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:recommendation",
+        "path": "Composition.section",
+        "sliceName": "recommendation"
+      },
+      {
+        "id": "Composition.section:recommendation.entry:lungRecommendation",
+        "path": "Composition.section.entry",
+        "sliceName": "lungRecommendation",
+        "short": "Follow-up recommendation based on LUNG-RADS",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

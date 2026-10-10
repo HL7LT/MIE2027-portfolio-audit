@@ -1,0 +1,43 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cvd-chronic-condition-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-chronic-condition-lt-cvd",
+  "version": "1.0.0",
+  "name": "CvdChronicConditionLtCvd",
+  "title": "CVD High Risk Condition",
+  "status": "draft",
+  "date": "2025-10-25T19:10:07+03:00",
+  "publisher": "HL7 Lithuania",
+  "description": "Condition profile for CVD high-risk chronic conditions (e.g. heart failure, CKD).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/condition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "active",
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cvd-high-risk-condition"
+        }
+      }
+    ]
+  }
+}

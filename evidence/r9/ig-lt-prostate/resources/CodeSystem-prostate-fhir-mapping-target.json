@@ -1,0 +1,120 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ProstateFhirMappingTarget",
+  "id": "prostate-fhir-mapping-target",
+  "title": "Prostate questionnaire → FHIR mapping target (illustrative)",
+  "description": "Target **codes** for **ConceptMap** entries: each code denotes a logical FHIR mapping destination (profile or element path). Used with **prostate-adpp-questionnaire-item** and **prostate-pathology-questionnaire-item** source codes.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target",
+  "concept": [
+    {
+      "code": "encounter-period",
+      "display": "Encounter.period"
+    },
+    {
+      "code": "encounter-reason",
+      "display": "Encounter.reasonCode"
+    },
+    {
+      "code": "servicerequest-reason",
+      "display": "ServiceRequest.reasonCode"
+    },
+    {
+      "code": "observation-lt",
+      "display": "ObservationLt (LT Base) — LOINC 2857-1 PSA"
+    },
+    {
+      "code": "body-height",
+      "display": "BodyHeight (Vital Signs)"
+    },
+    {
+      "code": "body-weight",
+      "display": "BodyWeight (Vital Signs)"
+    },
+    {
+      "code": "bmi",
+      "display": "BMI (Vital Signs)"
+    },
+    {
+      "code": "observation-prior-psa",
+      "display": "Observation: prior PSA value with effective time"
+    },
+    {
+      "code": "observation-mpmri-history",
+      "display": "Observation or Procedure: prior mpMRI / PI-RADS summary"
+    },
+    {
+      "code": "family-member-history-cancer",
+      "display": "FamilyMemberHistory (Base patterns) for oncologic family history"
+    },
+    {
+      "code": "procedure-prior-prostate-surgery",
+      "display": "Procedure: prior prostate surgery"
+    },
+    {
+      "code": "procedure-prior-prostate-radiation",
+      "display": "Procedure: prior prostate radiotherapy"
+    },
+    {
+      "code": "medicationstatement-anticoagulant",
+      "display": "MedicationStatement: anticoagulant use"
+    },
+    {
+      "code": "clinical-impression-or-note",
+      "display": "Encounter / DocumentReference / ClinicalImpression for free-text programme notes"
+    },
+    {
+      "code": "tumor-measurement-lt-lab",
+      "display": "TumorMeasurementLtLab (LT Pathology)"
+    },
+    {
+      "code": "specimen-adequacy-finding",
+      "display": "Observation: specimen adequacy (LT Lab)"
+    },
+    {
+      "code": "tumor-observable-lt-lab",
+      "display": "TumorObservableLtLab (LT Pathology) — treatment effect"
+    },
+    {
+      "code": "prostate-condition-lt-lab",
+      "display": "ProstateConditionLtLab (LT Pathology)"
+    },
+    {
+      "code": "gleason-isup-observation-lt-prostate",
+      "display": "GleasonIsupObservationLtProstate"
+    },
+    {
+      "code": "observation-pattern4-percent",
+      "display": "Observation: Pattern 4 percent band (lab tumour measurement patterns)"
+    },
+    {
+      "code": "observation-tumor-burden-percent",
+      "display": "Observation: tumour percentage in biopsy tissue"
+    },
+    {
+      "code": "observation-periprostatic-invasion",
+      "display": "Observation: periprostatic fat / seminal vesicle invasion (LT Lab tumour findings)"
+    },
+    {
+      "code": "observation-perineural-invasion",
+      "display": "Observation: perineural invasion finding (LT Lab tumour findings)"
+    },
+    {
+      "code": "observation-lymphovascular-invasion",
+      "display": "Observation: lymphovascular invasion finding (LT Lab tumour findings)"
+    },
+    {
+      "code": "pathology-report-lt-lab",
+      "display": "PathologyReportLtLab (LT Pathology)"
+    },
+    {
+      "code": "pathology-composition-lt-lab",
+      "display": "PathologyCompositionLtLab (LT Pathology)"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 26
+}

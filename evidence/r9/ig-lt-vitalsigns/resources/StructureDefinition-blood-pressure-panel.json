@@ -1,0 +1,796 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "blood-pressure-panel",
+  "url": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel",
+  "version": "1.0.0",
+  "name": "BloodPressurePanel",
+  "title": "Blood Pressure Panel",
+  "status": "draft",
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "Blood Pressure Panel; a grouping of systolic, diastolic, and mean arterial blood pressure components.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.extension",
+        "path": "Observation.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.extension:sleepStatus",
+        "path": "Observation.extension",
+        "sliceName": "sleepStatus",
+        "short": "Sleep Status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/sleep-status"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.extension:exerciseAssociation",
+        "path": "Observation.extension",
+        "sliceName": "exerciseAssociation",
+        "short": "Exercise Association",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/exercise-association"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.extension:measurementSetting",
+        "path": "Observation.extension",
+        "sliceName": "measurementSetting",
+        "short": "Measurement setting",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/measurement-setting"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 2
+      },
+      {
+        "id": "Observation.category:VSCat",
+        "path": "Observation.category",
+        "sliceName": "VSCat",
+        "definition": "This vital signs category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "vital-signs",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.category:BPCategory",
+        "path": "Observation.category",
+        "sliceName": "BPCategory",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "85354-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "short": "Blood Pressure",
+        "definition": "Blood pressure panel. LOINC required; SNOMED CT optional for dual coding."
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.code.coding:LOINC",
+        "path": "Observation.code.coding",
+        "sliceName": "LOINC",
+        "short": "Blood Pressure Panel (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation"
+        }
+      },
+      {
+        "id": "Observation.code.coding:LOINC.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.code.coding:SNOMED",
+        "path": "Observation.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Blood Pressure Panel (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-panel-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.code.coding:SNOMED.system",
+        "path": "Observation.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "short": "Vital Signs are point in time measurements and are recorded using the dateTime data type",
+        "definition": "Vital Signs are point in time measurements and are recorded using the dateTime data type.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "condition": [
+          "vsp-2"
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/numeric-result-interpretation"
+        }
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "short": "Describe body characteristics where on/in body an observation or procedure took place",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/body-structure-blood-pressure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-measurement-method",
+          "description": "A set of codes that describe the method used to measure a blood pressure"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "max": "0"
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "short": "Blood Pressure Device",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-blood-pressure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "extension.url"
+            },
+            {
+              "type": "pattern",
+              "path": "extension.value"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        },
+        "short": "Used when reporting systolic and diastolic blood pressure.",
+        "definition": "Used when reporting systolic and diastolic blood pressure.",
+        "min": 2
+      },
+      {
+        "id": "Observation.component:SystolicBP",
+        "path": "Observation.component",
+        "sliceName": "SystolicBP",
+        "min": 1,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "vsp-3-sbp",
+            "human": "If the systolic BP component exists and there is no component value a component data absent reason must be present.",
+            "source": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel",
+            "severity": "error",
+            "expression": "component.all(value.exists() or dataAbsentReason.exists())"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:SystolicBP.extension",
+        "path": "Observation.component.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            },
+            {
+              "type": "value",
+              "path": "value"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:SystolicBP.extension:SBPCode",
+        "path": "Observation.component.extension",
+        "sliceName": "SBPCode",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/observation-componentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:SystolicBP.extension:SBPCode.value[x]",
+        "path": "Observation.component.extension.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "8480-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:SystolicBP.code",
+        "path": "Observation.component.code",
+        "short": "Systolic Blood Pressure",
+        "definition": "Systolic blood pressure. LOINC required; SNOMED CT optional."
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding",
+        "path": "Observation.component.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "short": "Systolic BP (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation"
+        }
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding:LOINC.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding:SNOMED",
+        "path": "Observation.component.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Systolic BP (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-systolic-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.component:SystolicBP.code.coding:SNOMED.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.component:SystolicBP.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Vital Sign Systolic BP Component Value recorded with UCUM mm[Hg]",
+        "definition": "Vital Sign Systolic BP Component Value recorded with UCUM mm[Hg].",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "condition": [
+          "vsp-3-sbp"
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-unit"
+        }
+      },
+      {
+        "id": "Observation.component:SystolicBP.value[x].value",
+        "path": "Observation.component.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:SystolicBP.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:SystolicBP.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "min": 1,
+        "fixedUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:SystolicBP.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "min": 1,
+        "fixedCode": "mm[Hg]",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:SystolicBP.dataAbsentReason",
+        "path": "Observation.component.dataAbsentReason",
+        "condition": [
+          "vsp-3-sbp"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP",
+        "path": "Observation.component",
+        "sliceName": "DiastolicBP",
+        "min": 1,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "vsp-3-dbp",
+            "human": "If the diastolic BP component exists and there is no component value a component data absent reason must be present.",
+            "source": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel",
+            "severity": "error",
+            "expression": "component.all(value.exists() or dataAbsentReason.exists())"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP.extension",
+        "path": "Observation.component.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            },
+            {
+              "type": "pattern",
+              "path": "value"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:DiastolicBP.extension:DBPCode",
+        "path": "Observation.component.extension",
+        "sliceName": "DBPCode",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/observation-componentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:DiastolicBP.extension:DBPCode.value[x]",
+        "path": "Observation.component.extension.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "8462-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code",
+        "path": "Observation.component.code",
+        "short": "Diastolic Blood Pressure",
+        "definition": "Diastolic blood pressure. LOINC required; SNOMED CT optional."
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding",
+        "path": "Observation.component.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "short": "Diastolic BP (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation"
+        }
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding:LOINC.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding:SNOMED",
+        "path": "Observation.component.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Diastolic BP (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-diastolic-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.component:DiastolicBP.code.coding:SNOMED.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.component:DiastolicBP.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Vital Sign DiastolicBP BP Component Value recorded with UCUM mm[Hg]",
+        "definition": "Vital Sign DiastolicBP BP Component Value recorded with UCUM mm[Hg].",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "condition": [
+          "vsp-3-dbp"
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-unit"
+        }
+      },
+      {
+        "id": "Observation.component:DiastolicBP.value[x].value",
+        "path": "Observation.component.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "min": 1,
+        "fixedUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "min": 1,
+        "fixedCode": "mm[Hg]",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:DiastolicBP.dataAbsentReason",
+        "path": "Observation.component.dataAbsentReason",
+        "condition": [
+          "vsp-3-dbp"
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:MeanArterialBP",
+        "path": "Observation.component",
+        "sliceName": "MeanArterialBP",
+        "short": "Mean Arterial Blood Pressure",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.extension",
+        "path": "Observation.component.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            },
+            {
+              "type": "value",
+              "path": "value"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.extension:MeanCode",
+        "path": "Observation.component.extension",
+        "sliceName": "MeanCode",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/observation-componentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.extension:MeanCode.value[x]",
+        "path": "Observation.component.extension.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "8478-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code",
+        "path": "Observation.component.code",
+        "short": "Mean blood pressure",
+        "definition": "Mean arterial blood pressure. LOINC required; SNOMED CT optional."
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code.coding",
+        "path": "Observation.component.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code.coding:LOINC",
+        "path": "Observation.component.code.coding",
+        "sliceName": "LOINC",
+        "short": "Mean BP (LOINC)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation"
+        }
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code.coding:LOINC.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://loinc.org"
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code.coding:SNOMED",
+        "path": "Observation.component.code.coding",
+        "sliceName": "SNOMED",
+        "short": "Mean BP (SNOMED CT)",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bp-mean-observation-snomed"
+        }
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.code.coding:SNOMED.system",
+        "path": "Observation.component.code.coding.system",
+        "min": 1,
+        "patternUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.value[x].value",
+        "path": "Observation.component.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.value[x].unit",
+        "path": "Observation.component.value[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "min": 1,
+        "fixedUri": "http://unitsofmeasure.org",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:MeanArterialBP.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "min": 1,
+        "fixedCode": "mm[Hg]",
+        "mustSupport": true
+      }
+    ]
+  }
+}

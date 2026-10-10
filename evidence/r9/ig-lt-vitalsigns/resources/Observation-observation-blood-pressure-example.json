@@ -1,0 +1,178 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-blood-pressure-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/blood-pressure-panel"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "85354-9",
+          "system": "http://loinc.org",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "85354-9",
+        "display": "Blood pressure panel with all children optional"
+      }
+    ]
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient was seated for 5 minutes before measurement."
+    }
+  ],
+  "component": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/observation-componentCategory",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "8480-6",
+                "system": "http://loinc.org",
+                "display": "Systolic blood pressure"
+              }
+            ]
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8480-6",
+            "display": "Systolic blood pressure"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]",
+        "value": 117,
+        "unit": "mmHg"
+      },
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "display": "Normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/observation-componentCategory",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "8462-4",
+                "system": "http://loinc.org",
+                "display": "Diastolic blood pressure"
+              }
+            ]
+          }
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "Diastolic blood pressure"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]",
+        "value": 78,
+        "unit": "mmHg"
+      },
+      "interpretation": [
+        {
+          "coding": [
+            {
+              "code": "N",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "display": "Normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8478-0",
+            "display": "Mean blood pressure"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]",
+        "value": 91,
+        "unit": "mmHg"
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/observation-componentCategory",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "8478-0",
+                "system": "http://loinc.org"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-08-01T10:00:00Z",
+  "device": {
+    "reference": "Device/device-blood-pressure-example"
+  }
+}

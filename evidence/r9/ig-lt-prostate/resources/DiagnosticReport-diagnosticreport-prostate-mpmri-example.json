@@ -1,0 +1,106 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-prostate-mpmri-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/mpmri-report-lt-prostate"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "PractitionerRole/practitioner-role-radiologist-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-prostate-pirads-lesion1-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-dwi-score-lesion1-example2"
+    },
+    {
+      "reference": "Observation/observation-prostate-piqual-example"
+    },
+    {
+      "reference": "Observation/observation-prostate-precise-followup-example"
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": {
+        "reference": "Observation/prostate-psa-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "RSLT",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    },
+    {
+      "reference": {
+        "reference": "Observation/prostate-volume-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "RSLT",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    },
+    {
+      "reference": {
+        "reference": "Observation/prostate-psad-example"
+      },
+      "type": {
+        "coding": [
+          {
+            "code": "SCI",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0936"
+          }
+        ]
+      }
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "18748-4",
+          "display": "Diagnostic imaging study"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.eu/fhir/imaging-r5/CodeSystem/Hl7EuDocumentTypes",
+        "code": "imaging-report-v0-0-1",
+        "display": "Imaging Report V0.0.1"
+      },
+      {
+        "code": "719178004",
+        "system": "http://snomed.info/sct",
+        "display": "Multiparametric magnetic resonance imaging of prostate (procedure)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "composition": {
+    "reference": "Composition/composition-prostate-mpmri-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:30:00Z",
+  "conclusion": "Multiparametric prostate MRI performed. Peripheral zone focus with high suspicion. See linked observations."
+}

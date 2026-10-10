@@ -1,0 +1,80 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BodyWeightObservation",
+  "id": "body-weight-observation",
+  "title": "Body Weight observation codes",
+  "description": "This value set defines the set of LOINC codes considered to be appropriate for representing body weight vital sign measurements in Observation.code.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/body-weight-observation",
+  "meta": {
+    "lastUpdated": "2025-10-26T17:42:56.640+00:00",
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "oo"
+    }
+  ],
+  "version": "6.0.0",
+  "experimental": false,
+  "publisher": "FHIR project team",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7.org/fhir"
+        }
+      ]
+    }
+  ],
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "This content from LOINC® is copyright © 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "filter": [
+          {
+            "property": "COMPONENT",
+            "op": "in",
+            "value": "LP65139-5,LP304481-7,LP304482-5"
+          },
+          {
+            "property": "PROPERTY",
+            "op": "=",
+            "value": "LP6826-4"
+          },
+          {
+            "property": "TIME_ASPCT",
+            "op": "=",
+            "value": "LP6960-1"
+          },
+          {
+            "property": "SYSTEM",
+            "op": "=",
+            "value": "LP310005-6"
+          },
+          {
+            "property": "SCALE_TYP",
+            "op": "=",
+            "value": "LP7753-9"
+          }
+        ]
+      }
+    ]
+  }
+}

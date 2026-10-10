@@ -1,0 +1,112 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "ColorectalPolypCodesLt",
+  "id": "colorectal-polyp-codes-lt",
+  "title": "Colorectal - Local Polyp Codes CS",
+  "description": "Local codes for polyp classifications (Paris, NICE, Access, SMSA) used in the Lithuanian colorectal screening program.",
+  "url": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt",
+  "concept": [
+    {
+      "code": "comp-paris",
+      "display": "Paris classification"
+    },
+    {
+      "code": "comp-nice",
+      "display": "NICE classification"
+    },
+    {
+      "code": "comp-hist-predict",
+      "display": "Endoscopic prediction of histology"
+    },
+    {
+      "code": "comp-access",
+      "display": "Access to polyp"
+    },
+    {
+      "code": "comp-smsa-score",
+      "display": "SMSA Total Score"
+    },
+    {
+      "code": "comp-smsa-level",
+      "display": "SMSA Level"
+    },
+    {
+      "code": "paris-is",
+      "display": "Is (Sessile)"
+    },
+    {
+      "code": "paris-ip",
+      "display": "Ip (Pedunculated)"
+    },
+    {
+      "code": "paris-iia",
+      "display": "IIa (Flat elevated)"
+    },
+    {
+      "code": "paris-iib",
+      "display": "IIb (Flat)"
+    },
+    {
+      "code": "paris-iic",
+      "display": "IIc (Depressed)"
+    },
+    {
+      "code": "paris-lst-g-h",
+      "display": "LST-G-H (Granular homogeneous)"
+    },
+    {
+      "code": "paris-lst-g-nm",
+      "display": "LST-G-NM (Granular nodular mixed)"
+    },
+    {
+      "code": "paris-lst-ng-fe",
+      "display": "LST-NG-FE (Non-granular flat elevated)"
+    },
+    {
+      "code": "paris-lst-ng-pd",
+      "display": "LST-NG-PD (Non-granular pseudodepressed)"
+    },
+    {
+      "code": "nice-1",
+      "display": "Type I"
+    },
+    {
+      "code": "nice-2",
+      "display": "Type II"
+    },
+    {
+      "code": "nice-3",
+      "display": "Type III"
+    },
+    {
+      "code": "access-easy",
+      "display": "Easy"
+    },
+    {
+      "code": "access-heavy",
+      "display": "Heavy/Difficult"
+    },
+    {
+      "code": "smsa-lvl-1",
+      "display": "Level I (4-5 points)"
+    },
+    {
+      "code": "smsa-lvl-2",
+      "display": "Level II (6-8 points)"
+    },
+    {
+      "code": "smsa-lvl-3",
+      "display": "Level III (9-12 points)"
+    },
+    {
+      "code": "smsa-lvl-4",
+      "display": "Level IV (>= 13 points)"
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 24
+}

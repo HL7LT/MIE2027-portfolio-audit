@@ -1,0 +1,46 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "SnomedProstateExtension",
+  "id": "snomed-prostate-extension",
+  "title": "SNOMED CT Prostate Extension",
+  "description": "Local codes extending SNOMED CT for prostate-related clinical findings not yet available in SNOMED CT. To be used until adopted by SNOMED CT.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension",
+  "concept": [
+    {
+      "code": "standard-prostate",
+      "display": "Standard prostate (finding)",
+      "definition": "Normal consistency on digital rectal examination."
+    },
+    {
+      "code": "flexible-prostate",
+      "display": "Flexible prostate (finding)",
+      "definition": "Flexible/elastic consistency on digital rectal examination."
+    },
+    {
+      "code": "inflexible-prostate",
+      "display": "Inflexible prostate (finding)",
+      "definition": "Inflexible/rigid consistency on digital rectal examination."
+    },
+    {
+      "code": "change-neoplasm-related",
+      "display": "Related to prostate neoplasm (finding)",
+      "definition": "Change is related to the primary prostate neoplasm (invasion, compression, or direct extension)."
+    },
+    {
+      "code": "change-benign",
+      "display": "Benign change (finding)",
+      "definition": "Benign, non-neoplastic change (e.g. hyperplasia, inflammation)."
+    },
+    {
+      "code": "change-non-neoplastic",
+      "display": "Non-neoplastic / incidental (finding)",
+      "definition": "Change is not related to the prostate neoplasm (incidental or other etiology)."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": false,
+  "publisher": "HL7 Lithuania",
+  "count": 6
+}

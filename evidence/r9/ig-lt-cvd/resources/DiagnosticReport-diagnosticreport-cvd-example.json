@@ -1,0 +1,68 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "diagnosticreport-cvd-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-report-lt-cvd"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/cvd-diagnostic-report",
+      "value": "cvd-dr-2025-001"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "OTH",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "display": "Other"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "result": [
+    {
+      "reference": "Observation/observation-cvd-risk-assessment-example"
+    },
+    {
+      "reference": "Observation/observation-risk-group-high-example"
+    },
+    {
+      "reference": "Observation/observation-ekg-normal-example"
+    },
+    {
+      "reference": "Observation/observation-cvd-followup-ldl-example"
+    },
+    {
+      "reference": "Observation/observation-cvd-followup-bp-example"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "827181004",
+        "system": "http://snomed.info/sct",
+        "display": "Risk of cardiovascular disease"
+      }
+    ]
+  },
+  "language": "en",
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T14:30:00+03:00",
+  "issued": "2025-10-01T14:35:00+03:00",
+  "composition": {
+    "reference": "Composition/composition-cvd-example"
+  },
+  "conclusion": "High cardiovascular risk (SCORE2 24%); ECG normal. Prevention plan in place. Follow-up shows LDL 2.4 mmol/L and BP 126/78 mmHg toward targets."
+}

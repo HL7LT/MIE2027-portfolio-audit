@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PolypectomyInstrumentLtColorectal",
+  "id": "polypectomy-instrument-lt-colorectal",
+  "title": "Colorectal - Polypectomy Instrument VS",
+  "description": "Instrument used to remove the polyp: hot snare, cold snare, or forceps.",
+  "url": "https://hl7.lt/fhir/colorectal/ValueSet/polypectomy-instrument-lt-colorectal",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-instrument-codes-lt",
+        "concept": [
+          {
+            "code": "inst-loop-hot"
+          },
+          {
+            "code": "inst-loop-cold"
+          },
+          {
+            "code": "inst-pliers"
+          }
+        ]
+      }
+    ]
+  }
+}

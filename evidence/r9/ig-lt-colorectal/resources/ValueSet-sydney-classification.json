@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "SydneyClassificationVS",
+  "id": "sydney-classification",
+  "title": "Sydney Classification",
+  "description": "Sydney classification types for colon wall injury during diagnostic colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/sydney-classification",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/sydney-classification"
+      }
+    ]
+  }
+}

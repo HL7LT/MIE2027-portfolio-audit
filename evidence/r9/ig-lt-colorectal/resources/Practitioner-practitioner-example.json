@@ -1,0 +1,49 @@
+{
+  "resourceType": "Practitioner",
+  "id": "practitioner-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:1.2.3.4.5.6.7.8.9.10",
+      "value": "19750515-LT12345"
+    },
+    {
+      "use": "secondary",
+      "system": "http://licensing.lt/medical-license",
+      "value": "MED-LT-54321"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Petras"
+      ],
+      "prefix": [
+        "Dr."
+      ],
+      "use": "official",
+      "family": "Kazlauskas",
+      "text": "Dr. Petras Kazlauskas"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+370 5 123 4567",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "p.kazlauskas@clinic.lt",
+      "use": "work"
+    }
+  ],
+  "active": true,
+  "gender": "male",
+  "birthDate": "1975-05-15"
+}

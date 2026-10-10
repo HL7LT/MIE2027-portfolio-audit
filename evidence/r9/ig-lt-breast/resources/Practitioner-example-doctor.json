@@ -1,0 +1,22 @@
+{
+  "resourceType": "Practitioner",
+  "id": "example-doctor",
+  "name": [
+    {
+      "text": "Radiologist"
+    }
+  ],
+  "qualification": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "78729002",
+            "system": "http://snomed.info/sct",
+            "display": "Diagnostic radiologist"
+          }
+        ]
+      }
+    }
+  ]
+}

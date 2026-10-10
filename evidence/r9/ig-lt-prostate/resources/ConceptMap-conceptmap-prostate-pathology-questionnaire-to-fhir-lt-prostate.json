@@ -1,0 +1,164 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/ConceptMap/conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate",
+  "title": "Prostate pathology Questionnaire items to FHIR mapping",
+  "description": "Maps dr-prostate-aligned pathology Questionnaire linkIds to LT Lab and LT Prostate Gleason/ISUP patterns.",
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "tumor-measurement-lt-lab",
+              "relationship": "related-to",
+              "comment": "Specimen dimension or Observation-observation-specimen-measurement-example (LT Lab)."
+            }
+          ],
+          "code": "bioptate-length-mm",
+          "display": "Bioptate length (mm)"
+        },
+        {
+          "target": [
+            {
+              "code": "specimen-adequacy-finding",
+              "relationship": "related-to",
+              "comment": "Observation-observation-specimen-adequacy-example (LT Lab); map answerCoding to SNOMED finding codes from national spec."
+            }
+          ],
+          "code": "specimen-quality",
+          "display": "Quality of materials"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-observable-lt-lab",
+              "relationship": "related-to",
+              "comment": "TumorObservableLtLab or narrative in DiagnosticReport; map radiotherapy/hormone SNOMED from spreadsheet."
+            }
+          ],
+          "code": "treatment-effect",
+          "display": "Treatment effect on tumour"
+        },
+        {
+          "target": [
+            {
+              "code": "prostate-condition-lt-lab",
+              "relationship": "related-to",
+              "comment": "Condition.code / morphology; Condition-condition-prostate-cancer-example (LT Lab) for integrated staging."
+            }
+          ],
+          "code": "histological-type",
+          "display": "Primary histological type"
+        },
+        {
+          "target": [
+            {
+              "code": "prostate-condition-lt-lab",
+              "relationship": "related-to",
+              "comment": "Condition.note or Observation.note; complements histological-type."
+            }
+          ],
+          "code": "histological-comment",
+          "display": "Histological type comment"
+        },
+        {
+          "target": [
+            {
+              "code": "gleason-isup-observation-lt-prostate",
+              "relationship": "related-to",
+              "comment": "GleasonIsupObservationLtProstate + ValueSet prostate-isup-grade-group. Example: Observation-observation-prostate-gleason-gradegroup-example."
+            }
+          ],
+          "code": "isup-grade-group",
+          "display": "ISUP grade group"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-observable-lt-lab",
+              "relationship": "related-to",
+              "comment": "TumorObservableLtLab / morphology Observation; national form has additional IDC sub-questions."
+            }
+          ],
+          "code": "idc-status",
+          "display": "Intraductal carcinoma (IDC)"
+        },
+        {
+          "target": [
+            {
+              "code": "tumor-observable-lt-lab",
+              "relationship": "related-to",
+              "comment": "TumorObservableLtLab or structured finding Observation."
+            }
+          ],
+          "code": "cribriform-status",
+          "display": "Cribriform glands"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-pattern4-percent",
+              "relationship": "related-to",
+              "comment": "TumorMeasurementLtLab or lab tumour Observation; dr-prostate has finer bands than this Questionnaire."
+            }
+          ],
+          "code": "pattern4-pct-band",
+          "display": "Pattern 4 quantity (percent band)"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-tumor-burden-percent",
+              "relationship": "related-to",
+              "comment": "Quantitative tumour assessment row in dr-prostate; map to Observation ratio or coded category."
+            }
+          ],
+          "code": "tumor-percent-in-biopsy",
+          "display": "Tumour percentage in biopsy tissue"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-periprostatic-invasion",
+              "relationship": "related-to",
+              "comment": "NeoplasmInvasionLtProstate (imaging) vs microscopic finding in pathology Observation; use LT Lab tumour findings for biopsy."
+            }
+          ],
+          "code": "periprostatic-fat-invasion",
+          "display": "Periprostatic fat invasion"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-perineural-invasion",
+              "relationship": "related-to",
+              "comment": "SNOMED 369731000 (present), 370051000 (absent), 385001000 (not identified), 396393005 (indeterminate); use LT Lab tumour findings."
+            }
+          ],
+          "code": "perineural-invasion",
+          "display": "Perineural invasion"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lymphovascular-invasion",
+              "relationship": "related-to",
+              "comment": "SNOMED 385414009 Lymphatic (small vessel) tumor invasion finding; use LT Lab tumour findings for biopsy microscopic assessment."
+            }
+          ],
+          "code": "lymphovascular-invasion",
+          "display": "Lymphatic and/or vascular tumour invasion"
+        }
+      ],
+      "source": "https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item",
+      "target": "https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "ProstatePathologyQuestionnaireToFhir",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-03-24",
+  "publisher": "HL7 Lithuania"
+}

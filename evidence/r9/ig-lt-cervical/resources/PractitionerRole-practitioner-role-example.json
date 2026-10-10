@@ -1,0 +1,27 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "practitioner-role-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+    ]
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "83685006",
+          "system": "http://snomed.info/sct",
+          "display": "Gynecologist (occupation)"
+        }
+      ]
+    }
+  ],
+  "active": true,
+  "practitioner": {
+    "reference": "Practitioner/practitioner-example"
+  },
+  "organization": {
+    "reference": "Organization/organization-example"
+  }
+}

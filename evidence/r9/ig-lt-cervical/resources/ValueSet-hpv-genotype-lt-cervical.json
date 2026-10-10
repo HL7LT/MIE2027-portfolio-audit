@@ -1,0 +1,80 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HpvGenotypeLtCervicalVS",
+  "id": "hpv-genotype-lt-cervical",
+  "title": "Cervix - HPV Genotypes (LT Cervical)",
+  "description": "High-risk Human Papillomavirus (HPV) genotypes and groups detected in cervical cancer screening.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/hpv-genotype",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "115326008",
+            "display": "Human papillomavirus, type 16 (organism)"
+          },
+          {
+            "code": "115327004",
+            "display": "Human papillomavirus, type 18 (organism)"
+          },
+          {
+            "code": "1269503003",
+            "display": "Human papillomavirus type 31 (organism)"
+          },
+          {
+            "code": "1269504009",
+            "display": "Human papillomavirus type 33 (organism)"
+          },
+          {
+            "code": "1269505005",
+            "display": "Human papillomavirus type 35 (organism)"
+          },
+          {
+            "code": "1269506006",
+            "display": "Human papillomavirus type 39 (organism)"
+          },
+          {
+            "code": "1269507002",
+            "display": "Human papillomavirus type 45 (organism)"
+          },
+          {
+            "code": "1269508007",
+            "display": "Human papillomavirus type 51 (organism)"
+          },
+          {
+            "code": "1269509004",
+            "display": "Human papillomavirus type 52 (organism)"
+          },
+          {
+            "code": "1269510009",
+            "display": "Human papillomavirus type 56 (organism)"
+          },
+          {
+            "code": "1269511008",
+            "display": "Human papillomavirus type 58 (organism)"
+          },
+          {
+            "code": "1269512001",
+            "display": "Human papillomavirus type 59 (organism)"
+          },
+          {
+            "code": "1269513006",
+            "display": "Human papillomavirus type 66 (organism)"
+          },
+          {
+            "code": "1269514000",
+            "display": "Human papillomavirus type 68 (organism)"
+          },
+          {
+            "code": "9482002",
+            "display": "Human papillomavirus (organism)"
+          }
+        ]
+      }
+    ]
+  }
+}

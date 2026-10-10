@@ -1,0 +1,36 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-ki67-proliferation-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/ki67-proliferation-observation-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "29593-1",
+        "system": "http://loinc.org",
+        "display": "Cells.Ki-67 nuclear Ag/cells in Tissue by Immune stain"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-01-15T11:00:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  },
+  "valueQuantity": {
+    "value": 25,
+    "code": "%",
+    "system": "http://unitsofmeasure.org"
+  }
+}

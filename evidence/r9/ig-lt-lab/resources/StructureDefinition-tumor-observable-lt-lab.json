@@ -1,0 +1,930 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tumor-observable-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/tumor-observable-lt-lab",
+  "version": "0.1.0",
+  "name": "TumorObservableLtLab",
+  "title": "Observation: Tumor Observable",
+  "status": "draft",
+  "publisher": "HL7 LT",
+  "description": "Definition of the Observation for the Tumor Observable",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Tumor Observable",
+        "constraint": [
+          {
+            "key": "inv-obs-component-or-dataAbsentReason",
+            "human": "Observation must have either component[x] or dataAbsentReason",
+            "source": "https://hl7.lt/fhir/lab/StructureDefinition/tumor-observable-lt-lab",
+            "severity": "error",
+            "expression": "component.exists() or dataAbsentReason.exists()"
+          }
+        ]
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "395531003",
+              "system": "http://snomed.info/sct",
+              "display": "Neoplasm observable (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "Patient",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.subject.reference",
+        "path": "Observation.subject.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1
+      },
+      {
+        "id": "Observation.effective[x]:effectiveDateTime",
+        "path": "Observation.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "short": "Practitioner if resident physician or Organization Department if hospital",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer.reference",
+        "path": "Observation.performer.reference",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "max": "0"
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/sample-examination"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab",
+              "https://hl7.lt/fhir/lab/StructureDefinition/specimen-block-lt-lab"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "ordered": false
+        }
+      },
+      {
+        "id": "Observation.component:focality",
+        "path": "Observation.component",
+        "sliceName": "focality",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:focality.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "396199003",
+              "system": "http://snomed.info/sct",
+              "display": "Neoplasm focality (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:focality.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:focality.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/tumor-focality"
+        }
+      },
+      {
+        "id": "Observation.component:fociNr",
+        "path": "Observation.component",
+        "sliceName": "fociNr",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:fociNr.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "443748007",
+              "system": "http://snomed.info/sct",
+              "display": "Number of malignant neoplasm foci"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:fociNr.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:fociNr.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:fociNr.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:fociNr.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "count"
+      },
+      {
+        "id": "Observation.component:type",
+        "path": "Observation.component",
+        "sliceName": "type",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "396785008",
+              "system": "http://snomed.info/sct",
+              "display": "Histologic type of metastatic neoplasm (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:type.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:type.value[x]:valueCodeableConcept",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/tumor-type"
+        }
+      },
+      {
+        "id": "Observation.component:location",
+        "path": "Observation.component",
+        "sliceName": "location",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:location.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "399687005",
+              "system": "http://snomed.info/sct",
+              "display": "Anatomic location of primary malignant neoplasm (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:location.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleNr",
+        "path": "Observation.component",
+        "sliceName": "noduleNr",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:noduleNr.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "405930005",
+              "system": "http://snomed.info/sct",
+              "display": "Number of tumor nodules (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:noduleNr.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:noduleNr.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleNr.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:noduleNr.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "count"
+      },
+      {
+        "id": "Observation.component:noduleSite",
+        "path": "Observation.component",
+        "sliceName": "noduleSite",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:noduleSite.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "406084004",
+              "system": "http://snomed.info/sct",
+              "display": "Tumor nodule site (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:noduleSite.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleSize",
+        "path": "Observation.component",
+        "sliceName": "noduleSize",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:noduleSize.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "385398005",
+              "system": "http://snomed.info/sct",
+              "display": "Tumor size, dominant nodule, greatest dimension (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:noduleSize.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:noduleSize.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleSize.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:noduleSize.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:extent",
+        "path": "Observation.component",
+        "sliceName": "extent",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:extent.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "258263003",
+              "system": "http://snomed.info/sct",
+              "display": "Generic tumor extent (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:extent.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:extent.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:extent.value[x]:valueQuantity.unit",
+        "path": "Observation.component.value[x].unit",
+        "patternString": "%"
+      },
+      {
+        "id": "Observation.component:extent.value[x]:valueQuantity.system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:extent.value[x]:valueQuantity.code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "%"
+      },
+      {
+        "id": "Observation.component:tumorMicrofocus",
+        "path": "Observation.component",
+        "sliceName": "tumorMicrofocus",
+        "short": "Tumor microfocus: identifiable or unidentifiable",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tumorMicrofocus.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "tumor-microfocus",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Tumor microfocus status"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:tumorMicrofocus.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:degreeOfDifferentiation",
+        "path": "Observation.component",
+        "sliceName": "degreeOfDifferentiation",
+        "short": "Degree of tumor differentiation (e.g. not applicable, cannot be assessed)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:degreeOfDifferentiation.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "degree-of-differentiation",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Degree of tumor differentiation (histologic grade)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:degreeOfDifferentiation.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:biopsyCount",
+        "path": "Observation.component",
+        "sliceName": "biopsyCount",
+        "short": "Total quantity of biopsies submitted",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:biopsyCount.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "biopsy-count",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Quantity of biopsies submitted"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biopsyCount.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:biopsyWithTumorCount",
+        "path": "Observation.component",
+        "sliceName": "biopsyWithTumorCount",
+        "short": "Number of biopsies containing tumor",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:biopsyWithTumorCount.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "biopsy-with-tumor-count",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Quantity of biopsies containing tumor"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biopsyWithTumorCount.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:tumorVolumeMethodology",
+        "path": "Observation.component",
+        "sliceName": "tumorVolumeMethodology",
+        "short": "Methodology for determining tumor volume (single solid / continuous multifocal / discontinuous)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tumorVolumeMethodology.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "tumor-volume-methodology",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Methodology for determining tumor volume"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:tumorVolumeMethodology.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/tumor-volume-methodology"
+        }
+      },
+      {
+        "id": "Observation.component:tumorPercentInBiopsy",
+        "path": "Observation.component",
+        "sliceName": "tumorPercentInBiopsy",
+        "short": "Tumor percentage in biopsy tissue (0-100)",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:tumorPercentInBiopsy.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "tumor-percent-in-biopsy",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Tumor percentage in biopsy tissue"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:tumorPercentInBiopsy.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleLengthMm",
+        "path": "Observation.component",
+        "sliceName": "noduleLengthMm",
+        "short": "Length of tumor nodule in biopsy (mm). Use <1 for sub-millimeter.",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:noduleLengthMm.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "tumor-nodule-length-mm",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Length of tumor nodule in biopsy (mm)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:noduleLengthMm.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:noduleLengthMm.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:noduleLengthMm.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:periprostaticFatInvasion",
+        "path": "Observation.component",
+        "sliceName": "periprostaticFatInvasion",
+        "short": "Tumor infiltration in periprostatic adipose tissue",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:periprostaticFatInvasion.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "periprostatic-fat-invasion",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Periprostatic fat invasion finding"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:periprostaticFatInvasion.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/periprostatic-fat-invasion"
+        }
+      },
+      {
+        "id": "Observation.component:seminalVesicleInvasion",
+        "path": "Observation.component",
+        "sliceName": "seminalVesicleInvasion",
+        "short": "Tumor infiltration in seminal vesicles / ejaculatory duct",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:seminalVesicleInvasion.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "seminal-vesicle-invasion",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Seminal vesicle invasion finding"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:seminalVesicleInvasion.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/seminal-vesicle-invasion"
+        }
+      },
+      {
+        "id": "Observation.component:lymphovascularInvasion",
+        "path": "Observation.component",
+        "sliceName": "lymphovascularInvasion",
+        "short": "Lymphatic and/or vascular tumor invasion",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:lymphovascularInvasion.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371512006",
+              "system": "http://snomed.info/sct",
+              "display": "Presence of direct invasion by primary malignant neoplasm to lymphatic vessel and/or small blood vessel (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:lymphovascularInvasion.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lymphovascular-invasion"
+        }
+      },
+      {
+        "id": "Observation.component:perineuralInvasion",
+        "path": "Observation.component",
+        "sliceName": "perineuralInvasion",
+        "short": "Perineural invasion by tumor",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:perineuralInvasion.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "perineural-invasion",
+              "system": "https://tx.hl7.lt/fhir/CodeSystem/tumor-component-lt-lab",
+              "display": "Perineural invasion finding"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:perineuralInvasion.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/perineural-invasion"
+        }
+      }
+    ]
+  }
+}

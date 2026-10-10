@@ -1,0 +1,531 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-cvd-risk-assessment-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-10-01T09:00:00Z"
+            }
+          ],
+          "linkId": "evaluation-datetime"
+        }
+      ],
+      "linkId": "grp-context"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Heart failure (I50) — example only"
+            }
+          ],
+          "linkId": "chronic-condition-summary"
+        }
+      ],
+      "linkId": "grp-chronic"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-hypertension"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-dyslipidemia"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "risk-factor-diabetes"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "risk-factor-glucose-tolerance"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "risk-factor-familial-hypercholesterolemia"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "smoking-never",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Did not smoke"
+              }
+            }
+          ],
+          "linkId": "risk-factor-smoking"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "pa-insufficient",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Insufficient"
+              }
+            }
+          ],
+          "linkId": "risk-factor-physical-activity"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "nutrition-unbalanced",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unbalanced"
+              }
+            }
+          ],
+          "linkId": "risk-factor-nutrition"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "alcohol-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "risk-factor-alcohol"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "family-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "risk-factor-family-cvd"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "family-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "risk-factor-family-diabetes"
+        }
+      ],
+      "linkId": "grp-risk-factors"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDecimal": 178
+            }
+          ],
+          "linkId": "height-cm"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 88
+            }
+          ],
+          "linkId": "weight-kg"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 98
+            }
+          ],
+          "linkId": "waist-cm"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 132
+            }
+          ],
+          "linkId": "bp-systolic"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 84
+            }
+          ],
+          "linkId": "bp-diastolic"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 72
+            }
+          ],
+          "linkId": "heart-rate"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 27.8
+            }
+          ],
+          "linkId": "bmi-calculated"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "abdominal-obesity"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-present",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is"
+              }
+            }
+          ],
+          "linkId": "obesity-bmi"
+        }
+      ],
+      "linkId": "grp-objective"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDecimal": 5.8
+            }
+          ],
+          "linkId": "lipid-tc"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 1.1
+            }
+          ],
+          "linkId": "lipid-hdl"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 4.7
+            }
+          ],
+          "linkId": "lipid-non-hdl"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 3.6
+            }
+          ],
+          "linkId": "lipid-ldl"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 1.9
+            }
+          ],
+          "linkId": "lipid-tg"
+        }
+      ],
+      "linkId": "grp-lipidogram"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDecimal": 24
+            }
+          ],
+          "linkId": "score2-percent"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "metabolic-syndrome"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "cvd-rg-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Large"
+              }
+            }
+          ],
+          "linkId": "risk-group-cvd"
+        }
+      ],
+      "linkId": "grp-risk-estimate"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Outpatient CVD assessment — example"
+            }
+          ],
+          "linkId": "mig-encounter"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Cardiologist — example"
+            }
+          ],
+          "linkId": "mig-practitioner-role"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 72
+            }
+          ],
+          "linkId": "mig-heart-rate"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 27.8
+            }
+          ],
+          "linkId": "mig-bmi"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 5.2
+            }
+          ],
+          "linkId": "mig-glucose-fasting"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 5.4
+            }
+          ],
+          "linkId": "mig-hba1c"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 88
+            }
+          ],
+          "linkId": "mig-creatinine"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 82
+            }
+          ],
+          "linkId": "mig-egfr"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Occasional — example"
+            }
+          ],
+          "linkId": "mig-alcohol"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Walks 30 min/d — example"
+            }
+          ],
+          "linkId": "mig-physical-activity"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Mediterranean-style — example"
+            }
+          ],
+          "linkId": "mig-nutrition"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Father MI at 60 — example"
+            }
+          ],
+          "linkId": "mig-family-cvd"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "None — example"
+            }
+          ],
+          "linkId": "mig-referral"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-03-01T09:00:00Z"
+            }
+          ],
+          "linkId": "mig-follow-up-appointment"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Use prevention-plan Questionnaire for formal achievement block."
+            }
+          ],
+          "linkId": "mig-achievement-round"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "None additional — example"
+            }
+          ],
+          "linkId": "mig-chronic-additional"
+        }
+      ],
+      "linkId": "grp-migration-md-parity"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "patient-male-example"
+            }
+          ],
+          "linkId": "ac-patient-context"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "practitioner-example"
+            }
+          ],
+          "linkId": "ac-practitioner-context"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "organization-example"
+            }
+          ],
+          "linkId": "ac-organization-context"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Normal — example (see observation-ekg-normal-example)"
+            }
+          ],
+          "linkId": "ac-ekg-summary"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Statin — example (see medication-statement-screening-example)"
+            }
+          ],
+          "linkId": "ac-medication-context"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Not applicable — example"
+            }
+          ],
+          "linkId": "ac-diabetes-duration"
+        }
+      ],
+      "linkId": "grp-ig-example-parity"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-risk-assessment",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "authored": "2025-10-01T09:00:00Z",
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

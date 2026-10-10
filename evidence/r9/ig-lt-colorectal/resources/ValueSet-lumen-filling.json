@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "LumenFillingVS",
+  "id": "lumen-filling",
+  "title": "Lumen Filling Method",
+  "description": "Method used to distend the colonic lumen during polypectomy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/lumen-filling",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "lumen-air",
+            "display": "Air insufflation"
+          },
+          {
+            "code": "lumen-water",
+            "display": "Water immersion"
+          },
+          {
+            "code": "lumen-co2",
+            "display": "CO2 insufflation"
+          }
+        ]
+      }
+    ]
+  }
+}

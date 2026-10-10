@@ -1,0 +1,61 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-breast-density-fatty-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Mammography shows predominantly fatty breast density."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "733851004",
+        "system": "http://snomed.info/sct",
+        "display": "Breast consistency (observable entity)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "129716005",
+        "system": "http://snomed.info/sct"
+      }
+    ]
+  },
+  "bodySite": {
+    "coding": [
+      {
+        "code": "76752008",
+        "system": "http://snomed.info/sct",
+        "display": "Breast"
+      }
+    ]
+  }
+}

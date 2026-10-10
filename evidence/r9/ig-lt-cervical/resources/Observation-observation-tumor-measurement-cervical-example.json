@@ -1,0 +1,110 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-tumor-measurement-cervical-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/tumor-measurement-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "371479009",
+            "display": "Tumor size, largest dimension"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 8,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "372299002",
+            "display": "Tumor size, dimension 1"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 8,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "372300005",
+            "display": "Tumor size, dimension 2"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 5,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "372301009",
+            "display": "Tumor size, dimension 3"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 2,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "263605001",
+        "display": "Tumor size"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "effectiveDateTime": "2025-04-10T09:00:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-cervical-biopsy-example"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "104157003",
+        "system": "http://snomed.info/sct",
+        "display": "Light microscopy (procedure)"
+      }
+    ]
+  }
+}

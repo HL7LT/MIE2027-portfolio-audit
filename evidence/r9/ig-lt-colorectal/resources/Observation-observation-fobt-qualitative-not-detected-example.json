@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-fobt-qualitative-not-detected-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "80372-6",
+        "system": "http://loinc.org",
+        "display": "Hemoglobin [Presence] in Stool from gastrointestinal by Rapid immunoassay"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-02-26",
+  "specimen": {
+    "reference": "Specimen/specimen-stool-fobt-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "260415000",
+        "system": "http://snomed.info/sct",
+        "display": "Not detected (qualifier value)"
+      }
+    ]
+  }
+}

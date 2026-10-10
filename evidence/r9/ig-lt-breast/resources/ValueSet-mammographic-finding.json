@@ -1,0 +1,37 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MammographicFindingVS",
+  "id": "mammographic-finding",
+  "title": "Mammographic Finding",
+  "description": "Findings during the mammographic procedure.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/mammographic-finding",
+  "experimental": false,
+  "language": "en",
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "129788004",
+            "display": "Mammographic mass of breast (finding)"
+          },
+          {
+            "code": "697944008",
+            "display": "Mammographic calcification of breast (disorder)"
+          },
+          {
+            "code": "129792006",
+            "display": "Mammographic architectural distortion of breast (finding)"
+          },
+          {
+            "code": "129789007",
+            "display": "Focal asymmetric breast tissue finding (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

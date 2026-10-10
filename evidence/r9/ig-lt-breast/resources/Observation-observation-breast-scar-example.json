@@ -1,0 +1,79 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-breast-scar-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-observation-finding-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "BodyStructure",
+      "id": "breast-body-structure-right-upper-outer",
+      "meta": {
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      "includedStructure": [
+        {
+          "laterality": {
+            "coding": [
+              {
+                "code": "24028007",
+                "system": "http://snomed.info/sct",
+                "display": "Right"
+              }
+            ]
+          },
+          "structure": {
+            "coding": [
+              {
+                "code": "76365002",
+                "system": "http://snomed.info/sct",
+                "display": "Upper outer quadrant of breast"
+              }
+            ]
+          }
+        }
+      ],
+      "patient": {
+        "reference": "Patient/example-patient-female"
+      }
+    }
+  ],
+  "bodyStructure": {
+    "reference": "#breast-body-structure-right-upper-outer"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "364370007",
+        "system": "http://snomed.info/sct",
+        "display": "Breast observable"
+      }
+    ]
+  },
+  "status": "final",
+  "encounter": {
+    "reference": "Encounter/encounter-palpation-example"
+  },
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "effectiveDateTime": "2024-06-15T10:00:00+03:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "442523003",
+        "system": "http://snomed.info/sct",
+        "display": "Surgical scar finding"
+      }
+    ]
+  }
+}

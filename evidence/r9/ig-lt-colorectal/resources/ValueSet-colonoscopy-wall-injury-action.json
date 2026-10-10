@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColonoscopyWallInjuryActionVS",
+  "id": "colonoscopy-wall-injury-action",
+  "title": "Colonoscopy Wall Injury Action",
+  "description": "Actions taken after colon wall injury during diagnostic colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colonoscopy-wall-injury-action",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "360017003",
+            "display": "Clipping - action (qualifier value)"
+          },
+          {
+            "code": "29684008",
+            "display": "Sutured (qualifier value)"
+          },
+          {
+            "code": "261424001",
+            "display": "Primary operation (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

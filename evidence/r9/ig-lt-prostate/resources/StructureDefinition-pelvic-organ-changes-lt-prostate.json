@@ -1,0 +1,94 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pelvic-organ-changes-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/pelvic-organ-changes-lt-prostate",
+  "name": "PelvicOrganChangesLtProstate",
+  "title": "Observation: Pelvic Organ Changes",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "Rectal and other pelvic organ changes in prostate cancer staging.\nFor bladder-specific changes use BladderChangesLtProstate (with change nature component).\nFor bone metastasis use BoneMetastasisLtProstate.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "fixedCode": "final"
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "364636000",
+              "system": "http://snomed.info/sct",
+              "display": "Lesion observable (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-damage-and-change-status"
+        }
+      },
+      {
+        "id": "Observation.note",
+        "path": "Observation.note",
+        "max": "1"
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Observation.bodyStructure",
+        "path": "Observation.bodyStructure",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

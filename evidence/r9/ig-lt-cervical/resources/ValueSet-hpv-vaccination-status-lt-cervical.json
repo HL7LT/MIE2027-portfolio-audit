@@ -1,0 +1,32 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HpvVaccinationStatusLtCervicalVS",
+  "id": "hpv-vaccination-status-lt-cervical",
+  "title": "HPV Vaccination Status (LT Cervical)",
+  "description": "Status of HPV vaccination.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/hpv-vaccination-status",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "171258008",
+            "display": "Up-to-date with immunizations (finding)"
+          },
+          {
+            "code": "171259000",
+            "display": "Not up to date with immunizations (finding)"
+          },
+          {
+            "code": "171278000",
+            "display": "Immunization status unknown (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

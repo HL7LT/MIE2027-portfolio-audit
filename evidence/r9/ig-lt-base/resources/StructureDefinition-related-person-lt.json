@@ -1,0 +1,47 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "related-person-lt",
+  "url": "https://hl7.lt/fhir/base/StructureDefinition/related-person-lt",
+  "name": "RelatedPersonLt",
+  "title": "RelatedPersonLt",
+  "status": "active",
+  "description": "Lithuanian Base Related Person profile, used to define persons related to a patient",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "RelatedPerson",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "RelatedPerson.identifier",
+        "path": "RelatedPerson.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.patient",
+        "path": "RelatedPerson.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.relationship",
+        "path": "RelatedPerson.relationship",
+        "mustSupport": true
+      },
+      {
+        "id": "RelatedPerson.name",
+        "path": "RelatedPerson.name",
+        "mustSupport": true
+      }
+    ]
+  }
+}

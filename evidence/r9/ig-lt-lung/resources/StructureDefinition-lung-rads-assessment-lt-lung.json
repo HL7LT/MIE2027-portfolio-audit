@@ -1,0 +1,136 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lung-rads-assessment-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung",
+  "name": "LungRadsAssessmentLtLung",
+  "title": "LUNG-RADS Assessment (LT Lung)",
+  "status": "draft",
+  "description": "LUNG-RADS assessment category assigned to a low-dose chest CT (LDCT)\nscreening examination in the Lithuanian lung cancer early diagnosis programme.\n\nThe observation represents the final radiological assessment that determines\nthe follow-up recommendation and screening pathway.\n\nSNOMED CT code 1362105002 is used for the observable concept\n'Lung Imaging Reporting and Data System category (observable entity)'.\nThe actual assessment value is represented using a local code system for the\nmain category values 0, 1, 2, 3, 4A, 4B, and 4X, because separate SNOMED CT\ncodes for those category values are not provided in the source dataset.\nThe optional S modifier is represented as a component.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1362105002",
+              "system": "http://snomed.info/sct",
+              "display": "Lung Imaging Reporting and Data System category"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-category"
+        }
+      },
+      {
+        "id": "Observation.method.text",
+        "path": "Observation.method.text",
+        "short": "LUNG-RADS version, e.g. LUNG-RADS v2022"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "short": "Optional LUNG-RADS modifier, e.g. S",
+        "max": "1"
+      },
+      {
+        "id": "Observation.component.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "246513007",
+              "system": "http://snomed.info/sct",
+              "display": "Revision status"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lung-rads-modifier"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MolecularTestResultVS",
+  "id": "molecular-test-result",
+  "title": "Molecular Test Result",
+  "description": "Result values for molecular testing in the colorectal cancer screening program.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/molecular-test-result",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "mol-postponed",
+            "display": "Postponed"
+          },
+          {
+            "code": "mol-detected",
+            "display": "Detected mutation"
+          },
+          {
+            "code": "mol-not-detected",
+            "display": "Undefined mutation"
+          },
+          {
+            "code": "mol-set",
+            "display": "Set (MSI)"
+          }
+        ]
+      }
+    ]
+  }
+}

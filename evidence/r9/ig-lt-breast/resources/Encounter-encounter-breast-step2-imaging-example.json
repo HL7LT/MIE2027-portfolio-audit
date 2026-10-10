@@ -1,0 +1,49 @@
+{
+  "resourceType": "Encounter",
+  "id": "encounter-breast-step2-imaging-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+    ]
+  },
+  "class": [
+    {
+      "coding": [
+        {
+          "code": "AMB",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "Ambulatory"
+        }
+      ]
+    }
+  ],
+  "participant": [
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "code": "ATND",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "display": "attender"
+            }
+          ]
+        }
+      ],
+      "actor": {
+        "reference": "Practitioner/example-practitioner"
+      }
+    }
+  ],
+  "actualPeriod": {
+    "start": "2024-06-15T10:05:00+03:00",
+    "end": "2024-06-15T10:30:00+03:00"
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "serviceProvider": {
+    "reference": "Organization/example-organization"
+  }
+}

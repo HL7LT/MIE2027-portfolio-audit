@@ -1,0 +1,205 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "LungLdctQuestionnaireItem",
+  "id": "lung-ldct-questionnaire-item",
+  "title": "LDCT structured-report Questionnaire item (linkId)",
+  "description": "Stable linkId values for the LDCT structured-report Questionnaire; source codes for the Lung ConceptMap prototype.",
+  "url": "https://hl7.lt/fhir/lung/CodeSystem/lung-ldct-questionnaire-item",
+  "concept": [
+    {
+      "code": "exam-date",
+      "display": "LDCT exam date"
+    },
+    {
+      "code": "ctdivol",
+      "display": "CTDIvol (mGy)"
+    },
+    {
+      "code": "dlp",
+      "display": "DLP (mGy·cm)"
+    },
+    {
+      "code": "technologist-qualification",
+      "display": "Technologist qualification"
+    },
+    {
+      "code": "facility-name",
+      "display": "Facility name"
+    },
+    {
+      "code": "nodule-type",
+      "display": "Nodule type (solid / part-solid / non-solid)"
+    },
+    {
+      "code": "nodule-lobe",
+      "display": "Nodule lobe"
+    },
+    {
+      "code": "morphology-spiculated",
+      "display": "Spiculated margin"
+    },
+    {
+      "code": "morphology-irregular",
+      "display": "Irregular margin"
+    },
+    {
+      "code": "morphology-pleural",
+      "display": "Pleural attachment"
+    },
+    {
+      "code": "nodule-mean-diameter",
+      "display": "Nodule mean diameter (mm)"
+    },
+    {
+      "code": "nodule-long-axis",
+      "display": "Nodule long-axis diameter (mm)"
+    },
+    {
+      "code": "nodule-short-axis",
+      "display": "Nodule short-axis diameter (mm)"
+    },
+    {
+      "code": "nodule-volume",
+      "display": "Nodule volume (mm³)"
+    },
+    {
+      "code": "solid-part-mean-diameter",
+      "display": "Solid-part mean diameter (mm)"
+    },
+    {
+      "code": "solid-part-long-axis",
+      "display": "Solid-part long-axis (mm)"
+    },
+    {
+      "code": "solid-part-short-axis",
+      "display": "Solid-part short-axis (mm)"
+    },
+    {
+      "code": "solid-part-volume",
+      "display": "Solid-part volume (mm³)"
+    },
+    {
+      "code": "nodule-note",
+      "display": "Nodule free-text note"
+    },
+    {
+      "code": "interstitial-changes",
+      "display": "Interstitial lung changes (present/absent)"
+    },
+    {
+      "code": "interstitial-subtype",
+      "display": "Interstitial subtype"
+    },
+    {
+      "code": "emphysema",
+      "display": "Emphysema flag"
+    },
+    {
+      "code": "emphysema-severity",
+      "display": "Emphysema severity"
+    },
+    {
+      "code": "bronchiectasis",
+      "display": "Bronchiectasis flag"
+    },
+    {
+      "code": "bronchiectasis-severity",
+      "display": "Bronchiectasis severity"
+    },
+    {
+      "code": "pleural-fluid",
+      "display": "Pleural fluid flag"
+    },
+    {
+      "code": "pleural-fluid-laterality",
+      "display": "Pleural fluid laterality"
+    },
+    {
+      "code": "pleural-fluid-quantity",
+      "display": "Pleural fluid quantity"
+    },
+    {
+      "code": "pneumothorax",
+      "display": "Pneumothorax flag"
+    },
+    {
+      "code": "pneumothorax-laterality",
+      "display": "Pneumothorax laterality"
+    },
+    {
+      "code": "consolidation",
+      "display": "Consolidation flag"
+    },
+    {
+      "code": "consolidation-inflammatory",
+      "display": "Consolidation — inflammatory"
+    },
+    {
+      "code": "consolidation-malignant",
+      "display": "Consolidation — malignant"
+    },
+    {
+      "code": "coronary-calcification",
+      "display": "Coronary artery calcification"
+    },
+    {
+      "code": "coronary-calcification-severity",
+      "display": "Coronary calcification severity"
+    },
+    {
+      "code": "thoracic-aortic-aneurysm",
+      "display": "Thoracic aortic aneurysm"
+    },
+    {
+      "code": "mediastinal-mass",
+      "display": "Mediastinal mass"
+    },
+    {
+      "code": "mediastinal-mass-size",
+      "display": "Mediastinal mass size"
+    },
+    {
+      "code": "lymphadenopathy",
+      "display": "Lymphadenopathy"
+    },
+    {
+      "code": "lymphadenopathy-location",
+      "display": "Lymphadenopathy location"
+    },
+    {
+      "code": "thyroid-nodules",
+      "display": "Thyroid nodules"
+    },
+    {
+      "code": "liver-lesions",
+      "display": "Liver lesions"
+    },
+    {
+      "code": "kidney-lesions",
+      "display": "Kidney lesions"
+    },
+    {
+      "code": "adrenal-lesions",
+      "display": "Adrenal lesions"
+    },
+    {
+      "code": "lung-rads-category",
+      "display": "Lung-RADS category"
+    },
+    {
+      "code": "lung-rads-modifier",
+      "display": "Lung-RADS modifier"
+    },
+    {
+      "code": "recommendation",
+      "display": "Radiologist recommendation"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 47
+}

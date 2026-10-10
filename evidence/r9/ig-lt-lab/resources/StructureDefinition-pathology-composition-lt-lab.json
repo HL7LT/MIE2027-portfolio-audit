@@ -1,0 +1,462 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pathology-composition-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/pathology-composition-lt-lab",
+  "version": "0.1.0",
+  "name": "PathologyCompositionLtLab",
+  "title": "Composition: Pathology Document (LT Lab)",
+  "status": "draft",
+  "publisher": "HL7 LT",
+  "contact": [
+    {
+      "name": "HL7 LT",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://hl7.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Synoptic pathology Composition with four fixed LOINC-coded sections (Pre-Analytic, Macro, Micro, Synthesis). Each top-level section and each nested subsection must carry a human-readable Narrative for clinicians, alongside references to supporting resources.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "150",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "Europe"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/composition-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Pathology synoptic composition",
+        "definition": "Laboratory pathology document structured as Pre-Analytic context, macroscopic findings, microscopic findings, and integrated diagnosis. Sections use LOINC codes from the pathology documentation model; narrative text is required at each level so published documents are readable without resolving every reference."
+      },
+      {
+        "id": "Composition.text",
+        "path": "Composition.text",
+        "short": "Optional document-level human-readable summary of the whole synoptic composition (helps generic renderers display structure when nested section HTML is not expanded).",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "371528001",
+              "system": "http://snomed.info/sct",
+              "display": "Pathology report (record artifact)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "26436-6",
+              "system": "http://loinc.org",
+              "display": "Laboratory Studies (set)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt",
+              "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "closed",
+          "ordered": true
+        },
+        "min": 4,
+        "max": "4"
+      },
+      {
+        "id": "Composition.section:preAnalytic",
+        "path": "Composition.section",
+        "sliceName": "preAnalytic",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.title",
+        "path": "Composition.section.title",
+        "short": "Section title (e.g. Pre-Analytic (Clinical Context))",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:preAnalytic.code",
+        "path": "Composition.section.code",
+        "short": "Fixed LOINC for pathology relevant history",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "22636-5",
+              "system": "http://loinc.org",
+              "display": "Pathology report relevant history Narrative"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:preAnalytic.text",
+        "path": "Composition.section.text",
+        "short": "Overview narrative for the pre-analytic phase: order, procedure, and specimen provenance.",
+        "definition": "XHTML narrative summarising what this section contains for a clinician (request, biopsy, submitted specimens).",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.text.status",
+        "path": "Composition.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.text.div",
+        "path": "Composition.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.section",
+        "path": "Composition.section.section",
+        "short": "Subsection for each referenced resource (order, procedure, specimen, etc.)",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:preAnalytic.section.title",
+        "path": "Composition.section.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.section.text",
+        "path": "Composition.section.section.text",
+        "short": "Narrative describing the subsection content next to the entry reference.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.section.text.status",
+        "path": "Composition.section.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.section.text.div",
+        "path": "Composition.section.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:preAnalytic.section.entry",
+        "path": "Composition.section.section.entry",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic",
+        "path": "Composition.section",
+        "sliceName": "macroscopic",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.title",
+        "path": "Composition.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:macroscopic.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "74574-5",
+              "system": "http://loinc.org",
+              "display": "Macroscopic observation [Interpretation] in Specimen Narrative"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:macroscopic.text",
+        "path": "Composition.section.text",
+        "short": "Overview narrative for gross description, adequacy, blocks, and histology processing.",
+        "definition": "XHTML narrative covering dimensions, weight, specimen adequacy, paraffin blocks, and laboratory histology steps as represented in nested entries.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.text.status",
+        "path": "Composition.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.text.div",
+        "path": "Composition.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.section",
+        "path": "Composition.section.section",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:macroscopic.section.title",
+        "path": "Composition.section.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.section.text",
+        "path": "Composition.section.section.text",
+        "short": "Narrative for each macroscopic or processing subsection.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.section.text.status",
+        "path": "Composition.section.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.section.text.div",
+        "path": "Composition.section.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:macroscopic.section.entry",
+        "path": "Composition.section.section.entry",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic",
+        "path": "Composition.section",
+        "sliceName": "microscopic",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.title",
+        "path": "Composition.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:microscopic.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "660-1",
+              "system": "http://loinc.org",
+              "display": "Microscopic observation [Identifier] in Specimen by Dark field examination"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:microscopic.text",
+        "path": "Composition.section.text",
+        "short": "Overview narrative for microscopic findings and immunohistochemistry.",
+        "definition": "XHTML narrative summarising tumour characterisation, measurements, and receptor/her2 results linked below.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.text.status",
+        "path": "Composition.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.text.div",
+        "path": "Composition.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.section",
+        "path": "Composition.section.section",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:microscopic.section.title",
+        "path": "Composition.section.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.section.text",
+        "path": "Composition.section.section.text",
+        "short": "Narrative for each microscopic or IHC subsection.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.section.text.status",
+        "path": "Composition.section.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.section.text.div",
+        "path": "Composition.section.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:microscopic.section.entry",
+        "path": "Composition.section.section.entry",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis",
+        "path": "Composition.section",
+        "sliceName": "synthesis",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.title",
+        "path": "Composition.section.title",
+        "min": 1
+      },
+      {
+        "id": "Composition.section:synthesis.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "22637-3",
+              "system": "http://loinc.org",
+              "display": "Pathology report final diagnosis Narrative"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:synthesis.text",
+        "path": "Composition.section.text",
+        "short": "Overview narrative for the integrated conclusion and staging.",
+        "definition": "XHTML narrative binding the diagnostic report and any structured cancer Condition (e.g. TNM) used as the authoritative summary.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.text.status",
+        "path": "Composition.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.text.div",
+        "path": "Composition.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.section",
+        "path": "Composition.section.section",
+        "min": 1,
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:synthesis.section.title",
+        "path": "Composition.section.section.title",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.section.text",
+        "path": "Composition.section.section.text",
+        "short": "Narrative for each synthesis subsection (e.g. signed report, staging Condition).",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.section.text.status",
+        "path": "Composition.section.section.text.status",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.section.text.div",
+        "path": "Composition.section.section.text.div",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:synthesis.section.entry",
+        "path": "Composition.section.section.entry",
+        "min": 1,
+        "mustSupport": true
+      }
+    ]
+  }
+}

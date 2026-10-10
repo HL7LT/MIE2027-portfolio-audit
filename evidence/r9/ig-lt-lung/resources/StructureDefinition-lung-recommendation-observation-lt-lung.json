@@ -1,0 +1,110 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "lung-recommendation-observation-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung",
+  "name": "LungRecommendationObservationLtLung",
+  "title": "Lung Screening Recommendation (LT Lung)",
+  "status": "draft",
+  "description": "Recommendation for follow-up or referral after low-dose chest CT (LDCT)\nscreening examination in the Lithuanian lung cancer early diagnosis programme.\n\nThis observation captures the recommended next action following the final\nLUNG-RADS assessment.\n\nSNOMED CT code 424900004 is used for the observation concept\n'Recommendation - action (qualifier value)'.\nThe actual recommendation value is represented using a local code system,\nbecause the source dataset provides programme-specific recommendation options.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "424900004",
+              "system": "http://snomed.info/sct",
+              "display": "Recommendation - action"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.encounter",
+        "path": "Observation.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/encounter-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.performer",
+        "path": "Observation.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/lung-recommendation"
+        }
+      },
+      {
+        "id": "Observation.derivedFrom",
+        "path": "Observation.derivedFrom",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/lung/StructureDefinition/lung-rads-assessment-lt-lung"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

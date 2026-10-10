@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CholesterolLdlMethodLabLt",
+  "id": "cholesterol-ldl-method",
+  "title": "Cholesterol LDL Method",
+  "description": "Allowed LOINC codes for LDL cholesterol measurements (direct or calculated).",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cholesterol-ldl-method",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "13457-7",
+            "display": "Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation"
+          }
+        ]
+      }
+    ]
+  }
+}

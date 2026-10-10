@@ -1,0 +1,74 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DeviceTypeWeight",
+  "id": "device-type-weight",
+  "title": "Device Types for Weight Measurement",
+  "description": "SNOMED CT code system values that describe the instrument used to measure the body weight.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/device-type-weight",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "466289007",
+            "display": "Bed scale (physical object)"
+          },
+          {
+            "code": "444063009",
+            "display": "Broselow Luten color coding system for pediatric weight estimation (assessment scale)"
+          },
+          {
+            "code": "720689000",
+            "display": "Chair scale (physical object)"
+          },
+          {
+            "code": "469204003",
+            "display": "Floor scale, electronic (physical object)"
+          },
+          {
+            "code": "469787007",
+            "display": "Floor scale, mechanical (physical object)"
+          },
+          {
+            "code": "58514003",
+            "display": "Infant scale, device (physical object)"
+          },
+          {
+            "code": "462242008",
+            "display": "Patient sling scale (physical object)"
+          },
+          {
+            "code": "466532009",
+            "display": "Wheelchair scale (physical object)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension",
+        "concept": [
+          {
+            "code": "24181000205106",
+            "display": "Patient lift scale (physical object)"
+          }
+        ]
+      }
+    ]
+  }
+}

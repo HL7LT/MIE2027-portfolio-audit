@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "screening-careplan-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/screening-careplan-lt-prostate",
+  "name": "ScreeningCarePlanLtProstate",
+  "title": "CarePlan: Prostate Screening Programme (LT Prostate)",
+  "status": "active",
+  "publisher": "HL7 Lithuania",
+  "description": "CarePlan tracking the ADPP (Early Diagnosis and Prevention Programme) cycle\nfor prostate cancer screening. Captures programme enrollment, current status,\nscheduled activities (PSA testing, urologist consultations, mpMRI referrals),\nand risk group assignment.\n\nUsed by the ESPBI IS subsystem to track participant lifecycle through the\nscreening programme workflow (steps T1–T29 in the operational model).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "CarePlan",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CarePlan.intent",
+        "path": "CarePlan.intent",
+        "patternCode": "plan"
+      },
+      {
+        "id": "CarePlan.category",
+        "path": "CarePlan.category",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "444822002",
+              "system": "http://snomed.info/sct",
+              "display": "Screening for malignant neoplasm of prostate (procedure)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CarePlan.title",
+        "path": "CarePlan.title",
+        "min": 1
+      },
+      {
+        "id": "CarePlan.subject",
+        "path": "CarePlan.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.period",
+        "path": "CarePlan.period",
+        "short": "Programme participation period (enrollment to exit/completion)"
+      },
+      {
+        "id": "CarePlan.addresses",
+        "path": "CarePlan.addresses",
+        "short": "Reason for screening (e.g. age-based eligibility, family history risk)"
+      },
+      {
+        "id": "CarePlan.activity",
+        "path": "CarePlan.activity",
+        "short": "Scheduled screening activities (PSA test, urologist consultation, mpMRI, biopsy)"
+      },
+      {
+        "id": "CarePlan.note",
+        "path": "CarePlan.note",
+        "short": "Programme notes, status changes, non-participation reasons"
+      }
+    ]
+  }
+}

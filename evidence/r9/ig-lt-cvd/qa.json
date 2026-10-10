@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/cvd/ImplementationGuide/lt.hl7.fhir.cvd",
+  "name" : "LTCvd",
+  "title" : "Lithuanian CVD Implementation Guide",
+  "description" : "Lithuanian CVD Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.cvd",
+  "ig-ver" : "0.0.1",
+  "date" : "Fri, 09 Oct, 2026 08:05:32 +0300",
+  "dateISO8601" : "2026-10-09T08:05:32+03:00",
+  "errs" : 7,
+  "warnings" : 150,
+  "hints" : 359,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 12,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1327887000
+}

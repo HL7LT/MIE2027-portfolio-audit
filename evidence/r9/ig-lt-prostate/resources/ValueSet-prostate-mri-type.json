@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateMriTypeVS",
+  "id": "prostate-mri-type",
+  "title": "Prostate - MRI Examination Type",
+  "description": "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-mri-type",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "75691003",
+            "display": "Magnetic resonance imaging of prostate (procedure)"
+          },
+          {
+            "code": "719178004",
+            "display": "Multiparametric magnetic resonance imaging of prostate (procedure)"
+          }
+        ]
+      }
+    ]
+  }
+}

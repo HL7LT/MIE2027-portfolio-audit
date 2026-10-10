@@ -1,0 +1,1101 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "lt.hl7.fhir.breast",
+  "url": "https://hl7.lt/fhir/breast/ImplementationGuide/lt.hl7.fhir.breast",
+  "version": "0.0.1",
+  "name": "LtBreast",
+  "title": "Lithuanian Breast Diagnostics Implementation Guide",
+  "status": "draft",
+  "publisher": "Lithuanian Medical Library",
+  "contact": [
+    {
+      "name": "Lithuanian Medical Library",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://medicinosnk.lt"
+        },
+        {
+          "system": "email",
+          "value": "info@medicinosnk.lt"
+        }
+      ]
+    }
+  ],
+  "description": "Lithuanian Breast Diagnostics Implementation Guide",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "packageId": "lt.hl7.fhir.breast",
+  "fhirVersion": [
+    "5.0.0"
+  ],
+  "dependsOn": [
+    {
+      "packageId": "lt.hl7.fhir.base",
+      "version": "0.4.0",
+      "uri": "https://hl7.lt/fhir/base/ImplementationGuide/lt.hl7.fhir.base",
+      "id": "lt_hl7_fhir_base"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lifestyle",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lifestyle/ImplementationGuide/lt.hl7.fhir.lifestyle",
+      "id": "lt_hl7_fhir_lifestyle"
+    },
+    {
+      "packageId": "lt.hl7.fhir.vitalsigns",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/vitalsigns/ImplementationGuide/lt.hl7.fhir.vitalsigns",
+      "id": "lt_hl7_fhir_vitalsigns"
+    },
+    {
+      "packageId": "lt.hl7.fhir.eu",
+      "version": "0.0.3",
+      "uri": "https://hl7.lt/fhir/eu/ImplementationGuide/lt.hl7.fhir.eu",
+      "id": "lt_hl7_fhir_eu"
+    },
+    {
+      "packageId": "hl7.fhir.eu.base-r5",
+      "version": "0.1.0",
+      "uri": "http://hl7.eu/fhir/base-r5/ImplementationGuide/hl7.fhir.eu.base-r5",
+      "id": "hl7_fhir_eu_base_r5"
+    },
+    {
+      "packageId": "lt.hl7.fhir.lab",
+      "version": "0.1.0",
+      "uri": "https://hl7.lt/fhir/lab/ImplementationGuide/lt.hl7.fhir.lab",
+      "id": "lt_hl7_fhir_lab"
+    }
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/birads-assessment-lt-breast"
+        },
+        "name": "BI-RADS Assessment",
+        "description": "Final radiological diagnostic conclusion according to BI-RADS classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/birads-category"
+        },
+        "name": "BI-RADS Category",
+        "description": "Categories of Breast Imaging Reporting and Data System.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodystructure-bilateral-uiq-example"
+        },
+        "name": "BodyStructure: Bilateral Upper Inner Quadrant (example)",
+        "description": "Bilateral upper inner quadrant body structure.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodystructure-left-uoq-example"
+        },
+        "name": "BodyStructure: Left Breast Upper Outer Quadrant (example)",
+        "description": "Left breast upper outer quadrant for mammographic localization.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/breast-body-structure-left-uoq-example"
+        },
+        "name": "BodyStructure: Left Breast – Upper Outer Quadrant (example)",
+        "description": "Left breast upper outer quadrant body structure for anatomical localization.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/bodystructure-right-liq-example"
+        },
+        "name": "BodyStructure: Right Breast Lower Inner Quadrant (example)",
+        "description": "Right breast lower inner quadrant for mammographic localization.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "BodyStructure/breast-body-structure-right-uiq-example"
+        },
+        "name": "BodyStructure: Right Breast – Upper Inner Quadrant (example)",
+        "description": "Right breast upper inner quadrant body structure.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/body-structure-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-assessment"
+        },
+        "name": "Breast Assessment Services and Procedures",
+        "description": "This ValueSet includes all clinical services and procedures related to the assessment and diagnostic evaluation of the breast, such as imaging, biopsy, and specialist referrals.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-biopsy-procedure-lt-breast"
+        },
+        "name": "Breast Biopsy Procedure (LT Breast)",
+        "description": "Breast biopsy procedure profile for the breast cancer prevention program, covering ultrasound-guided and X-ray-guided biopsy types.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-biopsy-procedure-type"
+        },
+        "name": "Breast Biopsy Procedure Type",
+        "description": "Types of breast biopsy procedures used in the breast cancer prevention program.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-body-site"
+        },
+        "name": "Breast Body Site",
+        "description": "Entire breast and left/right breasts.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/body-structure-lt-breast"
+        },
+        "name": "Breast Body Structure",
+        "description": "BodyStructure profile representing breast structures including laterality and quadrants.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-clock-position"
+        },
+        "name": "Breast Clock Position",
+        "description": "Clock positions (1-12 o'clock) for localizing breast findings.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-composition-lt-breast"
+        },
+        "name": "Breast Composition (LT Breast)",
+        "description": "Breast-specific imaging composition extending the base imaging composition with breast-specific constraints on findings, impression, and history sections. Designed for use in the Lithuanian breast cancer prevention programme.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-report-lt-breast"
+        },
+        "name": "Breast Diagnostic Report (LT Breast)",
+        "description": "Overall breast diagnostic report covering the entire breast cancer diagnostic pathway. Wraps a BreastCompositionLtBreast and aggregates structured results including BI-RADS assessments, mammographic findings, ultrasound findings, gland density, and nipple observations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-duct-condition"
+        },
+        "name": "Breast Duct Condition",
+        "description": "Breast duct condition as assessed by ultrasound examination.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-duct-condition-lt-breast"
+        },
+        "name": "Breast Duct Condition (LT Breast)",
+        "description": "Breast duct condition observation as assessed by ultrasound, recorded per breast side.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-service-request-lt-breast"
+        },
+        "name": "Breast Examination Order",
+        "description": "A profile of ServiceRequest used to capture a clinical recommendation (e.g., follow-up ultrasound, surgical referral).",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-finding"
+        },
+        "name": "Breast Finding",
+        "description": "SNOMED CT finding representing findings on the breast.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-gland-density-lt-breast"
+        },
+        "name": "Breast Gland Density",
+        "description": "Breast gland density observation according to ACR BI-RADS classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-gland-density-acr"
+        },
+        "name": "Breast Gland Density ACR",
+        "description": "ACR (BI-RADS) glandular density assessment.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-history-assessment-lt-breast"
+        },
+        "name": "Breast History Assessment",
+        "description": "Breast history assessment according to the patient saying.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-history-situation"
+        },
+        "name": "Breast History Situations",
+        "description": "A value set of SNOMED CT situations representing various types of breast history.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-nipple-appearance-finding"
+        },
+        "name": "Breast Nipple Appearance Finding",
+        "description": "SNOMED CT finding representing findings of the breast nipple appearance.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-nipple-inversion-lt-breast"
+        },
+        "name": "Breast Nipple Inversion",
+        "description": "Observation representing nipple inversion assessment in a patient summary.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-observation-finding-lt-breast"
+        },
+        "name": "Breast Observation Finding",
+        "description": "Breast observation findings.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-parenchyma"
+        },
+        "name": "Breast Parenchyma Structure",
+        "description": "Ultrasound breast parenchyma structure classification.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-parenchyma-lt-breast"
+        },
+        "name": "Breast Parenchyma Structure (LT Breast)",
+        "description": "Ultrasound breast parenchyma structure observation per breast side.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-quadrant"
+        },
+        "name": "Breast Quadrants",
+        "description": "Quadrants of the breast.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/breast-questionnaire-options"
+        },
+        "name": "Breast questionnaire answer options (illustrative)",
+        "description": "Illustrative codes for Questionnaire answer options used in breast ESPBI-style forms. Register or replace with national coded values in production.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-recommendation"
+        },
+        "name": "Breast Recommendation",
+        "description": "Coded recommendations for breast cancer prevention programme follow-up actions.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/breast-ultrasound-finding-lt-breast"
+        },
+        "name": "Breast Ultrasound Findings",
+        "description": "A radiology observation representing one specific ultrasound lesion with localization, dimensions, and characteristics.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/careplan-breast-followup-example"
+        },
+        "name": "CarePlan: Breast Follow-up (example)",
+        "description": "Follow-up care plan for breast screening with BI-RADS-based recommendations.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Composition/composition-breast-diagnostic-example"
+        },
+        "name": "Composition: Breast Diagnostic Process (example)",
+        "description": "Imaging composition summarizing the breast cancer ADP diagnostic process with all required sections.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-composition-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-breast-report-example"
+        },
+        "name": "DiagnosticReport: Breast Diagnostic Report (example)",
+        "description": "Example of a complete breast diagnostic report aggregating imaging composition, BI-RADS assessment, gland density, and mammographic findings.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-report-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-breast-imaging-example"
+        },
+        "name": "DiagnosticReport: Breast Imaging (example)",
+        "description": "Placeholder DiagnosticReport referenced by the breast imaging composition.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/encounter-breast-step2-imaging-example"
+        },
+        "name": "Encounter: Breast Imaging Acquisition Step 2 (example)",
+        "description": "Ambulatory encounter for breast imaging acquisition including mammography, imaging studies, and radiation dose recording.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/encounter-first-visit-example"
+        },
+        "name": "Encounter: First Visit (example)",
+        "description": "First outpatient encounter for breast imaging screening.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Encounter/encounter-palpation-example"
+        },
+        "name": "Encounter: Palpation (example)",
+        "description": "The specific encounter where the breast history and palpation were performed.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ImagingStudy/imagingstudy-mammography-example"
+        },
+        "name": "ImagingStudy: Mammography (example)",
+        "description": "Mammography imaging study with bilateral breast series.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ImagingStudy/imagingstudy-mammography-previous-example"
+        },
+        "name": "ImagingStudy: Previous Mammography (example)",
+        "description": "Prior mammography study used for comparison in the current evaluation.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/lymph-node-level"
+        },
+        "name": "Lymph Node Level",
+        "description": "Regional lymph node involvement level (N1, N2, N3) for breast diagnostics.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mammographic-examination-finding-lt-breast"
+        },
+        "name": "Mammographic Examination Findings",
+        "description": "Observation representing mammographic breast changes using BodyStructure.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/mammographic-finding"
+        },
+        "name": "Mammographic Finding",
+        "description": "Findings during the mammographic procedure.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/mammography-report-lt-breast"
+        },
+        "name": "Mammography Diagnostic Report (LT Breast)",
+        "description": "A Diagnostic Report for Mammography imaging studies. Aggregates BI-RADS assessments, mammographic findings, ultrasound findings, and general breast observations.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-mammo-asym-bilateral-uiq-example"
+        },
+        "name": "Observation: Asymmetric Tissue – Bilateral UIQ (example)",
+        "description": "Focal asymmetric breast tissue finding increasing bilaterally in upper inner quadrants.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-birads-1-negative-example"
+        },
+        "name": "Observation: BI-RADS 1 – Negative (example)",
+        "description": "BI-RADS category 1 (Negative) assessment – no abnormality detected.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/birads-assessment-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-birads-cat4-example"
+        },
+        "name": "Observation: BI-RADS 4 – Suspicious Abnormality (example)",
+        "description": "BI-RADS category 4 (Suspicious Abnormality) – biopsy should be considered.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/birads-assessment-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-gland-density-fatty-example"
+        },
+        "name": "Observation: Breast Density – Fatty (example)",
+        "description": "Mammography shows predominantly fatty breast density.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-gland-density-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-history-injury-example"
+        },
+        "name": "Observation: Breast Injury History (example)",
+        "description": "History of breast injury to the right breast upper inner quadrant.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lesion-right-10-oclock-cyst-example"
+        },
+        "name": "Observation: Breast Lesion – Right Cyst (example)",
+        "description": "Ultrasound finding of a cyst in the right breast at 10 o'clock.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-ultrasound-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-nipple-inversion-example"
+        },
+        "name": "Observation: Breast Nipple Inversion (example)",
+        "description": "An example instance of a breast nipple inversion observation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-nipple-inversion-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-breast-scar-example"
+        },
+        "name": "Observation: Breast Scar (example)",
+        "description": "An example instance of a breast scar observation.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-observation-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-breast-skin-formation-example"
+        },
+        "name": "Observation: Breast Skin Formation (example)",
+        "description": "Observation of a skin mass on the breast surface.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-observation-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-history-surgery-example"
+        },
+        "name": "Observation: Breast Surgery History (example)",
+        "description": "History of breast operation — lumpectomy of the left breast UOQ in 2018.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lesion-left-3-oclock-fibroadenoma-example"
+        },
+        "name": "Observation: Lesion – Left Fibroadenoma (example)",
+        "description": "Ultrasound finding of a fibroadenoma in the left breast at 3 o'clock.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-ultrasound-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-lesion-right-6-oclock-malignant-example"
+        },
+        "name": "Observation: Lesion – Right Malignant Tumor (example)",
+        "description": "Ultrasound finding of a malignant tumor in the right breast at 6 o'clock.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-ultrasound-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-mammo-calc-right-liq-example"
+        },
+        "name": "Observation: Mammographic Calcification – Right LIQ (example)",
+        "description": "Mammographic calcification finding in the right lower inner quadrant, unchanged.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-mammo-mass-left-uoq-example"
+        },
+        "name": "Observation: Mammographic Mass – Left UOQ (12 mm) (example)",
+        "description": "Mammographic finding of a new 12 mm mass in the left upper outer quadrant.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-history-disease-example"
+        },
+        "name": "Observation: No Breast Disease History (example)",
+        "description": "Negative finding — no history of malignant tumor of breast.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-mammo-no-distortion-example"
+        },
+        "name": "Observation: No Mammographic Architectural Distortion (example)",
+        "description": "Negative mammographic finding – no architectural distortion detected.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/mammographic-examination-finding-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "Observation/observation-radiation-dose-example"
+        },
+        "name": "Observation: Radiation Dose (example)",
+        "description": "Radiation dose of 2.5 mGy recorded during the mammography procedure.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Organization/example-organization"
+        },
+        "name": "Organization: Breast Clinic (example)",
+        "description": "Example healthcare organization providing breast diagnostic services.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/example-patient-female"
+        },
+        "name": "Patient: Janette Petrauskaite (example)",
+        "description": "An example Patient conforming to the Lithuanian Base Profile.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/example-doctor"
+        },
+        "name": "Practitioner: Diagnostic Radiologist (example)",
+        "description": "Diagnostic radiologist evaluating mammography studies.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Practitioner/example-practitioner"
+        },
+        "name": "Practitioner: Triage Nurse (example)",
+        "description": "Triage nurse practitioner involved in breast screening workflow.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "PractitionerRole/example-practitioner-role"
+        },
+        "name": "PractitionerRole: Radiologist (example)",
+        "description": "Radiologist role linked to the breast diagnostics organization.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-breast-palpation-example"
+        },
+        "name": "Procedure: Breast Palpation (example)",
+        "description": "Clinical breast palpation performed during the initial outpatient visit.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-mammography-example"
+        },
+        "name": "Procedure: Mammography (example)",
+        "description": "Bilateral digital mammography procedure during imaging acquisition.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Procedure/procedure-palpation-mass-example"
+        },
+        "name": "Procedure: Palpation – Mass Finding (example)",
+        "description": "Breast palpation procedure revealing a palpable mass.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-biopsy-lt-breast"
+        },
+        "name": "Questionnaire: Biopsy ESPBI Form (LT Breast)",
+        "description": "ESPBI-style form for breast biopsy data capture, based on ADP Table 7.4.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-mammogram-lt-breast"
+        },
+        "name": "Questionnaire: Mammogram ESPBI Form (LT Breast)",
+        "description": "Structured data-capture form for mammogram reporting based on ADP Table 7.1.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-pathology-lt-breast"
+        },
+        "name": "Questionnaire: Pathological Histological Examination ESPBI Form (LT Breast)",
+        "description": "ADP Table 7.5 — Pathological histological examination questionnaire for Lithuanian breast diagnostics ESPBI-style forms.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-tomosynthesis-lt-breast"
+        },
+        "name": "Questionnaire: Tomosynthesis ESPBI Form (LT Breast)",
+        "description": "Structured data-capture form for breast tomosynthesis reporting based on ADP Table 7.2.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/questionnaire-ultrasound-lt-breast"
+        },
+        "name": "Questionnaire: Ultrasound Examination ESPBI Form (LT Breast)",
+        "description": "ESPBI-style form for breast ultrasound examination data capture, based on ADP Table 7.3.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-biopsy-example"
+        },
+        "name": "QuestionnaireResponse: Biopsy – Right Breast Mass (example)",
+        "description": "Completed biopsy ESPBI form: US-guided core biopsy of a 15 mm mass in the right breast at 10 o'clock, BI-RADS 4, 2 sample containers.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-mammogram-example"
+        },
+        "name": "QuestionnaireResponse: Mammogram ESPBI (example)",
+        "description": "Screening mammogram example – ACR B density, no findings, BI-RADS 1.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-pathology-example"
+        },
+        "name": "QuestionnaireResponse: Pathological Histological Examination (example)",
+        "description": "Example response for pathological histological examination — invasive ductal carcinoma, core needle biopsy, ER+/PR+/HER2 borderline.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-tomosynthesis-example"
+        },
+        "name": "QuestionnaireResponse: Tomosynthesis ESPBI (example)",
+        "description": "Tomosynthesis follow-up for BI-RADS 0 – mass found in right breast UOQ, BI-RADS 4.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "QuestionnaireResponse/questionnaireresponse-ultrasound-example"
+        },
+        "name": "QuestionnaireResponse: Ultrasound – Cyst Left Breast (example)",
+        "description": "Completed ultrasound ESPBI form: targeted examination revealing a simple cyst in the left breast at 2 o'clock, 8 x 6 mm, BI-RADS 2.",
+        "isExample": true
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/servicerequest-birads-referral-cat4-example"
+        },
+        "name": "ServiceRequest: BI-RADS Category 4 Referral (example)",
+        "description": "A ServiceRequest instance recommending a referral to a breast surgeon due to a Category 4 (suspicious) BI-RADS finding.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-service-request-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/servicerequest-breast-screening-example"
+        },
+        "name": "ServiceRequest: Breast Screening (example)",
+        "description": "An example of a ServiceRequest for breast cancer screening.",
+        "isExample": true,
+        "profile": [
+          "https://hl7.lt/fhir/breast/StructureDefinition/breast-service-request-lt-breast"
+        ]
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/snomed-breast-extension"
+        },
+        "name": "SNOMED Breast Extension",
+        "description": "Extension codes for breast diagnostics concepts not yet available in SNOMED CT. These codes are intended to be replaced by official SNOMED CT codes when they become available.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tomosynthesis-finding-lt-breast"
+        },
+        "name": "Tomosynthesis Examination Finding (LT Breast)",
+        "description": "Observation representing tomosynthesis breast findings including finding type, size, cross-section localization in CC and MLO projections, and finding evolution.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/ultrasound-lesion-finding"
+        },
+        "name": "Ultrasound Lesion Finding",
+        "description": "Lesions findings identified during breast ultrasound.",
+        "isExample": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/breast-tumor-who-classification"
+        },
+        "name": "WHO Breast Tumor Classification",
+        "description": "Breast tumor pathological diagnosis codes according to the WHO Classification of Tumours, 5th edition. Used for pathological histological examination conclusion/diagnosis in the breast cancer prevention program.",
+        "isExample": false
+      }
+    ],
+    "page": {
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "title": "Home",
+          "generation": "markdown",
+          "name": "index.html",
+          "sourceUrl": "index.html"
+        },
+        {
+          "title": "Workflow",
+          "generation": "markdown",
+          "name": "workflow.html",
+          "sourceUrl": "workflow.html"
+        },
+        {
+          "title": "Profiles",
+          "generation": "markdown",
+          "name": "profiles.html",
+          "sourceUrl": "profiles.html"
+        },
+        {
+          "title": "Terminology",
+          "generation": "markdown",
+          "name": "terminology.html",
+          "sourceUrl": "terminology.html"
+        },
+        {
+          "title": "Examples",
+          "generation": "markdown",
+          "name": "examples.html",
+          "sourceUrl": "examples.html"
+        },
+        {
+          "title": "Questionnaires",
+          "generation": "markdown",
+          "name": "questionnaires.html",
+          "sourceUrl": "questionnaires.html"
+        }
+      ],
+      "name": "toc.html",
+      "sourceUrl": "toc.html"
+    },
+    "parameter": [
+      {
+        "code": {
+          "code": "copyrightyear",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "2025+"
+      },
+      {
+        "code": {
+          "code": "releaselabel",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "ci-build"
+      },
+      {
+        "code": {
+          "code": "special-url-base",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/CodeSystem/snomed-breast-extension"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/birads-category"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-assessment"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-biopsy-procedure-type"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-body-site"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-clock-position"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-duct-condition"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-finding"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-gland-density-acr"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-history-situation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-nipple-appearance-finding"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-parenchyma"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-quadrant"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-recommendation"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/breast-tumor-who-classification"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/lymph-node-level"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/mammographic-finding"
+      },
+      {
+        "code": {
+          "code": "special-url",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "https://tx.hl7.lt/fhir/ValueSet/ultrasound-lesion-finding"
+      },
+      {
+        "code": {
+          "code": "excludettl",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "shownav",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "pin-canonicals",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "pin-all"
+      },
+      {
+        "code": {
+          "code": "apply-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "false"
+      },
+      {
+        "code": {
+          "code": "default-version",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "true"
+      },
+      {
+        "code": {
+          "code": "i18n-default-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "en"
+      },
+      {
+        "code": {
+          "code": "i18n-lang",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "lt"
+      },
+      {
+        "code": {
+          "code": "translation-sources",
+          "system": "http://hl7.org/fhir/tools/CodeSystem/ig-parameters"
+        },
+        "value": "input/translations/lt"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CarotidComponentCS",
+  "id": "carotid-component",
+  "title": "Carotid Ultrasound Component",
+  "description": "Component codes for carotid artery ultrasound observations (plaque and IMT, laterality).",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/carotid-component",
+  "concept": [
+    {
+      "code": "right-plaque",
+      "display": "Right carotid artery plaque",
+      "definition": "Atherosclerotic plaque assessment of the right carotid artery."
+    },
+    {
+      "code": "left-plaque",
+      "display": "Left carotid artery plaque",
+      "definition": "Atherosclerotic plaque assessment of the left carotid artery."
+    },
+    {
+      "code": "right-imt",
+      "display": "Right carotid IMT",
+      "definition": "Intima-media thickness of the right carotid artery."
+    },
+    {
+      "code": "left-imt",
+      "display": "Left carotid IMT",
+      "definition": "Intima-media thickness of the left carotid artery."
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 4
+}

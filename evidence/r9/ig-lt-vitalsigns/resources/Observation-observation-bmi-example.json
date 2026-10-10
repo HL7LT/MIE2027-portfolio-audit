@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-bmi-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/vitalsigns/StructureDefinition/bmi"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "39156-5",
+        "display": "Body mass index (BMI) [Ratio]"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2019-10-16T12:12:29-09:00",
+  "valueQuantity": {
+    "value": 22,
+    "code": "kg/m2",
+    "system": "http://unitsofmeasure.org",
+    "unit": "kilogram / (meter ^ 2)"
+  }
+}

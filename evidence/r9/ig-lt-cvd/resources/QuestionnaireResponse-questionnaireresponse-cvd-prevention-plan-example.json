@@ -1,0 +1,185 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-cvd-prevention-plan-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-10-31T10:00:00+02:00"
+            }
+          ],
+          "linkId": "plan-created-datetime"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "cvd-rg-very-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Very large"
+              }
+            }
+          ],
+          "linkId": "plan-risk-group"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "ldl-target-18",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "<1.8 mmol/l"
+              }
+            }
+          ],
+          "linkId": "plan-target-ldl"
+        },
+        {
+          "linkId": "plan-target-bp"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "cessation-behavior",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Behavior change tools"
+              }
+            }
+          ],
+          "linkId": "plan-smoking-cessation"
+        }
+      ],
+      "linkId": "grp-plan-header"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "pa-moderate-daily",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "30-60 minutes moderate activity daily"
+              }
+            }
+          ],
+          "linkId": "plan-physical-activity"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 24.5
+            }
+          ],
+          "linkId": "plan-target-bmi"
+        }
+      ],
+      "linkId": "grp-plan-lifestyle"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2026-01-15T11:00:00Z"
+            }
+          ],
+          "linkId": "achievement-datetime"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 2.4
+            }
+          ],
+          "linkId": "achievement-ldl-mmol"
+        },
+        {
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "achievement-ldl-target-met"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 126
+            }
+          ],
+          "linkId": "achievement-bp-systolic"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 78
+            }
+          ],
+          "linkId": "achievement-bp-diastolic"
+        },
+        {
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "achievement-bp-target-met"
+        },
+        {
+          "answer": [
+            {
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "achievement-smoking-quit"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 178
+            }
+          ],
+          "linkId": "achievement-height-cm"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 85
+            }
+          ],
+          "linkId": "achievement-weight-kg"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 26.8
+            }
+          ],
+          "linkId": "achievement-bmi"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Patient adheres to statin therapy; BP self-monitoring stable."
+            }
+          ],
+          "linkId": "achievement-comments"
+        }
+      ],
+      "linkId": "grp-achievement"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-prevention-plan",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "authored": "2026-01-15T11:00:00Z",
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

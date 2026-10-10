@@ -1,0 +1,50 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DeviceTypeHeightLength",
+  "id": "device-type-height-length",
+  "title": "Device Types for Height Length Measurement",
+  "description": "SNOMED CT code system values that describe the instrument used to measure the body height/length.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/device-type-height-length",
+  "version": "1.0.0",
+  "experimental": false,
+  "publisher": "HL7 International - Clinical Information Modeling Initiative",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "copyright": "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "102304005",
+            "display": "Measuring ruler, device (physical object)"
+          },
+          {
+            "code": "51791000",
+            "display": "Measuring tape, device (physical object)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-vitalsigns-extension",
+        "concept": [
+          {
+            "code": "24311000205101",
+            "display": "Stadiometer (physical object)"
+          }
+        ]
+      }
+    ]
+  }
+}

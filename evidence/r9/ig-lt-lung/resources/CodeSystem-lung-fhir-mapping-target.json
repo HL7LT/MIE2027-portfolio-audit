@@ -1,0 +1,109 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "LungFhirMappingTarget",
+  "id": "lung-fhir-mapping-target",
+  "title": "Lung Questionnaire → FHIR profile mapping target",
+  "description": "Short identifiers for the FHIR profile / element combinations referenced by the Lung ConceptMap prototype.",
+  "url": "https://hl7.lt/fhir/lung/CodeSystem/lung-fhir-mapping-target",
+  "concept": [
+    {
+      "code": "encounter-period",
+      "display": "Encounter.period (EncounterLt, ig-lt-base)"
+    },
+    {
+      "code": "observation-body-height",
+      "display": "BodyHeightLt (ig-lt-vitalsigns)"
+    },
+    {
+      "code": "observation-body-weight",
+      "display": "BodyWeightLt (ig-lt-vitalsigns)"
+    },
+    {
+      "code": "observation-tobacco-use",
+      "display": "TobaccoUseLtLifestyle (ig-lt-lifestyle)"
+    },
+    {
+      "code": "observation-pack-years",
+      "display": "PackYearsLtLifestyle (ig-lt-lifestyle)"
+    },
+    {
+      "code": "observation-smoking-duration",
+      "display": "SmokingDurationLtLifestyle (ig-lt-lifestyle)"
+    },
+    {
+      "code": "observation-smoking-cessation",
+      "display": "SmokingCessationLtLifestyle (ig-lt-lifestyle)"
+    },
+    {
+      "code": "condition-diagnosis",
+      "display": "ConditionLt (ig-lt-base)"
+    },
+    {
+      "code": "procedure-prior-chest-ct",
+      "display": "ProcedureLt (prior CT), ig-lt-base"
+    },
+    {
+      "code": "observation-functional-status",
+      "display": "ObservationLt (functional status), ig-lt-base"
+    },
+    {
+      "code": "imaging-report-ldct",
+      "display": "LungReportLtLung"
+    },
+    {
+      "code": "imaging-composition-ldct",
+      "display": "LungCompositionLtLung"
+    },
+    {
+      "code": "observation-nodule",
+      "display": "PulmonaryNoduleObservationLtLung"
+    },
+    {
+      "code": "observation-nodule-component",
+      "display": "PulmonaryNoduleComponent (nested)"
+    },
+    {
+      "code": "observation-incidental-finding",
+      "display": "IncidentalFindingLtLung"
+    },
+    {
+      "code": "observation-adrenal-lesion",
+      "display": "AdrenalLesionLtLung"
+    },
+    {
+      "code": "observation-kidney-lesion",
+      "display": "KidneyLesionLtLung"
+    },
+    {
+      "code": "observation-mediastinal-mass",
+      "display": "MediastinalMassLtLung"
+    },
+    {
+      "code": "observation-lung-rads",
+      "display": "LungRadsAssessmentLtLung"
+    },
+    {
+      "code": "observation-recommendation",
+      "display": "LungRecommendationObservationLtLung"
+    },
+    {
+      "code": "observation-ctdi",
+      "display": "ObservationLt — radiation dose (CTDIvol / DLP)"
+    },
+    {
+      "code": "practitioner-role",
+      "display": "PractitionerRoleLt (technologist)"
+    },
+    {
+      "code": "organization",
+      "display": "OrganizationLt (facility)"
+    }
+  ],
+  "version": "0.1.0",
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 23
+}

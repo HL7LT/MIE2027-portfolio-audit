@@ -1,0 +1,75 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-incidental-mediastinal-mass-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "246115007",
+            "system": "http://snomed.info/sct",
+            "display": "Size (attribute)"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 32,
+        "code": "mm",
+        "system": "http://unitsofmeasure.org"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "28328005",
+            "system": "http://snomed.info/sct",
+            "display": "Abnormal radiologic density"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "103360007",
+            "system": "http://snomed.info/sct",
+            "display": "Complex"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "404684003",
+        "system": "http://snomed.info/sct",
+        "display": "Clinical finding (finding)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-11-20T14:30:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "94147001",
+        "system": "http://snomed.info/sct",
+        "display": "Mass of mediastinum"
+      }
+    ]
+  }
+}

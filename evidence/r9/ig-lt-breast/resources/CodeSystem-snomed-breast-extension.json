@@ -1,0 +1,41 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "SnomedBreastExtension",
+  "id": "snomed-breast-extension",
+  "title": "SNOMED Breast Extension",
+  "description": "Extension codes for breast diagnostics concepts not yet available in SNOMED CT. These codes are intended to be replaced by official SNOMED CT codes when they become available.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/snomed-breast-extension",
+  "concept": [
+    {
+      "code": "parenchyma-fatty",
+      "display": "Homogeneous adipose tissue",
+      "definition": "Ultrasound breast parenchyma structure: homogeneous adipose tissue"
+    },
+    {
+      "code": "parenchyma-fibroglandular",
+      "display": "Homogeneous fibroglandular",
+      "definition": "Ultrasound breast parenchyma structure: homogeneous fibroglandular tissue"
+    },
+    {
+      "code": "parenchyma-heterogeneous",
+      "display": "Heterogeneous",
+      "definition": "Ultrasound breast parenchyma structure: heterogeneous tissue"
+    },
+    {
+      "code": "ducts-normal",
+      "display": "Ducts not expanded",
+      "definition": "Breast duct condition: ducts not expanded (normal)"
+    },
+    {
+      "code": "ducts-expanded",
+      "display": "Ducts expanded",
+      "definition": "Breast duct condition: ducts expanded (dilated)"
+    }
+  ],
+  "experimental": true,
+  "caseSensitive": true,
+  "publisher": "HL7 Lithuania",
+  "count": 5
+}

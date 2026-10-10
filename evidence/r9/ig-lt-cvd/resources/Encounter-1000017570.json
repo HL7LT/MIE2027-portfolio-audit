@@ -1,0 +1,19 @@
+{
+  "resourceType": "Encounter",
+  "id": "1000017570",
+  "class": [
+    {
+      "coding": [
+        {
+          "code": "AMB",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "ambulatory"
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

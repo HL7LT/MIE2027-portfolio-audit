@@ -1,0 +1,55 @@
+{
+  "resourceType": "Observation",
+  "id": "skl01-observation-smoking-186",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "52101004",
+          "system": "http://snomed.info/sct",
+          "display": "Present (qualifier value)"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "80943009",
+        "system": "http://snomed.info/sct",
+        "display": "Risk factor"
+      }
+    ]
+  },
+  "effectiveDateTime": "2014-10-28T08:01:00.000+02:00",
+  "valueQuantity": {
+    "value": 25,
+    "code": "1",
+    "system": "http://unitsofmeasure.org"
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

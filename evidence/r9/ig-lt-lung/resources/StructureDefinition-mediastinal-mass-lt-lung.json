@@ -1,0 +1,132 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "mediastinal-mass-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/StructureDefinition/mediastinal-mass-lt-lung",
+  "name": "MediastinalMassLtLung",
+  "title": "Mediastinal Mass (LT Lung)",
+  "status": "active",
+  "description": "Mediastinal mass incidental finding detected during LDCT screening.\nMultiple masses can be recorded as separate observation instances.\nAt least one of size, changed density, or calcification should be documented\nper ADP dataset section 1.2.2.2 item 4.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/lung/StructureDefinition/incidental-finding-lt-lung",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "94147001",
+              "system": "http://snomed.info/sct",
+              "display": "Mass of mediastinum (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:largestDimension",
+        "path": "Observation.component",
+        "sliceName": "largestDimension",
+        "short": "Largest dimension in the axial plane (mm)",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:largestDimension.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "396361002",
+              "system": "http://snomed.info/sct",
+              "display": "Lesion size, largest dimension (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].system",
+        "path": "Observation.component.value[x].system",
+        "patternUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Observation.component:largestDimension.value[x].code",
+        "path": "Observation.component.value[x].code",
+        "patternCode": "mm"
+      },
+      {
+        "id": "Observation.component:changedDensity",
+        "path": "Observation.component",
+        "sliceName": "changedDensity",
+        "short": "Whether the mass shows changed (abnormal) density",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:changedDensity.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "28328005",
+              "system": "http://snomed.info/sct",
+              "display": "Abnormal radiologic density (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:changedDensity.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:calcification",
+        "path": "Observation.component",
+        "sliceName": "calcification",
+        "short": "Whether calcification is present in the mass",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:calcification.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "129748009",
+              "system": "http://snomed.info/sct",
+              "display": "Radiographic calcification finding (finding)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:calcification.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

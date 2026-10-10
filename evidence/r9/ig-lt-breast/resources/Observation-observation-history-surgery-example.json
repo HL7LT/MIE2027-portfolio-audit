@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-history-surgery-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/breast/StructureDefinition/breast-history-assessment-lt-breast"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example-practitioner"
+    }
+  ],
+  "note": [
+    {
+      "text": "Lumpectomy of the left breast UOQ in 2018."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "161797003",
+        "system": "http://snomed.info/sct",
+        "display": "History of breast problem (situation)"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-palpation-example"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "71661000210109",
+        "system": "http://snomed.info/sct",
+        "display": "History of operation on breast (situation)"
+      }
+    ]
+  },
+  "bodyStructure": {
+    "reference": "BodyStructure/breast-body-structure-left-uoq-example"
+  },
+  "effectiveDateTime": "2018-05-15T00:00:00+02:00"
+}

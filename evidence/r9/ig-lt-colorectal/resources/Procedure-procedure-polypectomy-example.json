@@ -1,0 +1,99 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-polypectomy-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/colorectal/StructureDefinition/procedure-polypectomy-lt-colorectal"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "387713003",
+          "system": "http://snomed.info/sct",
+          "display": "Surgical procedure (procedure)"
+        }
+      ]
+    }
+  ],
+  "reason": [
+    {
+      "reference": {
+        "reference": "Observation/observation-polyp-found-example"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/procedure-method",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "exc-en-bloc",
+            "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-codes-lt",
+            "display": "En bloc"
+          }
+        ]
+      }
+    }
+  ],
+  "used": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "fill-air",
+            "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-lumen-filling-codes-lt",
+            "display": "Filling the space with air"
+          }
+        ]
+      }
+    },
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "inst-loop-cold",
+            "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-instrument-codes-lt",
+            "display": "With a loop - Cold method"
+          }
+        ]
+      }
+    },
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "hydro-adrenaline",
+            "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-hydroprep-codes-lt",
+            "display": "Adrenaline"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "274025005",
+        "system": "http://snomed.info/sct",
+        "display": "Colonic polypectomy (procedure)"
+      }
+    ]
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26",
+  "outcome": {
+    "coding": [
+      {
+        "code": "hist-sent",
+        "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polypectomy-codes-lt",
+        "display": "Sent for histological examination"
+      }
+    ]
+  }
+}

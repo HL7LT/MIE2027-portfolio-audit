@@ -1,0 +1,26 @@
+{
+  "resourceType": "BodyStructure",
+  "id": "bodyStructure-prostate-urinary-bladder-example",
+  "meta": {
+    "profile": [
+      "http://hl7.eu/fhir/base-r5/StructureDefinition/bodyStructure-eu-core"
+    ]
+  },
+  "includedStructure": [
+    {
+      "structure": {
+        "coding": [
+          {
+            "code": "89837001",
+            "system": "http://snomed.info/sct",
+            "display": "Urinary bladder structure (body structure)"
+          }
+        ]
+      }
+    }
+  ],
+  "active": true,
+  "patient": {
+    "reference": "Patient/patient-male-example"
+  }
+}

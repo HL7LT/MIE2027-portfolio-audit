@@ -1,0 +1,56 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "medication-statement-screening-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-statement-lt-lifestyle"
+    ]
+  },
+  "medication": {
+    "concept": {
+      "text": "Tylenol PM"
+    }
+  },
+  "dosage": [
+    {
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 1,
+            "unit": "tablet"
+          }
+        }
+      ],
+      "extension": [
+        {
+          "url": "https://hl7.lt/fhir/lifestyle/StructureDefinition/medication-timing-ext-lt-lifestyle",
+          "valueString": "3 times per day after meals"
+        }
+      ]
+    }
+  ],
+  "reason": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "166643006",
+            "system": "http://snomed.info/sct",
+            "display": "Liver enzymes abnormal"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient cannot take acetaminophen as per Dr instructions"
+    }
+  ],
+  "status": "recorded",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2015-01-23",
+  "dateAsserted": "2015-02-22"
+}

@@ -1,0 +1,47 @@
+{
+  "resourceType": "Organization",
+  "id": "organization-lt-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/organization-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://esveikata.lt/classifiers/Identifier/JAR",
+      "value": "123456789"
+    }
+  ],
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "+37061234567",
+          "use": "work"
+        }
+      ],
+      "address": {
+        "line": [
+          "Gedimino pr. 1"
+        ],
+        "use": "work",
+        "type": "both",
+        "city": "Vilnius",
+        "postalCode": "01103",
+        "country": "LT"
+      },
+      "purpose": {
+        "coding": [
+          {
+            "code": "work"
+          }
+        ]
+      }
+    }
+  ],
+  "language": "lt",
+  "active": true,
+  "name": "Vilniaus miesto ligoninė"
+}

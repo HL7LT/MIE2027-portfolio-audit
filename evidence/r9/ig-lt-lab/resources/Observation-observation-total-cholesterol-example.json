@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-total-cholesterol-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/total-cholesterol-lab-lt"
+    ]
+  },
+  "valueQuantity": {
+    "system": "http://unitsofmeasure.org",
+    "value": 155
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "display": "Normal"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "Total cholesterol within target range (less than 200 mg/dL or <5.0 mmol/L)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "2093-3",
+        "system": "http://loinc.org",
+        "display": "Cholesterol [Mass/volume] in Serum or Plasma"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

@@ -1,0 +1,67 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-cvd-risk-assessment-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "valueQuantity": {
+    "unit": "%",
+    "system": "http://unitsofmeasure.org",
+    "code": "%",
+    "value": 24
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "1371331009",
+            "system": "http://snomed.info/sct",
+            "display": "Systematic Coronary Risk Evaluation 2 score (observable entity)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "24484000",
+            "system": "http://snomed.info/sct",
+            "display": "Severe"
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "text": "According to SCORE2 table: 24% risk corresponds to high cardiovascular risk (orange zone)."
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "827181004",
+        "system": "http://snomed.info/sct",
+        "display": "Risk of cardiovascular disease"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-10-01T09:00:00Z"
+}

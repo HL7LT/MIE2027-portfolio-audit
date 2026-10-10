@@ -1,0 +1,31 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-colonoscopy-bleed-epinephrine-example",
+  "reason": [
+    {
+      "concept": {
+        "coding": [
+          {
+            "code": "698409004",
+            "system": "http://snomed.info/sct",
+            "display": "Colonoscopic control of bleeding (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "313191000",
+        "system": "http://snomed.info/sct",
+        "display": "Injection of epinephrine (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26"
+}

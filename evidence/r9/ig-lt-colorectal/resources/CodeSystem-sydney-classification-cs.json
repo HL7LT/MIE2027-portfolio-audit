@@ -1,0 +1,41 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "SydneyClassificationCS",
+  "id": "sydney-classification-cs",
+  "title": "Sydney Classification for Colon Wall Injury",
+  "description": "Sydney classification for deep mural injury (DMI) of the colon occurring during colonoscopy. The classification describes the severity of injury to the colon wall layers and helps guide appropriate management.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/sydney-classification",
+  "concept": [
+    {
+      "code": "type-1",
+      "display": "Sydney DMI Type I",
+      "definition": "Type I: Intact submucosa and muscularis propria with superficial mucosal injury only. No specific treatment is usually required."
+    },
+    {
+      "code": "type-2",
+      "display": "Sydney DMI Type II",
+      "definition": "Type II: Loss of clear distinction between submucosa and muscularis propria with focal loss of the submucosal plane. Endoscopic closure is usually suggested."
+    },
+    {
+      "code": "type-3",
+      "display": "Sydney DMI Type III",
+      "definition": "Type III: Visible target sign indicating injury to the muscularis propria. Endoscopic closure is required."
+    },
+    {
+      "code": "type-4",
+      "display": "Sydney DMI Type IV",
+      "definition": "Type IV: Clearly visible small-to-medium perforation, typically surrounded by a white cautery ring, without significant fecal contamination."
+    },
+    {
+      "code": "type-5",
+      "display": "Sydney DMI Type V",
+      "definition": "Type V: Large perforation with a visible hole and fecal contamination of the peritoneal cavity."
+    }
+  ],
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "caseSensitive": true,
+  "count": 5
+}

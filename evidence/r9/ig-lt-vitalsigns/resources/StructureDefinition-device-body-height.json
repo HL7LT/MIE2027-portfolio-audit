@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "device-body-height",
+  "url": "https://hl7.lt/fhir/vitalsigns/StructureDefinition/device-body-height",
+  "version": "1.0.0",
+  "name": "DeviceBodyHeight",
+  "title": "Device for Body Height Measurement",
+  "status": "draft",
+  "publisher": "Tallinn University of Technology (TalTech)",
+  "contact": [
+    {
+      "name": "Tallinn University of Technology (TalTech)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://taltech.ee/emedlab"
+        }
+      ]
+    }
+  ],
+  "description": "Device used to measure body height.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "display": "World"
+        }
+      ]
+    }
+  ],
+  "copyright": "MIT",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Device",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device.identifier",
+        "path": "Device.identifier",
+        "short": "Device identifier (e.g. serial number)"
+      },
+      {
+        "id": "Device.displayName",
+        "path": "Device.displayName",
+        "short": "Human-readable name"
+      },
+      {
+        "id": "Device.manufacturer",
+        "path": "Device.manufacturer",
+        "short": "Manufacturer (Organization or string)"
+      },
+      {
+        "id": "Device.type",
+        "path": "Device.type",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/device-type-height-length"
+        }
+      }
+    ]
+  }
+}

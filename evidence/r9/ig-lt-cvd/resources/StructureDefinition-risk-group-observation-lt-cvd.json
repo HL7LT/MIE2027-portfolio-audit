@@ -1,0 +1,90 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "risk-group-observation-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd",
+  "version": "1.0.0",
+  "name": "RiskGroupObservationLtCvd",
+  "title": "CVD Risk Group",
+  "status": "draft",
+  "experimental": true,
+  "date": "2025-10-25T19:10:07+03:00",
+  "publisher": "HL7 Lithuania",
+  "description": "Records the patient's cardiovascular Screening risk classification, expressed as a percentage value and interpreted using HL7 Observation Interpretation codes.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "827181004",
+              "system": "http://snomed.info/sct",
+              "display": "Risk of cardiovascular disease"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "comment": "The date and time when the cardiovascular risk assessment was performed.",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "code": "%",
+          "system": "http://unitsofmeasure.org",
+          "unit": "%"
+        }
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "short": "Risk group classification (Normal, High, Significantly high)",
+        "comment": "The interpretation category is derived from the numeric cardiovascular risk percentage:\n- < 10% → not assigned (below threshold)\n- 10–19% → Normal (#N)\n- 20–29% → High (#H)\n- ≥ 30% → Significantly high (#HU)",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/cvd-risk-group"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-specimen-measurement-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/specimen-measurement-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "valueQuantity": {
+        "unit": "mm",
+        "value": 5
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "384627007",
+            "system": "http://snomed.info/sct",
+            "display": "Specimen size, largest dimension"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "unit": "g",
+        "value": 20
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "371506001",
+            "system": "http://snomed.info/sct",
+            "display": "Specimen weight"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 5,
+        "unit": "mm"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "371476002",
+            "system": "http://snomed.info/sct",
+            "display": "Specimen size, dimension 1"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 3,
+        "unit": "mm"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "371477006",
+            "system": "http://snomed.info/sct",
+            "display": "Specimen size, dimension 2"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 2,
+        "unit": "mm"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "371478001",
+            "system": "http://snomed.info/sct",
+            "display": "Specimen size, dimension 3"
+          }
+        ]
+      }
+    },
+    {
+      "valueQuantity": {
+        "value": 4
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "444025001",
+            "system": "http://snomed.info/sct",
+            "display": "Number of lymph nodes examined by microscopy in excised specimen (observable entity)"
+          }
+        ]
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "371475003",
+        "system": "http://snomed.info/sct",
+        "display": "Specimen size"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2024-06-01T10:00:00Z",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "168126000",
+        "system": "http://snomed.info/sct",
+        "display": "Macroscopic examination"
+      }
+    ]
+  }
+}

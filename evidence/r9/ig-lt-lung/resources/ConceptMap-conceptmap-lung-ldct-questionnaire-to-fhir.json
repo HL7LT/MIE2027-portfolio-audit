@@ -1,0 +1,501 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "conceptmap-lung-ldct-questionnaire-to-fhir",
+  "url": "https://hl7.lt/fhir/lung/ConceptMap/conceptmap-lung-ldct-questionnaire-to-fhir",
+  "title": "LDCT Questionnaire items to FHIR mapping (prototype)",
+  "description": "Maps linkIds of the LDCT structured-report Questionnaire to Lung / foundation profiles, including Lung-RADS, pulmonary nodules, incidental findings, and dose Observations.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "LT",
+          "system": "urn:iso:std:iso:3166"
+        }
+      ]
+    }
+  ],
+  "group": [
+    {
+      "element": [
+        {
+          "target": [
+            {
+              "code": "imaging-composition-ldct",
+              "relationship": "related-to",
+              "comment": "LungCompositionLtLung.date. StructureDefinition: https://hl7.lt/fhir/lung/StructureDefinition/lung-composition-lt-lung."
+            }
+          ],
+          "code": "exam-date"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-ctdi",
+              "relationship": "related-to",
+              "comment": "ObservationLt with LOINC 73971-0 (CT dose index) — radiation dose metric."
+            }
+          ],
+          "code": "ctdivol"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-ctdi",
+              "relationship": "related-to",
+              "comment": "ObservationLt with LOINC 73971-7 (Dose-length product) or DICOM SR code."
+            }
+          ],
+          "code": "dlp"
+        },
+        {
+          "target": [
+            {
+              "code": "practitioner-role",
+              "relationship": "related-to",
+              "comment": "PractitionerRoleLt.code (ig-lt-base)."
+            }
+          ],
+          "code": "technologist-qualification"
+        },
+        {
+          "target": [
+            {
+              "code": "organization",
+              "relationship": "related-to",
+              "comment": "OrganizationLt.name (ig-lt-base)."
+            }
+          ],
+          "code": "facility-name"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "equivalent",
+              "comment": "PulmonaryNoduleObservationLtLung.valueCodeableConcept bound to pulmonary-nodule-type-vs-lt-lung."
+            }
+          ],
+          "code": "nodule-type"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.bodySite from lung-lobe-vs-lt-lung."
+            }
+          ],
+          "code": "nodule-lobe"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[morphology] (pulmonary-nodule-morphology-vs-lt-lung)."
+            }
+          ],
+          "code": "morphology-spiculated"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[morphology]."
+            }
+          ],
+          "code": "morphology-irregular"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[morphology]."
+            }
+          ],
+          "code": "morphology-pleural"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "equivalent",
+              "comment": "PulmonaryNoduleObservationLtLung.component[diameter-mean] Quantity (mm)."
+            }
+          ],
+          "code": "nodule-mean-diameter"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "equivalent",
+              "comment": "PulmonaryNoduleObservationLtLung.component[diameter-long] Quantity (mm)."
+            }
+          ],
+          "code": "nodule-long-axis"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "equivalent",
+              "comment": "PulmonaryNoduleObservationLtLung.component[diameter-short] Quantity (mm)."
+            }
+          ],
+          "code": "nodule-short-axis"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "equivalent",
+              "comment": "PulmonaryNoduleObservationLtLung.component[volume] Quantity (mm³)."
+            }
+          ],
+          "code": "nodule-volume"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[solid-diameter-mean]."
+            }
+          ],
+          "code": "solid-part-mean-diameter"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[solid-diameter-long]."
+            }
+          ],
+          "code": "solid-part-long-axis"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[solid-diameter-short]."
+            }
+          ],
+          "code": "solid-part-short-axis"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule-component",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.component[solid-volume]."
+            }
+          ],
+          "code": "solid-part-volume"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-nodule",
+              "relationship": "related-to",
+              "comment": "PulmonaryNoduleObservationLtLung.note (free-text annotation)."
+            }
+          ],
+          "code": "nodule-note"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung with category = interstitial; valueBoolean."
+            }
+          ],
+          "code": "interstitial-changes"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[subtype] bound to interstitial-subtype VS."
+            }
+          ],
+          "code": "interstitial-subtype"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung for emphysema (category=emphysema)."
+            }
+          ],
+          "code": "emphysema"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[severity] with finding-quantity-lt-lung."
+            }
+          ],
+          "code": "emphysema-severity"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=bronchiectasis)."
+            }
+          ],
+          "code": "bronchiectasis"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[severity]."
+            }
+          ],
+          "code": "bronchiectasis-severity"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=pleural-effusion)."
+            }
+          ],
+          "code": "pleural-fluid"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.bodySite laterality component."
+            }
+          ],
+          "code": "pleural-fluid-laterality"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[quantity]."
+            }
+          ],
+          "code": "pleural-fluid-quantity"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=pneumothorax)."
+            }
+          ],
+          "code": "pneumothorax"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.bodySite laterality."
+            }
+          ],
+          "code": "pneumothorax-laterality"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=consolidation). Interpretation uses consolidation-interpretation-lt-lung VS."
+            }
+          ],
+          "code": "consolidation"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[interpretation] = inflammatory."
+            }
+          ],
+          "code": "consolidation-inflammatory"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[interpretation] = malignant."
+            }
+          ],
+          "code": "consolidation-malignant"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=coronary-calcification). Severity bound to coronary-calcification-score-lt-lung."
+            }
+          ],
+          "code": "coronary-calcification"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.component[severity] bound to coronary-calcification-score-lt-lung (Agatston bands)."
+            }
+          ],
+          "code": "coronary-calcification-severity"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=aortic-aneurysm)."
+            }
+          ],
+          "code": "thoracic-aortic-aneurysm"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-mediastinal-mass",
+              "relationship": "equivalent",
+              "comment": "MediastinalMassLtLung. StructureDefinition: https://hl7.lt/fhir/lung/StructureDefinition/mediastinal-mass-lt-lung."
+            }
+          ],
+          "code": "mediastinal-mass"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-mediastinal-mass",
+              "relationship": "related-to",
+              "comment": "MediastinalMassLtLung.component[size] (Quantity mm)."
+            }
+          ],
+          "code": "mediastinal-mass-size"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=lymphadenopathy)."
+            }
+          ],
+          "code": "lymphadenopathy"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "related-to",
+              "comment": "IncidentalFindingLtLung.bodySite from lung-lymph-node-location-lt-lung."
+            }
+          ],
+          "code": "lymphadenopathy-location"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=thyroid-nodule)."
+            }
+          ],
+          "code": "thyroid-nodules"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-incidental-finding",
+              "relationship": "equivalent",
+              "comment": "IncidentalFindingLtLung (category=liver-lesion)."
+            }
+          ],
+          "code": "liver-lesions"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-kidney-lesion",
+              "relationship": "equivalent",
+              "comment": "KidneyLesionLtLung. StructureDefinition: https://hl7.lt/fhir/lung/StructureDefinition/kidney-lesion-lt-lung."
+            }
+          ],
+          "code": "kidney-lesions"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-adrenal-lesion",
+              "relationship": "equivalent",
+              "comment": "AdrenalLesionLtLung. Laterality from adrenal-laterality-lt-lung VS."
+            }
+          ],
+          "code": "adrenal-lesions"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lung-rads",
+              "relationship": "equivalent",
+              "comment": "LungRadsAssessmentLtLung.valueCodeableConcept bound to lung-rads-category-lt-lung VS."
+            }
+          ],
+          "code": "lung-rads-category"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-lung-rads",
+              "relationship": "related-to",
+              "comment": "LungRadsAssessmentLtLung.component[modifier] bound to lung-rads-modifier-lt-lung VS."
+            }
+          ],
+          "code": "lung-rads-modifier"
+        },
+        {
+          "target": [
+            {
+              "code": "observation-recommendation",
+              "relationship": "equivalent",
+              "comment": "LungRecommendationObservationLtLung. Codes from lung-recommendation-lt-lung VS."
+            }
+          ],
+          "code": "recommendation"
+        }
+      ],
+      "source": "https://hl7.lt/fhir/lung/CodeSystem/lung-ldct-questionnaire-item",
+      "target": "https://hl7.lt/fhir/lung/CodeSystem/lung-fhir-mapping-target"
+    }
+  ],
+  "version": "0.1.0",
+  "name": "LungLdctQuestionnaireToFhir",
+  "status": "draft",
+  "experimental": true,
+  "date": "2026-04-20",
+  "publisher": "HL7 Lithuania"
+}

@@ -1,0 +1,18 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "practitioner-role-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt"
+    ]
+  },
+  "practitioner": {
+    "reference": "Practitioner/practitioner-example",
+    "display": "Dr. Petras Kazlauskas"
+  },
+  "organization": {
+    "reference": "Organization/organization-example",
+    "display": "Vilniaus miesto ligoninė"
+  },
+  "active": true
+}

@@ -1,0 +1,27 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-prostate-mpmri-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt"
+    ]
+  },
+  "note": [
+    {
+      "text": "Multiparametric prostate MRI performed with intravenous gadolinium-based contrast agent (16 mL)."
+    }
+  ],
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "719178004",
+        "system": "http://snomed.info/sct",
+        "display": "Multiparametric magnetic resonance imaging of prostate"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

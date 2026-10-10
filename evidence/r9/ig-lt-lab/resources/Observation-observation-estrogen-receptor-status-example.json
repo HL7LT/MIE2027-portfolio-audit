@@ -1,0 +1,69 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-estrogen-receptor-status-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/estrogen-receptor-status-observation-lt-lab"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "85337-4",
+            "system": "http://loinc.org",
+            "display": "Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "strong",
+            "system": "https://tx.hl7.lt/fhir/CodeSystem/ihc-expression-level",
+            "display": "Strong (+++)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "85310-1",
+            "system": "http://loinc.org",
+            "display": "Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 90,
+        "code": "%",
+        "system": "http://unitsofmeasure.org"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "16112-5",
+        "system": "http://loinc.org",
+        "display": "Estrogen receptor [Interpretation] in Tissue"
+      }
+    ]
+  },
+  "status": "final",
+  "subject": {
+    "reference": "Patient/patient-example"
+  },
+  "effectiveDateTime": "2025-01-15T11:00:00+02:00",
+  "specimen": {
+    "reference": "Specimen/specimen-right-breast-example"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BreastFindingVS",
+  "id": "breast-finding",
+  "title": "Breast Finding",
+  "description": "SNOMED CT finding representing findings on the breast.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/breast-finding",
+  "language": "en",
+  "version": "1.0.0",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "297960002",
+            "display": "Mass of skin"
+          },
+          {
+            "code": "442523003",
+            "display": "Surgical scar finding"
+          },
+          {
+            "code": "390787006",
+            "display": "Radial scar of breast"
+          },
+          {
+            "code": "846728002",
+            "display": "No scarring of skin"
+          }
+        ]
+      }
+    ]
+  }
+}

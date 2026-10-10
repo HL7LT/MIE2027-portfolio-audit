@@ -1,0 +1,27 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-prostate-piqual-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/prostate/StructureDefinition/piqual-observation-lt-prostate"
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "1",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual",
+        "display": "No mpMRI sequences are of diagnostic quality"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "encounter": {
+    "reference": "Encounter/encounter-prostate-diagnostic-example"
+  },
+  "effectiveDateTime": "2025-09-22T10:30:00Z",
+  "valueInteger": 3
+}

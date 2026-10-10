@@ -1,0 +1,18 @@
+{
+  "resourceType": "Condition",
+  "id": "351",
+  "code": {
+    "text": "DSTU1 chronic condition (id:351)"
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active",
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+      }
+    ]
+  }
+}

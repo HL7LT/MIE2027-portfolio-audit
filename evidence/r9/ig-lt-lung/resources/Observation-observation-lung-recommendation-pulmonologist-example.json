@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-lung-recommendation-pulmonologist-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lung/StructureDefinition/lung-recommendation-observation-lt-lung"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-radiologist-example"
+    }
+  ],
+  "note": [
+    {
+      "text": "Patient should be referred for pulmonologist consultation in an oncology cluster institution."
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "424900004",
+        "system": "http://snomed.info/sct",
+        "display": "Recommendation - action"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2025-09-22T11:00:00Z",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "pulmonologist-consult",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+        "display": "Refer for pulmonologist consultation in an oncology cluster institution"
+      }
+    ]
+  }
+}

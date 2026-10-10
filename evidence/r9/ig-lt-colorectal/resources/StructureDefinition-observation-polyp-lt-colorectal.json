@@ -1,0 +1,287 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "observation-polyp-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/observation-polyp-lt-colorectal",
+  "name": "ObservationPolypLtColorectal",
+  "title": "Colon Polyp Observation (LT Colorectal)",
+  "status": "active",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "description": "Profile for recording a colon polyp, enforcing the inclusion of size, Paris/NICE classifications, and SMSA scoring.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exam",
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "display": "Exam"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "399505005",
+              "system": "http://snomed.info/sct",
+              "display": "Polyp of large intestine (disorder)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/yes-no"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 7
+      },
+      {
+        "id": "Observation.component:size",
+        "path": "Observation.component",
+        "sliceName": "size",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:size.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "373197004",
+              "system": "http://snomed.info/sct",
+              "display": "Polyp size, largest dimension (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:size.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:paris",
+        "path": "Observation.component",
+        "sliceName": "paris",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:paris.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-paris",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:paris.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:nice",
+        "path": "Observation.component",
+        "sliceName": "nice",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:nice.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-nice",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:nice.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:predictedHistology",
+        "path": "Observation.component",
+        "sliceName": "predictedHistology",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:predictedHistology.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-hist-predict",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:predictedHistology.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/polyp-predicted-histology"
+        }
+      },
+      {
+        "id": "Observation.component:access",
+        "path": "Observation.component",
+        "sliceName": "access",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:access.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-access",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:access.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:smsaScore",
+        "path": "Observation.component",
+        "sliceName": "smsaScore",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:smsaScore.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-smsa-score",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:smsaScore.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:smsaLevel",
+        "path": "Observation.component",
+        "sliceName": "smsaLevel",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.component:smsaLevel.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "comp-smsa-level",
+              "system": "https://hl7.lt/fhir/colorectal/CodeSystem/colorectal-polyp-codes-lt"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:smsaLevel.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      }
+    ]
+  }
+}

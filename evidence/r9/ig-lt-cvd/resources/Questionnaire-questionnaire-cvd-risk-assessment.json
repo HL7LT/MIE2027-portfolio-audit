@@ -1,0 +1,731 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cvd-risk-assessment",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "evaluation-datetime",
+          "text": "Evaluation date and time",
+          "type": "dateTime",
+          "required": true
+        }
+      ],
+      "linkId": "grp-context",
+      "text": "Context (registrar, institution, workstation — not itemised in this illustrative Questionnaire).",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "chronic-condition-summary",
+          "text": "Relevant chronic conditions",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-chronic",
+      "text": "Accompanying chronic diseases (programme list)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-untreated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, untreated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-hypertension",
+          "text": "Arterial hypertension",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-untreated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, untreated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-dyslipidemia",
+          "text": "Dyslipidemia",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-untreated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, untreated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-diabetes",
+          "text": "Diabetes",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-untreated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, untreated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-treated",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is, treated"
+              }
+            }
+          ],
+          "linkId": "risk-factor-glucose-tolerance",
+          "text": "Glucose tolerance disorder or fasting glucose disorder",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-present",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is"
+              }
+            }
+          ],
+          "linkId": "risk-factor-familial-hypercholesterolemia",
+          "text": "Familial hypercholesterolemia",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "smoking-never",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Did not smoke"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "smoking-current",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Smokes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "smoking-former",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Smoked before"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "risk-factor-smoking",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "smoking-current",
+                    "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "smoking-duration-years",
+              "text": "Smoking duration (years)",
+              "type": "decimal"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "risk-factor-smoking",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "smoking-current",
+                    "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "smoking-type",
+              "text": "Form of smoking",
+              "type": "coding",
+              "repeats": true
+            }
+          ],
+          "linkId": "risk-factor-smoking",
+          "text": "Smoking",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "pa-sufficient",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Sufficient"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pa-insufficient",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Insufficient"
+              }
+            }
+          ],
+          "linkId": "risk-factor-physical-activity",
+          "text": "Physical activity",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "nutrition-balanced",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Balanced"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "nutrition-unbalanced",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unbalanced"
+              }
+            }
+          ],
+          "linkId": "risk-factor-nutrition",
+          "text": "Nutrition",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "alcohol-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "alcohol-yes",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "alcohol-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "risk-factor-alcohol",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "alcohol-yes",
+                    "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "audit-c-score",
+              "text": "AUDIT / AUDIT-C test result interpretation",
+              "type": "decimal"
+            }
+          ],
+          "linkId": "risk-factor-alcohol",
+          "text": "Alcohol consumption",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "family-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "family-yes",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "family-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "risk-factor-family-cvd",
+          "text": "Family history of early CVD (men <55, women <60) or early cardiac death",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "family-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "family-yes",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "family-unknown",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Unknown"
+              }
+            }
+          ],
+          "linkId": "risk-factor-family-diabetes",
+          "text": "Family history of diabetes",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-risk-factors",
+      "text": "Risk factors",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "height-cm",
+          "text": "Height (cm)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "weight-kg",
+          "text": "Weight (kg)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "waist-cm",
+          "text": "Waist circumference (cm)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "bp-systolic",
+          "text": "Systolic blood pressure (mmHg)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "bp-diastolic",
+          "text": "Diastolic blood pressure (mmHg)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "heart-rate",
+          "text": "Heart rate (bpm)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "bmi-calculated",
+          "text": "BMI (kg/m², automatically calculated)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-present",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is"
+              }
+            }
+          ],
+          "linkId": "abdominal-obesity",
+          "text": "Abdominal obesity (waist circumference men ≥ 102 cm, women ≥ 88 cm)",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/rendering-xhtml",
+                "valueString": "Derived from WaistCircumference observation interpretation. Use interpretation code to indicate obesity status."
+              }
+            ]
+          },
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-present",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is"
+              }
+            }
+          ],
+          "linkId": "obesity-bmi",
+          "text": "Obesity (BMI ≥ 25)",
+          "type": "coding",
+          "required": true
+        }
+      ],
+      "linkId": "grp-objective",
+      "text": "Objective condition and investigations",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "lipid-tc",
+          "text": "Total cholesterol (mmol/l)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "lipid-hdl",
+          "text": "HDL cholesterol (mmol/l)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "lipid-non-hdl",
+          "text": "Non-HDL cholesterol (mmol/l)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "lipid-ldl",
+          "text": "LDL cholesterol (mmol/l)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "lipid-tg",
+          "text": "Triglycerides (mmol/l)",
+          "type": "decimal",
+          "required": true
+        }
+      ],
+      "linkId": "grp-lipidogram",
+      "text": "Lipidogram",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "score2-percent",
+          "text": "SCORE2 cardiovascular risk (%)",
+          "type": "decimal"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "risk-factor-no",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "No"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "risk-factor-present",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "There is"
+              }
+            }
+          ],
+          "linkId": "metabolic-syndrome",
+          "text": "Metabolic syndrome (at least 3 out of 5 NCEP ATP III criteria)",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "cvd-rg-small-medium",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Small to medium"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cvd-rg-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Large"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cvd-rg-very-large",
+                "system": "https://hl7.lt/fhir/cvd/CodeSystem/cvd-questionnaire-options",
+                "display": "Very large"
+              }
+            }
+          ],
+          "linkId": "risk-group-cvd",
+          "text": "Risk group for heart and vascular diseases",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "linkId": "albumin-creatinine-ratio",
+          "text": "Albumin/Creatinine ratio (for patients with diabetes)",
+          "type": "decimal"
+        }
+      ],
+      "linkId": "grp-risk-estimate",
+      "text": "Risk estimate and group",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "mig-encounter",
+          "text": "Encounter (visit id / context)",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-practitioner-role",
+          "text": "PractitionerRole (workplace / specialist)",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-heart-rate",
+          "text": "Heart rate (bpm)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "mig-bmi",
+          "text": "BMI (kg/m²)",
+          "type": "decimal"
+        },
+        {
+          "linkId": "mig-glucose-fasting",
+          "text": "Fasting glucose (mmol/l)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "mig-hba1c",
+          "text": "HbA1c (%)",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "mig-creatinine",
+          "text": "Creatinine",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "mig-egfr",
+          "text": "eGFR",
+          "type": "decimal",
+          "required": true
+        },
+        {
+          "linkId": "mig-alcohol",
+          "text": "Alcohol consumption (summary)",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-physical-activity",
+          "text": "Physical activity (summary)",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-nutrition",
+          "text": "Dietary habits / nutrition",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-family-cvd",
+          "text": "Family history of CVD",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-referral",
+          "text": "Referral (cardiology / service)",
+          "type": "string"
+        },
+        {
+          "linkId": "mig-follow-up-appointment",
+          "text": "Follow-up visit (appointment)",
+          "type": "dateTime"
+        },
+        {
+          "linkId": "mig-achievement-round",
+          "text": "Achievement evaluation (narrative)",
+          "type": "text"
+        },
+        {
+          "linkId": "mig-chronic-additional",
+          "text": "Additional chronic conditions",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-migration-md-parity",
+      "text": "Extended parity (migration/mapping.md — missing-concepts rows)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "ac-patient-context",
+          "text": "Patient (context note)",
+          "type": "string"
+        },
+        {
+          "linkId": "ac-practitioner-context",
+          "text": "Practitioner (context note)",
+          "type": "string"
+        },
+        {
+          "linkId": "ac-organization-context",
+          "text": "Organization (context note)",
+          "type": "string"
+        },
+        {
+          "linkId": "ac-ekg-summary",
+          "text": "ECG (summary)",
+          "type": "text"
+        },
+        {
+          "linkId": "ac-medication-context",
+          "text": "Medications (context)",
+          "type": "text"
+        },
+        {
+          "linkId": "ac-diabetes-duration",
+          "text": "Diabetes duration",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-ig-example-parity",
+      "text": "IG example parity (migration already-covered)",
+      "type": "group"
+    }
+  ],
+  "url": "https://hl7.lt/fhir/cvd/Questionnaire/questionnaire-cvd-risk-assessment",
+  "version": "0.1.0",
+  "name": "CvdRiskAssessment",
+  "title": "Patient cardiovascular disease risk assessment questionnaire",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "HL7 Lithuania",
+  "description": "Representative subset of programme fields: context, chronic diseases, key risk factors, anthropometrics, blood pressure, lipid panel, SCORE2, risk group, plus optional items aligned with input/fsh/migration/mapping.md (extended parity)."
+}

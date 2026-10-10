@@ -1,0 +1,18 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-colonoscopy-colon-bleeding-example",
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "698409004",
+        "system": "http://snomed.info/sct",
+        "display": "Colonoscopic control of bleeding (procedure)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "occurrenceDateTime": "2026-02-26"
+}

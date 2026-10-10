@@ -1,0 +1,831 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-pathology-lt-breast",
+  "item": [
+    {
+      "linkId": "grp-referral",
+      "text": "Referral to perform pathology test",
+      "type": "display"
+    },
+    {
+      "item": [
+        {
+          "linkId": "patient-personal-code",
+          "text": "Personal code",
+          "type": "string"
+        },
+        {
+          "linkId": "patient-name",
+          "text": "Name",
+          "type": "string"
+        },
+        {
+          "linkId": "patient-surname",
+          "text": "Surname",
+          "type": "string"
+        },
+        {
+          "linkId": "patient-birth-date",
+          "text": "Date of birth",
+          "type": "date"
+        },
+        {
+          "linkId": "patient-age",
+          "text": "Age",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "male",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Male"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "female",
+                "system": "http://hl7.org/fhir/administrative-gender",
+                "display": "Female"
+              }
+            }
+          ],
+          "linkId": "patient-gender",
+          "text": "Gender",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-patient",
+      "text": "Patient information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "specimen-collection-date",
+          "text": "Date of material collection",
+          "type": "dateTime"
+        },
+        {
+          "linkId": "specimen-shipment-date",
+          "text": "Shipment / formation date",
+          "type": "dateTime"
+        }
+      ],
+      "linkId": "grp-specimen-dates",
+      "text": "Specimen dates",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "diagnosis-icd10-code",
+          "text": "Clinical diagnosis ICD-10-AM code",
+          "type": "string"
+        },
+        {
+          "linkId": "diagnosis-name",
+          "text": "Clinical diagnosis name",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-clinical-diagnosis",
+      "text": "Clinical diagnosis",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "fixation-formalin",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Fixed (10% formalin buffered solution)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fixation-unfixed",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Unfixed"
+              }
+            }
+          ],
+          "linkId": "fixation-type",
+          "text": "Material fixation type",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-material",
+      "text": "Material fixation",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "proc-none",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No important information"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-biopsy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-excision",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Excision"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-other-operation",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Other operation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-chemotherapy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Chemotherapy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-radiation",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Radiation (breast)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "proc-immunotherapy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Immunotherapy"
+              }
+            }
+          ],
+          "linkId": "previous-procedures",
+          "text": "Key clinical data",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "linkId": "previous-procedures-other",
+          "text": "Other information",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-previous-procedures",
+      "text": "Previous procedures and key clinical data",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "special-tests-required",
+          "text": "Special tests required",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-special-tests",
+      "text": "Special tests",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "radiology-performed",
+          "text": "Radiological examination performed",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "71651007",
+                "system": "http://snomed.info/sct",
+                "display": "Mammography"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "450566007",
+                "system": "http://snomed.info/sct",
+                "display": "Digital breast tomosynthesis"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "16310003",
+                "system": "http://snomed.info/sct",
+                "display": "Ultrasonography"
+              }
+            }
+          ],
+          "linkId": "radiology-exam-type",
+          "text": "Examination type",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "linkId": "radiology-exam-date",
+          "text": "Examination date",
+          "type": "date"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "birads-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 0 – Incomplete examination"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 2 – Benign changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 3 – Possibly benign changes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 5 – Highly probable malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-right",
+          "text": "BI-RADS right breast",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "birads-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 0 – Incomplete examination"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 1 – No changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 2 – Benign changes found"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 3 – Possibly benign changes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "birads-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 5 – Highly probable malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-left",
+          "text": "BI-RADS left breast",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-radiological-data",
+      "text": "Radiological examination data",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "op-thick-needle-biopsy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Thick needle biopsy"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "op-excision",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Excision"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "op-other",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Other (free text)"
+              }
+            }
+          ],
+          "linkId": "operation-nature",
+          "text": "Nature of operation",
+          "type": "coding"
+        },
+        {
+          "linkId": "operation-other-details",
+          "text": "Other operation details",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-operation",
+      "text": "Operation details",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "sample-container-info",
+          "text": "Container information",
+          "type": "text"
+        },
+        {
+          "linkId": "sample-biopsy-location",
+          "text": "Biopsy location",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-histological-sample",
+      "text": "Description of histological sample / object",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "macro-biopsy-size",
+          "text": "Biopsy size (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "macro-fragment-details",
+          "text": "Fragment details",
+          "type": "text"
+        },
+        {
+          "linkId": "macro-notes",
+          "text": "Notes",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-macroscopic",
+      "text": "Description of macroscopic examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "microscopic-description",
+          "text": "Microscopic examination description",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-microscopic",
+      "text": "Description of microscopic examination",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ihc-negative",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Negative"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-weak",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Weak (+)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-moderate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Moderate (++)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-strong",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Strong (+++)"
+              }
+            }
+          ],
+          "linkId": "ihc-er-status",
+          "text": "Estrogen receptors ER",
+          "type": "coding"
+        },
+        {
+          "linkId": "ihc-er-percent",
+          "text": "ER expression in nuclei (%)",
+          "type": "quantity"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "ihc-negative",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Negative"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-weak",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Weak (+)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-moderate",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Moderate (++)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ihc-strong",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Strong (+++)"
+              }
+            }
+          ],
+          "linkId": "ihc-pr-status",
+          "text": "Progesterone receptors PR",
+          "type": "coding"
+        },
+        {
+          "linkId": "ihc-pr-percent",
+          "text": "PR expression in nuclei (%)",
+          "type": "quantity"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "her2-negative",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2: expression absent (0)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-low",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2: low immunohistochemical expression (1+)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-borderline",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2: expression borderline (2+)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-positive",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2: expression positive (3+)"
+              }
+            }
+          ],
+          "linkId": "ihc-her2-status",
+          "text": "HER2 status",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "her2-eval-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2 evaluation: 0+"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-eval-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2 evaluation: 1+"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-eval-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2 evaluation: 2+"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "her2-eval-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "HER2 evaluation: 3+"
+              }
+            }
+          ],
+          "linkId": "ihc-her2-evaluation",
+          "text": "HER2 evaluation",
+          "type": "coding"
+        },
+        {
+          "linkId": "ihc-ki67",
+          "text": "Ki67 proliferation index (%)",
+          "type": "quantity"
+        }
+      ],
+      "linkId": "grp-ihc",
+      "text": "Immunohistochemistry (IHC)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "fish-amplified",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: HER2 amplified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-amplified-clusters",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: amplified (clusters)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-co-amplified",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: co-amplified (HER2>=6, HER2/CEP17<2)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-borderline",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: borderline (4<=HER2<6, HER2/CEP17<2)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-monosomic",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: monosomic (HER2<4, HER2/CEP17>=2)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-negative",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: negative (HER2<4, HER2/CEP17<2)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "fish-not-evaluated",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "FISH: not to be evaluated"
+              }
+            }
+          ],
+          "linkId": "fish-result",
+          "text": "FISH result",
+          "type": "coding"
+        },
+        {
+          "linkId": "fish-her2-average",
+          "text": "HER2 average",
+          "type": "decimal"
+        },
+        {
+          "linkId": "fish-cep17-average",
+          "text": "Average CEP17",
+          "type": "decimal"
+        },
+        {
+          "linkId": "fish-her2-cep17-ratio",
+          "text": "HER2/CEP17 ratio",
+          "type": "decimal"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "cish-amplified",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "CISH/SISH: HER2 amplified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cish-not-amplified",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "CISH/SISH: HER2 not amplified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cish-not-evaluated",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "CISH/SISH: not to be evaluated"
+              }
+            }
+          ],
+          "linkId": "cish-sish-result",
+          "text": "CISH/SISH result",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-molecular",
+      "text": "Molecular studies",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "conclusion-who-diagnosis",
+          "text": "WHO Classification diagnosis",
+          "type": "text"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "grade-g1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "G1 (well-differentiated)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "grade-g2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "G2 (moderately differentiated)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "grade-g3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "G3 (poorly differentiated)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "grade-gx",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Gx (degree of differentiation undetermined)"
+              }
+            }
+          ],
+          "linkId": "conclusion-tumour-grade",
+          "text": "Tumour grade",
+          "type": "coding"
+        },
+        {
+          "linkId": "conclusion-tumour-size",
+          "text": "Tumour size (mm)",
+          "type": "quantity"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "lvi-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-0: not detected"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lvi-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-1: spreading, otherwise unclassified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lvi-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-2: only in lymphatic vessels and small blood vessels"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lvi-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-3: only in veins (large, thick-walled blood vessels)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lvi-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-4: present in both lymphatic vessels and veins"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lvi-9",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "pLVI-9: undetectable/unknown"
+              }
+            }
+          ],
+          "linkId": "conclusion-lvi",
+          "text": "Lymphovascular invasion",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion",
+      "type": "group"
+    }
+  ],
+  "name": "PathologyQuestionnaireLtBreast",
+  "title": "Questionnaire: Pathological Histological Examination ESPBI Form (LT Breast)",
+  "status": "active",
+  "url": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-pathology-lt-breast"
+}

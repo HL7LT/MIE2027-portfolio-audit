@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BowelPrepMethodVS",
+  "id": "bowel-prep-method",
+  "title": "Bowel Preparation Method",
+  "description": "Methods of bowel preparation timing for colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bowel-prep-method",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "prep-split-two-day",
+            "display": "Two-day split preparation"
+          },
+          {
+            "code": "prep-same-day",
+            "display": "Same-day non-split preparation"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "url" : "https://hl7.lt/fhir/breast/ImplementationGuide/lt.hl7.fhir.breast",
+  "name" : "LtBreast",
+  "title" : "Lithuanian Breast Diagnostics Implementation Guide",
+  "description" : "Lithuanian Breast Diagnostics Implementation Guide",
+  "status" : "draft",
+  "package-id" : "lt.hl7.fhir.breast",
+  "ig-ver" : "0.0.1",
+  "date" : "Thu, 08 Oct, 2026 21:47:05 +0300",
+  "dateISO8601" : "2026-10-08T21:47:05+03:00",
+  "errs" : 1,
+  "warnings" : 377,
+  "hints" : 630,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "5.0.0",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 1757962040
+}

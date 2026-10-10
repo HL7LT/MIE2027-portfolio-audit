@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "skl03-observation-comment-4",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "48767-8",
+        "system": "http://loinc.org",
+        "display": "Annotation comment [Interpretation] Narrative"
+      }
+    ]
+  },
+  "effectiveDateTime": "2014-10-27T20:40:40+02:00",
+  "valueString": "Pacientas laikosi rekomendacijų iš dalies, tęsiama stebėsena.",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

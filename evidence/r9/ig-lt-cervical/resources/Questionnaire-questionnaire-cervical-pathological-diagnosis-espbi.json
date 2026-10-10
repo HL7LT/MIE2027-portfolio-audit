@@ -1,0 +1,371 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cervical-pathological-diagnosis-espbi",
+  "url": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-pathological-diagnosis-espbi",
+  "title": "Questionnaire: Cervical Pathological Diagnosis ESPBI Form",
+  "description": "ESPBI form for structured coding of cervical pathological diagnoses using VLK, ICD-10-AM, ICD-O, and SNOMED CT classification systems.",
+  "item": [
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueString": "2235"
+            },
+            {
+              "valueString": "2236"
+            },
+            {
+              "valueString": "2234"
+            },
+            {
+              "valueString": "2237"
+            },
+            {
+              "valueString": "2238"
+            },
+            {
+              "valueString": "2239"
+            },
+            {
+              "valueString": "2240"
+            },
+            {
+              "valueString": "2241"
+            },
+            {
+              "valueString": "2242"
+            },
+            {
+              "valueString": "2243"
+            },
+            {
+              "valueString": "2244"
+            },
+            {
+              "valueString": "2246"
+            }
+          ],
+          "linkId": "diagnosisMapping.vlkServiceCode",
+          "text": "VLK service code",
+          "type": "string"
+        },
+        {
+          "linkId": "diagnosisMapping.icd10Code",
+          "text": "ICD-10-AM code",
+          "type": "string"
+        },
+        {
+          "linkId": "diagnosisMapping.icdOCode",
+          "text": "ICD-O morphology code",
+          "type": "string"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "30389008",
+                "system": "http://snomed.info/sct",
+                "display": "Normal tissue (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125513006",
+                "system": "http://snomed.info/sct",
+                "display": "Reactive cellular changes (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125154007",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen unsatisfactory for evaluation (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "400002005",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 1 (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "400049009",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1162893000",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "12478003",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "783212001",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1157180003",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus-associated adenocarcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1157177004",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus-associated adenocarcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "63264007",
+                "system": "http://snomed.info/sct",
+                "display": "Carcinosarcoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "14799000",
+                "system": "http://snomed.info/sct",
+                "display": "Neoplasm, metastatic (morphologic abnormality)"
+              }
+            }
+          ],
+          "linkId": "diagnosisMapping.snomedCode",
+          "text": "SNOMED CT concept ID",
+          "type": "coding"
+        },
+        {
+          "linkId": "diagnosisMapping.diagnosisDescription",
+          "text": "Diagnosis description",
+          "type": "string"
+        }
+      ],
+      "linkId": "diagnosisMapping",
+      "text": "Pathological diagnosis codes",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1228950008",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTX (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228951007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT0 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228953005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTis (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228959009",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1a (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228960004",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1a1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228961000",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1a2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228962007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1b (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229844006",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1b1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229845007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT1b2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229852009",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229853004",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT2a (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229856007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT2b (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229859000",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT3 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229860005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT3a (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229861009",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT3b (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1229864001",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pT4 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnmStaging.pT",
+          "text": "Pathological T category (pT)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1222641001",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer RX (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222638005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R0 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222639002",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1222640000",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R2 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnmStaging.pR",
+          "text": "Residual tumour (pR)",
+          "type": "coding"
+        }
+      ],
+      "linkId": "tnmStaging",
+      "text": "TNM staging codes",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1228848004",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G1 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228850007",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G2 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228851006",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade G3 (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1228845001",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer grade GX (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "grading.grade",
+          "text": "Histological grade",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grading",
+      "text": "Histological grading",
+      "type": "group"
+    }
+  ],
+  "status": "active",
+  "name": "CervicalPathologicalDiagnosisEspbi"
+}

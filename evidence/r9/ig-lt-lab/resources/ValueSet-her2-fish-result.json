@@ -1,0 +1,18 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "Her2FishResultVS",
+  "id": "her2-fish-result",
+  "title": "HER2 FISH/CISH/SISH Result Classification (VS)",
+  "description": "Classification of HER2 gene amplification results.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/her2-fish-result",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/her2-fish-result"
+      }
+    ]
+  }
+}

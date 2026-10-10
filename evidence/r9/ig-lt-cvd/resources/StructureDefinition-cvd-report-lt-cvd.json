@@ -1,0 +1,99 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cvd-report-lt-cvd",
+  "language": "en",
+  "url": "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-report-lt-cvd",
+  "version": "1.0.0",
+  "name": "CvdReportLtCvd",
+  "title": "DiagnosticReport: CVD programme report (LT)",
+  "status": "draft",
+  "experimental": true,
+  "publisher": "HL7 Lithuania",
+  "description": "Anchor resource for the Lithuanian CVD prevention programme document: links a **CvdComposition** narrative with **Observation** results (SCORE2, risk group, EKG, etc.). Modelled after the **ImagingReport** pattern (DiagnosticReport + Composition) but specialised for cardiovascular screening and prevention rather than imaging.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.identifier",
+        "path": "DiagnosticReport.identifier",
+        "min": 1
+      },
+      {
+        "id": "DiagnosticReport.category",
+        "path": "DiagnosticReport.category",
+        "short": "Diagnostic service section; CTG (Cardiology) reflects the cardiovascular nature of this screening programme report.",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "OTH",
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+              "display": "Other"
+            }
+          ]
+        }
+      },
+      {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "827181004",
+              "system": "http://snomed.info/sct",
+              "display": "Risk of cardiovascular disease"
+            }
+          ]
+        }
+      },
+      {
+        "id": "DiagnosticReport.subject",
+        "path": "DiagnosticReport.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-risk-assessment-lt-cvd",
+              "https://hl7.lt/fhir/cvd/StructureDefinition/risk-group-observation-lt-cvd",
+              "https://hl7.lt/fhir/cvd/StructureDefinition/risk-factor-status-lt-cvd",
+              "https://hl7.lt/fhir/cvd/StructureDefinition/ekg-lt-cvd",
+              "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.composition",
+        "path": "DiagnosticReport.composition",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/cvd/StructureDefinition/cvd-composition-lt-cvd"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

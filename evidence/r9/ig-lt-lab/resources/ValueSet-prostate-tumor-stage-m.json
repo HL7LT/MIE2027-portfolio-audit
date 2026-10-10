@@ -1,0 +1,45 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProstateTumorStageMLtLab",
+  "id": "prostate-tumor-stage-m",
+  "title": "Prostate Tumor Stage M",
+  "description": "Codes for prostate tumor stages M.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/prostate-tumor-stage-m",
+  "language": "en",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "385432009",
+            "display": "Not applicable"
+          },
+          {
+            "code": "1229901006",
+            "display": "cM0 (AJCC)"
+          },
+          {
+            "code": "1229903009",
+            "display": "cM1 (AJCC)"
+          },
+          {
+            "code": "1229917000",
+            "display": "pM1a (AJCC)"
+          },
+          {
+            "code": "1229920008",
+            "display": "pM1b (AJCC)"
+          },
+          {
+            "code": "1229923005",
+            "display": "pM1c (AJCC)"
+          }
+        ]
+      }
+    ]
+  }
+}

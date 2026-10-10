@@ -1,0 +1,25 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-male-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://hl7.lt/fhir/sid/lt-patient-pid",
+      "value": "39001010001"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Jonas"
+      ],
+      "family": "Pavardenis"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1990-01-01"
+}

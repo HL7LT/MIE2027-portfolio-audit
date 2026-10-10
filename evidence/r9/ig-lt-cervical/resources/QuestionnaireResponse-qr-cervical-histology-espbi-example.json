@@ -1,0 +1,476 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "qr-cervical-histology-espbi-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "48501019999"
+            }
+          ],
+          "linkId": "referral.personalCode",
+          "text": "Personal code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Janette"
+            }
+          ],
+          "linkId": "referral.name",
+          "text": "Name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Petrauskaite"
+            }
+          ],
+          "linkId": "referral.surname",
+          "text": "Surname"
+        },
+        {
+          "answer": [
+            {
+              "valueDate": "1985-01-01"
+            }
+          ],
+          "linkId": "referral.dateOfBirth",
+          "text": "Date of birth"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "N87.1 Moderate cervical dysplasia"
+            }
+          ],
+          "linkId": "referral.clinicalDiagnosis",
+          "text": "Clinical diagnosis (ICD-10 code with name)"
+        }
+      ],
+      "linkId": "referral",
+      "text": "Referral to perform pathology test"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "previousProcedures.hasPreviousProcedure",
+          "text": "Has previous procedure"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "50796003",
+                "system": "http://snomed.info/sct",
+                "display": "Cervical biopsy (procedure)"
+              }
+            }
+          ],
+          "linkId": "previousProcedures.procedureType",
+          "text": "Type of previous procedure"
+        },
+        {
+          "answer": [
+            {
+              "valueDate": "2024-11-20"
+            }
+          ],
+          "linkId": "previousProcedures.procedureDate",
+          "text": "Procedure date"
+        }
+      ],
+      "linkId": "previousProcedures",
+      "text": "Previous procedures history"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "392003006",
+                "system": "http://snomed.info/sct",
+                "display": "Colposcopy (procedure)"
+              }
+            }
+          ],
+          "linkId": "colposcopyData.colposcopyStatus",
+          "text": "Colposcopy status"
+        },
+        {
+          "answer": [
+            {
+              "valueInteger": 7
+            }
+          ],
+          "linkId": "colposcopyData.swedeScore",
+          "text": "Swede score (0-10)"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "125152006",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen satisfactory for evaluation (finding)"
+              }
+            }
+          ],
+          "linkId": "colposcopyData.adequacy",
+          "text": "Adequacy of colposcopy"
+        }
+      ],
+      "linkId": "colposcopyData",
+      "text": "Colposcopy examination data"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "54535009",
+                "system": "http://snomed.info/sct",
+                "display": "Cone biopsy of cervix (procedure)"
+              }
+            }
+          ],
+          "linkId": "biopsyProcedure.procedureType",
+          "text": "Procedure type"
+        }
+      ],
+      "linkId": "biopsyProcedure",
+      "text": "Nature of operation/procedure"
+    },
+    {
+      "item": [
+        {
+          "item": [
+            {
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "127900007",
+                    "system": "http://snomed.info/sct",
+                    "display": "Structure of left superior quadrant of uterine cervix"
+                  }
+                }
+              ],
+              "linkId": "biopsySites.containers.biopsySite",
+              "text": "Biopsy site"
+            },
+            {
+              "answer": [
+                {
+                  "valueString": "Cone biopsy specimen from transformation zone, left superior quadrant"
+                }
+              ],
+              "linkId": "biopsySites.containers.anatomicalNotes",
+              "text": "Anatomical notes"
+            },
+            {
+              "answer": [
+                {
+                  "valueInteger": 1
+                }
+              ],
+              "linkId": "biopsySites.containers.numberOfFragments",
+              "text": "Number of fragments"
+            }
+          ],
+          "linkId": "biopsySites.containers",
+          "text": "Container"
+        }
+      ],
+      "linkId": "biopsySites",
+      "text": "Biopsy site description"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDecimal": 18
+            }
+          ],
+          "linkId": "macroscopic.tissueSizeX",
+          "text": "Tissue size X (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 15
+            }
+          ],
+          "linkId": "macroscopic.tissueSizeY",
+          "text": "Tissue size Y (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 12
+            }
+          ],
+          "linkId": "macroscopic.tissueSizeZ",
+          "text": "Tissue size Z (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 16
+            }
+          ],
+          "linkId": "macroscopic.ectocervixSizeX",
+          "text": "Ectocervix size X (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueDecimal": 14
+            }
+          ],
+          "linkId": "macroscopic.ectocervixSizeY",
+          "text": "Ectocervix size Y (mm)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Cone biopsy specimen, grey-white tissue, well-oriented with ink marking at 12 o'clock position"
+            }
+          ],
+          "linkId": "macroscopic.notes",
+          "text": "Notes"
+        }
+      ],
+      "linkId": "macroscopic",
+      "text": "Macroscopic examination"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Sections show high-grade squamous intraepithelial neoplasia (CIN2) involving the transformation zone. The dysplastic epithelium extends through the upper two-thirds of the squamous epithelium with increased nuclear-to-cytoplasmic ratio, nuclear hyperchromasia, and mitotic figures. No stromal invasion identified. Endocervical glands are unremarkable."
+            }
+          ],
+          "linkId": "microscopic.description",
+          "text": "Microscopic description"
+        }
+      ],
+      "linkId": "microscopic",
+      "text": "Microscopic examination"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "400049009",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous intraepithelial neoplasia grade 2 (morphologic abnormality)"
+              }
+            }
+          ],
+          "linkId": "conclusion.diagnosisCategory",
+          "text": "Diagnosis category"
+        }
+      ],
+      "linkId": "conclusion",
+      "text": "Conclusion / Diagnosis"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "pLVI.status",
+          "text": "pLVI status"
+        }
+      ],
+      "linkId": "pLVI",
+      "text": "Lymphovascular invasion (pLVI)"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "310342002",
+                "system": "http://snomed.info/sct",
+                "display": "Excision - clear margin (finding)"
+              }
+            }
+          ],
+          "linkId": "margins.marginStatus",
+          "text": "Margin status"
+        }
+      ],
+      "linkId": "margins",
+      "text": "Surgical margins"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1228953005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer pTis (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnm.pT",
+          "text": "pT stage"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "1222638005",
+                "system": "http://snomed.info/sct",
+                "display": "American Joint Committee on Cancer R0 (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "tnm.pR",
+          "text": "pR stage"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "D06.9"
+            }
+          ],
+          "linkId": "tnm.icd10Code",
+          "text": "ICD-10 code"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "400049009"
+            }
+          ],
+          "linkId": "tnm.snomedCode",
+          "text": "SNOMED CT code"
+        }
+      ],
+      "linkId": "tnm",
+      "text": "TNM staging"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Petras"
+            }
+          ],
+          "linkId": "conductedBy.conductedName",
+          "text": "Name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Kazlauskas"
+            }
+          ],
+          "linkId": "conductedBy.conductedSurname",
+          "text": "Surname"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "MED-LT-54321"
+            }
+          ],
+          "linkId": "conductedBy.conductedPressNumber",
+          "text": "Medical press number"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-04-15T14:30:00+03:00"
+            }
+          ],
+          "linkId": "conductedBy.responseDate",
+          "text": "Response date"
+        }
+      ],
+      "linkId": "conductedBy",
+      "text": "Conducted by"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueString": "Ruta"
+            }
+          ],
+          "linkId": "confirmedBy.confirmedName",
+          "text": "Name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Jonaite"
+            }
+          ],
+          "linkId": "confirmedBy.confirmedSurname",
+          "text": "Surname"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "MED-LT-67890"
+            }
+          ],
+          "linkId": "confirmedBy.confirmedPressNumber",
+          "text": "Medical press number"
+        },
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-04-16T09:00:00+03:00"
+            }
+          ],
+          "linkId": "confirmedBy.confirmationDate",
+          "text": "Confirmation date"
+        }
+      ],
+      "linkId": "confirmedBy",
+      "text": "Confirmed by"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-histology-espbi",
+  "status": "completed",
+  "authored": "2025-04-15T14:30:00+03:00",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "author": {
+    "reference": "Practitioner/practitioner-example"
+  }
+}

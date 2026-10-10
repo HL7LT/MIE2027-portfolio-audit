@@ -1,0 +1,19 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "LungRadsModifier",
+  "id": "lung-rads-modifier",
+  "title": "LUNG-RADS Assessment Modifier",
+  "description": "Additional modifier used together with the main LUNG-RADS assessment\ncategory in the Lithuanian lung cancer early diagnosis programme.\n\nThe modifier S indicates clinically significant incidental findings that\ncontribute to the overall assessment string, for example 0S or 4AS.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/lung-rads-modifier",
+  "concept": [
+    {
+      "code": "S",
+      "display": "Modifier S – Significant incidental finding"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 1
+}

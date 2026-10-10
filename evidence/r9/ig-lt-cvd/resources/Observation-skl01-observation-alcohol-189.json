@@ -1,0 +1,39 @@
+{
+  "resourceType": "Observation",
+  "id": "skl01-observation-alcohol-189",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/base/StructureDefinition/observation-lt"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "exam",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Exam"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "897148007",
+        "system": "http://snomed.info/sct",
+        "display": "Alcoholic beverage intake (observable entity)"
+      }
+    ]
+  },
+  "effectiveDateTime": "2014-10-28T08:01:00.000+02:00",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  }
+}

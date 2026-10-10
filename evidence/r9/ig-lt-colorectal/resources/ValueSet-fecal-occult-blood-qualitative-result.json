@@ -1,0 +1,28 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FecalOccultBloodQualitativeResultVS",
+  "id": "fecal-occult-blood-qualitative-result",
+  "title": "FOBT Qualitative Result",
+  "description": "Qualitative result values for fecal occult blood testing.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/fecal-occult-blood-qualitative-result",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "260373001",
+            "display": "Detected (qualifier value)"
+          },
+          {
+            "code": "260415000",
+            "display": "Not detected (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

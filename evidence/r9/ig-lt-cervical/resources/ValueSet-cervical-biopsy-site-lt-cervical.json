@@ -1,0 +1,40 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "CervicalBiopsySiteLtCervicalVS",
+  "id": "cervical-biopsy-site-lt-cervical",
+  "title": "Cervical Biopsy Site (LT Cervical)",
+  "description": "Anatomical localization of cervical biopsy sampling sites during colposcopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/cervical-biopsy-site",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "127900007",
+            "display": "Structure of left superior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127902004",
+            "display": "Structure of right superior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127901006",
+            "display": "Structure of right inferior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "127899002",
+            "display": "Structure of left inferior quadrant of uterine cervix (body structure)"
+          },
+          {
+            "code": "56739004",
+            "display": "Structure of cervical canal of uterus (body structure)"
+          }
+        ]
+      }
+    ]
+  }
+}

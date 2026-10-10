@@ -1,0 +1,1047 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-cervical-cytology-hpv-espbi",
+  "url": "https://hl7.lt/fhir/cervical/Questionnaire/questionnaire-cervical-cytology-hpv-espbi",
+  "title": "Cervical Cytology and HPV ESPBI Form",
+  "description": "ESPBI form for cervical cancer screening: HPV testing and cytological examination. Based on ADP Table 7.1 (cervical cancer prevention program cytology and HPV kit).",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "facility.name",
+          "text": "Institution name",
+          "type": "string"
+        },
+        {
+          "linkId": "facility.code",
+          "text": "Institution code",
+          "type": "string"
+        },
+        {
+          "linkId": "facility.division",
+          "text": "Division / department",
+          "type": "string"
+        }
+      ],
+      "linkId": "facility",
+      "text": "Healthcare institution",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "patient.personalCode",
+          "text": "Personal code",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient.name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient.surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient.address",
+          "text": "Address",
+          "type": "string"
+        }
+      ],
+      "linkId": "patient",
+      "text": "Patient identification",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "referringDoctor.name",
+          "text": "Doctor name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "referringDoctor.phone",
+          "text": "Phone number",
+          "type": "string"
+        },
+        {
+          "linkId": "referringDoctor.email",
+          "text": "Email",
+          "type": "string"
+        }
+      ],
+      "linkId": "referringDoctor",
+      "text": "Referring physician",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "416107004",
+                "system": "http://snomed.info/sct",
+                "display": "Cervical cytology test (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "609040007",
+                "system": "http://snomed.info/sct",
+                "display": "Microscopic cytologic examination of smear of specimen from female genital tract prepared using Papanicolaou technique (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "35904009",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus deoxyribonucleic acid detection (procedure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "395126005",
+                "system": "http://snomed.info/sct",
+                "display": "Immunocytochemistry test (procedure)"
+              }
+            }
+          ],
+          "linkId": "orderedTest.testType",
+          "text": "Test type",
+          "type": "coding"
+        }
+      ],
+      "linkId": "orderedTest",
+      "text": "Commissioned test",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "sampleCollection.collectionDate",
+          "text": "Collection date and time",
+          "type": "dateTime",
+          "required": true
+        },
+        {
+          "linkId": "sampleCollection.sampleCode",
+          "text": "Sample code",
+          "type": "string"
+        },
+        {
+          "linkId": "sampleCollection.collectorName",
+          "text": "Collector name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sampleCollection.collectorSurname",
+          "text": "Collector surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sampleCollection.professionalQualification",
+          "text": "Professional qualification",
+          "type": "string"
+        }
+      ],
+      "linkId": "sampleCollection",
+      "text": "Sample collection",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "code": [
+            {
+              "code": "161713000",
+              "system": "http://snomed.info/sct",
+              "display": "Last menstrual period - First day (observable entity)"
+            }
+          ],
+          "linkId": "clinicalHistory.cycleDay",
+          "text": "Day of menstrual cycle",
+          "type": "integer"
+        },
+        {
+          "code": [
+            {
+              "code": "276477006",
+              "system": "http://snomed.info/sct",
+              "display": "Menopause observation"
+            }
+          ],
+          "linkId": "clinicalHistory.menopauseAge",
+          "text": "Age at menopause (years)",
+          "type": "integer"
+        },
+        {
+          "code": [
+            {
+              "code": "134651000119108",
+              "system": "http://snomed.info/sct",
+              "display": "History of estrogen therapy (situation)"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.hormoneTherapy",
+          "text": "Hormone therapy",
+          "type": "coding"
+        },
+        {
+          "code": [
+            {
+              "code": "77386006",
+              "system": "http://snomed.info/sct",
+              "display": "Pregnancy (finding)"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.pregnancy",
+          "text": "Pregnancy",
+          "type": "coding"
+        },
+        {
+          "code": [
+            {
+              "code": "225604004",
+              "system": "http://snomed.info/sct",
+              "display": "Lactation established (finding)"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.lactation",
+          "text": "Lactation",
+          "type": "coding"
+        },
+        {
+          "code": [
+            {
+              "code": "429479009",
+              "system": "http://snomed.info/sct",
+              "display": "History of radiation therapy (situation)"
+            }
+          ],
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes (qualifier value)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No (qualifier value)"
+                  }
+                }
+              ],
+              "linkId": "clinicalHistory.radiotherapy.status",
+              "text": "Radiotherapy received",
+              "type": "coding"
+            },
+            {
+              "linkId": "clinicalHistory.radiotherapy.yearsAgo",
+              "text": "Years ago",
+              "type": "integer"
+            }
+          ],
+          "linkId": "clinicalHistory.radiotherapy",
+          "text": "Radiotherapy",
+          "type": "group"
+        },
+        {
+          "code": [
+            {
+              "code": "161653008",
+              "system": "http://snomed.info/sct",
+              "display": "History of chemotherapy (situation)"
+            }
+          ],
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes (qualifier value)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No (qualifier value)"
+                  }
+                }
+              ],
+              "linkId": "clinicalHistory.chemotherapy.status",
+              "text": "Chemotherapy received",
+              "type": "coding"
+            },
+            {
+              "linkId": "clinicalHistory.chemotherapy.yearsAgo",
+              "text": "Years ago",
+              "type": "integer"
+            }
+          ],
+          "linkId": "clinicalHistory.chemotherapy",
+          "text": "Chemotherapy",
+          "type": "group"
+        },
+        {
+          "code": [
+            {
+              "code": "312081001",
+              "system": "http://snomed.info/sct",
+              "display": "Uses intrauterine device contraception (finding)"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373066001",
+                "system": "http://snomed.info/sct",
+                "display": "Yes (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373067005",
+                "system": "http://snomed.info/sct",
+                "display": "No (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "clinicalHistory.iud",
+          "text": "Intrauterine device (IUD)",
+          "type": "coding"
+        },
+        {
+          "code": [
+            {
+              "code": "108941000119102",
+              "system": "http://snomed.info/sct",
+              "display": "History of cervical conization (situation)"
+            }
+          ],
+          "item": [
+            {
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "373066001",
+                    "system": "http://snomed.info/sct",
+                    "display": "Yes (qualifier value)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "373067005",
+                    "system": "http://snomed.info/sct",
+                    "display": "No (qualifier value)"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "261665006",
+                    "system": "http://snomed.info/sct",
+                    "display": "Unknown (qualifier value)"
+                  }
+                }
+              ],
+              "linkId": "clinicalHistory.conization.status",
+              "text": "Conization performed",
+              "type": "coding"
+            },
+            {
+              "linkId": "clinicalHistory.conization.date",
+              "text": "Date of conization",
+              "type": "date"
+            }
+          ],
+          "linkId": "clinicalHistory.conization",
+          "text": "Conization",
+          "type": "group"
+        }
+      ],
+      "linkId": "clinicalHistory",
+      "text": "Other clinical information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "36973007",
+                "system": "http://snomed.info/sct",
+                "display": "Endocervical structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "28349006",
+                "system": "http://snomed.info/sct",
+                "display": "Exocervical structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "76784001",
+                "system": "http://snomed.info/sct",
+                "display": "Vaginal structure (body structure)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "45292006",
+                "system": "http://snomed.info/sct",
+                "display": "Vulval structure (body structure)"
+              }
+            }
+          ],
+          "linkId": "sampleSite.site",
+          "text": "Anatomical site",
+          "type": "coding",
+          "repeats": true
+        }
+      ],
+      "linkId": "sampleSite",
+      "text": "Sample collection site",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "171258008",
+                "system": "http://snomed.info/sct",
+                "display": "Up-to-date with immunizations (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "171259000",
+                "system": "http://snomed.info/sct",
+                "display": "Not up to date with immunizations (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "171278000",
+                "system": "http://snomed.info/sct",
+                "display": "Immunization status unknown (finding)"
+              }
+            }
+          ],
+          "linkId": "hpvVaccination.status",
+          "text": "Vaccination status",
+          "type": "coding"
+        }
+      ],
+      "linkId": "hpvVaccination",
+      "text": "HPV vaccination status",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "77851000146104",
+                "system": "http://snomed.info/sct",
+                "display": "High risk human papillomavirus not detected (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125154007",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen unsatisfactory for evaluation (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "720005005",
+                "system": "http://snomed.info/sct",
+                "display": "Human papillomavirus deoxyribonucleic acid detected, high risk on cervical specimen (finding)"
+              }
+            }
+          ],
+          "linkId": "hpvResults.overallResult",
+          "text": "Overall HPV result",
+          "type": "coding"
+        },
+        {
+          "item": [
+            {
+              "code": [
+                {
+                  "code": "115326008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus, type 16 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv16",
+              "text": "HPV 16",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "115327004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus, type 18 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv18",
+              "text": "HPV 18",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269503003",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 31 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv31",
+              "text": "HPV 31",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269504009",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 33 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv33",
+              "text": "HPV 33",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269505005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 35 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv35",
+              "text": "HPV 35",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269506006",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 39 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv39",
+              "text": "HPV 39",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269507002",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 45 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv45",
+              "text": "HPV 45",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269508007",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 51 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv51",
+              "text": "HPV 51",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269509004",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 52 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv52",
+              "text": "HPV 52",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269510009",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 56 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv56",
+              "text": "HPV 56",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269511008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 58 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv58",
+              "text": "HPV 58",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269512001",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 59 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv59",
+              "text": "HPV 59",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269513006",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 66 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv66",
+              "text": "HPV 66",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "1269514000",
+                  "system": "http://snomed.info/sct",
+                  "display": "Human papillomavirus type 68 (organism)"
+                }
+              ],
+              "linkId": "hpvResults.genotype.hpv68",
+              "text": "HPV 68",
+              "type": "boolean"
+            }
+          ],
+          "linkId": "hpvResults.genotype",
+          "text": "Detected HPV genotypes",
+          "type": "group"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "highest",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+                "display": "Highest risk genotype group (16, 18)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "medium",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+                "display": "Medium-risk genotype group (31, 33, 35, 45, 52, 58)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lower",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+                "display": "Lower risk genotype group (39, 51, 56, 59, 68)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "low",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/hpv-risk-group",
+                "display": "Low-risk HPV genotype group (53, 66, others)"
+              }
+            }
+          ],
+          "linkId": "hpvResults.riskGroup",
+          "text": "HPV risk group",
+          "type": "coding"
+        }
+      ],
+      "linkId": "hpvResults",
+      "text": "HPV test results",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "cytologyResults.institution",
+          "text": "Examining institution",
+          "type": "string",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "1179252003",
+                "system": "http://snomed.info/sct",
+                "display": "Slide submitted as specimen (specimen)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "430346005",
+                "system": "http://snomed.info/sct",
+                "display": "Liquid based cytologic material (specimen)"
+              }
+            }
+          ],
+          "linkId": "cytologyResults.specimenType",
+          "text": "Specimen type",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "125152006",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen satisfactory for evaluation (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373880007",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen rejected / not processed (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125160007",
+                "system": "http://snomed.info/sct",
+                "display": "Unsatisfactory for evaluation due to broken slide (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "125159002",
+                "system": "http://snomed.info/sct",
+                "display": "Specimen unlabeled (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "281268007",
+                "system": "http://snomed.info/sct",
+                "display": "Insufficient specimen (finding)"
+              }
+            }
+          ],
+          "linkId": "cytologyResults.suitability",
+          "text": "Specimen suitability",
+          "type": "coding"
+        },
+        {
+          "item": [
+            {
+              "code": [
+                {
+                  "code": "168418000",
+                  "system": "http://snomed.info/sct",
+                  "display": "Cervical smear - candida (finding)"
+                }
+              ],
+              "linkId": "cytologyResults.pathogens.candida",
+              "text": "Candida",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "168417005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Cervical smear - trichomonas (finding)"
+                }
+              ],
+              "linkId": "cytologyResults.pathogens.trichomonas",
+              "text": "Trichomonas",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "168422005",
+                  "system": "http://snomed.info/sct",
+                  "display": "Cervical smear - actinomyces (finding)"
+                }
+              ],
+              "linkId": "cytologyResults.pathogens.actinomyces",
+              "text": "Actinomyces",
+              "type": "boolean"
+            },
+            {
+              "code": [
+                {
+                  "code": "373875003",
+                  "system": "http://snomed.info/sct",
+                  "display": "Cellular changes consistent with Herpes simplex (finding)"
+                }
+              ],
+              "linkId": "cytologyResults.pathogens.herpes",
+              "text": "Herpes simplex",
+              "type": "boolean"
+            }
+          ],
+          "linkId": "cytologyResults.pathogens",
+          "text": "Pathogen findings",
+          "type": "group"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "373887005",
+                "system": "http://snomed.info/sct",
+                "display": "Negative for intraepithelial lesion or malignancy (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "441087007",
+                "system": "http://snomed.info/sct",
+                "display": "Atypical squamous cells of undetermined significance on cervical Papanicolaou smear (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "62051000119105",
+                "system": "http://snomed.info/sct",
+                "display": "Low grade squamous intraepithelial lesion on cervical Papanicolaou smear (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "441088002",
+                "system": "http://snomed.info/sct",
+                "display": "Atypical squamous cells on cervical Papanicolaou smear cannot exclude high grade squamous intraepithelial lesion (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "62061000119107",
+                "system": "http://snomed.info/sct",
+                "display": "High grade squamous intraepithelial lesion on cervical Papanicolaou smear (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1162767002",
+                "system": "http://snomed.info/sct",
+                "display": "Squamous cell carcinoma (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373883009",
+                "system": "http://snomed.info/sct",
+                "display": "Atypical glandular cells, favor neoplastic (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "51642000",
+                "system": "http://snomed.info/sct",
+                "display": "Adenocarcinoma in situ (morphologic abnormality)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "373885002",
+                "system": "http://snomed.info/sct",
+                "display": "Endometrial cells in a woman forty years of age or older, negative for squamous intraepithelial lesion (finding)"
+              }
+            }
+          ],
+          "linkId": "cytologyResults.bethesdaDiagnosis",
+          "text": "Bethesda diagnosis",
+          "type": "coding"
+        }
+      ],
+      "linkId": "cytologyResults",
+      "text": "Cytology examination results",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "10828004",
+                "system": "http://snomed.info/sct",
+                "display": "Positive (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "260385009",
+                "system": "http://snomed.info/sct",
+                "display": "Negative (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "immunocytochemistry.p16Ki67Result",
+          "text": "p16/Ki-67 dual staining result",
+          "type": "coding"
+        }
+      ],
+      "linkId": "immunocytochemistry",
+      "text": "Immunocytochemistry (p16/Ki-67)",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "conductedBy.name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.pressNumber",
+          "text": "Press number (stamp)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conductedBy.responseDate",
+          "text": "Response date",
+          "type": "dateTime",
+          "required": true
+        }
+      ],
+      "linkId": "conductedBy",
+      "text": "Test conducted by",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "confirmedBy.name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.surname",
+          "text": "Surname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.pressNumber",
+          "text": "Press number (stamp)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "confirmedBy.confirmationDate",
+          "text": "Confirmation date",
+          "type": "dateTime",
+          "required": true
+        }
+      ],
+      "linkId": "confirmedBy",
+      "text": "Test confirmed by",
+      "type": "group"
+    }
+  ],
+  "name": "CervicalCytologyHpvESPBI",
+  "status": "active"
+}

@@ -1,0 +1,27 @@
+{
+  "resourceType": "List",
+  "id": "skl01-list-meds-statement",
+  "subject": [
+    {
+      "reference": "Patient/patient-male-example"
+    }
+  ],
+  "entry": [
+    {
+      "item": {
+        "reference": "MedicationStatement/skl01-medication-statement-32"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "104205-0",
+        "system": "http://loinc.org",
+        "display": "Patient generated medication list [Identifier] Episode Pharmacy"
+      }
+    ]
+  },
+  "mode": "working",
+  "status": "current"
+}

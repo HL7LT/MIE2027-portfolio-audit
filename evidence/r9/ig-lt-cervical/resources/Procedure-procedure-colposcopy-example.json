@@ -1,0 +1,30 @@
+{
+  "resourceType": "Procedure",
+  "id": "procedure-colposcopy-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/cervical/StructureDefinition/colposcopy-procedure-lt-cervical"
+    ]
+  },
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/practitioner-example"
+      }
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "392003006",
+        "system": "http://snomed.info/sct",
+        "display": "Colposcopy (procedure)"
+      }
+    ]
+  },
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-female-example"
+  },
+  "occurrenceDateTime": "2025-02-10"
+}

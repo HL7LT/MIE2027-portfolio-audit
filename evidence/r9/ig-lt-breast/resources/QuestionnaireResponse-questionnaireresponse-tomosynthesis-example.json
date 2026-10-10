@@ -1,0 +1,192 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-tomosynthesis-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueDateTime": "2025-10-22T13:30:00Z"
+            }
+          ],
+          "linkId": "exam-date",
+          "text": "Date of test"
+        },
+        {
+          "linkId": "test-indication",
+          "text": "Test indication – BI-RADS 0 (incomplete assessment from mammography)"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Rima Kazlauskiene"
+            }
+          ],
+          "linkId": "technologist-name",
+          "text": "Technologist name"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Hologic Selenia Dimensions 3D"
+            }
+          ],
+          "linkId": "equipment-name",
+          "text": "Equipment name"
+        },
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 0.0035,
+                "code": "Gy",
+                "system": "http://unitsofmeasure.org",
+                "unit": "Gy"
+              }
+            }
+          ],
+          "linkId": "radiation-dose",
+          "text": "Radiation dose (Gy)"
+        }
+      ],
+      "linkId": "grp-exam-context",
+      "text": "Examination context"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Yes"
+              }
+            }
+          ],
+          "linkId": "findings-present",
+          "text": "Findings present"
+        },
+        {
+          "item": [
+            {
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "uoq",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Upper outer quadrant"
+                  }
+                }
+              ],
+              "linkId": "right-quadrant",
+              "text": "Localization by quadrant"
+            },
+            {
+              "answer": [
+                {
+                  "valueCoding": {
+                    "code": "finding-formation",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                    "display": "Formation (mass)"
+                  }
+                }
+              ],
+              "linkId": "right-entity",
+              "text": "Change entity"
+            },
+            {
+              "answer": [
+                {
+                  "valueQuantity": {
+                    "value": 14,
+                    "code": "mm",
+                    "system": "http://unitsofmeasure.org",
+                    "unit": "mm"
+                  }
+                }
+              ],
+              "linkId": "right-size",
+              "text": "Size (mm)"
+            }
+          ],
+          "linkId": "grp-findings-right",
+          "text": "Right breast findings"
+        },
+        {
+          "linkId": "grp-findings-left",
+          "text": "Left breast findings"
+        }
+      ],
+      "linkId": "grp-findings",
+      "text": "Findings"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "birads-4",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "BI-RADS 4 – Suspicious malignant finding"
+              }
+            }
+          ],
+          "linkId": "birads-conclusion",
+          "text": "BI-RADS conclusion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "rec-biopsy",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Biopsy indicated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "rec-ultrasound",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/breast-questionnaire-options",
+                "display": "Ultrasound examination"
+              }
+            }
+          ],
+          "linkId": "recommendations",
+          "text": "Recommendations"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Vilniaus universiteto ligonines Santaros klinikos"
+            }
+          ],
+          "linkId": "facility-name",
+          "text": "Facility"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Dr. Jonas Petrauskas"
+            }
+          ],
+          "linkId": "doctor-name",
+          "text": "Doctor"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/breast/Questionnaire/questionnaire-tomosynthesis-lt-breast",
+  "status": "completed",
+  "authored": "2025-10-22T14:15:00Z",
+  "subject": {
+    "reference": "Patient/example-patient-female"
+  },
+  "author": {
+    "reference": "Practitioner/example-practitioner"
+  }
+}

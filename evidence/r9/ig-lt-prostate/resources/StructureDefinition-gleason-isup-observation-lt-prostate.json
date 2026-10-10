@@ -1,0 +1,162 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gleason-isup-observation-lt-prostate",
+  "url": "https://hl7.lt/fhir/prostate/StructureDefinition/gleason-isup-observation-lt-prostate",
+  "name": "GleasonIsupObservationLtProstate",
+  "title": "Observation: Gleason / ISUP Grade Group",
+  "status": "draft",
+  "publisher": "HL7 Lithuania",
+  "description": "Histopathological grading of prostate cancer using Gleason score and ISUP Grade Group.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/observation-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.status",
+        "path": "Observation.status",
+        "patternCode": "final"
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "372278000",
+              "system": "http://snomed.info/sct",
+              "display": "Gleason score (observable entity)"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/prostate/StructureDefinition/lesion-lt-prostate"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/prostate-isup-grade-group"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Observation.component:pattern4Percent",
+        "path": "Observation.component",
+        "sliceName": "pattern4Percent",
+        "short": "Pattern 4 quantity as percentage (0-100). Applicable to GG2, GG3, GG4, GG5.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:pattern4Percent.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "1287180006",
+              "system": "http://snomed.info/sct",
+              "display": "Percentage of primary malignant neoplasm of prostate with Gleason histologic pattern 4"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:pattern4Percent.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:pattern5Percent",
+        "path": "Observation.component",
+        "sliceName": "pattern5Percent",
+        "short": "Pattern 5 quantity as percentage (0-100). Applicable to GG4 and GG5.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:pattern5Percent.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "363787002:{370130000=118596002,370132008=30766002,370134009=123029007,246514001=415067009,704319004=41216001,704325000=1187332001,704321009=1234914003,704327008=309133004,246501002=106241006,704326004=369774002}",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:pattern5Percent.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "radiation-dose-lt-lab",
+  "url": "https://hl7.lt/fhir/lab/StructureDefinition/radiation-dose-lt-lab",
+  "name": "RadiationDoseLtLab",
+  "title": "Observation: Radiation Dose (LT Lab)",
+  "status": "active",
+  "description": "Radiation dose observation for imaging procedures, based on the EU Imaging Radiation Dose profile. Records dose exposure during CT, fluoroscopy, or other radiological examinations.",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

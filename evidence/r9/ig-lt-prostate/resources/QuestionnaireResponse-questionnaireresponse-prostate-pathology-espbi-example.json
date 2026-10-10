@@ -1,0 +1,200 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "questionnaireresponse-prostate-pathology-espbi-example",
+  "item": [
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueQuantity": {
+                "value": 22,
+                "code": "mm",
+                "system": "http://unitsofmeasure.org",
+                "unit": "mm"
+              }
+            }
+          ],
+          "linkId": "bioptate-length-mm"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "specimen-satisfactory",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Specimen satisfactory for evaluation"
+              }
+            }
+          ],
+          "linkId": "specimen-quality"
+        }
+      ],
+      "linkId": "grp-specimen"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "treatment-unknown",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Treatment effect unknown"
+              }
+            }
+          ],
+          "linkId": "treatment-effect"
+        }
+      ],
+      "linkId": "grp-treatment-effect"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "hist-acinar",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Acinar adenocarcinoma (conventional)"
+              }
+            }
+          ],
+          "linkId": "histological-type"
+        },
+        {
+          "answer": [
+            {
+              "valueString": "Acinar pattern; correlate with MRI."
+            }
+          ],
+          "linkId": "histological-comment"
+        }
+      ],
+      "linkId": "grp-histology"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "isup-gg1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "ISUP Grade Group 1 (Gleason 3+3)"
+              }
+            }
+          ],
+          "linkId": "isup-grade-group"
+        }
+      ],
+      "linkId": "grp-grade"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "idc-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Intraductal carcinoma not identified"
+              }
+            }
+          ],
+          "linkId": "idc-status"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "cribriform-na",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Cribriform not applicable"
+              }
+            }
+          ],
+          "linkId": "cribriform-status"
+        }
+      ],
+      "linkId": "grp-idc-cribriform"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "pattern4-pct-lte5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Pattern 4 %: ≤5%"
+              }
+            }
+          ],
+          "linkId": "pattern4-pct-band"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "tumor-pct-1-5",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Tumour % in biopsy: 1–5%"
+              }
+            }
+          ],
+          "linkId": "tumor-percent-in-biopsy"
+        }
+      ],
+      "linkId": "grp-additional-grade-burden"
+    },
+    {
+      "item": [
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "periprostatic-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Periprostatic fat invasion: not identified"
+              }
+            }
+          ],
+          "linkId": "periprostatic-fat-invasion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "perineural-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Perineural invasion not identified"
+              }
+            }
+          ],
+          "linkId": "perineural-invasion"
+        },
+        {
+          "answer": [
+            {
+              "valueCoding": {
+                "code": "lymphovascular-absent",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options",
+                "display": "Lymphovascular invasion unidentifiable / not available"
+              }
+            }
+          ],
+          "linkId": "lymphovascular-invasion"
+        }
+      ],
+      "linkId": "grp-invasion"
+    }
+  ],
+  "questionnaire": "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "authored": "2024-05-28T14:00:00Z"
+}

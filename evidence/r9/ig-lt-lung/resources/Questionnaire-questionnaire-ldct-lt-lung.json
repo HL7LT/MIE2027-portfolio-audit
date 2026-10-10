@@ -1,0 +1,2211 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "questionnaire-ldct-lt-lung",
+  "url": "https://hl7.lt/fhir/lung/Questionnaire/questionnaire-ldct-lt-lung",
+  "title": "Questionnaire: LDCT ESPBI Form (LT Lung)",
+  "description": "Structured data-capture form for low-dose chest computed tomography (LDCT) reporting based on ADP Table 7.1 (MDKT dataset).",
+  "item": [
+    {
+      "item": [
+        {
+          "linkId": "exam-date",
+          "text": "LDCT examination date",
+          "type": "dateTime"
+        },
+        {
+          "linkId": "previous-exam-date",
+          "text": "Date of last performed chest LDCT examination (if known)",
+          "type": "dateTime",
+          "required": false
+        },
+        {
+          "linkId": "ctdivol",
+          "text": "Volume CT Dose Index – CTDIvol (mGy)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "dlp",
+          "text": "Dose Length Product – DLP (mGy x cm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "technologist-qualification",
+          "text": "Professional qualification of the technologist",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "technologist-first-name",
+          "text": "Technologist first name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "technologist-last-name",
+          "text": "Technologist last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "facility-name",
+          "text": "Healthcare institution name",
+          "type": "string"
+        },
+        {
+          "linkId": "facility-code",
+          "text": "Healthcare institution code",
+          "type": "string"
+        },
+        {
+          "linkId": "facility-address",
+          "text": "Healthcare institution address",
+          "type": "string"
+        },
+        {
+          "linkId": "facility-phone",
+          "text": "Healthcare institution phone number",
+          "type": "string"
+        },
+        {
+          "linkId": "facility-email",
+          "text": "Healthcare institution email",
+          "type": "string"
+        }
+      ],
+      "linkId": "grp-general",
+      "text": "General information",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "solid",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Solid"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "part-solid",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Part solid"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "ground-glass",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Ground glass nodule"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "calcified",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Calcified"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "cavitary",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Cavitary"
+              }
+            }
+          ],
+          "linkId": "nodule-type",
+          "text": "Type of lesion",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "right-upper",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Upper lobe of the right lung"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "right-middle",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Middle lobe of the right lung"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "right-lower",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Lower lobe of the right lung"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "left-upper",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Upper lobe of the left lung"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "left-lower",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Lower lobe of the left lung"
+              }
+            }
+          ],
+          "linkId": "nodule-lobe",
+          "text": "Lung lobe",
+          "type": "coding"
+        },
+        {
+          "linkId": "ct-slice-number",
+          "text": "CT image slice number",
+          "type": "integer"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "morphology-spiculated",
+          "text": "With spicules",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "morphology-irregular",
+          "text": "Irregular contours",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "morphology-pleural",
+          "text": "Related to pleura",
+          "type": "coding"
+        },
+        {
+          "linkId": "nodule-mean-diameter",
+          "text": "Size – average diameter (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "nodule-long-axis",
+          "text": "Size – long axis (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "nodule-short-axis",
+          "text": "Size – short axis (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "nodule-volume",
+          "text": "Volume (mm3)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "solid-part-mean-diameter",
+          "text": "Solid part – average diameter (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "solid-part-long-axis",
+          "text": "Solid part – long axis (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "solid-part-short-axis",
+          "text": "Solid part – short axis (mm)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "solid-part-volume",
+          "text": "Solid part – volume (mm3)",
+          "type": "quantity"
+        },
+        {
+          "linkId": "nodule-note",
+          "text": "Note",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-nodules",
+      "text": "Nodule findings",
+      "type": "group",
+      "repeats": true
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "interstitial-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "non-subpleural",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Non-subpleural"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "subpleural-non-fibrotic",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Subpleural non-fibrotic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "subpleural-fibrous",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Subpleural fibrous"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "respiratory-bronchiolitis",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Respiratory bronchiolitis (RB-IPL)"
+                  }
+                }
+              ],
+              "linkId": "interstitial-subtype",
+              "text": "Type of interstitial changes",
+              "type": "coding",
+              "repeats": true
+            }
+          ],
+          "linkId": "interstitial-changes",
+          "text": "Interstitial lung changes (>5% of lung volume)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "emphysema",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "severe",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Severe / expressed"
+                  }
+                }
+              ],
+              "linkId": "emphysema-severity",
+              "text": "Emphysema severity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "emphysema",
+          "text": "Emphysema",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "bronchiectasis",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "severe",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Severe / expressed"
+                  }
+                }
+              ],
+              "linkId": "bronchiectasis-severity",
+              "text": "Bronchiectasis severity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "bronchiectasis",
+          "text": "Bronchiectasis",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "pleural-fluid",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Left"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "bilateral",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Bilateral"
+                  }
+                }
+              ],
+              "linkId": "pleural-fluid-laterality",
+              "text": "Laterality",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "pleural-fluid",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "small-amount",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Small amount"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "large-amount",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Large amount"
+                  }
+                }
+              ],
+              "linkId": "pleural-fluid-quantity",
+              "text": "Quantity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "pleural-fluid",
+          "text": "Fluid in the pleural cavity",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "pleural-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "pleural-suspected-malignant",
+              "text": "Suspected malignant",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "pleural-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "pleural-asbestosis-plaque",
+              "text": "Asbestosis pleural plaque",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "pleural-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "local",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Local"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "diffuse",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Diffuse"
+                  }
+                }
+              ],
+              "linkId": "pleural-calcification",
+              "text": "Pleural calcification",
+              "type": "coding"
+            }
+          ],
+          "linkId": "pleural-changes",
+          "text": "Pleural changes",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "pneumothorax",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Left"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "bilateral",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Bilateral"
+                  }
+                }
+              ],
+              "linkId": "pneumothorax-laterality",
+              "text": "Laterality",
+              "type": "coding"
+            }
+          ],
+          "linkId": "pneumothorax",
+          "text": "Pneumothorax",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "pneumomediastinum",
+          "text": "Pneumomediastinum",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "diaphragm-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "diaphragm-suspected-malignant",
+              "text": "Suspected malignant",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "diaphragm-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "diaphragm-large-hernia",
+              "text": "Large hernia",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "diaphragm-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "diaphragm-complicated-hernia",
+              "text": "Complicated hernia",
+              "type": "coding"
+            }
+          ],
+          "linkId": "diaphragm-changes",
+          "text": "Changes in diaphragms",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "consolidation",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "consolidation-inflammatory",
+              "text": "Likely inflammatory",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "consolidation",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "consolidation-malignant",
+              "text": "Possibly malignant",
+              "type": "coding"
+            }
+          ],
+          "linkId": "consolidation",
+          "text": "Consolidation",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "tuberculosis",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "tuberculosis-differentiated",
+              "text": "Suspected tuberculosis differentiated from other diseases",
+              "type": "coding"
+            }
+          ],
+          "linkId": "tuberculosis",
+          "text": "Tuberculosis",
+          "type": "coding"
+        }
+      ],
+      "linkId": "grp-incidental-lung",
+      "text": "Significant incidental findings in the lungs",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "coronary-calcification",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "severe",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Severe / expressed"
+                  }
+                }
+              ],
+              "linkId": "coronary-calcification-severity",
+              "text": "Severity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "coronary-calcification",
+          "text": "Coronary artery calcification",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "aortic-valve-calcification",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "severe",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Severe / expressed"
+                  }
+                }
+              ],
+              "linkId": "aortic-valve-severity",
+              "text": "Severity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "aortic-valve-calcification",
+          "text": "Aortic valve calcification",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "thoracic-aortic-aneurysm",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "thoracic-aneurysm-size",
+              "text": "Size (mm)",
+              "type": "quantity"
+            }
+          ],
+          "linkId": "thoracic-aortic-aneurysm",
+          "text": "Thoracic aortic aneurysm (dilation >=45mm)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "mediastinal-mass",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "mediastinal-mass-size",
+              "text": "Size – largest dimension in axial plane (mm)",
+              "type": "quantity"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "mediastinal-mass",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "cystic",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Cystic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "solid-texture",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Solid"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "calcified-density",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Calcified"
+                  }
+                }
+              ],
+              "linkId": "mediastinal-mass-density",
+              "text": "Density texture",
+              "type": "coding"
+            }
+          ],
+          "linkId": "mediastinal-mass",
+          "text": "Mediastinal mass",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "lymphadenopathy",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "neck",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Neck"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "paraclavicular",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Paraclavicular"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "mediastinal",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Mediastinal"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "hilar-right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Hilar - right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "hilar-left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Hilar - left"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "hilar-both",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Hilar - both"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "axillary-right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Axillary - right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "axillary-left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Axillary - left"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "axillary-both",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Axillary - both"
+                  }
+                }
+              ],
+              "linkId": "lymphadenopathy-location",
+              "text": "Location(s)",
+              "type": "coding",
+              "repeats": true
+            }
+          ],
+          "linkId": "lymphadenopathy",
+          "text": "Lymphadenopathy (>=15mm)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "thyroid-nodules",
+          "text": "Thyroid changes (suspicious nodules)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "pericardial-effusion",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "moderate",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Moderate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "severe",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Severe / expressed"
+                  }
+                }
+              ],
+              "linkId": "pericardial-effusion-severity",
+              "text": "Severity",
+              "type": "coding"
+            }
+          ],
+          "linkId": "pericardial-effusion",
+          "text": "Fluid in the pericardial cavity (significant)",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "esophageal-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "esophageal-lumen-expansion",
+              "text": "Significant lumen expansion",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "esophageal-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "esophageal-mass",
+              "text": "Mass",
+              "type": "coding"
+            }
+          ],
+          "linkId": "esophageal-changes",
+          "text": "Changes in the esophagus",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "abdominal-aortic-aneurysm",
+          "text": "Abdominal aortic aneurysm",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "breast-findings",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Left"
+                  }
+                }
+              ],
+              "linkId": "breast-laterality",
+              "text": "Location",
+              "type": "coding"
+            }
+          ],
+          "linkId": "breast-findings",
+          "text": "Suspicious findings in the breasts",
+          "type": "coding",
+          "repeats": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "liver-lesions",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "singular",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Singular"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "multiple",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Multiple"
+                  }
+                }
+              ],
+              "linkId": "liver-multiplicity",
+              "text": "Number of lesions",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "liver-lesions",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "cystic",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Cystic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "solid-texture",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Solid"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "mixed-complex",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Mixed-complex"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "calcified-density",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Calcified"
+                  }
+                }
+              ],
+              "linkId": "liver-texture",
+              "text": "Texture",
+              "type": "coding"
+            }
+          ],
+          "linkId": "liver-lesions",
+          "text": "Liver lesions",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "kidney-lesions",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "kidney-size",
+              "text": "Size – largest dimension in axial plane (mm)",
+              "type": "quantity"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "kidney-lesions",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Left"
+                  }
+                }
+              ],
+              "linkId": "kidney-laterality",
+              "text": "Location",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "kidney-lesions",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "cystic",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Cystic"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "solid-texture",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Solid"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "mixed-complex",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Mixed-complex"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "calcified-density",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Calcified"
+                  }
+                }
+              ],
+              "linkId": "kidney-density",
+              "text": "Density",
+              "type": "coding"
+            }
+          ],
+          "linkId": "kidney-lesions",
+          "text": "Kidney lesions",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "bone-changes",
+          "text": "Changes in bones",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "adrenal-formations",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "right",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Right"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "left",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Left"
+                  }
+                }
+              ],
+              "linkId": "adrenal-laterality",
+              "text": "Laterality",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "adrenal-formations",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "adrenal-size",
+              "text": "Size – largest dimension in axial plane (mm)",
+              "type": "quantity"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "adrenal-formations",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "linkId": "adrenal-density",
+              "text": "Density (HV)",
+              "type": "quantity"
+            }
+          ],
+          "linkId": "adrenal-formations",
+          "text": "Adrenal formations",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "item": [
+            {
+              "enableWhen": [
+                {
+                  "question": "gallbladder-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "gallbladder-cholecystitis",
+              "text": "Suspected signs of acute cholecystitis",
+              "type": "coding"
+            },
+            {
+              "enableWhen": [
+                {
+                  "question": "gallbladder-changes",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options"
+                  }
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "yes",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "no",
+                    "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                    "display": "No"
+                  }
+                }
+              ],
+              "linkId": "gallbladder-masses",
+              "text": "Infiltration with masses",
+              "type": "coding"
+            }
+          ],
+          "linkId": "gallbladder-changes",
+          "text": "Changes in the gallbladder",
+          "type": "coding"
+        },
+        {
+          "linkId": "additional-findings-text",
+          "text": "Additional findings (free text)",
+          "type": "text",
+          "required": false
+        }
+      ],
+      "linkId": "grp-incidental-extra",
+      "text": "Significant incidental findings not in the lungs",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "linkId": "notes",
+          "text": "Notes (includes all additional findings)",
+          "type": "text"
+        }
+      ],
+      "linkId": "grp-notes",
+      "text": "Additional notes",
+      "type": "group"
+    },
+    {
+      "item": [
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "lung-rads-0",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 0 – Images cannot be evaluated"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-1",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 1 – No findings detected in the lungs"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-2",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 2 – Very likely benign formation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-3",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 3 – Likely benign formation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-4a",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 4A – Detected suspicious formation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-4b",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 4B – Detected very suspicious formation"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "lung-rads-4x",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "LUNG-RADS 4X – Detected extremely suspicious formation"
+              }
+            }
+          ],
+          "linkId": "lung-rads-category",
+          "text": "LUNG-RADS findings category",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "yes",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "Yes"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "no",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-questionnaire-options",
+                "display": "No"
+              }
+            }
+          ],
+          "linkId": "lung-rads-s-modifier",
+          "text": "S modifier – significant incidental finding contributing to category",
+          "type": "coding"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "repeat-36m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Repeat LDCT after 36 months"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "repeat-1m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Repeat LDCT after 1 month"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "insufficient-prior-images",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Insufficient data - previous images required for comparison"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "followup-12m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Follow-up LDCT after 12 months"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "followup-6m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Follow-up LDCT after 6 months"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "followup-3m",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Follow-up LDCT after 3 months"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "pulmonologist-consult",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Refer for pulmonologist consultation in an oncology cluster institution"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "specialist-consult",
+                "system": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+                "display": "Refer for consultation to an appropriate specialist"
+              }
+            }
+          ],
+          "linkId": "recommendation",
+          "text": "Recommendation",
+          "type": "coding",
+          "required": true
+        },
+        {
+          "linkId": "conclusion-notes",
+          "text": "Conclusion notes",
+          "type": "text"
+        },
+        {
+          "linkId": "specialist-qualification",
+          "text": "Professional qualification of the specialist",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "specialist-first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "specialist-last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "conclusion-institution-name",
+          "text": "Institution name",
+          "type": "string"
+        },
+        {
+          "linkId": "conclusion-institution-code",
+          "text": "Institution code",
+          "type": "string"
+        },
+        {
+          "linkId": "conclusion-institution-address",
+          "text": "Institution address",
+          "type": "string"
+        },
+        {
+          "linkId": "conclusion-institution-phone",
+          "text": "Institution phone number",
+          "type": "string"
+        },
+        {
+          "linkId": "conclusion-institution-email",
+          "text": "Institution email",
+          "type": "string"
+        }
+      ],
+      "linkId": "grp-conclusion",
+      "text": "Conclusion and recommendations",
+      "type": "group"
+    }
+  ],
+  "name": "LdctQuestionnaireLtLung",
+  "status": "active"
+}

@@ -1,0 +1,49 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BleedingControlMethodVS",
+  "id": "bleeding-control-method",
+  "title": "Bleeding Control Method",
+  "description": "Methods used for controlling bleeding during or after colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/bleeding-control-method",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "21147007",
+            "display": "Closure by clip (procedure)"
+          },
+          {
+            "code": "313191000",
+            "display": "Injection of epinephrine (procedure)"
+          }
+        ]
+      },
+      {
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "concept": [
+          {
+            "code": "bleeding-clip",
+            "display": "Hemostatic clipping"
+          },
+          {
+            "code": "bleeding-adrenaline-injection",
+            "display": "Adrenaline injection"
+          },
+          {
+            "code": "bleeding-coagulation",
+            "display": "Thermal coagulation"
+          },
+          {
+            "code": "bleeding-other",
+            "display": "Other bleeding control method"
+          }
+        ]
+      }
+    ]
+  }
+}

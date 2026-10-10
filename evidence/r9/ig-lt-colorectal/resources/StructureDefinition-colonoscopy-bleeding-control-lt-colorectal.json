@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "colonoscopy-bleeding-control-lt-colorectal",
+  "url": "https://hl7.lt/fhir/colorectal/StructureDefinition/colonoscopy-bleeding-control-lt-colorectal",
+  "name": "ColonoscopyBleedingControlLtColorectal",
+  "title": "Colonoscopy Bleeding Control (LT Colorectal)",
+  "status": "active",
+  "description": "Profile for recording bleeding control procedures performed during colonoscopy in the Lithuanian colorectal cancer screening program. Captures the method used (clip, epinephrine injection, etc.).",
+  "fhirVersion": "5.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "https://hl7.lt/fhir/base/StructureDefinition/procedure-lt",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Procedure.code",
+        "path": "Procedure.code",
+        "short": "Bleeding control method (clip, epinephrine injection, etc.)",
+        "min": 1,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://tx.hl7.lt/fhir/ValueSet/bleeding-control-method"
+        }
+      },
+      {
+        "id": "Procedure.subject",
+        "path": "Procedure.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://hl7.lt/fhir/base/StructureDefinition/patient-lt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Procedure.occurrence[x]",
+        "path": "Procedure.occurrence[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Procedure.reason",
+        "path": "Procedure.reason",
+        "short": "Reference to the complication or procedure that caused bleeding"
+      }
+    ]
+  }
+}

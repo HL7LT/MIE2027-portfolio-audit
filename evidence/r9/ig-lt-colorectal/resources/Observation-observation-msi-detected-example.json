@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-msi-detected-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/colorectal/StructureDefinition/molecular-test-result-lt-colorectal"
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Laboratory"
+        }
+      ]
+    }
+  ],
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner-example"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "msi-test",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "display": "MSI (Microsatellite instability study)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-male-example"
+  },
+  "effectiveDateTime": "2026-03-15",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "mol-set",
+        "system": "https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-lt-colorectal",
+        "display": "Set (MSI)"
+      }
+    ]
+  }
+}

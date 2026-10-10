@@ -1,0 +1,100 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-right-breast-example",
+  "meta": {
+    "profile": [
+      "https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab"
+    ]
+  },
+  "collection": {
+    "quantity": {
+      "value": 10,
+      "unit": "mg"
+    },
+    "collectedDateTime": "2025-01-10T09:15:00+02:00",
+    "collector": {
+      "reference": "Practitioner/practitioner-example"
+    },
+    "bodySite": {
+      "concept": {
+        "coding": [
+          {
+            "code": "73056007",
+            "system": "http://snomed.info/sct",
+            "display": "Right breast structure (body structure)"
+          }
+        ]
+      }
+    }
+  },
+  "request": [
+    {
+      "reference": "ServiceRequest/servicerequest-pathology-order-example"
+    }
+  ],
+  "processing": [
+    {
+      "additive": [
+        {
+          "reference": "Substance/substance-formalin-example"
+        }
+      ],
+      "method": {
+        "coding": [
+          {
+            "code": "787378005",
+            "system": "http://snomed.info/sct",
+            "display": "Fixation of specimen (procedure)"
+          }
+        ]
+      }
+    }
+  ],
+  "container": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/specimen-container-type",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "700855008",
+                "system": "http://snomed.info/sct",
+                "display": "Tissue/fluid collection bag, sterile"
+              }
+            ]
+          }
+        }
+      ],
+      "specimenQuantity": {
+        "value": 1
+      },
+      "device": {
+        "display": "Sterile container"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://hospital.lt/sid/specimen-number",
+      "value": "barcode12345"
+    }
+  ],
+  "accessionIdentifier": {
+    "value": "B26-6526"
+  },
+  "language": "en",
+  "status": "available",
+  "type": {
+    "coding": [
+      {
+        "code": "122601001",
+        "system": "http://snomed.info/sct",
+        "display": "Specimen from breast obtained by biopsy"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-example"
+  }
+}

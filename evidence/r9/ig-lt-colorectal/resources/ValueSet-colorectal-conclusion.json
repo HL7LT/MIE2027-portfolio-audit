@@ -1,0 +1,144 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ColorectalConclusionVS",
+  "id": "colorectal-conclusion",
+  "title": "Colorectal Conclusion",
+  "description": "SNOMED CT codes representing the final diagnostic conclusions of the colonoscopy.",
+  "url": "https://tx.hl7.lt/fhir/ValueSet/colorectal-conclusion",
+  "experimental": false,
+  "publisher": "HL7 Lithuania",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "313170008",
+            "display": "Colonoscopy normal (finding)"
+          },
+          {
+            "code": "399505005",
+            "display": "Polyp of large intestine (disorder)"
+          },
+          {
+            "code": "363510005",
+            "display": "Malignant tumor of large intestine (disorder)"
+          },
+          {
+            "code": "24526004",
+            "display": "Inflammatory bowel disease (disorder)"
+          },
+          {
+            "code": "64766004",
+            "display": "Ulcerative colitis (disorder)"
+          },
+          {
+            "code": "34000006",
+            "display": "Crohn's disease (disorder)"
+          },
+          {
+            "code": "30588004",
+            "display": "Ischemic colitis (disorder)"
+          },
+          {
+            "code": "302168000",
+            "display": "Inflammation of large intestine (disorder)"
+          },
+          {
+            "code": "46040000",
+            "display": "Ulceration of colon (disorder)"
+          },
+          {
+            "code": "54609002",
+            "display": "Ulcer of rectum (disorder)"
+          },
+          {
+            "code": "733657002",
+            "display": "Diverticulosis of colon (finding)"
+          },
+          {
+            "code": "1196824005",
+            "display": "Lipoma of large intestine (disorder)"
+          },
+          {
+            "code": "1345173005",
+            "display": "Subepithelial lesion of large intestine (disorder)"
+          },
+          {
+            "code": "92170008",
+            "display": "Benign neoplasm of large intestine (disorder)"
+          },
+          {
+            "code": "70153002",
+            "display": "Hemorrhoids (disorder)"
+          },
+          {
+            "code": "413245000",
+            "display": "Bleeding of unknown origin (finding)"
+          },
+          {
+            "code": "1290553006",
+            "display": "Angiectasia of large intestine (disorder)"
+          },
+          {
+            "code": "423590009",
+            "display": "Clostridium difficile colitis (disorder)"
+          },
+          {
+            "code": "19672005",
+            "display": "Condyloma (morphologic abnormality)"
+          },
+          {
+            "code": "4494009",
+            "display": "Diverticulitis of large intestine (disorder)"
+          },
+          {
+            "code": "284077005",
+            "display": "Perineal fistula (disorder)"
+          },
+          {
+            "code": "286602003",
+            "display": "Foreign body of large intestine (disorder)"
+          },
+          {
+            "code": "52457000",
+            "display": "Ileitis (disorder)"
+          },
+          {
+            "code": "11256005",
+            "display": "Melanosis coli (disorder)"
+          },
+          {
+            "code": "87282003",
+            "display": "Intestinal parasitism (disorder)"
+          },
+          {
+            "code": "117631000119103",
+            "display": "Pneumatosis coli (disorder)"
+          },
+          {
+            "code": "254589009",
+            "display": "Intestinal polyposis syndrome (disorder)"
+          },
+          {
+            "code": "245849007",
+            "display": "Post-surgical anatomy (morphologic abnormality)"
+          },
+          {
+            "code": "3951002",
+            "display": "Proctitis (disorder)"
+          },
+          {
+            "code": "8543007",
+            "display": "Stricture of colon (disorder)"
+          },
+          {
+            "code": "236109009",
+            "display": "Anastomotic stricture of large intestine (disorder)"
+          }
+        ]
+      }
+    ]
+  }
+}

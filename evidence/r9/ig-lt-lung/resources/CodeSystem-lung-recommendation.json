@@ -1,0 +1,47 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "LungRecommendation",
+  "id": "lung-recommendation",
+  "title": "Lung Screening Recommendation Codes",
+  "description": "Recommendation codes used in the Lithuanian lung cancer early diagnosis\nprogramme for follow-up and referral actions after LUNG-RADS assessment.\n\nThese codes represent the recommended next clinical action based on the\nradiological conclusion and programme rules.",
+  "url": "https://tx.hl7.lt/fhir/CodeSystem/lung-recommendation",
+  "concept": [
+    {
+      "code": "repeat-36m",
+      "display": "Repeat LDCT after 36 months"
+    },
+    {
+      "code": "repeat-1m",
+      "display": "Repeat LDCT after 1 month"
+    },
+    {
+      "code": "insufficient-prior-images",
+      "display": "Insufficient data - previous images required for comparison"
+    },
+    {
+      "code": "followup-12m",
+      "display": "Follow-up LDCT after 12 months"
+    },
+    {
+      "code": "followup-6m",
+      "display": "Follow-up LDCT after 6 months"
+    },
+    {
+      "code": "followup-3m",
+      "display": "Follow-up LDCT after 3 months"
+    },
+    {
+      "code": "pulmonologist-consult",
+      "display": "Refer for pulmonologist consultation in an oncology cluster institution"
+    },
+    {
+      "code": "specialist-consult",
+      "display": "Refer for consultation to an appropriate specialist"
+    }
+  ],
+  "experimental": false,
+  "caseSensitive": true,
+  "count": 8
+}
