@@ -76,8 +76,7 @@ hashed inputs, recorded publisher version and SHA-256 — is both stronger and c
 
 **The promise of an archived audit release, in two places.** The Methods sentence promising
 methods and expected outputs at an archive URL, and the Data availability placeholder. The
-Data availability statement now names this package; the DOI and release URL remain to be
-filled in.
+Data availability statement now names this package by its v1.0 release URL.
 
 ## Remaining unresolved
 
