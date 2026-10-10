@@ -81,8 +81,10 @@ filled in.
 
 ## Remaining unresolved
 
-1. **The archive DOI and release URL are placeholders.** The manuscript carries
-   `[ARCHIVE DOI AND RELEASE URL REQUIRED BEFORE SUBMISSION]`.
+1. **No DOI.** The manuscript cites this package by its release URL,
+   https://github.com/HL7LT/MIE2027-portfolio-audit/releases/tag/v1.0. A tagged release is
+   immutable, but the citation depends on the repository keeping its name and not being
+   deleted; a DOI would survive both. That trade was made deliberately.
 2. **283 was not reconciled.** See the discrepancies section of `AUDIT_REPORT.md`. The figure
    reported is the one this package computes under a written rule.
 3. **The manuscript has not been inspected as rendered.** Edits were made and verified at the
