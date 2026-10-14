@@ -13,7 +13,16 @@ cd "$(dirname "$0")"
 # Java is a native Windows binary: it needs Windows paths and ';' between classpath
 # entries, not the POSIX forms Git Bash hands out.
 win() { cygpath -m "$1" 2>/dev/null || echo "$1"; }
-JAR="$(win "$PWD/../tools/publisher-2.3.4.jar")"
+# The publisher jar is not shipped in this package. Pass its path as the first
+# argument, or set PUBLISHER_JAR. Its SHA-256 is recorded in audit_manifest.json:
+#   970922c12eb583bfb4cb6121584b922a236d5904e36413e3545d2fbc248f8e2b
+JAR_IN="${1:-${PUBLISHER_JAR:-}}"
+if [ -z "$JAR_IN" ] || [ ! -f "$JAR_IN" ]; then
+  echo "usage: bash run.sh /path/to/publisher-2.3.4.jar" >&2
+  echo "       (sha256 must be 970922c12eb583bfb4cb6121584b922a236d5904e36413e3545d2fbc248f8e2b)" >&2
+  exit 2
+fi
+JAR="$(win "$JAR_IN")"
 HERE="$(win "$PWD")"
 JDK="${JAVA_HOME:-/c/Program Files/Eclipse Adoptium/jdk-21.0.11.10-hotspot}/bin"
 

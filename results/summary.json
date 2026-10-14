@@ -1,0 +1,251 @@
+{
+  "analysis_is_local_only": true,
+  "assertions_pass": true,
+  "conceptmap_metric": {
+    "ambiguous_positive_rows": 165,
+    "exact_id_rows": 75,
+    "positive_rows": 168,
+    "wording": "text-supported profile association; not guaranteed equivalence"
+  },
+  "counts": {
+    "all_edges": 525,
+    "all_foundation_foundation": 182,
+    "all_programme_foundation": 343,
+    "codesystems": 51,
+    "conceptmap_entries": 199,
+    "conceptmap_exact_id": 75,
+    "conceptmap_text_supported": 168,
+    "conceptmaps": 7,
+    "conformance_edges": 404,
+    "conformance_foundation_foundation": 167,
+    "conformance_programme_foundation": 237,
+    "cross_guide_valueset_duplicate_groups": 1,
+    "failing_examples": 15,
+    "foundation_derived": 82,
+    "foundation_use_artefacts": 38,
+    "foundation_use_pairs": 86,
+    "portfolio_examples_total": 384,
+    "portfolio_examples_valid": 369,
+    "profiles": 221,
+    "profiles_foundation": 133,
+    "profiles_programme": 88,
+    "programme_examples_total": 297,
+    "programme_examples_valid": 283,
+    "programme_questionnaire_responses": 16,
+    "programme_questionnaires": 18,
+    "questionnaire_responses": 17,
+    "questionnaires": 19,
+    "validation_events": 27,
+    "valuesets": 213
+  },
+  "cross_guide": {
+    "all_directions": {
+      "foundation->foundation": 182,
+      "programme->foundation": 343
+    },
+    "conformance_directions": {
+      "foundation->foundation": 167,
+      "programme->foundation": 237
+    },
+    "dag": {
+      "cyclic_guides": [],
+      "guide_edges": [
+        {
+          "source_guide": "ig-lt-base",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-breast",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-breast",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-breast",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-breast",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-breast",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-cervical",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-cervical",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-cervical",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-cervical",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-cervical",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-colorectal",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-colorectal",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-colorectal",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-colorectal",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-colorectal",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-cvd",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-cvd",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-cvd",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-cvd",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-cvd",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-lab",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-lab",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-lifestyle",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-lifestyle",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-lung",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-lung",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-lung",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-lung",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-lung",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-prostate",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-prostate",
+          "target_guide": "ig-lt-eu"
+        },
+        {
+          "source_guide": "ig-lt-prostate",
+          "target_guide": "ig-lt-lab"
+        },
+        {
+          "source_guide": "ig-lt-prostate",
+          "target_guide": "ig-lt-lifestyle"
+        },
+        {
+          "source_guide": "ig-lt-prostate",
+          "target_guide": "ig-lt-vitalsigns"
+        },
+        {
+          "source_guide": "ig-lt-vitalsigns",
+          "target_guide": "ig-lt-base"
+        },
+        {
+          "source_guide": "ig-lt-vitalsigns",
+          "target_guide": "ig-lt-eu"
+        }
+      ],
+      "is_dag": true,
+      "topological_order_source_to_target": [
+        "ig-lt-breast",
+        "ig-lt-cervical",
+        "ig-lt-colorectal",
+        "ig-lt-cvd",
+        "ig-lt-lung",
+        "ig-lt-prostate",
+        "ig-lt-lab",
+        "ig-lt-lifestyle",
+        "ig-lt-vitalsigns",
+        "ig-lt-base",
+        "ig-lt-eu"
+      ]
+    }
+  },
+  "dgr_evidence": {
+    "contains_multi_item_throw": true,
+    "fresh_jar_run": false,
+    "path": "evidence\\dgr1\\output.txt",
+    "published_test_present": true
+  },
+  "failures": [],
+  "foundation_use_scope": [
+    "baseDefinition",
+    "type.profile",
+    "type.targetProfile",
+    "meta.profile",
+    "extension.url",
+    "binding.valueSet"
+  ],
+  "fresh_build_performed": false,
+  "input": "evidence/r9",
+  "manifest": "audit_manifest.json",
+  "snapshot": "r9",
+  "source_hash_note": "Manifest sourceSha256 values are recorded provenance; they cannot be recomputed without the original guide checkouts.",
+  "source_hashes_recomputed": false,
+  "validation": {
+    "author_classification_matches": 27,
+    "author_classification_unmatched_rows": 0,
+    "event_unmatched": 0,
+    "raw_error_lines_parsed": 8949,
+    "validation_events": 27
+  },
+  "valueset_metric": {
+    "cross_guide_duplicate_groups": 1,
+    "evaluated_explicit_sets": 187,
+    "excluded_non_explicit_sets": 26
+  }
+}

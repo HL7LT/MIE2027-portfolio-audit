@@ -1,0 +1,4 @@
+cross_guide,sets_sharing,guides,sets,explicit_system_code_pairs
+no,2,ig-lt-cervical,ig-lt-cervical:cervical-biopsy-quadrant == ig-lt-cervical:cervical-biopsy-site-lt-cervical,http://snomed.info/sct|127899002 http://snomed.info/sct|127900007 http://snomed.info/sct|127901006 http://snomed.info/sct|127902004 http://snomed.info/sct|56739004
+yes,2,ig-lt-cervical ig-lt-lab,ig-lt-cervical:cervical-histological-grade == ig-lt-lab:histological-grading,http://snomed.info/sct|1228845001 http://snomed.info/sct|1228848004 http://snomed.info/sct|1228850007 http://snomed.info/sct|1228851006
+no,2,ig-lt-lung,ig-lt-lung:finding-density == ig-lt-lung:kidney-lesion-density,http://snomed.info/sct|103360007 http://snomed.info/sct|20476009 http://snomed.info/sct|35702001 https://tx.hl7.lt/fhir/CodeSystem/snomed-extension-code|calcified

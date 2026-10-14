@@ -1,0 +1,12 @@
+guide,role,profiles,extensions,valuesets,codesystems,questionnaires,questionnaire_responses,conceptmaps
+ig-lt-base,foundation,27,0,4,1,0,0,0
+ig-lt-breast,programme,16,0,17,2,5,5,0
+ig-lt-cervical,programme,15,0,21,2,4,4,0
+ig-lt-colorectal,programme,18,1,41,9,1,1,1
+ig-lt-cvd,programme,13,1,11,10,2,2,2
+ig-lt-eu,foundation,41,5,4,0,0,0,0
+ig-lt-lab,foundation,35,1,29,7,0,0,0
+ig-lt-lifestyle,foundation,18,3,14,0,1,1,0
+ig-lt-lung,programme,9,0,16,10,2,2,2
+ig-lt-prostate,programme,17,0,14,9,4,2,2
+ig-lt-vitalsigns,foundation,12,5,42,1,0,0,0

@@ -1,0 +1,37 @@
+code,guide,error_events_attributable,edition_queried,source,query_date,result
+1371331009,ig-lt-cvd,4,International Edition 2025-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1371331009,ig-lt-cvd,4,International Edition 2024-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1371331009,ig-lt-cvd,4,Danish Edition 2026-03-31,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+1371331009,ig-lt-cvd,4,US Edition 2025-09-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1371331009,ig-lt-cvd,4,Netherlands Edition 2024-09-30,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1371331009,ig-lt-cvd,4,Edition 827022005 2024-12-16,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1379919001,ig-lt-cvd,2,International Edition 2025-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1379919001,ig-lt-cvd,2,International Edition 2024-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1379919001,ig-lt-cvd,2,Danish Edition 2026-03-31,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+1379919001,ig-lt-cvd,2,US Edition 2025-09-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1379919001,ig-lt-cvd,2,Netherlands Edition 2024-09-30,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1379919001,ig-lt-cvd,2,Edition 827022005 2024-12-16,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1362105002,ig-lt-lung,4,International Edition 2025-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1362105002,ig-lt-lung,4,International Edition 2024-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1362105002,ig-lt-lung,4,Danish Edition 2026-03-31,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+1362105002,ig-lt-lung,4,US Edition 2025-09-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+1362105002,ig-lt-lung,4,Netherlands Edition 2024-09-30,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1362105002,ig-lt-lung,4,Edition 827022005 2024-12-16,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+896998003,ig-lt-lung,5,International Edition 2025-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+896998003,ig-lt-lung,5,International Edition 2024-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+896998003,ig-lt-lung,5,Danish Edition 2026-03-31,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+896998003,ig-lt-lung,5,US Edition 2025-09-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,present
+896998003,ig-lt-lung,5,Netherlands Edition 2024-09-30,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+896998003,ig-lt-lung,5,Edition 827022005 2024-12-16,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,International Edition 2025-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,International Edition 2024-02-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,Danish Edition 2026-03-31,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,US Edition 2025-09-01,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,Netherlands Edition 2024-09-30,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,Edition 827022005 2024-12-16,"tx.fhir.org/r4 CodeSystem/$lookup (documented FHIR operation), version-pinned",2026-10-11,absent
+1389350002,ig-lt-cervical,3,n/a - author document,"SNOMED-koodide-ulevaatus.txt line 70 (author-supplied, in the working folder)",2026-09-10,absent
+1389350002,ig-lt-cervical,3,International Edition 2026-10-01,"browser.ihtsdotools.org SNOMED CT Browser v3.50.1, direct concept URL",2026-10-11,present
+1371331009,ig-lt-cvd,4,International Edition 2026-10-01,"browser.ihtsdotools.org SNOMED CT Browser v3.50.1, direct concept URL",2026-10-11,present
+1379919001,ig-lt-cvd,2,International Edition 2026-10-01,"browser.ihtsdotools.org SNOMED CT Browser v3.50.1, direct concept URL",2026-10-11,present
+1362105002,ig-lt-lung,4,International Edition 2026-10-01,"browser.ihtsdotools.org SNOMED CT Browser v3.50.1, direct concept URL",2026-10-11,present
+896998003,ig-lt-lung,5,International Edition 2026-10-01,"browser.ihtsdotools.org SNOMED CT Browser v3.50.1, direct concept URL",2026-10-11,present

@@ -1,0 +1,16 @@
+guide,role,resource,qa_errors,qa_warnings,qa_info
+ig-lt-breast,programme,DiagnosticReport/diagnosticreport-breast-report-example,1,2,2
+ig-lt-cervical,programme,DiagnosticReport/diagnosticreport-cervical-report-example,1,3,2
+ig-lt-cervical,programme,Observation/observation-colposcopy-finding-example,1,3,1
+ig-lt-cvd,programme,DiagnosticReport/diagnosticreport-cvd-example,1,2,2
+ig-lt-cvd,programme,Observation/observation-cvd-risk-assessment-example,1,2,1
+ig-lt-cvd,programme,Observation/skl01-observation-score2-1103,1,1,1
+ig-lt-lab,foundation,DiagnosticReport/diagnosticreport-pathology-report-example,2,3,1
+ig-lt-lung,programme,DiagnosticReport/diagnosticreport-lung-report-example,1,2,3
+ig-lt-lung,programme,Observation/observation-lung-rads-4a-example,1,1,1
+ig-lt-lung,programme,Observation/observation-lung-rads-4as-example,1,1,1
+ig-lt-lung,programme,Observation/observation-pulmonary-nodule-ground-glass-example,2,1,1
+ig-lt-lung,programme,Observation/observation-pulmonary-nodule-part-solid-example,2,1,1
+ig-lt-prostate,programme,DiagnosticReport/diagnosticReport-prostate-mpmri-report-example,1,6,6
+ig-lt-prostate,programme,DiagnosticReport/diagnosticreport-prostate-mpmri-example,1,5,5
+ig-lt-prostate,programme,DiagnosticReport/diagnosticreport-prostate-programme-report-example,1,6,6

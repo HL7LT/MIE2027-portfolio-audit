@@ -1,0 +1,87 @@
+foundation_canonical,programme_guide,foundation_guide,observation_count,mechanisms,field_paths
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImComposition,ig-lt-prostate,ig-lt-eu,1,type.targetProfile,$.differential.element[6].type[0].targetProfile[0]
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImDiagnosticReport,ig-lt-prostate,ig-lt-eu,1,baseDefinition,$.baseDefinition
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/ImFinding,ig-lt-prostate,ig-lt-eu,1,meta.profile,$.meta.profile[0]
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/ObservationRadiationDoseEuImaging,ig-lt-lung,ig-lt-eu,1,type.targetProfile,$.differential.element[9].type[0].targetProfile[0]
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference,ig-lt-breast,ig-lt-eu,1,extension.url,$.extension[0].url
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference,ig-lt-cervical,ig-lt-eu,1,extension.url,$.extension[0].url
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference,ig-lt-lung,ig-lt-eu,1,extension.url,$.extension[0].url
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/im-composition-diagnosticReportReference,ig-lt-prostate,ig-lt-eu,4,extension.url,$.extension[0].url
+http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu,ig-lt-breast,ig-lt-eu,3,type.profile,$.differential.element[16].type[0].profile[0] ; $.differential.element[19].type[0].profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt,ig-lt-breast,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt,ig-lt-cvd,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/care-plan-lt,ig-lt-prostate,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/composition-lt,ig-lt-cvd,ig-lt-base,6,baseDefinition ; meta.profile,$.baseDefinition ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/condition-lt,ig-lt-cervical,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/condition-lt,ig-lt-cvd,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt,ig-lt-cervical,ig-lt-base,4,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt,ig-lt-colorectal,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/diagnostic-report-lt,ig-lt-cvd,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/encounter-lt,ig-lt-breast,ig-lt-base,5,meta.profile ; type.targetProfile,$.differential.element[2].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/encounter-lt,ig-lt-cervical,ig-lt-base,1,type.targetProfile,$.differential.element[2].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/encounter-lt,ig-lt-colorectal,ig-lt-base,2,type.targetProfile,$.differential.element[2].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/encounter-lt,ig-lt-lung,ig-lt-base,5,type.targetProfile,$.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/encounter-lt,ig-lt-prostate,ig-lt-base,7,meta.profile ; type.targetProfile,$.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0] ; $.differential.element[4].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt,ig-lt-breast,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt,ig-lt-cervical,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt,ig-lt-colorectal,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt,ig-lt-lung,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-composition-lt,ig-lt-prostate,ig-lt-base,4,baseDefinition ; meta.profile,$.baseDefinition ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt,ig-lt-breast,ig-lt-base,2,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt,ig-lt-cervical,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt,ig-lt-colorectal,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt,ig-lt-lung,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-report-lt,ig-lt-prostate,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt,ig-lt-breast,ig-lt-base,2,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt,ig-lt-lung,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/imaging-study-lt,ig-lt-prostate,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-breast,ig-lt-base,11,baseDefinition ; meta.profile,$.baseDefinition ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-cervical,ig-lt-base,6,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-colorectal,ig-lt-base,24,baseDefinition ; meta.profile,$.baseDefinition ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-cvd,ig-lt-base,45,baseDefinition ; meta.profile ; type.targetProfile,$.baseDefinition ; $.differential.element[4].type[0].targetProfile[4] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-lung,ig-lt-base,4,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/observation-lt,ig-lt-prostate,ig-lt-base,19,baseDefinition ; meta.profile ; type.targetProfile,$.baseDefinition ; $.differential.element[0].type[0].targetProfile[10] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/organization-lt,ig-lt-breast,ig-lt-base,1,type.targetProfile,$.differential.element[3].type[0].targetProfile[2]
+https://hl7.lt/fhir/base/StructureDefinition/organization-lt,ig-lt-cervical,ig-lt-base,5,meta.profile ; type.targetProfile,$.differential.element[4].type[0].targetProfile[2] ; $.differential.element[5].type[0].targetProfile[0] ; $.differential.element[5].type[0].targetProfile[2] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/organization-lt,ig-lt-colorectal,ig-lt-base,2,meta.profile ; type.targetProfile,$.differential.element[4].type[0].targetProfile[2] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/organization-lt,ig-lt-cvd,ig-lt-base,2,meta.profile ; type.targetProfile,$.differential.element[5].type[0].targetProfile[2] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/organization-lt,ig-lt-prostate,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-breast,ig-lt-base,10,meta.profile ; type.targetProfile,$.differential.element[1].type[0].targetProfile[0] ; $.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-cervical,ig-lt-base,7,meta.profile ; type.targetProfile,$.differential.element[1].type[0].targetProfile[0] ; $.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-colorectal,ig-lt-base,14,meta.profile ; type.targetProfile,$.differential.element[1].type[0].targetProfile[0] ; $.differential.element[2].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-cvd,ig-lt-base,12,meta.profile ; type.targetProfile,$.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0] ; $.differential.element[4].type[0].targetProfile[0] ; $.differential.element[8].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-lung,ig-lt-base,5,meta.profile ; type.targetProfile,$.differential.element[2].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/patient-lt,ig-lt-prostate,ig-lt-base,10,meta.profile ; type.targetProfile,$.differential.element[1].type[0].targetProfile[0] ; $.differential.element[2].type[0].targetProfile[0] ; $.differential.element[3].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt,ig-lt-breast,ig-lt-base,1,type.targetProfile,$.differential.element[3].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt,ig-lt-cervical,ig-lt-base,10,meta.profile ; type.targetProfile,$.differential.element[4].type[0].targetProfile[0] ; $.differential.element[5].type[0].targetProfile[0] ; $.differential.element[5].type[0].targetProfile[1] ; $.differential.element[6].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt,ig-lt-colorectal,ig-lt-base,2,meta.profile ; type.targetProfile,$.differential.element[4].type[0].targetProfile[1] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt,ig-lt-cvd,ig-lt-base,2,meta.profile ; type.targetProfile,$.differential.element[5].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-lt,ig-lt-lung,ig-lt-base,5,meta.profile ; type.targetProfile,$.differential.element[5].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt,ig-lt-breast,ig-lt-base,1,type.targetProfile,$.differential.element[3].type[0].targetProfile[1]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt,ig-lt-cervical,ig-lt-base,10,meta.profile ; type.targetProfile,$.differential.element[4].type[0].targetProfile[1] ; $.differential.element[5].type[0].targetProfile[1] ; $.differential.element[5].type[0].targetProfile[2] ; $.differential.element[6].type[0].targetProfile[1] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt,ig-lt-colorectal,ig-lt-base,1,type.targetProfile,$.differential.element[4].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt,ig-lt-cvd,ig-lt-base,2,meta.profile ; type.targetProfile,$.differential.element[5].type[0].targetProfile[1] ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/practitioner-role-lt,ig-lt-lung,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/procedure-lt,ig-lt-breast,ig-lt-base,4,baseDefinition ; meta.profile,$.baseDefinition ; $.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/procedure-lt,ig-lt-cervical,ig-lt-base,2,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/procedure-lt,ig-lt-colorectal,ig-lt-base,4,baseDefinition ; type.targetProfile,$.baseDefinition ; $.differential.element[2].type[0].targetProfile[0]
+https://hl7.lt/fhir/base/StructureDefinition/procedure-lt,ig-lt-prostate,ig-lt-base,1,meta.profile,$.meta.profile[0]
+https://hl7.lt/fhir/base/StructureDefinition/screening-careplan-lt,ig-lt-colorectal,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/service-request-lt,ig-lt-breast,ig-lt-base,1,baseDefinition,$.baseDefinition
+https://hl7.lt/fhir/base/StructureDefinition/service-request-lt,ig-lt-cervical,ig-lt-base,3,type.targetProfile,$.differential.element[0].type[0].targetProfile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/pathology-composition-lt-lab,ig-lt-cervical,ig-lt-lab,1,type.targetProfile,$.differential.element[12].type[0].targetProfile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/pathology-report-lt-lab,ig-lt-colorectal,ig-lt-lab,1,type.targetProfile,$.differential.element[19].type[0].targetProfile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/specimen-adequacy-lt-lab,ig-lt-cervical,ig-lt-lab,1,type.targetProfile,$.differential.element[11].type[0].targetProfile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/specimen-lt-lab,ig-lt-cervical,ig-lt-lab,4,meta.profile ; type.targetProfile,$.differential.element[6].type[0].targetProfile[0] ; $.differential.element[7].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/specimen-measurement-lt-lab,ig-lt-cervical,ig-lt-lab,1,type.targetProfile,$.differential.element[10].type[0].targetProfile[0]
+https://hl7.lt/fhir/lab/StructureDefinition/tumor-measurement-lt-lab,ig-lt-cervical,ig-lt-lab,2,meta.profile ; type.targetProfile,$.differential.element[9].type[0].targetProfile[0] ; $.meta.profile[0]
+https://hl7.lt/fhir/lifestyle/StructureDefinition/activity-other-description-ext-lt-lifestyle,ig-lt-cvd,ig-lt-lifestyle,1,type.profile,$.differential.element[2].type[0].profile[0]
+https://hl7.lt/fhir/lifestyle/StructureDefinition/other-dietary-changes-ext-lt-lifestyle,ig-lt-cvd,ig-lt-lifestyle,1,type.profile,$.differential.element[3].type[0].profile[0]
+https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-n,ig-lt-cervical,ig-lt-lab,1,binding.valueSet,$.differential.element[6].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/cervical-tumor-stage-t,ig-lt-cervical,ig-lt-lab,1,binding.valueSet,$.differential.element[3].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/finding-evolution,ig-lt-breast,ig-lt-base,2,binding.valueSet,$.differential.element[10].binding.valueSet ; $.differential.element[16].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/icd-o-3,ig-lt-cervical,ig-lt-lab,2,binding.valueSet,$.differential.element[12].binding.valueSet ; $.differential.element[16].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/medication-taken,ig-lt-cvd,ig-lt-lifestyle,1,binding.valueSet,$.differential.element[13].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/plvi-classification,ig-lt-cervical,ig-lt-lab,1,binding.valueSet,$.differential.element[14].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/treatment-status,ig-lt-cvd,ig-lt-lifestyle,1,binding.valueSet,$.differential.element[10].binding.valueSet
+https://tx.hl7.lt/fhir/ValueSet/yes-no,ig-lt-colorectal,ig-lt-lifestyle,2,binding.valueSet,$.differential.element[3].binding.valueSet

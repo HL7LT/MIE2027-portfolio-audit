@@ -1,0 +1,167 @@
+{
+  "cyclic_guides": [],
+  "guide_edges": [
+    {
+      "source_guide": "ig-lt-base",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-breast",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-breast",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-breast",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-breast",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-breast",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-cervical",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-cervical",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-cervical",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-cervical",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-cervical",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-colorectal",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-colorectal",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-colorectal",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-colorectal",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-colorectal",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-cvd",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-cvd",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-cvd",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-cvd",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-cvd",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-lab",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-lab",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-lifestyle",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-lifestyle",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-lung",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-lung",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-lung",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-lung",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-lung",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-prostate",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-prostate",
+      "target_guide": "ig-lt-eu"
+    },
+    {
+      "source_guide": "ig-lt-prostate",
+      "target_guide": "ig-lt-lab"
+    },
+    {
+      "source_guide": "ig-lt-prostate",
+      "target_guide": "ig-lt-lifestyle"
+    },
+    {
+      "source_guide": "ig-lt-prostate",
+      "target_guide": "ig-lt-vitalsigns"
+    },
+    {
+      "source_guide": "ig-lt-vitalsigns",
+      "target_guide": "ig-lt-base"
+    },
+    {
+      "source_guide": "ig-lt-vitalsigns",
+      "target_guide": "ig-lt-eu"
+    }
+  ],
+  "is_dag": true,
+  "topological_order_source_to_target": [
+    "ig-lt-breast",
+    "ig-lt-cervical",
+    "ig-lt-colorectal",
+    "ig-lt-cvd",
+    "ig-lt-lung",
+    "ig-lt-prostate",
+    "ig-lt-lab",
+    "ig-lt-lifestyle",
+    "ig-lt-vitalsigns",
+    "ig-lt-base",
+    "ig-lt-eu"
+  ]
+}
